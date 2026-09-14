@@ -1,0 +1,16 @@
+[
+  {
+    "dataset": "splitcifar100",
+    "selected_config": "configs/light24/search/splitcifar100_b16_r2000.yaml",
+    "selected_run": "20260914T132121Z_light24_81cf877b",
+    "score": 0.5555333333333333,
+    "rule": "max (P_diag+S_initial)/2; tie faster; then lexical config"
+  },
+  {
+    "dataset": "core50_nc",
+    "selected_config": "configs/light24/search/core50_nc_b16_r2000.yaml",
+    "selected_run": "20260914T132434Z_light24_af70ddf0",
+    "score": 0.6496300957809895,
+    "rule": "max (P_diag+S_initial)/2; tie faster; then lexical config"
+  }
+]

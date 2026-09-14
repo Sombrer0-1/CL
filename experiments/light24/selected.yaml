@@ -1,0 +1,12 @@
+study_id: light24_v1
+name: selected
+estimated_hours:
+- 0.25
+- 1
+configs:
+- configs/light24/selected/splitcifar100_s0.yaml
+- configs/light24/selected/splitcifar100_s1.yaml
+- configs/light24/selected/splitcifar100_s2.yaml
+- configs/light24/selected/core50_nc_s0.yaml
+- configs/light24/selected/core50_nc_s1.yaml
+- configs/light24/selected/core50_nc_s2.yaml

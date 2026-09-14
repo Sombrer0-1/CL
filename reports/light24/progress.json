@@ -1,7 +1,7 @@
 {
-  "n_emitted": 90,
+  "n_emitted": 96,
   "n_planned": 96,
-  "n_completed": 0,
-  "selected_configs_ready": false,
+  "n_completed": 90,
+  "selected_configs_ready": true,
   "note": "Current identity only; missing and failed results are not zeros. Historical runs excluded. Static selection adds 6 cells after 12 development candidates."
 }

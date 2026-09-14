@@ -1,12 +1,12 @@
 item_id,requirement,evidence,status,boundary
 code,关键算法与新执行路径验证,tests/; reports/light24/readiness.json,verified_readiness,单元测试不等于科学结论
-core,两场景静态ER/资源消融/完整Orion×3,experiments/light24/core.yaml,ready_not_run,18格
-search,开发六候选×两场景,experiments/light24/search.yaml,ready_not_run,12格；不使用正式反馈选择
-selected,获选静态配置×两场景×3,orion_repro.light24 --select,waiting_search,6格搜索后生成
-budget,CIFAR100三档allocator×两方法×3,experiments/light24/budget.yaml,ready_not_run,18格；host及全局GPU不受限
-preference,NC两附加偏好×3，balanced复用core,experiments/light24/preference.yaml,ready_not_run,6新格
-prefetch,NC静态ER固定配置on/off×3,experiments/light24/prefetch.yaml,ready_not_run,6格；不代表动态策略等价
-sensitivity,两场景两附加阈值×3,experiments/light24/sensitivity.yaml,ready_not_run,12新格；不回填主配置
-endless,IC/IL/WC×ER/Orion×3,experiments/light24/endless.yaml,ready_not_run,18格；开发划分辅助证据
-analysis,主表/Pareto/轨迹/预算/偏好/预取/开销与C01-C08,orion_repro.study_report; docs/claims_status.md,waiting_results,均值/样本标准差/失败数；按当前身份分组
+core,两场景静态ER/资源消融/完整Orion×3,experiments/light24/core.yaml; reports/light24/means.csv,completed_18_18,URGE未触发；CORe50 seed0计时离群已诊断
+search,开发六候选×两场景,experiments/light24/search.yaml; reports/light24/selection.json,completed_12_12,两场景均选出b16/r2000（开发val规则）
+selected,获选静态配置×两场景×3,experiments/light24/selected.yaml; reports/light24/means.csv,completed_6_6,正式评价与选择数据源分离
+budget,CIFAR100三档allocator×两方法×3,reports/light24/budget_summary.csv; figures/fig_budget.png,completed_12_plus_6_oom,128MiB×6启动OOM为真实资源失败；allocator非host硬限制
+preference,NC两附加偏好×3，balanced复用core,reports/light24/means.csv; figures/fig_preference.png,completed_6_6,权重生效但无行为分化（触发不可达）
+prefetch,NC静态ER固定配置on/off×3,reports/light24/paired_diffs.csv; figures/fig_prefetch.png,completed_6_6,dP=dS=0逐seed全等；+31–44%耗时
+sensitivity,两场景两附加阈值×3,reports/light24/means.csv; figures/fig_sensitivity.png,completed_12_12,三档阈值结果噪声级一致（URGE峰值0.006<0.025）
+endless,IC/IL/WC×ER/Orion×3,reports/light24/means.csv; figures/fig_endless.png,completed_18_18,开发划分辅助证据；IC时间差经重跑探针证伪为方差
+analysis,主表/Pareto/轨迹/预算/偏好/预取/开销与C01-C08,reports/light24/RESULTS.md; paired_diffs.csv; overhead.csv; figures/,completed,docs/claims_status.md逐项判定；含失败数与局限
 excluded,MAX-A全覆盖/完整Oracle/非ER扩展/host硬限制/全checkpoint,PLAN.md,out_of_scope,不是完成或失败；保留既有证据

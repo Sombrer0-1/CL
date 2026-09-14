@@ -4,6 +4,8 @@
 
 当前目标是约24小时以内的代表性复现工作量，**时间只做估算，不是硬截止**。保留完整数据流和主要比较3 seeds，缩减昂贵的全组合搜索。历史71次正式运行保留为背景，新study独立验收。
 
+**light24_v1 已完成**：96 格全部执行（90 completed + 6 个 128MiB 启动 OOM 资源失败），结果与 C01–C08 判定见 [reports/light24/RESULTS.md](reports/light24/RESULTS.md) 与 [docs/claims_status.md](docs/claims_status.md)。
+
 ## 接手先读
 
 1. [STATUS.md](STATUS.md)：当前状态、已验证内容、下一步。
