@@ -1,0 +1,18 @@
+study_id: light24_v1
+name: sensitivity
+estimated_hours:
+- 0.5
+- 2
+configs:
+- configs/light24/sensitivity/splitcifar100_thr0.025_s0.yaml
+- configs/light24/sensitivity/splitcifar100_thr0.1_s0.yaml
+- configs/light24/sensitivity/splitcifar100_thr0.025_s1.yaml
+- configs/light24/sensitivity/splitcifar100_thr0.1_s1.yaml
+- configs/light24/sensitivity/splitcifar100_thr0.025_s2.yaml
+- configs/light24/sensitivity/splitcifar100_thr0.1_s2.yaml
+- configs/light24/sensitivity/core50_nc_thr0.025_s0.yaml
+- configs/light24/sensitivity/core50_nc_thr0.1_s0.yaml
+- configs/light24/sensitivity/core50_nc_thr0.025_s1.yaml
+- configs/light24/sensitivity/core50_nc_thr0.1_s1.yaml
+- configs/light24/sensitivity/core50_nc_thr0.025_s2.yaml
+- configs/light24/sensitivity/core50_nc_thr0.1_s2.yaml

@@ -1,0 +1,18 @@
+name: formal_queue_e03_max_a
+description: "Frozen paper_feedback E03 MAX-A reconstructed, 5 datasets x 3 seeds. Slow (batch=1)."
+configs:
+- configs/formal/e03/splitcifar10/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/splitcifar10/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/splitcifar10/max_a_reconstructed/seed2.yaml
+- configs/formal/e03/splitcifar100/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/splitcifar100/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/splitcifar100/max_a_reconstructed/seed2.yaml
+- configs/formal/e03/core50_ni/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/core50_ni/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/core50_ni/max_a_reconstructed/seed2.yaml
+- configs/formal/e03/core50_nc/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/core50_nc/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/core50_nc/max_a_reconstructed/seed2.yaml
+- configs/formal/e03/core50_nic/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/core50_nic/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/core50_nic/max_a_reconstructed/seed2.yaml

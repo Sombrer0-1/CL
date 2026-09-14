@@ -1,0 +1,9 @@
+{
+  "dataset": "splitcifar10",
+  "n_experiences": 10,
+  "stream_seed": 0,
+  "shuffle": true,
+  "source": "avalanche.benchmarks.classic.SplitCIFAR10 v0.6.0",
+  "class_order_by_experience": [4, 1, 7, 5, 3, 9, 0, 8, 6, 2],
+  "note": "Frozen from the first successful smoke that used seeds.stream=0. Formal runs should set dataset.fixed_class_order to this list."
+}

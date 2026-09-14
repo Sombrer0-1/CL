@@ -1,0 +1,6 @@
+name: formal_queue_e04_gss_max_p
+description: "E04 GSS MAX-P after A23 empty-grad fix. Prior seed0 implementation_error kept."
+configs:
+- configs/formal/e04/core50_nc_gss/max_p_reconstructed/seed0.yaml
+- configs/formal/e04/core50_nc_gss/max_p_reconstructed/seed1.yaml
+- configs/formal/e04/core50_nc_gss/max_p_reconstructed/seed2.yaml

@@ -1,0 +1,27 @@
+# Large data and run artifacts
+data/raw/
+data/processed/
+runs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+wandb/
+lightning_logs/
+.ipynb_checkpoints/
+*.pt
+*.pth
+*.ckpt
+.cuda-*
+.env
+.env.*
+!.env.example
+id_rsa
+id_ed25519
+.DS_Store
+thumbs.db

@@ -1,0 +1,41 @@
+claim_id,section,statement,numeric_value,unit,source_kind,notes
+C01_speedup_online,abstract_sec1_sec5.2,average training-latency speedup vs online baselines,12.13,ratio,paper_explicit,original-platform result; not a software-acceptance threshold
+C01_ps_gap_oracle,abstract_sec1_sec5.2,average plasticity and stability reduction vs Oracle less than,10,percent,paper_explicit,wording is "less than 10%"; original platforms
+C08_runtime_overhead_lo,abstract_sec1_sec5.5,runtime execution overhead lower bound,0.47,percent,paper_explicit,Table 5 overall on Xavier SplitCIFAR/CORe50
+C08_runtime_overhead_hi,abstract_sec1_sec5.5,runtime execution overhead upper bound,2.10,percent,paper_explicit,Table 5 overall on Xavier SplitCIFAR10/100
+C08_memory_overhead_lo,abstract_sec1_sec5.5,memory overhead lower bound,0.016,percent,paper_explicit,Table 7b Server
+C08_memory_overhead_hi,abstract_sec1_sec5.5,memory overhead upper bound,0.042,percent,paper_explicit,Table 7b Xavier CORe50-NIC
+C08_energy_overhead,abstract_sec1,energy overhead less than,0.1,percent,paper_explicit,Table 6 has Joules not percentages; Abstract claim has no matching percent column
+C03_oracle_latency_x,sec5.2.1,average latency speedup vs Oracle due to 42 offline runs,392.04,ratio,paper_explicit,mixes search cost with single-run latency; report separately
+C03_maxa_latency_x,sec5.2.1,average latency speedup vs MAX-A,12.13,ratio,paper_explicit,
+C03_lr_latency_x,sec5.2.1,average latency speedup vs LR,11.69,ratio,paper_explicit,
+C03_maxp_latency_x,sec5.2.1,average latency speedup vs MAX-P on 4 of 5 small/medium benchmarks,1.43,ratio,paper_explicit,
+C03_nic_vs_maxp_latency,sec5.2.1,CORe50-NIC latency as percent of MAX-P,116.05,percent,paper_explicit,
+C07_prefetch_xavier,sec5.4,prefetch training-latency reduction on Xavier,32.3,percent,paper_explicit,
+C07_prefetch_orin,sec5.4,prefetch training-latency reduction on Orin,36.7,percent,paper_explicit,
+C07_prefetch_server,sec5.4,prefetch training-latency reduction on Server,37.6,percent,paper_explicit,
+T3_cifar10_lat_pref,table3,SplitCIFAR10 Prefer Latency training latency,88.21,s,paper_explicit,Xavier ER
+T3_cifar10_lat_bal,table3,SplitCIFAR10 Balanced training latency,106.06,s,paper_explicit,Xavier ER
+T3_cifar10_lat_ps,table3,SplitCIFAR10 Prefer P/S training latency,117.61,s,paper_explicit,Xavier ER
+T3_cifar10_p_pref,table3,SplitCIFAR10 Prefer Latency plasticity,0.51,ratio,paper_explicit,
+T3_cifar10_p_bal,table3,SplitCIFAR10 Balanced plasticity,0.86,ratio,paper_explicit,
+T3_cifar10_p_ps,table3,SplitCIFAR10 Prefer P/S plasticity,0.86,ratio,paper_explicit,
+T3_cifar10_s_pref,table3,SplitCIFAR10 Prefer Latency stability,0.55,ratio,paper_explicit,
+T3_cifar10_s_bal,table3,SplitCIFAR10 Balanced stability,0.58,ratio,paper_explicit,
+T3_cifar10_s_ps,table3,SplitCIFAR10 Prefer P/S stability,0.71,ratio,paper_explicit,
+T5_cifar10_overall_ms,table5,SplitCIFAR10 overall runtime overhead,2210,ms,paper_explicit,Xavier; overall >> sum of calculator+control+prefetch
+T5_cifar10_overall_pct,table5,SplitCIFAR10 overall runtime overhead percent,2.10,percent,paper_explicit,
+T7_prefetch_mem,table7,prefetch memory overhead,3.2,MB,paper_explicit,same across listed benchmarks
+ORACLE_GRID,sec5.1,Oracle grid size batch x replay,42,count,paper_explicit,"batch {16,32,64,128,256,512,1024} x replay {10,100,1000,10000,100000,1000000}"
+DATASET_CIFAR10_NEXP,table2,SplitCIFAR10 experiences,10,count,paper_explicit,
+DATASET_CIFAR10_IMAGES,table2,SplitCIFAR10 images,60000,count,paper_explicit,train+test combined
+DATASET_CIFAR100_NEXP,table2,SplitCIFAR100 experiences,10,count,paper_explicit,
+DATASET_CORE50_NI,table2,CORe50-NI experiences,8,count,paper_explicit,
+DATASET_CORE50_NC,table2,CORe50-NC experiences,9,count,paper_explicit,
+DATASET_CORE50_NIC,table2,CORe50-NIC experiences,79,count,paper_explicit,
+DATASET_CORE50_IMAGES,table2,CORe50 images,164866,count,paper_explicit,
+DATASET_ENDLESS_IC,table2,Endless-Sim IC experiences/images,4,count,paper_explicit,49134 images
+INPUT_SIZE,table2,input spatial size,32,px,paper_explicit,all listed benchmarks
+ALPHA_EXAMPLE,sec4.3,example alpha in Eq 3,0.1,dimensionless,paper_explicit,formula example not an experimental default
+BETA_EXAMPLE,sec4.3,example beta in Eq 4,0.2,dimensionless,paper_explicit,formula example not an experimental default
+WEIGHT_EXAMPLE,sec4.4,"example k_m,k_p,k_s,k_l after 4/3/2/1 normalization","0.4,0.3,0.2,0.1",weights,paper_explicit,example order [memory,plasticity,stability,latency]

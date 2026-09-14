@@ -1,0 +1,29 @@
+{
+  "verified_date": "2026-09-14",
+  "tests": {
+    "passed": 100,
+    "warnings": 5,
+    "note": "Avalanche no-logger warnings"
+  },
+  "generated_configs": 90,
+  "selected_configs_pending_search": 6,
+  "matrix_dry_run": "passed",
+  "new_formal_runs": 0,
+  "gpu_ablation_smokes": {
+    "adaptive": {
+      "run_id": "readiness_light24_adaptive",
+      "suggested": "advanced",
+      "applied": "advanced",
+      "n_experiences": 2
+    },
+    "fixed_default": {
+      "run_id": "readiness_light24_fixed_default",
+      "suggested": "advanced",
+      "applied": "default",
+      "n_experiences": 2
+    }
+  },
+  "time_policy": "estimate_only_no_training_cutoff",
+  "test_over_24h_continues": "passed",
+  "scope": "Readiness only; no scientific claims verified by these checks."
+}

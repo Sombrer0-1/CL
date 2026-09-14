@@ -1,0 +1,105 @@
+schema_version: 1
+run_id: null
+phase: formal
+claim_ids:
+- E03
+- C03
+experiment_id: E03
+protocol_id: paper_feedback_diag_initial_v1
+method_id: orion_formula
+dataset_manifest_sha256: null
+code_revision_or_snapshot: null
+environment_lock_sha256: null
+alignment_version: A01-A22-formal_v1
+seeds:
+  model: 2
+  stream: 2
+  replay: 2
+  augmentation: 2
+model:
+  name: cifar_resnet20
+  initialization: random
+  precision: fp32
+  num_classes: 10
+algorithm:
+  base: er
+  optional_plugins: none
+training:
+  new_epochs: 1
+  new_batch: 16
+  replay_batch: 16
+  eval_batch: 128
+  device: cuda
+  allow_tf32: false
+  cudnn_benchmark: false
+  optimizer:
+    name: sgd
+    lr: 0.01
+    momentum: 0.9
+    weight_decay: 0.0
+    scheduler: none
+dataset:
+  name: splitcifar10
+  root: data/raw/cifar10
+  split_manifest: data/manifests/paper_feedback/cifar10_official.json
+  n_experiences: 10
+  experience_limit: 10
+  shuffle: false
+  fixed_class_order:
+  - 4
+  - 1
+  - 7
+  - 5
+  - 3
+  - 9
+  - 0
+  - 8
+  - 6
+  - 2
+replay:
+  capacity: 200
+  policy: experience_balanced
+  representation: avalanche_buffer
+controller:
+  enabled: true
+  units:
+    accuracy: ratio
+    latency: seconds
+    memory: MiB
+  metric_definition: diag_initial
+  feedback_source: official_test_seen
+  coefficients:
+    kp: 0.25
+    ks: 0.25
+    kl: 0.25
+    km: 0.25
+  thresholds:
+    p: 0.5
+    s: 0.5
+    latency_s: 30.0
+    m_max_mib: 4096.0
+  thr0: 0.05
+  delta: 0.0
+  updates:
+    alpha: 0.1
+    beta: 0.2
+  mb0: 16.0
+  mr0: 200.0
+  m_batch: 1.0
+  m_frame: 1.0
+  min_batch: 1
+  max_batch: 1024
+  equal_uses_gt: true
+budget:
+  enforcement: observed_only
+  controlled_resource: device
+  limit_bytes: null
+  guard_mode: stop
+prefetch:
+  enabled: false
+  queue_depth: 1
+  pin_memory: false
+  num_workers: 0
+measurement:
+  sample_interval_ms: 100
+  checkpoint_policy: none

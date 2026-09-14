@@ -1,0 +1,21 @@
+name: formal_queue_after_e04_fast
+description: "GSS MAX-P after A23, then E03 MAX-A 5 datasets x 3 seeds. Sequential GPU."
+configs:
+- configs/formal/e04/core50_nc_gss/max_p_reconstructed/seed0.yaml
+- configs/formal/e04/core50_nc_gss/max_p_reconstructed/seed1.yaml
+- configs/formal/e04/core50_nc_gss/max_p_reconstructed/seed2.yaml
+- configs/formal/e03/splitcifar10/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/splitcifar10/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/splitcifar10/max_a_reconstructed/seed2.yaml
+- configs/formal/e03/splitcifar100/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/splitcifar100/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/splitcifar100/max_a_reconstructed/seed2.yaml
+- configs/formal/e03/core50_ni/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/core50_ni/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/core50_ni/max_a_reconstructed/seed2.yaml
+- configs/formal/e03/core50_nc/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/core50_nc/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/core50_nc/max_a_reconstructed/seed2.yaml
+- configs/formal/e03/core50_nic/max_a_reconstructed/seed0.yaml
+- configs/formal/e03/core50_nic/max_a_reconstructed/seed1.yaml
+- configs/formal/e03/core50_nic/max_a_reconstructed/seed2.yaml

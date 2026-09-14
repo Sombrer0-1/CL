@@ -1,0 +1,12 @@
+name: dev_recalibrate
+description: Current-code CIFAR ER/Orion calibration, full-stream prefetch pair, Orion GEM/AGEM/GSS 2-exp. Development only.
+configs:
+- configs/development/cifar10_er_static.yaml
+- configs/development/cifar10_orion_formula.yaml
+- configs/development/cifar100_er_static.yaml
+- configs/development/cifar100_orion_formula.yaml
+- configs/development/cifar10_er_prefetch_off.yaml
+- configs/development/cifar10_er_prefetch_on.yaml
+- configs/development/cifar10_orion_gem_2exp.yaml
+- configs/development/cifar10_orion_agem_2exp.yaml
+- configs/development/cifar10_orion_gss_2exp.yaml

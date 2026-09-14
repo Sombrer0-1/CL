@@ -1,0 +1,24 @@
+study_id: light24_v1
+name: endless
+estimated_hours:
+- 1
+- 4
+configs:
+- configs/light24/endless/endless_ic_er_static_s0.yaml
+- configs/light24/endless/endless_ic_orion_formula_s0.yaml
+- configs/light24/endless/endless_il_er_static_s0.yaml
+- configs/light24/endless/endless_il_orion_formula_s0.yaml
+- configs/light24/endless/endless_wc_er_static_s0.yaml
+- configs/light24/endless/endless_wc_orion_formula_s0.yaml
+- configs/light24/endless/endless_ic_er_static_s1.yaml
+- configs/light24/endless/endless_ic_orion_formula_s1.yaml
+- configs/light24/endless/endless_il_er_static_s1.yaml
+- configs/light24/endless/endless_il_orion_formula_s1.yaml
+- configs/light24/endless/endless_wc_er_static_s1.yaml
+- configs/light24/endless/endless_wc_orion_formula_s1.yaml
+- configs/light24/endless/endless_ic_er_static_s2.yaml
+- configs/light24/endless/endless_ic_orion_formula_s2.yaml
+- configs/light24/endless/endless_il_er_static_s2.yaml
+- configs/light24/endless/endless_il_orion_formula_s2.yaml
+- configs/light24/endless/endless_wc_er_static_s2.yaml
+- configs/light24/endless/endless_wc_orion_formula_s2.yaml

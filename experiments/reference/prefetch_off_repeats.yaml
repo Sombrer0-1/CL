@@ -1,0 +1,9 @@
+name: prefetch_off_repeats
+description: >
+  E07 development: three identical prefetch-off CIFAR10 ER 10-exp runs
+  (same yaml, no --resume) to quantify P/S/learning variance before any
+  on/off tolerance. Not formal.
+configs:
+- configs/development/cifar10_er_prefetch_off.yaml
+- configs/development/cifar10_er_prefetch_off.yaml
+- configs/development/cifar10_er_prefetch_off.yaml

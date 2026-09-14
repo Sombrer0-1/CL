@@ -1,0 +1,12 @@
+study_id: light24_v1
+name: prefetch
+estimated_hours:
+- 0.25
+- 1
+configs:
+- configs/light24/prefetch/core50_nc_off_s0.yaml
+- configs/light24/prefetch/core50_nc_on_s0.yaml
+- configs/light24/prefetch/core50_nc_off_s1.yaml
+- configs/light24/prefetch/core50_nc_on_s1.yaml
+- configs/light24/prefetch/core50_nc_off_s2.yaml
+- configs/light24/prefetch/core50_nc_on_s2.yaml

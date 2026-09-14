@@ -1,0 +1,105 @@
+algorithm:
+  base: er
+  optional_plugins: none
+alignment_version: A01-A20-v1
+budget:
+  controlled_resource: device
+  enforcement: device_allocator_enforced
+  guard_mode: stop
+  limit_bytes: 268435456
+claim_ids:
+- R01
+- T02
+code_revision_or_snapshot: null
+controller:
+  coefficients:
+    kl: 0.25
+    km: 0.25
+    kp: 0.25
+    ks: 0.25
+  delta: 0.0
+  enabled: false
+  equal_uses_gt: true
+  feedback_source: development_val_seen
+  m_batch: 1.0
+  m_frame: 1.0
+  max_batch: 1024
+  mb0: 16.0
+  metric_definition: diag_initial
+  min_batch: 1
+  mr0: 200.0
+  thr0: 0.05
+  thresholds:
+    latency_s: 30.0
+    m_max_mib: 256
+    p: 0.5
+    s: 0.5
+  units:
+    accuracy: ratio
+    latency: seconds
+    memory: MiB
+  updates:
+    alpha: 0.1
+    beta: 0.2
+dataset:
+  experience_limit: 2
+  fixed_class_order:
+  - 4
+  - 1
+  - 7
+  - 5
+  - 3
+  - 9
+  - 0
+  - 8
+  - 6
+  - 2
+  n_experiences: 10
+  name: splitcifar10
+  root: data/raw/cifar10
+  shuffle: false
+  split_manifest: data/manifests/cifar10_dev_split_seed17.json
+dataset_manifest_sha256: null
+environment_lock_sha256: null
+experiment_id: E00
+measurement:
+  checkpoint_policy: none
+  sample_interval_ms: 100
+method_id: er_static
+model:
+  initialization: random
+  name: cifar_resnet20
+  num_classes: 10
+  precision: fp32
+phase: smoke
+prefetch:
+  enabled: false
+  num_workers: 0
+  pin_memory: false
+  queue_depth: 1
+protocol_id: development_val_diag_initial_v1
+replay:
+  capacity: 200
+  policy: experience_balanced
+  representation: avalanche_buffer
+run_id: null
+schema_version: 1
+seeds:
+  augmentation: 0
+  model: 0
+  replay: 0
+  stream: 0
+training:
+  allow_tf32: false
+  cudnn_benchmark: false
+  device: cuda
+  eval_batch: 128
+  new_batch: 16
+  new_epochs: 1
+  optimizer:
+    lr: 0.01
+    momentum: 0.9
+    name: sgd
+    scheduler: none
+    weight_decay: 0.0
+  replay_batch: 16

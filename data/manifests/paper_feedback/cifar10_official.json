@@ -1,0 +1,8 @@
+{
+  "dataset": "cifar10",
+  "protocol": "paper_feedback_diag_initial_v1",
+  "source": "torchvision_official_train_and_test",
+  "n_official_train": 50000,
+  "n_official_test": 10000,
+  "note": "Identity/provenance only. Factory loads torchvision official splits; this file has no indices."
+}

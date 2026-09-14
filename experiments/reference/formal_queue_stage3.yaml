@@ -1,0 +1,12 @@
+name: formal_queue_stage3
+description: "Frozen paper_feedback CORe50-NI E03 without MAX-A."
+configs:
+- configs/formal/e03/core50_ni/orion_formula/seed0.yaml
+- configs/formal/e03/core50_ni/orion_formula/seed1.yaml
+- configs/formal/e03/core50_ni/orion_formula/seed2.yaml
+- configs/formal/e03/core50_ni/max_p_reconstructed/seed0.yaml
+- configs/formal/e03/core50_ni/max_p_reconstructed/seed1.yaml
+- configs/formal/e03/core50_ni/max_p_reconstructed/seed2.yaml
+- configs/formal/e03/core50_ni/lr_reconstructed/seed0.yaml
+- configs/formal/e03/core50_ni/lr_reconstructed/seed1.yaml
+- configs/formal/e03/core50_ni/lr_reconstructed/seed2.yaml

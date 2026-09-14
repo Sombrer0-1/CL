@@ -1,0 +1,9 @@
+name: endless
+description: Development only; not a frozen formal matrix.
+configs:
+- configs/development/endless_ic_er_static_grouped_v2.yaml
+- configs/development/endless_ic_orion_formula_grouped_v2.yaml
+- configs/development/endless_il_er_static_grouped_v2.yaml
+- configs/development/endless_il_orion_formula_grouped_v2.yaml
+- configs/development/endless_wc_er_static_grouped_v2.yaml
+- configs/development/endless_wc_orion_formula_grouped_v2.yaml

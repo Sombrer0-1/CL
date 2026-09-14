@@ -1,0 +1,12 @@
+item_id,requirement,evidence,status,boundary
+code,关键算法与新执行路径验证,tests/; reports/light24/readiness.json,verified_readiness,单元测试不等于科学结论
+core,两场景静态ER/资源消融/完整Orion×3,experiments/light24/core.yaml,ready_not_run,18格
+search,开发六候选×两场景,experiments/light24/search.yaml,ready_not_run,12格；不使用正式反馈选择
+selected,获选静态配置×两场景×3,orion_repro.light24 --select,waiting_search,6格搜索后生成
+budget,CIFAR100三档allocator×两方法×3,experiments/light24/budget.yaml,ready_not_run,18格；host及全局GPU不受限
+preference,NC两附加偏好×3，balanced复用core,experiments/light24/preference.yaml,ready_not_run,6新格
+prefetch,NC静态ER固定配置on/off×3,experiments/light24/prefetch.yaml,ready_not_run,6格；不代表动态策略等价
+sensitivity,两场景两附加阈值×3,experiments/light24/sensitivity.yaml,ready_not_run,12新格；不回填主配置
+endless,IC/IL/WC×ER/Orion×3,experiments/light24/endless.yaml,ready_not_run,18格；开发划分辅助证据
+analysis,主表/Pareto/轨迹/预算/偏好/预取/开销与C01-C08,orion_repro.study_report; docs/claims_status.md,waiting_results,均值/样本标准差/失败数；按当前身份分组
+excluded,MAX-A全覆盖/完整Oracle/非ER扩展/host硬限制/全checkpoint,PLAN.md,out_of_scope,不是完成或失败；保留既有证据

@@ -1,0 +1,21 @@
+name: formal_queue_e04_fast
+description: "Frozen paper_feedback E04 GEM/AGEM/GSS x Orion/MAX-P, 3 seeds. MAX-A later."
+configs:
+- configs/formal/e04/core50_nc_gem/orion_formula/seed0.yaml
+- configs/formal/e04/core50_nc_gem/orion_formula/seed1.yaml
+- configs/formal/e04/core50_nc_gem/orion_formula/seed2.yaml
+- configs/formal/e04/core50_nc_gem/max_p_reconstructed/seed0.yaml
+- configs/formal/e04/core50_nc_gem/max_p_reconstructed/seed1.yaml
+- configs/formal/e04/core50_nc_gem/max_p_reconstructed/seed2.yaml
+- configs/formal/e04/core50_nc_agem/orion_formula/seed0.yaml
+- configs/formal/e04/core50_nc_agem/orion_formula/seed1.yaml
+- configs/formal/e04/core50_nc_agem/orion_formula/seed2.yaml
+- configs/formal/e04/core50_nc_agem/max_p_reconstructed/seed0.yaml
+- configs/formal/e04/core50_nc_agem/max_p_reconstructed/seed1.yaml
+- configs/formal/e04/core50_nc_agem/max_p_reconstructed/seed2.yaml
+- configs/formal/e04/core50_nc_gss/orion_formula/seed0.yaml
+- configs/formal/e04/core50_nc_gss/orion_formula/seed1.yaml
+- configs/formal/e04/core50_nc_gss/orion_formula/seed2.yaml
+- configs/formal/e04/core50_nc_gss/max_p_reconstructed/seed0.yaml
+- configs/formal/e04/core50_nc_gss/max_p_reconstructed/seed1.yaml
+- configs/formal/e04/core50_nc_gss/max_p_reconstructed/seed2.yaml

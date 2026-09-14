@@ -1,0 +1,112 @@
+{
+  "dataset": "splitcifar10",
+  "n_experiences_in_config": 10,
+  "n_experiences": 10,
+  "n_train_experiences": 10,
+  "n_test_experiences": 10,
+  "eval_protocol": "per_experience",
+  "feedback_source": "development_val_seen",
+  "split_manifest": "data/manifests/cifar10_dev_split_seed17.json",
+  "class_sets_disjoint": true,
+  "stream_seed": 0,
+  "shuffle": false,
+  "scenario": null,
+  "run": null,
+  "object_level": null,
+  "fixed_class_order_in_config": [
+    4,
+    1,
+    7,
+    5,
+    3,
+    9,
+    0,
+    8,
+    6,
+    2
+  ],
+  "class_map": [
+    [
+      4
+    ],
+    [
+      1
+    ],
+    [
+      7
+    ],
+    [
+      5
+    ],
+    [
+      3
+    ],
+    [
+      9
+    ],
+    [
+      0
+    ],
+    [
+      8
+    ],
+    [
+      6
+    ],
+    [
+      2
+    ]
+  ],
+  "flat_class_order": [
+    4,
+    1,
+    7,
+    5,
+    3,
+    9,
+    0,
+    8,
+    6,
+    2
+  ],
+  "n_classes_per_experience": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "train_sizes": [
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    4000
+  ],
+  "test_sizes": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000
+  ],
+  "n_train_total": 40000,
+  "n_test_total": 10000,
+  "config": "configs/development/cifar10_er_static.yaml",
+  "note": "Development split from official train only. n_train_total=40000 is not the official 50k train set; n_test_total is held-out train val, not the official test set."
+}

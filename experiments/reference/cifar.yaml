@@ -1,0 +1,17 @@
+name: cifar
+description: Development only; not a frozen formal matrix.
+configs:
+- configs/development/cifar100_er_static.yaml
+- configs/development/cifar100_orion_formula.yaml
+- configs/development/cifar10_er_prefetch_on.yaml
+- configs/development/cifar10_er_static.yaml
+- configs/development/cifar10_lr_reconstructed.yaml
+- configs/development/cifar10_max_a_reconstructed.yaml
+- configs/development/cifar10_max_p_reconstructed.yaml
+- configs/development/cifar10_orion_budget_formula_stop.yaml
+- configs/development/cifar10_orion_formula.yaml
+- configs/development/cifar10_orion_formula_gem_ewc.yaml
+- configs/development/cifar10_orion_lth_profiled.yaml
+- configs/development/cifar10_orion_pref_balanced.yaml
+- configs/development/cifar10_orion_pref_latency.yaml
+- configs/development/cifar10_orion_pref_ps.yaml

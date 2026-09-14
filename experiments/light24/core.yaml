@@ -1,0 +1,24 @@
+study_id: light24_v1
+name: core
+estimated_hours:
+- 0.5
+- 2
+configs:
+- configs/light24/core/splitcifar100_er_static_s0.yaml
+- configs/light24/core/splitcifar100_orion_batch_replay_s0.yaml
+- configs/light24/core/splitcifar100_orion_formula_s0.yaml
+- configs/light24/core/splitcifar100_er_static_s1.yaml
+- configs/light24/core/splitcifar100_orion_batch_replay_s1.yaml
+- configs/light24/core/splitcifar100_orion_formula_s1.yaml
+- configs/light24/core/splitcifar100_er_static_s2.yaml
+- configs/light24/core/splitcifar100_orion_batch_replay_s2.yaml
+- configs/light24/core/splitcifar100_orion_formula_s2.yaml
+- configs/light24/core/core50_nc_er_static_s0.yaml
+- configs/light24/core/core50_nc_orion_batch_replay_s0.yaml
+- configs/light24/core/core50_nc_orion_formula_s0.yaml
+- configs/light24/core/core50_nc_er_static_s1.yaml
+- configs/light24/core/core50_nc_orion_batch_replay_s1.yaml
+- configs/light24/core/core50_nc_orion_formula_s1.yaml
+- configs/light24/core/core50_nc_er_static_s2.yaml
+- configs/light24/core/core50_nc_orion_batch_replay_s2.yaml
+- configs/light24/core/core50_nc_orion_formula_s2.yaml

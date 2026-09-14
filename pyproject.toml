@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orion-repro"
+version = "0.1.0"
+description = "Reproduction of Orion (self-adaptive memory management for on-device OCL) on this platform."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Orion reproduction" }]
+dependencies = [
+  "pyyaml>=6.0",
+  "psutil>=5.9",
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+repro = [
+  "pytest>=8.0",
+  "matplotlib>=3.8",
+  "pandas>=2.0",
+  "scikit-learn>=1.3",
+  "tqdm>=4.66",
+  "dill>=0.3",
+  "packaging>=23.0",
+  "typing-extensions>=4.6.0",
+  "gputil",
+  "pytorchcv",
+  "torchmetrics",
+  "tensorboard>=1.15",
+  "gdown",
+  "qpsolvers[open_source_solvers]",
+]
+
+[project.scripts]
+orion-repro = "orion_repro.study:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+filterwarnings = [
+  "ignore::DeprecationWarning",
+]

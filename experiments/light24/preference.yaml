@@ -1,0 +1,12 @@
+study_id: light24_v1
+name: preference
+estimated_hours:
+- 0.25
+- 1
+configs:
+- configs/light24/preference/core50_nc_latency_s0.yaml
+- configs/light24/preference/core50_nc_ps_s0.yaml
+- configs/light24/preference/core50_nc_latency_s1.yaml
+- configs/light24/preference/core50_nc_ps_s1.yaml
+- configs/light24/preference/core50_nc_latency_s2.yaml
+- configs/light24/preference/core50_nc_ps_s2.yaml

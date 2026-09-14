@@ -1,0 +1,12 @@
+name: formal_queue_stage2
+description: "Frozen paper_feedback CIFAR100 E03 without MAX-A."
+configs:
+- configs/formal/e03/splitcifar100/orion_formula/seed0.yaml
+- configs/formal/e03/splitcifar100/orion_formula/seed1.yaml
+- configs/formal/e03/splitcifar100/orion_formula/seed2.yaml
+- configs/formal/e03/splitcifar100/max_p_reconstructed/seed0.yaml
+- configs/formal/e03/splitcifar100/max_p_reconstructed/seed1.yaml
+- configs/formal/e03/splitcifar100/max_p_reconstructed/seed2.yaml
+- configs/formal/e03/splitcifar100/lr_reconstructed/seed0.yaml
+- configs/formal/e03/splitcifar100/lr_reconstructed/seed1.yaml
+- configs/formal/e03/splitcifar100/lr_reconstructed/seed2.yaml

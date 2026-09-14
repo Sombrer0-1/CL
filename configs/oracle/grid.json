@@ -1,0 +1,276 @@
+{
+  "n_cells": 42,
+  "batches": [
+    16,
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "replay": [
+    10,
+    100,
+    1000,
+    10000,
+    100000,
+    1000000
+  ],
+  "selection_rule": "A15: Pareto then max 0.5P+0.5S, then shorter learning_s, then smaller memory, then dict order",
+  "note": "Generator only. Do not treat listing as a completed Oracle search.",
+  "cells": [
+    {
+      "new_batch": 16,
+      "replay_capacity": 10,
+      "replay_batch": 16,
+      "cell_id": "b16_r10"
+    },
+    {
+      "new_batch": 16,
+      "replay_capacity": 100,
+      "replay_batch": 16,
+      "cell_id": "b16_r100"
+    },
+    {
+      "new_batch": 16,
+      "replay_capacity": 1000,
+      "replay_batch": 16,
+      "cell_id": "b16_r1000"
+    },
+    {
+      "new_batch": 16,
+      "replay_capacity": 10000,
+      "replay_batch": 16,
+      "cell_id": "b16_r10000"
+    },
+    {
+      "new_batch": 16,
+      "replay_capacity": 100000,
+      "replay_batch": 16,
+      "cell_id": "b16_r100000"
+    },
+    {
+      "new_batch": 16,
+      "replay_capacity": 1000000,
+      "replay_batch": 16,
+      "cell_id": "b16_r1000000"
+    },
+    {
+      "new_batch": 32,
+      "replay_capacity": 10,
+      "replay_batch": 32,
+      "cell_id": "b32_r10"
+    },
+    {
+      "new_batch": 32,
+      "replay_capacity": 100,
+      "replay_batch": 32,
+      "cell_id": "b32_r100"
+    },
+    {
+      "new_batch": 32,
+      "replay_capacity": 1000,
+      "replay_batch": 32,
+      "cell_id": "b32_r1000"
+    },
+    {
+      "new_batch": 32,
+      "replay_capacity": 10000,
+      "replay_batch": 32,
+      "cell_id": "b32_r10000"
+    },
+    {
+      "new_batch": 32,
+      "replay_capacity": 100000,
+      "replay_batch": 32,
+      "cell_id": "b32_r100000"
+    },
+    {
+      "new_batch": 32,
+      "replay_capacity": 1000000,
+      "replay_batch": 32,
+      "cell_id": "b32_r1000000"
+    },
+    {
+      "new_batch": 64,
+      "replay_capacity": 10,
+      "replay_batch": 64,
+      "cell_id": "b64_r10"
+    },
+    {
+      "new_batch": 64,
+      "replay_capacity": 100,
+      "replay_batch": 64,
+      "cell_id": "b64_r100"
+    },
+    {
+      "new_batch": 64,
+      "replay_capacity": 1000,
+      "replay_batch": 64,
+      "cell_id": "b64_r1000"
+    },
+    {
+      "new_batch": 64,
+      "replay_capacity": 10000,
+      "replay_batch": 64,
+      "cell_id": "b64_r10000"
+    },
+    {
+      "new_batch": 64,
+      "replay_capacity": 100000,
+      "replay_batch": 64,
+      "cell_id": "b64_r100000"
+    },
+    {
+      "new_batch": 64,
+      "replay_capacity": 1000000,
+      "replay_batch": 64,
+      "cell_id": "b64_r1000000"
+    },
+    {
+      "new_batch": 128,
+      "replay_capacity": 10,
+      "replay_batch": 128,
+      "cell_id": "b128_r10"
+    },
+    {
+      "new_batch": 128,
+      "replay_capacity": 100,
+      "replay_batch": 128,
+      "cell_id": "b128_r100"
+    },
+    {
+      "new_batch": 128,
+      "replay_capacity": 1000,
+      "replay_batch": 128,
+      "cell_id": "b128_r1000"
+    },
+    {
+      "new_batch": 128,
+      "replay_capacity": 10000,
+      "replay_batch": 128,
+      "cell_id": "b128_r10000"
+    },
+    {
+      "new_batch": 128,
+      "replay_capacity": 100000,
+      "replay_batch": 128,
+      "cell_id": "b128_r100000"
+    },
+    {
+      "new_batch": 128,
+      "replay_capacity": 1000000,
+      "replay_batch": 128,
+      "cell_id": "b128_r1000000"
+    },
+    {
+      "new_batch": 256,
+      "replay_capacity": 10,
+      "replay_batch": 256,
+      "cell_id": "b256_r10"
+    },
+    {
+      "new_batch": 256,
+      "replay_capacity": 100,
+      "replay_batch": 256,
+      "cell_id": "b256_r100"
+    },
+    {
+      "new_batch": 256,
+      "replay_capacity": 1000,
+      "replay_batch": 256,
+      "cell_id": "b256_r1000"
+    },
+    {
+      "new_batch": 256,
+      "replay_capacity": 10000,
+      "replay_batch": 256,
+      "cell_id": "b256_r10000"
+    },
+    {
+      "new_batch": 256,
+      "replay_capacity": 100000,
+      "replay_batch": 256,
+      "cell_id": "b256_r100000"
+    },
+    {
+      "new_batch": 256,
+      "replay_capacity": 1000000,
+      "replay_batch": 256,
+      "cell_id": "b256_r1000000"
+    },
+    {
+      "new_batch": 512,
+      "replay_capacity": 10,
+      "replay_batch": 512,
+      "cell_id": "b512_r10"
+    },
+    {
+      "new_batch": 512,
+      "replay_capacity": 100,
+      "replay_batch": 512,
+      "cell_id": "b512_r100"
+    },
+    {
+      "new_batch": 512,
+      "replay_capacity": 1000,
+      "replay_batch": 512,
+      "cell_id": "b512_r1000"
+    },
+    {
+      "new_batch": 512,
+      "replay_capacity": 10000,
+      "replay_batch": 512,
+      "cell_id": "b512_r10000"
+    },
+    {
+      "new_batch": 512,
+      "replay_capacity": 100000,
+      "replay_batch": 512,
+      "cell_id": "b512_r100000"
+    },
+    {
+      "new_batch": 512,
+      "replay_capacity": 1000000,
+      "replay_batch": 512,
+      "cell_id": "b512_r1000000"
+    },
+    {
+      "new_batch": 1024,
+      "replay_capacity": 10,
+      "replay_batch": 1024,
+      "cell_id": "b1024_r10"
+    },
+    {
+      "new_batch": 1024,
+      "replay_capacity": 100,
+      "replay_batch": 1024,
+      "cell_id": "b1024_r100"
+    },
+    {
+      "new_batch": 1024,
+      "replay_capacity": 1000,
+      "replay_batch": 1024,
+      "cell_id": "b1024_r1000"
+    },
+    {
+      "new_batch": 1024,
+      "replay_capacity": 10000,
+      "replay_batch": 1024,
+      "cell_id": "b1024_r10000"
+    },
+    {
+      "new_batch": 1024,
+      "replay_capacity": 100000,
+      "replay_batch": 1024,
+      "cell_id": "b1024_r100000"
+    },
+    {
+      "new_batch": 1024,
+      "replay_capacity": 1000000,
+      "replay_batch": 1024,
+      "cell_id": "b1024_r1000000"
+    }
+  ]
+}

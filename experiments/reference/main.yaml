@@ -1,0 +1,5 @@
+name: main
+description: Development only; not a frozen formal matrix.
+configs:
+- configs/development/cifar10_er_static.yaml
+- configs/development/cifar10_orion_formula.yaml

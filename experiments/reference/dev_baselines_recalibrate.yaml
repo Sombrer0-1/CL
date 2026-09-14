@@ -1,0 +1,5 @@
+name: dev_baselines_recalibrate
+description: Current-code MAX-P and LR on CIFAR10 development. Not formal. MAX-A excluded (≈40 min).
+configs:
+- configs/development/cifar10_max_p_reconstructed.yaml
+- configs/development/cifar10_lr_reconstructed.yaml

@@ -1,0 +1,9 @@
+name: formal_e02
+description: Frozen paper_feedback CIFAR10 ER static vs Orion, 3 seeds. Prefetch off.
+configs:
+- configs/formal/e02/splitcifar10/er_static/seed0.yaml
+- configs/formal/e02/splitcifar10/er_static/seed1.yaml
+- configs/formal/e02/splitcifar10/er_static/seed2.yaml
+- configs/formal/e02/splitcifar10/orion_formula/seed0.yaml
+- configs/formal/e02/splitcifar10/orion_formula/seed1.yaml
+- configs/formal/e02/splitcifar10/orion_formula/seed2.yaml

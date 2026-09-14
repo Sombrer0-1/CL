@@ -1,0 +1,47 @@
+{
+  "dataset": "core50_ni",
+  "source": "official_train_filelists_sequence_groups",
+  "scenario": "ni",
+  "run": 0,
+  "object_level": true,
+  "split_seed": 17,
+  "val_fraction": 0.2,
+  "sequence_key": "session/object directory",
+  "prepared_utc": "2026-09-13T11:19:00.272294+00:00",
+  "src_filelist_dir": "/home/admin/research/Reproduce-Orion/data/raw/core50/batches_filelists/NI_inc/run0",
+  "out_dir": "/home/admin/research/Reproduce-Orion/data/processed/core50_ni_run0_dev_split_seed17",
+  "n_experiences": 8,
+  "train_sizes": [
+    12591,
+    12596,
+    11689,
+    12895,
+    11692,
+    11695,
+    12571,
+    11985
+  ],
+  "val_sizes_per_experience": [
+    2400,
+    2399,
+    3297,
+    2099,
+    3297,
+    3294,
+    2395,
+    2999
+  ],
+  "n_dev_train": 97714,
+  "n_dev_val": 22180,
+  "n_sequences": [
+    50,
+    50,
+    50,
+    50,
+    50,
+    50,
+    50,
+    50
+  ],
+  "note": "Whole s*/o* sequences stay on one side of the split. Official test_filelist is unused. Frames of one sequence are not randomly mixed between train and val."
+}

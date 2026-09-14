@@ -1,0 +1,59 @@
+{
+  "n": 9,
+  "cells": [
+    {
+      "context": "core50_nc_gem",
+      "method_id": "lr_reconstructed",
+      "seed": 0,
+      "reason": "LR \u00d7 GEM/AGEM/GSS is not a defined reconstruction: latent buffer vs raw gradient constraint are not mixed silently"
+    },
+    {
+      "context": "core50_nc_gem",
+      "method_id": "lr_reconstructed",
+      "seed": 1,
+      "reason": "LR \u00d7 GEM/AGEM/GSS is not a defined reconstruction: latent buffer vs raw gradient constraint are not mixed silently"
+    },
+    {
+      "context": "core50_nc_gem",
+      "method_id": "lr_reconstructed",
+      "seed": 2,
+      "reason": "LR \u00d7 GEM/AGEM/GSS is not a defined reconstruction: latent buffer vs raw gradient constraint are not mixed silently"
+    },
+    {
+      "context": "core50_nc_agem",
+      "method_id": "lr_reconstructed",
+      "seed": 0,
+      "reason": "LR \u00d7 GEM/AGEM/GSS is not a defined reconstruction: latent buffer vs raw gradient constraint are not mixed silently"
+    },
+    {
+      "context": "core50_nc_agem",
+      "method_id": "lr_reconstructed",
+      "seed": 1,
+      "reason": "LR \u00d7 GEM/AGEM/GSS is not a defined reconstruction: latent buffer vs raw gradient constraint are not mixed silently"
+    },
+    {
+      "context": "core50_nc_agem",
+      "method_id": "lr_reconstructed",
+      "seed": 2,
+      "reason": "LR \u00d7 GEM/AGEM/GSS is not a defined reconstruction: latent buffer vs raw gradient constraint are not mixed silently"
+    },
+    {
+      "context": "core50_nc_gss",
+      "method_id": "lr_reconstructed",
+      "seed": 0,
+      "reason": "LR \u00d7 GEM/AGEM/GSS is not a defined reconstruction: latent buffer vs raw gradient constraint are not mixed silently"
+    },
+    {
+      "context": "core50_nc_gss",
+      "method_id": "lr_reconstructed",
+      "seed": 1,
+      "reason": "LR \u00d7 GEM/AGEM/GSS is not a defined reconstruction: latent buffer vs raw gradient constraint are not mixed silently"
+    },
+    {
+      "context": "core50_nc_gss",
+      "method_id": "lr_reconstructed",
+      "seed": 2,
+      "reason": "LR \u00d7 GEM/AGEM/GSS is not a defined reconstruction: latent buffer vs raw gradient constraint are not mixed silently"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+name: formal_queue_stage5
+description: "Frozen paper_feedback CORe50-NIC E03 without MAX-A. 79 experiences."
+configs:
+- configs/formal/e03/core50_nic/orion_formula/seed0.yaml
+- configs/formal/e03/core50_nic/orion_formula/seed1.yaml
+- configs/formal/e03/core50_nic/orion_formula/seed2.yaml
+- configs/formal/e03/core50_nic/max_p_reconstructed/seed0.yaml
+- configs/formal/e03/core50_nic/max_p_reconstructed/seed1.yaml
+- configs/formal/e03/core50_nic/max_p_reconstructed/seed2.yaml
+- configs/formal/e03/core50_nic/lr_reconstructed/seed0.yaml
+- configs/formal/e03/core50_nic/lr_reconstructed/seed1.yaml
+- configs/formal/e03/core50_nic/lr_reconstructed/seed2.yaml

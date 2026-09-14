@@ -1,0 +1,5 @@
+name: core50_nc_recalibrate
+description: Current-code CORe50-NC ER vs Orion development. Not formal.
+configs:
+- configs/development/core50_nc_er_static.yaml
+- configs/development/core50_nc_orion_formula.yaml

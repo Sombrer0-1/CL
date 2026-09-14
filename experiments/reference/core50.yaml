@@ -1,0 +1,9 @@
+name: core50
+description: Development only; not a frozen formal matrix.
+configs:
+- configs/development/core50_nc_agem_9exp.yaml
+- configs/development/core50_nc_er_static.yaml
+- configs/development/core50_nc_gem_9exp.yaml
+- configs/development/core50_nc_gss_9exp.yaml
+- configs/development/core50_ni_er_static.yaml
+- configs/development/core50_nic_er_static.yaml

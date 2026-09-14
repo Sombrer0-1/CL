@@ -1,0 +1,18 @@
+study_id: light24_v1
+name: search
+estimated_hours:
+- 0.5
+- 2
+configs:
+- configs/light24/search/splitcifar100_b16_r200.yaml
+- configs/light24/search/splitcifar100_b16_r2000.yaml
+- configs/light24/search/splitcifar100_b64_r200.yaml
+- configs/light24/search/splitcifar100_b64_r2000.yaml
+- configs/light24/search/splitcifar100_b256_r200.yaml
+- configs/light24/search/splitcifar100_b256_r2000.yaml
+- configs/light24/search/core50_nc_b16_r200.yaml
+- configs/light24/search/core50_nc_b16_r2000.yaml
+- configs/light24/search/core50_nc_b64_r200.yaml
+- configs/light24/search/core50_nc_b64_r2000.yaml
+- configs/light24/search/core50_nc_b256_r200.yaml
+- configs/light24/search/core50_nc_b256_r2000.yaml

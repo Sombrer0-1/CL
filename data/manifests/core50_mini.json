@@ -1,0 +1,10 @@
+{
+  "dataset": "core50_mini_32x32",
+  "source": "Avalanche CORe50Dataset mini=True; zip from vps.continualai.org",
+  "prepared_utc": "2026-09-13T08:41:28.013077+00:00",
+  "root": "/home/admin/research/Reproduce-Orion/data/raw/core50",
+  "n_indexed_train_paths": 119894,
+  "image_root": "/home/admin/research/Reproduce-Orion/data/raw/core50/core50_32x32",
+  "image_root_exists": true,
+  "note": "Paper Table 2 input is 32x32 and lists 164866 images (train+test). This path downloads official mini 32x32 instead of 128x128. Images are file-backed; do not np.load a full imgs.npz into RAM. NI/NC/NIC splits use Avalanche filelists. Indexed train paths=119894; shared test from NC/NI/NIC dump is 44972; 119894+44972=164866."
+}

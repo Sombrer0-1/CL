@@ -1,0 +1,8 @@
+name: dev_variance_and_baselines
+description: "Sequential GPU: three prefetch-off repeats, then MAX-P and LR. Not formal."
+configs:
+- configs/development/cifar10_er_prefetch_off.yaml
+- configs/development/cifar10_er_prefetch_off.yaml
+- configs/development/cifar10_er_prefetch_off.yaml
+- configs/development/cifar10_max_p_reconstructed.yaml
+- configs/development/cifar10_lr_reconstructed.yaml
