@@ -17,6 +17,11 @@ lightning_logs/
 *.pt
 *.pth
 *.ckpt
+*.safetensors
+*.onnx
+*.pkl
+*.pickle
+*.log
 .cuda-*
 .env
 .env.*

@@ -25,7 +25,7 @@
 
 ## 版本控制
 
-当前状态纳入初始 Git 提交 `Establish light24 reproduction baseline`。具体提交号用 `git log -1 --oneline` 查看。接手先检查 `git status --short`；必要数据 manifests 纳入版本控制，原始数据、runs、权重及缓存保留在本地并忽略。本次仅固定版本基线，未改变训练代码/协议或启动实验，未推送远端。
+当前状态纳入初始 Git 提交 `Establish light24 reproduction baseline`。具体提交号用 `git log -1 --oneline` 查看。接手先检查 `git status --short`；必要数据 manifests 纳入版本控制，原始数据、runs、权重及缓存保留在本地并忽略。Git 远端为 `git@github.com:Sombrer0-1/CL.git`（origin/master），仓库本地提交邮箱为 `930937337@qq.com`。发布准备未改变训练代码/协议或启动实验；数据、runs及模型文件仍只保留本地。
 
 ## 接手顺序
 

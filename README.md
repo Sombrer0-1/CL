@@ -67,4 +67,4 @@ WANDB_MODE=disabled /home/admin/miniconda3/envs/orion/bin/python -m pytest tests
 
 后续按逻辑单元提交实现或协议变更，提交前检查 diff 并执行相关验证。每次实验的源码哈希和配置仍保留；哈希用于核对身份，Git 保存源码历史，二者用途不同。不要把旧运行的哈希当作可以恢复源码的完整备份。
 
-`data/raw/`、`data/processed/`、`runs/`、权重和缓存不纳入 Git；这些内容仍保存在本机，重要原始结果需另外备份。当前仅建立本地版本基线，未配置或推送远端。
+`data/raw/`、`data/processed/`、`runs/`、权重和缓存不纳入 Git；这些内容仍保存在本机，重要原始结果需另外备份。远端仓库为 `git@github.com:Sombrer0-1/CL.git`（origin），当前分支为 master。远端仅保存 Git 纳入的源码、配置、文档和必要研究记录，不包含原始数据、runs 或模型文件；这些本地材料仍需单独备份。
