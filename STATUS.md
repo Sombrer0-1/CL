@@ -1,28 +1,31 @@
-# 当前工作状态
+# 当前工作状态：第一阶段已结束
 
-更新：2026-09-14。有效范围为 **light24_v1 代表性方法复现**，见 PLAN.md。旧全覆盖目标已被用户授权替换，不再恢复旧MAX-A队列。
+light24_v1 代表性方法复现已完成执行、分析和阶段性评审。**当前没有待恢复的实验队列；下一阶段尚未确定范围、配置或启动时间。不要自行重跑旧矩阵或开始补充实验。**
 
-## 当前阶段
+## 阶段成果
 
-**light24_v1 全部 96 格执行完毕并完成结果分析：90 completed + 6 个 128MiB 启动 OOM（有证据的资源失败，保留）。最终结果见 [reports/light24/RESULTS.md](reports/light24/RESULTS.md)，C01–C08 判定见 [docs/claims_status.md](docs/claims_status.md)。**
+- 96格全部执行：90 completed + 6个128MiB CUDA OOM，失败证据保留，符合既定资源失败验收口径。
+- 六例OOM均发生在首个experience训练后的评价阶段（eval_batch=128），不是训练启动失败；详见 `reports/light24/budget_failure_stages.csv`。
+- 矩阵子进程累计墙时6725.6s（约1.87小时，含开发搜索、启动、训练、评价；不含软件验证及4次额外重跑探针）。
+- 两场景主要比较、有限开发搜索及获选配置评价、预算、偏好、预取、阈值敏感性、Endless辅助验证齐备。主要比较3 seeds；既有100项测试和两次小型GPU验证有记录，本次结项不重新训练。
+- 配置、代码、汇总脚本、逐格表、配对差、开销表、7张图和验收表已交付；历史71次正式运行仍是背景，不混入新比较。
 
-- 执行顺序 core → search → selected → extensions（budget→preference→prefetch→sensitivity→endless）全部完成；累计正式训练 6725.6s（约 1.87h，见 runs/light24_progress.json）。
-- 主要比较 3 seeds，均值/样本标准差/配对差/失败数齐备：means.csv、paired_diffs.csv、run_artifacts.csv、overhead.csv、budget_summary.csv；图在 reports/light24/figures/。
-- 核心 finding：URGE 峰值 0.006 远低于最低受试阈值 0.025（延迟因子主导），自适应从未触发；完整 Orion ≈ 初始资源静态 ER；6 格搜索选出的 b16/r2000 在两场景 (P+S)/2 均最优；预取语义严格等价但 +31–44% 耗时；128MiB 配额两方法全部启动 OOM。
-- Endless IC 的 Orion 时间优势经 4 次重跑探针证伪为进程级主机计时方差（同配置 t0 波动 5.9–9.0s）；探针保留在 runs/。
+## 核心认识与边界
 
-## 边界与遗留
+1. 控制器发生batch16→15与replay收缩，但未进入资源扩张或高级插件切换分支；不能称完全没有自适应。
+2. 有限搜索b16/r2000在本轮(P+S)/2指标下优于受试Orion；更大replay是否更好未知，不能把搜索边界当作未饱和的证明。
+3. 128MiB完整协议在评价阶段失败、256/512MiB完成；训练精确可行边界和真正受压时的自适应能力未验证。
+4. 预取on/off完整准确率矩阵和访问计数逐seed一致，时间增加31–44%；不据此证明每步训练严格等价，具体内部开销尚未直接剖析。
+5. Endless为开发划分辅助证据，真实时间隔离未经证明；同配置重跑存在明显计时波动，小幅速度差不能直接归因于方法。
+6. paper_feedback含官方测试反馈；C04新多算法扩展、Jetson能耗、机器人闭环等不在本阶段范围内。
 
-- 96 格中 6 格为 cuda_oom 资源失败（budget 128MiB×两方法×3 seeds），按协议视为有证据的真实结果，不补跑、不调参隐藏。
-- C04（多算法普适性）本轮范围外；Jetson 能耗、原设备耗时、机器人闭环仍为平台外。
-- paper_feedback 口径含官方测试反馈；开发选择未使用该数据源。
-- 未构造出“配额可满足且内存紧张”的受压区（可行下界 ~129MiB > 128MiB 配额）；控制器在真实内存压力下的行为未验证，列为后续研究项（RESULTS.md §6）。
-- 若未来源码修复改变训练语义，按 reuse v2 规则重跑受影响配对组；当前无未完成执行队列。
+完整报告：[reports/light24/RESULTS.md](reports/light24/RESULTS.md)。限定结论：[docs/claims_status.md](docs/claims_status.md)。验收：[docs/acceptance.csv](docs/acceptance.csv)。
 
-## 版本控制
+## 结项与后续边界
 
-代码、配置、文档与研究记录纳入 Git；数据、runs、权重、缓存仅本地（.gitignore 排除）。远端 `git@github.com:Sombrer0-1/CL.git`（origin/master）。本轮交付提交包含 light24 报告产物与分析脚本；原始子进程日志在 `runs/_light24_executor/`。
+- 本次仅修正文档解释、补充OOM阶段索引并固定阶段版本；原始数据、训练代码、配置和结果数值不变。
+- 阶段标记：`light24-v1-complete`。此前实验/分析提交为 `8aa6654`、`8036f59`；标记指向包含评审修订的结项提交。
+- Git远端：`git@github.com:Sombrer0-1/CL.git`。代码、文档、必要结果表和图纳入Git；data/raw、data/processed、runs、模型和缓存仅保留本地，远端不是完整原始数据备份。
+- 评价/训练内存分离、平台阈值校准等只作为下一阶段讨论候选，尚未立项。后续先与用户确定研究问题和协议，再实施。
 
-## 复现命令
-
-全部矩阵与报告可用 README「从仓库根目录恢复」一节的命令重跑；`python reports/light24_analysis.py`（orion 环境）重建配对差、开销表与图表。
+README中的命令仅供复核或经授权重跑已结束的第一阶段，不表示当前待办。

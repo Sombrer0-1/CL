@@ -2,11 +2,13 @@
 
 依据本地 `12_Orion_2605.26473v1.pdf`，在 WSL2 + RTX 5060 Ti 上验证 Orion 的自适应机制、性能权衡和局限。本仓库是依据论文重建的实现，不是作者官方代码。
 
-当前目标是约24小时以内的代表性复现工作量，**时间只做估算，不是硬截止**。保留完整数据流和主要比较3 seeds，缩减昂贵的全组合搜索。历史71次正式运行保留为背景，新study独立验收。
+第一阶段目标是约24小时以内的代表性复现工作量，**时间只做估算，不是硬截止**。保留完整数据流和主要比较3 seeds，缩减昂贵的全组合搜索。历史71次正式运行保留为背景，新study独立验收。
 
-**light24_v1 已完成**：96 格全部执行（90 completed + 6 个 128MiB 启动 OOM 资源失败），结果与 C01–C08 判定见 [reports/light24/RESULTS.md](reports/light24/RESULTS.md) 与 [docs/claims_status.md](docs/claims_status.md)。
+**light24_v1 已完成**：96 格全部执行（90 completed + 6 个 128MiB 评价阶段 OOM 资源失败），结果与 C01–C08 判定见 [reports/light24/RESULTS.md](reports/light24/RESULTS.md) 与 [docs/claims_status.md](docs/claims_status.md)。
 
-## 接手先读
+**第一阶段现已结项，下一阶段尚未立项。** 当前没有待恢复队列；下方命令仅用于复核或经授权重跑。阶段版本标记为 `light24-v1-complete`。
+
+## 阶段成果入口
 
 1. [STATUS.md](STATUS.md)：当前状态、已验证内容、下一步。
 2. [PLAN.md](PLAN.md)：有效范围、96次运行及验收标准。
@@ -19,7 +21,7 @@
 
 环境重建见 [环境定义](environment.yml) 和锁文件；已有环境先检查，不删除重建。源码可用 `orion/bin/python -m pip install -e . --no-deps` 安装（解释器使用上面的绝对路径）。
 
-## 从仓库根目录恢复
+## 第一阶段复核与重跑命令（非当前待办）
 
 先确认没有其他项目训练进程：`pgrep -af 'orion_repro.run|orion_repro.study'`，并查看 `nvidia-smi`。新执行器会防止两个study同时启动；不要与旧run_matrix或其他训练并行。
 
@@ -52,11 +54,11 @@ WANDB_MODE=disabled /home/admin/miniconda3/envs/orion/bin/python -m pytest tests
 | 路径 | 用途 |
 |---|---|
 | `src/orion_repro/`、`tests/` | 实现与验证 |
-| `configs/light24/`、`experiments/light24/` | 唯一活动配置与矩阵 |
+| `configs/light24/`、`experiments/light24/` | 已结束阶段的配置与矩阵 |
 | `configs/formal/`、`configs/development/` | 既有配置与新生成器输入模板 |
 | `experiments/reference/` | 历史矩阵，仅供追溯，不是待恢复队列 |
 | `docs/` | 方法、对齐依据、协议与验收 |
-| `reports/light24/` | 新study覆盖表、尝试清单和统计 |
+| `reports/light24/` | 第一阶段结果、尝试清单和统计 |
 | `reports/` 其他表 | 历史结果，见[结果说明](reports/README.md) |
 | `data/`、`runs/` | 数据与不可伪造的原始运行证据 |
 | PDF、论文Markdown、`images/` | 原文与辅助材料 |
