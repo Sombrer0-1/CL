@@ -39,32 +39,37 @@
 - 不向 Conda base 安装项目依赖；可使用 base 中的 Conda 工具创建和管理 `orion`。
 - 如果 `orion` 已存在，先检查是否为本项目建立以及其依赖状态，不得直接删除或覆盖未知环境。
 - 所有项目脚本、测试和实验均应显式使用 `orion`，例如 `conda run -n orion ...`，或使用该环境解释器的绝对路径，避免依赖当前 shell 的隐式状态。
-- 选择支持 RTX 5060 Ti / sm_120 的 PyTorch CUDA 构建，并在新环境验证导入、GPU 前向、反向和参数更新。之前的硬件检查不能代替新环境验收。
+- 使用共享 Conda CLI（`/opt/miniconda3`，base 只读）。环境与包缓存必须落在用户家目录：`/home/zhuzetong/.conda/envs/orion`、`/home/zhuzetong/.conda/pkgs`。不得写入 `/opt/miniconda3/envs` 或 `/opt/miniconda3/pkgs`。
+- 选择支持 RTX 5090 / sm_120 且匹配本机驱动 CUDA 12.8 的 PyTorch 轮子（当前为 `torch==2.11.0+cu128`）。**不要**安装 `cu130`：驱动 570.133.20 不足以运行 CUDA 13 runtime。在新环境验证导入、GPU 前向、反向和参数更新。之前的硬件检查不能代替新环境验收。
 - 区分驱动支持版本、PyTorch CUDA runtime 和 CUDA Toolkit；不能仅凭 `nvidia-smi` 判断 Toolkit 已安装。只有确实需要编译扩展时才补齐对应工具链。
-- WSL 复用 Windows 宿主已安装的 NVIDIA 驱动及其映射到 WSL 的驱动接口；不得在 WSL 内另装 Linux NVIDIA 显卡驱动。独立 Conda 环境不要求隔离或重装宿主驱动。
-- 在 `orion` 中安装所选 PyTorch CUDA 构建及其配套 Linux CUDA 运行库，不借用 `mineru` 或 Windows Toolkit 中的运行库。普通预编译 PyTorch 训练不要求额外安装完整 Toolkit。
-- 若确需编译 CUDA 扩展，先检查可用的 Linux 工具链，再按需安装兼容的 Linux/WSL CUDA Toolkit；不能用 Windows 版 Toolkit 替代，也不能使用会附带安装 Linux 显卡驱动的软件包。
-- 保存环境定义或锁定清单和安装说明，使环境可以重建。
+- 沿用本机已安装的 NVIDIA 驱动（570.133.20）和系统 CUDA 12.8。不得重装或升级显卡驱动，也不得借用 mineru 或其他用户环境中的运行库。普通预编译 PyTorch 训练使用 wheel 自带的 CUDA 12.8 运行库，不要求另装 Toolkit。
+- 若确需编译 CUDA 扩展，先检查可用的 Linux 工具链，再按需安装兼容的 Linux CUDA Toolkit；不能使用会附带安装 Linux 显卡驱动的软件包。
+- 保存环境定义或锁定清单和安装说明，使环境可以重建。当前锁文件对应本机；原 WSL/5060 Ti 锁文件见 `docs/environments/wsl2_rtx5060ti/`。
 
 ## 5. 本平台与资源约束
 
-以下是 2026-09-13 检查结果，只作为起点。实验开始前重新确认可用资源，不能把历史空闲量视为永久保证。
+以下是 2026-09-15 在本机检查的结果，只作为起点。实验开始前重新确认可用资源，不能把历史空闲量视为永久保证。
 
-| 项目 | 已检查情况 |
+| 项目 | 已检查情况（2026-09-15） |
 |---|---|
-| 系统 | WSL2，x86_64 |
-| CPU | Ryzen 7 9700X，8 核 16 线程 |
-| GPU | RTX 5060 Ti，约 16GB 独立显存，计算能力 12.0 |
-| 宿主 RAM | Windows 约 16GB |
-| WSL RAM / swap | 配置上限 6GB / 8GB |
-| Conda | `/home/admin/miniconda3` |
+| 系统 | Ubuntu 20.04.6 LTS，x86_64，Linux 5.15 |
+| CPU | Intel Core Ultra 9 285K，24 线程 |
+| GPU | 2× RTX 5090，各约 32607 MiB，计算能力 12.0 / sm_120 |
+| 驱动 / CUDA | 570.133.20 / 驱动报 CUDA 12.8；系统 Toolkit 12.8 |
+| RAM / swap | 约 125 GiB / 2 GiB |
+| Conda CLI | `/opt/miniconda3`（base 只读） |
+| `orion` 环境 | `/home/zhuzetong/.conda/envs/orion`（Python 3.11.16，`torch==2.11.0+cu128`） |
+| 工作区 | `/home/zhuzetong/research/CL/Reproduce-Orion` |
+| 数据与 runs | `data/raw`、`data/processed`、`runs` 经符号链接指向 `/mnt/data/zzt/CL/Reproduce-Orion/` |
 
-- 系统 RAM 和 GPU 显存分别建模、限制与测量，不能简单相加后视作 Jetson 的共享内存池。
+原 light24 / pressure_v2 平台（不要与上表混用）：WSL2 + RTX 5060 Ti ~16GB；WSL RAM 上限 6GB；解释器 `/home/admin/miniconda3/envs/orion`；`torch==2.14.0+cu130`。锁文件见 `docs/environments/wsl2_rtx5060ti/`。
+
+- 系统 RAM 和 GPU 显存分别建模、限制与测量，不能简单相加后视作 Jetson 的共享内存池。双卡时默认使用 `cuda:0`，启用第二块 GPU 须单独记录。
 - 优先通过按需加载、有限预取、合理 worker 数、适当存储格式控制内存，不要先把原分辨率全集加载进 RAM 再缩放。
 - 保持方法语义一致；存储表示、缓存和数据加载优化如影响与基线的公平性，应单独记录或做消融。
 - Swap 不作为等效 RAM。记录换页情况，分析其对训练延迟的影响。
-- 默认在现有 WSL 配置下开展实验。调整宿主或 WSL 全局配置前说明实际需要，不得擅自重启 WSL、终止其他任务或把全部宿主内存分给 WSL。
-- 预算实验必须说明预算执行机制、峰值统计范围和 OOM 判定。仅修改控制器中的 `M_max` 不等于施加了硬内存上限。
+- 默认在本机现有配置下开展实验。调整宿主全局配置、重启机器或终止他人任务前须说明实际需要。
+- 预算实验必须说明预算执行机制、峰值统计范围和 OOM 判定。仅修改控制器中的 `M_max` 不等于施加了硬内存上限。GPU 配额不能表述为 host 或 Jetson 共享内存限制。
 - 不将本机的内存上限实验称为完整 Jetson 硬件模拟；没有目标硬件时，不声称验证了原设备能耗或机器人闭环结果。
 
 ## 6. 算法与协议的关键检查
@@ -80,7 +85,7 @@
 
 ## 7. 实验范围与推进顺序
 
-当前阶段以 PLAN.md / STATUS.md 为准。第一阶段 light24_v1 已结束（标签 light24-v1-complete），结果与验收保留；旧计划见 docs/plans/light24_v1.md。第二阶段 pressure_v2 已在原 WSL2 + RTX 5060 Ti 上中断收尾、未验收；聚焦可行训练受压区、评价内存分离、阈值因素分解与同预算静态对照的设计与部分正式格保留为该阶段记录。后续工作在迁入的 Linux + RTX 5090 上先重建 `orion` 环境再另开阶段，不得把未完成格与新机器结果混为同一矩阵。
+当前阶段以 PLAN.md / STATUS.md 为准。第一阶段 light24_v1 已结束（标签 light24-v1-complete），结果与验收保留；旧计划见 docs/plans/light24_v1.md。第二阶段 pressure_v2 已在原 WSL2 + RTX 5060 Ti 上中断收尾、未验收；聚焦可行训练受压区、评价内存分离、阈值因素分解与同预算静态对照的设计与部分正式格保留为该阶段记录。本机 Linux + 双 RTX 5090 的 `orion` 环境已建立（A24）；后续另开阶段，不得把未完成格与新机器结果混为同一矩阵。
 
 先用开发数据校准资源与冻结协议，再进入正式比较。未冻结的预算/阈值不得伪装为可执行配置。原式与平台参数适配明确区分，不以让Orion胜出为选参目标。GPU配额不能表述为host或Jetson共享内存限制。
 
@@ -114,4 +119,4 @@
 - [Avalanche 官方仓库](https://github.com/ContinualAI/avalanche)
 - [CORe50 官方数据集](https://vlomonaco.github.io/core50/)
 - [PyTorch Blackwell 支持说明](https://pytorch.org/blog/pytorch-2-7/)
-- [NVIDIA CUDA on WSL 文档](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)
+- [PyTorch 安装（cu128）](https://pytorch.org/get-started/locally/)

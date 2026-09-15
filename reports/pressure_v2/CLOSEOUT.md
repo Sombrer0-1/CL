@@ -39,6 +39,6 @@
 
 ## 下一阶段边界
 
-1. 在本机新建独立 Conda 环境 `orion`（Python 3.11），不要使用 `/home/admin/miniconda3` 或 mineru。
+1. 本机独立 Conda 环境 `orion` 已建立（`/home/zhuzetong/.conda/envs/orion`，`torch==2.11.0+cu128`）。不要使用 `/home/admin/miniconda3` 或 mineru。
 2. 重新确认 GPU/驱动/RAM；历史 5060 Ti 校准值不自动沿用。
 3. 新阶段使用新 study id 与新进度文件；不覆盖 `reports/light24/`，也不把本中断矩阵改写成已完成。

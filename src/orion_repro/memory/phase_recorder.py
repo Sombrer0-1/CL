@@ -40,24 +40,26 @@ class PhaseRecorder:
         *,
         quota_bytes: int | None,
         reservation_getter: Callable[[], int],
+        device: Any | None = None,
     ) -> None:
         self.arts = arts
         self.quota_bytes = quota_bytes
         self.reservation_getter = reservation_getter
+        self.device = device
         self._open: dict[tuple[str, int | None], float] = {}
         self.last: PhaseRecord | None = None
         self.records: list[PhaseRecord] = []
 
     def begin(self, phase: str, k: int | None) -> None:
-        synchronize_gpu()
-        reset_gpu_peak()
+        synchronize_gpu(self.device)
+        reset_gpu_peak(self.device)
         self._open[(phase, k)] = time.monotonic()
 
     def end(self, phase: str, k: int | None, notes: str = "") -> PhaseRecord:
-        synchronize_gpu()
+        synchronize_gpu(self.device)
         end = time.monotonic()
         start = self._open.pop((phase, k))
-        snap = snapshot(phase + "_end", k)
+        snap = snapshot(phase + "_end", k, device=self.device)
         rec = PhaseRecord(
             phase=phase,
             experience_index=k,

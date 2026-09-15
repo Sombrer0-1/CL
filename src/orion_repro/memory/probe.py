@@ -43,7 +43,23 @@ def _pss_or_none(proc: psutil.Process) -> int | None:
         return None
 
 
-def _gpu_fields() -> dict[str, int | None]:
+def _resolve_cuda_device(device: Any | None = None):
+    """Bind GPU stats to the training device. Default is current_device (usually cuda:0)."""
+    import torch
+
+    if not torch.cuda.is_available():
+        return None
+    if device is None:
+        return torch.device("cuda", torch.cuda.current_device())
+    resolved = torch.device(device)
+    if resolved.type != "cuda":
+        return None
+    if resolved.index is None:
+        return torch.device("cuda", torch.cuda.current_device())
+    return resolved
+
+
+def _gpu_fields(device: Any | None = None) -> dict[str, int | None]:
     out = {
         "gpu_alloc_bytes": None,
         "gpu_reserved_bytes": None,
@@ -55,14 +71,15 @@ def _gpu_fields() -> dict[str, int | None]:
     try:
         import torch
 
-        if not torch.cuda.is_available():
+        d = _resolve_cuda_device(device)
+        if d is None:
             return out
-        out["gpu_alloc_bytes"] = int(torch.cuda.memory_allocated())
-        out["gpu_reserved_bytes"] = int(torch.cuda.memory_reserved())
-        out["gpu_alloc_peak_bytes"] = int(torch.cuda.max_memory_allocated())
-        out["gpu_reserved_peak_bytes"] = int(torch.cuda.max_memory_reserved())
+        out["gpu_alloc_bytes"] = int(torch.cuda.memory_allocated(d))
+        out["gpu_reserved_bytes"] = int(torch.cuda.memory_reserved(d))
+        out["gpu_alloc_peak_bytes"] = int(torch.cuda.max_memory_allocated(d))
+        out["gpu_reserved_peak_bytes"] = int(torch.cuda.max_memory_reserved(d))
         try:
-            free, total = torch.cuda.mem_get_info()
+            free, total = torch.cuda.mem_get_info(d)
             out["gpu_global_free_bytes"] = int(free)
             out["gpu_global_used_bytes"] = int(total - free)
         except Exception:
@@ -72,7 +89,12 @@ def _gpu_fields() -> dict[str, int | None]:
     return out
 
 
-def snapshot(phase: str, experience_index: int | None = None, notes: str = "") -> ResourceSnapshot:
+def snapshot(
+    phase: str,
+    experience_index: int | None = None,
+    notes: str = "",
+    device: Any | None = None,
+) -> ResourceSnapshot:
     proc = psutil.Process()
     rss = int(proc.memory_info().rss)
     child_rss = 0
@@ -83,7 +105,7 @@ def snapshot(phase: str, experience_index: int | None = None, notes: str = "") -
             continue
     vm = psutil.virtual_memory()
     swap = psutil.swap_memory()
-    gpu = _gpu_fields()
+    gpu = _gpu_fields(device)
     return ResourceSnapshot(
         timestamp_s=time.time(),
         monotonic_s=time.monotonic(),
@@ -102,9 +124,15 @@ def snapshot(phase: str, experience_index: int | None = None, notes: str = "") -
 class ResourceSampler:
     """Background RSS/allocator sampler. Peak is an observed lower bound."""
 
-    def __init__(self, interval_s: float, writer: TextIO | None = None) -> None:
+    def __init__(
+        self,
+        interval_s: float,
+        writer: TextIO | None = None,
+        device: Any | None = None,
+    ) -> None:
         self.interval_s = interval_s
         self.writer = writer
+        self.device = device
         self._stop = threading.Event()
         self._thread: threading.Thread | None = None
         self._phase = "idle"
@@ -137,7 +165,7 @@ class ResourceSampler:
 
     def _run(self) -> None:
         while not self._stop.is_set():
-            snap = snapshot(self._phase, self._exp, notes="interval")
+            snap = snapshot(self._phase, self._exp, notes="interval", device=self.device)
             self.rows.append(snap)
             rss = snap.proc_rss_bytes + snap.children_rss_bytes
             self.peak_rss = max(self.peak_rss, rss)
@@ -162,22 +190,24 @@ class ResourceSampler:
             self._stop.wait(self.interval_s)
 
 
-def reset_gpu_peak() -> None:
+def reset_gpu_peak(device: Any | None = None) -> None:
     try:
         import torch
 
-        if torch.cuda.is_available():
-            torch.cuda.reset_peak_memory_stats()
+        d = _resolve_cuda_device(device)
+        if d is not None:
+            torch.cuda.reset_peak_memory_stats(d)
     except Exception:
         pass
 
 
-def synchronize_gpu() -> None:
+def synchronize_gpu(device: Any | None = None) -> None:
     try:
         import torch
 
-        if torch.cuda.is_available():
-            torch.cuda.synchronize()
+        d = _resolve_cuda_device(device)
+        if d is not None:
+            torch.cuda.synchronize(d)
     except Exception:
         pass
 

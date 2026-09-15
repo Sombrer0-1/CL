@@ -73,7 +73,7 @@ class ResourceEnvelope:
             raise RuntimeError("resource envelope reservation requires CUDA")
         allocated_before = reserved_before = None
         if torch.cuda.is_available() and getattr(self.device, "type", None) == "cuda":
-            synchronize_gpu()
+            synchronize_gpu(self.device)
             allocated_before = int(torch.cuda.memory_allocated(self.device))
             reserved_before = int(torch.cuda.memory_reserved(self.device))
         self._tensor = None
@@ -85,7 +85,7 @@ class ResourceEnvelope:
             if requested:
                 tensor = torch.empty(requested, dtype=torch.uint8, device=self.device)
                 tensor.fill_(1)
-                synchronize_gpu()
+                synchronize_gpu(self.device)
                 self._tensor = tensor
                 actual = int(tensor.numel()) * int(tensor.element_size())
                 self.reservation_bytes = actual
@@ -96,7 +96,7 @@ class ResourceEnvelope:
             self.reservation_bytes = 0
         allocated_after = reserved_after = None
         if torch.cuda.is_available() and getattr(self.device, "type", None) == "cuda":
-            synchronize_gpu()
+            synchronize_gpu(self.device)
             allocated_after = int(torch.cuda.memory_allocated(self.device))
             reserved_after = int(torch.cuda.memory_reserved(self.device))
         return ReservationRecord(

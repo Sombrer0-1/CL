@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -16,6 +17,44 @@ def _fail(msg: str) -> None:
     raise SystemExit(2)
 
 
+def _conda_prefix(exe: Path) -> str | None:
+    env = os.environ.get("CONDA_PREFIX")
+    if env:
+        return env
+    # Direct interpreter path: .../envs/orion/bin/python
+    if exe.parent.name == "bin" and exe.parent.parent.name == "orion":
+        return str(exe.parent.parent)
+    return None
+
+
+def _nvidia_smi_gpus() -> list[dict[str, str]]:
+    try:
+        out = subprocess.check_output(
+            [
+                "nvidia-smi",
+                "--query-gpu=name,driver_version,memory.total",
+                "--format=csv,noheader,nounits",
+            ],
+            text=True,
+            timeout=10,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        print(f"ENVCHECK WARN: nvidia-smi unavailable ({exc})", file=sys.stderr)
+        return []
+    rows = []
+    for line in out.splitlines():
+        parts = [p.strip() for p in line.split(",")]
+        if len(parts) >= 3:
+            rows.append(
+                {
+                    "name": parts[0],
+                    "driver_version": parts[1],
+                    "memory_mib": parts[2],
+                }
+            )
+    return rows
+
+
 def main() -> None:
     exe = Path(sys.executable).resolve()
     print(f"python={exe}")
@@ -24,6 +63,8 @@ def main() -> None:
         _fail(f"interpreter is mineru: {exe}")
     if "orion" not in str(exe):
         _fail(f"interpreter is not the orion env: {exe}")
+    if "/home/admin/" in str(exe) or exe.as_posix().startswith("/home/admin/"):
+        _fail(f"interpreter is the archived WSL path: {exe}")
 
     try:
         import torch
@@ -37,14 +78,30 @@ def main() -> None:
     if not torch.cuda.is_available():
         _fail("torch.cuda.is_available() is False")
 
-    name = torch.cuda.get_device_name(0)
+    n_gpus = int(torch.cuda.device_count())
+    gpu_names = [torch.cuda.get_device_name(i) for i in range(n_gpus)]
+    name = gpu_names[0]
     cap = torch.cuda.get_device_capability(0)
     arch = torch.cuda.get_arch_list()
-    print(f"gpu={name}")
+    print(f"n_gpus={n_gpus}")
+    print(f"gpus={gpu_names}")
     print(f"capability={cap}")
     print(f"arch_list={arch}")
+    if "sm_120" not in arch:
+        _fail(f"wheel missing sm_120 (arch_list={arch}); RTX 50xx needs cu128+")
     if cap[0] < 12:
         print("ENVCHECK WARN: capability < 12.0; sm_120 kernels may be missing", file=sys.stderr)
+
+    smi = _nvidia_smi_gpus()
+    driver = smi[0]["driver_version"] if smi else None
+    if driver:
+        print(f"driver={driver}")
+    torch_cuda = str(torch.version.cuda or "")
+    if driver and driver.startswith("570") and torch_cuda.startswith("13"):
+        _fail(
+            f"torch CUDA runtime {torch_cuda} needs a newer driver than {driver}; "
+            "use cu128 wheels on this host, do not install cu130"
+        )
 
     device = torch.device("cuda:0")
     model = torch.nn.Sequential(
@@ -65,11 +122,13 @@ def main() -> None:
         _fail("parameter grads missing after backward")
     print("forward_backward_update=ok")
 
+    avalanche_version = None
     try:
         import avalanche
         from avalanche.training import AGEM, GEM, GSS_greedy, Replay
 
-        print(f"avalanche={avalanche.__version__}")
+        avalanche_version = avalanche.__version__
+        print(f"avalanche={avalanche_version}")
         print(f"strategies={Replay.__name__},{GSS_greedy.__name__},{GEM.__name__},{AGEM.__name__}")
     except Exception as exc:
         print(f"avalanche=unavailable ({exc})")
@@ -79,10 +138,15 @@ def main() -> None:
         "torch": torch.__version__,
         "torchvision": torchvision.__version__,
         "cuda": torch.version.cuda,
+        "n_gpus": n_gpus,
         "gpu": name,
+        "gpus": gpu_names,
+        "driver_version": driver,
+        "nvidia_smi": smi,
         "capability": list(cap),
         "arch_list": list(arch),
-        "conda_prefix": os.environ.get("CONDA_PREFIX"),
+        "avalanche": avalanche_version,
+        "conda_prefix": _conda_prefix(exe),
     }
     out = Path("reports") / "envcheck.json"
     out.parent.mkdir(parents=True, exist_ok=True)

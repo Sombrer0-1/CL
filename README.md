@@ -21,35 +21,39 @@
 
 ## 环境
 
-原平台解释器为 `/home/admin/miniconda3/envs/orion/bin/python`（WSL，已不存在于本机）。本机下一步是新建项目专用 Conda 环境 `orion`（Python 3.11），依赖见 `requirements.lock.txt`、`environment.lock.yml`；不得使用 mineru 或向 base 安装项目依赖。
+当前工作区：`/home/zhuzetong/research/CL/Reproduce-Orion`。解释器：`/home/zhuzetong/.conda/envs/orion/bin/python`（Python 3.11.16，`torch==2.11.0+cu128`）。共享 Conda CLI 为 `/opt/miniconda3`（base 只读）；包缓存在 `~/.conda/pkgs`。`data/raw`、`data/processed`、`runs` 经符号链接指向 `/mnt/data/zzt/CL/Reproduce-Orion/`。不得使用 mineru 或向 base 安装项目依赖。
 
-环境重建见 [环境定义](environment.yml) 和锁文件；已有环境先检查，不删除重建。源码可用该环境的 `python -m pip install -e . --no-deps` 安装。旧 WSL 路径与下方 light24 命令只供原平台复核，不是当前待办。
+重建步骤见 [environment.yml](environment.yml)；精确清单为本机 [requirements.lock.txt](requirements.lock.txt)、[environment.lock.yml](environment.lock.yml)。原 WSL/5060 Ti 锁文件在 [docs/environments/wsl2_rtx5060ti/](docs/environments/wsl2_rtx5060ti/)，版本选择见 [A24](docs/decisions/A24.md)。已有 `orion` 环境先检查，不删除重建。源码：`conda run -n orion python -m pip install -e . --no-deps`。
+
+本机无 Clash TUN 时，访问 PyTorch 官方轮子可导出 `http_proxy`/`https_proxy=http://127.0.0.1:7890`。不要改系统驱动或 Toolkit。
+
+验收：
+
+```bash
+WANDB_MODE=disabled /home/zhuzetong/.conda/envs/orion/bin/python -m orion_repro.envcheck
+WANDB_MODE=disabled /home/zhuzetong/.conda/envs/orion/bin/python -m pytest tests -ra
+```
 
 ## 第一阶段复核与重跑命令（非当前待办）
 
-先确认没有其他项目训练进程：`pgrep -af 'orion_repro.run|orion_repro.study'`，并查看 `nvidia-smi`。新执行器会防止两个study同时启动；不要与旧run_matrix或其他训练并行。
+以下命令用于确认 light24 配置能在**本机解释器**上解析；**不要**用新环境身份覆盖 `reports/light24/`。原 WSL 解释器是 `/home/admin/miniconda3/envs/orion/bin/python`，本机结果不能并入该阶段矩阵。
 
 ```bash
-# 校验与预览，不训练
-WANDB_MODE=disabled /home/admin/miniconda3/envs/orion/bin/python -m pytest tests -ra
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.study --matrix experiments/light24/core.yaml --dry-run
+ORION_PY=/home/zhuzetong/.conda/envs/orion/bin/python
+# 校验与预览，不训练（本机解释器；结果身份与原阶段不同）
+WANDB_MODE=disabled "$ORION_PY" -m pytest tests -ra
+WANDB_MODE=disabled "$ORION_PY" -m orion_repro.study --matrix experiments/light24/core.yaml --dry-run
 
-# 核心比较和开发搜索：自动复用新study身份匹配的完成结果
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.study --matrix experiments/light24/core.yaml
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.study --matrix experiments/light24/search.yaml
-
-# 12格开发搜索完成后，冻结获选静态配置并正式评价
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.light24 --select
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.study --matrix experiments/light24/selected.yaml
-
-# 核心后按计划完成扩展（亦可分别运行budget/preference/prefetch/sensitivity/endless.yaml）
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.study --matrix experiments/light24/extensions.yaml
-
-# 当前identity覆盖、全部尝试、均值与标准差
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.study_report
+# 下列矩阵是第一阶段队列，不是本机待执行任务
+# WANDB_MODE=disabled "$ORION_PY" -m orion_repro.study --matrix experiments/light24/core.yaml
+# WANDB_MODE=disabled "$ORION_PY" -m orion_repro.study --matrix experiments/light24/search.yaml
+# WANDB_MODE=disabled "$ORION_PY" -m orion_repro.light24 --select
+# WANDB_MODE=disabled "$ORION_PY" -m orion_repro.study --matrix experiments/light24/selected.yaml
+# WANDB_MODE=disabled "$ORION_PY" -m orion_repro.study --matrix experiments/light24/extensions.yaml
+# WANDB_MODE=disabled "$ORION_PY" -m orion_repro.study_report
 ```
 
-配置已生成，接手无需重新生成。`python -m orion_repro.light24` 是重建静态配置的入口。`all.yaml` 包含90个预生成格，不包含搜索完成后才产生的6格selected。已有资源失败不会被无限重试；实现错误暂停后需修复。Ctrl-C保留部分产物，下一次从头重跑未完成格；不是完整训练断点恢复。
+原平台解释器为 `/home/admin/miniconda3/envs/orion/bin/python`，仅作历史对照。配置已生成，接手无需重新生成。`python -m orion_repro.light24` 是重建静态配置的入口。`all.yaml` 包含90个预生成格，不包含搜索完成后才产生的6格selected。已有资源失败不会被无限重试；实现错误暂停后需修复。Ctrl-C保留部分产物，下一次从头重跑未完成格；不是完整训练断点恢复。
 
 `runs/light24_progress.json` 记录累计执行耗时与中断；不设置时间杀进程规则。新identity包含源码、实际配置、依赖锁与数据manifest，新增无关配置/文档不使旧格失效。源码修改仍需重新验收受影响配对。
 

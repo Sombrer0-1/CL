@@ -1,2 +1,7 @@
-2b4cbcd969d968fe23a9d8c6342d0c1a1e4fd2abf804aee5425822afcdb32119  requirements.lock.txt
-542053e30de9e7120840a13496d06deddd3a3fd9718656483d205c6e45ba84d9  environment.lock.yml
+# Current host (Linux + dual RTX 5090, 2026-09-15)
+47a32c4df58522a909c6643fe5005c31b6cc2e168240715aa883ad18eff4cd69  requirements.lock.txt
+44b137cb87153aa0bdd645051616f89c279e663b1b90aba2cc661299d44a7bff  environment.lock.yml
+
+# Archived WSL2 + RTX 5060 Ti (docs/environments/wsl2_rtx5060ti/)
+2b4cbcd969d968fe23a9d8c6342d0c1a1e4fd2abf804aee5425822afcdb32119  docs/environments/wsl2_rtx5060ti/requirements.lock.txt
+542053e30de9e7120840a13496d06deddd3a3fd9718656483d205c6e45ba84d9  docs/environments/wsl2_rtx5060ti/environment.lock.yml

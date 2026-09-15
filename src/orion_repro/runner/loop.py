@@ -307,6 +307,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             arts,
             quota_bytes=quota_bytes,
             reservation_getter=lambda: envelope.reservation_bytes if envelope is not None else 0,
+            device=device,
         )
         recorder.begin("setup", None)
         code_snapshot = snapshot_source_tree(ROOT)
@@ -343,7 +344,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             conv = torch.nn.Conv2d(3, 8, 3, padding=1).to(device)
             with torch.no_grad():
                 _ = conv(dummy)
-            synchronize_gpu()
+            synchronize_gpu(device)
             del dummy, conv
             set_seeds(model_seed)
 
@@ -434,7 +435,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             )
 
         interval = float(spec["measurement"]["sample_interval_ms"]) / 1000.0
-        sampler = ResourceSampler(interval_s=max(interval, 0.05))
+        sampler = ResourceSampler(interval_s=max(interval, 0.05), device=device)
         sampler.start()
         if recorder is not None:
             recorder.end("setup", None)
@@ -546,8 +547,8 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             if recorder is not None:
                 recorder.begin("training", k)
             else:
-                reset_gpu_peak()
-            snap0 = snapshot("learning_start", k)
+                reset_gpu_peak(device)
+            snap0 = snapshot("learning_start", k, device=device)
             arts.append_csv(arts._resource, snap0.as_row())
             arts.event(
                 {
@@ -567,7 +568,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             t0 = time.monotonic()
             failure_phase = "training"
             strategy.train(exp, num_workers=int(spec["prefetch"].get("num_workers", 0)))
-            synchronize_gpu()
+            synchronize_gpu(device)
             learning_s = time.monotonic() - t0
             trained_experiences = k + 1
             train_phase = recorder.end("training", k) if recorder is not None else None
@@ -580,7 +581,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 if train_phase.reserved_peak_bytes:
                     reserved_peak_gpu = int(train_phase.reserved_peak_bytes)
             pf = _prefetch_stats(strategy)
-            snap1 = snapshot("learning_end", k)
+            snap1 = snapshot("learning_end", k, device=device)
             arts.append_csv(arts._resource, snap1.as_row())
             arts.append_jsonl(
                 arts._plugin_activity,
@@ -595,7 +596,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             if recorder is not None:
                 recorder.begin("evaluation", k)
             else:
-                reset_gpu_peak()
+                reset_gpu_peak(device)
             t1 = time.monotonic()
             protocol = eval_protocol(benchmark, class_map)
             domains = make_eval_domains(benchmark, class_map, k)
@@ -607,7 +608,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 batch_size=int(spec["training"]["eval_batch"]),
                 num_workers=0,
             )
-            synchronize_gpu()
+            synchronize_gpu(device)
             evaluation_s = time.monotonic() - t1
             if recorder is not None:
                 recorder.end("evaluation", k)
@@ -855,7 +856,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     replay_batch=ctrl_state.new_batch,
                     optimizer_mode=ctrl_state.optimizer_mode,
                 )
-                synchronize_gpu()
+                synchronize_gpu(device)
                 reconfigure_s = time.monotonic() - t_reconfigure0
                 if recorder is not None:
                     recorder.end("reconfiguration", k)

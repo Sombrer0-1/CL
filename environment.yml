@@ -4,7 +4,10 @@ channels:
 dependencies:
   - python=3.11
   - pip
-# PyTorch CUDA wheels are NOT listed here. After creating the env:
-#   conda run -n orion python -m pip install torch==2.14.0 torchvision==0.29.0 --index-url https://download.pytorch.org/whl/cu130
+# PyTorch CUDA wheels are NOT listed here. This host driver is 570.133.20 / CUDA 12.8.
+# Do NOT install cu130 (needs a newer driver). After creating the env:
+#   conda run -n orion python -m pip install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu128
 #   conda run -n orion python -m pip install -e ".[repro]"
-#   conda run -n orion python -m pip install 'avalanche-lib==0.6.0' --no-deps
+#   conda run -n orion python -m pip install 'avalanche-lib==0.6.0' --no-deps wandb
+# Shared conda CLI: /opt/miniconda3 (read-only base). Env: ~/.conda/envs/orion
+# WSL/5060 Ti recipe used torch==2.14.0+cu130; see docs/environments/wsl2_rtx5060ti/

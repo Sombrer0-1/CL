@@ -1,9 +1,27 @@
 {
-  "executable": "/home/admin/miniconda3/envs/orion/bin/python3.11",
-  "torch": "2.14.0+cu130",
-  "torchvision": "0.29.0+cu130",
-  "cuda": "13.0",
-  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "executable": "/home/zhuzetong/.conda/envs/orion/bin/python3.11",
+  "torch": "2.11.0+cu128",
+  "torchvision": "0.26.0+cu128",
+  "cuda": "12.8",
+  "n_gpus": 2,
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "gpus": [
+    "NVIDIA GeForce RTX 5090",
+    "NVIDIA GeForce RTX 5090"
+  ],
+  "driver_version": "570.133.20",
+  "nvidia_smi": [
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "driver_version": "570.133.20",
+      "memory_mib": "32607"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "driver_version": "570.133.20",
+      "memory_mib": "32607"
+    }
+  ],
   "capability": [
     12,
     0
@@ -16,5 +34,6 @@
     "sm_100",
     "sm_120"
   ],
-  "conda_prefix": "/home/admin/miniconda3/envs/orion"
+  "avalanche": "0.6.0",
+  "conda_prefix": "/home/zhuzetong/.conda/envs/orion"
 }

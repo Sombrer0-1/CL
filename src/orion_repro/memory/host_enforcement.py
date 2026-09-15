@@ -1,4 +1,4 @@
-"""Host memory enforcement probe. Does not change WSL/global config."""
+"""Host memory enforcement probe. Does not change host/global memory config."""
 
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ def cgroup_memory_max() -> dict[str, Any]:
         "writable": False,
         "path": None,
         "mechanism": "cgroup_memory_max",
-        "reason": "no cgroup memory.max in this WSL namespace",
+        "reason": "no cgroup memory.max in this namespace",
     }
 
 
@@ -74,6 +74,6 @@ def probe_host_enforcement() -> dict[str, Any]:
         "rlimit_as": rlimit,
         "notes": (
             "PLAN host_enforced requires a verified process-group/cgroup limit. "
-            "This probe never writes WSL global memory settings."
+            "This probe never writes host/global memory settings."
         ),
     }

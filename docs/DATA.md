@@ -10,19 +10,22 @@
 
 Endless 每次运行保存 `runs/<run_id>/split_manifest.json`，包含路径及 train/val/excluded 索引。数字 patch ID 的时间含义尚未确认。CORe50 NIC 映射到 Avalanche `nicv2_79` 是重建选择，不是已确认的作者配置。
 
-需要在新环境准备数据时，在仓库根目录按需执行：
+需要在新环境准备数据时，在仓库根目录按需执行（数据已通过符号链接指向 `/mnt/data`，通常不必重下）：
 
 ```bash
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_data --dataset cifar10
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_data --dataset cifar100
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_data --dataset cifar10_dev
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_data --dataset cifar100_dev
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_core50
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_data --dataset core50_dev_nc
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_data --dataset core50_dev_ni
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_data --dataset core50_dev_nic
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_endless --scenario all
-/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.prepare_endless --scenario all --extract
+ORION_PY=/home/zhuzetong/.conda/envs/orion/bin/python
+"$ORION_PY" -m orion_repro.prepare_data --dataset cifar10
+"$ORION_PY" -m orion_repro.prepare_data --dataset cifar100
+"$ORION_PY" -m orion_repro.prepare_data --dataset cifar10_dev
+"$ORION_PY" -m orion_repro.prepare_data --dataset cifar100_dev
+"$ORION_PY" -m orion_repro.prepare_core50
+"$ORION_PY" -m orion_repro.prepare_data --dataset core50_dev_nc
+"$ORION_PY" -m orion_repro.prepare_data --dataset core50_dev_ni
+"$ORION_PY" -m orion_repro.prepare_data --dataset core50_dev_nic
+"$ORION_PY" -m orion_repro.prepare_endless --scenario all
+"$ORION_PY" -m orion_repro.prepare_endless --scenario all --extract
 ```
+
+`data/manifests/` 中的 `/home/admin/...` 绝对路径是原机准备时的溯源字段，不要为搬家改写（会改变哈希）。训练配置使用相对 `data/raw/...` 与 `split_dir`，经仓库根与符号链接解析。
 
 开发校准仅使用训练集内验证数据。官方测试曾在早期探索中暴露，不能宣称从未接触；正式 `paper_feedback` 的测试反馈也不能用于人为搜索配置。

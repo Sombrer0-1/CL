@@ -7,10 +7,10 @@
 ### 4.1 环境建立及版本决策
 
 1. 用已有 Conda 管理工具新建 `orion`，起始候选 Python 3.11；这只是兼容性起点，不是作者版本。如源码依赖要求不同，记录后调整。
-2. 从官方发布源选择支持 sm_120 的 PyTorch CUDA wheel 与匹配 torchvision。复用 Windows NVIDIA 驱动，依赖的 Linux CUDA 运行库由 `orion` 独立安装。
+2. 从官方发布源选择支持 sm_120、且 CUDA runtime 不超过本机驱动的 PyTorch wheel 与匹配 torchvision。本机驱动为 570 / CUDA 12.8，使用 `cu128` 轮子；`cu130` 不能装。CUDA 运行库由 `orion` 环境的 PyTorch wheel 提供，不改系统驱动。
 3. 安装并锁定 Avalanche，以及实际所需的求解器、指标、数据和绘图库。不盲目升级全部包，也不复制 `mineru`。
 4. 先做 T01，再做 Avalanche ER/GEM/AGEM/GSS 的微型训练；如兼容性失败，优先小补丁或切换有证据的相邻版本，记录失败组合。不要仅以 import 成功认定可用。
-5. 保存 `environment.yml`、精确依赖清单、Avalanche commit、安装命令和环境检查结果。安装期间不修改 Windows 驱动或 WSL 全局设置。
+5. 保存 `environment.yml`、精确依赖清单、Avalanche 版本、安装命令和环境检查结果。安装期间不修改宿主 NVIDIA 驱动或全局 CUDA Toolkit。
 
 起始研究实现默认 FP32、eager、不启用 AMP/torch.compile/额外量化；明确 TF32、cuDNN benchmark 与 deterministic 设置。任何性能变体对所有比较方法公平开放，并独立标记。GPU 预热使用合成数据，训练状态和 RNG 恢复后再进入正式数据。
 
@@ -253,7 +253,7 @@ apply state[k] → 建立当前 loader / 有界预取
 | `host_enforced` | 可用的进程组/cgroup 上限及 swap 策略，包含全部实验子进程 | 该记账范围下是否完成；退出原因需由限制机制日志确认 |
 | `device_allocator_enforced` | PyTorch 所选版本的分配器配额或等价可核实机制 | 分配器范围内是否超限；不能称驱动/GPU 全占用硬上限 |
 
-先检查 WSL 对实验专属资源组的支持与权限，用受控小进程测试限制确实生效，不修改系统全局内存或杀死其他进程。CPU 限制不可用时继续 `observed_only` 或可用的 device 实验，将 host 强制预算标为 blocked，不能以采样 watchdog 冒充同步硬限制。超时/信号退出本身不证明 OOM。
+先检查本机对实验专属 cgroup/资源组的支持与权限，用受控小进程测试限制确实生效，不修改系统全局内存或杀死其他进程。CPU 限制不可用时继续 `observed_only` 或可用的 device 实验，将 host 强制预算标为 blocked，不能以采样 watchdog 冒充同步硬限制。超时/信号退出本身不证明 OOM。原 WSL 命名空间曾记录 `host_enforced=blocked`；本机仍须重新探测，不得沿用旧结论。
 
 按 `host` 和 `device` 两条资源受限线分别运行，另一资源保持足够且记录。对应主 URGE 的 M 使用相同资源范围的经验内峰值，`M_max` 对应该范围预算。host→device 切换是平台适配，不混算一个分数。
 

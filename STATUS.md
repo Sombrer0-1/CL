@@ -2,7 +2,7 @@
 
 light24_v1 结项证据保持不变。2026-09-15 已保存 I1 修补，并按 SDD 实现 PhaseRecorder、ResourceEnvelope、协议冻结/发射、独立执行器与报告。开发校准与冻结已完成。正式 54 格在原 WSL2 + RTX 5060 Ti 上于用户指示下中断后收尾；**矩阵未跑完，不得声称第二阶段验收通过。**
 
-仓库已迁到 Linux 服务器（双 RTX 5090）。**不要**在本机续跑剩余格并并入同一 54 格比较。下一阶段先重建 `orion` 环境，再另开 study。
+仓库已迁到 Linux 服务器（双 RTX 5090）。**不要**在本机续跑剩余格并并入同一 54 格比较。本机 `orion` 环境已于 2026-09-15 建立（`torch==2.11.0+cu128`，见 [A24](docs/decisions/A24.md) 与 `reports/envcheck.json`）。下一步是新阶段设计与校准，不是续跑 `formal.yaml`。
 
 ## 第二阶段收尾入口
 
@@ -11,7 +11,7 @@ light24_v1 结项证据保持不变。2026-09-15 已保存 I1 修补，并按 SD
 - 冻结协议 `experiments/pressure_v2/frozen_protocol.json`，hash `863ac7b0f08570d985be0c2a5e0dd4e692088d0812854ce57455f58a1907471a`。eval_batch=32；Q_tight=176 MiB；Q_loose=352 MiB；L_cal≈5.94s（原 5060 Ti）；各预算 S* 均为 b16/r2000；DYN 在 k=3..5 预留 32505856 B；IO 开发 wait_ratio≈0.50。
 - 执行器（仅原平台复核，不是本机待办）：`PYTHONPATH=src conda run -n orion python -m orion_repro.pressure_study --matrix experiments/pressure_v2/formal.yaml`。进度文件 `runs/pressure_v2_progress.json`，不写 light24。
 - 正式进度（收尾时）：54 格中已记录 45（completed 30、cuda_oom 14、interrupted 1）；未启动 9 格（剩余 3 个 PREF + 全部 6 个 IO）。中断格为 `pref/O11_ps_s1`，进度 `active=null`。
-- 下一步：在本机配置独立 `orion` 环境 → 重新确认资源 → 新阶段设计与校准。不以 URGE 触发代替有效性，也不把未完成矩阵续成跨机混合结果。
+- 下一步：新阶段设计与本机资源校准。不以 URGE 触发代替有效性，也不把未完成矩阵续成跨机混合结果。旧 5060 Ti 的 `L_cal`、配额与耗时不自动沿用。
 
 ## 本轮修补与证据保护
 
@@ -49,6 +49,6 @@ light24_v1 结项证据保持不变。2026-09-15 已保存 I1 修补，并按 SD
 - 阶段标记：`light24-v1-complete`。此前实验/分析提交为 `8aa6654`、`8036f59`；标记指向包含评审修订的结项提交。
 - Git远端：`git@github.com:Sombrer0-1/CL.git`。代码、文档、必要结果表和图纳入Git；data/raw、data/processed、runs、模型和缓存仅保留本地，远端不是完整原始数据备份。
 - 第二阶段实现、冻结协议与中断进度已纳入仓库记录；正式比较未完成、未验收。第一阶段不因此重新打开为未完成状态。
-- 本机下一步是独立环境配置，不是续跑 `formal.yaml`。
+- 本机 `orion` 环境已建立，下一步是新阶段设计，不是续跑 `formal.yaml`。
 
-README中的light24命令仅供第一阶段在原环境下复核。
+README中的light24命令仅供第一阶段复核，不能用本机新环境身份覆盖冻结结果。

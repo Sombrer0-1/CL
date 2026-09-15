@@ -83,7 +83,7 @@ def _loop_device_peaks(device: torch.device) -> list[tuple[int, int, int]]:
 
 
 def _host_frame_pairs() -> list[tuple[int, int]]:
-    """RSS delta vs allocated uint8 RGB frames. Noisy on WSL; recorded as error evidence."""
+    """RSS delta vs allocated uint8 RGB frames. Host RSS pairing is noisy; recorded as error evidence."""
     base = _rss()
     held: list[tuple[int, int]] = []
     blobs = []
@@ -130,7 +130,7 @@ def profile(num_classes: int = 10) -> MemoryCostModel:
         "Device slope from real train-step peaks on cat(new,replay) pairs "
         f"{loop_pairs[:3]}; held-out pairs {held} MAPE={device_mape}. "
         f"Host uint8 frame RSS pairing {host_pairs} MAE={host_mae}B vs {frame}B/frame "
-        "(WSL RSS is noisy; this is not a cgroup cap). "
+        "(host RSS pairing is noisy; this is not a cgroup cap). "
         f"Synthetic single-tensor slope r2={r2:.4f} vs loop r2={loop_r2:.4f}. "
         f"cat(16,16)={merged} vs single32={single}. "
         f"plugin_gem_ewc_bytes={plugin_delta} still allocation copies, not a full "

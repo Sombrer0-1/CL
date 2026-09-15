@@ -23,4 +23,4 @@
 
 ### 2026-09-15 pressure_v2 收尾
 
-第二阶段正式 54 格在原 RTX 5060 Ti 上记录 45 格后中断并收尾，未验收，不更新上表 C01–C08。部分正式格的完成与 cuda_oom 保留为该阶段原始记录，见 reports/pressure_v2/CLOSEOUT.md。迁入 Linux + RTX 5090 后不得续跑剩余格并混入同一矩阵。
+第二阶段正式 54 格在原 RTX 5060 Ti 上记录 45 格后中断并收尾，未验收，不更新上表 C01–C08。部分正式格的完成与 cuda_oom 保留为该阶段原始记录，见 reports/pressure_v2/CLOSEOUT.md。迁入 Linux + RTX 5090 后不得续跑剩余格并混入同一矩阵。本机环境见 docs/decisions/A24.md，不更新上表 C01–C08。
