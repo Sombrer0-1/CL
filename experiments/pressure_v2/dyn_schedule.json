@@ -1,0 +1,14 @@
+{
+  "reserved_bytes_by_experience": [
+    0,
+    0,
+    0,
+    32505856,
+    32505856,
+    32505856,
+    0,
+    0,
+    0
+  ],
+  "note": "same-process CUDA uint8 reservation; not model or replay bytes"
+}

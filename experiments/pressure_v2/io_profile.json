@@ -1,0 +1,7 @@
+{
+  "profile": "natural_ondemand",
+  "pin_memory": false,
+  "queue_depth": 2,
+  "num_workers": 0,
+  "constructed": true
+}

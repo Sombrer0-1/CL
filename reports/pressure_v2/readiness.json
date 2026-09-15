@@ -1,6 +1,7 @@
 {
   "date": "2026-09-15",
-  "status": "design_and_local_fixes_verified_not_full_phase2_ready",
+  "status": "interrupted_closed_not_accepted",
+  "platform": "WSL2_RTX_5060_Ti",
   "unit_and_cpu_integration_tests": {
     "passed": 104,
     "warnings": 9
@@ -13,13 +14,14 @@
     "n_experiences_evaluated": 0
   },
   "formal_design_cells": 54,
-  "formal_started": false,
-  "not_yet_implemented": [
-    "resource_envelope",
-    "phase_reserved_peaks",
-    "new_executor_and_report",
-    "frozen_calibration",
-    "io_profile"
-  ],
+  "formal_recorded": 45,
+  "formal_completed": 30,
+  "formal_cuda_oom": 14,
+  "formal_interrupted": 1,
+  "formal_unstarted": 9,
+  "formal_accepted": false,
+  "frozen_hash": "863ac7b0f08570d985be0c2a5e0dd4e692088d0812854ce57455f58a1907471a",
+  "closeout": "reports/pressure_v2/CLOSEOUT.md",
+  "do_not_resume_on_new_host": true,
   "phase1_frozen_manifest": "reports/light24/stage_manifest.json"
 }

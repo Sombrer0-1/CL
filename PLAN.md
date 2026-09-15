@@ -1,6 +1,6 @@
 # 第二阶段设计：资源约束下的控制行为与收益
 
-版本：pressure_v2 · 2026-09-15 · **已复核设计，局部缺陷已修补；开发校准及正式实验未启动。** 架构与实现契约见 [docs/SDD_pressure_v2.md](docs/SDD_pressure_v2.md)。
+版本：pressure_v2 · 2026-09-15 · **设计已实现并冻结；正式 54 格在原 WSL 5060 Ti 上中断后收尾，未验收。** 收尾见 [reports/pressure_v2/CLOSEOUT.md](reports/pressure_v2/CLOSEOUT.md)。架构与实现契约见 [docs/SDD_pressure_v2.md](docs/SDD_pressure_v2.md)。本文件保留为第二阶段设计记录，不再作为本机待执行队列。
 
 第一阶段已结项，标签 `light24-v1-complete`，原计划保存在 [docs/plans/light24_v1.md](docs/plans/light24_v1.md)，原结果保持不变。本阶段遵循真实资源限制、公平比较和不预设优越性的原则；时间只估算，不强制终止训练。
 
@@ -121,13 +121,13 @@ S0、同DYN开发选择的S*、O11 ×3 seeds=9格。O11额外delta=ln(2)/(N−1)
 
 ## 8. 实现准备与工作量
 
-当前为经过论文与实现核对的设计，**不是可直接执行的矩阵**。设计清单见 `experiments/pressure_v2/design.yaml`。实际Q、L_cal、S*、统一eval_batch均待开发证据冻结，不填假定数值。
+设计清单见 `experiments/pressure_v2/design.yaml`。实现、独立执行器、开发校准与 `frozen_protocol.json` 已在原平台完成；正式矩阵执行至中断后收尾，见 [reports/pressure_v2/CLOSEOUT.md](reports/pressure_v2/CLOSEOUT.md)。
 
-执行前必须补齐/验证：新study独立ID与进度文件（现study只接受light24_v1）、阶段reserved峰值和OOM阶段持久化、带真实失败处理的开发选择、按预算/版本/方法分组的报告、固定交错顺序及manifest完整哈希。不能为了接受新ID就覆盖第一阶段结果。现有allocator、plugin_policy消融和reuse v2可以复用。
+原执行入口：`python -m orion_repro.pressure_study --matrix experiments/pressure_v2/formal.yaml`。不能为了接受新ID就覆盖第一阶段结果。本机新环境不得续跑该 formal 矩阵作为同一比较。
 
-预估D0/D1约12–24次诊断/开发运行，另最多18格预算/资源序列内静态搜索；正式54格（主表30+DYN12+PREF6+IO6）。开发重复只为定位问题，不铺全量搜索。初步约4–10小时训练/剖析、2–4小时实现验证与分析，目标约6–14小时；advanced插件实测后更新。没有时间杀进程或凑满预算要求。若场景构造失败，保留缺口、停止无辨识度的批量运行，不能计为有效性已验证。暂不扩多算法、Endless、完整Oracle或新模型。
+预估当时为 D0/D1 约12–24次诊断/开发运行，另最多18格预算/资源序列内静态搜索；正式54格（主表30+DYN12+PREF6+IO6）。没有时间杀进程或凑满预算要求。若场景构造失败，保留缺口、停止无辨识度的批量运行，不能计为有效性已验证。暂不扩多算法、Endless、完整Oracle或新模型。
 
-本轮交付是设计与仓库整理。开始实现/校准/正式训练前，依据此方案继续明确执行任务；第一阶段结项标签保持不变。
+第一阶段结项标签保持不变。
 
 ## 9. 第一阶段缺陷处置与冻结
 

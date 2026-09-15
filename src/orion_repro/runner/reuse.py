@@ -6,6 +6,25 @@ from pathlib import Path
 from orion_repro.provenance import sha256_file, snapshot_source_tree
 
 
+def _referenced_content_hashes(spec, root):
+    refs = {}
+    candidates = [
+        spec.get('dataset', {}).get('split_manifest'),
+        (spec.get('resource_envelope') or {}).get('schedule_path'),
+        (spec.get('data_supply') or {}).get('profile_path'),
+        spec.get('frozen_protocol_path'),
+    ]
+    for rel in candidates:
+        if not rel:
+            continue
+        path = Path(rel)
+        if not path.is_absolute():
+            path = root / path
+        if path.is_file():
+            refs[str(rel)] = sha256_file(path)
+    return refs
+
+
 def reuse_identity(spec, root):
     manifest = spec.get('dataset', {}).get('split_manifest')
     if not manifest:
@@ -20,7 +39,7 @@ def reuse_identity(spec, root):
                 'dataset_manifest_sha256', 'experiment_id', 'claim_ids'):
         clean.pop(key, None)
     # The original v1 identity is retained for configs not opting into v2.
-    if spec.get('reuse_version') == 2:
+    if spec.get('reuse_version') in {2, 3}:
         files = sorted((root / 'src' / 'orion_repro').rglob('*.py'))
         files += [p for p in (root/'pyproject.toml',) if p.exists()]
         source = [(str(p.relative_to(root)), sha256_file(p)) for p in files]
@@ -29,6 +48,12 @@ def reuse_identity(spec, root):
     identity = {'config': clean, 'source': source,
                 'environment': sha256_file(root / 'requirements.lock.txt'),
                 'data_manifest': sha256_file(path)}
+    if spec.get('reuse_version') == 3:
+        identity['referenced_content'] = _referenced_content_hashes(spec, root)
+        identity['resource_schedule'] = (spec.get('resource_envelope') or {}).get(
+            'reserved_bytes_by_experience'
+        )
+        identity['data_supply'] = spec.get('data_supply')
     return hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
 
 

@@ -29,11 +29,13 @@ from orion_repro.memory.budget import (
     require_cost_model_for_enforcement,
 )
 from orion_repro.memory.cost_model import MemoryCostModel
+from orion_repro.memory.phase_recorder import PhaseRecorder
 from orion_repro.memory.probe import ResourceSampler, reset_gpu_peak, snapshot, synchronize_gpu
+from orion_repro.memory.resource_envelope import ResourceEnvelope
 from orion_repro.provenance import fill_provenance, snapshot_source_tree
 from orion_repro.rng import seed_streams
 from orion_repro.runner.artifacts import RunArtifacts
-from orion_repro.runner.failures import failure_metadata
+from orion_repro.runner.failures import failure_metadata, parse_cuda_oom_request_bytes
 from orion_repro.runner.spec import RunSpec, canonical_hash, validate_mapping
 from orion_repro.strategies.builder import (
     apply_runtime_config,
@@ -42,6 +44,7 @@ from orion_repro.strategies.builder import (
     build_strategy,
     plugin_audit,
     replay_occupancy,
+    snapshot_plugin_activity,
 )
 from orion_repro.strategies.capacity import collect_auxiliary_visits
 from orion_repro.strategies.toggles import TogglePlugin
@@ -145,7 +148,33 @@ def _prefetch_stats(strategy) -> dict[str, float | int]:
         "prefetch_batches": int(getattr(plugin, "last_batches", 0)),
         "prefetch_plan_mode": str(getattr(plugin, "last_plan_mode", "")),
         "prefetch_planned_n": int(getattr(plugin, "last_planned_n", 0)),
+        "prefetch_produce_s": float(getattr(plugin, "last_produce_s", 0.0)),
     }
+
+
+def _reservation_schedule(spec: dict[str, Any], n_run: int) -> list[int]:
+    env = spec.get("resource_envelope") or {}
+    if not env or not env.get("enabled"):
+        return [0] * n_run
+    sched = env.get("reserved_bytes_by_experience")
+    if sched is None:
+        return [0] * n_run
+    values = [int(x) for x in sched]
+    if len(values) != n_run:
+        raise ValueError(
+            f"reserved_bytes_by_experience length {len(values)} != n_run {n_run}"
+        )
+    return values
+
+
+def _consumption_digest(strategy) -> dict[str, Any]:
+    plugin = getattr(strategy, "_orion_prefetch_plugin", None)
+    if plugin is None:
+        return {}
+    digest = dict(getattr(plugin, "last_digest", {}) or {})
+    digest.setdefault("produce_s", float(getattr(plugin, "last_produce_s", 0.0)))
+    digest.setdefault("wait_s", float(getattr(plugin, "last_wait_s", 0.0)))
+    return digest
 
 
 def _current_replay_batch(spec: dict[str, Any], ctrl_state: ControlState | None) -> int:
@@ -262,12 +291,24 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
     t_run0 = time.monotonic()
     failure_phase = "setup"
     trained_experiences = 0
+    recorder: PhaseRecorder | None = None
+    envelope: ResourceEnvelope | None = None
+    current_unannounced = False
+    quota_bytes = spec.get("budget", {}).get("limit_bytes")
     try:
         configure_torch(spec)
         device = _device(spec)
-        from orion_repro.memory.enforcement import install_device_quota
-        quota = install_device_quota(spec["budget"], device)
+        from orion_repro.memory.enforcement import install_device_quota  # noqa: F401
+        envelope = ResourceEnvelope(device)
+        quota = envelope.install_quota(spec["budget"], device)
+        quota_bytes = spec["budget"].get("limit_bytes")
         arts.write_json("budget_enforcement.json", {"quota": quota})
+        recorder = PhaseRecorder(
+            arts,
+            quota_bytes=quota_bytes,
+            reservation_getter=lambda: envelope.reservation_bytes if envelope is not None else 0,
+        )
+        recorder.begin("setup", None)
         code_snapshot = snapshot_source_tree(ROOT)
         spec = fill_provenance(spec, root=ROOT, snapshot=code_snapshot)
         feedback_source = resolve_feedback_source(spec)
@@ -395,6 +436,8 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
         interval = float(spec["measurement"]["sample_interval_ms"]) / 1000.0
         sampler = ResourceSampler(interval_s=max(interval, 0.05))
         sampler.start()
+        if recorder is not None:
+            recorder.end("setup", None)
         _append_registry({"run_id": run_id, "status": "running", "run_dir": str(run_dir)})
 
         last_metrics = None
@@ -439,7 +482,30 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     "completed_experiences": start_k,
                 }
             )
+        reservation_schedule = _reservation_schedule(spec, n_run)
         for k in range(start_k, n_run):
+            prev_reservation = reservation_schedule[k - 1] if k > 0 else 0
+            current_unannounced = int(reservation_schedule[k]) != int(prev_reservation)
+            failure_phase = "resource_transition"
+            if recorder is not None and envelope is not None:
+                recorder.begin("resource_transition", k)
+                trans = envelope.transition(k, reservation_schedule[k])
+                rec_transition = recorder.end("resource_transition", k)
+                arts.event(
+                    {
+                        "utc": _utc_now(),
+                        "monotonic_s": time.monotonic(),
+                        "experience": k,
+                        "phase": "resource_transition",
+                        "unannounced_transition": current_unannounced,
+                        "duration_s": rec_transition.duration_s,
+                        **trans.as_dict(),
+                    }
+                )
+                if trans.status != "ok":
+                    raise torch.cuda.OutOfMemoryError(
+                        f"Tried to allocate {reservation_schedule[k] / (1024 ** 2):.2f} MiB for resource envelope"
+                    )
             cur_batch = int(strategy.train_mb_size)
             cur_replay = int(
                 spec["replay"]["capacity"] if ctrl_state is None else ctrl_state.replay_capacity
@@ -477,7 +543,10 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 )
             exp = benchmark.train_stream[k]
             sampler.set_phase("learning", k)
-            reset_gpu_peak()
+            if recorder is not None:
+                recorder.begin("training", k)
+            else:
+                reset_gpu_peak()
             snap0 = snapshot("learning_start", k)
             arts.append_csv(arts._resource, snap0.as_row())
             arts.event(
@@ -492,6 +561,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     ),
                     "optimizer_mode": ctrl_state.optimizer_mode if ctrl_state else initial_mode,
                     "plugins": _toggle_states(strategy),
+                    "external_reservation_bytes": envelope.reservation_bytes if envelope is not None else 0,
                 }
             )
             t0 = time.monotonic()
@@ -500,14 +570,32 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             synchronize_gpu()
             learning_s = time.monotonic() - t0
             trained_experiences = k + 1
+            train_phase = recorder.end("training", k) if recorder is not None else None
             learning_peak_rss = sampler.phase_peak_rss
             learning_peak_gpu = sampler.phase_peak_gpu_alloc
+            reserved_peak_gpu = sampler.phase_peak_gpu_reserved
+            if train_phase is not None:
+                if train_phase.allocated_peak_bytes:
+                    learning_peak_gpu = int(train_phase.allocated_peak_bytes)
+                if train_phase.reserved_peak_bytes:
+                    reserved_peak_gpu = int(train_phase.reserved_peak_bytes)
             pf = _prefetch_stats(strategy)
             snap1 = snapshot("learning_end", k)
             arts.append_csv(arts._resource, snap1.as_row())
+            arts.append_jsonl(
+                arts._plugin_activity,
+                {"experience": k, "phase": "training", **snapshot_plugin_activity(strategy)},
+            )
+            arts.append_jsonl(
+                arts._consumption,
+                {"experience": k, **_consumption_digest(strategy)},
+            )
 
             sampler.set_phase("evaluation", k)
-            reset_gpu_peak()
+            if recorder is not None:
+                recorder.begin("evaluation", k)
+            else:
+                reset_gpu_peak()
             t1 = time.monotonic()
             protocol = eval_protocol(benchmark, class_map)
             domains = make_eval_domains(benchmark, class_map, k)
@@ -521,6 +609,8 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             )
             synchronize_gpu()
             evaluation_s = time.monotonic() - t1
+            if recorder is not None:
+                recorder.end("evaluation", k)
             if protocol == "shared_test_temporal":
                 acc_row = rows[0]
                 for i in range(k + 1):
@@ -575,7 +665,9 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     int(learning_peak_gpu or 0),
                     int(snap1.gpu_alloc_peak_bytes or snap1.gpu_alloc_bytes or 0),
                 )
+            reservation_bytes = envelope.reservation_bytes if envelope is not None else 0
             memory_mib = bytes_to_mib(mem_bytes)
+            memory_mib_model = bytes_to_mib(max(0, int(mem_bytes) - int(reservation_bytes)))
             occ = replay_occupancy(strategy)
             visits = dict(strategy._orion_prefetch_plugin.last_visits)
             visits.update(collect_auxiliary_visits(strategy))
@@ -607,6 +699,11 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     "learning_s": learning_s,
                     "evaluation_s": evaluation_s,
                     "memory_mib": memory_mib,
+                    "memory_mib_model": memory_mib_model,
+                    "allocated_peak_bytes": int(mem_bytes) if mem_bytes is not None else None,
+                    "reserved_peak_bytes": int(reserved_peak_gpu or 0) or None,
+                    "external_reservation_bytes": int(reservation_bytes),
+                    "prefetch_produce_s": pf.get("prefetch_produce_s", 0.0),
                     "new_batch": int(strategy.train_mb_size),
                     "replay_capacity": int(
                         ctrl_state.replay_capacity if ctrl_state else spec["replay"]["capacity"]
@@ -629,6 +726,10 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             if ctrl_cfg is not None and ctrl_state is not None:
                 t_c0 = time.monotonic()
                 failure_phase = "controller"
+                if recorder is not None:
+                    recorder.begin("controller", k)
+                mb_before = ctrl_state.mb
+                mr_before = ctrl_state.mr
                 decision = step_controller(
                     ctrl_cfg,
                     ctrl_state,
@@ -641,10 +742,18 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     m_frame=float(spec["controller"]["m_frame"]),
                 )
                 if k + 1 == n_run:
+                    if recorder is not None:
+                        recorder.end("controller", k)
                     arts.control({"t": k, "urge": decision.urge, "thr": decision.thr,
                         "factors": decision.factors, "plasticity": metrics.p_diag,
                         "stability": metrics.s_initial, "latency_s": learning_s,
-                        "memory_mib": memory_mib, "applied": None,
+                        "memory_mib": memory_mib, "memory_mib_model": memory_mib_model,
+                        "mb_before": mb_before, "mr_before": mr_before,
+                        "mb_next": decision.mb_next, "mr_next": decision.mr_next,
+                        "suggested_new_batch": decision.suggested_new_batch,
+                        "suggested_replay": decision.suggested_replay,
+                        "suggested_optimizer_mode": decision.suggested_optimizer_mode,
+                        "applied": None,
                         "reason": "last_experience", "controller_s": time.monotonic() - t_c0,
                         "reconfigure_s": 0.0})
                     continue
@@ -734,6 +843,9 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     optimizer_mode=applied_mode,
                 )
                 controller_s = time.monotonic() - t_c0
+                if recorder is not None:
+                    recorder.end("controller", k)
+                    recorder.begin("reconfiguration", k)
                 t_reconfigure0 = time.monotonic()
                 failure_phase = "reconfiguration"
                 occ_after = apply_runtime_config(
@@ -745,12 +857,16 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 )
                 synchronize_gpu()
                 reconfigure_s = time.monotonic() - t_reconfigure0
+                if recorder is not None:
+                    recorder.end("reconfiguration", k)
                 arts.control(
                     {
                         "t": k,
                         "urge": decision.urge,
                         "thr": decision.thr,
                         "factors": decision.factors,
+                        "mb_before": mb_before,
+                        "mr_before": mr_before,
                         "mb_next": decision.mb_next,
                         "mr_next": decision.mr_next,
                         "suggested_new_batch": decision.suggested_new_batch,
@@ -774,6 +890,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                         "stability": metrics.s_initial,
                         "latency_s": learning_s,
                         "memory_mib": memory_mib,
+                        "memory_mib_model": memory_mib_model,
                         "plugins": _toggle_states(strategy),
                     }
                 )
@@ -822,11 +939,26 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             "run_dir": str(run_dir),
         }
         return summary
-    except torch.cuda.OutOfMemoryError:
+    except torch.cuda.OutOfMemoryError as exc:
         status = "cuda_oom"
+        request = parse_cuda_oom_request_bytes(str(exc))
+        last = recorder.last if recorder is not None else None
         summary = {"run_id": run_id, "status": status, "traceback": traceback.format_exc(),
-                   **failure_metadata(spec, phase=failure_phase, experience=locals().get("k"),
-                                      trained=trained_experiences, evaluated=locals().get("completed_experiences", 0))}
+                   **failure_metadata(
+                       spec,
+                       phase=failure_phase,
+                       experience=locals().get("k"),
+                       trained=trained_experiences,
+                       evaluated=locals().get("completed_experiences", 0),
+                       request_bytes=request,
+                       quota_bytes=quota_bytes,
+                       unannounced_transition=bool(current_unannounced and failure_phase in {
+                           "training", "evaluation", "resource_transition"
+                       }),
+                       allocated_peak_bytes=None if last is None else last.allocated_peak_bytes,
+                       reserved_peak_bytes=None if last is None else last.reserved_peak_bytes,
+                       external_reservation_bytes=None if envelope is None else envelope.reservation_bytes,
+                   )}
         return summary
     except BudgetExceeded as exc:
         status = "budget_exceeded"
@@ -854,6 +986,8 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 handle.close()
             except Exception:
                 pass
+        if envelope is not None:
+            envelope.close()
         if sampler is not None:
             sampler.stop()
             for row in sampler.rows:

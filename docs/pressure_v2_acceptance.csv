@@ -1,13 +1,13 @@
 item_id,requirement,status,evidence_or_deliverable
 P2_design,论文启用情形及54格对照定义,reviewed_design,PLAN.md; docs/SDD_pressure_v2.md; experiments/pressure_v2/design.yaml
 P2_local_fixes,空advanced拒绝/真实插件状态/空buffer resize/OOM阶段,tests_passed_104,tests/test_phase2_regressions.py; reports/pressure_v2/readiness.json
-P2_D0,训练评价分阶段峰值与真实OOM阶段复核,not_run,开发原始轨迹与失败阶段记录
-P2_pressure,基础训练评价可行且训练压力区间有证据,not_calibrated,Q_tight/Q_loose开发候选完整结果
-P2_latency,L_cal按预定开发中位数规则冻结,not_calibrated,两次完整静态开发轨迹及汇总
-P2_static,每预算6格静态开发搜索及可行性选择,not_run,候选全部outcome和S_star选择依据
-P2_executor,独立study状态与阶段峰值记录及报告分组,not_implemented,代码测试和小型端到端验收
-P2_freeze,冻结预算阈值评价batch静态选择和交错顺序,pending_prerequisites,版本化protocol与manifest
-P2_formal,主表30动态衰减12偏好6预取6与3seeds,not_run,完整结果或真实资源失败
-P2_analysis,同预算因果对照及学习时间内存联合权衡,not_started,配对结果与限定结论
-P2_dynamic,真实资源序列与过渡首轮可行性,not_implemented,SDD ResourceEnvelope
-P2_io,自然供给瓶颈和训练输入等价,not_run,SDD DataSupplyProfile
+P2_D0,训练评价分阶段峰值与真实OOM阶段复核,calibrated_on_source_host,reports/pressure_v2/attempts.csv; experiments/pressure_v2/probe_manifest.json
+P2_pressure,基础训练评价可行且训练压力区间有证据,calibrated_on_source_host,frozen_protocol Q_tight=176 Q_loose=352; reports/pressure_v2/CLOSEOUT.md
+P2_latency,L_cal按预定开发中位数规则冻结,calibrated_on_source_host,L_cal≈5.94s on RTX 5060 Ti; experiments/pressure_v2/frozen_protocol.json
+P2_static,每预算6格静态开发搜索及可行性选择,calibrated_on_source_host,S*=b16/r2000; frozen_protocol static_selections
+P2_executor,独立study状态与阶段峰值记录及报告分组,implemented_not_accepted,src/orion_repro/pressure_study.py; reports/pressure_v2/progress.json
+P2_freeze,冻结预算阈值评价batch静态选择和交错顺序,frozen_on_source_host,experiments/pressure_v2/frozen_protocol.json hash 863ac7b0
+P2_formal,主表30动态衰减12偏好6预取6与3seeds,interrupted_45_of_54_not_accepted,reports/pressure_v2/CLOSEOUT.md; remaining 9 unstarted plus interrupted pref/O11_ps_s1
+P2_analysis,同预算因果对照及学习时间内存联合权衡,not_started,矩阵未完成且换机；不把部分格写成阶段结论
+P2_dynamic,真实资源序列与过渡首轮可行性,implemented_partial_formal,src/orion_repro/memory/resource_envelope.py; formal dyn recorded; not accepted
+P2_io,自然供给瓶颈和训练输入等价,dev_only_formal_not_run,experiments/pressure_v2/io_profile.json; six formal IO cells unstarted

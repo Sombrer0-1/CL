@@ -1,0 +1,10 @@
+study_id: pressure_v2
+name: d1_dyn_search
+executable: true
+configs:
+- configs/pressure_v2/dev/search_dyn_b16_r200_q176.yaml
+- configs/pressure_v2/dev/search_dyn_b16_r2000_q176.yaml
+- configs/pressure_v2/dev/search_dyn_b64_r200_q176.yaml
+- configs/pressure_v2/dev/search_dyn_b64_r2000_q176.yaml
+- configs/pressure_v2/dev/search_dyn_b256_r200_q176.yaml
+- configs/pressure_v2/dev/search_dyn_b256_r2000_q176.yaml

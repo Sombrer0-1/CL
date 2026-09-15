@@ -1,12 +1,12 @@
 # Orion 代表性方法复现
 
-依据本地 `12_Orion_2605.26473v1.pdf`，在 WSL2 + RTX 5060 Ti 上验证 Orion 的自适应机制、性能权衡和局限。本仓库是依据论文重建的实现，不是作者官方代码。
+依据本地 `12_Orion_2605.26473v1.pdf` 验证 Orion 的自适应机制、性能权衡和局限。本仓库是依据论文重建的实现，不是作者官方代码。
 
-第一阶段目标是约24小时以内的代表性复现工作量，**时间只做估算，不是硬截止**。保留完整数据流和主要比较3 seeds，缩减昂贵的全组合搜索。历史71次正式运行保留为背景，新study独立验收。
+第一、二阶段实验在 **WSL2 + RTX 5060 Ti** 上执行。仓库已迁到 Linux + 双 RTX 5090；**后续工作在本机新环境另开阶段**，不得把未完成的 pressure_v2 正式格续跑后与原 5060 Ti 结果混为同一矩阵。
 
-**light24_v1 已完成**：96 格全部执行（90 completed + 6 个 128MiB 评价阶段 OOM 资源失败），结果与 C01–C08 判定见 [reports/light24/RESULTS.md](reports/light24/RESULTS.md) 与 [docs/claims_status.md](docs/claims_status.md)。
+**light24_v1 已完成**：96 格全部执行（90 completed + 6 个 128MiB 评价阶段 OOM 资源失败），结果与 C01–C08 判定见 [reports/light24/RESULTS.md](reports/light24/RESULTS.md) 与 [docs/claims_status.md](docs/claims_status.md)。结项标签 `light24-v1-complete`。
 
-**第一阶段已结项；第二阶段 pressure_v2 的PLAN/SDD与局部修补已完成，尚未正式训练。** 当前[PLAN.md](PLAN.md)聚焦真实GPU资源约束与控制变量，原计划保存在[docs/plans/light24_v1.md](docs/plans/light24_v1.md)。下方light24命令只供第一阶段复核，结项标签仍为 `light24-v1-complete`。
+**pressure_v2 已收尾、未验收**：实现、开发校准与冻结已完成；正式 54 格记录 45（30 completed + 14 cuda_oom + 1 interrupted），其余 9 格未启动。见 [STATUS.md](STATUS.md) 与 [reports/pressure_v2/CLOSEOUT.md](reports/pressure_v2/CLOSEOUT.md)。原计划保存在 [docs/plans/light24_v1.md](docs/plans/light24_v1.md)。
 
 ## 当前接手入口
 
@@ -15,15 +15,15 @@
 3. [AGENTS.md](AGENTS.md)：稳定环境与研究约束。
 4. [当前协议](docs/protocols/light24_v1.md)、[验收表](docs/acceptance.csv)、[数据说明](docs/DATA.md)。
 
-第二阶段设计清单位于 `experiments/pressure_v2/design.yaml`（executable=false），准备验收见 [docs/pressure_v2_acceptance.csv](docs/pressure_v2_acceptance.csv)。预算与阈值须先由开发证据冻结；不直接把设计文件传给训练执行器。
+第二阶段设计与冻结协议位于 `experiments/pressure_v2/`。正式矩阵 `formal.yaml` 保留为原平台中断记录，**不是本机待执行队列**。准备验收见 [docs/pressure_v2_acceptance.csv](docs/pressure_v2_acceptance.csv)。不直接把 `design.yaml` 传给训练执行器。
 
 架构/实现契约：[docs/SDD_pressure_v2.md](docs/SDD_pressure_v2.md)。新源码包含缺陷修补，第一阶段应使用结项标签及 `reports/light24/stage_manifest.json` 复核；不要用当前身份汇总覆写其冻结覆盖表。
 
 ## 环境
 
-只使用 `/home/admin/miniconda3/envs/orion/bin/python`。依赖见 `requirements.lock.txt`、`environment.lock.yml`；不得使用 mineru 或向 base 安装项目依赖。WSL 复用宿主显卡驱动，不安装 Linux NVIDIA 驱动。
+原平台解释器为 `/home/admin/miniconda3/envs/orion/bin/python`（WSL，已不存在于本机）。本机下一步是新建项目专用 Conda 环境 `orion`（Python 3.11），依赖见 `requirements.lock.txt`、`environment.lock.yml`；不得使用 mineru 或向 base 安装项目依赖。
 
-环境重建见 [环境定义](environment.yml) 和锁文件；已有环境先检查，不删除重建。源码可用 `orion/bin/python -m pip install -e . --no-deps` 安装（解释器使用上面的绝对路径）。
+环境重建见 [环境定义](environment.yml) 和锁文件；已有环境先检查，不删除重建。源码可用该环境的 `python -m pip install -e . --no-deps` 安装。旧 WSL 路径与下方 light24 命令只供原平台复核，不是当前待办。
 
 ## 第一阶段复核与重跑命令（非当前待办）
 
@@ -59,7 +59,8 @@ WANDB_MODE=disabled /home/admin/miniconda3/envs/orion/bin/python -m pytest tests
 |---|---|
 | `src/orion_repro/`、`tests/` | 实现与验证 |
 | `configs/light24/`、`experiments/light24/` | 已结束阶段的配置与矩阵 |
-| `experiments/pressure_v2/` | 第二阶段设计清单，尚非可运行矩阵 |
+| `configs/pressure_v2/`、`experiments/pressure_v2/` | 第二阶段配置、冻结协议与中断矩阵（未验收） |
+| `reports/pressure_v2/` | 第二阶段准备摘要与收尾记录 |
 | `configs/formal/`、`configs/development/` | 既有配置与新生成器输入模板 |
 | `experiments/reference/` | 历史矩阵，仅供追溯，不是待恢复队列 |
 | `docs/` | 方法、对齐依据、协议与验收 |

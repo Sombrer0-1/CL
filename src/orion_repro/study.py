@@ -1,7 +1,6 @@
 """Resumable representative study with estimates, never a training time cutoff."""
 from __future__ import annotations
 import argparse
-import fcntl
 import json
 import os
 from pathlib import Path
@@ -12,6 +11,7 @@ import time
 import uuid
 from datetime import datetime, timezone
 
+from orion_repro.runner.locks import acquire_locks
 from orion_repro.runner.spec import load_yaml, validate_mapping
 from orion_repro.runner.reuse import find_completed, reuse_identity
 
@@ -131,13 +131,11 @@ def main(argv=None):
         if not reuse_identity(spec, ROOT):
             parser.error('Frozen dataset manifest required')
     state_path = ROOT/'runs/light24_progress.json'
-    lock_path = ROOT/'runs/.light24.lock'
-    lock_path.parent.mkdir(exist_ok=True)
-    with lock_path.open('w') as lock:
-        try:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError:
-            parser.error('Another light24 executor is active')
+    try:
+        locks = acquire_locks([ROOT/'runs/.orion_project.lock', ROOT/'runs/.light24.lock'])
+    except BlockingIOError:
+        parser.error('Another Orion training executor is active')
+    try:
         state = json.loads(state_path.read_text()) if state_path.exists() else {
             'study_id': 'light24_v1', 'consumed_s': 0, 'active': None, 'results': []}
         if args.dry_run:
@@ -168,6 +166,9 @@ def main(argv=None):
                 print(json.dumps({'paused': True, 'reason': status}), flush=True)
                 break
         print(json.dumps({'consumed_s': state['consumed_s'], 'target_remaining_s': remaining_seconds(state)}))
+    finally:
+        for handle in locks:
+            handle.close()
 
 
 if __name__ == '__main__':

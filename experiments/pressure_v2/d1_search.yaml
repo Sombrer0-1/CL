@@ -1,0 +1,16 @@
+study_id: pressure_v2
+name: d1_search
+executable: true
+configs:
+- configs/pressure_v2/dev/search_tight_b16_r200_q176.yaml
+- configs/pressure_v2/dev/search_tight_b16_r2000_q176.yaml
+- configs/pressure_v2/dev/search_tight_b64_r200_q176.yaml
+- configs/pressure_v2/dev/search_tight_b64_r2000_q176.yaml
+- configs/pressure_v2/dev/search_tight_b256_r200_q176.yaml
+- configs/pressure_v2/dev/search_tight_b256_r2000_q176.yaml
+- configs/pressure_v2/dev/search_loose_b16_r200_q352.yaml
+- configs/pressure_v2/dev/search_loose_b16_r2000_q352.yaml
+- configs/pressure_v2/dev/search_loose_b64_r200_q352.yaml
+- configs/pressure_v2/dev/search_loose_b64_r2000_q352.yaml
+- configs/pressure_v2/dev/search_loose_b256_r200_q352.yaml
+- configs/pressure_v2/dev/search_loose_b256_r2000_q352.yaml

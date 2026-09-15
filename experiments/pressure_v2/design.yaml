@@ -1,7 +1,8 @@
 kind: experiment_design
 study_id: pressure_v2
-status: reviewed_design_implementation_pending
+status: frozen_interrupted_closed
 executable: false
+closeout: reports/pressure_v2/CLOSEOUT.md
 primary_context: core50_nc
 diagnostic_context: splitcifar100
 seeds:
@@ -80,4 +81,6 @@ required_before_execution:
 - host_vs_device_accounting_and_unit_mapping_documented
 - dynamic_reservation_development_manifest
 - natural_io_bottleneck_and_tensor_equivalence
-training_started: false
+training_started: true
+formal_recorded: 45
+formal_accepted: false

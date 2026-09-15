@@ -1,0 +1,8 @@
+study_id: pressure_v2
+name: d0_profile
+executable: true
+configs:
+- configs/pressure_v2/dev/lcal_b16_r200_q256_rep0.yaml
+- configs/pressure_v2/dev/lcal_b16_r200_q256_rep1.yaml
+- configs/pressure_v2/dev/profile_b64_r200_q256.yaml
+- configs/pressure_v2/dev/profile_advanced_q256.yaml

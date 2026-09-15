@@ -17,18 +17,22 @@ class PrefetchWrapPlugin(SupervisedPlugin):
         depth: int,
         version_holder: dict[str, int],
         replay_seed: int | None = None,
+        record_hashes: bool = False,
     ) -> None:
         super().__init__()
         self.enabled = bool(enabled)
         self.depth = max(1, int(depth))
         self.version_holder = version_holder
         self.replay_seed = replay_seed
+        self.record_hashes = bool(record_hashes)
         self.last_wait_s = 0.0
         self.last_dropped_stale = 0
         self.last_batches = 0
         self.last_plan_mode = "unused"
         self.last_planned_n = 0
         self.last_visits = {}
+        self.last_produce_s = 0.0
+        self.last_digest: dict[str, Any] = {}
         self._wrapped: PrefetchingDataLoader | None = None
 
     def before_training_exp(self, strategy, *args, **kwargs) -> None:
@@ -46,6 +50,7 @@ class PrefetchWrapPlugin(SupervisedPlugin):
             config_version=int(self.version_holder.get("config_version", 0)),
             max_depth=self.depth,
             use_queue=self.enabled,
+            record_hashes=self.record_hashes,
         )
         strategy.dataloader = self._wrapped
 
@@ -60,6 +65,8 @@ class PrefetchWrapPlugin(SupervisedPlugin):
             self.last_plan_mode = str(self._wrapped.plan_mode)
             planned = self._wrapped.planned_index_batches
             self.last_planned_n = 0 if planned is None else sum(len(b) for b in planned)
+            self.last_produce_s = float(getattr(self._wrapped, "produce_s", 0.0))
+            self.last_digest = self._wrapped.digest()
             if planned is not None:
                 from collections import Counter
                 counts = Counter(i for batch in planned[:self.last_batches] for i in batch)

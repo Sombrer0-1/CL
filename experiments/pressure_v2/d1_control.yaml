@@ -1,0 +1,8 @@
+study_id: pressure_v2
+name: d1_control
+executable: true
+configs:
+- configs/pressure_v2/dev/control_O00_q176.yaml
+- configs/pressure_v2/dev/control_O10_q176.yaml
+- configs/pressure_v2/dev/control_O01_q176.yaml
+- configs/pressure_v2/dev/control_O11_q176.yaml

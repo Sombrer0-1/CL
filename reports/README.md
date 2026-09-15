@@ -1,6 +1,6 @@
 # 结果入口
 
-已结束阶段：light24_v1，范围见 [PLAN](../PLAN.md)，实时工作状态见 [STATUS](../STATUS.md)。
+已结束阶段：light24_v1。第二阶段 pressure_v2 已中断收尾、未验收。范围见 [PLAN](../PLAN.md)，实时工作状态见 [STATUS](../STATUS.md)。
 
 ## 第一阶段交付
 
@@ -21,4 +21,11 @@
 
 `validation.json` 是有日期的历史验证摘要，不代表当前全部代码已验收。`legacy_includes_setup` 与 `online_loop_v2` 不混算。Endless grouped辅助结果不混称官方测试结果。来源、原始矩阵和资源轨迹是后续图表的依据；尚无结果不代表零值。
 
-结项报告为 `light24/RESULTS.md`；OOM原始堆栈阶段索引见 `light24/budget_failure_stages.csv`。本阶段已结束，下一阶段尚未立项。
+结项报告为 `light24/RESULTS.md`；OOM原始堆栈阶段索引见 `light24/budget_failure_stages.csv`。第一阶段已结束。
+
+## 第二阶段收尾（未验收）
+
+- `pressure_v2/CLOSEOUT.md`：正式 54 格中断说明、不得跨机续跑。
+- `pressure_v2/progress.json`、`pressure_v2/attempts.csv`：开发+正式记录摘要；原始 runs 仍在 `runs/`。
+- `pressure_v2/readiness.json`：实现准备摘要，不是正式科学结论。
+

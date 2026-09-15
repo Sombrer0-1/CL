@@ -25,6 +25,7 @@ class ResourceSnapshot:
     gpu_alloc_bytes: int | None
     gpu_reserved_bytes: int | None
     gpu_alloc_peak_bytes: int | None
+    gpu_reserved_peak_bytes: int | None
     gpu_global_used_bytes: int | None
     gpu_global_free_bytes: int | None
     notes: str = ""
@@ -47,6 +48,7 @@ def _gpu_fields() -> dict[str, int | None]:
         "gpu_alloc_bytes": None,
         "gpu_reserved_bytes": None,
         "gpu_alloc_peak_bytes": None,
+        "gpu_reserved_peak_bytes": None,
         "gpu_global_used_bytes": None,
         "gpu_global_free_bytes": None,
     }
@@ -58,6 +60,7 @@ def _gpu_fields() -> dict[str, int | None]:
         out["gpu_alloc_bytes"] = int(torch.cuda.memory_allocated())
         out["gpu_reserved_bytes"] = int(torch.cuda.memory_reserved())
         out["gpu_alloc_peak_bytes"] = int(torch.cuda.max_memory_allocated())
+        out["gpu_reserved_peak_bytes"] = int(torch.cuda.max_memory_reserved())
         try:
             free, total = torch.cuda.mem_get_info()
             out["gpu_global_free_bytes"] = int(free)
@@ -108,8 +111,10 @@ class ResourceSampler:
         self._exp: int | None = None
         self.peak_rss = 0
         self.peak_gpu_alloc = 0
+        self.peak_gpu_reserved = 0
         self.phase_peak_rss = 0
         self.phase_peak_gpu_alloc = 0
+        self.phase_peak_gpu_reserved = 0
         self.rows: list[ResourceSnapshot] = []
 
     def set_phase(self, phase: str, experience_index: int | None) -> None:
@@ -117,6 +122,7 @@ class ResourceSampler:
         self._exp = experience_index
         self.phase_peak_rss = 0
         self.phase_peak_gpu_alloc = 0
+        self.phase_peak_gpu_reserved = 0
 
     def start(self) -> None:
         self._stop.clear()
@@ -140,6 +146,10 @@ class ResourceSampler:
             if gpu:
                 self.peak_gpu_alloc = max(self.peak_gpu_alloc, int(gpu))
                 self.phase_peak_gpu_alloc = max(self.phase_peak_gpu_alloc, int(gpu))
+            reserved = snap.gpu_reserved_peak_bytes or snap.gpu_reserved_bytes or 0
+            if reserved:
+                self.peak_gpu_reserved = max(self.peak_gpu_reserved, int(reserved))
+                self.phase_peak_gpu_reserved = max(self.phase_peak_gpu_reserved, int(reserved))
             if self.writer is not None:
                 import csv
 

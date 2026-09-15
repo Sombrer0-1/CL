@@ -1,0 +1,9 @@
+study_id: pressure_v2
+name: d0_quota
+executable: true
+configs:
+- configs/pressure_v2/dev/quota_b16_r200_q128.yaml
+- configs/pressure_v2/dev/quota_b16_r200_q144.yaml
+- configs/pressure_v2/dev/quota_b16_r200_q160.yaml
+- configs/pressure_v2/dev/quota_b16_r200_q176.yaml
+- configs/pressure_v2/dev/quota_b16_r200_q208.yaml

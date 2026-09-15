@@ -20,3 +20,7 @@
 ### 2026-09-15 实现复核补充
 
 第一阶段完整Orion配置的optional_plugins=none，没有安装可切换GEM/EWC；旧运行接口仍允许记录advanced。核心实际轨迹均为default，因此原指标保留，但插件启用能力未验证，旧小型readiness的模式字符串证据不能视为真实插件执行证明。当前源码已拒绝空advanced切换；第二阶段必须显式安装插件并验证hook及状态。第一阶段仍按原范围结项，不自动重跑；原始结项版本见light24-v1-complete。
+
+### 2026-09-15 pressure_v2 收尾
+
+第二阶段正式 54 格在原 RTX 5060 Ti 上记录 45 格后中断并收尾，未验收，不更新上表 C01–C08。部分正式格的完成与 cuda_oom 保留为该阶段原始记录，见 reports/pressure_v2/CLOSEOUT.md。迁入 Linux + RTX 5090 后不得续跑剩余格并混入同一矩阵。

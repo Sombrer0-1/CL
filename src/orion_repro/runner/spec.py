@@ -85,6 +85,12 @@ def validate_mapping(
         "spec.budget.cost_model_path",
         "spec.controller.thresholds.latency",
         "spec.measurement.resume_checkpoint",
+        "resource_envelope.schedule_path",
+        "spec.resource_envelope.schedule_path",
+        "data_supply.profile_path",
+        "spec.data_supply.profile_path",
+        "frozen_protocol_path",
+        "spec.frozen_protocol_path",
     }
     if require_provenance is None:
         require_provenance = str(data.get("phase", "")) == "formal"

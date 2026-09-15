@@ -17,6 +17,13 @@ class RunArtifacts:
         self._resource = self.run_dir / "resource_trace.csv"
         self._metrics = self.run_dir / "experience_metrics.csv"
         self._matrix = self.run_dir / "accuracy_matrix.csv"
+        self._phases = self.run_dir / "phase_trace.csv"
+        self._plugin_activity = self.run_dir / "plugin_activity.jsonl"
+        self._consumption = self.run_dir / "consumption.jsonl"
+
+    def append_jsonl(self, path, payload: Mapping[str, Any]) -> None:
+        with path.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(payload, default=str) + "\n")
 
     def close(self) -> None:
         self._events.close()

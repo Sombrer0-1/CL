@@ -134,6 +134,7 @@ def build_strategy(
         depth=int(spec["prefetch"].get("queue_depth", 1)),
         version_holder=version_holder,
         replay_seed=int(spec["seeds"]["replay"]),
+        record_hashes=bool((spec.get("data_supply") or {}).get("record_hashes", False)),
     )
     common = dict(
         model=model,
@@ -361,3 +362,35 @@ def apply_runtime_config(
     state["applied_replay_batch"] = int(replay_batch)
     state["applied_replay_capacity"] = int(replay_capacity)
     return state
+
+
+def snapshot_plugin_activity(strategy) -> dict[str, Any]:
+    """Per-experience plugin hook evidence. Unknown counts stay null, never 0."""
+    from orion_repro.strategies.capacity import gem_occupancy, plugin_state_bytes
+
+    plugins = []
+    for plugin in getattr(strategy, "plugins", []):
+        if not isinstance(plugin, TogglePlugin):
+            continue
+        inner = plugin.inner
+        gem_refs = None
+        if hasattr(inner, "memory_x"):
+            gem_refs = gem_occupancy(inner).get("replay_occupancy")
+        ewc_extra = getattr(inner, "auxiliary_visits", None)
+        if ewc_extra is None and type(inner).__name__ == "EWCPlugin":
+            ewc_extra = None
+        plugins.append(
+            {
+                "name": plugin.name,
+                "enabled": bool(plugin.enabled),
+                "inner": type(inner).__name__,
+                "before_backward": int(plugin.hook_counts.get("before_backward", 0)),
+                "after_training_exp": int(plugin.hook_counts.get("after_training_exp", 0)),
+                "gem_reference_samples": gem_refs,
+                "ewc_extra_forward_visits": ewc_extra,
+                "enabled_history": list(plugin.enabled_history),
+            }
+        )
+        plugin.hook_counts = {"before_backward": 0, "after_training_exp": 0}
+        plugin.enabled_history = []
+    return {"optional_plugins": plugins, "plugin_state_bytes": plugin_state_bytes(strategy)}

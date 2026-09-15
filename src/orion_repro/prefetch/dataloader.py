@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
+import hashlib
+import time
 from typing import Any, Callable, Iterator
 
 from orion_repro.prefetch.queue import BoundedPrefetcher, PrefetchItem
+from orion_repro.prefetch.supply import extract_xy, tensor_sha256, update_rolling
 
 
 def _identity_collate(batch):
@@ -45,6 +48,7 @@ class PrefetchingDataLoader:
         config_version: int,
         max_depth: int,
         use_queue: bool = True,
+        record_hashes: bool = False,
     ) -> None:
         self.loader = loader
         self.experience_id = int(experience_id)
@@ -53,9 +57,40 @@ class PrefetchingDataLoader:
         self.use_queue = bool(use_queue) and self.max_depth > 0
         self.prefetcher = BoundedPrefetcher(self.max_depth) if self.use_queue else None
         self.wait_s = 0.0
+        self.produce_s = 0.0
         self.batches_consumed = 0
         self.planned_index_batches: list[list[int]] | None = None
         self.plan_mode = "unplanned_fallback"
+        self.record_hashes = bool(record_hashes)
+        self.rolling = hashlib.sha256()
+        self.first_x_hash: str | None = None
+        self.first_y_hash: str | None = None
+        self.last_x_hash: str | None = None
+        self.last_y_hash: str | None = None
+
+    def _observe(self, batch: Any) -> None:
+        if not self.record_hashes:
+            return
+        x, y = extract_xy(batch)
+        hx = tensor_sha256(x)
+        hy = tensor_sha256(y)
+        if self.first_x_hash is None:
+            self.first_x_hash, self.first_y_hash = hx, hy
+        self.last_x_hash, self.last_y_hash = hx, hy
+        update_rolling(self.rolling, hx, hy)
+
+    def digest(self) -> dict[str, Any]:
+        return {
+            "batches_consumed": int(self.batches_consumed),
+            "produce_s": float(self.produce_s),
+            "wait_s": float(self.wait_s),
+            "rolling_sha256": self.rolling.hexdigest() if self.record_hashes else None,
+            "first_x_hash": self.first_x_hash,
+            "first_y_hash": self.first_y_hash,
+            "last_x_hash": self.last_x_hash,
+            "last_y_hash": self.last_y_hash,
+            "plan_mode": self.plan_mode,
+        }
 
     def __len__(self) -> int:
         return len(self.loader)
@@ -68,16 +103,22 @@ class PrefetchingDataLoader:
             if not self.use_queue:
                 self.plan_mode = "main_thread_indices_serial"
                 for indices in index_batches:
+                    t0 = time.perf_counter()
                     samples = [dataset[i] for i in indices]
+                    batch = collate(samples)
+                    self.produce_s += time.perf_counter() - t0
                     self.batches_consumed += 1
-                    yield collate(samples)
+                    self._observe(batch)
+                    yield batch
                 return
             self.plan_mode = "main_thread_indices"
 
             def producer():
                 for step, indices in enumerate(index_batches):
+                    t0 = time.perf_counter()
                     samples = [dataset[i] for i in indices]
                     batch = collate(samples)
+                    self.produce_s += time.perf_counter() - t0
                     yield PrefetchItem(
                         experience_id=self.experience_id,
                         config_version=self.config_version,
@@ -90,7 +131,11 @@ class PrefetchingDataLoader:
             if not self.use_queue:
                 self.plan_mode = "unplanned_serial"
                 for batch in inner_iter:
+                    t0 = time.perf_counter()
+                    # already materialized by the inner iterator
+                    self.produce_s += time.perf_counter() - t0
                     self.batches_consumed += 1
+                    self._observe(batch)
                     yield batch
                 return
             self.plan_mode = "unplanned_fallback"
@@ -112,6 +157,7 @@ class PrefetchingDataLoader:
                 if item is None:
                     break
                 self.batches_consumed += 1
+                self._observe(item.batch)
                 yield item.batch
         finally:
             self.wait_s = self.prefetcher.wait_s

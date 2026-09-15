@@ -35,6 +35,8 @@ class TogglePlugin(SupervisedPlugin):
         self.inner = inner
         self.enabled = enabled
         self.name = name or type(inner).__name__
+        self.hook_counts = {"before_backward": 0, "after_training_exp": 0}
+        self.enabled_history: list[bool] = []
 
     def __getattr__(self, item: str):
         return getattr(self.inner, item)
@@ -42,6 +44,10 @@ class TogglePlugin(SupervisedPlugin):
 
 def _make_hook(hook: str):
     def _fn(self, strategy, *args, **kwargs):
+        if hook in self.hook_counts and self.enabled:
+            self.hook_counts[hook] += 1
+        if hook == "after_training_exp":
+            self.enabled_history.append(bool(self.enabled))
         if not self.enabled:
             return None
         fn = getattr(self.inner, hook, None)

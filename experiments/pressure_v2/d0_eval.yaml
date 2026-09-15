@@ -1,0 +1,7 @@
+study_id: pressure_v2
+name: d0_eval
+executable: true
+configs:
+- configs/pressure_v2/dev/d0_eval_b128.yaml
+- configs/pressure_v2/dev/d0_eval_b32.yaml
+- configs/pressure_v2/dev/d0_eval_b8.yaml
