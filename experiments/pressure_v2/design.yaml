@@ -1,0 +1,83 @@
+kind: experiment_design
+study_id: pressure_v2
+status: reviewed_design_implementation_pending
+executable: false
+primary_context: core50_nc
+diagnostic_context: splitcifar100
+seeds:
+- 0
+- 1
+- 2
+resource:
+  enforcement: device_allocator_enforced
+  scope: process_pytorch_cuda_allocator
+  host_hard_limit: false
+  budgets:
+  - Q_tight_from_development
+  - Q_loose_from_development
+calibration:
+  evaluation_batch_candidates:
+  - 32
+  - 8
+  latency_rule: median_all_experiences_two_static_development_runs
+  thr0: 0.05
+  delta: 0.0
+  alpha: 0.1
+  beta: 0.2
+  static_batches:
+  - 16
+  - 64
+  - 256
+  static_replay_capacities:
+  - 200
+  - 2000
+formal_groups:
+- budget: Q_tight
+  methods:
+  - S0
+  - S_star
+  - O00
+  - O10
+  - O01
+  - O11
+  - R11
+  count: 21
+- budget: Q_loose
+  methods:
+  - S0
+  - S_star
+  - O11
+  count: 9
+- scenario: dynamic_reservation
+  methods:
+  - S0
+  - S_star_dynamic
+  - O11
+  count: 9
+- scenario: dynamic_decay
+  methods:
+  - O11_half_life
+  count: 3
+- scenario: preferences
+  methods:
+  - O11_latency
+  - O11_ps
+  count: 6
+- scenario: io_prefetch
+  methods:
+  - static_off
+  - static_on
+  count: 6
+formal_count: 54
+required_before_execution:
+- separate_train_evaluation_resource_evidence
+- feasible_training_pressure_interval
+- frozen_calibration_and_static_selection_manifest
+- independent_executor_state_and_report_grouping
+- phase_specific_failure_and_peak_recording
+- deterministic_interleaved_method_order
+- real_optional_plugin_hooks_and_state_verified
+- host_vs_device_accounting_and_unit_mapping_documented
+- dynamic_reservation_development_manifest
+- natural_io_bottleneck_and_tensor_equivalence
+training_started: false

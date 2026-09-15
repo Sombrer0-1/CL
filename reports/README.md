@@ -4,7 +4,7 @@
 
 ## 第一阶段交付
 
-运行 `/home/admin/miniconda3/envs/orion/bin/python -m orion_repro.study_report` 更新：
+以下为已冻结第一阶段交付。源码已经修补，不应直接运行当前study_report覆写旧阶段结果；复核使用结项标签及 `light24/stage_manifest.json`：
 
 - `light24/coverage.csv`：当前源码与配置身份逐格覆盖，未跑/失败不填零。
 - `light24/attempts.csv`：新study所有可读取的运行尝试，保留失败和中断。

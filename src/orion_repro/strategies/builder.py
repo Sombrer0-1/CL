@@ -301,6 +301,12 @@ def apply_runtime_config(
 ) -> dict[str, Any]:
     from avalanche.training.plugins import ReplayPlugin
 
+    if optimizer_mode not in {None, "default", "advanced"}:
+        raise UnsupportedAdaptationError(f"unknown optimizer_mode={optimizer_mode}")
+    if optimizer_mode == "advanced" and not any(isinstance(p, TogglePlugin) for p in strategy.plugins):
+        raise UnsupportedAdaptationError(
+            "advanced mode requires installed TogglePlugin instances; configure optional_plugins explicitly"
+        )
     base = getattr(strategy, "_orion_base", None)
     n_experiences = max(1, int(getattr(strategy, "_orion_n_experiences", 1)))
     strategy.train_mb_size = int(new_batch)
@@ -313,7 +319,12 @@ def apply_runtime_config(
             target.batch_size_mem = replay_batch
             target.mem_size = int(replay_capacity)
             if target.storage_policy is not None:
-                target.storage_policy.resize(strategy, int(replay_capacity))
+                groups = getattr(target.storage_policy, "buffer_groups", None)
+                if isinstance(groups, dict) and not groups:
+                    # Avalanche's balanced resize cannot divide an empty group set.
+                    target.storage_policy.max_size = int(replay_capacity)
+                else:
+                    target.storage_policy.resize(strategy, int(replay_capacity))
             adapted = True
         if isinstance(inner, LatentReplayPlugin):
             inner.mem_size = int(replay_capacity)
@@ -345,6 +356,7 @@ def apply_runtime_config(
     if isinstance(holder, dict):
         holder["config_version"] = int(holder.get("config_version", 0)) + 1
     state = replay_occupancy(strategy)
+    state["applied_optional_plugins"] = {p.name: bool(p.enabled) for p in strategy.plugins if isinstance(p, TogglePlugin)}
     state["applied_new_batch"] = int(new_batch)
     state["applied_replay_batch"] = int(replay_batch)
     state["applied_replay_capacity"] = int(replay_capacity)

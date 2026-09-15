@@ -6,14 +6,18 @@
 
 **light24_v1 已完成**：96 格全部执行（90 completed + 6 个 128MiB 评价阶段 OOM 资源失败），结果与 C01–C08 判定见 [reports/light24/RESULTS.md](reports/light24/RESULTS.md) 与 [docs/claims_status.md](docs/claims_status.md)。
 
-**第一阶段现已结项，下一阶段尚未立项。** 当前没有待恢复队列；下方命令仅用于复核或经授权重跑。阶段版本标记为 `light24-v1-complete`。
+**第一阶段已结项；第二阶段 pressure_v2 的PLAN/SDD与局部修补已完成，尚未正式训练。** 当前[PLAN.md](PLAN.md)聚焦真实GPU资源约束与控制变量，原计划保存在[docs/plans/light24_v1.md](docs/plans/light24_v1.md)。下方light24命令只供第一阶段复核，结项标签仍为 `light24-v1-complete`。
 
-## 阶段成果入口
+## 当前接手入口
 
 1. [STATUS.md](STATUS.md)：当前状态、已验证内容、下一步。
-2. [PLAN.md](PLAN.md)：有效范围、96次运行及验收标准。
+2. [PLAN.md](PLAN.md)：第二阶段资源实验设计、论文启用场景、开发校准门槛及54格正式比较。
 3. [AGENTS.md](AGENTS.md)：稳定环境与研究约束。
 4. [当前协议](docs/protocols/light24_v1.md)、[验收表](docs/acceptance.csv)、[数据说明](docs/DATA.md)。
+
+第二阶段设计清单位于 `experiments/pressure_v2/design.yaml`（executable=false），准备验收见 [docs/pressure_v2_acceptance.csv](docs/pressure_v2_acceptance.csv)。预算与阈值须先由开发证据冻结；不直接把设计文件传给训练执行器。
+
+架构/实现契约：[docs/SDD_pressure_v2.md](docs/SDD_pressure_v2.md)。新源码包含缺陷修补，第一阶段应使用结项标签及 `reports/light24/stage_manifest.json` 复核；不要用当前身份汇总覆写其冻结覆盖表。
 
 ## 环境
 
@@ -55,6 +59,7 @@ WANDB_MODE=disabled /home/admin/miniconda3/envs/orion/bin/python -m pytest tests
 |---|---|
 | `src/orion_repro/`、`tests/` | 实现与验证 |
 | `configs/light24/`、`experiments/light24/` | 已结束阶段的配置与矩阵 |
+| `experiments/pressure_v2/` | 第二阶段设计清单，尚非可运行矩阵 |
 | `configs/formal/`、`configs/development/` | 既有配置与新生成器输入模板 |
 | `experiments/reference/` | 历史矩阵，仅供追溯，不是待恢复队列 |
 | `docs/` | 方法、对齐依据、协议与验收 |

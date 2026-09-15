@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-15",
+  "status": "design_and_local_fixes_verified_not_full_phase2_ready",
+  "unit_and_cpu_integration_tests": {
+    "passed": 104,
+    "warnings": 9
+  },
+  "gpu_failure_context_check": {
+    "run_id": "pressure_v2_failure_context_check",
+    "status": "cuda_oom",
+    "failure_phase": "evaluation",
+    "n_experiences_trained": 1,
+    "n_experiences_evaluated": 0
+  },
+  "formal_design_cells": 54,
+  "formal_started": false,
+  "not_yet_implemented": [
+    "resource_envelope",
+    "phase_reserved_peaks",
+    "new_executor_and_report",
+    "frozen_calibration",
+    "io_profile"
+  ],
+  "phase1_frozen_manifest": "reports/light24/stage_manifest.json"
+}

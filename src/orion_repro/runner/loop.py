@@ -33,6 +33,7 @@ from orion_repro.memory.probe import ResourceSampler, reset_gpu_peak, snapshot, 
 from orion_repro.provenance import fill_provenance, snapshot_source_tree
 from orion_repro.rng import seed_streams
 from orion_repro.runner.artifacts import RunArtifacts
+from orion_repro.runner.failures import failure_metadata
 from orion_repro.runner.spec import RunSpec, canonical_hash, validate_mapping
 from orion_repro.strategies.builder import (
     apply_runtime_config,
@@ -259,6 +260,8 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
     sampler: ResourceSampler | None = None
     log_handles: list = []
     t_run0 = time.monotonic()
+    failure_phase = "setup"
+    trained_experiences = 0
     try:
         configure_torch(spec)
         device = _device(spec)
@@ -492,9 +495,11 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 }
             )
             t0 = time.monotonic()
+            failure_phase = "training"
             strategy.train(exp, num_workers=int(spec["prefetch"].get("num_workers", 0)))
             synchronize_gpu()
             learning_s = time.monotonic() - t0
+            trained_experiences = k + 1
             learning_peak_rss = sampler.phase_peak_rss
             learning_peak_gpu = sampler.phase_peak_gpu_alloc
             pf = _prefetch_stats(strategy)
@@ -506,6 +511,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             t1 = time.monotonic()
             protocol = eval_protocol(benchmark, class_map)
             domains = make_eval_domains(benchmark, class_map, k)
+            failure_phase = "evaluation"
             rows = evaluate_domains(
                 strategy.model,
                 domains,
@@ -622,6 +628,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
 
             if ctrl_cfg is not None and ctrl_state is not None:
                 t_c0 = time.monotonic()
+                failure_phase = "controller"
                 decision = step_controller(
                     ctrl_cfg,
                     ctrl_state,
@@ -728,6 +735,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 )
                 controller_s = time.monotonic() - t_c0
                 t_reconfigure0 = time.monotonic()
+                failure_phase = "reconfiguration"
                 occ_after = apply_runtime_config(
                     strategy,
                     new_batch=ctrl_state.new_batch,
@@ -752,6 +760,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                         "applied_new_batch": ctrl_state.new_batch,
                         "applied_replay": ctrl_state.replay_capacity,
                         "applied_optimizer_mode": ctrl_state.optimizer_mode,
+                        "applied_optional_plugins": occ_after.get("applied_optional_plugins", {}),
                         "replay_requested": occ_after.get("replay_requested"),
                         "replay_occupancy": occ_after.get("replay_occupancy"),
                         "replay_max_size": occ_after.get("replay_max_size"),
@@ -815,7 +824,9 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
         return summary
     except torch.cuda.OutOfMemoryError:
         status = "cuda_oom"
-        summary = {"run_id": run_id, "status": status, "traceback": traceback.format_exc()}
+        summary = {"run_id": run_id, "status": status, "traceback": traceback.format_exc(),
+                   **failure_metadata(spec, phase=failure_phase, experience=locals().get("k"),
+                                      trained=trained_experiences, evaluated=locals().get("completed_experiences", 0))}
         return summary
     except BudgetExceeded as exc:
         status = "budget_exceeded"

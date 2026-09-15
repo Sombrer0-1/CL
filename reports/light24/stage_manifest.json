@@ -1,0 +1,588 @@
+{
+  "stage": "light24_v1",
+  "closure_tag": "light24-v1-complete",
+  "closure_commit": "a802d1c",
+  "outcomes": {
+    "completed": 90,
+    "cuda_oom": 6
+  },
+  "note": "Frozen phase-one run mapping; subsequent source fixes do not retroactively validate plugin switching or invalidate recorded default-only numeric results. Do not rebuild this snapshot using current-identity matching.",
+  "runs": [
+    {
+      "config": "configs/light24/core/splitcifar100_er_static_s0.yaml",
+      "run_id": "20260914T125046Z_light24_d17343f0",
+      "status": "completed",
+      "reuse_identity": "c5ccb2ff1d5c2f588e390649e6848924d5975ee9b0d86b10362ee2f51ecc4a5f"
+    },
+    {
+      "config": "configs/light24/core/splitcifar100_orion_batch_replay_s0.yaml",
+      "run_id": "20260914T125122Z_light24_02873eff",
+      "status": "completed",
+      "reuse_identity": "ec33494637128e02530d3ae9faf4161b29f09570fc5937fae8ca37c8feb7bae6"
+    },
+    {
+      "config": "configs/light24/core/splitcifar100_orion_formula_s0.yaml",
+      "run_id": "20260914T125154Z_light24_808aaf42",
+      "status": "completed",
+      "reuse_identity": "b33e18466ac6548eb05e903f452485c09ae57d9053b968e4a5de5cbed263f2dc"
+    },
+    {
+      "config": "configs/light24/core/splitcifar100_er_static_s1.yaml",
+      "run_id": "20260914T125226Z_light24_1fe26c54",
+      "status": "completed",
+      "reuse_identity": "be9e9fc8d897270cfb2e4c8433a215c8de1a14a67f40aac8f56f9b8c06727502"
+    },
+    {
+      "config": "configs/light24/core/splitcifar100_orion_batch_replay_s1.yaml",
+      "run_id": "20260914T125257Z_light24_5cb0e538",
+      "status": "completed",
+      "reuse_identity": "830c1d1d2edafbb0eb990f291d98ca6d01f8c13fb6873de3da1a11f05af530a2"
+    },
+    {
+      "config": "configs/light24/core/splitcifar100_orion_formula_s1.yaml",
+      "run_id": "20260914T125330Z_light24_ab5a0c92",
+      "status": "completed",
+      "reuse_identity": "604b4a26757ed61e8b14cb1d58ab360cb1e237cfd459452da214a3c5402036cc"
+    },
+    {
+      "config": "configs/light24/core/splitcifar100_er_static_s2.yaml",
+      "run_id": "20260914T125402Z_light24_d069cc36",
+      "status": "completed",
+      "reuse_identity": "d0db593f87b1cff6c14445b7d27f0d08648d481067b7ff50625885703dad5293"
+    },
+    {
+      "config": "configs/light24/core/splitcifar100_orion_batch_replay_s2.yaml",
+      "run_id": "20260914T125433Z_light24_d726a527",
+      "status": "completed",
+      "reuse_identity": "8f8a8637ef55bcd853c1d53fd2a8df240648c5580dcd02b170062228e22a816d"
+    },
+    {
+      "config": "configs/light24/core/splitcifar100_orion_formula_s2.yaml",
+      "run_id": "20260914T125505Z_light24_e84986cd",
+      "status": "completed",
+      "reuse_identity": "f93bca957d20b67162acb18d7c090645ea75c66a3490b2f10be5c346e98a9087"
+    },
+    {
+      "config": "configs/light24/core/core50_nc_er_static_s0.yaml",
+      "run_id": "20260914T125537Z_light24_88ac689d",
+      "status": "completed",
+      "reuse_identity": "4ffb86358e9dc6e2bb38dbad363624a5e3c70e71b87a551d21b0450bd7206b01"
+    },
+    {
+      "config": "configs/light24/core/core50_nc_orion_batch_replay_s0.yaml",
+      "run_id": "20260914T125822Z_light24_a14b6f70",
+      "status": "completed",
+      "reuse_identity": "7378da4a83cbd7605b4c2b38ef2637bd0ce34bef0c2a5699324aac5711fd755f"
+    },
+    {
+      "config": "configs/light24/core/core50_nc_orion_formula_s0.yaml",
+      "run_id": "20260914T130028Z_light24_888e6178",
+      "status": "completed",
+      "reuse_identity": "f94f23edfeff0f2281a225bc473513739df62f25ba9308a5e8e3e2ce57534eec"
+    },
+    {
+      "config": "configs/light24/core/core50_nc_er_static_s1.yaml",
+      "run_id": "20260914T130225Z_light24_16237393",
+      "status": "completed",
+      "reuse_identity": "4f3becd30e30ea4d224ad103ae1856a85d0bcb225e36aca8a8596dd4aca170a9"
+    },
+    {
+      "config": "configs/light24/core/core50_nc_orion_batch_replay_s1.yaml",
+      "run_id": "20260914T130421Z_light24_69174d85",
+      "status": "completed",
+      "reuse_identity": "b26c449eabd4cab2b9819e7e5f150adf4c8a7f8a9754078d458795b26dcde32d"
+    },
+    {
+      "config": "configs/light24/core/core50_nc_orion_formula_s1.yaml",
+      "run_id": "20260914T130619Z_light24_dc69e4de",
+      "status": "completed",
+      "reuse_identity": "f41c12352df5d1c01d2afd0c1b6a5e2af3756af81c781050ea078a24a9ec8d8e"
+    },
+    {
+      "config": "configs/light24/core/core50_nc_er_static_s2.yaml",
+      "run_id": "20260914T130819Z_light24_1b29c520",
+      "status": "completed",
+      "reuse_identity": "87e6c0e89d8cccbe81c4191d6d38e86d29ca68ee1108cb4df975129c12a0fadd"
+    },
+    {
+      "config": "configs/light24/core/core50_nc_orion_batch_replay_s2.yaml",
+      "run_id": "20260914T131016Z_light24_bf4b7491",
+      "status": "completed",
+      "reuse_identity": "e30f8f3a7e67e857bf9d7eb3aaa291eb6c642353615396b9d3e82879159a2cc3"
+    },
+    {
+      "config": "configs/light24/core/core50_nc_orion_formula_s2.yaml",
+      "run_id": "20260914T131213Z_light24_b17e92f8",
+      "status": "completed",
+      "reuse_identity": "6feae2c4a65c1348956bfcea62be24a46c96a7e720037329abaa2c81cae2a5ec"
+    },
+    {
+      "config": "configs/light24/search/splitcifar100_b16_r200.yaml",
+      "run_id": "20260914T132054Z_light24_53d444f1",
+      "status": "completed",
+      "reuse_identity": "9cdc30c22dc3f9ee6c53cd348976c8625c526d70468234213298656d8ee0b298"
+    },
+    {
+      "config": "configs/light24/search/splitcifar100_b16_r2000.yaml",
+      "run_id": "20260914T132121Z_light24_81cf877b",
+      "status": "completed",
+      "reuse_identity": "43e57139d72707319cb69fe5810776ae82091b83a2b314d10173dc444674d91f"
+    },
+    {
+      "config": "configs/light24/search/splitcifar100_b64_r200.yaml",
+      "run_id": "20260914T132149Z_light24_9d1b174f",
+      "status": "completed",
+      "reuse_identity": "555b691113bd141f3b430a1422bbab845d6f3f2eed9e0f409c7de28489e69ba4"
+    },
+    {
+      "config": "configs/light24/search/splitcifar100_b64_r2000.yaml",
+      "run_id": "20260914T132208Z_light24_6bb0f1c4",
+      "status": "completed",
+      "reuse_identity": "1488a765cc4ef4a7c1e5279869e72ee391a74bde1b5fbd952b317a89685e728f"
+    },
+    {
+      "config": "configs/light24/search/splitcifar100_b256_r200.yaml",
+      "run_id": "20260914T132229Z_light24_b2a39504",
+      "status": "completed",
+      "reuse_identity": "f4cfa5aad1207a6c58b9024efa7a67e7ac2a7aa3c6e95517499c007d7ea809f6"
+    },
+    {
+      "config": "configs/light24/search/splitcifar100_b256_r2000.yaml",
+      "run_id": "20260914T132248Z_light24_c1da224b",
+      "status": "completed",
+      "reuse_identity": "4d3fbc0446ccf949d508a69cde8b3538ce6c29cda8f0578dda34766d8a4a0f95"
+    },
+    {
+      "config": "configs/light24/search/core50_nc_b16_r200.yaml",
+      "run_id": "20260914T132309Z_light24_2eccf6c4",
+      "status": "completed",
+      "reuse_identity": "a192db1b51b438c77b5b108420a55e83007639db4f27ef93f68f21a0658cab39"
+    },
+    {
+      "config": "configs/light24/search/core50_nc_b16_r2000.yaml",
+      "run_id": "20260914T132434Z_light24_af70ddf0",
+      "status": "completed",
+      "reuse_identity": "f0494e3634f486c1d3ad1649bbb2a1501a8f48cfe38db6ad3d9521b5c5f69661"
+    },
+    {
+      "config": "configs/light24/search/core50_nc_b64_r200.yaml",
+      "run_id": "20260914T132557Z_light24_710d8aea",
+      "status": "completed",
+      "reuse_identity": "80328e1c93217e41a7f0fab69d3b547eedb466fca24ec98e9f6cd6f698d95749"
+    },
+    {
+      "config": "configs/light24/search/core50_nc_b64_r2000.yaml",
+      "run_id": "20260914T132658Z_light24_af60ce28",
+      "status": "completed",
+      "reuse_identity": "3cb4e6725045ba1afff9c9f1e896ca470f5672164b4f69a4d5a247bfb0371f4c"
+    },
+    {
+      "config": "configs/light24/search/core50_nc_b256_r200.yaml",
+      "run_id": "20260914T132802Z_light24_ee14f6e5",
+      "status": "completed",
+      "reuse_identity": "5184dc106ce1b6868b7295f35e31bb57993f3accabf66bd03a9e4d4fe5c5b55c"
+    },
+    {
+      "config": "configs/light24/search/core50_nc_b256_r2000.yaml",
+      "run_id": "20260914T132858Z_light24_45ccf9e6",
+      "status": "completed",
+      "reuse_identity": "5d93f1cf74e6def666b6144ad29f5feb1dbeb64ca4d2635509469c29197246df"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_er_static_128mib_s0.yaml",
+      "run_id": "20260914T134158Z_light24_0922592c",
+      "status": "cuda_oom",
+      "reuse_identity": "bda7804664a49d6bb58be59c75cd44427b14e886b9d0e2adbe888ad6031c6ea2"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_orion_formula_128mib_s0.yaml",
+      "run_id": "20260914T134206Z_light24_132b5dc1",
+      "status": "cuda_oom",
+      "reuse_identity": "73ba7f32d6a4e49c8844800c652278c08996517b0360e7f822a7e60155536e4f"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_er_static_256mib_s0.yaml",
+      "run_id": "20260914T134214Z_light24_b11d30ed",
+      "status": "completed",
+      "reuse_identity": "34bb63a91c95c40ae9c151d1ac035f536da8732f3227c2cf923cb108b47bff81"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_orion_formula_256mib_s0.yaml",
+      "run_id": "20260914T134246Z_light24_b81d8cd0",
+      "status": "completed",
+      "reuse_identity": "98df5c88e698626b5c2836a216de20622ddeb6e8e6be89cc35d7e572aa32004f"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_er_static_512mib_s0.yaml",
+      "run_id": "20260914T134319Z_light24_71fe52e2",
+      "status": "completed",
+      "reuse_identity": "08ea755952a6caff81a6812ea46edf8915218ec0b619c20463d780a0690d45e5"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_orion_formula_512mib_s0.yaml",
+      "run_id": "20260914T134350Z_light24_1c4b8eea",
+      "status": "completed",
+      "reuse_identity": "37d0210dde2c089bb2742418fae0b89a276051cdcbd986a9be1a72a3ed64b829"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_er_static_128mib_s1.yaml",
+      "run_id": "20260914T134422Z_light24_bb8d9800",
+      "status": "cuda_oom",
+      "reuse_identity": "a61d1f5775c401bf5f515a3b7b35b272b6ff507d7a56d25e3824f331d93c0d12"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_orion_formula_128mib_s1.yaml",
+      "run_id": "20260914T134430Z_light24_210bfc3e",
+      "status": "cuda_oom",
+      "reuse_identity": "3585cde68948d5e7f8a1c2834ea40deffc1f9a1022d6671451b367a264c1200b"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_er_static_256mib_s1.yaml",
+      "run_id": "20260914T134438Z_light24_e30a2929",
+      "status": "completed",
+      "reuse_identity": "8ba734b26f09e9ff96896bcc177908b4548ed44c19d15469600fe9a77cdaa6f9"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_orion_formula_256mib_s1.yaml",
+      "run_id": "20260914T134510Z_light24_715ec01c",
+      "status": "completed",
+      "reuse_identity": "dad7d763c718c10f19639d4f25d36d3fed447af3863d041c13359bbc5d2c4851"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_er_static_512mib_s1.yaml",
+      "run_id": "20260914T134543Z_light24_eaab1c11",
+      "status": "completed",
+      "reuse_identity": "0c32dad40857bed97f4bcba33417549fdb9076520bf77b9a76eb36c279d3785d"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_orion_formula_512mib_s1.yaml",
+      "run_id": "20260914T134615Z_light24_67a58776",
+      "status": "completed",
+      "reuse_identity": "29a945dad41d7cdc546f0e236c4590b8de5415ad9d351a8ca259222d67ececa0"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_er_static_128mib_s2.yaml",
+      "run_id": "20260914T134647Z_light24_898228e4",
+      "status": "cuda_oom",
+      "reuse_identity": "a5860c2ab03df7bbd9c94981b0f1a2428f3147f83a16751a7d1e912549ccea3c"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_orion_formula_128mib_s2.yaml",
+      "run_id": "20260914T134655Z_light24_ad6fe091",
+      "status": "cuda_oom",
+      "reuse_identity": "380f61ad3bb883cb53cbe2a28284c24403ea1b7a55107f2beeae286d536b8520"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_er_static_256mib_s2.yaml",
+      "run_id": "20260914T134703Z_light24_2100696b",
+      "status": "completed",
+      "reuse_identity": "8ccf5bd79c65646b8793cd464735e6d2691245bb3f3cd7064b20adbd4530499a"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_orion_formula_256mib_s2.yaml",
+      "run_id": "20260914T134734Z_light24_244e9187",
+      "status": "completed",
+      "reuse_identity": "4146f5a631bff1587ac05a3f8466cd540c609e307cc98d5247251af8ecb3b3b3"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_er_static_512mib_s2.yaml",
+      "run_id": "20260914T134807Z_light24_e0477c92",
+      "status": "completed",
+      "reuse_identity": "8ba4f2b0c8058d3e5886e1eca8484f97af10b876f6c7a42966e42b75459cb789"
+    },
+    {
+      "config": "configs/light24/budget/cifar100_orion_formula_512mib_s2.yaml",
+      "run_id": "20260914T134838Z_light24_4f3174c7",
+      "status": "completed",
+      "reuse_identity": "7b17e9b1e702c8208689c7b3ea640a0e88688e54e8ff172ebf332aa694d48431"
+    },
+    {
+      "config": "configs/light24/preference/core50_nc_latency_s0.yaml",
+      "run_id": "20260914T134911Z_light24_58f9456d",
+      "status": "completed",
+      "reuse_identity": "8d710e64f4543bc7fd4959c15a095219d81f87c5e18f125000e088bb9365c3ac"
+    },
+    {
+      "config": "configs/light24/preference/core50_nc_ps_s0.yaml",
+      "run_id": "20260914T135113Z_light24_6381134e",
+      "status": "completed",
+      "reuse_identity": "82832545599677aba1ffe7b2fa190eca23aaa4b3eba85f90b8c22bbbdacfc192"
+    },
+    {
+      "config": "configs/light24/preference/core50_nc_latency_s1.yaml",
+      "run_id": "20260914T135310Z_light24_cff03777",
+      "status": "completed",
+      "reuse_identity": "cbe01f3494d2a4fcdb35558062aa85e23be5e679ee0395a18df64d00b8d48e82"
+    },
+    {
+      "config": "configs/light24/preference/core50_nc_ps_s1.yaml",
+      "run_id": "20260914T135504Z_light24_e393b8f0",
+      "status": "completed",
+      "reuse_identity": "035a0c52918a596c06541f2a86c6518d5f0f9d2b981823bb3de95752585fac99"
+    },
+    {
+      "config": "configs/light24/preference/core50_nc_latency_s2.yaml",
+      "run_id": "20260914T135659Z_light24_ba5385fe",
+      "status": "completed",
+      "reuse_identity": "15d0a714f5e2dc62bda9e6c9c066c3072b471af22aa7310f63c5f55d771254d3"
+    },
+    {
+      "config": "configs/light24/preference/core50_nc_ps_s2.yaml",
+      "run_id": "20260914T135854Z_light24_6d1adec2",
+      "status": "completed",
+      "reuse_identity": "d63dadb3996577da71d01d161c08ce37c135845b69898993e9623a702b94d01a"
+    },
+    {
+      "config": "configs/light24/prefetch/core50_nc_off_s0.yaml",
+      "run_id": "20260914T140049Z_light24_6c6dd7b2",
+      "status": "completed",
+      "reuse_identity": "ca8cbec9ca2911ab70930e4e296bab22962d750a6e729dfb2d01730432489a26"
+    },
+    {
+      "config": "configs/light24/prefetch/core50_nc_on_s0.yaml",
+      "run_id": "20260914T140254Z_light24_79271486",
+      "status": "completed",
+      "reuse_identity": "ede70687c4f875948b111763f04de1a3fe39ee6754d4a511dccb76608d80b56f"
+    },
+    {
+      "config": "configs/light24/prefetch/core50_nc_off_s1.yaml",
+      "run_id": "20260914T140551Z_light24_84cc10e8",
+      "status": "completed",
+      "reuse_identity": "66496eb219238d4caf55c50c5f90332ad33c8af1b65e5d81681174a7307d9965"
+    },
+    {
+      "config": "configs/light24/prefetch/core50_nc_on_s1.yaml",
+      "run_id": "20260914T140803Z_light24_47b296cd",
+      "status": "completed",
+      "reuse_identity": "326733585ff0981c0e4b830f983638ef0076af3e3f45a249ce4b0e5defacd118"
+    },
+    {
+      "config": "configs/light24/prefetch/core50_nc_off_s2.yaml",
+      "run_id": "20260914T141112Z_light24_ecca3b0e",
+      "status": "completed",
+      "reuse_identity": "831ea73914198167eb9ecabb125ddc9146348547eb6f4e60b776061b57c7a216"
+    },
+    {
+      "config": "configs/light24/prefetch/core50_nc_on_s2.yaml",
+      "run_id": "20260914T141330Z_light24_bc97511c",
+      "status": "completed",
+      "reuse_identity": "a4db29c76202421da112e2e3120ef0b830518d48be36944ee2152ec0f2250239"
+    },
+    {
+      "config": "configs/light24/sensitivity/splitcifar100_thr0.025_s0.yaml",
+      "run_id": "20260914T141627Z_light24_4ea23c88",
+      "status": "completed",
+      "reuse_identity": "de29363dbfa9278759b9be1a38d2df49f4c28324a3e7332552ded2afa51f2edb"
+    },
+    {
+      "config": "configs/light24/sensitivity/splitcifar100_thr0.1_s0.yaml",
+      "run_id": "20260914T141659Z_light24_ac5b26f0",
+      "status": "completed",
+      "reuse_identity": "3da18c89d53c5df9e434a7fad3452b39fea381a858200d81991906f51cb2f2da"
+    },
+    {
+      "config": "configs/light24/sensitivity/splitcifar100_thr0.025_s1.yaml",
+      "run_id": "20260914T141734Z_light24_876493db",
+      "status": "completed",
+      "reuse_identity": "b0cf2d9124553ae8e89f4675be1ed427f2be49c401f1c6c833e7f7b147058eed"
+    },
+    {
+      "config": "configs/light24/sensitivity/splitcifar100_thr0.1_s1.yaml",
+      "run_id": "20260914T141806Z_light24_0ff94f8d",
+      "status": "completed",
+      "reuse_identity": "3d46344bc3a46726642dc63896d6be07a9386a931dad35567f5e8899ba62ae2c"
+    },
+    {
+      "config": "configs/light24/sensitivity/splitcifar100_thr0.025_s2.yaml",
+      "run_id": "20260914T141838Z_light24_6832daad",
+      "status": "completed",
+      "reuse_identity": "7ead50f05162ec329545421b43811bfb3966dc1bfbc1164220c73c4b6f7d1a41"
+    },
+    {
+      "config": "configs/light24/sensitivity/splitcifar100_thr0.1_s2.yaml",
+      "run_id": "20260914T141909Z_light24_87bdbc4e",
+      "status": "completed",
+      "reuse_identity": "2388cd304daaa4abad37f474b5b494b0e8954df670a710c7ac7e35f9669ca0f9"
+    },
+    {
+      "config": "configs/light24/sensitivity/core50_nc_thr0.025_s0.yaml",
+      "run_id": "20260914T141940Z_light24_5e55f301",
+      "status": "completed",
+      "reuse_identity": "5f985d33b5972c9b8436e54cc6d1df72b3d6205659e86d58177c026d4f91ad9e"
+    },
+    {
+      "config": "configs/light24/sensitivity/core50_nc_thr0.1_s0.yaml",
+      "run_id": "20260914T142145Z_light24_923a8136",
+      "status": "completed",
+      "reuse_identity": "a06695d8cdd479706689df7e8e6a306eade59d09d435d74bb9da13682c82fb8b"
+    },
+    {
+      "config": "configs/light24/sensitivity/core50_nc_thr0.025_s1.yaml",
+      "run_id": "20260914T142347Z_light24_02660d03",
+      "status": "completed",
+      "reuse_identity": "cef74d163246bc872d363fd4b5ed2870760edcd53c0dece900593116828cb7a3"
+    },
+    {
+      "config": "configs/light24/sensitivity/core50_nc_thr0.1_s1.yaml",
+      "run_id": "20260914T142550Z_light24_eb8395b1",
+      "status": "completed",
+      "reuse_identity": "e59b919999c5d5e0c526521f6714dd85d55090a73278d89bdde33bda81a814a6"
+    },
+    {
+      "config": "configs/light24/sensitivity/core50_nc_thr0.025_s2.yaml",
+      "run_id": "20260914T142745Z_light24_365de998",
+      "status": "completed",
+      "reuse_identity": "9a1aa15b11395b5f631dbbef6aa696a4c9eef47482165b2771d4099be43baba3"
+    },
+    {
+      "config": "configs/light24/sensitivity/core50_nc_thr0.1_s2.yaml",
+      "run_id": "20260914T142938Z_light24_83ef74d5",
+      "status": "completed",
+      "reuse_identity": "31a3b773063e7947f159fa74e571752b0c87e064e4a78251b831e1dc3b6c3f73"
+    },
+    {
+      "config": "configs/light24/endless/endless_ic_er_static_s0.yaml",
+      "run_id": "20260914T143136Z_light24_4cae5bfa",
+      "status": "completed",
+      "reuse_identity": "8733469b1e124d0518a49900c0d98451a37f2673d12556f85bd4a30e95c4959b"
+    },
+    {
+      "config": "configs/light24/endless/endless_ic_orion_formula_s0.yaml",
+      "run_id": "20260914T143208Z_light24_9f9627b7",
+      "status": "completed",
+      "reuse_identity": "ced91d53efeca559ae82059961afb0b2d462ecdf1bf9c44d104bef3881ed4281"
+    },
+    {
+      "config": "configs/light24/endless/endless_il_er_static_s0.yaml",
+      "run_id": "20260914T143231Z_light24_d5e9bc63",
+      "status": "completed",
+      "reuse_identity": "9f26820d044154f3f90a7f06f0043c1037b1ce721eb7a9b55999b2c46951fc30"
+    },
+    {
+      "config": "configs/light24/endless/endless_il_orion_formula_s0.yaml",
+      "run_id": "20260914T143410Z_light24_0d0e3d60",
+      "status": "completed",
+      "reuse_identity": "a0866c4e4fb1d9814b32440113425c252b76d9594a17cbc6004f37413863fc1c"
+    },
+    {
+      "config": "configs/light24/endless/endless_wc_er_static_s0.yaml",
+      "run_id": "20260914T143545Z_light24_b1cc561d",
+      "status": "completed",
+      "reuse_identity": "c69914bfacba1888c10b402e71e3e30c3c44da0e33d1654cdafe107da274ba93"
+    },
+    {
+      "config": "configs/light24/endless/endless_wc_orion_formula_s0.yaml",
+      "run_id": "20260914T143735Z_light24_0aca7541",
+      "status": "completed",
+      "reuse_identity": "7997022596906883a2ae5ea83fcee9949975cd14b7a19cf24bb113f2c918667f"
+    },
+    {
+      "config": "configs/light24/endless/endless_ic_er_static_s1.yaml",
+      "run_id": "20260914T143919Z_light24_52675fd9",
+      "status": "completed",
+      "reuse_identity": "f0c2dbe739afcfdf0d5ea7737738a370a7e7a0bb8efccb4accb29da584a9882f"
+    },
+    {
+      "config": "configs/light24/endless/endless_ic_orion_formula_s1.yaml",
+      "run_id": "20260914T143948Z_light24_207c6986",
+      "status": "completed",
+      "reuse_identity": "7388efea17e1ce5dbc5eabdcd8987ad77273c454f388a6f4a70be64f2fe557cb"
+    },
+    {
+      "config": "configs/light24/endless/endless_il_er_static_s1.yaml",
+      "run_id": "20260914T144013Z_light24_95276843",
+      "status": "completed",
+      "reuse_identity": "4c443bffa73cb92a71ac0cc6185435f1f2160b2ccf81a18d7c25a1cca8b00337"
+    },
+    {
+      "config": "configs/light24/endless/endless_il_orion_formula_s1.yaml",
+      "run_id": "20260914T144148Z_light24_cf6d9622",
+      "status": "completed",
+      "reuse_identity": "af9cd333dfb3e7c27fce2c1ffa344dcc20958762b6460099306c92da8f95c3cd"
+    },
+    {
+      "config": "configs/light24/endless/endless_wc_er_static_s1.yaml",
+      "run_id": "20260914T144323Z_light24_c126a852",
+      "status": "completed",
+      "reuse_identity": "312df8c3858963fa97c9a8428a44058ca84ae5645590379d5e030e0c495a0abc"
+    },
+    {
+      "config": "configs/light24/endless/endless_wc_orion_formula_s1.yaml",
+      "run_id": "20260914T144506Z_light24_700e06b0",
+      "status": "completed",
+      "reuse_identity": "781218e9c4c219069b8939b06067ccd20bab5c6eade1c0bd9070fdec7fb977c0"
+    },
+    {
+      "config": "configs/light24/endless/endless_ic_er_static_s2.yaml",
+      "run_id": "20260914T144647Z_light24_55eeaeb5",
+      "status": "completed",
+      "reuse_identity": "e8130dc90e5a770bbf132990e81e4633d2b0686460af9f34fba9db80371c501c"
+    },
+    {
+      "config": "configs/light24/endless/endless_ic_orion_formula_s2.yaml",
+      "run_id": "20260914T144717Z_light24_76c5a728",
+      "status": "completed",
+      "reuse_identity": "1c6324f18bf4aedd68db3620579cb962582933a7e23603b585e88ea97b6aa2e5"
+    },
+    {
+      "config": "configs/light24/endless/endless_il_er_static_s2.yaml",
+      "run_id": "20260914T144739Z_light24_75b1b87c",
+      "status": "completed",
+      "reuse_identity": "c7781613f6ecdbed5bc71726c8238f62d3860530bdf7a75bfc6a722634a4b7b7"
+    },
+    {
+      "config": "configs/light24/endless/endless_il_orion_formula_s2.yaml",
+      "run_id": "20260914T144916Z_light24_fd0e58c6",
+      "status": "completed",
+      "reuse_identity": "9710f0dc96f6bfc651f233e47c1cf6c12e6f49a76c1e1bd40902904579a4bd31"
+    },
+    {
+      "config": "configs/light24/endless/endless_wc_er_static_s2.yaml",
+      "run_id": "20260914T145050Z_light24_76fd2bf7",
+      "status": "completed",
+      "reuse_identity": "92097989112881d388ebbda35783811f422aa44c4e39b9dbd2adff94ac4c6690"
+    },
+    {
+      "config": "configs/light24/endless/endless_wc_orion_formula_s2.yaml",
+      "run_id": "20260914T145233Z_light24_afbc1169",
+      "status": "completed",
+      "reuse_identity": "f3b328e74eb2ea9de4c5991562fbb160609a4a965362c2003ac3522de592b2aa"
+    },
+    {
+      "config": "configs/light24/selected/splitcifar100_s0.yaml",
+      "run_id": "20260914T133410Z_light24_d81149fb",
+      "status": "completed",
+      "reuse_identity": "4df010fc96a31b828cd6b4f44f40dac96d056ed96c31215dbfbf5f22ff9634ca"
+    },
+    {
+      "config": "configs/light24/selected/splitcifar100_s1.yaml",
+      "run_id": "20260914T133442Z_light24_043611d0",
+      "status": "completed",
+      "reuse_identity": "63d411d006d3dcc3d7b3af0da4d96e48ed241d0bf31459692553f008da436be7"
+    },
+    {
+      "config": "configs/light24/selected/splitcifar100_s2.yaml",
+      "run_id": "20260914T133513Z_light24_ce839283",
+      "status": "completed",
+      "reuse_identity": "ba29cf1148ccee84f71845dad4950bba3536b03d7d57f4d43bddd38c119abe17"
+    },
+    {
+      "config": "configs/light24/selected/core50_nc_s0.yaml",
+      "run_id": "20260914T133544Z_light24_9475fce8",
+      "status": "completed",
+      "reuse_identity": "f4d108cf3d4be47be25ca514e20968dccb9eff3b8750380343a6781f0b8a2298"
+    },
+    {
+      "config": "configs/light24/selected/core50_nc_s1.yaml",
+      "run_id": "20260914T133744Z_light24_1a54471b",
+      "status": "completed",
+      "reuse_identity": "560c78df7c06108039b92ffc455ff4d4ceb46931adaadca7f311b2229a957cc6"
+    },
+    {
+      "config": "configs/light24/selected/core50_nc_s2.yaml",
+      "run_id": "20260914T133942Z_light24_e0a33448",
+      "status": "completed",
+      "reuse_identity": "f24f7b58cd1fccb81f27dc8e34c892d6acb448c1cb90480ff745f1e158d1b9c8"
+    }
+  ]
+}
