@@ -1,5 +1,7 @@
-# Large data and run artifacts
+# Large data and run artifacts (raw/processed live on /mnt/data via symlinks)
+data/raw
 data/raw/
+data/processed
 data/processed/
 runs/
 .pytest_cache/
