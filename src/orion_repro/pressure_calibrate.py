@@ -178,7 +178,10 @@ def collect_row(rel: str, role: str) -> dict[str, Any]:
     wait = [float(m.get("prefetch_wait_s") or 0) for m in metrics]
     supply = None
     if learning:
-        supply = (sum(produce) + sum(wait)) / max(sum(learning), 1e-9)
+        # Producer work overlaps consumer waiting/training when queued.
+        # Serial loading blocks training directly; queued producer work does not.
+        blocked = sum(wait) if spec["prefetch"]["enabled"] else sum(produce)
+        supply = blocked / max(sum(learning), 1e-9)
     trans_ok = True
     if spec.get("resource_envelope", {}).get("enabled"):
         trans_events = []

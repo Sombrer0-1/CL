@@ -34,9 +34,13 @@ class BoundedPrefetcher:
         self.wait_s = 0.0
 
     def start(self, producer: Callable[[], Iterable[PrefetchItem]]) -> None:
+        if self._thread is not None and self._thread.is_alive():
+            raise PrefetchError("refusing to start a prefetcher while a producer thread is still alive")
         self._stop.clear()
         self._error = None
         self.wait_s = 0.0
+        self.dropped_stale = 0
+        self.enqueued = 0
 
         def _enqueue(item: PrefetchItem | None) -> None:
             while not self._stop.is_set():
@@ -74,7 +78,13 @@ class BoundedPrefetcher:
         self._thread = threading.Thread(target=_run, name="orion-prefetcher", daemon=True)
         self._thread.start()
 
-    def get(self, *, config_version: int, timeout: float | None = None) -> PrefetchItem | None:
+    def get(
+        self,
+        *,
+        config_version: int,
+        experience_id: int | None = None,
+        timeout: float | None = None,
+    ) -> PrefetchItem | None:
         import time
 
         while True:
@@ -85,15 +95,20 @@ class BoundedPrefetcher:
                 if self._error is not None:
                     raise PrefetchError("producer failed") from self._error
                 return None
-            if item.config_version != config_version:
+            stale_version = item.config_version != config_version
+            stale_exp = experience_id is not None and item.experience_id != int(experience_id)
+            if stale_version or stale_exp:
                 self.dropped_stale += 1
                 continue
             return item
 
     def close(self) -> None:
         self._stop.set()
-        if self._thread is not None:
-            self._thread.join(timeout=5.0)
+        thread = self._thread
+        if thread is not None:
+            thread.join(timeout=5.0)
+            if thread.is_alive():
+                raise PrefetchError("producer thread still alive after join timeout; refusing silent reuse")
             self._thread = None
         while True:
             try:

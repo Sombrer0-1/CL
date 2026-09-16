@@ -1,0 +1,51 @@
+{
+  "kind": "allocator_phase_diagnostic",
+  "passed": true,
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "torch": "2.11.0+cu128",
+  "quota": {
+    "mechanism": "torch_cuda_allocator_fraction",
+    "limit_bytes": 67108864,
+    "fraction": 0.001993047689115702,
+    "total_device_bytes": 33671479296,
+    "scope": "process PyTorch CUDA allocator; excludes driver/non-Torch allocations"
+  },
+  "previous_phase": {
+    "phase": "training",
+    "experience_index": 0,
+    "start_monotonic_s": 60310.985382456,
+    "end_monotonic_s": 60310.99027828,
+    "duration_s": 0.004895824000413995,
+    "allocated_current_bytes": 2097152,
+    "allocated_peak_bytes": 2097152,
+    "reserved_current_bytes": 20971520,
+    "reserved_peak_bytes": 20971520,
+    "quota_bytes": 67108864,
+    "external_reservation_bytes": 0,
+    "proc_rss_bytes": 689532928,
+    "children_rss_bytes": 0,
+    "proc_pss_bytes": 685895680,
+    "swap_used_bytes": 52166656,
+    "notes": ""
+  },
+  "failed_phase": {
+    "phase": "evaluation",
+    "experience_index": 0,
+    "start_monotonic_s": 60311.005229554,
+    "end_monotonic_s": 60311.006654608,
+    "duration_s": 0.0014250539970817044,
+    "allocated_current_bytes": 6291456,
+    "allocated_peak_bytes": 6291456,
+    "reserved_current_bytes": 20971520,
+    "reserved_peak_bytes": 20971520,
+    "quota_bytes": 67108864,
+    "external_reservation_bytes": 0,
+    "proc_rss_bytes": 690950144,
+    "children_rss_bytes": 0,
+    "proc_pss_bytes": 689799168,
+    "swap_used_bytes": 52166656,
+    "notes": "failed"
+  },
+  "limitations": "Real allocations and OOM; no benchmark training or effectiveness evidence."
+}

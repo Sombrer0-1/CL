@@ -17,6 +17,7 @@ import yaml
 
 from orion_repro.benchmarks.dev_split import resolve_feedback_source
 from orion_repro.benchmarks.factory import build_benchmark, experience_class_map
+from orion_repro.control.ablation import applied_optimizer_mode, initial_optimizer_mode
 from orion_repro.control.controller import ControlState, step_controller
 from orion_repro.runner.checkpoint import apply_checkpoint, load_checkpoint, save_checkpoint
 from orion_repro.control.urge import UrgeConfig, bytes_to_mib, resolve_controller_coefficients
@@ -303,12 +304,16 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
         quota = envelope.install_quota(spec["budget"], device)
         quota_bytes = spec["budget"].get("limit_bytes")
         arts.write_json("budget_enforcement.json", {"quota": quota})
+        interval = float(spec["measurement"]["sample_interval_ms"]) / 1000.0
+        sampler = ResourceSampler(interval_s=max(interval, 0.05), device=device)
         recorder = PhaseRecorder(
             arts,
             quota_bytes=quota_bytes,
             reservation_getter=lambda: envelope.reservation_bytes if envelope is not None else 0,
             device=device,
+            sampler=sampler,
         )
+        sampler.start()
         recorder.begin("setup", None)
         code_snapshot = snapshot_source_tree(ROOT)
         spec = fill_provenance(spec, root=ROOT, snapshot=code_snapshot)
@@ -402,11 +407,10 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
 
         ctrl_cfg = None
         ctrl_state = None
-        initial_mode = (
-            "advanced"
-            if bool(spec["algorithm"].get("optional_start_enabled", False))
-            else "default"
-        )
+        initial_mode = initial_optimizer_mode(spec)
+        for plugin in strategy.plugins:
+            if isinstance(plugin, TogglePlugin):
+                plugin.enabled = initial_mode == "advanced"
         if spec["controller"]["enabled"]:
             c = spec["controller"]
             coef = resolve_controller_coefficients(c)
@@ -434,9 +438,6 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 optimizer_mode=initial_mode,
             )
 
-        interval = float(spec["measurement"]["sample_interval_ms"]) / 1000.0
-        sampler = ResourceSampler(interval_s=max(interval, 0.05), device=device)
-        sampler.start()
         if recorder is not None:
             recorder.end("setup", None)
         _append_registry({"run_id": run_id, "status": "running", "run_dir": str(run_dir)})
@@ -543,11 +544,12 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     optimizer_mode=ctrl_state.optimizer_mode if ctrl_state else initial_mode,
                 )
             exp = benchmark.train_stream[k]
-            sampler.set_phase("learning", k)
             if recorder is not None:
                 recorder.begin("training", k)
             else:
                 reset_gpu_peak(device)
+                if sampler is not None:
+                    sampler.set_phase("training", k)
             snap0 = snapshot("learning_start", k, device=device)
             arts.append_csv(arts._resource, snap0.as_row())
             arts.event(
@@ -592,11 +594,12 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 {"experience": k, **_consumption_digest(strategy)},
             )
 
-            sampler.set_phase("evaluation", k)
             if recorder is not None:
                 recorder.begin("evaluation", k)
             else:
                 reset_gpu_peak(device)
+                if sampler is not None:
+                    sampler.set_phase("evaluation", k)
             t1 = time.monotonic()
             protocol = eval_protocol(benchmark, class_map)
             domains = make_eval_domains(benchmark, class_map, k)
@@ -757,8 +760,19 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                         "applied": None,
                         "reason": "last_experience", "controller_s": time.monotonic() - t_c0,
                         "reconfigure_s": 0.0})
+                    if spec["measurement"].get("checkpoint_policy") == "experience_boundary":
+                        for name in (f"experience_{k}.pt", "latest.pt"):
+                            save_checkpoint(
+                                run_dir / "checkpoints" / name,
+                                strategy=strategy,
+                                ctrl_state=ctrl_state,
+                                completed_experiences=k + 1,
+                                matrix=matrix,
+                                correct_mat=correct_mat,
+                                totals=totals,
+                                extra={"run_id": run_id},
+                            )
                     continue
-                from orion_repro.control.ablation import applied_optimizer_mode
                 effective_mode = applied_optimizer_mode(spec["controller"], decision.suggested_optimizer_mode)
                 predicted_bytes = None
                 if cost_model is not None:
@@ -928,6 +942,8 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             "method_id": spec["method_id"],
             "dataset": spec["dataset"]["name"],
             "n_experiences_run": completed_experiences,
+            "n_experiences_trained": trained_experiences,
+            "n_experiences_evaluated": completed_experiences,
             "eval_protocol": locals().get("protocol"),
             "p_diag": last_metrics.p_diag if last_metrics else None,
             "s_initial": last_metrics.s_initial if last_metrics else None,
@@ -943,8 +959,16 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
     except torch.cuda.OutOfMemoryError as exc:
         status = "cuda_oom"
         request = parse_cuda_oom_request_bytes(str(exc))
-        last = recorder.last if recorder is not None else None
+        last = None
+        measurement_error = None
+        if recorder is not None:
+            try:
+                last = recorder.end_failed(failure_phase, locals().get("k"))
+            except Exception as measurement_exc:
+                # Preserve the original OOM even if its final measurement fails.
+                measurement_error = str(measurement_exc)
         summary = {"run_id": run_id, "status": status, "traceback": traceback.format_exc(),
+                   "failure_measurement_error": measurement_error,
                    **failure_metadata(
                        spec,
                        phase=failure_phase,

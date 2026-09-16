@@ -2,6 +2,10 @@
 import copy
 import hashlib
 import json
+import os
+import platform
+import subprocess
+import sys
 from pathlib import Path
 from orion_repro.provenance import sha256_file, snapshot_source_tree
 
@@ -25,6 +29,63 @@ def _referenced_content_hashes(spec, root):
     return refs
 
 
+def actual_training_packages():
+    versions = {}
+    for name in ("torch", "torchvision"):
+        try:
+            mod = __import__(name)
+            versions[name] = getattr(mod, "__version__", None)
+        except Exception:
+            versions[name] = None
+    try:
+        import avalanche
+        versions["avalanche"] = avalanche.__version__
+    except Exception:
+        versions["avalanche"] = None
+    try:
+        import torch
+        versions["torch_cuda"] = str(torch.version.cuda)
+    except Exception:
+        versions["torch_cuda"] = None
+    return versions
+
+
+def platform_fingerprint():
+    gpus = []
+    try:
+        out = subprocess.check_output(
+            [
+                "nvidia-smi",
+                "--query-gpu=index,name,uuid,memory.total,driver_version",
+                "--format=csv,noheader,nounits",
+            ],
+            text=True,
+            timeout=10,
+        )
+        for line in out.splitlines():
+            parts = [p.strip() for p in line.split(",")]
+            if len(parts) >= 5:
+                gpus.append(
+                    {
+                        "index": parts[0],
+                        "name": parts[1],
+                        "uuid": parts[2],
+                        "memory_mib": parts[3],
+                        "driver_version": parts[4],
+                    }
+                )
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return {
+        "os": platform.platform(),
+        "python": sys.version.split()[0],
+        "machine": platform.machine(),
+        "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
+        "logical_device": "cuda:0",
+        "gpus": gpus,
+    }
+
+
 def reuse_identity(spec, root):
     manifest = spec.get('dataset', {}).get('split_manifest')
     if not manifest:
@@ -39,7 +100,7 @@ def reuse_identity(spec, root):
                 'dataset_manifest_sha256', 'experiment_id', 'claim_ids'):
         clean.pop(key, None)
     # The original v1 identity is retained for configs not opting into v2.
-    if spec.get('reuse_version') in {2, 3}:
+    if spec.get('reuse_version') in {2, 3, 4}:
         files = sorted((root / 'src' / 'orion_repro').rglob('*.py'))
         files += [p for p in (root/'pyproject.toml',) if p.exists()]
         source = [(str(p.relative_to(root)), sha256_file(p)) for p in files]
@@ -54,6 +115,17 @@ def reuse_identity(spec, root):
             'reserved_bytes_by_experience'
         )
         identity['data_supply'] = spec.get('data_supply')
+    if spec.get('reuse_version') == 4:
+        identity['schema'] = 'reuse_v4'
+        identity['referenced_content'] = _referenced_content_hashes(spec, root)
+        identity['resource_schedule'] = (spec.get('resource_envelope') or {}).get(
+            'reserved_bytes_by_experience'
+        )
+        identity['data_supply'] = spec.get('data_supply')
+        identity['environment_lock'] = identity['environment']
+        identity['environment_actual'] = actual_training_packages()
+        identity['platform'] = platform_fingerprint()
+        identity['frozen_hash'] = spec.get('frozen_hash')
     return hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
 
 

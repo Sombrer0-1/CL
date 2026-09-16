@@ -121,8 +121,24 @@ def snapshot(
     )
 
 
+@dataclass
+class SamplerPeaks:
+    rss_peak_bytes: int = 0
+    children_rss_peak_bytes: int = 0
+    gpu_alloc_peak_bytes: int = 0
+    gpu_reserved_peak_bytes: int = 0
+    sample_count: int = 0
+    phase: str = "idle"
+    experience_index: int | None = None
+
+
 class ResourceSampler:
-    """Background RSS/allocator sampler. Peak is an observed lower bound."""
+    """Background RSS/allocator sampler. Peak is an observed lower bound.
+
+    Phase tokens isolate in-flight samples: an old snapshot cannot update a
+    newer phase's peaks. Attribution to the token captured at sample start is
+    allowed.
+    """
 
     def __init__(
         self,
@@ -135,8 +151,11 @@ class ResourceSampler:
         self.device = device
         self._stop = threading.Event()
         self._thread: threading.Thread | None = None
+        self._lock = threading.Lock()
+        self._token = 0
         self._phase = "idle"
         self._exp: int | None = None
+        self._peaks: dict[int, SamplerPeaks] = {}
         self.peak_rss = 0
         self.peak_gpu_alloc = 0
         self.peak_gpu_reserved = 0
@@ -145,12 +164,64 @@ class ResourceSampler:
         self.phase_peak_gpu_reserved = 0
         self.rows: list[ResourceSnapshot] = []
 
-    def set_phase(self, phase: str, experience_index: int | None) -> None:
-        self._phase = phase
-        self._exp = experience_index
-        self.phase_peak_rss = 0
-        self.phase_peak_gpu_alloc = 0
-        self.phase_peak_gpu_reserved = 0
+    def begin_phase(self, phase: str, experience_index: int | None) -> int:
+        with self._lock:
+            self._token += 1
+            token = self._token
+            self._phase = phase
+            self._exp = experience_index
+            self._peaks[token] = SamplerPeaks(phase=phase, experience_index=experience_index)
+            self.phase_peak_rss = 0
+            self.phase_peak_gpu_alloc = 0
+            self.phase_peak_gpu_reserved = 0
+            return token
+
+    def set_phase(self, phase: str, experience_index: int | None) -> int:
+        return self.begin_phase(phase, experience_index)
+
+    def peaks_for(self, token: int | None) -> SamplerPeaks | None:
+        if token is None:
+            return None
+        with self._lock:
+            peaks = self._peaks.get(int(token))
+            if peaks is None:
+                return None
+            return SamplerPeaks(
+                rss_peak_bytes=peaks.rss_peak_bytes,
+                children_rss_peak_bytes=peaks.children_rss_peak_bytes,
+                gpu_alloc_peak_bytes=peaks.gpu_alloc_peak_bytes,
+                gpu_reserved_peak_bytes=peaks.gpu_reserved_peak_bytes,
+                sample_count=peaks.sample_count,
+                phase=peaks.phase,
+                experience_index=peaks.experience_index,
+            )
+
+    def ingest(self, snap: ResourceSnapshot, token: int) -> None:
+        """Attribute a snapshot to the token captured before the sample."""
+        rss = int(snap.proc_rss_bytes or 0)
+        child = int(snap.children_rss_bytes or 0)
+        gpu = int(snap.gpu_alloc_peak_bytes or snap.gpu_alloc_bytes or 0)
+        reserved = int(snap.gpu_reserved_peak_bytes or snap.gpu_reserved_bytes or 0)
+        with self._lock:
+            peaks = self._peaks.get(int(token))
+            if peaks is None:
+                return
+            peaks.rss_peak_bytes = max(peaks.rss_peak_bytes, rss)
+            peaks.children_rss_peak_bytes = max(peaks.children_rss_peak_bytes, child)
+            peaks.sample_count += 1
+            if gpu:
+                peaks.gpu_alloc_peak_bytes = max(peaks.gpu_alloc_peak_bytes, gpu)
+            if reserved:
+                peaks.gpu_reserved_peak_bytes = max(peaks.gpu_reserved_peak_bytes, reserved)
+            self.peak_rss = max(self.peak_rss, rss + child)
+            if gpu:
+                self.peak_gpu_alloc = max(self.peak_gpu_alloc, gpu)
+            if reserved:
+                self.peak_gpu_reserved = max(self.peak_gpu_reserved, reserved)
+            if token == self._token:
+                self.phase_peak_rss = peaks.rss_peak_bytes + peaks.children_rss_peak_bytes
+                self.phase_peak_gpu_alloc = peaks.gpu_alloc_peak_bytes
+                self.phase_peak_gpu_reserved = peaks.gpu_reserved_peak_bytes
 
     def start(self) -> None:
         self._stop.clear()
@@ -165,19 +236,13 @@ class ResourceSampler:
 
     def _run(self) -> None:
         while not self._stop.is_set():
-            snap = snapshot(self._phase, self._exp, notes="interval", device=self.device)
+            with self._lock:
+                token = self._token
+                phase = self._phase
+                exp = self._exp
+            snap = snapshot(phase, exp, notes="interval", device=self.device)
             self.rows.append(snap)
-            rss = snap.proc_rss_bytes + snap.children_rss_bytes
-            self.peak_rss = max(self.peak_rss, rss)
-            self.phase_peak_rss = max(self.phase_peak_rss, rss)
-            gpu = snap.gpu_alloc_peak_bytes or snap.gpu_alloc_bytes or 0
-            if gpu:
-                self.peak_gpu_alloc = max(self.peak_gpu_alloc, int(gpu))
-                self.phase_peak_gpu_alloc = max(self.phase_peak_gpu_alloc, int(gpu))
-            reserved = snap.gpu_reserved_peak_bytes or snap.gpu_reserved_bytes or 0
-            if reserved:
-                self.peak_gpu_reserved = max(self.peak_gpu_reserved, int(reserved))
-                self.phase_peak_gpu_reserved = max(self.phase_peak_gpu_reserved, int(reserved))
+            self.ingest(snap, token)
             if self.writer is not None:
                 import csv
 

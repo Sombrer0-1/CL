@@ -55,6 +55,37 @@ def _nvidia_smi_gpus() -> list[dict[str, str]]:
     return rows
 
 
+def verify_training_step(model, opt, x, y) -> None:
+    """An optimizer call alone is not evidence that parameters actually changed."""
+    import torch
+
+    params = [p for p in model.parameters() if p.requires_grad]
+    before = [p.detach().clone() for p in params]
+    opt.zero_grad(set_to_none=True)
+    loss = torch.nn.functional.cross_entropy(model(x), y)
+    if not torch.isfinite(loss).all():
+        _fail("non-finite training loss")
+    loss.backward()
+    if any(p.grad is None or not torch.isfinite(p.grad).all() for p in params):
+        _fail("parameter grads missing or non-finite after backward")
+    opt.step()
+    if any(not torch.isfinite(p).all() for p in params):
+        _fail("non-finite parameters after optimizer update")
+    if not any(not torch.equal(old, p.detach()) for old, p in zip(before, params)):
+        _fail("optimizer did not change any parameter")
+
+
+def required_avalanche_version() -> str:
+    try:
+        import avalanche
+        from avalanche.training import AGEM, GEM, GSS_greedy, Replay
+    except Exception as exc:
+        _fail(f"required Avalanche import failed: {exc}")
+    print(f"avalanche={avalanche.__version__}")
+    print(f"strategies={Replay.__name__},{GSS_greedy.__name__},{GEM.__name__},{AGEM.__name__}")
+    return avalanche.__version__
+
+
 def main() -> None:
     exe = Path(sys.executable).resolve()
     print(f"python={exe}")
@@ -114,24 +145,11 @@ def main() -> None:
     opt = torch.optim.SGD(model.parameters(), lr=0.01)
     x = torch.randn(4, 3, 32, 32, device=device)
     y = torch.randint(0, 10, (4,), device=device)
-    opt.zero_grad(set_to_none=True)
-    loss = torch.nn.functional.cross_entropy(model(x), y)
-    loss.backward()
-    opt.step()
-    if any(p.grad is None for p in model.parameters() if p.requires_grad):
-        _fail("parameter grads missing after backward")
+    verify_training_step(model, opt, x, y)
+    torch.cuda.synchronize(device)
     print("forward_backward_update=ok")
 
-    avalanche_version = None
-    try:
-        import avalanche
-        from avalanche.training import AGEM, GEM, GSS_greedy, Replay
-
-        avalanche_version = avalanche.__version__
-        print(f"avalanche={avalanche_version}")
-        print(f"strategies={Replay.__name__},{GSS_greedy.__name__},{GEM.__name__},{AGEM.__name__}")
-    except Exception as exc:
-        print(f"avalanche=unavailable ({exc})")
+    avalanche_version = required_avalanche_version()
 
     payload = {
         "executable": str(exe),

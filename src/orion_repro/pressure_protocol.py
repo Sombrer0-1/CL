@@ -58,9 +58,9 @@ def validate_design(design: dict[str, Any]) -> dict[str, Any]:
 
 
 def _require_dev_feedback(row: dict[str, Any]) -> None:
-    source = row.get("feedback_source") or row.get("controller_feedback_source")
-    if source and source != "development_val_seen":
-        raise CalibrationError(f"non-development feedback rejected: {source}")
+    sources = [row[key] for key in ("feedback_source", "controller_feedback_source") if key in row]
+    if not sources or any(source != "development_val_seen" for source in sources):
+        raise CalibrationError(f"missing or non-development feedback rejected: {sources}")
 
 
 def _median(values: list[float]) -> float:
@@ -155,14 +155,7 @@ def calibrate(probe_manifest: dict[str, Any]) -> dict[str, Any]:
     if not rows:
         raise CalibrationError("probe_manifest has no runs")
     for row in rows:
-        if row.get("role") in {
-            "static_search_tight",
-            "static_search_loose",
-            "static_search_dyn",
-            "l_cal",
-            "control_2x2",
-        }:
-            _require_dev_feedback(row)
+        _require_dev_feedback(row)
         if row.get("status") is None:
             raise CalibrationError(f"candidate missing outcome: {row.get('config_id')}")
         if row.get("status") == "implementation_error":

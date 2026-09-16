@@ -34,6 +34,8 @@
 
 ## 4. 独立环境：强制要求
 
+独立 `orion` 环境、禁止 mineru、禁止向 base 装包，这些在换机后仍然有效。下面关于 Conda 路径、RTX 5090 / cu128 / 驱动 570 的条目是 **2026-09-15 该宿主** 的可执行细节；换机后按新驱动与 GPU 重选 PyTorch 轮子并重写路径，不要照抄。
+
 - 新建项目专用 Conda 环境，名称为 `orion`，从所选 Python 版本开始独立安装依赖。
 - **不得复用、克隆或修改 `mineru` 环境，也不得借用其 Python、site-packages 或运行时来执行本项目工作。**
 - 不向 Conda base 安装项目依赖；可使用 base 中的 Conda 工具创建和管理 `orion`。
@@ -44,11 +46,11 @@
 - 区分驱动支持版本、PyTorch CUDA runtime 和 CUDA Toolkit；不能仅凭 `nvidia-smi` 判断 Toolkit 已安装。只有确实需要编译扩展时才补齐对应工具链。
 - 沿用本机已安装的 NVIDIA 驱动（570.133.20）和系统 CUDA 12.8。不得重装或升级显卡驱动，也不得借用 mineru 或其他用户环境中的运行库。普通预编译 PyTorch 训练使用 wheel 自带的 CUDA 12.8 运行库，不要求另装 Toolkit。
 - 若确需编译 CUDA 扩展，先检查可用的 Linux 工具链，再按需安装兼容的 Linux CUDA Toolkit；不能使用会附带安装 Linux 显卡驱动的软件包。
-- 保存环境定义或锁定清单和安装说明，使环境可以重建。当前锁文件对应本机；原 WSL/5060 Ti 锁文件见 `docs/environments/wsl2_rtx5060ti/`。
+- 保存环境定义或锁定清单和安装说明，使环境可以重建。根目录锁文件曾对应 Linux + RTX 5090，归档见 `docs/environments/linux_rtx5090/`；原 WSL/5060 Ti 锁文件见 `docs/environments/wsl2_rtx5060ti/`。换机后重新锁定，不要直接 pip 安装旧宿主清单。
 
 ## 5. 本平台与资源约束
 
-以下是 2026-09-15 在本机检查的结果，只作为起点。实验开始前重新确认可用资源，不能把历史空闲量视为永久保证。
+以下是 2026-09-15 在 **Linux + 双 RTX 5090** 上检查的结果，只作为该宿主快照。项目按 [A26](docs/decisions/A26.md) 换机后，必须在新宿主重测资源并重写可执行路径；不得把下表、5090 配额或冻结协议带到新机。方法约束（§1–3、§6、§8）仍然有效。实验开始前重新确认可用资源，不能把历史空闲量视为永久保证。
 
 | 项目 | 已检查情况（2026-09-15） |
 |---|---|
@@ -60,7 +62,7 @@
 | Conda CLI | `/opt/miniconda3`（base 只读） |
 | `orion` 环境 | `/home/zhuzetong/.conda/envs/orion`（Python 3.11.16，`torch==2.11.0+cu128`） |
 | 工作区 | `/home/zhuzetong/research/CL/Reproduce-Orion` |
-| 数据与 runs | `data/raw`、`data/processed`、`runs` 经符号链接指向 `/mnt/data/zzt/CL/Reproduce-Orion/` |
+| 数据与 runs | `data/raw`、`data/processed` 经符号链接指向 `/mnt/data/zzt/CL/Reproduce-Orion/`；`runs` 为工作区普通目录（2026-09-16 复核） |
 
 原 light24 / pressure_v2 平台（不要与上表混用）：WSL2 + RTX 5060 Ti ~16GB；WSL RAM 上限 6GB；解释器 `/home/admin/miniconda3/envs/orion`；`torch==2.14.0+cu130`。锁文件见 `docs/environments/wsl2_rtx5060ti/`。
 
@@ -85,7 +87,7 @@
 
 ## 7. 实验范围与推进顺序
 
-当前阶段以 PLAN.md / STATUS.md 为准。第一阶段 light24_v1 已结束（标签 light24-v1-complete），结果与验收保留；旧计划见 docs/plans/light24_v1.md。第二阶段 pressure_v2 已在原 WSL2 + RTX 5060 Ti 上中断收尾、未验收；聚焦可行训练受压区、评价内存分离、阈值因素分解与同预算静态对照的设计与部分正式格保留为该阶段记录。本机 Linux + 双 RTX 5090 的 `orion` 环境已建立（A24）；后续另开阶段，不得把未完成格与新机器结果混为同一矩阵。
+当前阶段以 PLAN.md / STATUS.md 为准。第一阶段 light24_v1 已结束（标签 light24-v1-complete），结果与验收保留；旧计划见 docs/plans/light24_v1.md。第二阶段 pressure_v2 已在原 WSL2 + RTX 5060 Ti 上中断收尾、未验收。Linux + 双 RTX 5090 曾建立 `orion` 环境（A24），但其上 effectiveness_v3 校准与正式跑数已按 A26 放弃，不得与新宿主结果混为同一矩阵。换机后按新硬件重建环境，从 G2 重新校准。
 
 先用开发数据校准资源与冻结协议，再进入正式比较。未冻结的预算/阈值不得伪装为可执行配置。原式与平台参数适配明确区分，不以让Orion胜出为选参目标。GPU配额不能表述为host或Jetson共享内存限制。
 

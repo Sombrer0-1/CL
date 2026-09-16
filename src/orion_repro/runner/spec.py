@@ -105,8 +105,12 @@ def validate_mapping(
         errors.append(
             "checkpoint_policy must be none or experience_boundary"
         )
-    if data.get("controller", {}).get("plugin_policy", "adaptive") not in {"adaptive", "fixed_default"}:
-        errors.append("controller.plugin_policy must be adaptive or fixed_default")
+    if data.get("controller", {}).get("plugin_policy", "adaptive") not in {
+        "adaptive",
+        "fixed_default",
+        "fixed_advanced",
+    }:
+        errors.append("controller.plugin_policy must be adaptive, fixed_default, or fixed_advanced")
     _walk_unresolved(data, "spec", errors)
 
     def check_none(obj: Any, prefix: str) -> None:

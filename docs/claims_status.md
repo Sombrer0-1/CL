@@ -1,4 +1,4 @@
-# 当前结论状态
+# 结论状态：第一阶段判定与第二阶段边界
 
 更新：2026-09-14，light24_v1 全部 96 格执行完毕（90 completed + 6 个 128MiB 首个experience训练后的评价阶段OOM 资源失败）。逐项证据见 reports/light24/RESULTS.md；下表为判定摘要。历史 71 次运行仍只作背景，不并入本表判定。
 
@@ -24,3 +24,7 @@
 ### 2026-09-15 pressure_v2 收尾
 
 第二阶段正式 54 格在原 RTX 5060 Ti 上记录 45 格后中断并收尾，未验收，不更新上表 C01–C08。部分正式格的完成与 cuda_oom 保留为该阶段原始记录，见 reports/pressure_v2/CLOSEOUT.md。迁入 Linux + RTX 5090 后不得续跑剩余格并混入同一矩阵。本机环境见 docs/decisions/A24.md，不更新上表 C01–C08。
+
+### 2026-09-16 effectiveness_v3 设计与换机
+
+[PLAN](../PLAN.md)与[SDD](SDD_effectiveness_v3.md)是可迁移的第三阶段契约。RTX 5090 上的开发校准与正式跑数已按 [A26](decisions/A26.md) 放弃，不更新上表有效性判定。换机后重新校准，不得把 5090 数字写入新冻结协议。源码修补见[实现审计](../reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md)。

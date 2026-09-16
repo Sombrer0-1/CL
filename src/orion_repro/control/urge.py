@@ -14,6 +14,16 @@ import numpy as np
 FLOAT = np.float64
 
 
+def _require_finite(name: str, value: float | np.floating | int) -> float:
+    try:
+        parsed = FLOAT(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{name} must be a finite number, got {value!r}") from exc
+    if not np.isfinite(parsed):
+        raise ValueError(f"{name} must be finite, got {value!r}")
+    return float(parsed)
+
+
 def stable_sigmoid(x: float | np.floating) -> float:
     """Numerically stable sigmoid in float64; math-equivalent to 1/(1+exp(-x))."""
     z = FLOAT(x)
@@ -46,6 +56,18 @@ def urge_factors(
     factor_l = σ( kl (L - L_th))
     factor_m = σ(-km (M - M_max))
     """
+    plasticity = _require_finite("plasticity", plasticity)
+    stability = _require_finite("stability", stability)
+    latency_s = _require_finite("latency_s", latency_s)
+    memory_mib = _require_finite("memory_mib", memory_mib)
+    kp = _require_finite("kp", kp)
+    ks = _require_finite("ks", ks)
+    kl = _require_finite("kl", kl)
+    km = _require_finite("km", km)
+    p_th = _require_finite("p_th", p_th)
+    s_th = _require_finite("s_th", s_th)
+    latency_th_s = _require_finite("latency_th_s", latency_th_s)
+    m_max_mib = _require_finite("m_max_mib", m_max_mib)
     fp = stable_sigmoid(-FLOAT(kp) * (FLOAT(plasticity) - FLOAT(p_th)))
     fs = stable_sigmoid(-FLOAT(ks) * (FLOAT(stability) - FLOAT(s_th)))
     fl = stable_sigmoid(FLOAT(kl) * (FLOAT(latency_s) - FLOAT(latency_th_s)))
@@ -64,6 +86,9 @@ def threshold(thr0: float, delta: float, t: int) -> float:
     """Eq. (2): Thr_t = Thr0 * exp(-δ t). t is 0-based completed-experience index."""
     if t < 0:
         raise ValueError(f"t must be >= 0, got {t}")
+    thr0 = _require_finite("thr0", thr0)
+    delta = _require_finite("delta", delta)
+    t = int(t)
     return float(FLOAT(thr0) * np.exp(-FLOAT(delta) * FLOAT(t)))
 
 
@@ -72,6 +97,10 @@ def scale_budget(current: float, coeff: float, urge: float, thr: float) -> float
 
     MB_next = MB * (1 + α (U - Thr)). Does not integer-truncate residual.
     """
+    current = _require_finite("current", current)
+    coeff = _require_finite("coeff", coeff)
+    urge = _require_finite("urge", urge)
+    thr = _require_finite("thr", thr)
     nxt = FLOAT(current) * (FLOAT(1.0) + FLOAT(coeff) * (FLOAT(urge) - FLOAT(thr)))
     if not np.isfinite(nxt) or nxt < 0.0:
         raise ValueError(f"illegal next budget {nxt} from current={current} coeff={coeff}")
@@ -83,6 +112,8 @@ def select_optimizer_mode(urge: float, thr: float, *, equal_uses_gt: bool = True
 
     Default A03: follow Algorithm 1, so equality keeps default plugin.
     """
+    urge = _require_finite("urge", urge)
+    thr = _require_finite("thr", thr)
     if equal_uses_gt:
         return "advanced" if FLOAT(urge) > FLOAT(thr) else "default"
     return "advanced" if FLOAT(urge) >= FLOAT(thr) else "default"

@@ -1,0 +1,55 @@
+kind: experiment_design
+executable: false
+study_id: effectiveness_v3
+design_version: 2026-09-16-v1
+status: designed_not_calibrated
+plan: PLAN.md
+sdd: docs/SDD_effectiveness_v3.md
+formal_protocol_id: effectiveness_v3_paper_feedback_v1
+development_protocol_id: effectiveness_v3_development_v1
+scenario_ids: [S01, S02, S03, S04, S05, S06, S07, S08]
+seeds: [0, 1, 2]
+primary_datasets: [core50_nc, splitcifar100]
+device: cuda:0
+formal_slots: 153
+core_slots: 120
+sensitivity_slots: 24
+conditional_host_slots: 9
+groups:
+  A: {scope: two_datasets_tight, methods: [S0, S_star, O00, O10, O01, O11, R11, F11], slots: 48}
+  B: {scope: two_datasets_loose, methods: [S0, S_star, O11, R11, F11], slots: 30}
+  C: {scope: core50_nc_dynamic, methods: [S0, S_star_dynamic, O11, R11, O11_half_life], slots: 15}
+  D: {scope: core50_nc_tight_preferences, variants: [latency, plasticity_stability, memory], slots: 9}
+  E: {scope: core50_nc_io, methods: [static_off, static_on, orion_off, orion_on], slots: 12, condition: natural_supply_bottleneck}
+  F: {scope: core50_nc_loose_agem, methods: [agem_static, agem_adaptive_ewc], slots: 6}
+  G: {scope: core50_nc_sensitivity, variants: [thr_half, thr_double, alpha_double, beta_double, lr_half, initial_batch32, initial_replay1000, quota_mid], slots: 24}
+  H: {scope: core50_nc_host, methods: [S0, S_star_host, orion_host], slots: 9, condition: verified_host_limit_and_pressure}
+calibration_rules:
+  feedback_source: development_val_seen
+  static_batches: [16, 64, 256]
+  static_replay: [200, 2000]
+  static_selection: max_mean_P_S_then_min_online_s_then_config_id
+  quota_grid_mib: 16
+  reservation_grid_mib: 4
+  latency_rule: median_all_experiences_two_full_loose_S0_runs
+  io_serial_blocked_ratio_min: 0.10
+  no_formal_result_selection: true
+pending_measurements:
+  - per_dataset_eval_batch
+  - per_dataset_tight_loose_quota
+  - per_dataset_latency_target
+  - per_scenario_static_selection
+  - dynamic_reservation_bytes
+  - io_backend_and_equivalence
+  - host_capability_and_replay_accounting
+parameter_sources:
+  paper: 12_Orion_2605.26473v1.pdf
+  alignment: docs/effectiveness_v3_alignment.csv
+  decision: docs/decisions/A25.md
+  transfer: docs/decisions/A26.md
+gates:
+  G0: implemented_reverify_on_new_host
+  G1: implemented_reverify_on_new_host
+  G2: pending_complete_development
+  G3: pending_freeze_and_emission
+  G4: pending_formal_and_report

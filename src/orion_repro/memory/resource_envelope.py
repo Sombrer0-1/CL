@@ -76,13 +76,20 @@ class ResourceEnvelope:
             synchronize_gpu(self.device)
             allocated_before = int(torch.cuda.memory_allocated(self.device))
             reserved_before = int(torch.cuda.memory_reserved(self.device))
-        self._tensor = None
-        self.reservation_bytes = 0
         status = "ok"
         notes = ""
-        actual = 0
+        actual = int(self.reservation_bytes)
+        unchanged = requested == int(self.reservation_bytes) and (
+            requested == 0 or self._tensor is not None
+        )
+        if unchanged:
+            notes = "unchanged"
+        else:
+            self._tensor = None
+            self.reservation_bytes = 0
+            actual = 0
         try:
-            if requested:
+            if requested and not unchanged:
                 tensor = torch.empty(requested, dtype=torch.uint8, device=self.device)
                 tensor.fill_(1)
                 synchronize_gpu(self.device)

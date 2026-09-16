@@ -96,6 +96,15 @@ class PrefetchingDataLoader:
         return len(self.loader)
 
     def __iter__(self) -> Iterator[Any]:
+        self.wait_s = 0.0
+        self.produce_s = 0.0
+        self.batches_consumed = 0
+        self.planned_index_batches = None
+        self.rolling = hashlib.sha256()
+        self.first_x_hash = None
+        self.first_y_hash = None
+        self.last_x_hash = None
+        self.last_y_hash = None
         planned = plan_index_batches(self.loader)
         if planned is not None:
             index_batches, dataset, collate = planned
@@ -130,9 +139,12 @@ class PrefetchingDataLoader:
             inner_iter = iter(self.loader)
             if not self.use_queue:
                 self.plan_mode = "unplanned_serial"
-                for batch in inner_iter:
+                while True:
                     t0 = time.perf_counter()
-                    # already materialized by the inner iterator
+                    try:
+                        batch = next(inner_iter)
+                    except StopIteration:
+                        break
                     self.produce_s += time.perf_counter() - t0
                     self.batches_consumed += 1
                     self._observe(batch)
@@ -141,19 +153,30 @@ class PrefetchingDataLoader:
             self.plan_mode = "unplanned_fallback"
 
             def producer():
-                for step, batch in enumerate(inner_iter):
+                step = 0
+                while True:
+                    t0 = time.perf_counter()
+                    try:
+                        batch = next(inner_iter)
+                    except StopIteration:
+                        break
+                    self.produce_s += time.perf_counter() - t0
                     yield PrefetchItem(
                         experience_id=self.experience_id,
                         config_version=self.config_version,
                         step_id=step,
                         batch=batch,
                     )
+                    step += 1
 
         assert self.prefetcher is not None
         self.prefetcher.start(producer)
         try:
             while True:
-                item = self.prefetcher.get(config_version=self.config_version)
+                item = self.prefetcher.get(
+                    config_version=self.config_version,
+                    experience_id=self.experience_id,
+                )
                 if item is None:
                     break
                 self.batches_consumed += 1
