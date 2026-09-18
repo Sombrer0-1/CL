@@ -15,6 +15,19 @@ class _Probe:
         self.calls.append("after_backward")
 
 
+def test_reset_auxiliary_visits_clears_paused_inner_plugin():
+    from types import SimpleNamespace
+
+    from orion_repro.strategies.capacity import collect_auxiliary_visits, reset_auxiliary_visits
+
+    inner = SimpleNamespace(auxiliary_visits=9)
+    strategy = SimpleNamespace(plugins=[TogglePlugin(inner, enabled=False, name="gem")])
+    assert collect_auxiliary_visits(strategy)["auxiliary_visits"] == 9
+    reset_auxiliary_visits(strategy)
+    assert inner.auxiliary_visits == 0
+    assert collect_auxiliary_visits(strategy)["auxiliary_visits"] == 0
+
+
 def test_toggle_skips_hooks_when_disabled():
     inner = _Probe()
     plugin = TogglePlugin(inner, enabled=False, name="probe")

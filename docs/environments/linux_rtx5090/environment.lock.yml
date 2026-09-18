@@ -1,4 +1,4 @@
-# Current host 2026-09-15: Linux + dual RTX 5090; prefix /home/zhuzetong/.conda/envs/orion; torch 2.11.0+cu128
+# Archived host 2026-09-15: Linux + dual RTX 5090; prefix /home/zhuzetong/.conda/envs/orion; torch 2.11.0+cu128
 # Archived WSL cu130 lock: docs/environments/wsl2_rtx5060ti/environment.lock.yml
 name: orion
 channels:

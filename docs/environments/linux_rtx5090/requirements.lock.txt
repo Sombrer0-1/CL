@@ -1,4 +1,4 @@
-# This host: Linux + dual RTX 5090; interpreter /home/zhuzetong/.conda/envs/orion/bin/python
+# Archived host: Linux + dual RTX 5090; interpreter /home/zhuzetong/.conda/envs/orion/bin/python
 -e /home/zhuzetong/research/CL/Reproduce-Orion
 absl-py==2.5.0
 annotated-types==0.8.0

@@ -79,6 +79,9 @@ def _gpu_fields(device: Any | None = None) -> dict[str, int | None]:
         out["gpu_alloc_peak_bytes"] = int(torch.cuda.max_memory_allocated(d))
         out["gpu_reserved_peak_bytes"] = int(torch.cuda.max_memory_reserved(d))
         try:
+            # On discrete GPUs this is board VRAM. On Jetson unified memory it
+            # tracks the shared pool and can overlap host RSS; do not add the
+            # two or treat gpu_global_* as independent VRAM.
             free, total = torch.cuda.mem_get_info(d)
             out["gpu_global_free_bytes"] = int(free)
             out["gpu_global_used_bytes"] = int(total - free)

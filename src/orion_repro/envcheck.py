@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import platform
 import subprocess
 import sys
 from pathlib import Path
@@ -27,7 +28,28 @@ def _conda_prefix(exe: Path) -> str | None:
     return None
 
 
-def _nvidia_smi_gpus() -> list[dict[str, str]]:
+def cuda_sm_tag(capability: tuple[int, int]) -> str:
+    """PyTorch arch_list tag for a CUDA compute capability, e.g. (11, 0) -> sm_110."""
+    major, minor = capability
+    return f"sm_{major}{minor}"
+
+
+def wheel_covers_device(arch_list: list[str], capability: tuple[int, int]) -> bool:
+    return cuda_sm_tag(capability) in arch_list
+
+
+def parse_smi_memory_mib(raw: str) -> int | None:
+    """nvidia-smi discrete VRAM; Jetson unified memory often reports N/A."""
+    text = raw.strip().strip("[]").replace("MiB", "").strip()
+    if not text or text.upper() in {"N/A", "NOT SUPPORTED"}:
+        return None
+    try:
+        return int(float(text))
+    except ValueError:
+        return None
+
+
+def _nvidia_smi_gpus() -> list[dict[str, str | int | None]]:
     try:
         out = subprocess.check_output(
             [
@@ -41,7 +63,7 @@ def _nvidia_smi_gpus() -> list[dict[str, str]]:
     except (OSError, subprocess.SubprocessError) as exc:
         print(f"ENVCHECK WARN: nvidia-smi unavailable ({exc})", file=sys.stderr)
         return []
-    rows = []
+    rows: list[dict[str, str | int | None]] = []
     for line in out.splitlines():
         parts = [p.strip() for p in line.split(",")]
         if len(parts) >= 3:
@@ -49,7 +71,8 @@ def _nvidia_smi_gpus() -> list[dict[str, str]]:
                 {
                     "name": parts[0],
                     "driver_version": parts[1],
-                    "memory_mib": parts[2],
+                    "memory_mib_raw": parts[2],
+                    "memory_mib": parse_smi_memory_mib(parts[2]),
                 }
             )
     return rows
@@ -113,25 +136,32 @@ def main() -> None:
     gpu_names = [torch.cuda.get_device_name(i) for i in range(n_gpus)]
     name = gpu_names[0]
     cap = torch.cuda.get_device_capability(0)
-    arch = torch.cuda.get_arch_list()
+    arch = list(torch.cuda.get_arch_list())
+    needed = cuda_sm_tag(cap)
     print(f"n_gpus={n_gpus}")
     print(f"gpus={gpu_names}")
     print(f"capability={cap}")
     print(f"arch_list={arch}")
-    if "sm_120" not in arch:
-        _fail(f"wheel missing sm_120 (arch_list={arch}); RTX 50xx needs cu128+")
-    if cap[0] < 12:
-        print("ENVCHECK WARN: capability < 12.0; sm_120 kernels may be missing", file=sys.stderr)
+    print(f"machine={platform.machine()}")
+    if not wheel_covers_device(arch, cap):
+        _fail(
+            f"wheel missing {needed} (arch_list={arch}); "
+            f"device {name} capability {cap[0]}.{cap[1]} needs a matching CUDA wheel"
+        )
+    props = torch.cuda.get_device_properties(0)
+    torch_total_mib = int(props.total_memory / (1024 * 1024))
+    print(f"torch_total_memory_mib={torch_total_mib}")
 
     smi = _nvidia_smi_gpus()
     driver = smi[0]["driver_version"] if smi else None
+    smi_vram_mib = smi[0].get("memory_mib") if smi else None
     if driver:
         print(f"driver={driver}")
-    torch_cuda = str(torch.version.cuda or "")
-    if driver and driver.startswith("570") and torch_cuda.startswith("13"):
-        _fail(
-            f"torch CUDA runtime {torch_cuda} needs a newer driver than {driver}; "
-            "use cu128 wheels on this host, do not install cu130"
+    if smi_vram_mib is None:
+        print(
+            "ENVCHECK WARN: nvidia-smi discrete VRAM unavailable; "
+            "treat torch total_memory as unified-memory accounting, not a discrete VRAM pool",
+            file=sys.stderr,
         )
 
     device = torch.device("cuda:0")
@@ -153,6 +183,8 @@ def main() -> None:
 
     payload = {
         "executable": str(exe),
+        "python": sys.version.split()[0],
+        "machine": platform.machine(),
         "torch": torch.__version__,
         "torchvision": torchvision.__version__,
         "cuda": torch.version.cuda,
@@ -161,7 +193,11 @@ def main() -> None:
         "gpus": gpu_names,
         "driver_version": driver,
         "nvidia_smi": smi,
+        "nvidia_smi_vram_mib": smi_vram_mib,
+        "torch_total_memory_mib": torch_total_mib,
+        "memory_model": "unified" if smi_vram_mib is None else "discrete_vram",
         "capability": list(cap),
+        "required_sm": needed,
         "arch_list": list(arch),
         "avalanche": avalanche_version,
         "conda_prefix": _conda_prefix(exe),

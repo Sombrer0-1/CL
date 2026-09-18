@@ -1,0 +1,21 @@
+{
+  "run_id": "effectiveness_v3_20260917T080746Z_8ee9b49c",
+  "status": "completed",
+  "phase": "development",
+  "method_id": "S0",
+  "dataset": "splitcifar100",
+  "n_experiences_run": 1,
+  "n_experiences_trained": 1,
+  "n_experiences_evaluated": 1,
+  "eval_protocol": "per_experience",
+  "p_diag": 0.521,
+  "s_initial": 1.0,
+  "shared_test_accuracy": null,
+  "online_total_s": 5.315101125990623,
+  "setup_s": 1.3612674670002889,
+  "run_total_s": 6.676376814997639,
+  "timing_schema": "online_loop_v2",
+  "resumed": false,
+  "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/effectiveness_v3_20260917T080746Z_8ee9b49c",
+  "reuse_identity": "690e4d1385581c5ce959a85393bcf3b0d72c20149b4e3566c583fa6b73ad5ba6"
+}

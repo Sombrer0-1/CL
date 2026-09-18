@@ -1,0 +1,71 @@
+{
+  "kind": "third_stage_preparation_admission",
+  "created_utc": "2026-09-17T08:08:55.520118+00:00",
+  "development_entry_ready": true,
+  "formal_ready": false,
+  "tests_passed": 165,
+  "data_verified": true,
+  "real_data_smoke": [
+    {
+      "run_id": "effectiveness_v3_20260917T080710Z_7df2f47c",
+      "config": "configs/effectiveness_v3/thor_readiness/dev/core50_nc.yaml",
+      "status": "completed",
+      "elapsed_s": 35.53355168500275,
+      "source_hash": "28052f212b8b11a7ed64a24bde93d16b2a8b3b06524d17fb85c088304b855cdc",
+      "n_experiences_trained": 1,
+      "n_experiences_evaluated": 1
+    },
+    {
+      "run_id": "effectiveness_v3_20260917T080746Z_8ee9b49c",
+      "config": "configs/effectiveness_v3/thor_readiness/dev/splitcifar100.yaml",
+      "status": "completed",
+      "elapsed_s": 13.72570224798983,
+      "source_hash": "28052f212b8b11a7ed64a24bde93d16b2a8b3b06524d17fb85c088304b855cdc",
+      "n_experiences_trained": 1,
+      "n_experiences_evaluated": 1
+    }
+  ],
+  "identity": {
+    "study_id": "effectiveness_v3",
+    "source_hash": "28052f212b8b11a7ed64a24bde93d16b2a8b3b06524d17fb85c088304b855cdc",
+    "source_n_files": 563,
+    "design_hash": "3d5ab8242a7b790d55c9eecece61ceaaaabeb543e4eada145b21fb878b56a656",
+    "environment_lock_sha256": "2441b78017080812aecdee490a6fa44e18b03635aa5e64f0a8c249caee7424b4",
+    "environment_actual": {
+      "torch": "2.14.0+cu132",
+      "torchvision": "0.29.0+cu132",
+      "avalanche": "0.6.0",
+      "torch_cuda": "13.2"
+    },
+    "platform": {
+      "os": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+      "python": "3.11.16",
+      "machine": "aarch64",
+      "cuda_visible_devices": null,
+      "logical_device": "cuda:0",
+      "gpus": [
+        {
+          "index": "0",
+          "name": "NVIDIA Thor",
+          "uuid": "GPU-a7c66ad2-6dbb-0ab8-c1a2-37ba6dba3600",
+          "memory_mib": null,
+          "memory_mib_raw": "[N/A]",
+          "driver_version": "595.78"
+        }
+      ]
+    },
+    "data_hashes": {
+      "core50_nc_dev": "6641afb44392e990e217fc008cfe50808eac83c626cf24a86812481bb987caaf",
+      "core50_nc_formal": "eebb5a2ad6457024e88e098d3050c7893743c79e53558840089f3e5d1152be1b",
+      "splitcifar100_dev": "1dba7d42e863a4c250894644189a519ac0a01b78ff12bcee2b833b081153ce99",
+      "splitcifar100_formal": "da2fa2bab5fe749a3294bc4ee3ba2d94e75697c73b7a6d5f1c2cbc466ca208a4"
+    },
+    "identity_hash": null
+  },
+  "formal_blockers": "SDD section 10, complete G2 and evidence-backed g2_review.json",
+  "limitations": [
+    "pip check cusparselt sbsa wheel tag warning",
+    "no delegated host cgroup",
+    "historical CLOSEOUT migration note already dirty on entry"
+  ]
+}

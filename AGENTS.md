@@ -34,45 +34,46 @@
 
 ## 4. 独立环境：强制要求
 
-独立 `orion` 环境、禁止 mineru、禁止向 base 装包，这些在换机后仍然有效。下面关于 Conda 路径、RTX 5090 / cu128 / 驱动 570 的条目是 **2026-09-15 该宿主** 的可执行细节；换机后按新驱动与 GPU 重选 PyTorch 轮子并重写路径，不要照抄。
+独立 `orion` 环境、禁止 mineru、禁止向 base 装包，这些在换机后仍然有效。下面是 **2026-09-16 Jetson AGX Thor** 的可执行细节；再换机后按新驱动与 GPU 重选轮子并重写路径。
 
 - 新建项目专用 Conda 环境，名称为 `orion`，从所选 Python 版本开始独立安装依赖。
 - **不得复用、克隆或修改 `mineru` 环境，也不得借用其 Python、site-packages 或运行时来执行本项目工作。**
 - 不向 Conda base 安装项目依赖；可使用 base 中的 Conda 工具创建和管理 `orion`。
 - 如果 `orion` 已存在，先检查是否为本项目建立以及其依赖状态，不得直接删除或覆盖未知环境。
 - 所有项目脚本、测试和实验均应显式使用 `orion`，例如 `conda run -n orion ...`，或使用该环境解释器的绝对路径，避免依赖当前 shell 的隐式状态。
-- 使用共享 Conda CLI（`/opt/miniconda3`，base 只读）。环境与包缓存必须落在用户家目录：`/home/zhuzetong/.conda/envs/orion`、`/home/zhuzetong/.conda/pkgs`。不得写入 `/opt/miniconda3/envs` 或 `/opt/miniconda3/pkgs`。
-- 选择支持 RTX 5090 / sm_120 且匹配本机驱动 CUDA 12.8 的 PyTorch 轮子（当前为 `torch==2.11.0+cu128`）。**不要**安装 `cu130`：驱动 570.133.20 不足以运行 CUDA 13 runtime。在新环境验证导入、GPU 前向、反向和参数更新。之前的硬件检查不能代替新环境验收。
+- Conda CLI：`/home/zhuzetong/miniconda3`。环境：`/home/zhuzetong/miniconda3/envs/orion`。
+- 选择覆盖本机 GPU（Thor / sm_110）且匹配驱动 CUDA 13.2 的官方 aarch64 轮子（当前为 `torch==2.14.0+cu132`）。在新环境验证导入、GPU 前向、反向和参数更新。
 - 区分驱动支持版本、PyTorch CUDA runtime 和 CUDA Toolkit；不能仅凭 `nvidia-smi` 判断 Toolkit 已安装。只有确实需要编译扩展时才补齐对应工具链。
-- 沿用本机已安装的 NVIDIA 驱动（570.133.20）和系统 CUDA 12.8。不得重装或升级显卡驱动，也不得借用 mineru 或其他用户环境中的运行库。普通预编译 PyTorch 训练使用 wheel 自带的 CUDA 12.8 运行库，不要求另装 Toolkit。
-- 若确需编译 CUDA 扩展，先检查可用的 Linux 工具链，再按需安装兼容的 Linux CUDA Toolkit；不能使用会附带安装 Linux 显卡驱动的软件包。
-- 保存环境定义或锁定清单和安装说明，使环境可以重建。根目录锁文件曾对应 Linux + RTX 5090，归档见 `docs/environments/linux_rtx5090/`；原 WSL/5060 Ti 锁文件见 `docs/environments/wsl2_rtx5060ti/`。换机后重新锁定，不要直接 pip 安装旧宿主清单。
+- 沿用本机已安装的 NVIDIA 驱动（595.78）和系统 CUDA 13.2。不得重装或升级显卡驱动，也不得借用 mineru 或其他用户环境中的运行库。普通预编译 PyTorch 训练使用 wheel 自带的 CUDA 13.2 运行库。
+- 若确需编译 CUDA 扩展，先检查可用的 Linux 工具链，再按需使用已有 Toolkit；不能使用会附带安装 Linux 显卡驱动的软件包。
+- 保存环境定义或锁定清单。本机锁见 `docs/environments/jetson_agx_thor/`。历史宿主锁只作身份归档，见同目录 `linux_rtx5090/` 与 `wsl2_rtx5060ti/`。
 
 ## 5. 本平台与资源约束
 
-以下是 2026-09-15 在 **Linux + 双 RTX 5090** 上检查的结果，只作为该宿主快照。项目按 [A26](docs/decisions/A26.md) 换机后，必须在新宿主重测资源并重写可执行路径；不得把下表、5090 配额或冻结协议带到新机。方法约束（§1–3、§6、§8）仍然有效。实验开始前重新确认可用资源，不能把历史空闲量视为永久保证。
+以下是 2026-09-16 在 **Jetson AGX Thor** 上检查的结果，只作为该宿主快照。再换机必须重测资源并重写可执行路径。方法约束（§1–3、§6、§8）仍然有效。实验开始前重新确认可用资源，不能把历史空闲量视为永久保证。
 
-| 项目 | 已检查情况（2026-09-15） |
+| 项目 | 已检查情况（2026-09-16） |
 |---|---|
-| 系统 | Ubuntu 20.04.6 LTS，x86_64，Linux 5.15 |
-| CPU | Intel Core Ultra 9 285K，24 线程 |
-| GPU | 2× RTX 5090，各约 32607 MiB，计算能力 12.0 / sm_120 |
-| 驱动 / CUDA | 570.133.20 / 驱动报 CUDA 12.8；系统 Toolkit 12.8 |
-| RAM / swap | 约 125 GiB / 2 GiB |
-| Conda CLI | `/opt/miniconda3`（base 只读） |
-| `orion` 环境 | `/home/zhuzetong/.conda/envs/orion`（Python 3.11.16，`torch==2.11.0+cu128`） |
-| 工作区 | `/home/zhuzetong/research/CL/Reproduce-Orion` |
-| 数据与 runs | `data/raw`、`data/processed` 经符号链接指向 `/mnt/data/zzt/CL/Reproduce-Orion/`；`runs` 为工作区普通目录（2026-09-16 复核） |
+| 系统 | Ubuntu 24.04.4 LTS，aarch64，Linux 6.8.12-tegra（L4T R39.2.1，JetPack 7.2.1） |
+| CPU | ARM Neoverse-V2 类，14 核 |
+| GPU | 1× NVIDIA Thor，计算能力 11.0 / sm_110；nvidia-smi 独立 VRAM 为 N/A |
+| 驱动 / CUDA | 595.78 / 驱动报 CUDA 13.2；系统 Toolkit 13.2 |
+| RAM / swap | 约 122 GiB 统一内存 / 无 swap |
+| Conda CLI | `/home/zhuzetong/miniconda3` |
+| `orion` 环境 | `/home/zhuzetong/miniconda3/envs/orion`（Python 3.11.16，`torch==2.14.0+cu132`） |
+| 工作区 | `/home/zhuzetong/research/cl/Reproduce-Orion` |
+| 数据与 runs | `data/raw`、`data/processed` 为本机普通目录（尚未下载数据）；`runs` 为工作区普通目录 |
 
-原 light24 / pressure_v2 平台（不要与上表混用）：WSL2 + RTX 5060 Ti ~16GB；WSL RAM 上限 6GB；解释器 `/home/admin/miniconda3/envs/orion`；`torch==2.14.0+cu130`。锁文件见 `docs/environments/wsl2_rtx5060ti/`。
+历史阶段证据（不要与上表混用）：WSL2 + RTX 5060 Ti 见 `docs/environments/wsl2_rtx5060ti/`；Linux + 双 RTX 5090 见 `docs/environments/linux_rtx5090/`。本机环境见 [A27](docs/decisions/A27.md)。
 
-- 系统 RAM 和 GPU 显存分别建模、限制与测量，不能简单相加后视作 Jetson 的共享内存池。双卡时默认使用 `cuda:0`，启用第二块 GPU 须单独记录。
+- 本机是统一内存：host RSS 与 PyTorch allocated/reserved 仍分别记录。nvidia-smi 离散 VRAM 不可用；`torch.cuda` 的 `total_memory` 约为整机 RAM，不能把它当成独立显存池。
+- 默认单卡 `cuda:0`。本机没有第二块 GPU。
 - 优先通过按需加载、有限预取、合理 worker 数、适当存储格式控制内存，不要先把原分辨率全集加载进 RAM 再缩放。
 - 保持方法语义一致；存储表示、缓存和数据加载优化如影响与基线的公平性，应单独记录或做消融。
-- Swap 不作为等效 RAM。记录换页情况，分析其对训练延迟的影响。
+- Swap 不作为等效 RAM。本机当前无 swap；若后来启用，记录换页及其对训练延迟的影响。
 - 默认在本机现有配置下开展实验。调整宿主全局配置、重启机器或终止他人任务前须说明实际需要。
-- 预算实验必须说明预算执行机制、峰值统计范围和 OOM 判定。仅修改控制器中的 `M_max` 不等于施加了硬内存上限。GPU 配额不能表述为 host 或 Jetson 共享内存限制。
-- 不将本机的内存上限实验称为完整 Jetson 硬件模拟；没有目标硬件时，不声称验证了原设备能耗或机器人闭环结果。
+- 预算实验必须说明预算执行机制、峰值统计范围和 OOM 判定。仅修改控制器中的 `M_max` 不等于施加了硬内存上限。allocator 配额不能表述为 cgroup 或板级硬共享内存限制。
+- Thor 属于论文的 on-device / Jetson 设备类，但不是已确认的作者原实验 SKU。不把本机结果写成原设备能耗或机器人闭环验证。
 
 ## 6. 算法与协议的关键检查
 
@@ -87,7 +88,7 @@
 
 ## 7. 实验范围与推进顺序
 
-当前阶段以 PLAN.md / STATUS.md 为准。第一阶段 light24_v1 已结束（标签 light24-v1-complete），结果与验收保留；旧计划见 docs/plans/light24_v1.md。第二阶段 pressure_v2 已在原 WSL2 + RTX 5060 Ti 上中断收尾、未验收。Linux + 双 RTX 5090 曾建立 `orion` 环境（A24），但其上 effectiveness_v3 校准与正式跑数已按 A26 放弃，不得与新宿主结果混为同一矩阵。换机后按新硬件重建环境，从 G2 重新校准。
+当前阶段以 PLAN.md / STATUS.md 为准。第一阶段 light24_v1 已结束（标签 light24-v1-complete），结果与验收保留；旧计划见 docs/plans/light24_v1.md。第二阶段 pressure_v2 已在原 WSL2 + RTX 5060 Ti 上中断收尾、未验收。本机按 [A27](docs/decisions/A27.md) 使用 Thor 环境，从 G2 重新校准；不得把其它宿主的配额/L_cal/frozen_hash 混入同一矩阵。
 
 先用开发数据校准资源与冻结协议，再进入正式比较。未冻结的预算/阈值不得伪装为可执行配置。原式与平台参数适配明确区分，不以让Orion胜出为选参目标。GPU配额不能表述为host或Jetson共享内存限制。
 
@@ -121,4 +122,4 @@
 - [Avalanche 官方仓库](https://github.com/ContinualAI/avalanche)
 - [CORe50 官方数据集](https://vlomonaco.github.io/core50/)
 - [PyTorch Blackwell 支持说明](https://pytorch.org/blog/pytorch-2-7/)
-- [PyTorch 安装（cu128）](https://pytorch.org/get-started/locally/)
+- [PyTorch 安装（cu132，本机 Thor）](https://download.pytorch.org/whl/cu132)

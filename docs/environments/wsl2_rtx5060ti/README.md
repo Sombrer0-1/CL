@@ -1,6 +1,6 @@
 # WSL2 + RTX 5060 Ti 环境锁（归档）
 
-第一、二阶段实验环境。不要在 Linux + RTX 5090 上按此清单安装。
+**不是当前执行环境。** 第一、二阶段实验环境。不要在 Jetson AGX Thor 或其他新宿主上按此清单安装。
 
 - 解释器：`/home/admin/miniconda3/envs/orion/bin/python`
 - `torch==2.14.0+cu130`、`torchvision==0.29.0+cu130`、`avalanche-lib==0.6.0`

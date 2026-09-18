@@ -1,0 +1,6 @@
+{
+  "development_data_ready": true,
+  "formal_ready": false,
+  "formal_reason": "requires host G2 calibration, SDD section 10 review, then freeze",
+  "missing": []
+}

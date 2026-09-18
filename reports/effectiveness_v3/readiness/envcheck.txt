@@ -1,0 +1,18 @@
+ENVCHECK WARN: nvidia-smi discrete VRAM unavailable; treat torch total_memory as unified-memory accounting, not a discrete VRAM pool
+python=/home/zhuzetong/miniconda3/envs/orion/bin/python3.11
+version=3.11.16 (main, Aug 27 2026, 14:37:14) [GCC 14.3.0]
+torch=2.14.0+cu132
+torchvision=0.29.0+cu132
+torch.version.cuda=13.2
+n_gpus=1
+gpus=['NVIDIA Thor']
+capability=(11, 0)
+arch_list=['sm_80', 'sm_90', 'sm_100', 'sm_110', 'sm_120']
+machine=aarch64
+torch_total_memory_mib=125748
+driver=595.78
+forward_backward_update=ok
+avalanche=0.6.0
+strategies=Replay,GSS_greedy,GEM,AGEM
+wrote reports/envcheck.json
+ENVCHECK PASS

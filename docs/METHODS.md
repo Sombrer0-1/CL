@@ -7,7 +7,7 @@
 ### 4.1 环境建立及版本决策
 
 1. 用已有 Conda 管理工具新建 `orion`，起始候选 Python 3.11；这只是兼容性起点，不是作者版本。如源码依赖要求不同，记录后调整。
-2. 从官方发布源选择支持 sm_120、且 CUDA runtime 不超过本机驱动的 PyTorch wheel 与匹配 torchvision。本机驱动为 570 / CUDA 12.8，使用 `cu128` 轮子；`cu130` 不能装。CUDA 运行库由 `orion` 环境的 PyTorch wheel 提供，不改系统驱动。
+2. 从官方发布源选择覆盖本机 GPU 计算能力、且 CUDA runtime 不超过本机驱动的 PyTorch wheel 与匹配 torchvision。Jetson AGX Thor（驱动 595 / CUDA 13.2 / sm_110）使用 `cu132` aarch64 轮子（A27）。归档的 5090 宿主用 `cu128`（A24）；不要混装。CUDA 运行库由 `orion` 环境的 PyTorch wheel 提供，不改系统驱动。
 3. 安装并锁定 Avalanche，以及实际所需的求解器、指标、数据和绘图库。不盲目升级全部包，也不复制 `mineru`。
 4. 先做 T01，再做 Avalanche ER/GEM/AGEM/GSS 的微型训练；如兼容性失败，优先小补丁或切换有证据的相邻版本，记录失败组合。不要仅以 import 成功认定可用。
 5. 保存 `environment.yml`、精确依赖清单、Avalanche 版本、安装命令和环境检查结果。安装期间不修改宿主 NVIDIA 驱动或全局 CUDA Toolkit。

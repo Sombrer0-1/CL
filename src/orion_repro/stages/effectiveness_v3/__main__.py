@@ -77,7 +77,7 @@ def cmd_develop(args) -> int:
             print(
                 json.dumps(
                     {
-                        "done": True,
+                        "done": batch.blocked_reason is None,
                         "blocked_reason": batch.blocked_reason,
                         "n_runs": len(evidence.get("runs") or []),
                         "waves": waves,
@@ -85,7 +85,7 @@ def cmd_develop(args) -> int:
                     indent=2,
                 )
             )
-            return 0
+            return 2 if batch.blocked_reason else 0
         emit_probe_configs(batch, context)
         matrix = load_yaml(context.revision_dir / "dev_batch.yaml")
         result = execute_matrix(matrix, context, frozen=None)
@@ -107,6 +107,8 @@ def cmd_develop(args) -> int:
 
 def cmd_freeze(args) -> int:
     context = _context(args)
+    from orion_repro.stages.effectiveness_v3.readiness import require_freeze_review
+    require_freeze_review(context)
     design = load_design(context.design_path)
     manifest_path = context.revision_dir / "probe_manifest.json"
     if not manifest_path.exists():
@@ -198,8 +200,9 @@ def build_parser() -> argparse.ArgumentParser:
     inspect = sub.add_parser("inspect", parents=[common], help="read-only design and isolation check; no writes")
     inspect.set_defaults(func=cmd_inspect)
     develop = sub.add_parser("develop", parents=[common], help="plan or execute development probes")
-    develop.add_argument("--plan-only", action="store_true")
-    develop.add_argument("--execute", action="store_true")
+    mode = develop.add_mutually_exclusive_group()
+    mode.add_argument("--plan-only", action="store_true")
+    mode.add_argument("--execute", action="store_true")
     develop.add_argument("--max-waves", type=int, default=40)
     develop.set_defaults(func=cmd_develop)
     freeze_p = sub.add_parser("freeze", parents=[common], help="freeze protocol from development evidence")

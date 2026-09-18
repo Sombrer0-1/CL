@@ -1,13 +1,13 @@
 gate,test_id,requirement,status,evidence_or_next
-G0,V01,stage isolation and identity,implemented_reverify_on_new_host,CLI and StageContext in src/orion_repro/stages/effectiveness_v3; tests/test_effectiveness_v3_g0.py; rerun after transfer
-G1,V02,formula units metrics and rounding,implemented_reverify_on_new_host,urge nonfinite rejected; sigmoid direction; tests/test_effectiveness_v3_g1.py
-G1,V03,replay plugin lifecycle fixed_advanced and visits,implemented_reverify_on_new_host,schema+F11 policy; pause-compute-keep-state; rerun G1 tests
-G1,V04,evaluation and single-pass timing,implemented_reverify_on_new_host,BN/RNG restore; B06 checkpoint patch in tree
-G1,V05,phase resources and failures,implemented_reverify_on_new_host,B01 patch in tree; 5090 GPU OOM diagnostic not transferred
-G1,V06,prefetch equivalence and lifecycle,implemented_reverify_on_new_host,B02/B05 timing patches; 5090 wait_ratio not transferred
-G1,V07,calibration freeze and pairing integrity,implemented_reverify_on_new_host,freeze/emit guards in tree; no portable frozen_protocol after A26
-G1,V08,process state failure and restart,implemented_reverify_on_new_host,executor PID signature; formal restart still unexercised
-G2,V09,real complete development and S01-S08 coverage,pending,recalibrate on the next host; do not reuse 5090 Q/L/S*
-G2,V10,host enforcement and replay accounting,pending,probe delegated cgroup on the next host
+G0,V01,stage isolation and identity,partial_verified_on_thor,reports/effectiveness_v3/readiness/tests.txt; real GPU diagnostic; remaining integration obligations in SDD section 10
+G1,V02,formula units metrics and rounding,partial_verified_on_thor,reports/effectiveness_v3/readiness/tests.txt; real GPU diagnostic; remaining integration obligations in SDD section 10
+G1,V03,replay plugin lifecycle fixed_advanced and visits,partial_verified_on_thor,reports/effectiveness_v3/readiness/tests.txt; real GPU diagnostic; remaining integration obligations in SDD section 10
+G1,V04,evaluation and single-pass timing,partial_verified_on_thor,reports/effectiveness_v3/readiness/tests.txt; real GPU diagnostic; remaining integration obligations in SDD section 10
+G1,V05,phase resources and failures,partial_verified_on_thor,reports/effectiveness_v3/readiness/tests.txt; real GPU diagnostic; remaining integration obligations in SDD section 10
+G1,V06,prefetch equivalence and lifecycle,partial_verified_on_thor,reports/effectiveness_v3/readiness/tests.txt; real GPU diagnostic; remaining integration obligations in SDD section 10
+G1,V07,calibration freeze and pairing integrity,partial_verified_on_thor,reports/effectiveness_v3/readiness/tests.txt; real GPU diagnostic; remaining integration obligations in SDD section 10
+G1,V08,process state failure and restart,partial_verified_on_thor,reports/effectiveness_v3/readiness/tests.txt; real GPU diagnostic; remaining integration obligations in SDD section 10
+G2,V09,real complete development and S01-S08 coverage,pending,Thor complete development pending; first-wave configs emitted; no portable Q/L/S*
+G2,V10,host enforcement and replay accounting,host_unavailable_replay_pending,thor_r1/probe_manifest.json: no delegated cgroup root; replay accounting still required
 G3,V11,immutable freeze and matrix emission,pending,freeze only after new-host G2
 G4,V12,formal results and claims,pending,no 5090 formal matrix retained

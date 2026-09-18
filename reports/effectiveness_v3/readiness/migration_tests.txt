@@ -1,0 +1,15 @@
+............................                                             [100%]
+=============================== warnings summary ===============================
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+  /home/zhuzetong/miniconda3/envs/orion/lib/python3.11/site-packages/avalanche/training/plugins/evaluation.py:94: UserWarning: No loggers specified, metrics will not be logged
+    warnings.warn("No loggers specified, metrics will not be logged")
+
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+  /home/zhuzetong/miniconda3/envs/orion/lib/python3.11/site-packages/avalanche/training/plugins/replay.py:123: DeprecationWarning: Call to deprecated function update (removal in version 0.7: switch to pre_adapt and post_adapt)
+    self.storage_policy.update(strategy, **kwargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+28 passed, 5 warnings in 5.81s

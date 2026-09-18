@@ -1,6 +1,6 @@
 # 仓库地图与接手说明
 
-2026-09-16 整理。当前状态以 [STATUS](../STATUS.md) 为准，下一阶段任务以 [PLAN](../PLAN.md) 为准；本文描述代码和材料之间的关系。新阶段架构见 [SDD_effectiveness_v3.md](SDD_effectiveness_v3.md)。5090 执行证据已按 [A26](decisions/A26.md) 放弃；实际源码修补见[实现审计](../reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md)。
+2026-09-16 整理。当前状态以 [STATUS](../STATUS.md) 为准，下一阶段任务以 [PLAN](../PLAN.md) 为准；本文描述代码和材料之间的关系。新阶段架构见 [SDD_effectiveness_v3.md](SDD_effectiveness_v3.md)。当前执行宿主是 Jetson AGX Thor（[A27](decisions/A27.md)）。源码修补见[实现审计](../reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md)。
 
 ## 实现链路
 
@@ -42,7 +42,7 @@
 | 材料 | 定位 |
 |---|---|
 | 根目录 README / STATUS / PLAN | 导航 / 当前事实 / 下一阶段准备，避免重复展开历史执行命令 |
-| `docs/SDD_effectiveness_v3.md`、`docs/HANDOFF.md`、`experiments/effectiveness_v3/design.yaml` | 第三阶段架构/接手/不可执行设计；冻结协议在执行宿主生成，不随 5090 跑数迁移 |
+| `docs/SDD_effectiveness_v3.md`、`docs/HANDOFF.md`、`experiments/effectiveness_v3/design.yaml` | 第三阶段架构/接手/不可执行设计；冻结协议在本机生成 |
 | `AGENTS.md` | 稳定约束，用户后续明确指示优先 |
 | `docs/METHODS.md`、`alignment.csv`、`decisions/` | 定义、来源及假设；旧 E 编号是历史技术背景，不代表全部实现或待执行任务 |
 | `docs/plans/`、`docs/protocols/light24_v1.md`、`docs/SDD_pressure_v2.md` | 阶段计划与契约；不当作本机冻结协议 |
@@ -50,9 +50,9 @@
 | `configs/pressure_v2/`、`experiments/pressure_v2/`、`reports/pressure_v2/` | 第二阶段原平台开发/冻结/中断记录，未验收 |
 | `configs/formal/`、`configs/oracle/`、`experiments/reference/`、`reports/` 中旧表 | 更早探索结果和模板，不能混入阶段均值 |
 | `data/manifests/` | 已纳入 Git 的数据版本和划分证据，旧绝对路径保留为原始溯源 |
-| `data/raw`、`data/processed` | 符号链接指向 /mnt/data，未纳入 Git |
+| `data/raw`、`data/processed` | 本机普通目录；未纳入 Git |
 | `runs/` | 工作区普通目录，原始日志/配置/矩阵/失败等；未纳入 Git |
-| `requirements.lock.txt`、`environment.lock.yml` | 曾为 5090 宿主锁，归档于 docs/environments/linux_rtx5090/；WSL 锁在 docs/environments/wsl2_rtx5060ti/ |
+| `requirements.lock.txt`、`environment.lock.yml` | 本机 Thor 锁，归档于 docs/environments/jetson_agx_thor/；历史宿主见同目录其它子目录 |
 | PDF、论文 Markdown、`images/` | 原文及辅助材料；公式与图表以 PDF 为准 |
 
 ## 已知限制
@@ -60,6 +60,14 @@
 - 第一阶段完整配置未安装可切换插件，且核心轨迹未进 advanced；保留 P/S，不将旧字符串模式检查算作真实插件验收。
 - 第二阶段有真实插件路径和资源失败记录，但未完成正式比较；迁移后需重新验证开发可行区。
 - 暂停插件计算不释放 GEM/EWC 状态；这可能限制内存自适应，必须作为实测因素。
-- 更快 GPU 会改变以秒计的延迟反馈，旧 L_cal 和预算不能直接移植；不能为让 Orion 胜出而选参。
-- 5090 上的 host 探测与完整端到端校准已按 A26 放弃；换机后重新探测。GPU allocator 限额仅约束对应分配器范围。
-- 工作区 runs 与数据盘副本没有自动同步。新运行默认写工作区 runs。本机 effectiveness_v3 跑数已删除。
+- 更快 GPU 会改变以秒计的延迟反馈，其它宿主的 L_cal 和预算不能直接移植；不能为让 Orion 胜出而选参。
+- GPU allocator 限额仅约束对应分配器范围，不是 cgroup 或板级硬限额。host 探测与端到端校准须在本机重做。
+- 新运行默认写工作区 `runs/`。历史 effectiveness_v3 跑数已删除。
+
+## Thor 第三阶段新增入口（2026-09-17）
+
+- `stages/effectiveness_v3/prepare.py`：恢复本机公开数据、重建划分并核对历史manifest，输出当前宿主数据证据。
+- `stages/effectiveness_v3/readiness.py`：只读数据准入检查；提供CLI冻结前的G2审查校验。
+- `tests/test_v3_migration.py`：因素阈值、DYN对照、候选完整性、冻结审查、源码身份自引用回归。
+- `reports/effectiveness_v3/readiness/`：本次准备验收；不进入正式统计。
+- `docs/decisions/A28.md`、SDD §10：本轮修补及剩余G2/G3实施条件。

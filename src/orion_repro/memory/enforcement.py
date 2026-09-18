@@ -1,4 +1,10 @@
-"""Process-local PyTorch allocator quota; excludes driver and non-Torch allocations."""
+"""Process-local PyTorch allocator quota; excludes driver and non-Torch allocations.
+
+On Jetson unified-memory hosts, ``get_device_properties().total_memory`` is the
+shared pool (nvidia-smi discrete VRAM is N/A). The fraction still only binds
+this process's PyTorch CUDA allocator; it is not a cgroup or board-level hard
+limit, and must not be described as one.
+"""
 
 def install_device_quota(budget, device):
     if budget.get('enforcement') != 'device_allocator_enforced':

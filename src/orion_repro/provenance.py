@@ -21,7 +21,7 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def snapshot_source_tree(root: Path) -> dict[str, Any]:
+def snapshot_source_tree(root: Path, *, exclude_generated_v3: bool = False) -> dict[str, Any]:
     """Hash tracked implementation files. Does not require a git commit."""
     patterns = [
         root / "src" / "orion_repro",
@@ -42,6 +42,10 @@ def snapshot_source_tree(root: Path) -> dict[str, Any]:
             files.extend(p for p in base.rglob("*") if p.is_file() and p.suffix in {".py", ".yaml", ".yml", ".json", ".md"})
         elif base.is_file():
             files.append(base)
+    if exclude_generated_v3:
+        generated = (root / "configs/effectiveness_v3", root / "experiments/effectiveness_v3/revisions")
+        files = [p for p in files if not any(p.is_relative_to(base) for base in generated)]
+        extra.append(root / "docs/SDD_effectiveness_v3.md")
     files.extend(p for p in extra if p.is_file())
     rels = sorted({p.resolve() for p in files}, key=lambda p: str(p.relative_to(root)))
     listing = []

@@ -1,32 +1,38 @@
-# 当前状态：换机整理，effectiveness_v3 只保留计划与实现
+# 当前状态：Thor 第三阶段准备准入
 
-更新：2026-09-16。[A26](docs/decisions/A26.md)：放弃本机 Linux + 双 RTX 5090 上的第三阶段校准、冻结和正式跑数。Git 基线仍为 `ecc004c`；工作树含可迁移的第三阶段入口，尚未提交。
+更新：2026-09-17。执行设备为 Jetson AGX Thor，独立环境 `/home/zhuzetong/miniconda3/envs/orion`。接手时已有的迁移修改已保留；本轮没有提交或覆盖历史实验。决定见[A27](docs/decisions/A27.md)、[A28](docs/decisions/A28.md)。
 
-## 接手入口
+## 已完成
 
-先读 `AGENTS.md`、`PLAN.md`、[SDD](docs/SDD_effectiveness_v3.md)、[HANDOFF](docs/HANDOFF.md)。独立入口：`python -m orion_repro.stages.effectiveness_v3`。禁止 pressure_* 续跑旧矩阵，禁止把任何 5090 配额/L_cal/frozen_hash 当作可执行协议。
+- 重新梳理训练、评价、控制、资源、预取、开发、冻结与报告链路，更新[PLAN](PLAN.md)、[SDD](docs/SDD_effectiveness_v3.md)、[仓库地图](docs/REPO_MAP.md)和[交接命令](docs/HANDOFF.md)。
+- 修复开发O00/O10阈值覆盖、L中位数、DYN静态搜索未施加预留、缺失候选误入校准、正式运行缺冻结对象、源码哈希包含自身产物等问题；新增迁移回归。
+- 本机全套测试 **165 passed**；GPU参数更新和真实allocator OOM失败峰值诊断通过。证据在[readiness](reports/effectiveness_v3/readiness/)。
+- CIFAR-100和CORe50 mini已下载并校验；NC9开发划分已恢复，历史manifest未覆盖；数据准入检查通过。
+- `thor_r1`首个开发波次已生成（3个NC评价batch诊断），尚未运行完整开发校准。`thor_readiness`单独存放真实数据首experience验收，不进入校准或正式均值。
+- 两套真实数据首experience训练/评价均completed（35.53s / 13.73s），源码身份一致；见[准备验收](reports/restart_readiness.md)。
+- G2审查缺失时freeze拒绝执行；没有正式冻结预算/L_cal/S*，没有正式矩阵。
 
-换机后先重建 `orion` 环境并重跑 envcheck / pytest，再从 **G2 开发校准** 开始。解释器用 `ORION_PY` 或 `~/.conda/envs/orion/bin/python`，不要写死旧宿主路径。
+## 准入边界与下一步
 
-## 已完成（可迁移）
+可以进入第三阶段 **G1真实数据验收 / G2开发工作**。正式G3/G4尚未准入；先完成[SDD §10](docs/SDD_effectiveness_v3.md#10-thor-准入实施清单2026-09-17)中的原始证据闭包、完整开发候选与场景判定、配对统计报告，再审查冻结。不能把当前报告框架当成完整有效性分析器。
 
-- 第三阶段研究设计：S01–S08、153 名额、校准规则、报告口径。见 PLAN / SDD / `experiments/effectiveness_v3/design.yaml`。
-- G0/G1 **代码与测试**：独立 stage、runtime 修补（B01–B06）、隔离检查。换机后必须重验，不把本机 pytest/GPU 诊断当正式证据。
+1. 读取本机准备验收报告，使用 `thor_r1`逐波开展完整真实开发流。
+2. 保存失败和未建立场景；统一内存上的allocator限额不代表板级共享内存限制。
+3. 完成完整开发与SDD实现清单，生成有证据的`g2_review.json`后freeze→emit→run→report。
+4. A–H共153设计名额、主要比较3 seeds；按PLAN §9逐项裁决C01–C08，不预设Orion有效。
 
-## 已放弃（不迁移）
+## 已知限制
 
-- 本机 G2 开发校准、G3 冻结协议、G4 未完成正式矩阵，以及对应 configs/revisions/runs。
-- `configs/effectiveness_v3/<revision>/`、`experiments/effectiveness_v3/revisions/`、`runs/effectiveness_v3*`、本机写入 registry 的 v3 行。
+- `pip check`报告cuSPARSELt 0.8.1的SBSA wheel标签不匹配；当前dense FP32训练路径已验证，未篡改元数据或更换驱动。
+- host专属cgroup未配置且当前探测不可用，H组尚不能执行；不以RLIMIT或allocator冒充共享RAM硬限额。
+- `inspect`仍报告接手前已有的`reports/pressure_v2/CLOSEOUT.md`迁移说明改动；不删除保护检查换取绿灯。
+- raw/processed/runs不纳入Git；迁移需另备份。当前工作树含原有迁移修改和本轮修改，未做混合提交。
 
-## 正在进行
+## 历史边界
 
-- 仓库已按换机整理。下一步在**新宿主**上：环境 → G0/G1 重验 → G2 校准 → G3 冻结 → G4 正式矩阵。
-- 允许按新硬件对平台参数做小幅适配并记入新决策；不以让 Orion 胜出为选参目标。约 24 小时仅估算，不杀正常训练。
-
-## 历史阶段（保持冻结）
-
-| 阶段 | 状态 | 证据 |
-|---|---|---|
-| light24_v1，WSL2 / RTX5060 Ti | 96格：90完成+6评价OOM；未证明Orion有效性 | [结果](reports/light24/RESULTS.md) |
-| pressure_v2，同原平台 | 正式54格中断未验收 | [收尾](reports/pressure_v2/CLOSEOUT.md) |
-| effectiveness_v3 本机 5090 执行 | 按 A26 放弃，不验收、不混入新机 | 无保留跑数 |
+| 阶段 | 状态 |
+|---|---|
+| light24_v1 / RTX5060 Ti | 96格，90完成+6评价OOM；未证明Orion有效性，原证据保留 |
+| pressure_v2 / RTX5060 Ti | 中断收尾、未验收，不跨机续跑 |
+| effectiveness_v3 / RTX5090 | A26放弃校准与跑数，不混入Thor |
+| effectiveness_v3 / Thor | 准备与开发入口已具备；完整开发/正式结果尚无结论 |

@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 import csv
 import json
+from statistics import median
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -101,16 +102,6 @@ def completed_roles(manifest: dict[str, Any]) -> set[tuple[str, str]]:
     return out
 
 
-def _has_role(manifest: dict[str, Any], role: str, dataset: str | None = None) -> bool:
-    for row in manifest.get("runs") or []:
-        if row.get("role") != role:
-            continue
-        if dataset is not None and row.get("dataset") != dataset:
-            continue
-        return True
-    return False
-
-
 def _role_complete(manifest: dict[str, Any], role: str, dataset: str, n: int) -> bool:
     rows = [
         r
@@ -118,6 +109,17 @@ def _role_complete(manifest: dict[str, Any], role: str, dataset: str, n: int) ->
         if r.get("role") == role and r.get("dataset") == dataset and r.get("status") not in {None, "not_run", "interrupted"}
     ]
     return len(rows) >= n
+
+
+def _l_cal_s(evidence: dict[str, Any], dataset: str) -> float:
+    learning: list[float] = []
+    for row in evidence.get("runs") or []:
+        if row.get("role") != "l_cal" or row.get("dataset") != dataset:
+            continue
+        if row.get("status") != "completed":
+            continue
+        learning.extend(float(v) for v in (row.get("learning_s_by_experience") or []))
+    return float(median(learning)) if learning else 30.0
 
 
 def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: StageContext) -> ProbeBatch:
@@ -154,7 +156,7 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
                     _request(context, spec, probe_id, "s0_profile", dataset, True, N_EXPECTED[dataset])
                 )
             return batch
-        if not _has_role(evidence, "plugin_cost", dataset):
+        if not _role_complete(evidence, "plugin_cost", dataset, 5):
             for name, extra in (
                 ("b64", {"training": {"new_batch": 64, "replay_batch": 64}}),
                 ("b256", {"training": {"new_batch": 256, "replay_batch": 256}}),
@@ -272,30 +274,8 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
         batch.blocked_reason = "Q_tight not identifiable for core50_nc"
         return batch
     nc_loose = _verified_loose(evidence, "core50_nc", nc_tight) or (2 * int(nc_tight))
-    if not _role_complete(evidence, "static_search_dyn", "core50_nc", 6):
-        for batch_n, replay in STATIC_GRID:
-            spec = stamp_dev(_template(root, "core50_nc"), role="static_search_dyn", method=f"b{batch_n}_r{replay}", dataset="core50_nc")
-            spec["training"].update(new_batch=batch_n, replay_batch=batch_n, eval_batch=nc_eval)
-            spec["replay"]["capacity"] = replay
-            apply_quota(spec, nc_tight)
-            batch.probes.append(
-                _request(
-                    context,
-                    spec,
-                    f"search_dyn_core50_nc_b{batch_n}_r{replay}_q{nc_tight}",
-                    "static_search_dyn",
-                    "core50_nc",
-                    True,
-                    9,
-                )
-            )
-        return batch
-    if not _has_role(evidence, "control_2x2", "core50_nc"):
-        l_rows = [r for r in evidence.get("runs") or [] if r.get("role") == "l_cal" and r.get("dataset") == "core50_nc" and r.get("status") == "completed"]
-        learning = []
-        for row in l_rows:
-            learning.extend(float(v) for v in (row.get("learning_s_by_experience") or []))
-        l_cal = sorted(learning)[len(learning) // 2] if learning else 30.0
+    if not _role_complete(evidence, "control_2x2", "core50_nc", 4):
+        l_cal = _l_cal_s(evidence, "core50_nc")
         for name, latency, m_max in (
             ("O00", 30.0, 4096.0),
             ("O10", float(l_cal), 4096.0),
@@ -308,11 +288,11 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
             spec["algorithm"]["optional_plugins"] = "gem_ewc"
             spec["algorithm"]["optional_start_enabled"] = False
             spec["algorithm"].update(PLUGIN_DEFAULTS)
-            spec["controller"]["thresholds"].update(p=0.5, s=0.5, latency_s=latency, m_max_mib=m_max)
             apply_quota(spec, nc_tight)
+            spec["controller"]["thresholds"].update(p=0.5, s=0.5, latency_s=latency, m_max_mib=m_max)
             batch.probes.append(_request(context, spec, f"control_{name}_q{nc_tight}", "control_2x2", "core50_nc", True, 9))
         return batch
-    if not _has_role(evidence, "dyn_reservation_probe", "core50_nc"):
+    if not _role_complete(evidence, "dyn_reservation_probe", "core50_nc", 1):
         peak = _profile_reserved_mib(evidence, "core50_nc") or 0.0
         margin = max(4, int(nc_tight - peak))
         r_mib = max(4, (margin // 8) * 4) if margin >= 8 else 4
@@ -327,10 +307,36 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
         spec["controller"].update(enabled=True, plugin_policy="adaptive")
         spec["algorithm"]["optional_plugins"] = "gem_ewc"
         spec["algorithm"].update(PLUGIN_DEFAULTS)
-        spec["controller"]["thresholds"].update(latency_s=30.0, m_max_mib=float(nc_tight))
+        spec["controller"]["thresholds"].update(
+            latency_s=_l_cal_s(evidence, "core50_nc"),
+            m_max_mib=float(nc_tight),
+        )
         batch.probes.append(_request(context, spec, f"dyn_core50_nc_R{r_mib}", "dyn_reservation_probe", "core50_nc", True, 9))
         return batch
-    if not _has_role(evidence, "io_off", "core50_nc"):
+    dyn = next((r for r in evidence.get("runs", []) if r.get("role") == "dyn_reservation_probe" and r.get("status") == "completed"), None)
+    if dyn is not None and not _role_complete(evidence, "static_search_dyn", "core50_nc", 6):
+        for batch_n, replay in STATIC_GRID:
+            spec = stamp_dev(_template(root, "core50_nc"), role="static_search_dyn", method=f"b{batch_n}_r{replay}", dataset="core50_nc")
+            spec["training"].update(new_batch=batch_n, replay_batch=batch_n, eval_batch=nc_eval)
+            spec["replay"]["capacity"] = replay
+            apply_quota(spec, int(dyn["quota_mib"]))
+            spec["resource_envelope"] = {"enabled": True, "reserved_bytes_by_experience": list(dyn["reserved_bytes_by_experience"])}
+            batch.probes.append(
+                _request(
+                    context,
+                    spec,
+                    f"search_dyn_core50_nc_b{batch_n}_r{replay}_q{nc_tight}",
+                    "static_search_dyn",
+                    "core50_nc",
+                    True,
+                    9,
+                )
+            )
+        return batch
+    if not (
+        _role_complete(evidence, "io_off", "core50_nc", 1)
+        and _role_complete(evidence, "io_on", "core50_nc", 1)
+    ):
         for enabled, role in ((False, "io_off"), (True, "io_on")):
             spec = stamp_dev(_template(root, "core50_nc"), role=role, method=role, dataset="core50_nc")
             spec["training"]["eval_batch"] = nc_eval
@@ -339,10 +345,8 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
             spec["data_supply"] = {"record_hashes": True, "profile": "natural_ondemand"}
             batch.probes.append(_request(context, spec, f"{role}_core50_nc", role, "core50_nc", True, 9))
         return batch
-    if not _has_role(evidence, "sensitivity", "core50_nc"):
-        l_rows = [r for r in evidence.get("runs") or [] if r.get("role") == "l_cal" and r.get("dataset") == "core50_nc" and r.get("learning_s_by_experience")]
-        learning = [float(v) for row in l_rows for v in row["learning_s_by_experience"]]
-        l_cal = sorted(learning)[len(learning) // 2] if learning else 30.0
+    if not _role_complete(evidence, "sensitivity", "core50_nc", 7):
+        l_cal = _l_cal_s(evidence, "core50_nc")
         variants = {
             "thr_half": {"controller": {"thr0": 0.025, "enabled": True, "plugin_policy": "adaptive"}},
             "thr_double": {"controller": {"thr0": 0.1, "enabled": True, "plugin_policy": "adaptive"}},
@@ -367,7 +371,7 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
                     spec[key] = value
             batch.probes.append(_request(context, spec, f"sens_{name}_q{nc_tight}", "sensitivity", "core50_nc", True, 9))
         return batch
-    if not _has_role(evidence, "agem_profile", "core50_nc"):
+    if not _role_complete(evidence, "agem_profile", "core50_nc", 2):
         for name, extra in (
             ("agem_static", {"algorithm": {"base": "agem", "optional_plugins": "none", **PLUGIN_DEFAULTS}, "controller": {"enabled": False}}),
             ("agem_adaptive_ewc", {"algorithm": {"base": "agem", "optional_plugins": "ewc", "optional_start_enabled": False, **PLUGIN_DEFAULTS}, "controller": {"enabled": True, "plugin_policy": "adaptive"}}),
@@ -563,6 +567,8 @@ def emit_probe_configs(batch: ProbeBatch, context: StageContext) -> list[str]:
 
 def collect_row(rel: str, role: str, context: StageContext, run_dir: Path | None) -> dict[str, Any]:
     spec = load_yaml(context.root / rel)
+    resolved_path = run_dir / "resolved_config.yaml" if run_dir else None
+    resolved = load_yaml(resolved_path) if resolved_path and resolved_path.is_file() else spec
     summary: dict[str, Any] = {}
     if run_dir and (run_dir / "summary.json").is_file():
         summary = json.loads((run_dir / "summary.json").read_text(encoding="utf-8"))
@@ -638,9 +644,9 @@ def collect_row(rel: str, role: str, context: StageContext, run_dir: Path | None
         "n_evaluated": n_evaluated,
         "failure_phase": summary.get("failure_phase"),
         "artifact_hashes": artifacts,
-        "source_hash": spec.get("code_revision_or_snapshot"),
-        "environment_hash": spec.get("environment_lock_sha256"),
-        "split_hash": spec.get("dataset_manifest_sha256"),
+        "source_hash": resolved.get("code_revision_or_snapshot"),
+        "environment_hash": resolved.get("environment_lock_sha256"),
+        "split_hash": resolved.get("dataset_manifest_sha256"),
         "phase": spec.get("phase"),
         "reserved_bytes_by_experience": (spec.get("resource_envelope") or {}).get("reserved_bytes_by_experience"),
         "transition_first_ok": _transition_ok(run_dir, spec, summary),
@@ -693,6 +699,7 @@ def ingest_batch(batch: ProbeBatch, context: StageContext, evidence: dict[str, A
         if match and match.get("run_id"):
             run_dir = context.root / "runs" / match["run_id"]
         collected = collect_row(probe.rel_config, probe.role, context, run_dir)
+        evidence.setdefault("attempts", []).append(copy.deepcopy(collected))
         evidence["runs"] = [r for r in evidence.get("runs") or [] if r.get("probe_id") != probe.probe_id]
         evidence.setdefault("runs", []).append(collected)
     return evidence

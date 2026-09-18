@@ -1,6 +1,6 @@
 # 实验入口状态
 
-当前无活动的正式矩阵。下一步见 [PLAN](../PLAN.md)。5090 上的 effectiveness_v3 冻结与跑数已按 [A26](../docs/decisions/A26.md) 删除。
+当前无活动的正式矩阵。下一步见 [PLAN](../PLAN.md)。当前执行宿主是 Jetson AGX Thor（[A27](../docs/decisions/A27.md)）。5090 上的 effectiveness_v3 冻结与跑数已按 [A26](../docs/decisions/A26.md) 删除。
 
 - `effectiveness_v3/design.yaml`：新阶段不可执行设计，153 名额及校准规则；没有可迁移的冻结参数。
 - `effectiveness_v3/revisions/`：仅在执行宿主生成；换机后重建。

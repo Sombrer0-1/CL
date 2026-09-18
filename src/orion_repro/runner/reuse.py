@@ -7,6 +7,7 @@ import platform
 import subprocess
 import sys
 from pathlib import Path
+from orion_repro.envcheck import parse_smi_memory_mib
 from orion_repro.provenance import sha256_file, snapshot_source_tree
 
 
@@ -70,7 +71,8 @@ def platform_fingerprint():
                         "index": parts[0],
                         "name": parts[1],
                         "uuid": parts[2],
-                        "memory_mib": parts[3],
+                        "memory_mib": parse_smi_memory_mib(parts[3]),
+                        "memory_mib_raw": parts[3],
                         "driver_version": parts[4],
                     }
                 )

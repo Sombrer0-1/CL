@@ -1,4 +1,4 @@
-# Large data and run artifacts (raw/processed live on /mnt/data via symlinks)
+# Large data and run artifacts (raw/processed are local dirs on this host)
 data/raw
 data/raw/
 data/processed

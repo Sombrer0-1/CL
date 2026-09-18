@@ -134,7 +134,8 @@ def profile(num_classes: int = 10) -> MemoryCostModel:
         f"Synthetic single-tensor slope r2={r2:.4f} vs loop r2={loop_r2:.4f}. "
         f"cat(16,16)={merged} vs single32={single}. "
         f"plugin_gem_ewc_bytes={plugin_delta} still allocation copies, not a full "
-        "GEM/EWC training loop. Not Jetson unified memory."
+        "GEM/EWC training loop. Device slope uses the PyTorch CUDA allocator; on "
+        "Jetson unified memory that is not a discrete VRAM pool or cgroup cap."
     )
     return MemoryCostModel(
         intercept_bytes=loop_intercept,

@@ -1,39 +1,39 @@
 {
-  "executable": "/home/zhuzetong/.conda/envs/orion/bin/python3.11",
-  "torch": "2.11.0+cu128",
-  "torchvision": "0.26.0+cu128",
-  "cuda": "12.8",
-  "n_gpus": 2,
-  "gpu": "NVIDIA GeForce RTX 5090",
+  "executable": "/home/zhuzetong/miniconda3/envs/orion/bin/python3.11",
+  "python": "3.11.16",
+  "machine": "aarch64",
+  "torch": "2.14.0+cu132",
+  "torchvision": "0.29.0+cu132",
+  "cuda": "13.2",
+  "n_gpus": 1,
+  "gpu": "NVIDIA Thor",
   "gpus": [
-    "NVIDIA GeForce RTX 5090",
-    "NVIDIA GeForce RTX 5090"
+    "NVIDIA Thor"
   ],
-  "driver_version": "570.133.20",
+  "driver_version": "595.78",
   "nvidia_smi": [
     {
-      "name": "NVIDIA GeForce RTX 5090",
-      "driver_version": "570.133.20",
-      "memory_mib": "32607"
-    },
-    {
-      "name": "NVIDIA GeForce RTX 5090",
-      "driver_version": "570.133.20",
-      "memory_mib": "32607"
+      "name": "NVIDIA Thor",
+      "driver_version": "595.78",
+      "memory_mib_raw": "[N/A]",
+      "memory_mib": null
     }
   ],
+  "nvidia_smi_vram_mib": null,
+  "torch_total_memory_mib": 125748,
+  "memory_model": "unified",
   "capability": [
-    12,
+    11,
     0
   ],
+  "required_sm": "sm_110",
   "arch_list": [
-    "sm_75",
     "sm_80",
-    "sm_86",
     "sm_90",
     "sm_100",
+    "sm_110",
     "sm_120"
   ],
   "avalanche": "0.6.0",
-  "conda_prefix": "/home/zhuzetong/.conda/envs/orion"
+  "conda_prefix": "/home/zhuzetong/miniconda3/envs/orion"
 }

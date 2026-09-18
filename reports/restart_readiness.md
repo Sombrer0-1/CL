@@ -1,42 +1,31 @@
-# 迁移后仓库整理验收（上一轮快照）
+# Thor 第三阶段准备验收
 
-本记录早于后续源码审查与 A26 换机整理。最新源码修补见 [实现审计](effectiveness_v3/IMPLEMENTATION_AUDIT.md)。2026-09-16 起，5090 上的 effectiveness_v3 校准与正式跑数已删除，本文件只保留当时整理事实。
+2026-09-17。结论：**可进入第三阶段G1/G2开发工作；尚不可直接进入G3/G4正式比较。** 机器可读记录：[admission.json](effectiveness_v3/readiness/admission.json)。
 
+## 本轮已执行
 
-日期：2026-09-16。检查基线：`ecc004c`，本轮变更为文档整理，未修改训练源码、YAML 配置、依赖锁或历史结果；未启动新阶段训练。本记录只证明仓库整理及环境基础检查，不是下一阶段正式实验验收。
+| 检查 | 结果 |
+|---|---|
+| 专用orion、Thor/sm_110、GPU前向/反向/参数更新 | 通过；driver595.78、torch2.14.0+cu132、Avalanche0.6.0 |
+| 回归 | 165 passed，15库告警；[原始输出](effectiveness_v3/readiness/tests.txt) |
+| allocator64MiB真实OOM与失败阶段峰值 | 通过；[GPU证据](effectiveness_v3/validation_gpu.json) |
+| CIFAR-100 / CORe50 mini获取及划分恢复 | 官方MD5通过；开发划分核对、CORe50引用图片存在性检查通过；[数据证据](effectiveness_v3/readiness/data.json) |
+| CORe50-NC真实首experience | 训练1次、评价1次，completed；端到端35.53秒 |
+| CIFAR100真实首experience | 训练1次、评价1次，completed；端到端13.73秒 |
+| 当前源码与两次真实运行身份 | 一致；运行ID及hash见admission.json |
+| 首波次生成 / 未审查冻结拒绝 | 3个NC评价batch探针已生成；缺g2_review时明确拒绝 |
+| git diff --check | 通过 |
 
-## 整理结果
+真实数据验收采用独立`thor_readiness` revision、真实数据首experience、静态ER、开发验证反馈、1024MiB allocator配额。它验证迁移后的运行链路，**不是完整流校准、不是Orion有效性实验**。完整配置在`configs/effectiveness_v3/thor_readiness/dev/`，原始运行在`runs/`；关键summary副本在readiness目录。
 
-- 根目录 README、STATUS、PLAN 分别负责导航、当前事实和下一阶段准备；移除重复历史命令和过期活动矩阵说明。
-- 原根目录 pressure_v2 计划归档到 [docs/plans/pressure_v2.md](../docs/plans/pressure_v2.md)，正文保留，仅调整相对链接。
-- 新增[仓库地图](../docs/REPO_MAP.md)及 configs / experiments 目录索引，解释生成器模板依赖和历史材料用途。历史配置原路径保留。
-- 修正 SDD 中“仅局部修补已实现”的过时状态；METHODS 对齐当前插件保留状态行为、可选扩展范围及不设训练硬截止约定。
-- 修正 AGENTS / README 的存储描述：两个 data 目录为符号链接，runs 实为普通目录。未搬动或删除原始证据。
-- 新阶段入口隔离、端到端验收、开发校准和冻结仍待开展，见 [PLAN](../PLAN.md)。
+本轮修复及影响见[A28](../docs/decisions/A28.md)。PLAN补充了论文描述与重建的距离、三层判定及实用效应阈值；SDD清楚区分已有实现和G3前剩余工作。未改动历史数据manifest、light24结果或旧开发模板；接手前已有pressure_v2收尾说明改动保留，inspect对此仍返回非零。
 
-## 本次实际验证
+## 必须保留的边界
 
-| 检查 | 结果 | 边界 |
-|---|---|---|
-| orion 环境检查 | Python 3.11.16 / torch 2.11.0+cu128 / torchvision 0.26.0+cu128 / Avalanche 0.6.0；sm_120；cuda:0 前向、反向、优化器更新流程通过 | 小型环境检查，不是完整训练资源校准 |
-| 全套现有测试 | **121 passed，9 warnings，5.31s** | 告警来自 Avalanche 无 logger 和 replay update 弃用提示；不证明方法收益 |
-| 当前与 WSL 锁文件 | docs/environment_hashes.txt 的 4 项 SHA256 全部一致 | 未重装依赖；历史锁保留 |
-| 配置数据路径 | 381 个 YAML 可解析；其中 dataset.root / split_dir / split_manifest 引用路径均存在 | 路径检查，未重新哈希全量数据或验证每个样本 |
-| 第一阶段索引 | stage_manifest 的 96 个运行目录均存在，90 completed + 6 cuda_oom | 未重新计算历史指标 |
-| 第二阶段索引 | progress 的 85 条记录引用目录均存在；开发25完成/15 OOM，正式30完成/14 OOM/1中断 | 9 个未启动正式格仍未启动 |
-| 历史运行进度 | 两个 runs/*_progress.json 的 active 均为 null | 检查时状态，不保证未来无并发任务 |
-| runs 双份内容 | 工作区与 /mnt/data/zzt/CL/Reproduce-Orion/runs 各5814个文件，相对路径及逐文件 SHA256 全部相同 | 只是当时一致；没有自动同步，未删除任一副本 |
-| 历史证据保护 | 整理前后对照：源码、测试、两阶段报告、原 YAML/JSON 配置、实验记录、数据 manifests 内容未改变 | configs/formal/README.md、experiments/reference/README.md 属有意更新的目录说明 |
-| 文档检查 | 本轮新增/修改文档的本地 Markdown 链接存在；git diff --check 通过 | 历史文档中的纯文本路径/外部 URL 未作全量验证 |
+- `pip check`仍有cuSPARSELt SBSA标签告警，未声称全依赖检查通过；dense FP32实测通过。
+- host专属cgroup未配置/不可用，H组尚未建立。allocator不等于统一内存板级硬上限。
+- SDD §10的原始证据闭包、完整候选/场景验证和完整配对报告必须在正式冻结前完成；不是通过测试就自动具备。
+- 153为计划分母，不是现成可执行矩阵。预算/L_cal/S*未冻结，没有本机正式结论。
+- 当前保留原有及本轮工作树修改，未混合提交。raw/processed/runs需单独备份。
 
-本机检查时 GPU0 / GPU1 分别占用约348 / 24 MiB（各32607 MiB），驱动570.133.20；RAM 可用约105 GiB，swap 已用约49 MiB。根分区可用约849 GiB，/mnt/data 可用约13 TiB。以上是资源快照，不是运行预算或未来可用量保证。
-
-环境与测试复核命令（仓库根目录）：
-
-```bash
-ORION_PY=/home/zhuzetong/.conda/envs/orion/bin/python
-WANDB_MODE=disabled "$ORION_PY" -m orion_repro.envcheck
-WANDB_MODE=disabled "$ORION_PY" -m pytest tests -ra
-```
-
-本次不重新汇总 light24 / pressure_v2，也不运行旧队列。特别是 `pressure_*` 内仍绑定旧 ID、冻结文件及输出路径，独立新阶段入口必须先实现并验证。
+下一步按[HANDOFF](../docs/HANDOFF.md)使用`thor_r1`逐波推进；完整流耗时在G2实测估计，不能把上述首experience计时线性当成含插件的153格预算。5090旧准备报告见[归档](../docs/environments/linux_rtx5090/restart_readiness.md)。

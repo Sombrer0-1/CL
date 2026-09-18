@@ -9,7 +9,7 @@
 - **不得声称第二阶段验收通过。**
 - 正式 54 格未跑完，未做分组报告与配对分析。
 - 已完成格、OOM 与中断都是有效记录，保留；不以完成率或 URGE 触发代替方法有效性。
-- 仓库已迁到 Linux + 双 RTX 5090。**禁止**在新机器上续跑剩余格并并入同一 54 格比较。`L_cal≈5.94s`、IO `wait_ratio≈0.50` 及已有耗时均绑定原 5060 Ti。后续工作另开阶段、先在本机重建 `orion` 环境并重新校准。
+- 仓库在 5060 Ti 收尾后曾迁到 Linux + 双 RTX 5090，现执行宿主为 Jetson AGX Thor。**禁止**跨机续跑剩余格并并入同一 54 格比较。`L_cal≈5.94s`、IO `wait_ratio≈0.50` 及已有耗时均绑定原 5060 Ti。
 
 ## 已交付（实现与校准）
 
@@ -39,6 +39,8 @@
 
 ## 下一阶段边界
 
-1. 本机独立 Conda 环境 `orion` 已建立（`/home/zhuzetong/.conda/envs/orion`，`torch==2.11.0+cu128`）。不要使用 `/home/admin/miniconda3` 或 mineru。
-2. 重新确认 GPU/驱动/RAM；历史 5060 Ti 校准值不自动沿用。
+本节是 2026-09-15 迁入 5090 时的接手说明，**不是当前 Thor 环境**。当前解释器与依赖见 [A27](../../docs/decisions/A27.md) 与 `STATUS.md`。
+
+1. 当时 5090 上的 `orion` 位于 `/home/zhuzetong/.conda/envs/orion`（`torch==2.11.0+cu128`）。不要使用 `/home/admin/miniconda3` 或 mineru。
+2. 任何新宿主都必须重新确认 GPU/驱动/RAM；5060 Ti 与 5090 校准值都不自动沿用。
 3. 新阶段使用新 study id 与新进度文件；不覆盖 `reports/light24/`，也不把本中断矩阵改写成已完成。

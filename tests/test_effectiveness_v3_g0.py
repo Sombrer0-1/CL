@@ -73,6 +73,33 @@ def test_dry_run_matrix_does_not_create_progress(tmp_path):
     assert not (tmp_path / "runs").exists()
 
 
+def test_orion_python_prefers_miniconda_layout(tmp_path, monkeypatch):
+    from orion_repro.stages.effectiveness_v3 import constants as const
+
+    mini = tmp_path / "miniconda3" / "envs" / "orion" / "bin" / "python"
+    mini.parent.mkdir(parents=True)
+    mini.write_text("")
+    monkeypatch.delenv("ORION_PY", raising=False)
+    monkeypatch.delenv("ORION_PYTHON", raising=False)
+    monkeypatch.delenv("CONDA_PREFIX", raising=False)
+    monkeypatch.setattr(const.Path, "home", classmethod(lambda cls: tmp_path))
+    assert const.orion_python() == mini
+
+
+def test_orion_python_ignores_archived_dot_conda_layout(tmp_path, monkeypatch):
+    from orion_repro.stages.effectiveness_v3 import constants as const
+
+    legacy = tmp_path / ".conda" / "envs" / "orion" / "bin" / "python"
+    legacy.parent.mkdir(parents=True)
+    legacy.write_text("")
+    monkeypatch.delenv("ORION_PY", raising=False)
+    monkeypatch.delenv("ORION_PYTHON", raising=False)
+    monkeypatch.delenv("CONDA_PREFIX", raising=False)
+    monkeypatch.setattr(const.Path, "home", classmethod(lambda cls: tmp_path))
+    monkeypatch.setattr(const.sys, "executable", "/tmp/not-legacy-orion")
+    assert const.orion_python() == Path("/tmp/not-legacy-orion")
+
+
 def test_historical_protection_hashes_tracked_files():
     report = historical_protection_report(ROOT)
     assert report["n_files"] > 100

@@ -12,7 +12,7 @@ from orion_repro.stages.effectiveness_v3.util import canonical_hash
 
 
 def source_identity(root: Path, *, design_path: Path) -> dict[str, Any]:
-    snap = snapshot_source_tree(root)
+    snap = snapshot_source_tree(root, exclude_generated_v3=True)
     manifests = {
         "core50_nc_dev": "data/manifests/core50_nc_run0_dev_split_seed17.json",
         "core50_nc_formal": "data/manifests/core50_nc_run0.json",

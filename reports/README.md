@@ -1,6 +1,6 @@
 # 结果入口
 
-已结束阶段：light24_v1。第二阶段 pressure_v2 已中断收尾、未验收。effectiveness_v3 只迁移计划、SDD 与实现；本机 5090 校准/正式跑数已按 [A26](../docs/decisions/A26.md) 删除。准备流程见 [PLAN](../PLAN.md)，实时工作状态见 [STATUS](../STATUS.md)，源码修补见 [effectiveness_v3/IMPLEMENTATION_AUDIT.md](effectiveness_v3/IMPLEMENTATION_AUDIT.md)。
+已结束阶段：light24_v1。第二阶段 pressure_v2 已中断收尾、未验收。effectiveness_v3 只迁移计划、SDD 与实现；RTX 5090 校准/正式跑数已按 [A26](../docs/decisions/A26.md) 删除。当前执行宿主是 Jetson AGX Thor（[A27](../docs/decisions/A27.md)）。准备流程见 [PLAN](../PLAN.md)，实时工作状态见 [STATUS](../STATUS.md)，源码修补见 [effectiveness_v3/IMPLEMENTATION_AUDIT.md](effectiveness_v3/IMPLEMENTATION_AUDIT.md)。
 
 ## 第一阶段交付
 

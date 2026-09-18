@@ -17,18 +17,29 @@ DEVICE = "cuda:0"
 
 
 def orion_python() -> Path:
-    """Resolve the orion interpreter without baking in a host-specific path.
+    """Resolve the orion interpreter without baking in a single host path.
 
-    Order: ORION_PY / ORION_PYTHON, then ~/.conda/envs/orion, then sys.executable.
+    Order: ORION_PY / ORION_PYTHON, then CONDA_PREFIX if it is the orion env,
+    then ``~/miniconda3/envs/orion``, then sys.executable.
     execute() still rejects mineru and the archived WSL interpreter.
     """
     explicit = os.environ.get("ORION_PY") or os.environ.get("ORION_PYTHON")
     if explicit:
         return Path(explicit)
-    home_conda = Path.home() / ".conda" / "envs" / "orion" / "bin" / "python"
-    if home_conda.exists():
-        return home_conda
+    conda_prefix = os.environ.get("CONDA_PREFIX")
+    if conda_prefix:
+        prefix = Path(conda_prefix)
+        if prefix.name == "orion":
+            cand = prefix / "bin" / "python"
+            if cand.exists():
+                return cand
+    home = Path.home()
+    cand = home / "miniconda3" / "envs" / "orion" / "bin" / "python"
+    if cand.exists():
+        return cand
     return Path(sys.executable)
+
+
 SLOT_COUNTS = {"A": 48, "B": 30, "C": 15, "D": 9, "E": 12, "F": 6, "G": 24, "H": 9}
 TOTAL_SLOTS = 153
 CORE_SLOTS = 120

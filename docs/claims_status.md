@@ -23,8 +23,8 @@
 
 ### 2026-09-15 pressure_v2 收尾
 
-第二阶段正式 54 格在原 RTX 5060 Ti 上记录 45 格后中断并收尾，未验收，不更新上表 C01–C08。部分正式格的完成与 cuda_oom 保留为该阶段原始记录，见 reports/pressure_v2/CLOSEOUT.md。迁入 Linux + RTX 5090 后不得续跑剩余格并混入同一矩阵。本机环境见 docs/decisions/A24.md，不更新上表 C01–C08。
+第二阶段正式 54 格在原 RTX 5060 Ti 上记录 45 格后中断并收尾，未验收，不更新上表 C01–C08。部分正式格的完成与 cuda_oom 保留为该阶段原始记录，见 reports/pressure_v2/CLOSEOUT.md。不得跨机续跑剩余格并混入同一矩阵。当前执行宿主是 Jetson AGX Thor，见 [A27](decisions/A27.md)，不更新上表 C01–C08。
 
 ### 2026-09-16 effectiveness_v3 设计与换机
 
-[PLAN](../PLAN.md)与[SDD](SDD_effectiveness_v3.md)是可迁移的第三阶段契约。RTX 5090 上的开发校准与正式跑数已按 [A26](decisions/A26.md) 放弃，不更新上表有效性判定。换机后重新校准，不得把 5090 数字写入新冻结协议。源码修补见[实现审计](../reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md)。
+[PLAN](../PLAN.md)与[SDD](SDD_effectiveness_v3.md)是第三阶段契约。RTX 5090 上的开发校准与正式跑数已按 [A26](decisions/A26.md) 放弃。本机按 [A27](decisions/A27.md) 重建环境后重新校准，不得把 5090 数字写入新冻结协议。源码修补见[实现审计](../reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md)。

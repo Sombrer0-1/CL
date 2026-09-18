@@ -81,6 +81,21 @@ def test_envcheck_accepts_actual_finite_update():
     envcheck.verify_training_step(model, opt, torch.ones(2, 2), torch.tensor([0, 0]))
 
 
+def test_envcheck_wheel_must_cover_device_arch_not_sm_120():
+    assert envcheck.cuda_sm_tag((11, 0)) == "sm_110"
+    assert envcheck.cuda_sm_tag((12, 0)) == "sm_120"
+    thor_wheel = ["sm_80", "sm_90", "sm_100", "sm_110", "sm_120"]
+    assert envcheck.wheel_covers_device(thor_wheel, (11, 0))
+    assert envcheck.wheel_covers_device(thor_wheel, (12, 0))
+    assert not envcheck.wheel_covers_device(["sm_120"], (11, 0))
+
+
+def test_envcheck_parses_jetson_unavailable_smi_vram():
+    assert envcheck.parse_smi_memory_mib("[N/A]") is None
+    assert envcheck.parse_smi_memory_mib("Not Supported") is None
+    assert envcheck.parse_smi_memory_mib("32607") == 32607
+
+
 def test_envcheck_requires_avalanche_import(monkeypatch):
     original = builtins.__import__
     def missing(name, *args, **kwargs):

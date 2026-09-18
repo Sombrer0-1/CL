@@ -107,7 +107,7 @@ def render(bundle: dict[str, Any], context: StageContext, *, calibration: dict[s
             )
     if rows:
         with attempts_path.open("w", encoding="utf-8", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+            writer = csv.DictWriter(handle, fieldnames=list(dict.fromkeys(key for row in rows for key in row)))
             writer.writeheader()
             writer.writerows(rows)
     atomic_write_json(context.report_dir / "scenario_coverage.json", coverage)

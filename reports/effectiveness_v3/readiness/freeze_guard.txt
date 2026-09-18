@@ -1,0 +1,1 @@
+ERROR: G2 review missing: complete SDD section 10 before freeze; write g2_review.json with evidence hashes

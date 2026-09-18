@@ -11,6 +11,7 @@ from orion_repro.stages.effectiveness_v3.constants import (
     PRIMARY_DATASETS,
     QUOTA_GRID_MIB,
     STUDY_ID,
+    STATIC_GRID,
 )
 from orion_repro.stages.effectiveness_v3.development import N_EXPECTED
 from orion_repro.stages.effectiveness_v3.schema import validate_probe_row
@@ -43,6 +44,14 @@ def _rows(manifest: dict[str, Any], *, role: str, dataset: str | None = None) ->
 
 
 def _select_static(candidates: list[dict[str, Any]]) -> dict[str, Any]:
+    pairs = [(int(c.get("new_batch", 0)), int(c.get("replay_capacity", 0))) for c in candidates]
+    if len(pairs) != len(STATIC_GRID) or set(pairs) != set(STATIC_GRID):
+        raise CalibrationError("static search requires all six unique candidates")
+    for row in candidates:
+        if row.get("status") == "completed":
+            _require_full_stream(row, row["dataset"])
+        elif row.get("status") not in {"cuda_oom", "host_oom", "budget_exceeded"}:
+            raise CalibrationError("static candidate has no valid terminal outcome")
     feasible = [c for c in candidates if c.get("status") == "completed"]
     failed = [c for c in candidates if c.get("status") in {"cuda_oom", "host_oom", "budget_exceeded"}]
     errors = [c for c in candidates if c.get("status") == "implementation_error"]
@@ -150,6 +159,8 @@ def calibrate(manifest: dict[str, Any]) -> dict[str, Any]:
         q_tight, quota_evidence = _quota_choice(quota_rows)
         loose_rows = _rows(manifest, role="q_loose_verify", dataset=dataset)
         q_loose = 2 * q_tight
+        if not loose_rows:
+            raise CalibrationError(f"{dataset} missing Q_loose verification")
         if loose_rows:
             ok = [r for r in loose_rows if r.get("status") == "completed"]
             if not ok:
@@ -196,7 +207,7 @@ def calibrate(manifest: dict[str, Any]) -> dict[str, Any]:
             "l_cal_run_ids": [r.get("run_id") for r in l_rows],
         }
     dyn_search = _rows(manifest, role="static_search_dyn", dataset="core50_nc")
-    s_dyn = _select_static(dyn_search) if dyn_search else copy.deepcopy(datasets["core50_nc"]["static_selections"]["tight"])
+    s_dyn = _select_static(dyn_search) if dyn_search else None
     datasets["core50_nc"]["static_selections"]["dyn"] = s_dyn
     control = _rows(manifest, role="control_2x2", dataset="core50_nc")
     identifiable = any(r.get("status") == "completed" and r.get("integer_config_changed") for r in control)
@@ -206,6 +217,8 @@ def calibrate(manifest: dict[str, Any]) -> dict[str, Any]:
     dyn_quota_bytes = datasets["core50_nc"]["quota_tight_bytes"]
     if dyn_probe:
         ok = next((r for r in dyn_probe if r.get("status") == "completed" and r.get("transition_first_ok")), None)
+        if ok and s_dyn is None:
+            raise CalibrationError("dynamic scenario requires its own six-candidate static search")
         if ok:
             reserved = [int(x) for x in ok["reserved_bytes_by_experience"]]
             dyn_constructed = True
@@ -227,7 +240,7 @@ def calibrate(manifest: dict[str, Any]) -> dict[str, Any]:
         "S03": "pending_formal",
         "S04": "realized" if dyn_constructed else "failed_to_construct",
         "S05": "pending_formal",
-        "S06": "realized" if identifiable else "failed_to_construct",
+        "S06": "pending_formal",
         "S07": "realized" if io_constructed else "failed_to_construct",
         "S08": "pending_formal",
         "eval_separation": "realized",

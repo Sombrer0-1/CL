@@ -1,0 +1,36 @@
+{
+  "study_id": "effectiveness_v3",
+  "revision": "thor_r1",
+  "executable": false,
+  "design_version": "2026-09-16-v1",
+  "formal_slots": 153,
+  "design_path": "experiments/effectiveness_v3/design.yaml",
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python3.11",
+  "orion_python": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "platform": {
+    "os": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+    "python": "3.11.16",
+    "machine": "aarch64",
+    "cuda_visible_devices": null,
+    "logical_device": "cuda:0",
+    "gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA Thor",
+        "uuid": "GPU-a7c66ad2-6dbb-0ab8-c1a2-37ba6dba3600",
+        "memory_mib": null,
+        "memory_mib_raw": "[N/A]",
+        "driver_version": "595.78"
+      }
+    ]
+  },
+  "historical_protection": {
+    "ok": false,
+    "n_files": 256,
+    "aggregate_sha256": "a141e9a47fe31c73bf09b0e028929ecb59099ccf741118f2136b0a73ffc4bbd1",
+    "dirty": [
+      "reports/pressure_v2/CLOSEOUT.md"
+    ]
+  },
+  "writes": false
+}

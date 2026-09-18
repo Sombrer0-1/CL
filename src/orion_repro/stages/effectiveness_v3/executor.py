@@ -265,6 +265,8 @@ def execute_matrix(matrix: dict[str, Any], context: StageContext, *, frozen: dic
         validate_mapping(spec, require_provenance=False)
         if spec.get("study_id") != STUDY_ID or spec.get("reuse_version") != 4:
             raise StageError("Study configs must opt into effectiveness_v3 and reuse v4")
+        if spec.get("phase") == "formal" and frozen is None:
+            raise StageError("formal execution requires a frozen protocol")
         if frozen and spec.get("phase") == "formal" and spec.get("frozen_hash") != frozen.get("frozen_hash"):
             raise StageError("config frozen_hash mismatch")
     try:

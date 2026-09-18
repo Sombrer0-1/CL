@@ -47,7 +47,7 @@ from orion_repro.strategies.builder import (
     replay_occupancy,
     snapshot_plugin_activity,
 )
-from orion_repro.strategies.capacity import collect_auxiliary_visits
+from orion_repro.strategies.capacity import collect_auxiliary_visits, reset_auxiliary_visits
 from orion_repro.strategies.toggles import TogglePlugin
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -315,7 +315,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
         )
         sampler.start()
         recorder.begin("setup", None)
-        code_snapshot = snapshot_source_tree(ROOT)
+        code_snapshot = snapshot_source_tree(ROOT, exclude_generated_v3=spec.get("study_id") == "effectiveness_v3")
         spec = fill_provenance(spec, root=ROOT, snapshot=code_snapshot)
         feedback_source = resolve_feedback_source(spec)
         validate_mapping(spec, require_provenance=spec.get("phase") == "formal")
@@ -569,6 +569,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             )
             t0 = time.monotonic()
             failure_phase = "training"
+            reset_auxiliary_visits(strategy)
             strategy.train(exp, num_workers=int(spec["prefetch"].get("num_workers", 0)))
             synchronize_gpu(device)
             learning_s = time.monotonic() - t0

@@ -1,0 +1,55 @@
+{
+  "machine": "aarch64",
+  "os": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+  "memory": {
+    "total": 131856928768,
+    "available": 125238431744,
+    "percent": 5.0,
+    "used": 6618497024,
+    "free": 86854561792,
+    "active": 4412489728,
+    "inactive": 35990065152,
+    "buffers": 447778816,
+    "cached": 38586626048,
+    "shared": 20504576,
+    "slab": 2220466176
+  },
+  "swap": {
+    "total": 0,
+    "used": 0,
+    "free": 0,
+    "percent": 0.0,
+    "sin": 0,
+    "sout": 0
+  },
+  "disk": {
+    "total": 1004162105344,
+    "used": 43168407552,
+    "free": 909909594112
+  },
+  "host": {
+    "host_enforced": "blocked",
+    "cgroup": {
+      "available": false,
+      "writable": false,
+      "path": null,
+      "mechanism": "cgroup_memory_max",
+      "reason": "no cgroup memory.max in this namespace"
+    },
+    "rlimit_as": {
+      "available": true,
+      "mechanism": "rlimit_as",
+      "soft": null,
+      "hard": null,
+      "scope": "process virtual address space, not RSS; CUDA mappings inflate VA",
+      "reason": "usable as a named host_rlimit_as variant, not a cgroup RSS cap"
+    },
+    "notes": "PLAN host_enforced requires a verified process-group/cgroup limit. This probe never writes host/global memory settings. Writable parent memory.max is not an execution proof; HostEnvelope must create a child cgroup without modifying the parent limit."
+  },
+  "delegated": {
+    "available": false,
+    "status": "unavailable",
+    "reason": "no delegated cgroup root configured",
+    "mechanism": "cgroup_v2_child"
+  }
+}

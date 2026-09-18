@@ -1,6 +1,6 @@
 # effectiveness_v3 软件设计说明（SDD）
 
-版本：2026-09-16。依据：[PLAN](../PLAN.md) §1–8、本地原PDF §4.1–4.5 / 式(1)–(5) / Algorithm 1，以及现有源码审查。**本文是第三阶段架构契约，随仓库迁移。** G0/G1 独立入口与测试已在 `src/orion_repro/stages/effectiveness_v3/`；G2–G4 必须在新宿主重新校准与冻结。[A26](decisions/A26.md) 放弃 RTX 5090 上的开发冻结和正式跑数，不得把那些数字写进新冻结协议。源码修补见[审计记录](../reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md)，其中本机 GPU 测量不是新宿主证据。下文部分“待实现”条目以换机后重验为准，不把设计文档写成能力已经验收。
+版本：2026-09-17。依据：[PLAN](../PLAN.md) §1–8、本地原PDF §4.1–4.5 / 式(1)–(5) / Algorithm 1，以及现有源码审查。**本文是第三阶段架构契约。** G0/G1 独立入口与测试已在 `src/orion_repro/stages/effectiveness_v3/`；G2–G4 必须在当前执行宿主（Jetson AGX Thor，[A27](decisions/A27.md)）重新校准与冻结。[A26](decisions/A26.md) 放弃 RTX 5090 上的开发冻结和正式跑数。源码修补见[审计记录](../reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md)。下文部分“待实现”条目以本机重验为准，不把设计文档写成能力已经验收。
 
 本文所有代码/产物路径相对仓库根。study_id 固定为 `effectiveness_v3`，实验协议版本为 `effectiveness_v3_paper_feedback_v1`，开发协议为 `effectiveness_v3_development_v1`。内容变更通过 revision 和内容哈希追踪，不改写旧冻结对象。
 
@@ -28,7 +28,7 @@ CoverageResolver → PairingValidator → ReportBuilder → S01–S08判定
 
 新建 `src/orion_repro/stages/effectiveness_v3/` 包，保持旧阶段入口可追溯，不批量重命名 pressure_*。
 
-| 新模块（待实现） | 主要接口 | 责任与可复用部分 |
+| 阶段模块（实现状态见§10） | 主要接口 | 责任与可复用部分 |
 |---|---|---|
 | `schema.py` | `load_design(path) -> Design`；`validate_frozen(...)` | 严格区分设计/开发配置/冻结/正式矩阵，拒绝未知必需字段与非法数值；复用基础spec字段验证 |
 | `context.py` | `StageContext(root, study_id, revision)`；`assert_output_path(path)` | 新阶段目录、进度、锁、平台身份；禁止输出解析到历史目录或工作区外 |
@@ -45,11 +45,11 @@ CoverageResolver → PairingValidator → ReportBuilder → S01–S08判定
 
 必须扩展的现有接口：
 
-- `runner/spec.py` 与 `control/ablation.py` 增加 `plugin_policy=fixed_advanced`，返回实际always-on策略但保留URGE原建议。F11起始插件开启；R11起始关闭；adaptive起始关闭。**当前仅支持adaptive/fixed_default，F11尚不可运行。**
+- `runner/spec.py` 与 `control/ablation.py` 增加 `plugin_policy=fixed_advanced`，返回实际always-on策略但保留URGE原建议。F11起始插件开启；R11起始关闭；adaptive起始关闭。**fixed_advanced已有schema/runtime与单元测试；正式可行性仍待开发实验。**
 - `runner/reuse.py` 的新阶段身份加入硬件、实际依赖、完整引用文件hash和冻结hash；旧v2/v3身份规则保持可解释。新阶段采用具名新身份schema，不能仅靠当前requirements文件代表实际环境。
 - `memory/phase_recorder.py` 的host峰值补充采样聚合；当前PhaseRecord中的RSS/PSS是阶段结束快照，不能改标签称峰值。异步采样与phase切换需加phase token或锁，防止旧phase样本写入新phase峰值。
 - `runner/loop.py` 将训练/评价/控制/重配置/失败的当前阶段显式传给记录器；零值不是unknown；实际预算来源、插件状态、消费计数持久化。
-- `memory/host_enforcement.py` 当前只提供探测，不提供已验证的host执行器。H组需要下述专属cgroup执行接口，不能复用“检测到可写”作为执行证明。
+- `memory/host_enforcement.py` 已有HostEnvelope执行接口，但没有本机真实硬限额验收。H组需要下述专属cgroup执行接口，不能复用“检测到可写”作为执行证明。
 
 ## 3. 目录与身份契约
 
@@ -68,7 +68,7 @@ CoverageResolver → PairingValidator → ReportBuilder → S01–S08判定
 
 `cell_id = group/dataset/scenario/method/seed/variant`。`attempt_id`每次启动唯一。配置比较用resolved spec的canonical JSON hash，排除运行时间/UUID等非语义字段；全部路径解析并记录，但身份依赖文件内容，不依赖路径字符串。static S*的选择ID必须进入正式配置。
 
-平台身份至少含 GPU型号/UUID/总显存、逻辑device到物理卡映射、driver、torch/torchvision/Avalanche、CUDA runtime、Python、CPU/OS、数值模式；实际资源占用是快照，不能加入每次变化就失效的稳定身份。新平台或关键依赖变化拒绝复用并要求新冻结revision。
+平台身份至少含 GPU 型号/UUID、内存口径（本机为统一内存；nvidia-smi 离散 VRAM 可能为 N/A）、逻辑 device 到物理卡映射、driver、torch/torchvision/Avalanche、CUDA runtime、Python、CPU/OS、数值模式；实际资源占用是快照，不能加入每次变化就失效的稳定身份。关键依赖变化拒绝复用并要求新冻结 revision。
 
 ## 4. 数据结构与验证不变量
 
@@ -206,3 +206,22 @@ construction_status枚举 `not_run / realized / failed_to_construct / unavailabl
 - 不改`reports/light24/`、`reports/pressure_v2/`、旧配置/冻结协议/data manifests；发现历史缺陷以新审计文档限定结论，不重写旧数字。
 - G1/G2 在新宿主通过后，README 再加入该宿主实际 CLI；此前只链接设计与 STATUS，不留貌似可跑的旧 formal 命令。
 - 整理后的接手文档见 [HANDOFF](HANDOFF.md)。工作量遵循 PLAN 估算与非硬截止约定，长运行定期记录进度，不因实验负结果停止留证。换机后从 G2 重新校准，见 [A26](decisions/A26.md)。
+
+## 10. Thor 准入实施清单（2026-09-17）
+
+本节纠正旧草案的能力状态，不降低前文验收契约。阶段入口、fixed_advanced、host采样phase token、HostEnvelope、冻结/矩阵/执行框架均已有代码；其中HostEnvelope的mock测试不等于本机cgroup硬限额验收。不能再按“全部待实现”重写，也不能按“都有模块”宣称全部通过。
+
+| 项目 | 当前实现 / 后续完成条件 |
+|---|---|
+| 环境与阶段隔离 | Thor envcheck与allocator失败诊断已执行；当前工作树历史说明文件已有迁移修改，inspect会报告dirty，不能删除检查或假装clean |
+| 数据迁移 | `python -m orion_repro.stages.effectiveness_v3.prepare`仅写raw/processed及readiness报告；重建划分与历史manifest比较，不覆写历史时间戳/绝对路径；data.json.ready才是准备完成证据 |
+| 开发因素与DYN | A28修复阈值覆盖、中位数和动态搜索；DYN探针先于DYN六候选，所有候选使用同一资源序列；探针失败保留覆盖缺口 |
+| 校准证据闭包（G3前） | 目前仍需把probe行与原始resolved config/summary/phase trace交叉核对，并校验source/env/platform/data一致；不能只信manifest中的status/hash字符串 |
+| 完整开发覆盖（G2） | planner已有主要扫描，但当前敏感性自动波次只覆盖正式G组的大部分值；须补齐PLAN §5.2的alpha半值、beta半值、lr双值、delta和中预算，以及两数据集因素诊断；宽配额须验证高级插件可行性而非只验证S0 |
+| 资源场景（G2） | DYN当前只生成一个预留候选，仍须完成预定最小正预留失败诊断和窗口判定；IO成立还须CPU余量及off/on输入等价；H必须实证授权子cgroup，不能由“目录可写”直接启用 |
+| 报告（G3前） | 当前report只输出attempt/覆盖框架，仍须实现means/paired/phase_resources/control_events/plugin_activity/supply及图；按完整配对签名检查数据/环境/资源序列/变换，原始attempt不挑优；S01–S08不可从一个changed布尔量自动得出 |
+| 完整性（G3前） | 正式发射前补缺失、冲突、引用篡改、失败phase和负结果的集成验收；G2尚未校准，G3/G4均pending |
+
+交付“准进入第三阶段”指上述环境、代码审查、计划和可执行开发入口已具备；阶段内先做真实数据小例及完整开发，并在G3前完成此表剩余实现。默认采用独立revision `thor_r1`；旧r1/5090目录不复用。任何正式跑数前的源码修补都改变source identity，受影响校准须重新验证，不将修补前后结果混在同一正式矩阵。
+
+`freeze`命令现在要求`experiments/effectiveness_v3/revisions/<revision>/g2_review.json`。字段包括`study_id`、`revision`、当前`source_hash`、`checks`；checks必须包含`raw_evidence_identity / development_coverage / resource_scenarios / paired_reporting / failure_and_integrity_tests`，每项为`{status: "pass", artifacts: {相对证据路径: SHA256}}`。这里的pass指完成审核（允许有证据的负结果/场景不可用），不是要求Orion胜出。审查文件只能在对应工作完成后生成，不能预填pass；代码/证据变动使审查失效。该门槛在CLI执行，不把它替代原始校准与正式结果验证。
