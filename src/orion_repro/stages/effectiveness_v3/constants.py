@@ -11,7 +11,17 @@ DESIGN_VERSION = "2026-09-16-v1"
 FORMAL_PROTOCOL_ID = "effectiveness_v3_paper_feedback_v1"
 DEVELOPMENT_PROTOCOL_ID = "effectiveness_v3_development_v1"
 DEFAULT_REVISION = "r1"
+IDENTITY_CALIBRATION_REVISION = "thor_r2"
+PROCESS_EVIDENCE_REVISION = "thor_r1"
 SEEDS = (0, 1, 2)
+CALIBRATION_IDENTITY_ROLES = (
+    "eval_batch",
+    "quota_scan",
+    "q_loose_verify",
+    "l_cal",
+    "static_search_tight",
+    "static_search_loose",
+)
 PRIMARY_DATASETS = ("core50_nc", "splitcifar100")
 DEVICE = "cuda:0"
 

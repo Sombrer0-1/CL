@@ -1,0 +1,52 @@
+{
+  "study_id": "effectiveness_v3",
+  "revision": "thor_r2",
+  "static_selections": {
+    "core50_nc": {
+      "tight": {
+        "new_batch": 16,
+        "replay_capacity": 2000,
+        "config_id": "search_tight_core50_nc_b16_r2000_q160",
+        "run_id": "effectiveness_v3_20260918T115848Z_196762f9",
+        "score": 0.6552736306702206,
+        "n_feasible": 2,
+        "n_resource_failed": 4,
+        "rule": "max (P+S)/2; then shorter online_total_s; then lexical config_id"
+      },
+      "loose": {
+        "new_batch": 16,
+        "replay_capacity": 2000,
+        "config_id": "search_loose_core50_nc_b16_r2000_q320",
+        "run_id": "effectiveness_v3_20260918T120619Z_eb253037",
+        "score": 0.6556733931251104,
+        "n_feasible": 4,
+        "n_resource_failed": 2,
+        "rule": "max (P+S)/2; then shorter online_total_s; then lexical config_id"
+      },
+      "dyn": null
+    },
+    "splitcifar100": {
+      "tight": {
+        "new_batch": 16,
+        "replay_capacity": 2000,
+        "config_id": "search_tight_splitcifar100_b16_r2000_q160",
+        "run_id": "effectiveness_v3_20260918T122020Z_78102316",
+        "score": 0.5568555555555554,
+        "n_feasible": 2,
+        "n_resource_failed": 4,
+        "rule": "max (P+S)/2; then shorter online_total_s; then lexical config_id"
+      },
+      "loose": {
+        "new_batch": 16,
+        "replay_capacity": 2000,
+        "config_id": "search_loose_splitcifar100_b16_r2000_q320",
+        "run_id": "effectiveness_v3_20260918T122348Z_c186b925",
+        "score": 0.5467277777777778,
+        "n_feasible": 4,
+        "n_resource_failed": 2,
+        "rule": "max (P+S)/2; then shorter online_total_s; then lexical config_id"
+      }
+    }
+  },
+  "note": "Search cost is in search_cost.csv; selected S* is not a runtime speedup"
+}

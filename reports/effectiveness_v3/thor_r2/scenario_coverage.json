@@ -1,0 +1,104 @@
+{
+  "study_id": "effectiveness_v3",
+  "kind": "scenario_coverage",
+  "scenarios": {
+    "S01": {
+      "scenario_id": "S01",
+      "implementation_status": "pending",
+      "construction_status": "failed_to_construct",
+      "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+      "raw": "failed_to_construct",
+      "actions_applied": [],
+      "failure_category": null,
+      "predicate_values": {
+        "control_identifiable": false
+      },
+      "limitations": [
+        "integer_config_changed is not by itself an effectiveness verdict"
+      ]
+    },
+    "S02": {
+      "scenario_id": "S02",
+      "implementation_status": "pending",
+      "construction_status": "not_run",
+      "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+      "raw": "pending_formal",
+      "actions_applied": [],
+      "failure_category": null
+    },
+    "S03": {
+      "scenario_id": "S03",
+      "implementation_status": "pending",
+      "construction_status": "not_run",
+      "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+      "raw": "pending_formal",
+      "actions_applied": [],
+      "failure_category": null
+    },
+    "S04": {
+      "scenario_id": "S04",
+      "implementation_status": "pending",
+      "construction_status": "failed_to_construct",
+      "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+      "raw": "failed_to_construct",
+      "actions_applied": [],
+      "failure_category": null,
+      "experience_windows": {
+        "high": null,
+        "recovery": null,
+        "mutation": null
+      },
+      "predicate_values": {
+        "observable_feedback_window": null,
+        "transition_first_ok": null
+      },
+      "limitations": [],
+      "evidence_run_ids": []
+    },
+    "S05": {
+      "scenario_id": "S05",
+      "implementation_status": "pending",
+      "construction_status": "not_run",
+      "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+      "raw": "pending_formal",
+      "actions_applied": [],
+      "failure_category": null
+    },
+    "S06": {
+      "scenario_id": "S06",
+      "implementation_status": "pending",
+      "construction_status": "not_run",
+      "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+      "raw": "pending_formal",
+      "actions_applied": [],
+      "failure_category": null
+    },
+    "S07": {
+      "scenario_id": "S07",
+      "implementation_status": "pending",
+      "construction_status": "realized",
+      "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+      "raw": "realized",
+      "actions_applied": [],
+      "failure_category": null,
+      "predicate_values": {
+        "wait_ratio": 0.5201355793967096,
+        "cpu_percent_mean": 9.487585681645102,
+        "constructed": true
+      },
+      "limitations": []
+    },
+    "S08": {
+      "scenario_id": "S08",
+      "implementation_status": "pending",
+      "construction_status": "not_run",
+      "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+      "raw": "pending_formal",
+      "actions_applied": [],
+      "failure_category": null
+    }
+  },
+  "host": "unavailable",
+  "rules": {},
+  "note": "construction_status is not an Orion effectiveness verdict"
+}

@@ -1,0 +1,62 @@
+{
+  "kind": "dyn_window_audit",
+  "study_id": "effectiveness_v3",
+  "revision": "thor_r2",
+  "windows": [
+    {
+      "probe_id": "identity_s04_dyn_R4_core50_nc_q160",
+      "run_id": "effectiveness_v3_20260918T122827Z_be93b1e4",
+      "status": "cuda_oom",
+      "r_mib": 4,
+      "high_experiences": [
+        3,
+        4,
+        5
+      ],
+      "recovery_experiences": [
+        6,
+        7,
+        8
+      ],
+      "mutation_experience": 3,
+      "transition_first_ok": false,
+      "post_feedback_events": [],
+      "recovery_events": [],
+      "observable_feedback_window": false,
+      "construction_status": "failed_to_construct",
+      "limitation": "mutation_round_failed",
+      "n_trained": 2,
+      "failure_phase": "training"
+    }
+  ],
+  "realized": null,
+  "mutation_failures_retained": [
+    {
+      "probe_id": "identity_s04_dyn_R4_core50_nc_q160",
+      "run_id": "effectiveness_v3_20260918T122827Z_be93b1e4",
+      "status": "cuda_oom",
+      "r_mib": 4,
+      "high_experiences": [
+        3,
+        4,
+        5
+      ],
+      "recovery_experiences": [
+        6,
+        7,
+        8
+      ],
+      "mutation_experience": 3,
+      "transition_first_ok": false,
+      "post_feedback_events": [],
+      "recovery_events": [],
+      "observable_feedback_window": false,
+      "construction_status": "failed_to_construct",
+      "limitation": "mutation_round_failed",
+      "n_trained": 2,
+      "failure_phase": "training"
+    }
+  ],
+  "s04_construction": "failed_to_construct",
+  "note": "Transition OOM is mutation-round evidence, not a post-feedback control failure"
+}

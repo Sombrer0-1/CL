@@ -1,0 +1,516 @@
+{
+  "kind": "frozen_protocol",
+  "schema": "effectiveness_v3_frozen_v1",
+  "study_id": "effectiveness_v3",
+  "protocol_id": "effectiveness_v3_paper_feedback_v1",
+  "revision": "thor_r2",
+  "design_hash": "3d5ab8242a7b790d55c9eecece61ceaaaabeb543e4eada145b21fb878b56a656",
+  "source_hash": "264eb322e88c490030523262362cc66e6a7548acb183003363b79f892a6c49e1",
+  "environment_lock_sha256": "2441b78017080812aecdee490a6fa44e18b03635aa5e64f0a8c249caee7424b4",
+  "environment_actual": {
+    "torch": "2.14.0+cu132",
+    "torchvision": "0.29.0+cu132",
+    "avalanche": "0.6.0",
+    "torch_cuda": "13.2"
+  },
+  "platform": {
+    "os": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+    "python": "3.11.16",
+    "machine": "aarch64",
+    "cuda_visible_devices": null,
+    "logical_device": "cuda:0",
+    "gpus": [
+      {
+        "index": "0",
+        "name": "NVIDIA Thor",
+        "uuid": "GPU-a7c66ad2-6dbb-0ab8-c1a2-37ba6dba3600",
+        "memory_mib": null,
+        "memory_mib_raw": "[N/A]",
+        "driver_version": "595.78"
+      }
+    ]
+  },
+  "data_hashes": {
+    "core50_nc_dev": "6641afb44392e990e217fc008cfe50808eac83c626cf24a86812481bb987caaf",
+    "core50_nc_formal": "eebb5a2ad6457024e88e098d3050c7893743c79e53558840089f3e5d1152be1b",
+    "splitcifar100_dev": "1dba7d42e863a4c250894644189a519ac0a01b78ff12bcee2b833b081153ce99",
+    "splitcifar100_formal": "da2fa2bab5fe749a3294bc4ee3ba2d94e75697c73b7a6d5f1c2cbc466ca208a4"
+  },
+  "identity_hash": "a65ade68d2d3cb1474390241f74fd9ef4574dc1f85da5c9e74fec016e479c5e0",
+  "calibration_hash": "1f806c830b521ee4a7601ee84e94729045c41ddf8c5ee23e846aac06dbcea923",
+  "datasets": {
+    "core50_nc": {
+      "eval_batch": 128,
+      "quota_tight_mib": 160,
+      "quota_loose_mib": 320,
+      "quota_mid_mib": 240,
+      "quota_mid_status": "available",
+      "quota_tight_bytes": 167772160,
+      "quota_loose_bytes": 335544320,
+      "latency_cal_s": 15.871690582498559,
+      "static_selections": {
+        "tight": {
+          "new_batch": 16,
+          "replay_capacity": 2000,
+          "config_id": "search_tight_core50_nc_b16_r2000_q160",
+          "run_id": "effectiveness_v3_20260918T115848Z_196762f9",
+          "score": 0.6552736306702206,
+          "n_feasible": 2,
+          "n_resource_failed": 4,
+          "rule": "max (P+S)/2; then shorter online_total_s; then lexical config_id"
+        },
+        "loose": {
+          "new_batch": 16,
+          "replay_capacity": 2000,
+          "config_id": "search_loose_core50_nc_b16_r2000_q320",
+          "run_id": "effectiveness_v3_20260918T120619Z_eb253037",
+          "score": 0.6556733931251104,
+          "n_feasible": 4,
+          "n_resource_failed": 2,
+          "rule": "max (P+S)/2; then shorter online_total_s; then lexical config_id"
+        },
+        "dyn": null
+      },
+      "quota_evidence": {
+        "scans": [
+          {
+            "quota_mib": 160,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.95,
+            "run_id": "effectiveness_v3_20260918T110511Z_6625ed70"
+          },
+          {
+            "quota_mib": 176,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.8636363636363636,
+            "run_id": "effectiveness_v3_20260918T110840Z_a5771425"
+          },
+          {
+            "quota_mib": 192,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.7916666666666666,
+            "run_id": "effectiveness_v3_20260918T111208Z_387ef458"
+          },
+          {
+            "quota_mib": 208,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.7307692307692307,
+            "run_id": "effectiveness_v3_20260918T111539Z_c2348841"
+          },
+          {
+            "quota_mib": 224,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.6785714285714286,
+            "run_id": "effectiveness_v3_20260918T111913Z_e14ccac2"
+          },
+          {
+            "quota_mib": 240,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.6333333333333333,
+            "run_id": "effectiveness_v3_20260918T112243Z_21f4d66f"
+          },
+          {
+            "quota_mib": 256,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.59375,
+            "run_id": "effectiveness_v3_20260918T112618Z_d021c23a"
+          },
+          {
+            "quota_mib": 272,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.5588235294117647,
+            "run_id": "effectiveness_v3_20260918T112947Z_d260d5a9"
+          }
+        ],
+        "selected_tight_run": "effectiveness_v3_20260918T110511Z_6625ed70"
+      },
+      "l_cal_run_ids": [
+        "effectiveness_v3_20260918T114803Z_7be1450c",
+        "effectiveness_v3_20260918T115131Z_c16256fe"
+      ]
+    },
+    "splitcifar100": {
+      "eval_batch": 128,
+      "quota_tight_mib": 160,
+      "quota_loose_mib": 320,
+      "quota_mid_mib": 240,
+      "quota_mid_status": "available",
+      "quota_tight_bytes": 167772160,
+      "quota_loose_bytes": 335544320,
+      "latency_cal_s": 5.841627937494195,
+      "static_selections": {
+        "tight": {
+          "new_batch": 16,
+          "replay_capacity": 2000,
+          "config_id": "search_tight_splitcifar100_b16_r2000_q160",
+          "run_id": "effectiveness_v3_20260918T122020Z_78102316",
+          "score": 0.5568555555555554,
+          "n_feasible": 2,
+          "n_resource_failed": 4,
+          "rule": "max (P+S)/2; then shorter online_total_s; then lexical config_id"
+        },
+        "loose": {
+          "new_batch": 16,
+          "replay_capacity": 2000,
+          "config_id": "search_loose_splitcifar100_b16_r2000_q320",
+          "run_id": "effectiveness_v3_20260918T122348Z_c186b925",
+          "score": 0.5467277777777778,
+          "n_feasible": 4,
+          "n_resource_failed": 2,
+          "rule": "max (P+S)/2; then shorter online_total_s; then lexical config_id"
+        }
+      },
+      "quota_evidence": {
+        "scans": [
+          {
+            "quota_mib": 160,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.95,
+            "run_id": "effectiveness_v3_20260918T113321Z_478b35ff"
+          },
+          {
+            "quota_mib": 176,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.8636363636363636,
+            "run_id": "effectiveness_v3_20260918T113444Z_d0c5ea96"
+          },
+          {
+            "quota_mib": 192,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.7916666666666666,
+            "run_id": "effectiveness_v3_20260918T113606Z_e6a1ba43"
+          },
+          {
+            "quota_mib": 208,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.7307692307692307,
+            "run_id": "effectiveness_v3_20260918T113731Z_28cef347"
+          },
+          {
+            "quota_mib": 224,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.6785714285714286,
+            "run_id": "effectiveness_v3_20260918T113853Z_f3e0ac16"
+          },
+          {
+            "quota_mib": 240,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.6333333333333333,
+            "run_id": "effectiveness_v3_20260918T114015Z_3d1ec284"
+          },
+          {
+            "quota_mib": 256,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.59375,
+            "run_id": "effectiveness_v3_20260918T114138Z_ef623b13"
+          },
+          {
+            "quota_mib": 272,
+            "status": "completed",
+            "train_reserved_peak_ratio": 0.5588235294117647,
+            "run_id": "effectiveness_v3_20260918T114259Z_e10bf2e6"
+          }
+        ],
+        "selected_tight_run": "effectiveness_v3_20260918T113321Z_478b35ff"
+      },
+      "l_cal_run_ids": [
+        "effectiveness_v3_20260918T121603Z_be974f29",
+        "effectiveness_v3_20260918T121724Z_566d4373"
+      ]
+    }
+  },
+  "thr0": 0.05,
+  "delta": 0.0,
+  "alpha": 0.1,
+  "beta": 0.2,
+  "initial_counts": {
+    "new_batch": 16,
+    "replay_capacity": 200
+  },
+  "optional_plugins": "gem_ewc",
+  "m_batch": 1.0,
+  "m_frame": 1.0,
+  "cost_model_note": "count-space proxy m_batch=m_frame=1.0; not physical MiB",
+  "reserved_bytes_by_experience": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "dyn_quota_bytes": 167772160,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "scenario_coverage": {
+    "S01": "failed_to_construct",
+    "S02": "pending_formal",
+    "S03": "pending_formal",
+    "S04": "failed_to_construct",
+    "S05": "pending_formal",
+    "S06": "pending_formal",
+    "S07": "realized",
+    "S08": "pending_formal",
+    "eval_separation": "realized",
+    "control_identifiable": "failed_to_construct",
+    "dynamic_reservation": "failed_to_construct",
+    "io_prefetch": "realized",
+    "host": "unavailable"
+  },
+  "scenario_audit": {
+    "study_id": "effectiveness_v3",
+    "kind": "scenario_coverage",
+    "scenarios": {
+      "S01": {
+        "scenario_id": "S01",
+        "implementation_status": "pending",
+        "construction_status": "failed_to_construct",
+        "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+        "raw": "failed_to_construct",
+        "actions_applied": [],
+        "failure_category": null,
+        "predicate_values": {
+          "control_identifiable": false
+        },
+        "limitations": [
+          "integer_config_changed is not by itself an effectiveness verdict"
+        ]
+      },
+      "S02": {
+        "scenario_id": "S02",
+        "implementation_status": "pending",
+        "construction_status": "not_run",
+        "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+        "raw": "pending_formal",
+        "actions_applied": [],
+        "failure_category": null
+      },
+      "S03": {
+        "scenario_id": "S03",
+        "implementation_status": "pending",
+        "construction_status": "not_run",
+        "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+        "raw": "pending_formal",
+        "actions_applied": [],
+        "failure_category": null
+      },
+      "S04": {
+        "scenario_id": "S04",
+        "implementation_status": "pending",
+        "construction_status": "failed_to_construct",
+        "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+        "raw": "failed_to_construct",
+        "actions_applied": [],
+        "failure_category": null,
+        "experience_windows": {
+          "high": null,
+          "recovery": null,
+          "mutation": null
+        },
+        "predicate_values": {
+          "observable_feedback_window": null,
+          "transition_first_ok": null
+        },
+        "limitations": [],
+        "evidence_run_ids": []
+      },
+      "S05": {
+        "scenario_id": "S05",
+        "implementation_status": "pending",
+        "construction_status": "not_run",
+        "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+        "raw": "pending_formal",
+        "actions_applied": [],
+        "failure_category": null
+      },
+      "S06": {
+        "scenario_id": "S06",
+        "implementation_status": "pending",
+        "construction_status": "not_run",
+        "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+        "raw": "pending_formal",
+        "actions_applied": [],
+        "failure_category": null
+      },
+      "S07": {
+        "scenario_id": "S07",
+        "implementation_status": "pending",
+        "construction_status": "realized",
+        "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+        "raw": "realized",
+        "actions_applied": [],
+        "failure_category": null,
+        "predicate_values": {
+          "wait_ratio": 0.5201355793967096,
+          "cpu_percent_mean": 9.487585681645102,
+          "constructed": true
+        },
+        "limitations": []
+      },
+      "S08": {
+        "scenario_id": "S08",
+        "implementation_status": "pending",
+        "construction_status": "not_run",
+        "effectiveness_verdict": "\u672a\u9a8c\u8bc1",
+        "raw": "pending_formal",
+        "actions_applied": [],
+        "failure_category": null
+      }
+    },
+    "host": "unavailable",
+    "rules": {},
+    "note": "construction_status is not an Orion effectiveness verdict"
+  },
+  "s04_policy": {
+    "status": "abandoned_this_revision",
+    "group_c": "scenario_not_realized",
+    "note": "do not rebuild S04 at Q_mid or Q_loose in this revision"
+  },
+  "q_mid_policy": {
+    "role": "group_G_quota_mid_only",
+    "note": "do not add an A/B-structured comparison at Q_mid"
+  },
+  "calibration_source_hash": "264eb322e88c490030523262362cc66e6a7548acb183003363b79f892a6c49e1",
+  "io_prefetch": {
+    "constructed": true,
+    "wait_ratio": 0.5201355793967096,
+    "cpu_percent_mean": 9.487585681645102,
+    "limitations": [],
+    "pin_memory": false,
+    "queue_depth": 2,
+    "num_workers": 0
+  },
+  "host": {
+    "status": "unavailable",
+    "row": {
+      "probe_id": "host_capability",
+      "role": "host_capability",
+      "dataset": "core50_nc",
+      "status": "unavailable",
+      "feedback_source": "development_val_seen",
+      "full_stream": false,
+      "n_expected": 0,
+      "n_trained": 0,
+      "n_evaluated": 0,
+      "host_probe": {
+        "host_enforced": "blocked",
+        "cgroup": {
+          "available": false,
+          "writable": false,
+          "path": null,
+          "mechanism": "cgroup_memory_max",
+          "reason": "no cgroup memory.max in this namespace"
+        },
+        "rlimit_as": {
+          "available": true,
+          "mechanism": "rlimit_as",
+          "soft": null,
+          "hard": null,
+          "scope": "process virtual address space, not RSS; CUDA mappings inflate VA",
+          "reason": "usable as a named host_rlimit_as variant, not a cgroup RSS cap"
+        },
+        "notes": "PLAN host_enforced requires a verified process-group/cgroup limit. This probe never writes host/global memory settings. Writable parent memory.max is not an execution proof; HostEnvelope must create a child cgroup without modifying the parent limit."
+      },
+      "delegated": {
+        "available": false,
+        "status": "unavailable",
+        "reason": "no delegated cgroup root configured",
+        "mechanism": "cgroup_v2_child"
+      }
+    }
+  },
+  "o00_latency_s": 30.0,
+  "o00_memory_mib": 4096.0,
+  "decay_delta": 0.08664339756999316,
+  "preference_orders": {
+    "balanced": null,
+    "latency": [
+      "latency",
+      "memory",
+      "plasticity",
+      "stability"
+    ],
+    "plasticity_stability": [
+      "plasticity",
+      "stability",
+      "memory",
+      "latency"
+    ],
+    "memory": [
+      "memory",
+      "latency",
+      "stability",
+      "plasticity"
+    ]
+  },
+  "formal_slots": 153,
+  "source_runs": [
+    "effectiveness_v3_20260918T105219Z_f71357c4",
+    "effectiveness_v3_20260918T105256Z_1365e1e6",
+    "effectiveness_v3_20260918T105334Z_06428be6",
+    "effectiveness_v3_20260918T105419Z_c989e0b8",
+    "effectiveness_v3_20260918T105432Z_d2823b7d",
+    "effectiveness_v3_20260918T105446Z_82bc694b",
+    "effectiveness_v3_20260918T105507Z_30b241a6",
+    "effectiveness_v3_20260918T105839Z_16319eb8",
+    "effectiveness_v3_20260918T110217Z_75c47b82",
+    "effectiveness_v3_20260918T110341Z_063b7e9b",
+    "effectiveness_v3_20260918T110511Z_6625ed70",
+    "effectiveness_v3_20260918T110840Z_a5771425",
+    "effectiveness_v3_20260918T111208Z_387ef458",
+    "effectiveness_v3_20260918T111539Z_c2348841",
+    "effectiveness_v3_20260918T111913Z_e14ccac2",
+    "effectiveness_v3_20260918T112243Z_21f4d66f",
+    "effectiveness_v3_20260918T112618Z_d021c23a",
+    "effectiveness_v3_20260918T112947Z_d260d5a9",
+    "effectiveness_v3_20260918T113321Z_478b35ff",
+    "effectiveness_v3_20260918T113444Z_d0c5ea96",
+    "effectiveness_v3_20260918T113606Z_e6a1ba43",
+    "effectiveness_v3_20260918T113731Z_28cef347",
+    "effectiveness_v3_20260918T113853Z_f3e0ac16",
+    "effectiveness_v3_20260918T114015Z_3d1ec284",
+    "effectiveness_v3_20260918T114138Z_ef623b13",
+    "effectiveness_v3_20260918T114259Z_e10bf2e6",
+    "effectiveness_v3_20260918T114428Z_b0d85084",
+    "effectiveness_v3_20260918T114803Z_7be1450c",
+    "effectiveness_v3_20260918T115131Z_c16256fe",
+    "effectiveness_v3_20260918T115513Z_7ae0a419",
+    "effectiveness_v3_20260918T115848Z_196762f9",
+    "effectiveness_v3_20260918T120210Z_cdbc2c63",
+    "effectiveness_v3_20260918T120218Z_0c37d785",
+    "effectiveness_v3_20260918T120226Z_efc0e9fa",
+    "effectiveness_v3_20260918T120234Z_fd13f788",
+    "effectiveness_v3_20260918T120250Z_836b2c9a",
+    "effectiveness_v3_20260918T120619Z_eb253037",
+    "effectiveness_v3_20260918T120948Z_245119b7",
+    "effectiveness_v3_20260918T121158Z_dabdd4bc",
+    "effectiveness_v3_20260918T121407Z_6145c70a",
+    "effectiveness_v3_20260918T121416Z_8e66ea82",
+    "effectiveness_v3_20260918T121432Z_dbaf83b0",
+    "effectiveness_v3_20260918T121603Z_be974f29",
+    "effectiveness_v3_20260918T121724Z_566d4373",
+    "effectiveness_v3_20260918T121856Z_e38b9654",
+    "effectiveness_v3_20260918T122020Z_78102316",
+    "effectiveness_v3_20260918T122143Z_e5952c76",
+    "effectiveness_v3_20260918T122151Z_b5a028ce",
+    "effectiveness_v3_20260918T122200Z_3dd593e0",
+    "effectiveness_v3_20260918T122208Z_e404b70f",
+    "effectiveness_v3_20260918T122226Z_5af78732",
+    "effectiveness_v3_20260918T122348Z_c186b925",
+    "effectiveness_v3_20260918T122512Z_1c21ccab",
+    "effectiveness_v3_20260918T122557Z_55af747b",
+    "effectiveness_v3_20260918T122641Z_086e81f5",
+    "effectiveness_v3_20260918T122649Z_6081ccbc",
+    "effectiveness_v3_20260918T122707Z_e90ddff2",
+    "effectiveness_v3_20260918T122827Z_be93b1e4",
+    "effectiveness_v3_20260918T122947Z_bbe961fc",
+    "effectiveness_v3_20260918T123324Z_803446b8"
+  ],
+  "frozen_hash": "9289a239c1f10ff7d32d9b6422b8dc1a467ded2516658a3b3ea668abea798e6c"
+}

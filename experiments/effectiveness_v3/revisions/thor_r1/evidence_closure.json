@@ -1,0 +1,1607 @@
+{
+  "kind": "raw_evidence_closure",
+  "study_id": "effectiveness_v3",
+  "revision": "thor_r1",
+  "n_rows": 95,
+  "n_ok": 95,
+  "n_mismatch": 0,
+  "ok": true,
+  "rows": [
+    {
+      "probe_id": "host_capability",
+      "role": "host_capability",
+      "dataset": "core50_nc",
+      "run_id": null,
+      "status": "unavailable",
+      "ok": true,
+      "mismatches": []
+    },
+    {
+      "probe_id": "eval_core50_nc_b128",
+      "role": "eval_batch",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T034951Z_79924874",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "b0e4041572fa98ed436b3a3de67d6b2a6d23268a8fd6c9516144a7b50e3262f3",
+        "phase_trace.csv": "0699ff67726720cd63e801dfa7337c0d62a4860576dc44644fb4cc76a7d6e2e2",
+        "experience_metrics.csv": "dc3ff6fbaebe97059247a61b9241d59d25397733981cf5ca0b7bea5f6c0ed603",
+        "resolved_config.yaml": "1ba3a134effe990cff07ca2413393d5130d97d053f96af6ff422379302b8381c",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "120d50f3d3e81467e5958e1a971a3ac61c4d3f9b8cd51cb5c44a586af3e30f4e"
+      }
+    },
+    {
+      "probe_id": "eval_core50_nc_b32",
+      "role": "eval_batch",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T035026Z_9d0bd278",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "fb3584c155aee779773d1a6ef8c8014d01c9833344175bb9a6dfbad85d2fb4b0",
+        "phase_trace.csv": "8c1ae79a88b3b50f5b8c064e5867441461d767757fc82e444bc4fbdb7ccca6d5",
+        "experience_metrics.csv": "ff7128a2582c784a0dd2db7eacda6804c4748bc4bee0a9aca69fff31ea50d764",
+        "resolved_config.yaml": "0ad4d602d1ffa2387807403cb29c183ac3a3dc84cf4d3a8127719961b68700ba",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "ede7ee26188c370d1b46ad6e8edc5184bef254463eca43c4a5db69f4b8aa555b"
+      }
+    },
+    {
+      "probe_id": "eval_core50_nc_b8",
+      "role": "eval_batch",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T035102Z_024561a7",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "93db05428a6a0067b1f3aaf09966616c2fc921abdd934919ede5414d4153d7f1",
+        "phase_trace.csv": "e74d3dba11f172ad3be51cd9fd6a60c67c918bc325f13f82f098a9d07afa209c",
+        "experience_metrics.csv": "50bcf232ce08ac025b7d7a47a551794b436ea451349efe565b5c9a349ef2d81a",
+        "resolved_config.yaml": "71040e825572d43fc256ce9a9e9f4573f32edf9cbcc2781412f660051b395eed",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "110fe739a78ff85d7604bc55066fdb826e25329978e8c1f7831cba6c4ee85473"
+      }
+    },
+    {
+      "probe_id": "eval_splitcifar100_b128",
+      "role": "eval_batch",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T035221Z_7b303cae",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "56bd5b36fe8837582a7f1bebcd4b0e754ac82ab49c83706c81c405bcb7342dca",
+        "phase_trace.csv": "5c4601991117a2d8c54118ce7470ad5afc363fd0ec50a82a6dcc7eb879588473",
+        "experience_metrics.csv": "49125b0642fea1fcb7fe749244e166513654ba0939b1bb0a0bfd8598d0512ef7",
+        "resolved_config.yaml": "26a37f9dba2cc2b6b6730af7d321071338de01b3526711fd08d320aaf1d78d98",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "3a88f5fe5f8c3666e64d4193bf5b67738eebda082917754e81fcd93bc0bfe9b7"
+      }
+    },
+    {
+      "probe_id": "eval_splitcifar100_b32",
+      "role": "eval_batch",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T035236Z_4f0930ef",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "5463e9ce1dd79b97746432b6b95da2c28e43dc4b648c22a0e74887ff99aa973e",
+        "phase_trace.csv": "0a1ca0d517e1a557f3656c95ccc356204df5347651eda91655a19ac0becc627e",
+        "experience_metrics.csv": "3e9b2e16edf68c2ddb1d728358dc1912fe90e17d4e4ed2146c67fd1c47ce5ec7",
+        "resolved_config.yaml": "8a4a6da7467862ee3b5cf4af6c872030859f929049d1fa82782442aeb693a24d",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "06107d9bb237a88458e500ffc7f4326672be2c76d7dded9247f193b1327f2977"
+      }
+    },
+    {
+      "probe_id": "eval_splitcifar100_b8",
+      "role": "eval_batch",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T035250Z_e0948625",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "54c4dcaf8f402ca36e6840742b94746756e2c55e9060067f63766f73717655c7",
+        "phase_trace.csv": "9023e323dcbfe1ff0a6056e6c1392a811b8c06bc6d959bddaad7df4d4fc9ab05",
+        "experience_metrics.csv": "b42df53d9c05f09809d63d7aff6c6df62021cc42971918407943dc1688177103",
+        "resolved_config.yaml": "34d8aa6ed7385ec3755cd0e45978f410e61c769e124806ffd17d42bb168db278",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "2544376d519f1ff6c56749e19e3dd085a2b7189f6a50a124e3baa5b6cb73b7c2"
+      }
+    },
+    {
+      "probe_id": "s0_core50_nc_rep0",
+      "role": "s0_profile",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T040734Z_93bd9bba",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "51dd63ca9d83aac972b738042b01971be4a47346347d42205fbd8b6208187048",
+        "phase_trace.csv": "789c3564ba428e6c83f52855a5827317639b1c7f03d38fd6a3eacf0cae5b1480",
+        "experience_metrics.csv": "f5c2f20290372ddf44a6b2e4bf23a8c51c894562ec3766576721d1ddf8ab77e6",
+        "resolved_config.yaml": "1ae2eea4ada423039b5a0fe69447c3b5d7faf0645cef16e9ad01badfbe8012c5",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "f5bdd05fc56762ad0cb549f777ebd82da2f04c30f4e3287bc7cc17acb891fb3a"
+      }
+    },
+    {
+      "probe_id": "s0_core50_nc_rep1",
+      "role": "s0_profile",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T041110Z_7da6f0cf",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "5978107c0090fca6b90275e23c7853db4fea5060bf2158c2dd1dbc3a9e865cb6",
+        "phase_trace.csv": "d08337ac22badd3128222d24be9f2aebbb965a7c7b3d07c539071f73f15e3a8a",
+        "experience_metrics.csv": "44b8d1a6e903acea03134a2fdd07bf0e8648e157543155118a612f87027d3d43",
+        "resolved_config.yaml": "da40d6fd743b498eb948a9662f9185b6b35a08f356ba06c8b03eee160292162e",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "fe48b29456726cf4dd0fc3df99707204eb7460e6941c87334ad782000e8ad4a0"
+      }
+    },
+    {
+      "probe_id": "cost_core50_nc_b64",
+      "role": "plugin_cost",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T041442Z_64049f11",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "f71a28f2e9ab2c2fcff2f91593480df9a0003c7b01bf1b121f13492bdfdc3e51",
+        "phase_trace.csv": "d2a9923fe06ceb5c6d4496de52d086bf5e6b3c78f3e6a9e4bdb577f69c35659d",
+        "experience_metrics.csv": "28d140054768c64b6c730625e6424165fc32f5c40eec79cb0c2b8a510983fc17",
+        "resolved_config.yaml": "6d31d6ea5f71c3d42066a8d3ce383f2cd3f4408296d920480c7260b1b89966f9",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "e54628517de30e636feebfe457293d9580eb9109c5c9e6e06eabe7497a29b81c"
+      }
+    },
+    {
+      "probe_id": "cost_core50_nc_b256",
+      "role": "plugin_cost",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T041653Z_27f9e4f1",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "aa3d1c4fc35580f1481e41e2986960c3f56d1011dc3e31d356637cdf43234a34",
+        "phase_trace.csv": "11a997d111a1ee186c7b18316f8e25823e2e0050f863bc1bf45c2aaae8e64773",
+        "experience_metrics.csv": "21e2a919756d464105ecda47fd06a0b94f2e4c0f0f801f5e8edc0248b44ed01b",
+        "resolved_config.yaml": "0aaa779a719a280a185f8bcae0d53c79c98b873177975c79b85a0fd7c405bde3",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "0b44772e56eec6b266c42982700d8b26f72a5c3ecb18e80a00e2f0b4047c1004"
+      }
+    },
+    {
+      "probe_id": "cost_core50_nc_gem",
+      "role": "plugin_cost",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T041849Z_142c7d28",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "cfc2b289038330e0f64212791adf17ede1bd120d0a1763da53b4f25e5fc56e48",
+        "phase_trace.csv": "e0a94855b997726c50fd458bb59992e73b705c65bc1630d5bf9dee62da26fbb7",
+        "experience_metrics.csv": "00f2f1159d055eb257948f7453be21b31d57b060289591e6bd49367f9a591242",
+        "resolved_config.yaml": "d47a0e938b035093ee411116d288df6ff786cc35283addb96ec114690ba13467",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "1b834e60e236b3fc453a3bfee53c7ec3f5836d5221ef5e3b4a78bdc74b269be7"
+      }
+    },
+    {
+      "probe_id": "cost_core50_nc_ewc",
+      "role": "plugin_cost",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T042714Z_1547820b",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "459cbd1057a4a82a31d74aea0494acc0998bdc6dc0d5d1b2313599d278582176",
+        "phase_trace.csv": "337126b304725b38b6b19f557c4bcd48654eb825d108d04a9ca68ad323560770",
+        "experience_metrics.csv": "50b3b413257e696abbf02350c7a21a1b73f052d7f14261ea587a199fb6140bf2",
+        "resolved_config.yaml": "6563d84a6f55ed6a619b54b72c592ce93b2dd02f15d86b6310858e95a2b0a89b",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "b065a3c6be527aa26aa089db83b0051c2abaa98cc007a96eb5df807c43dae89d"
+      }
+    },
+    {
+      "probe_id": "cost_core50_nc_gem_ewc",
+      "role": "plugin_cost",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T043807Z_ed855c65",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "6b18be0d6942b9c112e2ad8fb1c213674e92253ff109a010ceb1097cd1405211",
+        "phase_trace.csv": "d498dd9eb85f36385b32975186ece676be1aceaaf1e418105fd6fa1b5a77ac16",
+        "experience_metrics.csv": "8145944ed7ee5732486cb9eda9f4bf286f3fcd4407be35b9765c4b2f42cf3279",
+        "resolved_config.yaml": "7da4583a1d41d38310f33548b412fa5e6204ab2b16deff2589c4ccebb65c6029",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "2319d695c5958069ef06e490fc3465171ce028fda2c93270d16fd365c7d43ed6"
+      }
+    },
+    {
+      "probe_id": "s0_splitcifar100_rep0",
+      "role": "s0_profile",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T045416Z_2e6c108f",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "f90936e85e24bb9479827fffce5b92fdeccf3c129908a2b5608cc9d5a4621540",
+        "phase_trace.csv": "75863c9e367c805fcdcec854c6457f3d87e334698deb2455e9ad0fc96dae229a",
+        "experience_metrics.csv": "4b5be6b5cef269b4852b1806128ae110a1dbdfbe2378f9b15d40c728d80b95f2",
+        "resolved_config.yaml": "2f926d8963a9048e400aedbb404ba076c50208f276811c6e1523b3f1e79723c2",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "6c99c91232067865ed8ca6ad67c2a35bbdf68139e195b4acddbeb8a54e34e198"
+      }
+    },
+    {
+      "probe_id": "s0_splitcifar100_rep1",
+      "role": "s0_profile",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T045539Z_46e01d7e",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "efb4ae09811e22444a287b4dc913e9aa7933f6dc1f91051acd0304b600593e11",
+        "phase_trace.csv": "ca99a2197128551423de0411ba010d63470e20e0c68718b67520c426fa6a3052",
+        "experience_metrics.csv": "7d750e8ad16593f846171d968123866eb11f181d1a846d69cc4e4c610e192267",
+        "resolved_config.yaml": "881f8f375292348528d937314e6ad10ae60d3e73b145e8af607eea3dc7b12fa4",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "22e26007f255b703043af639f6b5a613064c07b005da1210200faa87f09ead38"
+      }
+    },
+    {
+      "probe_id": "cost_splitcifar100_b64",
+      "role": "plugin_cost",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T045709Z_0b11e29d",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "d4b64c38a1f6d7d02cff0182aa17d7be8509f15798d9d39c68eca66ed6c55bff",
+        "phase_trace.csv": "0f3bdd2a6984023105bfe544f1544240e1347f7a84f0e9c3a5733675e6fa2bb8",
+        "experience_metrics.csv": "734b46430b6b65d83e21d301f1132def1ec27684b884592964b45117040157a4",
+        "resolved_config.yaml": "c04b9d20e411130d7625fa325b107099279ea260af09d1e53b401f628d95eaa9",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "0a2f985d7b62c142a50490655866147e22d7e5bf3e7269969fa39cd0808c6602"
+      }
+    },
+    {
+      "probe_id": "cost_splitcifar100_b256",
+      "role": "plugin_cost",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T045753Z_531aff64",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "41e6aa10c01d2bd7d8080e57d8deba00a6e801568b588dc66e09fb433eda736f",
+        "phase_trace.csv": "c01fb6f32d047e243aa35892df25625cdf6c2b107f4d0cf38c92bbc279626344",
+        "experience_metrics.csv": "4530d84f9b84f04c0cdcad0ddf7c290e64131cc591425726e5c7a7ca6f005ea9",
+        "resolved_config.yaml": "9defb67e8ef56add3f00af979a6efb566fbebfa22921325a9b77737ebf88e861",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "6c71d52e483248f43ca590741d8114a329338876381a906774166f017e2df5e1"
+      }
+    },
+    {
+      "probe_id": "cost_splitcifar100_gem",
+      "role": "plugin_cost",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T045833Z_3ea4231e",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "3fd56b21bc9c59710fc643abee88aafbc14ed3ed7b8d44641725e999bb3d023a",
+        "phase_trace.csv": "1201408b101f7f673b87ad3c542ac6c13244f6e9e8d9a4570f0187981543a25f",
+        "experience_metrics.csv": "0eaecadc339c665c27d559486691d4375451e39f82eaba22eb730ee8bbd29259",
+        "resolved_config.yaml": "89494c159248d975960834a11bd7c4ea4ffd1d50b694d6fcdb2202b957aee832",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "a652269f523ba718bb7db973043583e974b9c27f15c5523cd478dffcde384d14"
+      }
+    },
+    {
+      "probe_id": "cost_splitcifar100_ewc",
+      "role": "plugin_cost",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T050219Z_ee7b9532",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "9e616908ede069c781c7c7c782f407a4aeb85774d802be96ea5505ecb1e13945",
+        "phase_trace.csv": "66199401e6ac09fd47c03286029de5cfed087b254ab907edca706d7664db1c9e",
+        "experience_metrics.csv": "0a6524d41b753545f3b88f297cb406c9203260cd3f1c992add26af304495690f",
+        "resolved_config.yaml": "9db5acc2c46760b29ceb30daa50a9c2d324dd1f9b37285b8b820e485b3dd3ee0",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "0638b4c6eb703da8ca33e29d5fcdc604366a89c346a0878ff9df9528f07e3507"
+      }
+    },
+    {
+      "probe_id": "cost_splitcifar100_gem_ewc",
+      "role": "plugin_cost",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T050652Z_3e217be9",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "d61ea83e740cc8ee3e08ac45fe7a5abcdc0198ba5f4d6f2c104a0353ddce3085",
+        "phase_trace.csv": "a5774b3546b6148a0eb1d43085e3ddcf48d7b5b13f01931dc8baa3043c4da343",
+        "experience_metrics.csv": "d6226edf2f0324659496768f2ba85c93fb7ae4ca2189f56fd3924b8b4a57855d",
+        "resolved_config.yaml": "3819c52888c2e758037ae54d00eae046dde8a3c12b4b263e0fb15a3546bbdc4f",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "9d2e5389756f9c6194018ffd7634c176436f3225e0409ddf32d25880ccc6c9cd"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q160",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T051310Z_753bf737",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "76d2166c89a7f741b8539de7100bed6c90f0df850c6c2885e6954a47b3da5f71",
+        "phase_trace.csv": "49fae83faabb2c76e1a91a6ee587e27fab2a353676ab8d3a10fe19f873dc62dd",
+        "experience_metrics.csv": "e8b30d7ad6f47f4cee72b0879f08cb00002838a48effb9f88ab560d1dbe26c8e",
+        "resolved_config.yaml": "eda5657a7f039b5a61cbc103f6ee328a13842d515bbe7dc62633b47f5a4dd965",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "e008922207d2d6861122f203c42923f8a04245c2b9cca2cc98e730ca0b4623db"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q176",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T051644Z_afe539fc",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "68e2e6f9b17df2a72c24f772c7a7ddb7f704493de7e197f2c5589830d5f193be",
+        "phase_trace.csv": "210630e0fc8e0e51c7ad04a88cc8db708a8c5e81d69f464552057db75704f7be",
+        "experience_metrics.csv": "19e5d967daf9cee42ecdd44f606d599afcb119dae49c5f4d9b9a7b6807c5db2d",
+        "resolved_config.yaml": "ce43fb6dd9e453b07a9ba8adb3d5f13b40a14b880755ee007a3a204958c7a76c",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "496af59f46ed296c57f9f35faea1fb163d9e4b50f30305cd4fc70d16a2e0008f"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q192",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T052003Z_0326cd41",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "070a7a62ed6987e4919114300d124bd062a137719d5de64aae1b6b0079a35596",
+        "phase_trace.csv": "700c63ef1f294ce88599c8ca727174845a3cb57b3c517f9700eaaf0fc658cd84",
+        "experience_metrics.csv": "63d39c9e9bd2dd1f921d1d0dd5e0e7276e35fb6779df0d4e6a9872653aa22634",
+        "resolved_config.yaml": "1f6722148902fe7fa4e998448b9be626e877197d6d3fbfc69dd50e81f2d5d932",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "264e8fa3e6330382644fa35b3ee6df974d467b97b7f83d84954f128c8fb1dfff"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q208",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T052329Z_c1d89672",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "7a2d3a6252755cf31ac4bbdeefec505c2f64e66e951f318a874d7ce26aa78f87",
+        "phase_trace.csv": "140bbdcb4f070537d749cc1a3167a41eb02bccdf50b2e5eba5a4d441e6a06591",
+        "experience_metrics.csv": "c52506dbcdcc50b2d3d608161396997c197677828796f2d00dc1a2eab223cb5c",
+        "resolved_config.yaml": "41f0e086b3454b03bbdd01976e8de6a48f3f1d794f6f4215c7d4e8271517cdc6",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "b58b0da834898c0f54c9326f9ab0d4ebb35cb4da9a9b79f52a0344d7adcdc5ad"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q224",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T052702Z_ca15a41b",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "b0818706634046b853fe6f137225543a9d70d1872f8191558643cf4b4768a8b8",
+        "phase_trace.csv": "23d1de30a18c5826e12883b044176f86a73517b743475865d8eb3372fb699eb2",
+        "experience_metrics.csv": "8ce05db9916e6dbc404cccbcbc16b4cf5c652e93019996e4ab6b428511b47994",
+        "resolved_config.yaml": "34788bb657c6b5923d8d27cd7cef0671adbdba8999947d2326c424ad2908505a",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "82df5dca4a62026c092630f3815c8f9fa4ec4323977814d62e6a693e24d564fb"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q240",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T053032Z_b8606185",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "4b5715243f3d6bc49adcdd9bb12936f7425c9df528182499b1765d9dd60d18e9",
+        "phase_trace.csv": "c870134ad142970f62542c14c4a1a1c94576076978cabad425d52a7751f648b5",
+        "experience_metrics.csv": "ada6287ca492804651fb747c296c53c72ef6c92c8d9f39a79cd9a24c11159246",
+        "resolved_config.yaml": "ca4ea06b5d139c4521dc00cc1755ac947564fd045b6e924b31295420ed46f56e",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "85be901965681b0ba5ff58318ce2cf706f41d3bc8e4711c89b7696d73f2d1d34"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q256",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T053405Z_da48ec62",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "367424c69526ca6a58702df616d782fabe772fbc5e8418c346f8dcb75d58d331",
+        "phase_trace.csv": "6d7a873b2b52fd2918d2c21bd0ca075b7ea30ee99c9b059828a498f74254da89",
+        "experience_metrics.csv": "cec2af59bd0d779f23d2b651400530373f5d018de2204c7e7ca243d6943b730d",
+        "resolved_config.yaml": "24853c3a5bb34fc012e9812a1149eaa271806797ce88efe7de65a80bbc060fca",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "61f7cf9bb086df1f11a9b42cb3157778d17591ff82e8e7eac3a73293fb92a3b4"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q272",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T053739Z_7f296087",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "dd528188268b01aefb14531bb4dcf524c5b261b1e429afb0fa71c318d2d927a3",
+        "phase_trace.csv": "b4d420e21b77576f6e928eeab387435033b42733f5b93c58b246ffe0be36ae4b",
+        "experience_metrics.csv": "fd9e0338002010303e1a655e09557ece5dbd87b55a5e3e8a3ddd5bca4ec7ee8c",
+        "resolved_config.yaml": "5305b549ad7c70cf55e4704a9e353977c6f0d4848ef0d6764f96006f5c523bc2",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "0827a03f3b7c9b3a25624632dfa10f9324c6745b6632eaa849ec5d4a27ee1d68"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q160",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T054112Z_d4208e97",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "bc38d3d7c77d26cd6e16a0bdf44f936c7a12b180afbc3e86e33fbed98857a725",
+        "phase_trace.csv": "24f9ccbd41abe447e3546fa3e627dac585403f41d55e2a6564c5a5b64e54fa7b",
+        "experience_metrics.csv": "009bc0e9ad9462b3ca29bb9338a3968f4458ac30fc8c7c00c5ac1c9e35638c39",
+        "resolved_config.yaml": "fac11d1971d5526e2ddf5c826594483cc6d110dc2a6f6db1a8f29ab3377463ae",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "6653f12660844d96a0be02e48dfaa7fd4b781c0dc771ce4d75af99da02967187"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q176",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T054236Z_cc768590",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "e5e6b7c71ce637df65951c72a130c3c5cb840070ef56391aa132fd93074c8da5",
+        "phase_trace.csv": "479e9678ab8409197a41697e05291a7630971d62876da4cc1c17d2567fd574c9",
+        "experience_metrics.csv": "d0e072dd21745b7f47da19eeafbf6475435880e3d2692d50d1b6115b7fab26b5",
+        "resolved_config.yaml": "e581bfb8d3fe6307a1c27165f4e61a0e660b3db596de8263da188900dfedda81",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "4bc267418fd65c9220f489a8b5359685b25cc5cfe06925d30b0c877e54f1310a"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q192",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T054400Z_e4bd3c8e",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "7795d15ce77683ea213695aa4fe6fdbf6bbc05c348e600dc86454286dc1f02dc",
+        "phase_trace.csv": "86c18d952a217545a39ee8fbe6fbc518cdac070cd4582740d38235e9ed88c08e",
+        "experience_metrics.csv": "6e3cf6588a24da774f785e3a8f64c78dfc2c574e697c0f160590b15178401861",
+        "resolved_config.yaml": "c1b817c5f9c756d95a742101ccf3432be828222ad9504b3aa09def924b21f79b",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "1e15b69398f95859423f4fcfc56e1e9d29e9838c35c8a273d00f8678716764dc"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q208",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T054522Z_0bab737f",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "4a2fd7e58b463e9bc0fc99b6ebf2f2740a37bc24d58f5616aa4991ea72a85bf2",
+        "phase_trace.csv": "4dbb3ff7c02ae38f4a8a4da8ce9f85c4dfdf2ef77344ef253873c816663f4e79",
+        "experience_metrics.csv": "5ac313bd5f2b6c64c083cdf29c70cfd351b0fc2a45ed8de38a5355c09ac1b359",
+        "resolved_config.yaml": "aefc188bb551fc81597b9155cbfdeec0501c3d2f9dac91c281ec3f9f70f10e4f",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "4f97fb5d43bab3627540d9e912d1345d9a8b8c59f690985fa385dcfe51d790e7"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q224",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T054644Z_7e5cb9f5",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "c850e431e573a6112c8e12c890c82fcd33bc3d63d25b5b6fb525cebf27adc92b",
+        "phase_trace.csv": "567f3f61bc06505bc2c0a626501fe4476f7f80b9de5449a33d96136d803430ab",
+        "experience_metrics.csv": "72f9da25544fc92897cf5ff5e90ebe4d2925f790b3fe499e8443d8dc77555ac9",
+        "resolved_config.yaml": "a6207ed1f68dd751f1eb698b6cdb1fe05a842aaf7038b995c8833005d3eaee43",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "a7807714c02cbf350982ecb56eea6fb144a8ceb640d8931aaa0f488de4f6113b"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q240",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T054805Z_038271a2",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "2d9a4df706e17736b5daa0098bc405b3c600a51dae899606995a583d3ad3acad",
+        "phase_trace.csv": "ce9bbb712c7f9787bc99ff5d4c35481f436c2d13bb26d33219fedaf1fa6a1bcc",
+        "experience_metrics.csv": "55a88b101967962b1871252f07da54e65b4ee3d3c7169579c9fb089e2bd1ee19",
+        "resolved_config.yaml": "2f9b25353448ca670572429a6f04b36c05322f98bdefd8d19cd7cab728069f5c",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "51d29de1667b316460ac72d371324041ffc70205f0c2f4d79f05957a9fd4d8e4"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q256",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T054930Z_6d7360cb",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "7a681f47f04637dc065899fa9942d6d8dd7c11ff72fd5336a437505809105715",
+        "phase_trace.csv": "6f3f349de0524eaaa593870a598bd1d6173026871227f8b4e28536e90cc51003",
+        "experience_metrics.csv": "68c8284f3f703c739a87bf076ca3eb5eebf85e7f6a6d8c40c775229f9e0fb060",
+        "resolved_config.yaml": "f45fb7affc786e5cb6b56f14a0ddbeb08398a7932040a3df00ed1fb61527bb44",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "d639782e9a3b7093a2ff4f1fe1512ed0c4ee6acfa2c16450a158e98b4aec9895"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q272",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T055051Z_91f34914",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "6d617439674bb60dfc68f4bca2a93e0b0d571d7769ca86e14882d074c69db2c6",
+        "phase_trace.csv": "cc7ab7e29ad8397801f89a6c0505e10b873cb9bb7bfa74de6f777e2efbc33232",
+        "experience_metrics.csv": "8445d080d7e62957e1c24718a911a0530e356faf8a5aba0a974d6bab1bd83ba5",
+        "resolved_config.yaml": "aad7c4edf575f67592c50ed676ba954c63ad7f74595437126983c4c9e3aa5ff2",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "0a2eee0cb1d3269a031c169a71f882b22a6116ba3381501e6dd51ccf9cccf53a"
+      }
+    },
+    {
+      "probe_id": "loose_core50_nc_q320",
+      "role": "q_loose_verify",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T055222Z_53e5a22d",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "81546a87c1d2445735964cc9a5effe4d1be8bed0fd27dc3ae0ac6afdba7cc7af",
+        "phase_trace.csv": "907604e754a6461c022ad1c1129512ef86a332c102f0be6150612d0fba1d5f82",
+        "experience_metrics.csv": "272cad790db1724d22f201bfd7b14f2221fd9e22dd827f913535d2cc6e8199c8",
+        "resolved_config.yaml": "67a37562b350454bd69bcf7693f72f1ddc748a2ab9849ce79879a758dcfbbafa",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "9c16b720b71589256b94d7c785eb29acc3e66eb58ad09a8c4824a3cb242e30fe"
+      }
+    },
+    {
+      "probe_id": "plugin_loose_core50_nc_q320",
+      "role": "plugin_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T055602Z_9b29b8f8",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "2672ee382f7f9a1719e9aadb657facf2c469e7c89cc61607d399359cb2efc21c",
+        "phase_trace.csv": "f9365300f03ed6b0f7a665ccb52378093fba490b7e88e6e56098c80cd5dcf583",
+        "experience_metrics.csv": "eed9f6673cd4d7428bbc21158be5ab300331d06d5c49ff41ca6f3229750cfee9",
+        "resolved_config.yaml": "8a31a7114efea12c436e19c1ed95614e37b8c5a718a1e0889e6a7aeafb840047",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "4e1ab976ce5756f9be714198cc43d8e47d1079b36573d29178bc3548ead68a3b"
+      }
+    },
+    {
+      "probe_id": "lcal_core50_nc_q320_rep0",
+      "role": "l_cal",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T061211Z_f25203dd",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "835036642687d607bf35a933c22e2d7569648bc1c6c8e7b87dc5a0af0539cfd9",
+        "phase_trace.csv": "b92d86ad59a03effcdfccb1f4c7777e0362b9e05cbb7fa0c8a282aa2a2e758d0",
+        "experience_metrics.csv": "430932650ead84ddaa59e9bf36df75ef5bb028a1f6597b9744eafbb34b45e9a7",
+        "resolved_config.yaml": "a552edebd0d3c619171f390538be2314128f990147be81c01cf8505e4413373a",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "d0a6ae999ad0599351979b2fab9ccbca78da1f82327c00440f421680bc227944"
+      }
+    },
+    {
+      "probe_id": "lcal_core50_nc_q320_rep1",
+      "role": "l_cal",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T061541Z_8747fb0e",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "680f145edc0b924dd61c7ee6b0545922d3c04d3c05d3d549db3b1ba2464cd8ff",
+        "phase_trace.csv": "66b6fbb2e6681bcaded9658403bc77c65740f03e1ed413e0caa04a0cc82d2dc7",
+        "experience_metrics.csv": "894983c1ca5c92de2fcdf80ada95312b45301a25eca9c83e35f7818e2a8bcb79",
+        "resolved_config.yaml": "97a701e1c059fbc01c7d59f85453248fab80422702140fbad986ff5b38789d4c",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "2d4ec20e699b049057793b944c9699b25315446d165e5c19bc1a9929112e99c1"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b16_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T061925Z_1158848e",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "ea7eba7c0daec35d35fff2ff96a25d772d9cc5885679d006f512e5a96dbce14c",
+        "phase_trace.csv": "e3f554d7ed80b3daa8a7021fa344155bae15ef99bc1a26d682006835ed715898",
+        "experience_metrics.csv": "b9c029c539e6d04acfa7e3cd171e803ca1c169ec7f0a72528cb0397be83c017b",
+        "resolved_config.yaml": "dac10e4435157245c33d4677477ec5851abccc6d3fb332e4396fc96bfa71a3de",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "6780d3f505f2c0cc17e23f814e839ecbc8f5bc42712a87aa07c36336069e77ab"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b16_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T062258Z_fb2a4c31",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "a83278270e0159b67bdebe6b1a8472135cb4b050de10a8ba3d6d3a51b9469ce8",
+        "phase_trace.csv": "74f97cf8653f2ad1015a08dd6a91ec29152a04cd3227c3ffe2c857edaa9aa824",
+        "experience_metrics.csv": "c6b25c3517dd3aaefa8b000df33e7e3d91f26eacdd0417d884dbcf3ebf099386",
+        "resolved_config.yaml": "078b1588edcb48c52c0f5c63866846712b66d2d1cf61ac396a36c275d4305777",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "2ed9e6b5ec95f0005b5ea4f965fc7e02cd0a2abd2e97d5e8ad10491eb8c0c635"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b64_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T062624Z_021adce6",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "064dad74734709eb2c5942a716f1c6e6e7706bd1fdb65c95562cace8b971f136",
+        "phase_trace.csv": "f5a4bba4d2932578d0be7c14b34faf2da565555031f076df3c9c9ea4c8e98f43",
+        "resolved_config.yaml": "da61371cbfad70f3fe97b0432b44b5da243d2a105323c1e66e8bbd77dbda8b3e",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "1c72848b41fc4723554d72ca115e3e0123de8c1bb107e1170d1e1f7f2c88464f"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b64_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T062632Z_f14a7bae",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "54561a2a27eeef37975681ed9080cd0640d2fbdc14ca6f7dc4ee2ebbc2afba2e",
+        "phase_trace.csv": "6681d27926dbd6dbfd8911075f51d429a2de22045ab58de24740ba91199102a1",
+        "resolved_config.yaml": "e33214e988c8ce945279e5f036ad8b1d0b0bb74e8aec0f50b51a6f65827833e3",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "a6db89fa8deb9ff22a62849d3089c13a8605ae59a09bf45f10d6b6221a1f3265"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b256_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T062640Z_1ae47bce",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "b6187d2fdb10994e5a5ab3ac24df57d7fdd1847b22174f4bddf1f1a99f914dd0",
+        "phase_trace.csv": "b4a2de7906e13af01097ed60269e17a7a9c506121598984bab4d021cb1ec555a",
+        "resolved_config.yaml": "0d537cde1be4f207b255e094e24d280cbd5de38a8e8ad02aa79654787dba4ec3",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "8ca03d82f5982d94346de822f4e883a0ff855862a73488b1a12155e687067db4"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b256_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T062648Z_a187fa33",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "5aa9fb81e58f8584b08d9010fe1c926a63f6c09c9eb654e677d660c0b164ac71",
+        "phase_trace.csv": "47e2c8dc930f64b8cd98ba3430204a840431ddf366dfb9ab11eefbfbe862811c",
+        "resolved_config.yaml": "87b89d364a1aa87bc4f3b7d6c0e306dab6069941bad3f47b95d4202a71cb0261",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "9ff263c9bfd0860f56a30942ea5e5fcf37f9f87011498ed6c69cff0879adaa35"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b16_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T062705Z_ce1e6152",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "cf12dada2d324d42b2e0b501e5e39716eb947cf3da64811d514fe0d49bb0d2a5",
+        "phase_trace.csv": "205da3a64aeb8fa1a9ea0a8070389824ae1ff1e7f3b06e6295f6a14a5a6bb1f5",
+        "experience_metrics.csv": "edf2160a4439833bbbb9ba28217c53e268f20807f6074af28fe5e7d2932b49bd",
+        "resolved_config.yaml": "7b94421691756954c44672452cb3be2a80bab76b68105befc8c8cf0d2f8f4665",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "b582fda8e7421e6b1917a196f116205469199bd54403eae8c828a8e8b9e3aee6"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b16_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T063035Z_a97c2d26",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "a48ec6db5733ce08566e513232dfcf472be36a4925d864f5040941d89fbf1628",
+        "phase_trace.csv": "b02ee73480c232e6bdec71c3ade241397f0f99c8e2ede3e124ceb65876f51250",
+        "experience_metrics.csv": "842d8ad8b6a0513412777076505a1d8a260ac1ed28a17dc40009f5ef395bc4fa",
+        "resolved_config.yaml": "4628237acf6ee2ce94f610383a889bc03ae5b3cfcc4386025cf20d3d422bffff",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "b5cb51127cdad2a42a0a963ccb6e54b6b36646a2bacdfb3801203d9382fb90c1"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b64_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T063410Z_35400e3d",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "d378e2ed4f1d5003597e556e5591fe229da756f8b215f4542ce4e623ed9ba7a7",
+        "phase_trace.csv": "3d986118f5379690ffe35ea12ea795dc65c2309a2f7033efc41cabea79db8809",
+        "experience_metrics.csv": "3cd4d85b04f2301a104ea2b4ce52b8e7c17915fe0c855ec6bf8df1f95c467b76",
+        "resolved_config.yaml": "e4e8666a2ccf0e4c4dedf92a59e6cf5e39b23b6f563bcd47a7e61b392628c834",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "2798829f291a33c18ccfb663d076ea6f105f0ccab1ee54c423f0a6d4d9426fa5"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b64_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T063618Z_0d2342fd",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "f725937f8f279a41b58823de6e6c9d65fe8698bd3f98e50709be59ed392eaf50",
+        "phase_trace.csv": "5032d710cf0b94cfd5eb8e0312cca383f402fbb78e0f42f20a88c05cb9364262",
+        "experience_metrics.csv": "ab37c263959f53d6c56c88bdbf8cb8ce3dfeb55c11b7959b82dec5028e14c143",
+        "resolved_config.yaml": "625e33cf4214382680d03b896f2619e07b2e0a572120a64d8499b418e299fe48",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "aa133aae96b1fa11563a6482d3f5e974b6b75d40834964d710a674c53ee35b51"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b256_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T063833Z_0e8cd303",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "c6e300ae6cf113f9bb844d53d8bfb671ecc67cfc295a2002bf6256ffc2fd7c03",
+        "phase_trace.csv": "0b83fb9f03ec412f269dfce1be9b4e102c2bd5fa94e0b580a67a4a1a99a4c412",
+        "resolved_config.yaml": "3e59c96a5fd638eb587d51d4ee862fb78bae1a2b89e83b0bc8bcd70978572851",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "d903d3be94502824914758416eae6cff283a6ac38f5930110221c0e83f3cb18e"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b256_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T063841Z_ee57fce9",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "23e93a6c9127bd5c767e09c800a07d0172f8d62cfd55a7c97b0e4e6e760fbfd5",
+        "phase_trace.csv": "acadb1eb50e862b9ae0448848770824bf3ea189f2461f87f940bb1686cd01c25",
+        "resolved_config.yaml": "49a05e5d3a7b50824b91627c3c39eb2a74bf1fad1ac542071f7050b607ab722e",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "0127da776254ff6368e6f63dc19eefa977cc7859d9495ceb1ee29626bea30209"
+      }
+    },
+    {
+      "probe_id": "loose_splitcifar100_q320",
+      "role": "q_loose_verify",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T063857Z_99a791e7",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "4ee5466d6155b61031f42298bc1ebf2f44638c98a5c5563c193f458f580878f5",
+        "phase_trace.csv": "e5812bdfcd8c44fd16fc83d93fa8dd7e606c0f9a2ff38cff0495801b0b76b116",
+        "experience_metrics.csv": "8c90e41b40d6d8cc91836efb87c58e031a795a10cb50188bd7ab86ea68df3f9a",
+        "resolved_config.yaml": "33835a6a64782524746294e7d6d28e60ef266fc6f36fa16fa0413efd298c779e",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "673072eed44717fc6a9d0b35208e7a7d905ddc5f942decf168f41f5016cd1285"
+      }
+    },
+    {
+      "probe_id": "plugin_loose_splitcifar100_q320",
+      "role": "plugin_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T064028Z_cbe2cbf1",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "ca4111d286a7a588b3cdcbf9c88b4865667aae639b588e3fcc8473d76e1a9f8c",
+        "phase_trace.csv": "d68f45c1d9a06f3d9072445b25fcc637d1490792618cdf6bda72de3587e5b412",
+        "experience_metrics.csv": "d44c842f155f7fb6ada41b37d400ae26e18f59ee582236afe97032584dc554bd",
+        "resolved_config.yaml": "5bebeb0c5564ee7882a02ea7011868c7e480a2bc00017c1d0c465680a7c4f4cf",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "1279edd9811c23cdcf66bb6e4498a5bb56d5175ee6007dfe496685a9975bdbf4"
+      }
+    },
+    {
+      "probe_id": "lcal_splitcifar100_q320_rep0",
+      "role": "l_cal",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T064650Z_7d7f8e57",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "0bb29afbae6f26da0e918e00f017b3d03d984f7e192d93144ff62161cd1e282a",
+        "phase_trace.csv": "e133b6e58b2dd72c392728d601cf23c0305ce4b790a9e62554b90c07fa077b77",
+        "experience_metrics.csv": "dbbe80ed0586ba001e09dd29d0e3b676bd56b7d0ea28d4a33d074c8e12ee8a2c",
+        "resolved_config.yaml": "28df5532e6b0143efcce6aa54c4de82d35757eb34cbbe0e8cd87855c839d9d0f",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "7c2db282dcbabc55bbff48a7441d503527db78d74ef92d57762d6ba7954d4456"
+      }
+    },
+    {
+      "probe_id": "lcal_splitcifar100_q320_rep1",
+      "role": "l_cal",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T064813Z_08eabb50",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "bff6052e2254fda33901d0e6c12060072edbeb6aeb6ecd8239a7938b517d21ff",
+        "phase_trace.csv": "dd76846c133e13b5bf54c242aa07577df9e3215bb39df69bb2687cb5188ee88d",
+        "experience_metrics.csv": "c2e48dab85ba98f82428378a0911c030d8f071e2bc18085bf32893b19e25f5ae",
+        "resolved_config.yaml": "2033d6d21d9e62ea67a27d46aa944771e7af59021191e53993444a0e22d38beb",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "f6c5ffc70737842118859fbdbe19063c3ce889fa2c839388de42846df7f3f523"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b16_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T064943Z_874b24ea",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "a4149d9cd67bc451c17c1019e61ada9cf92c3d93a0cf9c444c8df753ffcda3a8",
+        "phase_trace.csv": "9d7c924e076cb33868899e315acdbb53165bd17d911f9fcbea646961e3a4ff25",
+        "experience_metrics.csv": "994a4fdbd85b5ca3de9e3ca9f9fbaa8e8e2c5a0c58a6b808dd715bf6a8d3c2ca",
+        "resolved_config.yaml": "5accae0b0c7ce2432dffcff86d481e3095a132a2478952f4b79ca1b00cc02a7d",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "2e98ba7be3e9231036a83d07a30907bd9ec416a5983e30eb7ff6ed7839e78aaa"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b16_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065109Z_f4622985",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "87c57bb176bcaeb9838bdf6e6b3d4777f94c46790a8d4864d5a10cfe93665264",
+        "phase_trace.csv": "7c74b1d9cea3de67e5878e92917be4b56cf20174482668e410659b1fc8a02f2c",
+        "experience_metrics.csv": "8a56e2f01aa6a28a6d28c49db5e9c4d13c4d3c2513af27d253b796211e76fc92",
+        "resolved_config.yaml": "47c617311b86ee11f4c592c154f1dbdfb68e5f0f669e6992544d4aadf3c23c87",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "13f4ec2c2ee35675b55d1aba2194beda66e7764ce30824509f8128fcdd1cdb52"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b64_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065233Z_9139655f",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "ada3d39f1db4d8940923362bae941f25a894bd44e5bd5ca105d2b2e1c7c7981d",
+        "phase_trace.csv": "4b001a84897b40a8b4948034dfdb6fbec6790e2bf791bd5145c507edd621a5c2",
+        "resolved_config.yaml": "dba5c5cd37cb486e9e37569b04837606555cae5cea89ebec0640a2f096ff9063",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "d88ba587a9675be5a972f66506467e6b1dc41d1e61711adc130c5a9b5a427bec"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b64_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065241Z_e0d38c65",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "1fcc71be1a9cd369537c28db840e9d30e80c0f0dc3e02a73305b6eb2e54d53bf",
+        "phase_trace.csv": "34b1d0cf902b1792fdbbbf98505ce0a93caefa05b2c8a70a154a782016488ae6",
+        "resolved_config.yaml": "396f80a0f5bc17c48ca30a251c6c3f8ca21a6928b0b9430cfe5fe741d742072b",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "af8914ad5e8d10dc43909c9c4a70c6d3678471ab67516f11f2698bc800a2f183"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b256_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065250Z_18890833",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "33318d441d9a7ee9d24b703f419e107f8c8fbac119521a4f2649f5c2c38c121b",
+        "phase_trace.csv": "7258269de95c06c354c73bbabd542472c0e4b68e7dc6911023229fe3ed35a114",
+        "resolved_config.yaml": "b654fed5b66da7ec62d20908a2d971b78026c7eb0c91ee34cad46d8afdc3443a",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "b225b0ae4767fae5b600919de281857a7f04cdae359c750fe8328f85736a521f"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b256_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065258Z_826cd4bf",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "2bd7fde1d28ab6c5497a7643ba16bb756863aff7bf81eb6e9ddc4b134c4fea28",
+        "phase_trace.csv": "fe3b9e95265c1c24edbe9cbab9af181f7a2f7e4ea1c48068314b46d3fd30fd6c",
+        "resolved_config.yaml": "a8fc94c6ec8a8c8aa0dd1ad11ee6c93994a00e311c93cb584e42908535b47965",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "404b21d39512892eb4539a3c6f866c5cef940488aac282bb1b8ed59164959df8"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b16_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065316Z_09e88ab3",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "2a26ef81bae9243632602a201787b30c76c7ce75db58515887d333a00e246b0e",
+        "phase_trace.csv": "1fc13833f5e8e42d9bdbf4c8137905ded476a8f84d41198e2a9d9bd6b10e9837",
+        "experience_metrics.csv": "c1bc87cecd44d1a617810f1fd54d13e9e1688f4a7fdea2da873e3455a912bf47",
+        "resolved_config.yaml": "ad99a5797154a05b9600c8c6639644f9779acfa4a934ebb85fa5203a9b5da9ea",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "42fb8a0f6395cfa33b765f5f56ac12dc9b981943c0164ae3e4304d52b41e5a83"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b16_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065440Z_b6aee39a",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "5b5a5a0b60afbfc3c8a9152f62e6bb4dc15eed3be1fa05847341066d8d592c46",
+        "phase_trace.csv": "e3e5cd8691186e8392e0e8d68ba8980a3f0886c8a7ace90051be926cc9509364",
+        "experience_metrics.csv": "2859169de5576ec5b2b2987f2445996a9175ac3c3de8bfe62abe9a5e801ddc4f",
+        "resolved_config.yaml": "0d08f0b8705658747a57e39470f94990b0f0cab86a850dbdc4ab14a0bba8a7a2",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "c59844a5fe970f3dec2abcc56282b3a6ddc25408e570c774ff29dc1ba0b2bd90"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b64_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065602Z_2e52079b",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "e2b1f9a9bb13910cb3cb9c72e493db507dd4c3e65f149261da0b4e4b0740ca50",
+        "phase_trace.csv": "cd60540e4d0bff874546f6743cc72cc7d1aa199fc56fc25040341a293d48b596",
+        "experience_metrics.csv": "9354017df775cb25eb227b78b7d17612c469adc17644b89a1d87cf15b73efe5c",
+        "resolved_config.yaml": "5f5bd5667cb6ebe0282bbfa9aca94d0dc8d87289efe94674c16fb01e47d4667a",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "fadd0b7e7abe130e9966476053dbbef5f6895bc04416f906c09ef01a5658862d"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b64_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065647Z_f82fb9c8",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "b33c2054fc70e4e40fc4d0092dca21dc128b32b8a6910d320ecd1cdd8622d6cb",
+        "phase_trace.csv": "716b6ab52160726091202ceb0458f2c76a9f2ab26491568e39b78a67f191382a",
+        "experience_metrics.csv": "4e233e4903dc83d3783dd9dd088bf67d8f56bc6f84d882295ff51246c5cbd505",
+        "resolved_config.yaml": "ef5e04f074db0b366ad44419c8cdff89bf3076a0263ff6be467be73ca8389192",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "e7c32f50961e0a23437dd56b0402a6b09730066eb2cbac56d3268748fde07ced"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b256_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065731Z_14d83092",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "94b3d066978df3bbc36364d5848708dfaab69ac6101fd7deb23393aca728f28e",
+        "phase_trace.csv": "e6ea74be505d2ca2de8180fb9cec7c34203283fba39d1c708eee43fcc7461fc2",
+        "resolved_config.yaml": "c8c7bd10fb80d23f48dc31966c2ae5ddacc6469754b092fbd1587930c292830a",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "228791005dd1540155dc36777008b124b034156e5221d523705c3ad95b9236f6"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b256_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T065739Z_9ec93436",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "3323035949232d813935a647b6401fb0beffadb33a59c20243c1ce92392a3505",
+        "phase_trace.csv": "05f924ade87411af79bdaff84ee6f4d77945b0fbd6e2be3ca1251093d479da36",
+        "resolved_config.yaml": "66e6b3744a3df0e4528d160d2bc82c0fa29efabf92b527c3d4e14348777b95d5",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "22092370f0dd907a62d5b955dabd637f100f835b6900602f0f71f14d520f7225"
+      }
+    },
+    {
+      "probe_id": "control_core50_nc_O00_q160",
+      "role": "control_2x2",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T065758Z_923243ad",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "7cdb6c772b5f8dec673cb3daf2cc59033ae8a1d2f3984990dc583970d16a5346",
+        "phase_trace.csv": "7715250421265f9da7079aa2a8fecbd96ef54d40691f5eef23a38638eacd0c5b",
+        "experience_metrics.csv": "8ed2160b807020ad887625e323bbfcfcff07fdd4d892a5a78078b8d23c184b83",
+        "resolved_config.yaml": "2cc37785560c17b8b6453b936135fc9ca22c2afdd8817efd415be5469b183ba2",
+        "control_trace.jsonl": "39d6cc8f247b9fe67089616beedbc9c08b2d504f5bb6c3e42a810869d603b8f6",
+        "events.jsonl": "3afaceb960f544cde8f18f2f4a6c25482fd9c600d7fdd4c4362d342e4520038e"
+      }
+    },
+    {
+      "probe_id": "control_core50_nc_O10_q160",
+      "role": "control_2x2",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T065908Z_f6fddf5b",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "4ef764e93abfa220b1739df3606575c14bd08d6a843aa3adf4eb5ad35aef5916",
+        "phase_trace.csv": "465ea4d80ec068a17472e87c37b66cf88d70ba5a98a00b8c24c8a8117ec0477a",
+        "experience_metrics.csv": "298a36f55716da466749ac00e3a2d4cb697341d7bcca9a1525cd4676bee034b9",
+        "resolved_config.yaml": "e85ecdfa3e60f7b29b48cd7afa5a3df1ac72daead830e2615badcfbec0e109d6",
+        "control_trace.jsonl": "bea881a120e69eeb30e276dce23b9a8fd2243c4af54f542b5e4f966b34d9217c",
+        "events.jsonl": "be6de17e39401fbdf1f9a936d1a5b17466d9072eed7e0d43713656539d0a977a"
+      }
+    },
+    {
+      "probe_id": "control_core50_nc_O01_q160",
+      "role": "control_2x2",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T070016Z_313ede76",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "f2ab31ffddfad8776b750027a22e894bde1e192c8a9d83ecf74c695ff8b9a85b",
+        "phase_trace.csv": "aa32fc8840708859396f552fdf649bca30c7eb0f36cec8b3d786871315244091",
+        "experience_metrics.csv": "f94e7a41eb1b0a03f7c18837f9e06f0a0751a0bfe157162c11997dec7d104596",
+        "resolved_config.yaml": "3baf7322d5bc31f295ec1af82248219092399f5afa828d2e622cac8d5afba1a9",
+        "control_trace.jsonl": "8d4edc10877211b164b104f9ee1550f4309747eb3cc2b61eddaf4d6d88d88679",
+        "events.jsonl": "36a393c396147d95ba45e8c04006232f8ad2bbf74fb94086765ae66e5e4b5391"
+      }
+    },
+    {
+      "probe_id": "control_core50_nc_O11_q160",
+      "role": "control_2x2",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T070126Z_72e2b9e8",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "9847c402e3ff2c19a358fb7852fde881d2e6dc4dc237b00c2a0c391f4f23735a",
+        "phase_trace.csv": "b3b846d012611de9587c9115543d7b3e50561b3e5582f97c03d5bc4478fc4b30",
+        "experience_metrics.csv": "e3b5b501bfa5ec0a49cd70b7e89f8883f9361cd0348c84c5fd4305feded236c3",
+        "resolved_config.yaml": "f80e1917cd24427757030c2a4befbaefb8dc7a2e40baeb44b67023f09b1617f6",
+        "control_trace.jsonl": "721f0ade74c3dd69a646d4be5da82a51a2870a2bf4ef763fc9924fd3a7534078",
+        "events.jsonl": "1a7151ced5d54c418beae0e6f91d9ea8e7ad6627ab2d9f36e6809294087bbd04"
+      }
+    },
+    {
+      "probe_id": "control_splitcifar100_O00_q160",
+      "role": "control_2x2",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T070247Z_4f265e8f",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "4fdb4f3358e43c016b1afde726ed8ca03fbc4fb671833d6168da559a9700d362",
+        "phase_trace.csv": "9928f0df52f20cfcade8abb81b97524cf4c421f36dab41abdc27a45f9009df49",
+        "experience_metrics.csv": "7c4ef24e5d4d9281f68d640fe0672a801e221c2d07f970a04b6b7d9592104f44",
+        "resolved_config.yaml": "fc9a3ae0d72b7b3d434963fd80ac447dbbb494ca0570b82f0b18f441bddbc1e2",
+        "control_trace.jsonl": "a4850830ec1a53f5c2260b46b9aacd271b09184353a98a9448b021afe40bf2af",
+        "events.jsonl": "0fe9d2953f19a3acaf7c34a58fda03491f3bc5faa4a4d97e60a9219f253758fe"
+      }
+    },
+    {
+      "probe_id": "control_splitcifar100_O10_q160",
+      "role": "control_2x2",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T070414Z_84ac12b9",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "4766f6f89791a613dba9e3b63462cf11ce9a181ac14593b6bb6e0df17b1cb10d",
+        "phase_trace.csv": "f5f62e53f16695b8f213a180e4eed4b08832fb40a42d952de8ed24901b40abbb",
+        "experience_metrics.csv": "9eb4a528922277baa8b33812d18c95855de1a9762ffac0c7f977811346739bd7",
+        "resolved_config.yaml": "5e64a6f4ad90eb2e723b99145e8e9b33b80eb0ff3a0cc052e29c7a75ab6a5d07",
+        "control_trace.jsonl": "48a6a7d3666459bd23272f3d58e59a1d8cb9161b7a19e8a2e45e927e3f09ea8e",
+        "events.jsonl": "f3228f12d7d8f0d33d6de09435a934b20d72da506687334d06411b959eea141b"
+      }
+    },
+    {
+      "probe_id": "control_splitcifar100_O01_q160",
+      "role": "control_2x2",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T070441Z_f953b85a",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "3cc8429f99abcd23a80f2429082a8c1e4a2cdca2f835bd69466eae043ed3f9d1",
+        "phase_trace.csv": "7f832b74c5113d1e6b23624da7801bf416502bd4f07bf35d37136df01dc015b5",
+        "experience_metrics.csv": "14cfe2491b81bf65b722cc17c386d1fd67fd66a8cc9b99a14175c8bd62fdb1e3",
+        "resolved_config.yaml": "fb88f2d6a6680991985f10a0f4ef921b9d4ecd4c1106fefd0cc7001d74ebf5de",
+        "control_trace.jsonl": "b81c02a98bf238678fa685ebe369d443484f705357721aa229c27bc9d2b4db61",
+        "events.jsonl": "a63dd7e85093b688ca0c5b69d5fa2047dd7efcda3be775edffb74580a135f462"
+      }
+    },
+    {
+      "probe_id": "control_splitcifar100_O11_q160",
+      "role": "control_2x2",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T070608Z_9a93c0ae",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "af3653e1b1433c3fd1a1e1d2cc665464045c3edd076ed9879c2973dd17e22f70",
+        "phase_trace.csv": "325bc5f87fe02cf3cc39f4189d1603123273b8f672539e75e59232c26d58f9f1",
+        "experience_metrics.csv": "e81505aba56fbe4075ba379b64b287908e4ae4dc324349ce1660b1092c36ee54",
+        "resolved_config.yaml": "2fb3d8db24fb65407ed15a721d7313caef097cd2ed5d34e8378eb991f15597ea",
+        "control_trace.jsonl": "9fe9477eb8fda2958214244d931b47de3c1a641deca8c0d7a15dc4c0aac03446",
+        "events.jsonl": "17dae65dd0b3549d408dc8ac5b0e783261f7b43a3480aa554f49c610c5852fef"
+      }
+    },
+    {
+      "probe_id": "dyn_core50_nc_R4",
+      "role": "dyn_reservation_probe",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T070643Z_ca7c2157",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "e50c09d055f1b8559819ddcd2d895d11c12a422ab7b0e987f617ef39abed1865",
+        "phase_trace.csv": "c3786328505311b07c339c5f1155c5997c02b04ac87e16006a5fdfe37becfcc7",
+        "experience_metrics.csv": "d8ee1f00378ca38ec412f3a981cdd9e3ec45e58236f44a3b1be65f068459d4b9",
+        "resolved_config.yaml": "9546d998ee3227023b68f49ad5ca8b9f10eda1540b6bd7d75a17819e447aeb22",
+        "control_trace.jsonl": "ff52f9c0371d95c099f3c52168ffb090b08f0bb129ff09fa3dbd5effe832dd02",
+        "events.jsonl": "5c233255a63122125ba2cf293e7688e058c254b7ce0530a659f9e9d67796618b"
+      }
+    },
+    {
+      "probe_id": "io_off_core50_nc",
+      "role": "io_off",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T070802Z_9e915627",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "6c56fa23db940e2e32c2be8d06053621debf26db0ab57e950466db5b0dca6fc8",
+        "phase_trace.csv": "34cb4a8e0679046eff584482127f618324f1bea9036823b6d83b991f49634d60",
+        "experience_metrics.csv": "68e13e22688e7da997fb30844ad684f5b06173d227f397ec24d2bf4a6bb33876",
+        "resolved_config.yaml": "1b33ffcebc2a6c1bfd71ddda38d08da5934e6c6d07effecc0887e39f0415ce09",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "0c43309601b329b37f179c0f67594a13a63738f225eae4f80bc571dcfc9915de"
+      }
+    },
+    {
+      "probe_id": "io_on_core50_nc",
+      "role": "io_on",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T071131Z_f68f3c56",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "8ac67c5cc40b51424b6bec6fb3be6cdfc2c346c3ad1058f68bdf19b76ce61abc",
+        "phase_trace.csv": "bf9facf04f01cdace83cf6db81182c4268c2b7db8390e293c6433b916742ae58",
+        "experience_metrics.csv": "711f9ce90ed16f8fc27a9aee36556d387cfd379fe2a08a617a519b3270ff395c",
+        "resolved_config.yaml": "47ffb658c9ae31edca13cc23036aff042db8364667e2dad824ca9740901b891f",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "2b25b95588c84d1a0f41da6faab77a03cb31bc67928c08c0f8b137462c7b8637"
+      }
+    },
+    {
+      "probe_id": "sens_thr_half_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T071448Z_a0c5f366",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "7a04d65ffe2e6093376a086ecbb011e55f14843d32812cfbbce06ce7c5979fa4",
+        "phase_trace.csv": "8e8303d39fb12ccee18228abe42bf24ab64d115881db44eb6d1dc03a1860b27f",
+        "experience_metrics.csv": "e390a8174855aa8a1239456c4c62da1f5a4c865cb1082689554f31b6908f8182",
+        "resolved_config.yaml": "e69e1daa2ae3b942670c1d2ffe3dd8de271adba57961ab972a66eed04f67bfb4",
+        "control_trace.jsonl": "0bcc79bb39f88153bb2d2546885e3d25c34b9a3bba8a7c6bb878db98b91e23aa",
+        "events.jsonl": "324f129877830834c2ed81c0c32ada69e92d48aa23e4d4c8202576f9ef44cb65"
+      }
+    },
+    {
+      "probe_id": "sens_thr_double_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T071559Z_e01e3443",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "2de8651714d2c7c56fd9497002e5627788771e34e084d6377e4902269237955e",
+        "phase_trace.csv": "500de81426de10faa0ec6e260337cd89ddb57dbc668464229c35d34b96834c14",
+        "experience_metrics.csv": "ee076e817479b19534bceadfa17fb3231e6a36d605629f30911be02c025f6e2e",
+        "resolved_config.yaml": "8e0f3885c65aeb57ba8f2cd66b2d1be3140c02c3585049c820eb83e5ac269fd6",
+        "control_trace.jsonl": "eacd4764a7bcc3e4ee5fe5728d023ccf5abcae0c6ecc3bfc550a63f3c0296283",
+        "events.jsonl": "9ff9d1cbb74b7760ba9dd3ea2712454714b0bda164c8440b06bfc132dba89863"
+      }
+    },
+    {
+      "probe_id": "sens_alpha_half_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T071706Z_15ebee85",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "9e27f1b2daae3f09a9a3278ab132dc8fb30b49ca5ae9834d5cb31207d11239f3",
+        "phase_trace.csv": "b9db80bda38359ce5389d7e479bd6111061f3828692f69b139970ac6486fb44f",
+        "experience_metrics.csv": "ca8177c1804cf678a9d6592f699f19bb7f4634fe865ad672836b197a3aee498a",
+        "resolved_config.yaml": "42e6443f334ece195f5b0fe9b82c20b43cfa700ac5202e407cb9e8a0016896af",
+        "control_trace.jsonl": "9dc0b195b4c4d52c517df4bf977a7f4005b4d690ffce8d158daae63a657b6c5e",
+        "events.jsonl": "27a917f7ab3d00e58facb657a0576404087891c5ba36102f95016de813479285"
+      }
+    },
+    {
+      "probe_id": "sens_alpha_double_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T071816Z_b64b58f9",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "715bc5cb2ba93351f407b38aeca1c5019247f4cead12eefea2bbf717a5fa3a19",
+        "phase_trace.csv": "c01470fba0bca2f6990d193e5f846daa72eafc9fd3f0feaad3367470f4c661fd",
+        "experience_metrics.csv": "e35a4d39b40637be34ec2a9b6257d29a9cc1904f1c5e89e171f28203a44fe363",
+        "resolved_config.yaml": "161cf38ff2f53660209f141421408eeec925f44fffbfe47529864ea3c1b88cac",
+        "control_trace.jsonl": "3253ebd3e5c1ff7d51c1772049be2cdda513301b7cb8eb82b94b00517fb13ef5",
+        "events.jsonl": "806bdd2c8437dcd335cf08869f3b2a37a16816f5b5387fc91f879d7fe87c03b9"
+      }
+    },
+    {
+      "probe_id": "sens_beta_half_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T071926Z_2b894538",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "42e7c7aa92fdd8c62dcd38cb514e8bbbd0a46cdb9604337dabea6004e15bd434",
+        "phase_trace.csv": "131436579ab89c956c044e5992c1164073f561f7a35adee87c4ee9e8f3dab401",
+        "experience_metrics.csv": "59c9d0797d5db63c531e4ebe51fd7449d9b0d868a659313b0a340f437294626b",
+        "resolved_config.yaml": "fead0f5f5cc2c64902d40e4f99fef909567ab422c75ce5895fe33b66522e922c",
+        "control_trace.jsonl": "42c441e7cb05cbbd89cbea43b0920fc8acf6c21450529a1f0d2f00c58afe6a91",
+        "events.jsonl": "2c32d37dd0d2c4f28cb3dc9dba779bce31262577d340801d17176df334527e21"
+      }
+    },
+    {
+      "probe_id": "sens_beta_double_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T072035Z_faee1189",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "3a2a0606769ac2e2b33af57bf0d6fcd272bf004fec7308f3e6a330278557a6cf",
+        "phase_trace.csv": "159151601c484df81be759a91a128199bf7abb79b8ae9f32896c5f6fa260d315",
+        "experience_metrics.csv": "18f133bd2396621d2a5c243eb4e89861719388118f7f7064f773fa12953e9e1e",
+        "resolved_config.yaml": "046c66f6cc823ad0e9c6311fe53b14481acf5dfbadfa468fa8ac637851999b99",
+        "control_trace.jsonl": "dcd5857c42cd99ef60b4024cdb5061cda74ad446ba4a780f2e7b19bbb4e0fdaa",
+        "events.jsonl": "0f47b44581acaf579d81813f057f2752ac4dd13d380aa1564d4981e0f9b23672"
+      }
+    },
+    {
+      "probe_id": "sens_lr_half_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T072142Z_620bd669",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "51d5925780739ddd755eb6a6cfa8aab8c59e7dd82419737c86f63f66aab7cb1c",
+        "phase_trace.csv": "d8de489aa7339451cb6d646fab5e93392de77c19df77cdeb49d73cd7975f5577",
+        "experience_metrics.csv": "07360d0250a9c27c462dc592001f184fe5f04343e9455c1873d0972092001be6",
+        "resolved_config.yaml": "41bc986a49260561e0d8ac10fb7bd3e7659143e447bf72e7012ccbedcaabbe86",
+        "control_trace.jsonl": "5a9fdb3e38a9789fd04a97481c18129d639d78fbd64d9d7cfdd329dad24d9261",
+        "events.jsonl": "fc18aa0627480409ce3624ca846f690e941a7360df445d23f0af9c0957f5a693"
+      }
+    },
+    {
+      "probe_id": "sens_lr_double_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T072252Z_cfb0717e",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "0187937d6d4ea67965eee1de5429faff8dee4f72c7df2d8e5a0e6eadcc602a70",
+        "phase_trace.csv": "660128dd7a836f42bac9caa3e0bb506ec7c8ae2b03b2661ff394891ec0d47ff2",
+        "experience_metrics.csv": "963641c39cea95d0e02c098ab6536a984ed8926dcb4073446345e8fb9821e302",
+        "resolved_config.yaml": "9a235e4db9ac89db1bb413dca08c9071a9003df2709b4860354b1d3bc52982d2",
+        "control_trace.jsonl": "1b778f2e6782b27b2294af3e8805bcd9c64e29a8496a7b0d25b4faab576c9826",
+        "events.jsonl": "39e359b44daa8ca513e4ab1b33641521a6adc7e7a88d57e7eb970ab5c0d97abd"
+      }
+    },
+    {
+      "probe_id": "sens_delta_half_life_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T072403Z_e3878a3f",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "d47a06ea3a962e46e90cbed8a69b6ed1c85a106960b97ad414aab769b1769094",
+        "phase_trace.csv": "a2e6bf4879b2691ca3de7eeb76c725f75823349ece69290313a13fcd28366c3a",
+        "experience_metrics.csv": "47d88195350415f4c6c74c29ac4f2273a63f1afa433473221e795f9e1f1e5f5b",
+        "resolved_config.yaml": "f04d69ba92831355310a2f61238b6129eace87558d530d179a8ebebbf18cc2a2",
+        "control_trace.jsonl": "fdd9ee1b0d9888c3c3455fa67aee0ac7aa7b2841ec9529543b121141e34f88a4",
+        "events.jsonl": "fadfc2babe264b392a17c27e72cf2053bb59aa9666cddac8872d03d647b7e7a0"
+      }
+    },
+    {
+      "probe_id": "sens_initial_batch32_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T072509Z_1bb76c1e",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "741dbf7dccc03125660e6ae394561b0b01041d1920d0c4b885d195a450a8b38c",
+        "phase_trace.csv": "6383e75a213ca17f5719a492bb2adc243ea40e7c35e4d5bdab1c00e0989e4e7e",
+        "experience_metrics.csv": "6f8f6fb986d68e4d8ed0b12c5370639216a1825bed14def60d6821f430ee8263",
+        "resolved_config.yaml": "8e67a43953ceeafcf77898d41c40f96f6fc370d8b23a352f09894b8097cbf8f3",
+        "control_trace.jsonl": "9cd60144f95d01ecbeec21e821ef522ec9a36cea124508d31411e68c3dcb9dbf",
+        "events.jsonl": "62593869a054cb87426bd6718eeb23f967d0a2684d4fb84f356948d53eb68767"
+      }
+    },
+    {
+      "probe_id": "sens_initial_replay1000_q160",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T072535Z_a66b8f55",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "24c67ef4209470bb0e5844ee6f1e1700c23f8a732bdf5fe41ded32dedf9d9648",
+        "phase_trace.csv": "0fe163bdf3ef399dbe282358e0e498d511d6283b81ccd3196dcdd4dc1d2217e4",
+        "experience_metrics.csv": "ff5751f17234d93ff8d1081f6632a409276914c8bcb5d37f7955602a7105a909",
+        "resolved_config.yaml": "b2f3bbba50f6bde02bcf9e8811685053224cadf0cf78815d108c66973e5f02ce",
+        "control_trace.jsonl": "f733cce5440d7f14329d25e25bd80c084675d5bd337db793769d49ac438963ae",
+        "events.jsonl": "114697f8755bd2cacf581b775a517656ad6ebe32922fa4954d9306db1d646e1c"
+      }
+    },
+    {
+      "probe_id": "sens_quota_loose_q320",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T072643Z_8270ed07",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "26dde5746c44d73af0032dfb386c0552ad47cae8e4c9b8b9b00e67c080c838f9",
+        "phase_trace.csv": "1e902d949a2034a88dc56049a198c667b78cf2bcd94095bd5b0c05c693a69a10",
+        "experience_metrics.csv": "4c29555507b6304ec3f77d2908f963cf5d1308d2cdb8d9adfbb4dfdf82ca9a24",
+        "resolved_config.yaml": "456d424132b6cc22a1e3ca6e001c316209e2ee8466cea08fa54638fdcd2b169f",
+        "control_trace.jsonl": "36caa470305132220395f49df85d191c959dc2ebfeb98d30258c9c0c2d4638c6",
+        "events.jsonl": "c09bdb9b8ea895d27c05c169dac98a68507716b9a7ddc5cc45761ccfec7938a8"
+      }
+    },
+    {
+      "probe_id": "sens_quota_mid_q240",
+      "role": "sensitivity",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T073910Z_ebc842d3",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "eec35df208e5a57f55a86bb16d2dcf32a550d3717bf20f7f265e92b8702a4afa",
+        "phase_trace.csv": "0f104fc74ac7ef902070e996da638f9cf3bf8ff197fed044ba5c7ac509777507",
+        "experience_metrics.csv": "a4a86a11412e96c5004b2727795de5ae216683b2853b33851fd7e200f8441376",
+        "resolved_config.yaml": "124ecf9142fbd5c9a51ff85b511f353ef27ec09b47665ba5ca26505b8c589b34",
+        "control_trace.jsonl": "f8d96abfd41f633942ab509759107ccf8b12eb83cd47faabcce1b89e65e2b963",
+        "events.jsonl": "65763f2934f1421242ca5d57b451062c5c6cc5f820d9237db1701c245484685c"
+      }
+    },
+    {
+      "probe_id": "agem_static_q320",
+      "role": "agem_profile",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T075205Z_4e190a1d",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "7740cdaa3d0097f7949fa3d812402b535ac4342253996128a3f27dd701815279",
+        "phase_trace.csv": "9d82d2f79ba529c1807e534adddd2808e73ee0f331bf99372aec49b3747d2713",
+        "experience_metrics.csv": "f0df552f959eeeb40b90256e8ac01eedec24185133b1c5ebe1e4ca701bc7edd8",
+        "resolved_config.yaml": "f3b1104aec00172508ef363beae8b20d5e1350c129d6d626a08808df7de54fc9",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "606ea4ef35348375e9ff8ab7582148e0832969fe1c2ab2f5d573dc1872a4497a"
+      }
+    },
+    {
+      "probe_id": "agem_adaptive_ewc_q320",
+      "role": "agem_profile",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T075722Z_0b1f08b5",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "83624d9e0e511c0fb0493f7c77eb5a64b04345853d73fd3650c18ddc71ce86ae",
+        "phase_trace.csv": "69b6a543f37cab922732de22974016c0dcd28092f616db5a85e630832c2afc9c",
+        "experience_metrics.csv": "6200ca5e320962aa00ed8d651dbb85f91cdf70ba35fd7aa9da8a6425d62f90fc",
+        "resolved_config.yaml": "185f9bd4cbd9f1710a81fa1c866d05236d2455847fce6d68451079e30d078d36",
+        "control_trace.jsonl": "68891be40ab9b96183178f79770e33484312103f266ae58768d6ca7bd97a3add",
+        "events.jsonl": "2d83afd577034bc861b5a436dc3006083146837a11d5a2adba9162c1b95ad922"
+      }
+    }
+  ],
+  "note": "ok means artifacts match the probe row; it is not an effectiveness verdict"
+}

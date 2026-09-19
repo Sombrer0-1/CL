@@ -39,6 +39,11 @@ def freeze(
         if block.get("quota_mid_mib") is None:
             raise CalibrationError(f"{name} has no interior mid quota: {block.get('quota_mid_status')}")
     closed = close_identity(identity)
+    cal_source = calibration.get("calibration_source_hash")
+    if not cal_source:
+        raise CalibrationError("calibration missing calibration_source_hash")
+    if cal_source != closed.get("source_hash"):
+        raise CalibrationError("calibration source_hash does not match current tree")
     coverage = audit_scenarios(calibration)
     frozen = {
         "kind": "frozen_protocol",
@@ -72,6 +77,18 @@ def freeze(
         "seeds": list(SEEDS),
         "scenario_coverage": calibration["scenario_coverage"],
         "scenario_audit": coverage,
+        "s04_policy": calibration.get("s04_policy")
+        or {
+            "status": "attempted_in_development",
+            "group_c": "scenario_not_realized",
+            "note": "do not rebuild S04 at Q_mid or Q_loose in this revision",
+        },
+        "q_mid_policy": calibration.get("q_mid_policy")
+        or {
+            "role": "group_G_quota_mid_only",
+            "note": "do not add an A/B-structured comparison at Q_mid",
+        },
+        "calibration_source_hash": cal_source,
         "io_prefetch": calibration["io_prefetch"],
         "host": calibration["host"],
         "o00_latency_s": calibration["o00_latency_s"],

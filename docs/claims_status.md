@@ -28,3 +28,22 @@
 ### 2026-09-16 effectiveness_v3 设计与换机
 
 [PLAN](../PLAN.md)与[SDD](SDD_effectiveness_v3.md)是第三阶段契约。RTX 5090 上的开发校准与正式跑数已按 [A26](decisions/A26.md) 放弃。本机按 [A27](decisions/A27.md) 重建环境后重新校准，不得把 5090 数字写入新冻结协议。源码修补见[实现审计](../reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md)。
+
+### 2026-09-19 effectiveness_v3 / Thor `thor_r2`
+
+上表 **仍是 light24_v1 判定，不要用本小节覆盖。** 本机正式证据与逐项 run_id 见 [CLAIMS.md](../reports/effectiveness_v3/thor_r2/CLAIMS.md)。`RESULTS.md` 是自动表，不含本裁决。平台：Jetson AGX Thor，allocator 配额 160/240/320 MiB ≠ cgroup。正式 129 格：75 completed，54 cuda_oom。**没有 Orion 有效结论。**
+
+| 命题 | 当前判定 | 本轮证据与边界 |
+|---|---|---|
+| C01 参数/插件权衡 | 部分支持 | b256 不可行；S* 均为 b16/r2000，相对 S0 为 P↓ S↑；R11≈S0；F11/打开 GEM 则宽档 P 大降、紧档训练 OOM |
+| C02 自适应机制有效 | 不支持（本范围） | 宽档场景建成且有真实开关/扩 replay；O11 对 S0/S*/R11 的 ΔP 六对全负，online 约 3–4×，reserved 更高。紧档 O11 完成率低于 S*（训练 OOM，可归因于开 GEM）。L_cal 驱动 CIFAR 扩张 |
+| C03 跨场景方法权衡 | 部分支持（方向）/不支持（胜出） | NC 与 CIFAR 同号；紧/宽建设不同，不合成一个胜负分；不外推五基准 |
+| C04 多算法普适性 | 部分支持（负结果，仅 AGEM 宽档） | agem_static P≈0.65 vs adaptive+EWC P≈0.37；不是五算法 |
+| C05 用户偏好 | 未验证 | D 组 9/9 紧档 OOM，S06 未建成 |
+| C06 内存预算 | 部分支持（配额）/不支持（受压适应）/未验证（host） | 160 上 GEM 训练 OOM，240/320 同族可完成；适应未在 160 保住完成率；H 组未执行 |
+| C07 统一预取 | 部分支持（观测）/不支持（收益） | S07 建成；静态 P/S 一致，wait 0.515→0.002；online 约 −4%，未达 5%；不用 Orion on/off 当等配置消融 |
+| C08 系统开销 | 支持（限定） | 控制器+重配置 ≪ 训练；O11 额外墙时在 GEM/EWC；RSS ~2 GiB；非原设备能耗 |
+
+判定用支持、部分支持、不支持、未验证。S04/C 组按 [A29](decisions/A29.md) 放弃，未验证动态预留。n=3 不作强显著性宣称。
+
+**第三阶段已结束。** 本小节是 `thor_r2` 限定判定；覆盖缺口与外推见 [after_effectiveness_v3.md](plans/after_effectiveness_v3.md)，不作为本阶段未完成项自动续跑。

@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 import csv
 import json
+import math
 from statistics import median
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -122,7 +123,13 @@ def _l_cal_s(evidence: dict[str, Any], dataset: str) -> float:
     return float(median(learning)) if learning else 30.0
 
 
-def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: StageContext) -> ProbeBatch:
+def plan_probes(
+    design: dict[str, Any],
+    evidence: dict[str, Any],
+    context: StageContext,
+    *,
+    identity_recalibrate: bool = False,
+) -> ProbeBatch:
     context.reject_foreign_study(design)
     if evidence:
         context.reject_foreign_study(evidence)
@@ -156,6 +163,8 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
                     _request(context, spec, probe_id, "s0_profile", dataset, True, N_EXPECTED[dataset])
                 )
             return batch
+        if identity_recalibrate:
+            continue
         if not _role_complete(evidence, "plugin_cost", dataset, 5):
             for name, extra in (
                 ("b64", {"training": {"new_batch": 64, "replay_batch": 64}}),
@@ -210,6 +219,26 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
             apply_quota(spec, next_loose)
             batch.probes.append(
                 _request(context, spec, f"loose_{dataset}_q{next_loose}", "q_loose_verify", dataset, True, N_EXPECTED[dataset])
+            )
+            return batch
+        if (not identity_recalibrate) and (not _role_complete(evidence, "plugin_loose", dataset, 1)):
+            spec = stamp_dev(_template(root, dataset), role="plugin_loose", method="gem_ewc_on", dataset=dataset)
+            spec["training"]["eval_batch"] = int(eval_choice[dataset])
+            spec["algorithm"]["optional_plugins"] = "gem_ewc"
+            spec["algorithm"]["optional_start_enabled"] = True
+            spec["algorithm"].update(PLUGIN_DEFAULTS)
+            spec["controller"].update(enabled=False, plugin_policy="fixed_advanced")
+            apply_quota(spec, q_loose)
+            batch.probes.append(
+                _request(
+                    context,
+                    spec,
+                    f"plugin_loose_{dataset}_q{q_loose}",
+                    "plugin_loose",
+                    dataset,
+                    True,
+                    N_EXPECTED[dataset],
+                )
             )
             return batch
         if not _role_complete(evidence, "l_cal", dataset, 2):
@@ -274,23 +303,37 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
         batch.blocked_reason = "Q_tight not identifiable for core50_nc"
         return batch
     nc_loose = _verified_loose(evidence, "core50_nc", nc_tight) or (2 * int(nc_tight))
-    if not _role_complete(evidence, "control_2x2", "core50_nc", 4):
-        l_cal = _l_cal_s(evidence, "core50_nc")
+    if identity_recalibrate:
+        return _plan_identity_coverage_stamps(
+            evidence, context, eval_choice, int(nc_eval), int(nc_tight), int(nc_loose)
+        )
+    for dataset in PRIMARY_DATASETS:
+        if _role_complete(evidence, "control_2x2", dataset, 4):
+            continue
+        q_ds = _chosen_tight(evidence, dataset)
+        if q_ds is None:
+            batch.blocked_reason = f"Q_tight not identifiable for {dataset}"
+            return batch
+        l_cal = _l_cal_s(evidence, dataset)
+        eval_b = int(eval_choice[dataset])
+        n_exp = N_EXPECTED[dataset]
         for name, latency, m_max in (
             ("O00", 30.0, 4096.0),
             ("O10", float(l_cal), 4096.0),
-            ("O01", 30.0, float(nc_tight)),
-            ("O11", float(l_cal), float(nc_tight)),
+            ("O01", 30.0, float(q_ds)),
+            ("O11", float(l_cal), float(q_ds)),
         ):
-            spec = stamp_dev(_template(root, "core50_nc"), role="control_2x2", method=name, dataset="core50_nc")
-            spec["training"]["eval_batch"] = nc_eval
+            spec = stamp_dev(_template(root, dataset), role="control_2x2", method=name, dataset=dataset)
+            spec["training"]["eval_batch"] = eval_b
             spec["controller"].update(enabled=True, plugin_policy="adaptive")
             spec["algorithm"]["optional_plugins"] = "gem_ewc"
             spec["algorithm"]["optional_start_enabled"] = False
             spec["algorithm"].update(PLUGIN_DEFAULTS)
-            apply_quota(spec, nc_tight)
+            apply_quota(spec, q_ds)
             spec["controller"]["thresholds"].update(p=0.5, s=0.5, latency_s=latency, m_max_mib=m_max)
-            batch.probes.append(_request(context, spec, f"control_{name}_q{nc_tight}", "control_2x2", "core50_nc", True, 9))
+            batch.probes.append(
+                _request(context, spec, f"control_{dataset}_{name}_q{q_ds}", "control_2x2", dataset, True, n_exp)
+            )
         return batch
     if not _role_complete(evidence, "dyn_reservation_probe", "core50_nc", 1):
         peak = _profile_reserved_mib(evidence, "core50_nc") or 0.0
@@ -313,7 +356,22 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
         )
         batch.probes.append(_request(context, spec, f"dyn_core50_nc_R{r_mib}", "dyn_reservation_probe", "core50_nc", True, 9))
         return batch
-    dyn = next((r for r in evidence.get("runs", []) if r.get("role") == "dyn_reservation_probe" and r.get("status") == "completed"), None)
+    if _need_dyn_min_positive(evidence):
+        reserved = [0, 0, 0, 4 * 1024**2, 4 * 1024**2, 4 * 1024**2, 0, 0, 0]
+        spec = stamp_dev(_template(root, "core50_nc"), role="dyn_min_positive", method="R4", dataset="core50_nc")
+        spec["training"]["eval_batch"] = nc_eval
+        apply_quota(spec, nc_tight)
+        spec["resource_envelope"] = {"enabled": True, "reserved_bytes_by_experience": reserved}
+        spec["controller"].update(enabled=True, plugin_policy="adaptive")
+        spec["algorithm"]["optional_plugins"] = "gem_ewc"
+        spec["algorithm"].update(PLUGIN_DEFAULTS)
+        spec["controller"]["thresholds"].update(
+            latency_s=_l_cal_s(evidence, "core50_nc"),
+            m_max_mib=float(nc_tight),
+        )
+        batch.probes.append(_request(context, spec, "dyn_core50_nc_R4_min_positive", "dyn_min_positive", "core50_nc", True, 9))
+        return batch
+    dyn = _dyn_anchor(evidence)
     if dyn is not None and not _role_complete(evidence, "static_search_dyn", "core50_nc", 6):
         for batch_n, replay in STATIC_GRID:
             spec = stamp_dev(_template(root, "core50_nc"), role="static_search_dyn", method=f"b{batch_n}_r{replay}", dataset="core50_nc")
@@ -345,17 +403,9 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
             spec["data_supply"] = {"record_hashes": True, "profile": "natural_ondemand"}
             batch.probes.append(_request(context, spec, f"{role}_core50_nc", role, "core50_nc", True, 9))
         return batch
-    if not _role_complete(evidence, "sensitivity", "core50_nc", 7):
+    if not _role_complete(evidence, "sensitivity", "core50_nc", len(planned_sensitivity_variants(evidence, "core50_nc"))):
         l_cal = _l_cal_s(evidence, "core50_nc")
-        variants = {
-            "thr_half": {"controller": {"thr0": 0.025, "enabled": True, "plugin_policy": "adaptive"}},
-            "thr_double": {"controller": {"thr0": 0.1, "enabled": True, "plugin_policy": "adaptive"}},
-            "alpha_double": {"controller": {"enabled": True, "plugin_policy": "adaptive", "updates": {"alpha": 0.2, "beta": 0.2}}},
-            "beta_double": {"controller": {"enabled": True, "plugin_policy": "adaptive", "updates": {"alpha": 0.1, "beta": 0.4}}},
-            "lr_half": {"training": {"optimizer": {"name": "sgd", "lr": 0.005, "momentum": 0.9, "weight_decay": 0.0, "scheduler": "none"}}},
-            "initial_batch32": {"training": {"new_batch": 32, "replay_batch": 32}, "controller": {"mb0": 32.0, "enabled": True, "plugin_policy": "adaptive"}},
-            "initial_replay1000": {"replay": {"capacity": 1000}, "controller": {"mr0": 1000.0, "enabled": True, "plugin_policy": "adaptive"}},
-        }
+        variants = planned_sensitivity_variants(evidence, "core50_nc")
         for name, extra in variants.items():
             spec = stamp_dev(_template(root, "core50_nc"), role="sensitivity", method=name, dataset="core50_nc")
             spec["training"]["eval_batch"] = nc_eval
@@ -363,13 +413,23 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
             spec["algorithm"].update(PLUGIN_DEFAULTS)
             spec["controller"].update(enabled=True, plugin_policy="adaptive")
             spec["controller"]["thresholds"].update(latency_s=float(l_cal), m_max_mib=float(nc_tight))
-            apply_quota(spec, nc_tight)
+            quota = nc_tight
+            extra = dict(extra)
+            quota_kind = extra.pop("_quota", None)
+            quota_mib = extra.pop("_quota_mib", None)
+            if quota_kind == "loose":
+                quota = int(nc_loose)
+            elif quota_kind == "mid":
+                quota = int(quota_mib)
+            apply_quota(spec, quota)
             for key, value in extra.items():
                 if isinstance(value, dict) and isinstance(spec.get(key), dict):
                     spec[key].update(value)
                 else:
                     spec[key] = value
-            batch.probes.append(_request(context, spec, f"sens_{name}_q{nc_tight}", "sensitivity", "core50_nc", True, 9))
+            if quota_kind:
+                spec["controller"]["thresholds"]["m_max_mib"] = float(quota)
+            batch.probes.append(_request(context, spec, f"sens_{name}_q{quota}", "sensitivity", "core50_nc", True, 9))
         return batch
     if not _role_complete(evidence, "agem_profile", "core50_nc", 2):
         for name, extra in (
@@ -387,6 +447,159 @@ def plan_probes(design: dict[str, Any], evidence: dict[str, Any], context: Stage
             batch.probes.append(_request(context, spec, f"{name}_q{nc_loose}", "agem_profile", "core50_nc", True, 9))
         return batch
     return batch
+
+
+def _plan_identity_coverage_stamps(
+    evidence: dict[str, Any],
+    context: StageContext,
+    eval_choice: dict[str, int],
+    nc_eval: int,
+    nc_tight: int,
+    nc_loose: int,
+) -> ProbeBatch:
+    """S01/S04 identity stamps and S07 IO pair after Q/L/S* probes. Does not rebuild DYN at mid/loose."""
+    batch = ProbeBatch()
+    root = context.root
+    l_cal = _l_cal_s(evidence, "core50_nc")
+    if not _role_complete(evidence, "identity_s01_stamp", "core50_nc", 1):
+        spec = stamp_dev(_template(root, "core50_nc"), role="identity_s01_stamp", method="O11", dataset="core50_nc")
+        spec["training"]["eval_batch"] = nc_eval
+        spec["controller"].update(enabled=True, plugin_policy="adaptive")
+        spec["algorithm"]["optional_plugins"] = "gem_ewc"
+        spec["algorithm"]["optional_start_enabled"] = False
+        spec["algorithm"].update(PLUGIN_DEFAULTS)
+        apply_quota(spec, nc_tight)
+        spec["controller"]["thresholds"].update(p=0.5, s=0.5, latency_s=float(l_cal), m_max_mib=float(nc_tight))
+        batch.probes.append(
+            _request(
+                context,
+                spec,
+                f"identity_s01_O11_core50_nc_q{nc_tight}",
+                "identity_s01_stamp",
+                "core50_nc",
+                True,
+                9,
+            )
+        )
+        return batch
+    if not _role_complete(evidence, "identity_s04_stamp", "core50_nc", 1):
+        reserved = [0, 0, 0, 4 * 1024**2, 4 * 1024**2, 4 * 1024**2, 0, 0, 0]
+        spec = stamp_dev(_template(root, "core50_nc"), role="identity_s04_stamp", method="R4", dataset="core50_nc")
+        spec["training"]["eval_batch"] = nc_eval
+        apply_quota(spec, nc_tight)
+        spec["resource_envelope"] = {"enabled": True, "reserved_bytes_by_experience": reserved}
+        spec["controller"].update(enabled=True, plugin_policy="adaptive")
+        spec["algorithm"]["optional_plugins"] = "gem_ewc"
+        spec["algorithm"].update(PLUGIN_DEFAULTS)
+        spec["controller"]["thresholds"].update(latency_s=float(l_cal), m_max_mib=float(nc_tight))
+        batch.probes.append(
+            _request(context, spec, f"identity_s04_dyn_R4_core50_nc_q{nc_tight}", "identity_s04_stamp", "core50_nc", True, 9)
+        )
+        return batch
+    if not (
+        _role_complete(evidence, "io_off", "core50_nc", 1) and _role_complete(evidence, "io_on", "core50_nc", 1)
+    ):
+        for enabled, role in ((False, "io_off"), (True, "io_on")):
+            spec = stamp_dev(_template(root, "core50_nc"), role=role, method=role, dataset="core50_nc")
+            spec["training"]["eval_batch"] = int(eval_choice["core50_nc"])
+            apply_quota(spec, nc_loose)
+            spec["prefetch"].update(enabled=enabled, queue_depth=2, pin_memory=False, num_workers=0)
+            spec["data_supply"] = {"record_hashes": True, "profile": "natural_ondemand"}
+            batch.probes.append(_request(context, spec, f"{role}_core50_nc", role, "core50_nc", True, 9))
+        return batch
+    return batch
+
+
+def planned_sensitivity_variants(evidence: dict[str, Any], dataset: str = "core50_nc") -> dict[str, dict[str, Any]]:
+    """PLAN §5.2 one-factor probes. Baseline (Thr0=0.05, α=0.1, β=0.2, δ=0, lr=0.01, b16, r200, tight) is reused."""
+    n_exp = N_EXPECTED[dataset]
+    variants: dict[str, dict[str, Any]] = {
+        "thr_half": {"controller": {"thr0": 0.025, "enabled": True, "plugin_policy": "adaptive"}},
+        "thr_double": {"controller": {"thr0": 0.1, "enabled": True, "plugin_policy": "adaptive"}},
+        "alpha_half": {
+            "controller": {"enabled": True, "plugin_policy": "adaptive", "updates": {"alpha": 0.05, "beta": 0.2}}
+        },
+        "alpha_double": {
+            "controller": {"enabled": True, "plugin_policy": "adaptive", "updates": {"alpha": 0.2, "beta": 0.2}}
+        },
+        "beta_half": {
+            "controller": {"enabled": True, "plugin_policy": "adaptive", "updates": {"alpha": 0.1, "beta": 0.1}}
+        },
+        "beta_double": {
+            "controller": {"enabled": True, "plugin_policy": "adaptive", "updates": {"alpha": 0.1, "beta": 0.4}}
+        },
+        "lr_half": {
+            "training": {"optimizer": {"name": "sgd", "lr": 0.005, "momentum": 0.9, "weight_decay": 0.0, "scheduler": "none"}}
+        },
+        "lr_double": {
+            "training": {"optimizer": {"name": "sgd", "lr": 0.02, "momentum": 0.9, "weight_decay": 0.0, "scheduler": "none"}}
+        },
+        "delta_half_life": {
+            "controller": {
+                "enabled": True,
+                "plugin_policy": "adaptive",
+                "delta": float(math.log(2.0) / float(n_exp - 1)),
+            }
+        },
+        "initial_batch32": {
+            "training": {"new_batch": 32, "replay_batch": 32},
+            "controller": {"mb0": 32.0, "enabled": True, "plugin_policy": "adaptive"},
+        },
+        "initial_replay1000": {
+            "replay": {"capacity": 1000},
+            "controller": {"mr0": 1000.0, "enabled": True, "plugin_policy": "adaptive"},
+        },
+        "quota_loose": {"_quota": "loose"},
+    }
+    q_tight = _chosen_tight(evidence, dataset)
+    q_loose = _verified_loose(evidence, dataset, q_tight) if q_tight is not None else None
+    if q_tight is not None and q_loose is not None:
+        from orion_repro.stages.effectiveness_v3.calibration import CalibrationError, mid_quota_mib
+
+        try:
+            variants["quota_mid"] = {"_quota": "mid", "_quota_mib": int(mid_quota_mib(q_tight, q_loose))}
+        except CalibrationError:
+            pass
+    return variants
+
+
+def _dyn_r_mib(row: dict[str, Any]) -> int:
+    reserved = row.get("reserved_bytes_by_experience") or []
+    highs = [int(x) for x in reserved if int(x or 0) > 0]
+    if not highs:
+        return 0
+    return int(max(highs) // (1024**2))
+
+
+def _need_dyn_min_positive(evidence: dict[str, Any]) -> bool:
+    probe = next(
+        (r for r in evidence.get("runs") or [] if r.get("role") == "dyn_reservation_probe"),
+        None,
+    )
+    if probe is None:
+        return False
+    if probe.get("status") == "completed" and probe.get("transition_first_ok"):
+        return False
+    if probe.get("status") not in {"cuda_oom", "host_oom", "budget_exceeded"}:
+        return False
+    if probe.get("failure_phase") not in {"resource_transition", "training"}:
+        return False
+    if _dyn_r_mib(probe) <= 4:
+        return False
+    return not _role_complete(evidence, "dyn_min_positive", "core50_nc", 1)
+
+
+def _dyn_anchor(evidence: dict[str, Any]) -> dict[str, Any] | None:
+    rows = [
+        r
+        for r in evidence.get("runs") or []
+        if r.get("role") in {"dyn_reservation_probe", "dyn_min_positive"}
+    ]
+    ok = [r for r in rows if r.get("status") == "completed" and r.get("transition_first_ok")]
+    if ok:
+        return ok[-1]
+    completed = [r for r in rows if r.get("status") == "completed"]
+    return completed[-1] if completed else None
 
 
 def _quota_rows(evidence: dict[str, Any], role: str, dataset: str) -> list[dict[str, Any]]:
@@ -610,10 +823,38 @@ def collect_row(rel: str, role: str, context: StageContext, run_dir: Path | None
         n_trained = len(metrics) if summary.get("status") == "completed" else summary.get("n_experiences_run")
     artifacts = {}
     if run_dir:
-        for name in ("summary.json", "phase_trace.csv", "experience_metrics.csv", "resolved_config.yaml"):
+        for name in (
+            "summary.json",
+            "phase_trace.csv",
+            "experience_metrics.csv",
+            "resolved_config.yaml",
+            "control_trace.jsonl",
+            "events.jsonl",
+            "plugin_activity.jsonl",
+            "resource_trace.csv",
+        ):
             path = run_dir / name
             if path.is_file():
                 artifacts[name] = sha256_file(path)
+    actions: list[dict[str, Any]] = []
+    for item in control:
+        last_only = item.get("reason") == "last_experience" or (
+            item.get("applied_new_batch") is None and item.get("controller") != "skipped"
+        )
+        action = {
+            "t": item.get("t"),
+            "applied_new_batch": item.get("applied_new_batch"),
+            "applied_replay": item.get("applied_replay"),
+            "applied_optimizer_mode": item.get("applied_optimizer_mode"),
+            "last_experience_only": bool(last_only),
+        }
+        actions.append(action)
+    cpu_mean = None
+    if run_dir:
+        resources = _read_csv(run_dir / "resource_trace.csv")
+        cpu_vals = [float(r["cpu_percent"]) for r in resources if r.get("cpu_percent") not in (None, "")]
+        if cpu_vals:
+            cpu_mean = sum(cpu_vals) / len(cpu_vals)
     row = {
         "probe_id": spec.get("v3_probe_id") or Path(rel).stem,
         "role": role,
@@ -635,9 +876,11 @@ def collect_row(rel: str, role: str, context: StageContext, run_dir: Path | None
         "learning_s_by_experience": learning,
         "train_reserved_peak_ratio": max(ratios) if ratios else None,
         "integer_config_changed": changed,
+        "applied_actions": actions,
         "supply_wait_ratio": supply,
         "prefetch_produce_s": sum(produce) if produce else 0.0,
         "prefetch_wait_s": sum(wait) if wait else 0.0,
+        "cpu_percent_mean": cpu_mean,
         "full_stream": bool(spec.get("v3_full_stream", n_expected == N_EXPECTED.get(spec["dataset"]["name"]))),
         "n_expected": n_expected,
         "n_trained": n_trained,
@@ -648,6 +891,8 @@ def collect_row(rel: str, role: str, context: StageContext, run_dir: Path | None
         "environment_hash": resolved.get("environment_lock_sha256"),
         "split_hash": resolved.get("dataset_manifest_sha256"),
         "phase": spec.get("phase"),
+        "plugin_policy": spec["controller"].get("plugin_policy"),
+        "optional_plugins": spec["algorithm"].get("optional_plugins"),
         "reserved_bytes_by_experience": (spec.get("resource_envelope") or {}).get("reserved_bytes_by_experience"),
         "transition_first_ok": _transition_ok(run_dir, spec, summary),
     }
@@ -699,9 +944,22 @@ def ingest_batch(batch: ProbeBatch, context: StageContext, evidence: dict[str, A
         if match and match.get("run_id"):
             run_dir = context.root / "runs" / match["run_id"]
         collected = collect_row(probe.rel_config, probe.role, context, run_dir)
+        if probe.role in {"dyn_reservation_probe", "dyn_min_positive", "identity_s04_stamp"} and collected.get("run_id"):
+            from orion_repro.stages.effectiveness_v3.evidence import dyn_window_from_run
+
+            collected["dyn_window"] = dyn_window_from_run(collected, context)
         evidence.setdefault("attempts", []).append(copy.deepcopy(collected))
         evidence["runs"] = [r for r in evidence.get("runs") or [] if r.get("probe_id") != probe.probe_id]
         evidence.setdefault("runs", []).append(collected)
+    from orion_repro.stages.effectiveness_v3.evidence import (
+        audit_dyn_windows,
+        factor_diagnostics,
+        write_evidence_closure,
+    )
+
+    write_evidence_closure(evidence, context)
+    factor_diagnostics(evidence, context)
+    audit_dyn_windows(evidence, context)
     return evidence
 
 

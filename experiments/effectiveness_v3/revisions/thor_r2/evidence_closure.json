@@ -1,0 +1,1029 @@
+{
+  "kind": "raw_evidence_closure",
+  "study_id": "effectiveness_v3",
+  "revision": "thor_r2",
+  "n_rows": 61,
+  "n_ok": 61,
+  "n_mismatch": 0,
+  "ok": true,
+  "rows": [
+    {
+      "probe_id": "host_capability",
+      "role": "host_capability",
+      "dataset": "core50_nc",
+      "run_id": null,
+      "status": "unavailable",
+      "ok": true,
+      "mismatches": []
+    },
+    {
+      "probe_id": "eval_core50_nc_b128",
+      "role": "eval_batch",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T105219Z_f71357c4",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "e369ce929aa173f7286f4c28ab2f730a05f7dad35920c641393c9378fe78b3dd",
+        "phase_trace.csv": "80373ab772bb8a75d39ee97f61436fba6b63f8baef68f410bc6c29552d01a28f",
+        "experience_metrics.csv": "abfa0cd09322df8d495deaddf53bf09e9f70c9f199e23683b9d04f0a07797258",
+        "resolved_config.yaml": "0b54106591201a11b77ede6168fc9ababdb04e7f9a621834dafb9de665eb4956",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "21d99f1d331213413c110673a52cc32068afb8c59523051c90dfd2f195e5f044"
+      }
+    },
+    {
+      "probe_id": "eval_core50_nc_b32",
+      "role": "eval_batch",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T105256Z_1365e1e6",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "417e746b70ae387f49d8a815d4f33243f3438cfd01c03734e4eca80e3bffc07e",
+        "phase_trace.csv": "5895474ba0652ae5fdee92a2e5a09dd9936dd94c13033a1186b05639c1c5d2f3",
+        "experience_metrics.csv": "754b810c96b16d79cbafa941329cafb6703d209ebb6da8d9c7dd25499f96f9c5",
+        "resolved_config.yaml": "3dc8d8e8a4b56be0019df669b1048c4fa2cf9803a74dcc5b7f4df6230ff244cb",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "66fbf6d4ca06b067fefa32b952f79581073b439736cdf9f583435aef0f7a5768"
+      }
+    },
+    {
+      "probe_id": "eval_core50_nc_b8",
+      "role": "eval_batch",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T105334Z_06428be6",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "2bcf10167ef67f6e1dc07c27f7df091ddfe8163c47ad94bf5e225d7c4f78e5a5",
+        "phase_trace.csv": "2fc6058ecb8d028c73413801c4cb8abdd1ad97ce414d44751e4890151d191c6d",
+        "experience_metrics.csv": "6428deb62f849ec3f47c14be1a406cdafc53c6068e723e78b53b8555620f58f4",
+        "resolved_config.yaml": "c871f7f0b572fa85eabf81b3b4358e2a5419e80c4e328e5f40caa279f64bccef",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "2cb67eb38f4152cf88bfb4a31e518ebdcc9c700b50b261268a11bc3e5096c0a3"
+      }
+    },
+    {
+      "probe_id": "eval_splitcifar100_b128",
+      "role": "eval_batch",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T105419Z_c989e0b8",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "af04c9e06611303e220dc9990570caad8d792d3f9461dc04e234ccd39ddd04ef",
+        "phase_trace.csv": "54a51a55f1ca90ea656485a1c52d86511f2c3e6ce1ac2fa8c3228521337bcf65",
+        "experience_metrics.csv": "fccf2effe62f4185b421ec71357f6ea6de5f0f9e8cfacf8a33568b9ee810f1a6",
+        "resolved_config.yaml": "082217e1a4fcd31243060e085e56db19885e164f35d8bc01e1c27fe1b47aa8d7",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "c13da3e94e1dc26749dd4a68f91126b19fa4cafda3331cb6edf7c2e5d38e8b88"
+      }
+    },
+    {
+      "probe_id": "eval_splitcifar100_b32",
+      "role": "eval_batch",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T105432Z_d2823b7d",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "81d9dfae8767556b02c1b65079759355269d05f64831b475526ba5baf5535c7e",
+        "phase_trace.csv": "366e3e0aa310996202d71ef5770a77af609f3ae6365d76a3c048b456d6589467",
+        "experience_metrics.csv": "f0c1f397628bd918d9f80501706b4d81f77cdbc428551f8034e186a20708e323",
+        "resolved_config.yaml": "8760fe857aff715f18e5cbf942794f5668705347df5bba1a9f5c6a0f06798c4e",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "1a61bbb37455ab45778e87878519e7058ed7144eb9e7b11679502c6226c3c68c"
+      }
+    },
+    {
+      "probe_id": "eval_splitcifar100_b8",
+      "role": "eval_batch",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T105446Z_82bc694b",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "a4656eba5fe20c50b364c0795b7ae9b0d43c3ae77c04a7a36ea68598de4705ee",
+        "phase_trace.csv": "2b1a9717974cdd4b8199276617327775bf56c541d38303a5b26db97ddf4b1095",
+        "experience_metrics.csv": "bc5a2025ac7beb9a9f65f7a0920a4f11e883ba747127494ff867ceb05bc6e5bb",
+        "resolved_config.yaml": "adf78f690733b867f6d95de6e3fa26a3ca9c0bfded4c39c0a61964f3ac5995b5",
+        "control_trace.jsonl": "d736b68288967a6cea22b9c055efbb9ed6af1c5de98d54e3c86b642e8eb635af",
+        "events.jsonl": "c32ee4327e03644e740c5c85787855bab8715c89c5010dd5fa6c366c80809634"
+      }
+    },
+    {
+      "probe_id": "s0_core50_nc_rep0",
+      "role": "s0_profile",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T105507Z_30b241a6",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "3fd4807e55f1bbee1fe241775a8a9c3a4e2acfe2d2c0cb04a35ab777946a7743",
+        "phase_trace.csv": "1398d8d13e187589c105394fa2b3f907fd9d47466952e9f9c7aa9e89a2d54c6e",
+        "experience_metrics.csv": "e638519a8848d7297de6a53f34f22de66eb9d860ae9487f230a266fd7e16add3",
+        "resolved_config.yaml": "2e00346415d22bce08eae0e9a909d0c5bac2e2fc58954ce06e7e935632907cb4",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "03ae06c2702dcf70ae2eb9892ea2d9ae78d1f4b882c3075573dcf19117a03c82"
+      }
+    },
+    {
+      "probe_id": "s0_core50_nc_rep1",
+      "role": "s0_profile",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T105839Z_16319eb8",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "39b6c76fd4afdc5ff4635fe4132894e04013562ae54b412b35c1cd695a78463b",
+        "phase_trace.csv": "caa10d27536570407cb680e5e9abb4f657bb37396d25d633dff261519b0c6975",
+        "experience_metrics.csv": "11e499884baabdd3625d8e2a18a79db456a4616348f2daa1509a5eaf59d3066c",
+        "resolved_config.yaml": "7b7bad7f54f16f5708830a0480ddca1f47719bda737333a36ecc5891e50f9932",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "1044b40b7444656143a4cdbfddcb125f7a97581e375f7b7bd4912d6f614d3d09"
+      }
+    },
+    {
+      "probe_id": "s0_splitcifar100_rep0",
+      "role": "s0_profile",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T110217Z_75c47b82",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "7ece9acab625ac1a2c3fa6d90abfc62ec01025ac857b373d678c50638e8fe57b",
+        "phase_trace.csv": "3bf02478912057f09b3e52b1c9101f90b4df485c6bcff59bb3d79b73d4d8b70b",
+        "experience_metrics.csv": "1fabc0b2b223baeba66fb12de48ffeae2b85a446d6ff998f8d395b7e9357ac89",
+        "resolved_config.yaml": "234d285bbedc55eb16cacb6db466d4ff4d1a44d9df139c72d433d43ee93ed0b9",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "201597f7df9440ea0ede9af311b1ccb92a3d386383a7b37dd9c7600867405c47"
+      }
+    },
+    {
+      "probe_id": "s0_splitcifar100_rep1",
+      "role": "s0_profile",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T110341Z_063b7e9b",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "c627bafbe72ff0afe3be5ffa5de3924f60b13c67c33eb8e59739e85bfb700862",
+        "phase_trace.csv": "f30c06a7d0963ae8a69592107f71d34f9bc414e768ce203df5af878235831ef4",
+        "experience_metrics.csv": "9a7b70b304ec515653d9ce054a03cd1f414e00835a70ca7ce641d5e9c1dedb7c",
+        "resolved_config.yaml": "cd45974accf3750f84cb9695e37abeff76d9f7f2bb519351ffc461d5e7516c9b",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "915bab1344f23ceb21a17bc200e0f414634e6e715c8ada7a3ff82ed214df62c5"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q160",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T110511Z_6625ed70",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "79bd797822a1b12816fc5add95272de03e23650dfd83ebc571581e80f74f1a3d",
+        "phase_trace.csv": "406131ca7aa62af7a1563ed156530a06d239affa5ed8f3f18cf11967dd43b170",
+        "experience_metrics.csv": "ebbd06a8b23e42a805bd60a48069eb5e923d06bd0f6112082f9527c69d53362e",
+        "resolved_config.yaml": "2ff7b846e6da4a09f01242db741865d8df384e2da697cb52bf4a04c1b21842b8",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "38bbebb0a5bd586dcf5e8516a12ef5bb5154d3448affb96a1e10170463a60dd5"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q176",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T110840Z_a5771425",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "2c092314359765d73ee57be427b1ddd4fd0926a303def4a4994000f8c52de5d6",
+        "phase_trace.csv": "6a3658a69fdc8d153ee400eca1f35f6fe9cd9d28e7f40a1f50fd2cc171038c6f",
+        "experience_metrics.csv": "f391e203de640fe8d6663e8d94f2d57361ca50186963dcc4d2aea7983277a163",
+        "resolved_config.yaml": "15c1bd12d83609597e8622ef151cb72e0443ccd93230cbe327f3afec48956748",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "dd2a413fad68d7eb8af1211d71ff700cae223eef0fb34266ecf05d39a45e1797"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q192",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T111208Z_387ef458",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "b9c18438810dd09c118617c5bffe8daf9c147d2fdd09f4132c259fa99cd1d799",
+        "phase_trace.csv": "25859931bd5248737565dc25c9da2b9b7a5e3b8ea4a65349e67c2daabd8881bf",
+        "experience_metrics.csv": "09d31569d1201e1e0e1f4f2170df98a0f376c786ada4457ff69a9cec81f5435d",
+        "resolved_config.yaml": "a8529168307f5743be108b0ba2593a5bad838c7dd27a65274579382a11adebeb",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "b3ea8597dca26d0b40b1e652ef7c4276c0c7e169fab1029c6f93b567c63d4f6e"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q208",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T111539Z_c2348841",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "60fb37e5d9cf2603c96ab410f56f78fb0e517f047aeb652b0930722e4dd2aec2",
+        "phase_trace.csv": "cb0bb33736f171e9af5e9acd6f3b1b24d821d5e6e6cf600644d3e969121fbc24",
+        "experience_metrics.csv": "1ace3adc01c0e747011c079826436ad60b749203c4e7a9fb1828e1631d376b71",
+        "resolved_config.yaml": "298c231cc813ad69d5a173adc838ef339fa9f72ffde9eb5598baaa3b103947ae",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "23b9979b2952dac01ef776313ac97bb55529825939c7318253df310c8999774a"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q224",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T111913Z_e14ccac2",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "49633b9de73c22e29bf757e09df450099975a338635c3dc7751fd4bd5b7d0b41",
+        "phase_trace.csv": "2876a805b98e20fa7852e4004b5bd02e1866ef5f620df1275c2461119e057b9c",
+        "experience_metrics.csv": "daa8fe7b93a32006dd6e60f9fbf64f28ae14242d404f1b0e1704b46f2b7047ae",
+        "resolved_config.yaml": "7d957d9f7cb6720eda4366f47b781ca4286985bcdda778886bed1ed69166e467",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "a85e3b918b93ce1f54719eb15bcfeb63698f701322e35d13e38b76b840688dd3"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q240",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T112243Z_21f4d66f",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "79a7bf71ea9bc33ba9f5fe6ebd03f74cdc594253940ca85b4fb8916fe6127ea3",
+        "phase_trace.csv": "d681e66052709a8b2c7b690b113c521bb57129fc0e404b34cdd6ae954d1b25b8",
+        "experience_metrics.csv": "7e5a2c433de62118a4a2a64e8e7b98f75ec3601d67e3c2f3fb179fc1416e5669",
+        "resolved_config.yaml": "3e1ec6ae42636da1a6af529146a592f755a8f8807da72f8a5890df2e361121b8",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "47dc2171259de759802b4fc77cbd860256570083c3b26233e691e86ad04f59ea"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q256",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T112618Z_d021c23a",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "879c2eeebcc1a5c86ba8448b6151553e7d90876b1908d55246579b43c30f543b",
+        "phase_trace.csv": "6663599ac3311a5683841e9c608f735d592c540fdbc24042adf5baf9583ec32e",
+        "experience_metrics.csv": "6fda8b11827c128c9b819e4f153f495f8c15298005f559bdd9c5b481e7bf39c8",
+        "resolved_config.yaml": "bb4b9d683cf0c6a19c74a1b55abc7dad90624fcd88fea0025d5b9659c842b239",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "842f345b9772380843a62881ab9e28e8f2a74c79217bb7e61fb938a5cffd951a"
+      }
+    },
+    {
+      "probe_id": "quota_core50_nc_q272",
+      "role": "quota_scan",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T112947Z_d260d5a9",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "afab17c31f874e41cf36fefb2c4786461b423bccc2bb1bfc18484b45b8ee3db4",
+        "phase_trace.csv": "bac9638f53abbb0071973ada5153442041f0d5cb9e81152574a0294a09f47421",
+        "experience_metrics.csv": "fee0a527727b3470b7134cba4d727c04a2e165e4d0b491bedbf1a0decab0245b",
+        "resolved_config.yaml": "6dedb3775f1b13201db35d218330a3652b8a185cc198c6cfd436884a8f2a238e",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "96dd279e3520eb9ad75b40610fcf912b46ec66af714f1f153f4d36cdd4f485aa"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q160",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T113321Z_478b35ff",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "7cf270304205622f25ed40cd52a8b8f42bf2c33616c65c683eaf051927a9eee5",
+        "phase_trace.csv": "98fe23c2dec33d43f20f71086e10cba4a8d6224968ea0dc6c9d197b5f4560daa",
+        "experience_metrics.csv": "4ac5e6f36701287165ec375fd08efc48100528c0f60d1f83cc8e5105b31ca436",
+        "resolved_config.yaml": "f12b6bd2ffbc8cfba80f3ae9fc5ce89c5f405996f6fe92ab4c851cccd76750db",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "2161d98e9cc7effc265083544438b9621ea2f51cc3579818d6eb04f1e3c19ecc"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q176",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T113444Z_d0c5ea96",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "1dd22db241ffdddbbf5add4a2d4edb2bbc230bf6f98b5c73d34cc09e3de24589",
+        "phase_trace.csv": "f9f346f231b9d9862585f692bd5a2d85f0aa941546e86630e2f5a872eb5badd2",
+        "experience_metrics.csv": "450c7fe42485587edad8cbe6a47098f84f85af7673ec87b565624bbcf5b35ebd",
+        "resolved_config.yaml": "21ec9f8a3a335825ea1809474787b23d2e62fa375c0d2b1acb145595d6704d3a",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "35c1db2c2fd87968dd04076eebdbfad0c32e4eeb617ddc9ec935c58af4987da8"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q192",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T113606Z_e6a1ba43",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "8e882f2697658409c552a07c00d293f2855158737ab3a415179b62bdd60ca9dd",
+        "phase_trace.csv": "017a362842e54c05a6364f8afe60f99e2df00481c40ba0eafa062523bf601026",
+        "experience_metrics.csv": "c7fa0c240f695fe742d58ff225af2a9b076a3173666382ab6a9970b8a58870c2",
+        "resolved_config.yaml": "971f3e8d9729c8470f70bdce417a854c89b333adac7eef9d0133093ad19e2647",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "40f059d5b38c924ad4ea4596144974aa8ee99444a232e2563b0f2bb5a26c9f4f"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q208",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T113731Z_28cef347",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "c6b8047bd46585e5f6ca65d227a58064696dc2966e478f354d9f744486c3fb97",
+        "phase_trace.csv": "e4aab2da654f230319068c72527a010e806f02b4301784fc8171d35609bfaa9e",
+        "experience_metrics.csv": "7a7dc591245e5a42ede9f3009b7e859f4b4074da07a4b6de733189395495f376",
+        "resolved_config.yaml": "bdaad9da471c46fe36ecd6d2841fa3a0df6e9531ad25af946988dd95e0ebcca1",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "99dbcaffb1792fd00a4e4439ad6f9eb1dc23e600c889d56f0abe4c62bf1c08b3"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q224",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T113853Z_f3e0ac16",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "9916d195990f08cfe6eb75dae0933f21f6cd750b42bdcb9169b586226aefa362",
+        "phase_trace.csv": "a7e7ffe919b12ce5c6e6ed1366f275e533898f41ba1a23f1f2a514669c65665f",
+        "experience_metrics.csv": "ad9ee6f5d4cbdff5fb67adf46e4b8934dac23f2794d5f0bee67aba0f8de76965",
+        "resolved_config.yaml": "aa215684d3bbec6807d294f501d42e50e6f32a2081fef64b8204774f1fc45337",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "36d940c1eb8553a54333a5fd9083378744f68d9bf6357347819454d0235ed723"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q240",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T114015Z_3d1ec284",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "045b7c6ba07e1004de071a3283647139c2cf7c954fd797ddde7e34d1247e02e7",
+        "phase_trace.csv": "e8e54630b24d70a213587081ba50459c5cfd7866b5a41639140435b675a3761d",
+        "experience_metrics.csv": "65b1745ea340daf04f59a25c48d160335c5ac74ad1eae3b28e4bbd7cde2baa5c",
+        "resolved_config.yaml": "a3e5d141514de19d2fe25706a12acd4ec96935887ea47d2527721f1dce79e2e4",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "0b8464a6dccaf449f5220a15cebfb7f67887622f20d207f11935afbff25efc6a"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q256",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T114138Z_ef623b13",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "d4e7008ff293793be8e84da3841757d4f9b753dd35b9aab82be1d0e16f2fb173",
+        "phase_trace.csv": "c30b66b273e68618bb47bb4b0de0c6faa71208623ca573972fee268f6e2463ae",
+        "experience_metrics.csv": "525c1fdca0dfabc946ae025d09b3342dc60854da657e09a063d52fcb8cd9c3d8",
+        "resolved_config.yaml": "e40e44ef84bf7c3df2ec9e2d3ceefdb26c7727ac0f16914d68cdf3da712c0898",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "e78f5cf88bceaa1ff2fba5b8042d9ca7d56f809d6a77a9e68cc2bb968ed4a2d3"
+      }
+    },
+    {
+      "probe_id": "quota_splitcifar100_q272",
+      "role": "quota_scan",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T114259Z_e10bf2e6",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "2bfe854f7df6fc0e8604211b456570a28207e79aa2c1176d1f4ce15d1c7f302c",
+        "phase_trace.csv": "ba3904db66d50d833dcf0c4ea7687bfa7684f1862b49305e1a68430cdb35f9f0",
+        "experience_metrics.csv": "4d2f5dd628303c22b12b361e3959f275b4cc13aa6031af67634c963550823cbc",
+        "resolved_config.yaml": "6ec8c742425b18774fa0fd525d51adaa7798c88834932f3ab3f38155a8c5c481",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "39040f20d418b321b9b0ddaf6fb050bf7b94bad7a3cfdafdfae1ddd51a752c5f"
+      }
+    },
+    {
+      "probe_id": "loose_core50_nc_q320",
+      "role": "q_loose_verify",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T114428Z_b0d85084",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "56b3ea4f1a4f55fc9be0b6b8b6aa674cec6702be81cd582155c0d875e7753f79",
+        "phase_trace.csv": "6d95d07485ac315c949a11032f1c532f943f3fd8ce889fb2d780b4aa24b614bf",
+        "experience_metrics.csv": "cfa2aa6d9c324311b90c5cc646dc21be5e2e4b990cea8c7d6feb987924ac287c",
+        "resolved_config.yaml": "20b0e8f3958e2bb1cd068fb4b2060ddbb89d0e0038c5cdead5ec864ec7a0d308",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "27665748a2b5a260c8f87e6c7b213d481fd19cc8f64fb7c6f51488c48414e169"
+      }
+    },
+    {
+      "probe_id": "lcal_core50_nc_q320_rep0",
+      "role": "l_cal",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T114803Z_7be1450c",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "3e57e74625364310e8f99b730160bd296ff1581825dbdba5378c54f1b5e34d6e",
+        "phase_trace.csv": "bd9787efbc25197274d52f549c10af17cfcae39b3fdf8f4df154ccf7b166dbde",
+        "experience_metrics.csv": "6a8d54e4f026a48e095e0f974450b4bc195a6c41951f8b21ef152fe6837cb2ea",
+        "resolved_config.yaml": "8ee6eaf6fd93fb4a00e22bf04daf4271940455dea88299dfcd67a12251f30ad2",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "782be62528c2eaf9e15a30afa9e58409218ee37c726ff9d285b5e9d83dd03a95"
+      }
+    },
+    {
+      "probe_id": "lcal_core50_nc_q320_rep1",
+      "role": "l_cal",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T115131Z_c16256fe",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "69666835c890bd1335a446960c7642fdd83f16ed94f9e2451acb27bab432c398",
+        "phase_trace.csv": "76ca9eef192b4718009191a2a80a6be30fd7c9781a798a907b73f7ec062e0025",
+        "experience_metrics.csv": "c8aa492354b829327ca9d6778afe538ef915b4788f0a25fa4ec9fa31a4e8ad1e",
+        "resolved_config.yaml": "cf6bdf95d7edfcc55d204180ba9e5ac5c59e36217eebcadfc3ba51d1725dba09",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "3944b08280615d1071bbec82b7a0032b31f47cff2d060af58e49d4e20cdc3afd"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b16_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T115513Z_7ae0a419",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "96d079596bc7bfa705d32f5cc959fa22622e084c680087a124dc22411352ba7a",
+        "phase_trace.csv": "f26cee350b6f4f91f5d80efb9fbc37acde19400fcf200fb9b10c0781d3f0b478",
+        "experience_metrics.csv": "7c0dba1e1f3f6adca356452c548b5ee2cdefad9819868267a2112da79d882359",
+        "resolved_config.yaml": "3dd0b35de8d453e4ea0b1857d09f4bd1b8b4c574742b49a4c95433cb0e63f2e8",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "da449d91f720d018f04751387bbf0fb57bbc5d74f71174261f72acadbf176a62"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b16_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T115848Z_196762f9",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "32475b529418accc1e360e80e0bec69f31e31939d792cbc83833ffd4c617fe17",
+        "phase_trace.csv": "86fd3230b74ee570fbf7cbf7f91258c3cda6bd20a087b03cf22332091fb02e33",
+        "experience_metrics.csv": "b4aa114706a4dca2618bb2146b80471ff4317ffdf327237136e8fb25438338a3",
+        "resolved_config.yaml": "a6fe31549aa1c76b9ccf63f765905119919a4be125cce3c83ac452e71b160504",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "e88abf705f44fffcaa905477ebc4df545e1ec35e78f065f627efe8096e88fd4c"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b64_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T120210Z_cdbc2c63",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "cbe77eff7e73b3e58e4c7ef7c3724e492610b9a397358969b36cb296024a96b9",
+        "phase_trace.csv": "f721d8d824f5483a86348820dd02b4da23a7ebba68835263c3337b4a1e76c21c",
+        "resolved_config.yaml": "c6d6f888f4d24bda97c6d88ef464681c8864078f7eaf63811f6e4f2d5f1e03f1",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "d5b49aba4514a450cead7f81e1b07ac9e120823689df2939e2436f12747b7d93"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b64_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T120218Z_0c37d785",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "82ff9ebecd76d316b33d9b4ff140959de37a09adde81258d2ef0c5d421aec3a8",
+        "phase_trace.csv": "3d46de9b235856be439e0a2f02f17d2ca205ab492866132d59f60224cc035c44",
+        "resolved_config.yaml": "b44edcd9d6b552923fbb931dd8531c73f56ec78819484ca0e8bb4d7f27debed9",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "1500716c0282fd552dc7b8f5ea3b54d6b04d66cd23eb623173f7d1f8a8826b4a"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b256_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T120226Z_efc0e9fa",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "c604754dfe387740b0ad5e3fa611fde29299a90f18b9c30d5a904feec4587020",
+        "phase_trace.csv": "cf50cfa103fddfdfceb97a36bc389e408f852e788f786c73bd8d4419c260dd4f",
+        "resolved_config.yaml": "a0c853dd2abb26268559ae42e3c64541ba89ba1c4ace340cc2dc79f9bc37f79d",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "880d9076f66d555f350936310502f8ff245b2e096766947e37c28701828c02a6"
+      }
+    },
+    {
+      "probe_id": "search_tight_core50_nc_b256_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T120234Z_fd13f788",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "b05edcb6650550eabab8439e87c8d8281c4913e23394aca2fc2b3ea682498e4d",
+        "phase_trace.csv": "c9bbc9c9b016374be17a0359dd4f34e75ef4f2021e815b977fbc327ece9dbd8b",
+        "resolved_config.yaml": "a8f7012996ab464f4b74c0f4260e069da651ff70047d7b33120a69da7b804d79",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "082eb870af376044f16715f0b8700ba76a24c9da1d7be38854b28d4e86dccbda"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b16_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T120250Z_836b2c9a",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "aa2f3fb078c16e5181515e531f759cea1451ef01e4e8ef4c93b9b5a884ac9a5d",
+        "phase_trace.csv": "828961a6cdfbd8d955aa2bc29dd9eb036940421e4ad50b4b9f165dc8f99cae7d",
+        "experience_metrics.csv": "4676b46973674b3806bdc9fcde32d2848ccd32718a86f4afa4fa53246bedb5e2",
+        "resolved_config.yaml": "af5c5521c3fc8df913fb69e413ac83be4a584ad7e0d539b429bb23bd76d4ed31",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "3fa0b86707c446fba0a652e722ff9a24d38b27b65f0ea731a0e8fe823d1dffe2"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b16_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T120619Z_eb253037",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "d07714104ac896efdccf7f02b3827d746acee8c163bc3ca907a06cb2c76029ee",
+        "phase_trace.csv": "4b645951becc665bd1fd65ac274e835d87644f4ef5c98a87b07f9f686d6cb4ad",
+        "experience_metrics.csv": "bd3dcf39121963195d537bddf4536a6bf7425f3d641b44a26def65c85a9f20fb",
+        "resolved_config.yaml": "b31421ccd3e3aa0def6390e01d674fb80f3166d9641123d906fe30df24d2dd72",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "8f62c8f1f6d298168067be6833b831e1ea0e07101cd24066a5fb904231287f69"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b64_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T120948Z_245119b7",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "28694159ad3bf2b4e95af275b9caf15223927da7fd6e8f7b1963272d9f661071",
+        "phase_trace.csv": "6bb99619a927f8a9917c1eab117f3ce2548e69226a8fc827cd3f058e7df8cdd7",
+        "experience_metrics.csv": "3dcc4499ffc378ea352b674a5fc23538c9d0f8f1fb9ebc761f9caed30c8912d1",
+        "resolved_config.yaml": "b9adc9378a5c71c4c5dea50b4a6dac7ffff649c81dd54dc58326f6414610c428",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "1da7e08028bf29ddbf13263c796ce8c99ffd6eda9f6144ab69d09f21ab2efe62"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b64_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T121158Z_dabdd4bc",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "880a354d5485520cc174f8b8ab9e86c87d7d2602e2357f0c9e1186856af108fd",
+        "phase_trace.csv": "6635eabdb21c3d48e1c26ce92b4d4cdb757c8f9ca5b10fcdbc893d3bca85b33a",
+        "experience_metrics.csv": "e28bbd6f25813477013b3a8a41e9dd837ec2253d5b65b22aa2e0b0894fa68fdc",
+        "resolved_config.yaml": "89a47c3ea2e9b89368feeb9d38175bbe0444a2d48171e31c1e7f978d5e75873f",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "3726818a6b1d435c4e5c5e9006bbd626df7129358fa8d7af746549a82d836078"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b256_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T121407Z_6145c70a",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "df88fa7d1232644510283fcbd1b8f9d135bd6cc92cf0b5ce4ef9180405af4246",
+        "phase_trace.csv": "6fe14009ac6f0e8dd10abedd1cdb006b67886c4697acaf227185da7b39f95fab",
+        "resolved_config.yaml": "b4959d54f872ecb92d0da9e15224b646e8bf09ca7e9ec342bcc56068d366cc42",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "5d2c7dc267d645d40504add6fdb4339567ac4228c913471f5afb37c4c11f0c69"
+      }
+    },
+    {
+      "probe_id": "search_loose_core50_nc_b256_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T121416Z_8e66ea82",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "fb256887642625905d6a148bd03c35f26bb9e06501713027e2fc2b2502ed5983",
+        "phase_trace.csv": "7cd142173ad2a9b29f3bf347c8503976f7c91c820cc1458ab578854fc7b8ce6d",
+        "resolved_config.yaml": "10106669ffb50064bbfb8fa16bd1410a03a74d9dea540dc4bcd74eecdb4152e7",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "a7a7debd8e61e152be854c4e790027ed5c81e7a41fa90b7ee6fd021fa92cbc21"
+      }
+    },
+    {
+      "probe_id": "loose_splitcifar100_q320",
+      "role": "q_loose_verify",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T121432Z_dbaf83b0",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "e086cd6ccc67574bd851b0e3bceac5e2826dfb05e6952c8d55616328c48c134f",
+        "phase_trace.csv": "66c98e9cf0a562886397ef5a0c1da36185d6e42cac7a48e1af165d75bb255190",
+        "experience_metrics.csv": "71cd4cfff614026e5b7892a9fff8d0fcaab7349c26503c427a15f4ceda626397",
+        "resolved_config.yaml": "2f0ebbb43b70e1735434504b09616c973070c6596a37377cd43219da5a0f6454",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "1465767514755fcef1f5d71e6cf416733b0f4250adc93fa3ea11e36f87877477"
+      }
+    },
+    {
+      "probe_id": "lcal_splitcifar100_q320_rep0",
+      "role": "l_cal",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T121603Z_be974f29",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "d77d26962391b092f1ca82310ca89a73ceb3b05cf14c9cc4258b79e765f913a1",
+        "phase_trace.csv": "8f78f610c04b4459319351f8ad1061fa5718f019787f699dcfdc13bc5d705457",
+        "experience_metrics.csv": "657e50a1a355bedbac7a10700e2f3550855c477bf2c542bebe0ad3bc6ee4e218",
+        "resolved_config.yaml": "cc0246ccd9419b3deb4a0f13653e01b15f5f8dfba68da5c1ef5a1bb0e831ee1f",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "e39bbe13791f1de58551b37edae4464cd04d45260ce1020bb50cd0aa10e079bb"
+      }
+    },
+    {
+      "probe_id": "lcal_splitcifar100_q320_rep1",
+      "role": "l_cal",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T121724Z_566d4373",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "20106468dfebc84ddedc0ae8967a56a3839d54f9c8def33372418ae13cd8f3e2",
+        "phase_trace.csv": "88c45195bf02ff8bc008364eeb5e800e76e0eea213e2706377c0a65ec8e90b86",
+        "experience_metrics.csv": "ee963656e0840bc0c18847aac24adc2c53d6ffea293c0d2731aa87a7f2698131",
+        "resolved_config.yaml": "b11fe303bebc7dd9a4cc256960c4074bd4f6316d34058abb221e87ef0fe304a7",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "023a32a88a179f0c0c833735fd7a12d5743847ba448f4290f112e2b141b1ef01"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b16_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T121856Z_e38b9654",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "8424553bcaee7ad93a4ee68c3fc2876ceff01c5b5524a7bb2dd18fe56f23113c",
+        "phase_trace.csv": "3787a0b8968cfdbf2f0529b7915798cde586848268bd9276be13c41a0d414ff3",
+        "experience_metrics.csv": "5a5154f08d2db217952b7f6c798e92c4628995fa486a9e677f26c09af3d68866",
+        "resolved_config.yaml": "b245f557ab92cb21ab8e8ede27af213f2473065069b09076fb55b91d28ea116b",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "6e11eb0cd3b6f0e2216a86040c724f11fa981acd15702640cfdd64eccc65a0b9"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b16_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122020Z_78102316",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "b49b9d43b1d2b5611e88198f6e3905289c05a2fc4032c81dfdf16ce607623158",
+        "phase_trace.csv": "a1b00c7a9c118152c1b18e51f5c060cd7c4ea292e18242ae5c974b52b25bda79",
+        "experience_metrics.csv": "439cd4f355cb4e85e0e567129450e56542018a75bfdac1c609cea5ded633bc39",
+        "resolved_config.yaml": "d2d4553230b50acac6d3d09ab22c0f6d2f5dd4961931110e6899a505d2fac73f",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "8f85fbc0d0c85903c854ad5888f16c401a9e8827d049dcfa6d0dbd96549fd3a1"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b64_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122143Z_e5952c76",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "ea66a962434cc3ad5191a7504a124f6be53f285dccfe22d34c0def372bdaaa76",
+        "phase_trace.csv": "1f2de35b1cf90adafcd95284a8ac9f061ecee9cf55a6ff72c3f6d1af177e1d3f",
+        "resolved_config.yaml": "7eee913c0c7d09344049db54999cee8dc4ecc874d5e534b282e0c8fa19c6b355",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "f999cc8eea32d40be5125fb2cd062c143e74b609daf70a10a0b1645e4fc582db"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b64_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122151Z_b5a028ce",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "d11b59488f04be1331cb34dc4001a142ccf1a48a394a00c17fcc7a9445496eef",
+        "phase_trace.csv": "5e0413a65091a969b2dd8793e24756696304cbb07c1d3b040ffde75e843e2b37",
+        "resolved_config.yaml": "62191a966bce4b83288849306e2834a30938bff4384f83327a33004e0a081847",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "b9148a66eb7bc981bf0bd234927156dfe1586a63a4944284f27ecf74a747d07b"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b256_r200_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122200Z_3dd593e0",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "08760c128e4f95de185ed6d18020593c9c77b922939b5645dbd5b41c317515b6",
+        "phase_trace.csv": "7fe0d11e0b75bf4e8318c3489925251665e310f667178a190c7fd809ca634539",
+        "resolved_config.yaml": "869b1f2156799a3ab2ea21969fee00657f9324abcd58f5e32f13c2b3ee6db9a0",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "4c8da22080bdc3bf01d54ba9369ec0265304de64af99bba607ab07ea7868e989"
+      }
+    },
+    {
+      "probe_id": "search_tight_splitcifar100_b256_r2000_q160",
+      "role": "static_search_tight",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122208Z_e404b70f",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "94cb685a828137d24e4bb59d5db31c37c47477b4dad0c81e2e7052559a10685c",
+        "phase_trace.csv": "6939a3ce8c4ad279539f49e9e0f74fc0b813e00a798646c8266f784934b64021",
+        "resolved_config.yaml": "98ee721c5df6cf39ab335cf86462ba14fe031057878f6106103773e2b2b4a07a",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "dcdb60cee0a1eee12b54b3a03fca939282e6259557e6aa3e6e204180e3d4b9f9"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b16_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122226Z_5af78732",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "707235ea36b98b41297b4f2bc699cc457588326ffa4c0353ef3d60996ef9c3d2",
+        "phase_trace.csv": "8f857d50c3d3387195d0e48940e29c3185380d66a43ed2ad252bff3f2a53bea1",
+        "experience_metrics.csv": "52b89c236de39db199702008608ca0c8184b4be30d8d5252a23f30466ac1df93",
+        "resolved_config.yaml": "ab8eba2c1f8f70ef0eb31570c87df1a24d868371e4e8b06dfe995317114d3a2f",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "4cf88f10223f389a0262cc9a66543d7265c1dd6c80c7e71b921faacc5da00a72"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b16_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122348Z_c186b925",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "496ef8626c8235723eaa6ac1fd9d72620a837a29ad4be0d6f9d7c7b951547f8a",
+        "phase_trace.csv": "612357dfa012e21ce73df60994e7abb42b2c53877cceaab41dc665153f18f820",
+        "experience_metrics.csv": "65400797bfbe8e265b7a0f8e6891f52df416306a78fc78d8e5678df4e3c725f0",
+        "resolved_config.yaml": "0238c48be99954febe296cbd5148e16fb20b8c8cf225ff3c9346d2b8bfa2a24a",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "7404a41568d7836c92f8b901b7df1f6c267c18ef672c2c222784d0087d31f99e"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b64_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122512Z_1c21ccab",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "e9cb7df9bee17df25fce5e9f4c040b51931dc234e54e0e840c561d2273ddb8df",
+        "phase_trace.csv": "b11a68c0cef112add30063cf6f38d1eddb4e8ea51aef3fd3576b462038c3e02d",
+        "experience_metrics.csv": "0cde7e0cf41d9dffb8ab314cbfa93d62c26d8ae5d65023208ce8e0a8fdab9cb9",
+        "resolved_config.yaml": "de4b4c8e4f5d9d975cbb8e575d6acc3487b5578701fc2e12dde3c210b3e1f137",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "1923a126d7fa6c03571155f2188b4edc1262ad3d681e853196ceab1c604c01cb"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b64_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122557Z_55af747b",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "f2a39e5c93c9ce599c03cf90070bd0bb1983db750c0994951cb6fe9b7c794f3d",
+        "phase_trace.csv": "1a0ce2857b5a30b1f77ef71a9f99bbe34c2a87163db965e7f9c8c155df7aaa99",
+        "experience_metrics.csv": "b3b59aea61d5bdede54b87ae05e8e4a74fe427e9bdd0d77bf6774132b204474d",
+        "resolved_config.yaml": "c50244aed8a945fce564021b2c7f880ff9e21e627b9efdb0d7572105f60ef735",
+        "control_trace.jsonl": "9a2592dcf454305f305001866b3b2beb7fbecd2ee9d6d459330504e18107f641",
+        "events.jsonl": "e49e5af5bb839352f63fd6c391a164de3de49a9258937b0b6e4319a855fbab12"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b256_r200_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122641Z_086e81f5",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "ddbc422eb6c9bf8c1863b8d52ca7feec9c563348774984ce6653ad22d31ab3f6",
+        "phase_trace.csv": "e397a11d428fbc2db20a0e0c5300688a75334dedb9077f5395db8295e60d31f2",
+        "resolved_config.yaml": "146151d74cf6e0daca9ce6c3be67a6c240a3c250d033f77b9b5183657e1aa919",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "74855810a5a4796986a786eaee13b722b6cec309f40c7059ec59a1cc09539255"
+      }
+    },
+    {
+      "probe_id": "search_loose_splitcifar100_b256_r2000_q320",
+      "role": "static_search_loose",
+      "dataset": "splitcifar100",
+      "run_id": "effectiveness_v3_20260918T122649Z_6081ccbc",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "cd7ef948ba045b7bfbcbc4e87749098b4c73abc85d03e69d850dc0ae41bd7290",
+        "phase_trace.csv": "f81e05ecda9a1e8eec65533a5e890d34a1707b536a61f19cb4e60bb779ffa4ba",
+        "resolved_config.yaml": "10b3bce84b8f1d84d6fb2925fcf6de356f10c6fb2f97d16c3d0c33da8af3b975",
+        "control_trace.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "events.jsonl": "bca779429845234a1942a64c7208835d04fae56edc30d2c4675fe67678143c17"
+      }
+    },
+    {
+      "probe_id": "identity_s01_O11_core50_nc_q160",
+      "role": "identity_s01_stamp",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T122707Z_e90ddff2",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "cb41558bb96b37db64414b695adcd7a49f8b7e0ac49c074a0d002d9bb1643d5b",
+        "phase_trace.csv": "390a0ebf374a1ec58fe9da054085349bb76f3314abd11b57fac9707c441e667d",
+        "experience_metrics.csv": "ae2094b5bac920917737335128e6ef7a0529d6ef52359f31b52c6e3449e284da",
+        "resolved_config.yaml": "78ceb87abd8e79069e56900d1f8553b0252c64c99bf98b7086fb2730ae2f537d",
+        "control_trace.jsonl": "80d5328800d31ebc8793b4f744cb36d7f32a1e39604d9d6bb12d269bcb6bafc6",
+        "events.jsonl": "7d5c5a2b3ea399892ec0adbaf86a16fcd1dff7a3c4a73a41dd2ddefc6385c93d"
+      }
+    },
+    {
+      "probe_id": "identity_s04_dyn_R4_core50_nc_q160",
+      "role": "identity_s04_stamp",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T122827Z_be93b1e4",
+      "status": "cuda_oom",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "7912fed878e31d7e4c398b3feaabdbcd1825991be85e8793e1c641126f848347",
+        "phase_trace.csv": "2106e06118e495bd600342cffd7296d98cd117319a9b545f6dcacbf61cc0ba1f",
+        "experience_metrics.csv": "8a9362239f15914a833ca8a9a8601879b157181a7cf204c394c9e12ffa89c80f",
+        "resolved_config.yaml": "4dd068d9f4987e3d7b4069f2dc26b4dbd321cbba31a15e2b16a59e6df32b6366",
+        "control_trace.jsonl": "54b18ba15d7a0ba706feced42efed2c8b689e82985fe8e8edc04173c88bbec31",
+        "events.jsonl": "171c25c28c0f77268465d38008882dc7f1d74663dbb31e7f7c5c68c7102f7b2b"
+      }
+    },
+    {
+      "probe_id": "io_off_core50_nc",
+      "role": "io_off",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T122947Z_bbe961fc",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "79d0cde0a7b42add66b0f2e895fd9b93359166e5f1ea43e227db0a1b8d5e053b",
+        "phase_trace.csv": "62796fb326e22c69e35d3bfd9c18863f9f42aa6aea8d96a3e49c022b2b1f6a6b",
+        "experience_metrics.csv": "57e8f81c64d24afb6d3ee3c20f04d6045fd510ba8b10b6293c5acab116b91876",
+        "resolved_config.yaml": "c9141449ee5006030f1cbe86dd0b0dbfa0158922ac05a35280ccdbba0a63b34f",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "bad5b1349f51228a7ab04c58940f2d46228196601df2c76c7521657b289157ca"
+      }
+    },
+    {
+      "probe_id": "io_on_core50_nc",
+      "role": "io_on",
+      "dataset": "core50_nc",
+      "run_id": "effectiveness_v3_20260918T123324Z_803446b8",
+      "status": "completed",
+      "ok": true,
+      "mismatches": [],
+      "live_artifact_hashes": {
+        "summary.json": "9b4ba61669342f0cb10b79217eeebba1310d221ea60bb4889b488c4b431e444a",
+        "phase_trace.csv": "e15a84475d73ee5719d7f83be0358e4bb0effa63b332c5d4b20ba8fb6b03bf42",
+        "experience_metrics.csv": "91f067048ed623a0107a007029df88eff7a299527c149f501239ca1e22dc4102",
+        "resolved_config.yaml": "dc341e23e30a529a5837c73c01427c01048bd96a8cd094f229d01a55174a1f13",
+        "control_trace.jsonl": "8658d17090e610670ed94fd5cae73a33ad2adadd689b358033650fb2619e5a34",
+        "events.jsonl": "11c01e93c68387867e698948bf3b969517f252b607d16fbf714e56fc6fb27d07"
+      }
+    }
+  ],
+  "note": "ok means artifacts match the probe row; it is not an effectiveness verdict"
+}

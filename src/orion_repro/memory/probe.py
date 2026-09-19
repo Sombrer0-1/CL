@@ -29,6 +29,8 @@ class ResourceSnapshot:
     gpu_global_used_bytes: int | None
     gpu_global_free_bytes: int | None
     notes: str = ""
+    cpu_percent: float | None = None
+    cpu_count: int | None = None
 
     def as_row(self) -> dict[str, Any]:
         return asdict(self)
@@ -109,6 +111,13 @@ def snapshot(
     vm = psutil.virtual_memory()
     swap = psutil.swap_memory()
     gpu = _gpu_fields(device)
+    cpu_percent = None
+    cpu_count = None
+    try:
+        cpu_count = int(psutil.cpu_count() or 0) or None
+        cpu_percent = float(psutil.cpu_percent(interval=None))
+    except Exception:
+        pass
     return ResourceSnapshot(
         timestamp_s=time.time(),
         monotonic_s=time.monotonic(),
@@ -120,6 +129,8 @@ def snapshot(
         system_available_bytes=int(vm.available),
         swap_used_bytes=int(swap.used),
         notes=notes,
+        cpu_percent=cpu_percent,
+        cpu_count=cpu_count,
         **gpu,
     )
 
@@ -227,6 +238,10 @@ class ResourceSampler:
                 self.phase_peak_gpu_reserved = peaks.gpu_reserved_peak_bytes
 
     def start(self) -> None:
+        try:
+            psutil.cpu_percent(interval=None)
+        except Exception:
+            pass
         self._stop.clear()
         self._thread = threading.Thread(target=self._run, name="resource-sampler", daemon=True)
         self._thread.start()

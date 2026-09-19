@@ -1,0 +1,26 @@
+........................................................................ [ 39%]
+........................................................................ [ 79%]
+......................................                                   [100%]
+=============================== warnings summary ===============================
+tests/test_builder_order.py::test_er_plugin_order_prefetch_after_replay
+tests/test_builder_order.py::test_max_a_toggles_start_enabled_before_replay
+tests/test_builder_order.py::test_base_gem_uses_adaptive_plugin_before_prefetch
+tests/test_builder_order.py::test_lr_uses_latent_plugin
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+tests/test_gem_agem_gss.py::test_apply_runtime_config_resizes_base_gem
+tests/test_phase2_regressions.py::test_explicit_real_plugins_switch_and_report_actual_state
+tests/test_phase2_regressions.py::test_real_training_populates_plugin_state_then_disabled_hooks_pause
+  /home/zhuzetong/miniconda3/envs/orion/lib/python3.11/site-packages/avalanche/training/plugins/evaluation.py:94: UserWarning: No loggers specified, metrics will not be logged
+    warnings.warn("No loggers specified, metrics will not be logged")
+
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+tests/test_effectiveness_v3_g1.py::test_optional_plugins_off_on_off_on_keep_state_and_base_replay
+tests/test_phase2_regressions.py::test_real_training_populates_plugin_state_then_disabled_hooks_pause
+tests/test_phase2_regressions.py::test_real_training_populates_plugin_state_then_disabled_hooks_pause
+tests/test_restart_regressions.py::test_controller_final_experience_writes_complete_checkpoint
+  /home/zhuzetong/miniconda3/envs/orion/lib/python3.11/site-packages/avalanche/training/plugins/replay.py:123: DeprecationWarning: Call to deprecated function update (removal in version 0.7: switch to pre_adapt and post_adapt)
+    self.storage_policy.update(strategy, **kwargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

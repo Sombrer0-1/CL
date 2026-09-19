@@ -1,0 +1,60 @@
+{
+  "kind": "g2_review",
+  "study_id": "effectiveness_v3",
+  "revision": "thor_r2",
+  "source_hash": "264eb322e88c490030523262362cc66e6a7548acb183003363b79f892a6c49e1",
+  "note": "pass means reviewed with artifacts, including negative construction outcomes. Not an Orion effectiveness verdict.",
+  "policy": {
+    "s04": "abandoned_this_revision; Group C scenario_not_realized",
+    "q_mid": "Group G only; no extra A/B at 240",
+    "identity": "frozen Q/L/S* from thor_r2 uniform source_hash only; thor_r1 is process evidence"
+  },
+  "checks": {
+    "raw_evidence_identity": {
+      "status": "pass",
+      "finding": "n_ok=61 n_mismatch=0; all non-host source_hash equal current tree",
+      "artifacts": {
+        "experiments/effectiveness_v3/revisions/thor_r2/evidence_closure.json": "a1b1348fc74f847b7b5af2e496b7c9f1b12ab077bd8efae1a1804e039fdf3514",
+        "experiments/effectiveness_v3/revisions/thor_r2/probe_manifest.json": "9c750f68371fe4a5e843261a41c8bdd9512f569ddfc868c55eb10a7609b74400"
+      }
+    },
+    "development_coverage": {
+      "status": "pass",
+      "finding": "Q/L/S* probes complete both datasets; eval_batch=128 Q_tight=160 Q_loose=320 Q_mid=240 S*=b16/r2000; skipped plugin_cost",
+      "artifacts": {
+        "experiments/effectiveness_v3/revisions/thor_r2/probe_manifest.json": "9c750f68371fe4a5e843261a41c8bdd9512f569ddfc868c55eb10a7609b74400",
+        "reports/effectiveness_v3/thor_r2/wave_log.txt": "3437e0733491ff65be50d16520c35da12a4b265725f3ea37de0a8c71e0c0cf1a",
+        "experiments/effectiveness_v3/revisions/thor_r2/g2_review_notes.md": "7dd9d34f55fba6f5b27b0f84335e3d204f53832b50a72f7482351dd827fbb0fb",
+        "experiments/effectiveness_v3/revisions/thor_r2/factor_diagnostics.json": "0aa6332e6a4e78151d2d6c97e0b3beac08100cd066cbf96103ef9f39e702e525"
+      }
+    },
+    "resource_scenarios": {
+      "status": "pass",
+      "finding": "S01/S04 failed_to_construct with identity stamps OOM at exp 2; S07 realized; host unavailable; C skipped by A29",
+      "artifacts": {
+        "experiments/effectiveness_v3/revisions/thor_r2/dyn_window.json": "140c2313bf7ae63857db6631f61617f2a21af15bf7d2372d034d3222d5f4388c",
+        "docs/decisions/A29.md": "041f6469fc22b899da7f0cd35e1cccc5eb3f2392e5cdccf64b4a2761fdbddc6d",
+        "experiments/effectiveness_v3/revisions/thor_r2/g2_review_notes.md": "7dd9d34f55fba6f5b27b0f84335e3d204f53832b50a72f7482351dd827fbb0fb"
+      }
+    },
+    "paired_reporting": {
+      "status": "pass",
+      "finding": "development pairing tables exist; formal verdicts remain \u672a\u9a8c\u8bc1",
+      "artifacts": {
+        "reports/effectiveness_v3/thor_r2/paired.csv": "7703741f562b3f2c276fc35a9aba6f2de114df21e80f56ebf257cdb5ea03115c",
+        "reports/effectiveness_v3/thor_r2/attempts.csv": "e3f570e9f563da32ca7ccf15e2b9a10117037a29ab15fefbe398decdbff3a46a",
+        "reports/effectiveness_v3/thor_r2/RESULTS.md": "eeb5e21474dff247d9ec6d4f166c2db649ae09741c0a9bceb1abef5d60f9ec0e"
+      }
+    },
+    "failure_and_integrity_tests": {
+      "status": "pass",
+      "finding": "pytest tests exit 0; no implementation_error in thor_r2 probes; mixed source_hash freeze rejected by tests",
+      "artifacts": {
+        "reports/effectiveness_v3/thor_r2/integrity_pytest.txt": "399faee4ba8d0665d0a8f02edbe2d9c856c8e24a892ccb74ea750e14d928ae33",
+        "reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md": "98bbad961ef7e37d798145bd395d5460d62445eb03804d3e38042e8b2db5ddba",
+        "tests/test_effectiveness_v3_g1.py": "656c3f524b36e4f56fd87f0d13219c67c0faabc746bff3ab87d4122502706c59",
+        "tests/test_v3_g2_sdd10.py": "21f4404c362fba095a3da25354ab00d5c7ef29868dcc8820fa48a50d78c90f39"
+      }
+    }
+  }
+}

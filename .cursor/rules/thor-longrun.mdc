@@ -1,0 +1,23 @@
+---
+description: Thor 长程复现必须先读 MEMORY，并遵守 A29 冻结身份
+alwaysApply: true
+---
+
+# Orion Thor 长程约束
+
+开始任何实现或实验前，先读并遵循：
+
+- `docs/MEMORY.md`（当前指针；压缩后以它为准）
+- `STATUS.md`
+- `docs/decisions/A29.md`
+
+做出会改变 revision、冻结数字、场景覆盖或下一条命令的决定后，立刻更新 `docs/MEMORY.md` 的「当前指针」和更新日志。
+
+硬约束（细节以 MEMORY / A29 为准）：
+
+- 冻结用 `--revision thor_r2`。`thor_r1` 只保留为 G2 过程证据。
+- 写入 frozen 的 Q/L/S* 必须来自停改哈希源码后的单一 `source_hash`。禁止混用修补前后数字再加脚注。
+- 本 revision 放弃 S04；C 组 `scenario_not_realized`，不换 240/320 重建。
+- 240 只服务 G 组；不加一套 A/B。不把 Q_tight 调到 Orion 能跑完。
+- `ORION_PY=/home/zhuzetong/miniconda3/envs/orion/bin/python`，`WANDB_MODE=disabled`。禁止 mineru/base/改驱动。禁止 `pressure_*`。未要求不 commit。
+- 第三阶段已结项。后续读 `docs/plans/after_effectiveness_v3.md`。不把 OOM、测试通过、URGE 触发或宽档跑完说成 Orion 有效。C01–C08 见 `reports/effectiveness_v3/thor_r2/CLAIMS.md`（C02 已判不支持本协议范围）。

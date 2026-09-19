@@ -277,6 +277,8 @@ def _min_manifest(l_cal_trained=9):
             "n_evaluated": 9,
         }
     )
+    for row in runs:
+        row.setdefault("source_hash", "b" * 64)
     return {"study_id": STUDY_ID, "runs": runs}
 
 
@@ -343,6 +345,39 @@ def test_freeze_and_planned_cells_keep_153_denominator():
     assert counts == SLOT_COUNTS
     assert any(cell["group"] == "E" for cell in excluded)
     assert any(cell["group"] == "H" for cell in excluded)
+    assert frozen["s04_policy"]["group_c"] == "scenario_not_realized"
+    assert frozen["q_mid_policy"]["role"] == "group_G_quota_mid_only"
+    assert frozen["calibration_source_hash"] == "b" * 64
+
+
+def test_calibrate_rejects_mixed_source_hash():
+    manifest = _min_manifest()
+    manifest["runs"][0]["source_hash"] = "a" * 64
+    with pytest.raises(CalibrationError, match="mixed source_hash"):
+        calibrate(manifest)
+
+
+def test_freeze_rejects_source_hash_mismatch():
+    calibration = calibrate(_min_manifest())
+    with pytest.raises(CalibrationError, match="does not match current tree"):
+        freeze(
+            {"kind": "experiment_design", "study_id": STUDY_ID},
+            calibration,
+            {
+                "design_hash": "a" * 64,
+                "source_hash": "a" * 64,
+                "environment_lock_sha256": "c" * 64,
+                "environment_actual": {"torch": "2.11.0+cu128"},
+                "platform": {"logical_device": "cuda:0", "gpus": []},
+                "data_hashes": {
+                    "core50_nc_dev": "d1",
+                    "core50_nc_formal": "d2",
+                    "splitcifar100_dev": "d3",
+                    "splitcifar100_formal": "d4",
+                },
+            },
+            revision="thor_r2",
+        )
 
 
 def test_quota_scan_continues_until_ratio_window():

@@ -1,0 +1,55 @@
+2026-09-18T18:52:13+08:00 start thor_r2 identity_recalibrate sequential max-waves=1 loop; source_hash=264eb322e88c490030523262362cc66e6a7548acb183003363b79f892a6c49e1
+2026-09-18T18:52:13+08:00 wave1_plan {"n": 3, "ids": ["eval_core50_nc_b128", "eval_core50_nc_b32", "eval_core50_nc_b8"], "blocked": null}
+2026-09-18T18:52:13+08:00 start wave1 execute
+2026-09-18T18:54:13+08:00 wave1_exit=0
+2026-09-18T18:54:13+08:00 wave2_plan {"n": 3, "ids": ["eval_splitcifar100_b128", "eval_splitcifar100_b32", "eval_splitcifar100_b8"], "blocked": null}
+2026-09-18T18:54:13+08:00 start wave2 execute
+2026-09-18T18:55:02+08:00 wave2_exit=0
+2026-09-18T18:55:02+08:00 wave3_plan {"n": 2, "ids": ["s0_core50_nc_rep0", "s0_core50_nc_rep1"], "blocked": null}
+2026-09-18T18:55:02+08:00 start wave3 execute
+2026-09-18T19:02:12+08:00 wave3_exit=0
+2026-09-18T19:02:12+08:00 wave4_plan {"n": 2, "ids": ["s0_splitcifar100_rep0", "s0_splitcifar100_rep1"], "blocked": null}
+2026-09-18T19:02:12+08:00 start wave4 execute
+2026-09-18T19:05:06+08:00 wave4_exit=0
+2026-09-18T19:05:06+08:00 wave5_plan {"n": 8, "ids": ["quota_core50_nc_q160", "quota_core50_nc_q176", "quota_core50_nc_q192", "quota_core50_nc_q208", "quota_core50_nc_q224", "quota_core50_nc_q240", "quota_core50_nc_q256", "quota_core50_nc_q272"], "blocked": null}
+2026-09-18T19:05:06+08:00 start wave5 execute
+2026-09-18T19:33:16+08:00 wave5_exit=0
+2026-09-18T19:33:16+08:00 wave6_plan {"n": 8, "ids": ["quota_splitcifar100_q160", "quota_splitcifar100_q176", "quota_splitcifar100_q192", "quota_splitcifar100_q208", "quota_splitcifar100_q224", "quota_splitcifar100_q240", "quota_splitcifar100_q256", "quota_splitcifar100_q272"], "blocked": null}
+2026-09-18T19:33:16+08:00 start wave6 execute
+2026-09-18T19:44:23+08:00 wave6_exit=0
+2026-09-18T19:44:23+08:00 wave7_plan {"n": 1, "ids": ["loose_core50_nc_q320"], "blocked": null}
+2026-09-18T19:44:23+08:00 start wave7 execute
+2026-09-18T19:47:58+08:00 wave7_exit=0
+2026-09-18T19:47:58+08:00 wave8_plan {"n": 2, "ids": ["lcal_core50_nc_q320_rep0", "lcal_core50_nc_q320_rep1"], "blocked": null}
+2026-09-18T19:47:58+08:00 start wave8 execute
+2026-09-18T19:55:07+08:00 wave8_exit=0
+2026-09-18T19:55:07+08:00 wave9_plan {"n": 6, "ids": ["search_tight_core50_nc_b16_r200_q160", "search_tight_core50_nc_b16_r2000_q160", "search_tight_core50_nc_b64_r200_q160", "search_tight_core50_nc_b64_r2000_q160", "search_tight_core50_nc_b256_r200_q160", "search_tight_core50_nc_b256_r2000_q160"], "blocked": null}
+2026-09-18T19:55:08+08:00 start wave9 execute
+2026-09-18T20:02:45+08:00 wave9_exit=0
+2026-09-18T20:02:45+08:00 wave10_plan {"n": 6, "ids": ["search_loose_core50_nc_b16_r200_q320", "search_loose_core50_nc_b16_r2000_q320", "search_loose_core50_nc_b64_r200_q320", "search_loose_core50_nc_b64_r2000_q320", "search_loose_core50_nc_b256_r200_q320", "search_loose_core50_nc_b256_r2000_q320"], "blocked": null}
+2026-09-18T20:02:45+08:00 start wave10 execute
+2026-09-18T20:14:26+08:00 wave10_exit=0
+2026-09-18T20:14:26+08:00 wave11_plan {"n": 1, "ids": ["loose_splitcifar100_q320"], "blocked": null}
+2026-09-18T20:14:27+08:00 start wave11 execute
+2026-09-18T20:15:58+08:00 wave11_exit=0
+2026-09-18T20:15:58+08:00 wave12_plan {"n": 2, "ids": ["lcal_splitcifar100_q320_rep0", "lcal_splitcifar100_q320_rep1"], "blocked": null}
+2026-09-18T20:15:58+08:00 start wave12 execute
+2026-09-18T20:18:50+08:00 wave12_exit=0
+2026-09-18T20:18:50+08:00 wave13_plan {"n": 6, "ids": ["search_tight_splitcifar100_b16_r200_q160", "search_tight_splitcifar100_b16_r2000_q160", "search_tight_splitcifar100_b64_r200_q160", "search_tight_splitcifar100_b64_r2000_q160", "search_tight_splitcifar100_b256_r200_q160", "search_tight_splitcifar100_b256_r2000_q160"], "blocked": null}
+2026-09-18T20:18:50+08:00 start wave13 execute
+2026-09-18T20:22:20+08:00 wave13_exit=0
+2026-09-18T20:22:20+08:00 wave14_plan {"n": 6, "ids": ["search_loose_splitcifar100_b16_r200_q320", "search_loose_splitcifar100_b16_r2000_q320", "search_loose_splitcifar100_b64_r200_q320", "search_loose_splitcifar100_b64_r2000_q320", "search_loose_splitcifar100_b256_r200_q320", "search_loose_splitcifar100_b256_r2000_q320"], "blocked": null}
+2026-09-18T20:22:20+08:00 start wave14 execute
+2026-09-18T20:27:01+08:00 wave14_exit=0
+2026-09-18T20:27:01+08:00 wave15_plan {"n": 1, "ids": ["identity_s01_O11_core50_nc_q160"], "blocked": null}
+2026-09-18T20:27:01+08:00 start wave15 execute
+2026-09-18T20:28:21+08:00 wave15_exit=0
+2026-09-18T20:28:21+08:00 wave16_plan {"n": 1, "ids": ["identity_s04_dyn_R4_core50_nc_q160"], "blocked": null}
+2026-09-18T20:28:21+08:00 start wave16 execute
+2026-09-18T20:29:41+08:00 wave16_exit=0
+2026-09-18T20:29:41+08:00 wave17_plan {"n": 2, "ids": ["io_off_core50_nc", "io_on_core50_nc"], "blocked": null}
+2026-09-18T20:29:41+08:00 start wave17 execute
+2026-09-18T20:36:33+08:00 wave17_exit=0
+2026-09-18T20:36:33+08:00 wave18_plan {"n": 0, "ids": [], "blocked": null}
+2026-09-18T20:36:33+08:00 stop wave18: n_probes=0 blocked=none
+2026-09-18T20:36:33+08:00 thor_r2_identity_loop_finished

@@ -24,6 +24,7 @@ lightning_logs/
 *.pkl
 *.pickle
 *.log
+!reports/**/*.log
 .cuda-*
 .env
 .env.*

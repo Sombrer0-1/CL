@@ -222,6 +222,8 @@ construction_status枚举 `not_run / realized / failed_to_construct / unavailabl
 | 报告（G3前） | 当前report只输出attempt/覆盖框架，仍须实现means/paired/phase_resources/control_events/plugin_activity/supply及图；按完整配对签名检查数据/环境/资源序列/变换，原始attempt不挑优；S01–S08不可从一个changed布尔量自动得出 |
 | 完整性（G3前） | 正式发射前补缺失、冲突、引用篡改、失败phase和负结果的集成验收；G2尚未校准，G3/G4均pending |
 
-交付“准进入第三阶段”指上述环境、代码审查、计划和可执行开发入口已具备；阶段内先做真实数据小例及完整开发，并在G3前完成此表剩余实现。默认采用独立revision `thor_r1`；旧r1/5090目录不复用。任何正式跑数前的源码修补都改变source identity，受影响校准须重新验证，不将修补前后结果混在同一正式矩阵。
+交付“准进入第三阶段”指上述环境、代码审查、计划和可执行开发入口已具备；阶段内先做真实数据小例及完整开发，并在G3前完成此表剩余实现。过程证据 revision 为 `thor_r1`；写入冻结协议与正式矩阵的 revision 为 `thor_r2`。旧r1/5090目录不复用。任何正式跑数前的源码修补都改变source identity，受影响校准须重新验证，不将修补前后结果混在同一正式矩阵。
 
 `freeze`命令现在要求`experiments/effectiveness_v3/revisions/<revision>/g2_review.json`。字段包括`study_id`、`revision`、当前`source_hash`、`checks`；checks必须包含`raw_evidence_identity / development_coverage / resource_scenarios / paired_reporting / failure_and_integrity_tests`，每项为`{status: "pass", artifacts: {相对证据路径: SHA256}}`。这里的pass指完成审核（允许有证据的负结果/场景不可用），不是要求Orion胜出。审查文件只能在对应工作完成后生成，不能预填pass；代码/证据变动使审查失效。该门槛在CLI执行，不把它替代原始校准与正式结果验证。
+
+2026-09-18：G2 代码入口已补；`thor_r1` 95 条为过程证据且 source_hash 已漂移。按 [A29](decisions/A29.md) 在停改哈希源码后于 `thor_r2` 重跑决定 Q/L/S* 的探针，`freeze` 拒绝混哈希。本 revision 放弃 S04，C 组 `scenario_not_realized`；240 不加一套 A/B。

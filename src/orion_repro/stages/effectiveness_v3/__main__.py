@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 from orion_repro.stages.effectiveness_v3.calibration import calibrate
-from orion_repro.stages.effectiveness_v3.constants import DEFAULT_REVISION, STUDY_ID
+from orion_repro.stages.effectiveness_v3.constants import DEFAULT_REVISION, IDENTITY_CALIBRATION_REVISION, PROCESS_EVIDENCE_REVISION, STUDY_ID
 from orion_repro.stages.effectiveness_v3.context import StageContext, inspect_payload, require_orion_interpreter
 from orion_repro.stages.effectiveness_v3.development import (
     empty_manifest,
@@ -47,9 +47,17 @@ def cmd_develop(args) -> int:
         evidence = json.loads(manifest_path.read_text(encoding="utf-8"))
         context.reject_foreign_study(evidence)
     evidence = record_host_capability(evidence)
+    identity_recalibrate = bool(
+        getattr(args, "identity_recalibrate", False)
+        or evidence.get("campaign") == "identity_recalibrate"
+        or context.revision == IDENTITY_CALIBRATION_REVISION
+    )
+    if identity_recalibrate:
+        evidence["campaign"] = "identity_recalibrate"
+        evidence.setdefault("process_evidence_revision", PROCESS_EVIDENCE_REVISION)
     if not args.execute:
         context.ensure_revision_dirs()
-        batch = plan_probes(design, evidence, context)
+        batch = plan_probes(design, evidence, context, identity_recalibrate=identity_recalibrate)
         emit_probe_configs(batch, context)
         context.assert_output_path(manifest_path)
         atomic_write_json(manifest_path, evidence)
@@ -60,6 +68,7 @@ def cmd_develop(args) -> int:
                     "blocked_reason": batch.blocked_reason,
                     "probe_ids": [p.probe_id for p in batch.probes],
                     "execute": False,
+                    "identity_recalibrate": identity_recalibrate,
                 },
                 indent=2,
             )
@@ -70,7 +79,7 @@ def cmd_develop(args) -> int:
     waves = 0
     last_ids: list[str] = []
     while waves < int(args.max_waves):
-        batch = plan_probes(design, evidence, context)
+        batch = plan_probes(design, evidence, context, identity_recalibrate=identity_recalibrate)
         if not batch.probes:
             context.assert_output_path(manifest_path)
             atomic_write_json(manifest_path, evidence)
@@ -90,8 +99,20 @@ def cmd_develop(args) -> int:
         matrix = load_yaml(context.revision_dir / "dev_batch.yaml")
         result = execute_matrix(matrix, context, frozen=None)
         evidence = ingest_batch(batch, context, evidence)
+        if identity_recalibrate:
+            evidence["campaign"] = "identity_recalibrate"
+            evidence.setdefault("process_evidence_revision", PROCESS_EVIDENCE_REVISION)
         context.assert_output_path(manifest_path)
         atomic_write_json(manifest_path, evidence)
+        try:
+            from orion_repro.stages.effectiveness_v3.report import render_development
+
+            render_development(evidence, context)
+        except Exception as exc:
+            atomic_write_json(
+                context.revision_dir / "development_report_error.json",
+                {"error": str(exc), "type": type(exc).__name__},
+            )
         last_ids = [p.probe_id for p in batch.probes]
         recent = [r for r in evidence["runs"] if r.get("probe_id") in set(last_ids)]
         if any(r.get("status") == "implementation_error" for r in recent):
@@ -204,6 +225,11 @@ def build_parser() -> argparse.ArgumentParser:
     mode.add_argument("--plan-only", action="store_true")
     mode.add_argument("--execute", action="store_true")
     develop.add_argument("--max-waves", type=int, default=40)
+    develop.add_argument(
+        "--identity-recalibrate",
+        action="store_true",
+        help="re-run only Q/L/S* probes plus S01/S04/S07 stamps; thor_r2 enables this automatically",
+    )
     develop.set_defaults(func=cmd_develop)
     freeze_p = sub.add_parser("freeze", parents=[common], help="freeze protocol from development evidence")
     freeze_p.set_defaults(func=cmd_freeze)

@@ -56,6 +56,21 @@ WANDB_MODE=disabled "$ORION_PY" reports/effectiveness_v3/verify_failure_peak.py
 
 剩余不确定性属于待测问题：本机能否建立可辨识训练压力/自然IO、URGE是否实际扩张、host权限及插件成本。全部有明确诊断和未建立出口；不保证正向结论，不把设计自审称为实验验收。
 
+## 2026-09-18 Thor G2 实现补丁（SDD §10）
+
+在真实开发波次进行期间补齐 G3 前需要的代码，不预先填写 `g2_review.json`，不把测试通过写成 Orion 有效。
+
+| 项 | 行为 | 验证 |
+|---|---|---|
+| 证据闭包 | `evidence.close_raw_evidence` 对照 run 目录哈希/status/n_trained/反馈源 | `tests/test_v3_g2_sdd10.py` |
+| PLAN §5.2 | 敏感性波次含 α/β 半值、lr 双值、半衰期 δ、中/宽预算 | 同测试 |
+| 宽档插件 | `plugin_loose` 在 Q_loose 上 GEM+EWC always-on | 同测试 |
+| DYN 窗口 | 过渡 OOM 后最小正预留；窗口审计不把突变失败写成适应无效 | 同测试 |
+| 配对报告 | 完整表 + 资源序列/source 签名；重复 attempt 保留 | 同测试 |
+| CPU 采样 | `ResourceSnapshot.cpu_percent`；S07 缺测则未建立 | G1 sampler 回归仍通过 |
+
+修补改变 source identity。eval_batch 波次与后续完整流不得在 G3 混为同一冻结矩阵。H 组仍无授权子 cgroup。
+
 ## 2026-09-17 Thor 修订
 
 前文“尚待实现”是5090设计审查时点，不能作为当前源码清单。fixed_advanced、StageContext/CLI、HostEnvelope和host phase采样已有实现及本机回归；原始证据校验、完整开发候选和最终配对报告仍未完成，见[SDD §10](../../docs/SDD_effectiveness_v3.md#10-thor-准入实施清单2026-09-17)。

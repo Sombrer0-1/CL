@@ -1,0 +1,21 @@
+study_id: effectiveness_v3
+revision: thor_r2
+executable: true
+phase: development
+configs:
+- configs/effectiveness_v3/thor_r2/dev/io_off_core50_nc.yaml
+- configs/effectiveness_v3/thor_r2/dev/io_on_core50_nc.yaml
+probes:
+- probe_id: io_off_core50_nc
+  role: io_off
+  dataset: core50_nc
+  full_stream: true
+  n_expected: 9
+  config: configs/effectiveness_v3/thor_r2/dev/io_off_core50_nc.yaml
+- probe_id: io_on_core50_nc
+  role: io_on
+  dataset: core50_nc
+  full_stream: true
+  n_expected: 9
+  config: configs/effectiveness_v3/thor_r2/dev/io_on_core50_nc.yaml
+blocked_reason: null

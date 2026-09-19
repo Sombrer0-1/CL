@@ -1,0 +1,74 @@
+2026-09-18T11:49:45+08:00 start wave1 develop --revision thor_r1 --execute --max-waves 1
+2026-09-18T11:51:40+08:00 wave1_exit=0
+2026-09-18T11:52:16+08:00 start wave2 develop --revision thor_r1 --execute --max-waves 1
+2026-09-18T11:53:05+08:00 wave2_exit=0
+2026-09-18T12:07:28+08:00 start sequential max-waves=1 loop from wave3 (s0_profile expected)
+2026-09-18T12:07:28+08:00 wave3_plan {"n": 2, "ids": ["s0_core50_nc_rep0", "s0_core50_nc_rep1"], "blocked": null}
+2026-09-18T12:07:28+08:00 start wave3 execute
+2026-09-18T12:14:37+08:00 wave3_exit=0
+2026-09-18T12:14:37+08:00 wave4_plan {"n": 5, "ids": ["cost_core50_nc_b64", "cost_core50_nc_b256", "cost_core50_nc_gem", "cost_core50_nc_ewc", "cost_core50_nc_gem_ewc"], "blocked": null}
+2026-09-18T12:14:37+08:00 start wave4 execute
+2026-09-18T12:54:10+08:00 wave4_exit=0
+2026-09-18T12:54:10+08:00 wave5_plan {"n": 2, "ids": ["s0_splitcifar100_rep0", "s0_splitcifar100_rep1"], "blocked": null}
+2026-09-18T12:54:10+08:00 start wave5 execute
+2026-09-18T12:57:03+08:00 wave5_exit=0
+2026-09-18T12:57:03+08:00 wave6_plan {"n": 5, "ids": ["cost_splitcifar100_b64", "cost_splitcifar100_b256", "cost_splitcifar100_gem", "cost_splitcifar100_ewc", "cost_splitcifar100_gem_ewc"], "blocked": null}
+2026-09-18T12:57:03+08:00 start wave6 execute
+2026-09-18T13:13:05+08:00 wave6_exit=0
+2026-09-18T13:13:05+08:00 wave7_plan {"n": 8, "ids": ["quota_core50_nc_q160", "quota_core50_nc_q176", "quota_core50_nc_q192", "quota_core50_nc_q208", "quota_core50_nc_q224", "quota_core50_nc_q240", "quota_core50_nc_q256", "quota_core50_nc_q272"], "blocked": null}
+2026-09-18T13:13:05+08:00 start wave7 execute
+2026-09-18T13:41:06+08:00 wave7_exit=0
+2026-09-18T13:41:06+08:00 wave8_plan {"n": 8, "ids": ["quota_splitcifar100_q160", "quota_splitcifar100_q176", "quota_splitcifar100_q192", "quota_splitcifar100_q208", "quota_splitcifar100_q224", "quota_splitcifar100_q240", "quota_splitcifar100_q256", "quota_splitcifar100_q272"], "blocked": null}
+2026-09-18T13:41:06+08:00 start wave8 execute
+2026-09-18T13:52:16+08:00 wave8_exit=0
+2026-09-18T13:52:16+08:00 wave9_plan {"n": 1, "ids": ["loose_core50_nc_q320"], "blocked": null}
+2026-09-18T13:52:16+08:00 start wave9 execute
+2026-09-18T13:55:56+08:00 wave9_exit=0
+2026-09-18T13:55:56+08:00 wave10_plan {"n": 1, "ids": ["plugin_loose_core50_nc_q320"], "blocked": null}
+2026-09-18T13:55:57+08:00 start wave10 execute
+2026-09-18T14:12:06+08:00 wave10_exit=0
+2026-09-18T14:12:06+08:00 wave11_plan {"n": 2, "ids": ["lcal_core50_nc_q320_rep0", "lcal_core50_nc_q320_rep1"], "blocked": null}
+2026-09-18T14:12:06+08:00 start wave11 execute
+2026-09-18T14:19:19+08:00 wave11_exit=0
+2026-09-18T14:19:20+08:00 wave12_plan {"n": 6, "ids": ["search_tight_core50_nc_b16_r200_q160", "search_tight_core50_nc_b16_r2000_q160", "search_tight_core50_nc_b64_r200_q160", "search_tight_core50_nc_b64_r2000_q160", "search_tight_core50_nc_b256_r200_q160", "search_tight_core50_nc_b256_r2000_q160"], "blocked": null}
+2026-09-18T14:19:20+08:00 start wave12 execute
+2026-09-18T14:26:59+08:00 wave12_exit=0
+2026-09-18T14:26:59+08:00 wave13_plan {"n": 6, "ids": ["search_loose_core50_nc_b16_r200_q320", "search_loose_core50_nc_b16_r2000_q320", "search_loose_core50_nc_b64_r200_q320", "search_loose_core50_nc_b64_r2000_q320", "search_loose_core50_nc_b256_r200_q320", "search_loose_core50_nc_b256_r2000_q320"], "blocked": null}
+2026-09-18T14:26:59+08:00 start wave13 execute
+2026-09-18T14:38:52+08:00 wave13_exit=0
+2026-09-18T14:38:52+08:00 wave14_plan {"n": 1, "ids": ["loose_splitcifar100_q320"], "blocked": null}
+2026-09-18T14:38:52+08:00 start wave14 execute
+2026-09-18T14:40:22+08:00 wave14_exit=0
+2026-09-18T14:40:22+08:00 wave15_plan {"n": 1, "ids": ["plugin_loose_splitcifar100_q320"], "blocked": null}
+2026-09-18T14:40:22+08:00 start wave15 execute
+2026-09-18T14:46:45+08:00 wave15_exit=0
+2026-09-18T14:46:45+08:00 wave16_plan {"n": 2, "ids": ["lcal_splitcifar100_q320_rep0", "lcal_splitcifar100_q320_rep1"], "blocked": null}
+2026-09-18T14:46:45+08:00 start wave16 execute
+2026-09-18T14:49:38+08:00 wave16_exit=0
+2026-09-18T14:49:38+08:00 wave17_plan {"n": 6, "ids": ["search_tight_splitcifar100_b16_r200_q160", "search_tight_splitcifar100_b16_r2000_q160", "search_tight_splitcifar100_b64_r200_q160", "search_tight_splitcifar100_b64_r2000_q160", "search_tight_splitcifar100_b256_r200_q160", "search_tight_splitcifar100_b256_r2000_q160"], "blocked": null}
+2026-09-18T14:49:38+08:00 start wave17 execute
+2026-09-18T14:53:11+08:00 wave17_exit=0
+2026-09-18T14:53:11+08:00 wave18_plan {"n": 6, "ids": ["search_loose_splitcifar100_b16_r200_q320", "search_loose_splitcifar100_b16_r2000_q320", "search_loose_splitcifar100_b64_r200_q320", "search_loose_splitcifar100_b64_r2000_q320", "search_loose_splitcifar100_b256_r200_q320", "search_loose_splitcifar100_b256_r2000_q320"], "blocked": null}
+2026-09-18T14:53:11+08:00 start wave18 execute
+2026-09-18T14:57:52+08:00 wave18_exit=0
+2026-09-18T14:57:52+08:00 wave19_plan {"n": 4, "ids": ["control_core50_nc_O00_q160", "control_core50_nc_O10_q160", "control_core50_nc_O01_q160", "control_core50_nc_O11_q160"], "blocked": null}
+2026-09-18T14:57:52+08:00 start wave19 execute
+2026-09-18T15:02:41+08:00 wave19_exit=0
+2026-09-18T15:02:41+08:00 wave20_plan {"n": 4, "ids": ["control_splitcifar100_O00_q160", "control_splitcifar100_O10_q160", "control_splitcifar100_O01_q160", "control_splitcifar100_O11_q160"], "blocked": null}
+2026-09-18T15:02:41+08:00 start wave20 execute
+2026-09-18T15:06:38+08:00 wave20_exit=0
+2026-09-18T15:06:38+08:00 wave21_plan {"n": 1, "ids": ["dyn_core50_nc_R4"], "blocked": null}
+2026-09-18T15:06:38+08:00 start wave21 execute
+2026-09-18T15:07:56+08:00 wave21_exit=0
+2026-09-18T15:07:56+08:00 wave22_plan {"n": 2, "ids": ["io_off_core50_nc", "io_on_core50_nc"], "blocked": null}
+2026-09-18T15:07:56+08:00 start wave22 execute
+2026-09-18T15:14:43+08:00 wave22_exit=0
+2026-09-18T15:14:43+08:00 wave23_plan {"n": 13, "ids": ["sens_thr_half_q160", "sens_thr_double_q160", "sens_alpha_half_q160", "sens_alpha_double_q160", "sens_beta_half_q160", "sens_beta_double_q160", "sens_lr_half_q160", "sens_lr_double_q160", "sens_delta_half_life_q160", "sens_initial_batch32_q160", "sens_initial_replay1000_q160", "sens_quota_loose_q320", "sens_quota_mid_q240"], "blocked": null}
+2026-09-18T15:14:43+08:00 start wave23 execute
+2026-09-18T15:51:59+08:00 wave23_exit=0
+2026-09-18T15:51:59+08:00 wave24_plan {"n": 2, "ids": ["agem_static_q320", "agem_adaptive_ewc_q320"], "blocked": null}
+2026-09-18T15:51:59+08:00 start wave24 execute
+2026-09-18T16:08:12+08:00 wave24_exit=0
+2026-09-18T16:08:12+08:00 wave25_plan {"n": 0, "ids": [], "blocked": null}
+2026-09-18T16:08:12+08:00 stop wave25: n_probes=0 blocked=none
+2026-09-18T16:08:12+08:00 develop_loop_finished

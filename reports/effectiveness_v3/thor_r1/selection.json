@@ -1,0 +1,6 @@
+{
+  "study_id": "effectiveness_v3",
+  "revision": "thor_r1",
+  "static_selections": {},
+  "note": "Search cost is in search_cost.csv; selected S* is not a runtime speedup"
+}

@@ -1,0 +1,126 @@
+schema_version: 1
+run_id: null
+phase: formal
+claim_ids:
+- V3_E
+experiment_id: V3_E_core50_nc_orion_on
+protocol_id: effectiveness_v3_paper_feedback_v1
+method_id: orion_on
+dataset_manifest_sha256: eebb5a2ad6457024e88e098d3050c7893743c79e53558840089f3e5d1152be1b
+code_revision_or_snapshot: 264eb322e88c490030523262362cc66e6a7548acb183003363b79f892a6c49e1
+environment_lock_sha256: 2441b78017080812aecdee490a6fa44e18b03635aa5e64f0a8c249caee7424b4
+alignment_version: effectiveness_v3
+seeds:
+  model: 2
+  stream: 2
+  replay: 2
+  augmentation: 2
+model:
+  name: cifar_resnet20
+  initialization: random
+  precision: fp32
+  num_classes: 50
+algorithm:
+  base: er
+  optional_plugins: gem_ewc
+  patterns_per_exp: 50
+  memory_strength: 0.5
+  ewc_lambda: 100.0
+  optional_start_enabled: false
+training:
+  new_epochs: 1
+  new_batch: 16
+  replay_batch: 16
+  eval_batch: 128
+  device: cuda:0
+  allow_tf32: false
+  cudnn_benchmark: false
+  optimizer:
+    name: sgd
+    lr: 0.01
+    momentum: 0.9
+    weight_decay: 0.0
+    scheduler: none
+  deterministic_algorithms: false
+dataset:
+  name: core50_nc
+  root: data/raw/core50
+  split_manifest: data/manifests/core50_nc_run0.json
+  n_experiences: 9
+  experience_limit: 9
+  shuffle: false
+  scenario: nc
+  run: 0
+  object_level: true
+replay:
+  capacity: 200
+  policy: experience_balanced
+  representation: avalanche_buffer
+controller:
+  enabled: true
+  units:
+    accuracy: ratio
+    latency: seconds
+    memory: MiB
+  metric_definition: diag_initial
+  feedback_source: official_test_seen
+  coefficients:
+    kp: 0.25
+    ks: 0.25
+    kl: 0.25
+    km: 0.25
+  thresholds:
+    p: 0.5
+    s: 0.5
+    latency_s: 15.871690582498559
+    m_max_mib: 320.0
+  thr0: 0.05
+  delta: 0.0
+  updates:
+    alpha: 0.1
+    beta: 0.2
+  mb0: 16.0
+  mr0: 200.0
+  m_batch: 1.0
+  m_frame: 1.0
+  min_batch: 1
+  max_batch: 1024
+  equal_uses_gt: true
+  plugin_policy: adaptive
+budget:
+  enforcement: device_allocator_enforced
+  controlled_resource: device
+  limit_bytes: 335544320
+  guard_mode: stop
+prefetch:
+  enabled: true
+  queue_depth: 2
+  pin_memory: false
+  num_workers: 0
+measurement:
+  sample_interval_ms: 100
+  checkpoint_policy: none
+study_id: effectiveness_v3
+reuse_version: 4
+frozen_hash: 9289a239c1f10ff7d32d9b6422b8dc1a467ded2516658a3b3ea668abea798e6c
+frozen_protocol_path: experiments/effectiveness_v3/revisions/thor_r2/frozen_protocol.json
+resource_envelope:
+  enabled: false
+  reserved_bytes_by_experience:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+data_supply:
+  record_hashes: true
+  profile: natural_ondemand
+  profile_path: experiments/effectiveness_v3/revisions/thor_r2/io_profile.json
+v3_group: E
+v3_variant: default
+v3_scenario: io
+v3_cell_id: E/core50_nc/io/orion_on/2/default

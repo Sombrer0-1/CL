@@ -1,0 +1,224 @@
+schema_version: 1
+run_id: null
+phase: formal
+claim_ids:
+- V3_B
+experiment_id: V3_B_splitcifar100_S_star
+protocol_id: effectiveness_v3_paper_feedback_v1
+method_id: S_star
+dataset_manifest_sha256: da2fa2bab5fe749a3294bc4ee3ba2d94e75697c73b7a6d5f1c2cbc466ca208a4
+code_revision_or_snapshot: 264eb322e88c490030523262362cc66e6a7548acb183003363b79f892a6c49e1
+environment_lock_sha256: 2441b78017080812aecdee490a6fa44e18b03635aa5e64f0a8c249caee7424b4
+alignment_version: effectiveness_v3
+seeds:
+  model: 2
+  stream: 2
+  replay: 2
+  augmentation: 2
+model:
+  name: cifar_resnet20
+  initialization: random
+  precision: fp32
+  num_classes: 100
+algorithm:
+  base: er
+  optional_plugins: none
+  patterns_per_exp: 50
+  memory_strength: 0.5
+  ewc_lambda: 100.0
+  optional_start_enabled: false
+training:
+  new_epochs: 1
+  new_batch: 16
+  replay_batch: 16
+  eval_batch: 128
+  device: cuda:0
+  allow_tf32: false
+  cudnn_benchmark: false
+  optimizer:
+    name: sgd
+    lr: 0.01
+    momentum: 0.9
+    weight_decay: 0.0
+    scheduler: none
+dataset:
+  name: splitcifar100
+  root: data/raw/cifar100
+  split_manifest: data/manifests/paper_feedback/cifar100_official.json
+  n_experiences: 10
+  experience_limit: 10
+  shuffle: false
+  fixed_class_order:
+  - 37
+  - 69
+  - 71
+  - 44
+  - 19
+  - 53
+  - 90
+  - 91
+  - 93
+  - 95
+  - 40
+  - 42
+  - 74
+  - 76
+  - 80
+  - 81
+  - 82
+  - 85
+  - 56
+  - 63
+  - 97
+  - 66
+  - 8
+  - 41
+  - 10
+  - 16
+  - 89
+  - 26
+  - 92
+  - 57
+  - 65
+  - 98
+  - 35
+  - 7
+  - 20
+  - 23
+  - 24
+  - 29
+  - 30
+  - 31
+  - 4
+  - 5
+  - 46
+  - 78
+  - 15
+  - 52
+  - 54
+  - 59
+  - 61
+  - 94
+  - 2
+  - 3
+  - 68
+  - 70
+  - 6
+  - 72
+  - 28
+  - 49
+  - 55
+  - 60
+  - 32
+  - 1
+  - 34
+  - 0
+  - 11
+  - 12
+  - 45
+  - 77
+  - 79
+  - 22
+  - 96
+  - 36
+  - 9
+  - 47
+  - 50
+  - 83
+  - 84
+  - 87
+  - 25
+  - 62
+  - 64
+  - 67
+  - 39
+  - 75
+  - 13
+  - 48
+  - 17
+  - 18
+  - 21
+  - 88
+  - 33
+  - 99
+  - 38
+  - 73
+  - 43
+  - 14
+  - 51
+  - 86
+  - 58
+  - 27
+replay:
+  capacity: 2000
+  policy: experience_balanced
+  representation: avalanche_buffer
+controller:
+  enabled: false
+  units:
+    accuracy: ratio
+    latency: seconds
+    memory: MiB
+  metric_definition: diag_initial
+  feedback_source: official_test_seen
+  coefficients:
+    kp: 0.25
+    ks: 0.25
+    kl: 0.25
+    km: 0.25
+  thresholds:
+    p: 0.5
+    s: 0.5
+    latency_s: 5.841627937494195
+    m_max_mib: 320.0
+  thr0: 0.05
+  delta: 0.0
+  updates:
+    alpha: 0.1
+    beta: 0.2
+  mb0: 16.0
+  mr0: 200.0
+  m_batch: 1.0
+  m_frame: 1.0
+  min_batch: 1
+  max_batch: 1024
+  equal_uses_gt: true
+  plugin_policy: adaptive
+budget:
+  enforcement: device_allocator_enforced
+  controlled_resource: device
+  limit_bytes: 335544320
+  guard_mode: stop
+prefetch:
+  enabled: false
+  queue_depth: 1
+  pin_memory: false
+  num_workers: 0
+measurement:
+  sample_interval_ms: 100
+  checkpoint_policy: none
+study_id: effectiveness_v3
+reuse_version: 4
+frozen_hash: 9289a239c1f10ff7d32d9b6422b8dc1a467ded2516658a3b3ea668abea798e6c
+frozen_protocol_path: experiments/effectiveness_v3/revisions/thor_r2/frozen_protocol.json
+resource_envelope:
+  enabled: false
+  reserved_bytes_by_experience:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+data_supply:
+  record_hashes: false
+  profile: default
+v3_group: B
+v3_variant: default
+v3_scenario: loose
+v3_cell_id: B/splitcifar100/loose/S_star/2/default
+static_selection_id: search_loose_splitcifar100_b16_r2000_q320

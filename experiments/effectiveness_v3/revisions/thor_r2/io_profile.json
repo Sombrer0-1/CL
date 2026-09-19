@@ -1,0 +1,9 @@
+{
+  "constructed": true,
+  "wait_ratio": 0.5201355793967096,
+  "cpu_percent_mean": 9.487585681645102,
+  "limitations": [],
+  "pin_memory": false,
+  "queue_depth": 2,
+  "num_workers": 0
+}

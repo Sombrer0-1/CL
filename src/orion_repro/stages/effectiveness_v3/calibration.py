@@ -7,6 +7,7 @@ import math
 from typing import Any
 
 from orion_repro.stages.effectiveness_v3.constants import (
+    CALIBRATION_IDENTITY_ROLES,
     EVAL_BATCH_CANDIDATES,
     PRIMARY_DATASETS,
     QUOTA_GRID_MIB,
@@ -41,6 +42,19 @@ def _rows(manifest: dict[str, Any], *, role: str, dataset: str | None = None) ->
             continue
         out.append(row)
     return out
+
+
+def _require_single_calibration_source_hash(rows: list[dict[str, Any]]) -> str:
+    cal_rows = [r for r in rows if r.get("role") in CALIBRATION_IDENTITY_ROLES]
+    if not cal_rows:
+        raise CalibrationError("no Q/L/S* calibration rows")
+    missing = [r.get("probe_id") or r.get("config_id") or r.get("role") for r in cal_rows if not r.get("source_hash")]
+    if missing:
+        raise CalibrationError(f"calibration rows missing source_hash: {missing[:8]}")
+    unique = {str(r["source_hash"]) for r in cal_rows}
+    if len(unique) != 1:
+        raise CalibrationError(f"mixed source_hash in Q/L/S* rows: {sorted(unique)}")
+    return next(iter(unique))
 
 
 def _select_static(candidates: list[dict[str, Any]]) -> dict[str, Any]:
@@ -206,17 +220,29 @@ def calibrate(manifest: dict[str, Any]) -> dict[str, Any]:
             "quota_evidence": quota_evidence,
             "l_cal_run_ids": [r.get("run_id") for r in l_rows],
         }
+    calibration_source_hash = _require_single_calibration_source_hash(rows)
     dyn_search = _rows(manifest, role="static_search_dyn", dataset="core50_nc")
     s_dyn = _select_static(dyn_search) if dyn_search else None
     datasets["core50_nc"]["static_selections"]["dyn"] = s_dyn
     control = _rows(manifest, role="control_2x2", dataset="core50_nc")
     identifiable = any(r.get("status") == "completed" and r.get("integer_config_changed") for r in control)
     dyn_probe = _rows(manifest, role="dyn_reservation_probe", dataset="core50_nc")
+    dyn_probe += _rows(manifest, role="dyn_min_positive", dataset="core50_nc")
     reserved = [0] * 9
     dyn_constructed = False
     dyn_quota_bytes = datasets["core50_nc"]["quota_tight_bytes"]
+    dyn_window = None
     if dyn_probe:
-        ok = next((r for r in dyn_probe if r.get("status") == "completed" and r.get("transition_first_ok")), None)
+        ok = None
+        for row in dyn_probe:
+            window = row.get("dyn_window") or {}
+            if window.get("observable_feedback_window"):
+                ok = row
+                dyn_window = window
+                break
+            if not window and row.get("status") == "completed" and row.get("transition_first_ok"):
+                ok = row
+                break
         if ok and s_dyn is None:
             raise CalibrationError("dynamic scenario requires its own six-candidate static search")
         if ok:
@@ -225,15 +251,38 @@ def calibrate(manifest: dict[str, Any]) -> dict[str, Any]:
             if ok.get("quota_mib"):
                 dyn_quota_bytes = int(ok["quota_mib"]) * 1024**2
     io_off = next((r for r in _rows(manifest, role="io_off", dataset="core50_nc") if r.get("status") == "completed"), None)
+    io_on = next((r for r in _rows(manifest, role="io_on", dataset="core50_nc") if r.get("status") == "completed"), None)
     io_ratio = None
     io_constructed = False
+    io_cpu = None
+    io_limitations = []
     if io_off is not None:
         io_ratio = io_off.get("supply_wait_ratio")
-        io_constructed = io_ratio is not None and float(io_ratio) >= 0.10
+        io_cpu = io_off.get("cpu_percent_mean")
+        wait_ok = io_ratio is not None and float(io_ratio) >= 0.10
+        cpu_ok = io_cpu is not None and float(io_cpu) < 85.0
+        if not wait_ok:
+            io_limitations.append("serial_supply_wait_ratio_below_0.10")
+        if io_cpu is None:
+            io_limitations.append("cpu_headroom_not_measured")
+        elif not cpu_ok:
+            io_limitations.append("cpu_headroom_insufficient")
+        if io_on is None:
+            io_limitations.append("io_on_missing")
+        io_constructed = bool(wait_ok and cpu_ok and io_on is not None)
+    plugin_loose = {
+        dataset: [
+            r
+            for r in _rows(manifest, role="plugin_loose", dataset=dataset)
+        ]
+        for dataset in PRIMARY_DATASETS
+    }
     host = next((r for r in rows if r.get("role") == "host_capability"), None)
     host_status = "unavailable"
     if host:
         host_status = str(host.get("status") or "unavailable")
+    s04_stamp = _rows(manifest, role="identity_s04_stamp", dataset="core50_nc")
+    s04_abandoned = bool(s04_stamp) or manifest.get("campaign") == "identity_recalibrate"
     coverage = {
         "S01": "pending_formal" if identifiable else "failed_to_construct",
         "S02": "pending_formal",
@@ -270,13 +319,40 @@ def calibrate(manifest: dict[str, Any]) -> dict[str, Any]:
         "io_prefetch": {
             "constructed": bool(io_constructed),
             "wait_ratio": float(io_ratio) if io_ratio is not None else 0.0,
+            "cpu_percent_mean": io_cpu,
+            "limitations": io_limitations,
             "pin_memory": False,
             "queue_depth": 2,
             "num_workers": 0,
         },
+        "dyn_window": dyn_window,
+        "plugin_loose": {
+            dataset: {
+                "n": len(rows),
+                "statuses": [r.get("status") for r in rows],
+                "run_ids": [r.get("run_id") for r in rows],
+                "feasible": any(
+                    r.get("status") == "completed"
+                    and int(r.get("n_trained") or 0) == N_EXPECTED[dataset]
+                    and int(r.get("n_evaluated") or 0) == N_EXPECTED[dataset]
+                    for r in rows
+                ),
+            }
+            for dataset, rows in plugin_loose.items()
+        },
         "host": {"status": host_status, "row": host},
         "source_runs": [r.get("run_id") for r in rows if r.get("run_id")],
         "probe_manifest_hash": canonical_hash(manifest),
+        "calibration_source_hash": calibration_source_hash,
+        "s04_policy": {
+            "status": "abandoned_this_revision" if s04_abandoned else "attempted_in_development",
+            "group_c": "scenario_not_realized" if not dyn_constructed else "pending_formal",
+            "note": "do not rebuild S04 at Q_mid or Q_loose in this revision",
+        },
+        "q_mid_policy": {
+            "role": "group_G_quota_mid_only",
+            "note": "do not add an A/B-structured comparison at Q_mid",
+        },
         "o00_latency_s": 30.0,
         "o00_memory_mib": 4096.0,
         "decay_delta": math.log(2.0) / 8.0,
