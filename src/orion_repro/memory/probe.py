@@ -28,6 +28,7 @@ class ResourceSnapshot:
     gpu_reserved_peak_bytes: int | None
     gpu_global_used_bytes: int | None
     gpu_global_free_bytes: int | None
+    system_total_bytes: int | None = None
     notes: str = ""
     cpu_percent: float | None = None
     cpu_count: int | None = None
@@ -127,6 +128,7 @@ def snapshot(
         children_rss_bytes=child_rss,
         proc_pss_bytes=_pss_or_none(proc),
         system_available_bytes=int(vm.available),
+        system_total_bytes=int(vm.total),
         swap_used_bytes=int(swap.used),
         notes=notes,
         cpu_percent=cpu_percent,
@@ -144,6 +146,8 @@ class SamplerPeaks:
     sample_count: int = 0
     phase: str = "idle"
     experience_index: int | None = None
+    system_available_min_bytes: int | None = None
+    board_used_peak_bytes: int = 0
 
 
 class ResourceSampler:
@@ -176,6 +180,8 @@ class ResourceSampler:
         self.phase_peak_rss = 0
         self.phase_peak_gpu_alloc = 0
         self.phase_peak_gpu_reserved = 0
+        self.phase_peak_board_used = 0
+        self.phase_available_min_bytes: int | None = None
         self.rows: list[ResourceSnapshot] = []
 
     def begin_phase(self, phase: str, experience_index: int | None) -> int:
@@ -188,6 +194,8 @@ class ResourceSampler:
             self.phase_peak_rss = 0
             self.phase_peak_gpu_alloc = 0
             self.phase_peak_gpu_reserved = 0
+            self.phase_peak_board_used = 0
+            self.phase_available_min_bytes = None
             return token
 
     def set_phase(self, phase: str, experience_index: int | None) -> int:
@@ -208,6 +216,8 @@ class ResourceSampler:
                 sample_count=peaks.sample_count,
                 phase=peaks.phase,
                 experience_index=peaks.experience_index,
+                system_available_min_bytes=peaks.system_available_min_bytes,
+                board_used_peak_bytes=peaks.board_used_peak_bytes,
             )
 
     def ingest(self, snap: ResourceSnapshot, token: int) -> None:
@@ -216,6 +226,11 @@ class ResourceSampler:
         child = int(snap.children_rss_bytes or 0)
         gpu = int(snap.gpu_alloc_peak_bytes or snap.gpu_alloc_bytes or 0)
         reserved = int(snap.gpu_reserved_peak_bytes or snap.gpu_reserved_bytes or 0)
+        available = snap.system_available_bytes
+        total = snap.system_total_bytes
+        board_used = 0
+        if total is not None and available is not None:
+            board_used = max(0, int(total) - int(available))
         with self._lock:
             peaks = self._peaks.get(int(token))
             if peaks is None:
@@ -227,6 +242,13 @@ class ResourceSampler:
                 peaks.gpu_alloc_peak_bytes = max(peaks.gpu_alloc_peak_bytes, gpu)
             if reserved:
                 peaks.gpu_reserved_peak_bytes = max(peaks.gpu_reserved_peak_bytes, reserved)
+            if available is not None:
+                if peaks.system_available_min_bytes is None:
+                    peaks.system_available_min_bytes = int(available)
+                else:
+                    peaks.system_available_min_bytes = min(peaks.system_available_min_bytes, int(available))
+            if board_used:
+                peaks.board_used_peak_bytes = max(peaks.board_used_peak_bytes, board_used)
             self.peak_rss = max(self.peak_rss, rss + child)
             if gpu:
                 self.peak_gpu_alloc = max(self.peak_gpu_alloc, gpu)
@@ -236,6 +258,8 @@ class ResourceSampler:
                 self.phase_peak_rss = peaks.rss_peak_bytes + peaks.children_rss_peak_bytes
                 self.phase_peak_gpu_alloc = peaks.gpu_alloc_peak_bytes
                 self.phase_peak_gpu_reserved = peaks.gpu_reserved_peak_bytes
+                self.phase_peak_board_used = peaks.board_used_peak_bytes
+                self.phase_available_min_bytes = peaks.system_available_min_bytes
 
     def start(self) -> None:
         try:

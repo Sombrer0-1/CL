@@ -1,0 +1,8 @@
+{
+  "kind": "source_tree_sha256",
+  "created_utc": "2026-09-24T07:41:43.945415+00:00",
+  "aggregate_sha256": "a9cace14a8ba5c9fde5b548a4a95eff7f61034414dc15a0b30c0045bff8ca330",
+  "n_files": 1122,
+  "git_head_is_not_this_snapshot": true,
+  "note": "Uncommitted staging overlay. Git HEAD is still v3. Not a freeze."
+}

@@ -1,0 +1,47 @@
+{
+  "study_id": "fullmem_v4",
+  "note": "Development probe only. Not a freeze. LR_reconstructed is not author Orion code.",
+  "collected_at_utc": "2026-09-21T14:17:06Z",
+  "cifar100": {
+    "run_id": "fullmem_v4_g2_cifar100_lr_seed17",
+    "status": "completed",
+    "n_experiences_run": 10,
+    "run_total_s": 42.38,
+    "p_diag": 0.3954,
+    "s_initial": 0.636,
+    "latent_occupancy_after_exp0": 200,
+    "plugin_state_bytes_latent": 6555200,
+    "auxiliary_visits_per_exp": 256,
+    "auxiliary_visit_scope": "latent_cache_feature_forward",
+    "learning_s_exp0": 5.184,
+    "learning_s_later_approx": 2.4,
+    "min_system_available_bytes": 62362640384,
+    "proc_rss_peak_bytes": 2358095872,
+    "gpu_reserved_peak_bytes": 138412032
+  },
+  "core50_nc": {
+    "run_id": "fullmem_v4_g2_core50_nc_lr_seed17",
+    "status": "completed",
+    "n_experiences_run": 9,
+    "run_total_s": 171.51,
+    "p_diag": 0.621655065379632,
+    "s_initial": 0.44288332781602113,
+    "latent_occupancy_after_exp0": 200,
+    "plugin_state_bytes_latent": 6555200,
+    "auxiliary_visits_per_exp": 256,
+    "learning_s_exp0": 26.08,
+    "min_system_available_bytes": 62561923072
+  },
+  "comparators": {
+    "cifar100_s0_hash_off_seed17": {
+      "p_diag": 0.4418,
+      "s_initial": 0.5752222222222223,
+      "run_total_s": 71.5
+    },
+    "core50_nc_s0_seed0": {
+      "p_diag": 0.6408615321507453,
+      "s_initial": 0.4601397409125516,
+      "run_total_s": 225.7
+    }
+  }
+}

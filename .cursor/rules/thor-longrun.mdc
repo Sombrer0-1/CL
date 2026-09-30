@@ -1,23 +1,16 @@
 ---
-description: Thor 长程复现必须先读 MEMORY，并遵守 A29 冻结身份
+description: Orion 阶段4真实总内存与远程运行；先读当前状态，保护历史证据
 alwaysApply: true
 ---
 
-# Orion Thor 长程约束
+# 当前执行约束
 
-开始任何实现或实验前，先读并遵循：
+开始前读 PLAN.md、STATUS.md、docs/MEMORY.md、docs/decisions/A30.md。当前stage为fullmem_v4，无冻结revision或正式命令。A29只约束已结项v3，不再把新工作固定到thor_r2。
 
-- `docs/MEMORY.md`（当前指针；压缩后以它为准）
-- `STATUS.md`
-- `docs/decisions/A29.md`
-
-做出会改变 revision、冻结数字、场景覆盖或下一条命令的决定后，立刻更新 `docs/MEMORY.md` 的「当前指针」和更新日志。
-
-硬约束（细节以 MEMORY / A29 为准）：
-
-- 冻结用 `--revision thor_r2`。`thor_r1` 只保留为 G2 过程证据。
-- 写入 frozen 的 Q/L/S* 必须来自停改哈希源码后的单一 `source_hash`。禁止混用修补前后数字再加脚注。
-- 本 revision 放弃 S04；C 组 `scenario_not_realized`，不换 240/320 重建。
-- 240 只服务 G 组；不加一套 A/B。不把 Q_tight 调到 Orion 能跑完。
-- `ORION_PY=/home/zhuzetong/miniconda3/envs/orion/bin/python`，`WANDB_MODE=disabled`。禁止 mineru/base/改驱动。禁止 `pressure_*`。未要求不 commit。
-- 第三阶段已结项。后续读 `docs/plans/after_effectiveness_v3.md`。不把 OOM、测试通过、URGE 触发或宽档跑完说成 Orion 有效。C01–C08 见 `reports/effectiveness_v3/thor_r2/CLAIMS.md`（C02 已判不支持本协议范围）。
+- 主基准必须通过真实整机CPU/GPU共享池验收；host cgroup、allocator、watchdog不替代。
+- agent runtime在控制机，SSH调度Thor独立systemd任务；远程接入与启动重启尚未配置确认。
+- 16GiB为候选，不是已安装或冻结的预算。
+- 项目解释器为orion；禁mineru/base/擅改驱动；整机启动修改和重启须有具体回退与安排。
+- 旧v3/light24/pressure证据不可覆盖；源码改动产生新v4身份。
+- 不从旧study/pressure/effectiveness队列发射v4。不以测试通过、URGE触发或完成格数证明优势。
+- 新决定立即更新MEMORY/STATUS；未要求不commit/push。

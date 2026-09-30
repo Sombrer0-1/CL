@@ -1,0 +1,203 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-25T09:13:06Z",
+  "board": {
+    "capacity_id": "mem8g",
+    "mem_total_bytes": 8374337536,
+    "mem_total_mib": 7986.390625
+  },
+  "pressure_scene": "unestablished_at_mem8g",
+  "pressure_scope": "run_id_contains_h4",
+  "note": "H4 co-running occupancy only. Dedicated background process, not static tight. Do not treat as a G3 freeze. Do not enlarge the model.",
+  "members": [
+    {
+      "run_id": "fullmem_v4_g2_cifar100_s0_h4_high_low_high_seed17_mem8g",
+      "status": "completed",
+      "method_id": "S0",
+      "dataset": "splitcifar100",
+      "n_experiences_run": 10,
+      "p_diag": 0.4459000000000001,
+      "s_initial": 0.5804444444444445,
+      "online_total_s": 71.53792765000071,
+      "run_total_s": 73.27773842399984,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_cifar100_s0_h4_high_low_high_seed17_mem8g",
+      "min_system_available_bytes": 1457946624.0,
+      "peak_memtotal_minus_available_bytes": 6916390912.0,
+      "peak_M_t_mib": 6595.984375,
+      "gpu_reserved_peak_bytes": 159383552.0,
+      "proc_rss_peak_bytes": 2083377152.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_cifar100_s0_h4_low_high_low_seed17_mem8g",
+      "status": "completed",
+      "method_id": "S0",
+      "dataset": "splitcifar100",
+      "n_experiences_run": 10,
+      "p_diag": 0.4316,
+      "s_initial": 0.5875555555555556,
+      "online_total_s": 72.59853311900042,
+      "run_total_s": 74.35772375399938,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_cifar100_s0_h4_low_high_low_seed17_mem8g",
+      "min_system_available_bytes": 1401597952.0,
+      "peak_memtotal_minus_available_bytes": 6972739584.0,
+      "peak_M_t_mib": 6649.72265625,
+      "gpu_reserved_peak_bytes": 159383552.0,
+      "proc_rss_peak_bytes": 2111799296.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nc_orecon_h4_high_low_high_seed17_mem8g",
+      "status": "completed",
+      "method_id": "O-recon",
+      "dataset": "core50_nc",
+      "n_experiences_run": 9,
+      "p_diag": 0.24031104936526967,
+      "s_initial": 0.7546556324369244,
+      "online_total_s": 769.3284438539995,
+      "run_total_s": 770.3030109389983,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_core50_nc_orecon_h4_high_low_high_seed17_mem8g",
+      "min_system_available_bytes": 1338007552.0,
+      "peak_memtotal_minus_available_bytes": 7036329984.0,
+      "peak_M_t_mib": 6710.3671875,
+      "gpu_reserved_peak_bytes": 216006656.0,
+      "proc_rss_peak_bytes": 2142162944.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nc_orecon_h4_low_high_low_seed17_mem8g",
+      "status": "completed",
+      "method_id": "O-recon",
+      "dataset": "core50_nc",
+      "n_experiences_run": 9,
+      "p_diag": 0.3028103987117603,
+      "s_initial": 0.6843438644221224,
+      "online_total_s": 742.896881011,
+      "run_total_s": 743.844358407001,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_core50_nc_orecon_h4_low_high_low_seed17_mem8g",
+      "min_system_available_bytes": 1326755840.0,
+      "peak_memtotal_minus_available_bytes": 7047581696.0,
+      "peak_M_t_mib": 6721.09765625,
+      "gpu_reserved_peak_bytes": 216006656.0,
+      "proc_rss_peak_bytes": 2096726016.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nc_s0_h4_high_low_high_seed17_mem8g",
+      "status": "completed",
+      "method_id": "S0",
+      "dataset": "core50_nc",
+      "n_experiences_run": 9,
+      "p_diag": 0.6811071914290032,
+      "s_initial": 0.39923837358992387,
+      "online_total_s": 213.41831220800123,
+      "run_total_s": 214.39734398499968,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_core50_nc_s0_h4_high_low_high_seed17_mem8g",
+      "min_system_available_bytes": 1597341696.0,
+      "peak_memtotal_minus_available_bytes": 6776995840.0,
+      "peak_M_t_mib": 6463.046875,
+      "gpu_reserved_peak_bytes": 159383552.0,
+      "proc_rss_peak_bytes": 1921302528.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nc_s0_h4_low_high_low_seed17_mem8g",
+      "status": "completed",
+      "method_id": "S0",
+      "dataset": "core50_nc",
+      "n_experiences_run": 9,
+      "p_diag": 0.6892302174113447,
+      "s_initial": 0.4332763919457836,
+      "online_total_s": 221.20901944900106,
+      "run_total_s": 222.24570263699934,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_core50_nc_s0_h4_low_high_low_seed17_mem8g",
+      "min_system_available_bytes": 1592680448.0,
+      "peak_memtotal_minus_available_bytes": 6781657088.0,
+      "peak_M_t_mib": 6467.4921875,
+      "gpu_reserved_peak_bytes": 159383552.0,
+      "proc_rss_peak_bytes": 1979486208.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nic_s0_h4_high_low_high_seed17_mem8g",
+      "status": "completed",
+      "method_id": "S0",
+      "dataset": "core50_nic",
+      "n_experiences_run": 79,
+      "p_diag": 0.10747127800366996,
+      "s_initial": 1.0379401972787619,
+      "online_total_s": 1703.4943561740001,
+      "run_total_s": 1704.505845278003,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_core50_nic_s0_h4_high_low_high_seed17_mem8g",
+      "min_system_available_bytes": 1444614144.0,
+      "peak_memtotal_minus_available_bytes": 6929723392.0,
+      "peak_M_t_mib": 6608.69921875,
+      "gpu_reserved_peak_bytes": 159383552.0,
+      "proc_rss_peak_bytes": 1972604928.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nic_s0_h4_low_high_low_seed17_mem8g",
+      "status": "completed",
+      "method_id": "S0",
+      "dataset": "core50_nic",
+      "n_experiences_run": 79,
+      "p_diag": 0.10871791860884558,
+      "s_initial": 1.021908548610585,
+      "online_total_s": 1771.0939012770014,
+      "run_total_s": 1772.1682037589999,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_core50_nic_s0_h4_low_high_low_seed17_mem8g",
+      "min_system_available_bytes": 1520115712.0,
+      "peak_memtotal_minus_available_bytes": 6854221824.0,
+      "peak_M_t_mib": 6536.6953125,
+      "gpu_reserved_peak_bytes": 159383552.0,
+      "proc_rss_peak_bytes": 2088673280.0
+    }
+  ],
+  "pressure_run_ids": [
+    "fullmem_v4_g2_cifar100_s0_h4_high_low_high_seed17_mem8g",
+    "fullmem_v4_g2_cifar100_s0_h4_low_high_low_seed17_mem8g",
+    "fullmem_v4_g2_core50_nc_orecon_h4_high_low_high_seed17_mem8g",
+    "fullmem_v4_g2_core50_nc_orecon_h4_low_high_low_seed17_mem8g",
+    "fullmem_v4_g2_core50_nc_s0_h4_high_low_high_seed17_mem8g",
+    "fullmem_v4_g2_core50_nc_s0_h4_low_high_low_seed17_mem8g",
+    "fullmem_v4_g2_core50_nic_s0_h4_high_low_high_seed17_mem8g",
+    "fullmem_v4_g2_core50_nic_s0_h4_low_high_low_seed17_mem8g"
+  ],
+  "factor_m_at_observed_peak": [
+    {
+      "run_id": "fullmem_v4_g2_cifar100_s0_h4_high_low_high_seed17_mem8g",
+      "slack_mib": 1390.40625,
+      "factor_m": 1.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_cifar100_s0_h4_low_high_low_seed17_mem8g",
+      "slack_mib": 1336.66796875,
+      "factor_m": 1.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nc_orecon_h4_high_low_high_seed17_mem8g",
+      "slack_mib": 1276.0234375,
+      "factor_m": 1.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nc_orecon_h4_low_high_low_seed17_mem8g",
+      "slack_mib": 1265.29296875,
+      "factor_m": 1.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nc_s0_h4_high_low_high_seed17_mem8g",
+      "slack_mib": 1523.34375,
+      "factor_m": 1.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nc_s0_h4_low_high_low_seed17_mem8g",
+      "slack_mib": 1518.8984375,
+      "factor_m": 1.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nic_s0_h4_high_low_high_seed17_mem8g",
+      "slack_mib": 1377.69140625,
+      "factor_m": 1.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nic_s0_h4_low_high_low_seed17_mem8g",
+      "slack_mib": 1449.6953125,
+      "factor_m": 1.0
+    }
+  ],
+  "min_available_bytes_across_completed": 1326755840.0
+}

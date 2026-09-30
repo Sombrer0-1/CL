@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
+import os
 import sys
 import time
 import traceback
@@ -30,9 +32,11 @@ from orion_repro.memory.budget import (
     require_cost_model_for_enforcement,
 )
 from orion_repro.memory.cost_model import MemoryCostModel
+from orion_repro.memory.observation import board_used_bytes, resolve_controller_memory_bytes
 from orion_repro.memory.phase_recorder import PhaseRecorder
 from orion_repro.memory.probe import ResourceSampler, reset_gpu_peak, snapshot, synchronize_gpu
 from orion_repro.memory.resource_envelope import ResourceEnvelope
+from orion_repro.memory.h4_holder import BackgroundHolder, H4HolderError, h4_reservation_schedule, memtotal_mib
 from orion_repro.provenance import fill_provenance, snapshot_source_tree
 from orion_repro.rng import seed_streams
 from orion_repro.runner.artifacts import RunArtifacts
@@ -61,11 +65,52 @@ def _utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _scheduled_plugin_mode(spec: dict[str, Any], k: int) -> str | None:
+    """Optional H5c scripted plugin lifecycle. None means URGE/fixed policy owns the mode."""
+    sched = (spec.get("controller") or {}).get("plugin_schedule")
+    if not sched:
+        return None
+    if k < 0 or k >= len(sched):
+        raise RuntimeError(f"plugin_schedule length {len(sched)} has no index {k}")
+    mode = str(sched[k])
+    if mode not in {"default", "advanced"}:
+        raise RuntimeError(f"illegal plugin_schedule[{k}]={mode!r}")
+    return mode
+
+
+def _release_optional_plugin_state(strategy) -> dict[str, str]:
+    """O-eng-release-rebuild: drop GEM/EWC tensors. Not O-recon. Replay buffer stays."""
+    released: dict[str, str] = {}
+    plugins = list(getattr(strategy, "plugins", []) or [])
+    inners = []
+    for plugin in plugins:
+        inner = getattr(plugin, "inner", plugin)
+        inners.append(inner)
+    for inner in inners:
+        name = type(inner).__name__
+        if name == "SparseGEMPlugin":
+            inner.memory_x = {}
+            inner.memory_y = {}
+            if hasattr(inner, "memory_tid"):
+                inner.memory_tid = {}
+            released[name] = "cleared_memory_xy"
+        elif name == "EWCPlugin":
+            if hasattr(inner, "saved_params"):
+                inner.saved_params = {}
+            if hasattr(inner, "importances"):
+                inner.importances = {}
+            released[name] = "cleared_fisher"
+    return released
+
+
 def configure_torch(spec: dict[str, Any]) -> None:
+    deterministic = bool(spec["training"].get("deterministic_algorithms", False))
+    if deterministic:
+        # Required for CUDA deterministic GEMM; set before the first cuBLAS call.
+        os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
     torch.backends.cuda.matmul.allow_tf32 = bool(spec["training"].get("allow_tf32", False))
     torch.backends.cudnn.allow_tf32 = bool(spec["training"].get("allow_tf32", False))
     torch.backends.cudnn.benchmark = bool(spec["training"].get("cudnn_benchmark", False))
-    deterministic = bool(spec["training"].get("deterministic_algorithms", False))
     torch.use_deterministic_algorithms(deterministic)
     torch.backends.cudnn.deterministic = deterministic
     torch.set_float32_matmul_precision("highest")
@@ -133,7 +178,20 @@ def _toggle_states(strategy) -> dict[str, bool]:
     return states
 
 
-def _prefetch_stats(strategy) -> dict[str, float | int]:
+def _param_sha256(model: Any) -> str | None:
+    if model is None:
+        return None
+    digest = hashlib.sha256()
+    with torch.no_grad():
+        for name, tensor in model.state_dict().items():
+            digest.update(name.encode("utf-8"))
+            digest.update(b"\0")
+            cpu = tensor.detach().to("cpu", copy=True).contiguous()
+            digest.update(cpu.numpy().tobytes())
+    return digest.hexdigest()
+
+
+def _prefetch_stats(strategy) -> dict[str, Any]:
     plugin = getattr(strategy, "_orion_prefetch_plugin", None)
     if plugin is None:
         return {
@@ -143,6 +201,7 @@ def _prefetch_stats(strategy) -> dict[str, float | int]:
             "prefetch_plan_mode": "unused",
             "prefetch_planned_n": 0,
         }
+    digest = dict(getattr(plugin, "last_digest", {}) or {})
     return {
         "prefetch_wait_s": float(getattr(plugin, "last_wait_s", 0.0)),
         "prefetch_dropped_stale": int(getattr(plugin, "last_dropped_stale", 0)),
@@ -150,6 +209,11 @@ def _prefetch_stats(strategy) -> dict[str, float | int]:
         "prefetch_plan_mode": str(getattr(plugin, "last_plan_mode", "")),
         "prefetch_planned_n": int(getattr(plugin, "last_planned_n", 0)),
         "prefetch_produce_s": float(getattr(plugin, "last_produce_s", 0.0)),
+        "rolling_sha256": digest.get("rolling_sha256"),
+        "first_x_hash": digest.get("first_x_hash"),
+        "first_y_hash": digest.get("first_y_hash"),
+        "last_x_hash": digest.get("last_x_hash"),
+        "last_y_hash": digest.get("last_y_hash"),
     }
 
 
@@ -158,14 +222,22 @@ def _reservation_schedule(spec: dict[str, Any], n_run: int) -> list[int]:
     if not env or not env.get("enabled"):
         return [0] * n_run
     sched = env.get("reserved_bytes_by_experience")
-    if sched is None:
-        return [0] * n_run
-    values = [int(x) for x in sched]
-    if len(values) != n_run:
-        raise ValueError(
-            f"reserved_bytes_by_experience length {len(values)} != n_run {n_run}"
+    if sched is not None:
+        values = [int(x) for x in sched]
+        if len(values) != n_run:
+            raise ValueError(
+                f"reserved_bytes_by_experience length {len(values)} != n_run {n_run}"
+            )
+        return values
+    sequence = env.get("sequence")
+    if sequence:
+        return h4_reservation_schedule(
+            n_run,
+            high_bytes=int(env["high_bytes"]),
+            sequence=str(sequence),
+            low_bytes=int(env.get("low_bytes") or 0),
         )
-    return values
+    return [0] * n_run
 
 
 def _consumption_digest(strategy) -> dict[str, Any]:
@@ -202,7 +274,7 @@ def _admit_config(
     resource = spec["budget"]["controlled_resource"]
     representation = str(spec["replay"].get("representation", "avalanche_buffer"))
     predicted_bytes = None
-    if cost_model is not None:
+    if cost_model is not None and resource not in {"board", "shared_pool"}:
         predicted_bytes = cost_model.predict_bytes(
             new_batch,
             replay_capacity,
@@ -294,6 +366,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
     trained_experiences = 0
     recorder: PhaseRecorder | None = None
     envelope: ResourceEnvelope | None = None
+    holder: BackgroundHolder | None = None
     current_unannounced = False
     quota_bytes = spec.get("budget", {}).get("limit_bytes")
     try:
@@ -304,12 +377,32 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
         quota = envelope.install_quota(spec["budget"], device)
         quota_bytes = spec["budget"].get("limit_bytes")
         arts.write_json("budget_enforcement.json", {"quota": quota})
+        env_cfg = spec.get("resource_envelope") or {}
+        if env_cfg.get("enabled") and str(env_cfg.get("mode") or "") == "background_process":
+            holder = BackgroundHolder.start(
+                log_path=run_dir / "h4_holder.log",
+                executable=sys.executable,
+            )
+            arts.event(
+                {
+                    "utc": _utc_now(),
+                    "monotonic_s": time.monotonic(),
+                    "phase": "h4_holder_start",
+                    "pid": holder.pid,
+                    "mode": "background_process",
+                    "sequence": env_cfg.get("sequence"),
+                    "high_bytes": env_cfg.get("high_bytes"),
+                    "low_bytes": env_cfg.get("low_bytes") or 0,
+                }
+            )
         interval = float(spec["measurement"]["sample_interval_ms"]) / 1000.0
         sampler = ResourceSampler(interval_s=max(interval, 0.05), device=device)
         recorder = PhaseRecorder(
             arts,
             quota_bytes=quota_bytes,
-            reservation_getter=lambda: envelope.reservation_bytes if envelope is not None else 0,
+            reservation_getter=lambda: (
+                holder.reservation_bytes if holder is not None else (envelope.reservation_bytes if envelope is not None else 0)
+            ),
             device=device,
             sampler=sampler,
         )
@@ -408,6 +501,9 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
         ctrl_cfg = None
         ctrl_state = None
         initial_mode = initial_optimizer_mode(spec)
+        sched0 = _scheduled_plugin_mode(spec, 0)
+        if sched0 is not None:
+            initial_mode = sched0
         for plugin in strategy.plugins:
             if isinstance(plugin, TogglePlugin):
                 plugin.enabled = initial_mode == "advanced"
@@ -415,6 +511,13 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             c = spec["controller"]
             coef = resolve_controller_coefficients(c)
             c["coefficients"] = coef
+            m_max_mib = float(c["thresholds"]["m_max_mib"])
+            if spec["budget"].get("controlled_resource") in {"board", "shared_pool"}:
+                live = memtotal_mib()
+                if live > 0:
+                    m_max_mib = live
+                    c["thresholds"]["m_max_mib"] = live
+                    c["m_max_source"] = "live_memtotal"
             ctrl_cfg = UrgeConfig(
                 kp=float(coef["kp"]),
                 ks=float(coef["ks"]),
@@ -423,7 +526,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                 p_th=float(c["thresholds"]["p"]),
                 s_th=float(c["thresholds"]["s"]),
                 latency_th_s=float(c["thresholds"]["latency_s"]),
-                m_max_mib=float(c["thresholds"]["m_max_mib"]),
+                m_max_mib=m_max_mib,
                 thr0=float(c["thr0"]),
                 delta=float(c["delta"]),
                 alpha=float(c["updates"]["alpha"]),
@@ -486,12 +589,24 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             )
         reservation_schedule = _reservation_schedule(spec, n_run)
         for k in range(start_k, n_run):
+            sched_mode = _scheduled_plugin_mode(spec, k)
+            if sched_mode is not None:
+                policy = str((spec.get("controller") or {}).get("plugin_policy") or "")
+                for plugin in strategy.plugins:
+                    if isinstance(plugin, TogglePlugin):
+                        plugin.enabled = sched_mode == "advanced"
+                if policy == "scripted_release_rebuild" and sched_mode == "default":
+                    _release_optional_plugin_state(strategy)
+                initial_mode = sched_mode
+                if ctrl_state is not None:
+                    ctrl_state.optimizer_mode = sched_mode
             prev_reservation = reservation_schedule[k - 1] if k > 0 else 0
             current_unannounced = int(reservation_schedule[k]) != int(prev_reservation)
             failure_phase = "resource_transition"
-            if recorder is not None and envelope is not None:
+            occupier = holder if holder is not None else envelope
+            if recorder is not None and occupier is not None:
                 recorder.begin("resource_transition", k)
-                trans = envelope.transition(k, reservation_schedule[k])
+                trans = occupier.transition(k, reservation_schedule[k])
                 rec_transition = recorder.end("resource_transition", k)
                 arts.event(
                     {
@@ -504,7 +619,11 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                         **trans.as_dict(),
                     }
                 )
+                if holder is not None and not holder.alive():
+                    raise H4HolderError("h4 scene_failure: holder_dead")
                 if trans.status != "ok":
+                    if holder is not None:
+                        raise H4HolderError(f"h4 scene_failure: {trans.notes or trans.status}")
                     raise torch.cuda.OutOfMemoryError(
                         f"Tried to allocate {reservation_schedule[k] / (1024 ** 2):.2f} MiB for resource envelope"
                     )
@@ -564,7 +683,9 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     ),
                     "optimizer_mode": ctrl_state.optimizer_mode if ctrl_state else initial_mode,
                     "plugins": _toggle_states(strategy),
-                    "external_reservation_bytes": envelope.reservation_bytes if envelope is not None else 0,
+                    "external_reservation_bytes": (
+                        holder.reservation_bytes if holder is not None else (envelope.reservation_bytes if envelope is not None else 0)
+                    ),
                 }
             )
             t0 = time.monotonic()
@@ -592,7 +713,11 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             )
             arts.append_jsonl(
                 arts._consumption,
-                {"experience": k, **_consumption_digest(strategy)},
+                {
+                    "experience": k,
+                    **_consumption_digest(strategy),
+                    "param_sha256": _param_sha256(getattr(strategy, "model", None)),
+                },
             )
 
             if recorder is not None:
@@ -658,19 +783,30 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
             shared_test_accuracy = (
                 float(rows[0].accuracy) if protocol == "shared_test_temporal" else None
             )
-            mem_bytes = snap1.gpu_alloc_peak_bytes or snap1.gpu_alloc_bytes or snap1.proc_rss_bytes
             resource_name = spec["budget"]["controlled_resource"]
-            if resource_name == "host":
-                mem_bytes = max(
-                    int(learning_peak_rss or 0),
-                    int(snap1.proc_rss_bytes + snap1.children_rss_bytes),
-                )
-            elif resource_name == "device":
-                mem_bytes = max(
-                    int(learning_peak_gpu or 0),
-                    int(snap1.gpu_alloc_peak_bytes or snap1.gpu_alloc_bytes or 0),
-                )
-            reservation_bytes = envelope.reservation_bytes if envelope is not None else 0
+            gpu_peak = max(
+                int(learning_peak_gpu or 0),
+                int(snap1.gpu_alloc_peak_bytes or snap1.gpu_alloc_bytes or 0),
+            )
+            host_rss = max(
+                int(learning_peak_rss or 0),
+                int(snap1.proc_rss_bytes + snap1.children_rss_bytes),
+            )
+            sampler_board = int(getattr(sampler, "phase_peak_board_used", 0) or 0) if sampler is not None else 0
+            snap_board = max(
+                board_used_bytes(snap0.system_total_bytes, snap0.system_available_bytes),
+                board_used_bytes(snap1.system_total_bytes, snap1.system_available_bytes),
+            )
+            board_peak = max(sampler_board, snap_board)
+            mem_bytes = resolve_controller_memory_bytes(
+                resource_name,
+                board_used_bytes_value=board_peak,
+                gpu_peak_bytes=gpu_peak,
+                host_rss_bytes=host_rss,
+            )
+            reservation_bytes = (
+                holder.reservation_bytes if holder is not None else (envelope.reservation_bytes if envelope is not None else 0)
+            )
             memory_mib = bytes_to_mib(mem_bytes)
             memory_mib_model = bytes_to_mib(max(0, int(mem_bytes) - int(reservation_bytes)))
             occ = replay_occupancy(strategy)
@@ -719,6 +855,9 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     "prefetch_batches": pf["prefetch_batches"],
                     "prefetch_plan_mode": pf.get("prefetch_plan_mode"),
                     "prefetch_planned_n": pf.get("prefetch_planned_n"),
+                    "rolling_sha256": pf.get("rolling_sha256"),
+                    "first_x_hash": pf.get("first_x_hash"),
+                    "first_y_hash": pf.get("first_y_hash"),
                     "replay_occupancy": occ.get("replay_occupancy"),
                     "replay_max_size": occ.get("replay_max_size"),
                     "latent_occupancy": occ.get("latent_occupancy"),
@@ -753,6 +892,10 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                         "factors": decision.factors, "plasticity": metrics.p_diag,
                         "stability": metrics.s_initial, "latency_s": learning_s,
                         "memory_mib": memory_mib, "memory_mib_model": memory_mib_model,
+                        "memory_source": resource_name,
+                        "board_used_bytes": board_peak,
+                        "gpu_alloc_peak_bytes": gpu_peak,
+                        "host_rss_bytes": host_rss,
                         "mb_before": mb_before, "mr_before": mr_before,
                         "mb_next": decision.mb_next, "mr_next": decision.mr_next,
                         "suggested_new_batch": decision.suggested_new_batch,
@@ -776,7 +919,7 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                     continue
                 effective_mode = applied_optimizer_mode(spec["controller"], decision.suggested_optimizer_mode)
                 predicted_bytes = None
-                if cost_model is not None:
+                if cost_model is not None and spec["budget"]["controlled_resource"] not in {"board", "shared_pool"}:
                     predicted_bytes = cost_model.predict_bytes(
                         decision.suggested_new_batch,
                         decision.suggested_replay,
@@ -907,6 +1050,10 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                         "latency_s": learning_s,
                         "memory_mib": memory_mib,
                         "memory_mib_model": memory_mib_model,
+                        "memory_source": resource_name,
+                        "board_used_bytes": board_peak,
+                        "gpu_alloc_peak_bytes": gpu_peak,
+                        "host_rss_bytes": host_rss,
                         "plugins": _toggle_states(strategy),
                     }
                 )
@@ -983,8 +1130,23 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
                        }),
                        allocated_peak_bytes=None if last is None else last.allocated_peak_bytes,
                        reserved_peak_bytes=None if last is None else last.reserved_peak_bytes,
-                       external_reservation_bytes=None if envelope is None else envelope.reservation_bytes,
+                       external_reservation_bytes=(
+                           None if holder is None and envelope is None
+                           else (holder.reservation_bytes if holder is not None else envelope.reservation_bytes)
+                       ),
                    )}
+        return summary
+    except H4HolderError as exc:
+        status = "scene_failure"
+        print(f"H4 scene_failure: {exc}", flush=True)
+        summary = {
+            "run_id": run_id,
+            "status": status,
+            "reason": str(exc),
+            "n_experiences_run": locals().get("completed_experiences", 0),
+            "run_dir": str(run_dir),
+            "traceback": traceback.format_exc(),
+        }
         return summary
     except BudgetExceeded as exc:
         status = "budget_exceeded"
@@ -1010,6 +1172,11 @@ def run_from_spec(spec: dict[str, Any], *, config_path: Path | None = None) -> d
         for handle in log_handles:
             try:
                 handle.close()
+            except Exception:
+                pass
+        if holder is not None:
+            try:
+                holder.close()
             except Exception:
                 pass
         if envelope is not None:
@@ -1038,7 +1205,7 @@ def main(argv: list[str] | None = None) -> None:
         data["run_id"] = _generate_run_id(data)
     summary = run_from_spec(data, config_path=path)
     print(json.dumps(summary, indent=2, default=str))
-    if summary.get("status") not in {"completed", "cuda_oom", "host_oom", "budget_exceeded"}:
+    if summary.get("status") not in {"completed", "cuda_oom", "host_oom", "budget_exceeded", "scene_failure"}:
         if summary.get("status") != "completed":
             raise SystemExit(1)
 

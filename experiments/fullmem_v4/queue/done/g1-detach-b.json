@@ -1,0 +1,34 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g1-detach-b",
+  "seq": 2,
+  "kind": "dummy",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "dummy",
+    "--seconds",
+    "2",
+    "--marker",
+    "runs/fullmem_v4/g1-detach-b.ok"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "any",
+  "batch_id": "g1-detach",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "content_hash": "13fa495f6e173e4689b6a54ad6a988c12f7caf2162766c69f54e62ea2477b3e3",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-20T05:27:54Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-20T05:28:06Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g1-detach-b.log",
+  "finished_at_utc": "2026-09-20T05:28:06Z"
+}

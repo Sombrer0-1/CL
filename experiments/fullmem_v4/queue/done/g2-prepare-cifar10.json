@@ -1,0 +1,30 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-prepare-cifar10",
+  "seq": 22,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "g2-prepare-cifar10"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem64g",
+  "batch_id": "g2-dev-mem64g",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "content_hash": "0ac6796cb75c4614fe8326860e76b4c1ea0fa0c82b5d8155e55d786451e6f2eb",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-20T07:36:52Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-20T08:02:47Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-prepare-cifar10.log",
+  "finished_at_utc": "2026-09-20T08:02:47Z"
+}

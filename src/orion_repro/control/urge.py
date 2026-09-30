@@ -157,12 +157,61 @@ def coefficients_from_weights(weights: dict[str, float]) -> dict[str, float]:
     }
 
 
+H6A_PREFERENCE_ORDERS = {
+    "latency": ["latency", "memory", "plasticity", "stability"],
+    "p_s": ["plasticity", "stability", "memory", "latency"],
+    "memory": ["memory", "latency", "stability", "plasticity"],
+}
+
+
+def normalize_h6_preference(name: str) -> str:
+    key = str(name).strip().lower().replace(" ", "_").replace("-", "_")
+    aliases = {
+        "balanced": "balanced",
+        "equal": "balanced",
+        "latency": "latency",
+        "l": "latency",
+        "p_s": "p_s",
+        "ps": "p_s",
+        "p_s_first": "p_s",
+        "memory": "memory",
+        "m": "memory",
+    }
+    if key not in aliases:
+        raise ValueError(f"unknown H6 preference {name!r}")
+    return aliases[key]
+
+
+def h6_delta(kind: str, n_experiences: int) -> float:
+    """design-v1 H6b: delta0 / ln(2) / (N−1).
+
+    Reconstruction: δ=0; δ=ln2 (half-life 1 experience); δ=ln2/(N-1)
+    (half-life spans the stream). Literal δ=N-1 would zero Thr after one
+    step and is not used.
+    """
+    key = str(kind).strip().lower().replace("−", "-").replace(" ", "")
+    key = key.replace("(", "").replace(")", "")
+    if key in {"delta0", "0", "zero"}:
+        return 0.0
+    if key in {"ln2", "ln(2)", "half_life_1", "halflife1"}:
+        return float(np.log(2.0))
+    if key in {"n-1", "n_minus_1", "half_life_n_minus_1", "halflifenminus1"}:
+        n = int(n_experiences)
+        if n < 2:
+            raise ValueError(f"N-1 half-life needs n_experiences>=2, got {n}")
+        return float(np.log(2.0) / float(n - 1))
+    raise ValueError(f"unknown H6b delta kind {kind!r}")
+
+
 def resolve_controller_coefficients(controller: dict) -> dict[str, float]:
-    """Return kp/ks/kl/km. Ranked preference_order overrides explicit coefficients."""
+    """Return kp/ks/kl/km. Named H6 preference or ranked order overrides coefficients."""
     pref = controller.get("preference")
     order = controller.get("preference_order")
-    if pref == "balanced":
-        return coefficients_from_weights(balanced_weights())
+    if pref is not None and str(pref).strip() != "":
+        named = normalize_h6_preference(str(pref))
+        if named == "balanced":
+            return coefficients_from_weights(balanced_weights())
+        return coefficients_from_weights(preference_weights(list(H6A_PREFERENCE_ORDERS[named])))
     if order:
         return coefficients_from_weights(preference_weights(list(order)))
     coef = controller.get("coefficients") or {}

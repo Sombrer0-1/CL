@@ -1,0 +1,21 @@
+{
+  "run_id": "fullmem_v4_g1_cifar100_exp1",
+  "status": "completed",
+  "phase": "development",
+  "method_id": "S0",
+  "dataset": "splitcifar100",
+  "n_experiences_run": 1,
+  "n_experiences_trained": 1,
+  "n_experiences_evaluated": 1,
+  "eval_protocol": "per_experience",
+  "p_diag": 0.439,
+  "s_initial": 1.0,
+  "shared_test_accuracy": null,
+  "online_total_s": 5.5680710170000225,
+  "setup_s": 1.4572078790000091,
+  "run_total_s": 7.025288192000005,
+  "timing_schema": "online_loop_v2",
+  "resumed": false,
+  "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g1_cifar100_exp1",
+  "reuse_identity": "1b01106d84927a131f0d78f915d962f4abd2ad299cea8f9a824040e4d23acdc6"
+}

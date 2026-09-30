@@ -1,0 +1,34 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem8g",
+  "seq": 1006,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_cifar100_er_gem_ewc_seed17_mem8g.yaml"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem8g",
+  "batch_id": "g2-dev-mem8g",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {
+    "configs/fullmem_v4/g2_cifar100_er_gem_ewc_seed17_mem8g.yaml": "482e6b284bbb079ab442a9be468df8c1a5a8bba4206efb10e8502352ed667820"
+  },
+  "content_hash": "c895981f279d3c4cb10b79188b88ab0bfcb3bde1978ab87f5157257ef5fdf11b",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-25T04:05:25Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-25T04:18:39Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-dev-cifar100-er-gem-ewc-seed17-mem8g.log",
+  "finished_at_utc": "2026-09-25T04:18:39Z"
+}

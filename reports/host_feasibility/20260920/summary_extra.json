@@ -1,0 +1,54 @@
+[
+  {
+    "mode": "cuda",
+    "quota": "512M",
+    "command": [
+      "systemd-run",
+      "--user",
+      "--wait",
+      "--pipe",
+      "--unit=orion-host-probe-cuda-800023",
+      "-p",
+      "MemoryMax=512M",
+      "-p",
+      "MemorySwapMax=0",
+      "-p",
+      "MemoryAccounting=yes",
+      "-p",
+      "OOMPolicy=stop",
+      "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+      "/home/zhuzetong/research/cl/Reproduce-Orion/reports/host_feasibility/20260920/probe.py",
+      "worker",
+      "cuda"
+    ],
+    "returncode": 0,
+    "peak_sampled_bytes": 388505600,
+    "last_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+  },
+  {
+    "mode": "cache",
+    "quota": "128M",
+    "command": [
+      "systemd-run",
+      "--user",
+      "--wait",
+      "--pipe",
+      "--unit=orion-host-probe-cache-800023",
+      "-p",
+      "MemoryMax=128M",
+      "-p",
+      "MemorySwapMax=0",
+      "-p",
+      "MemoryAccounting=yes",
+      "-p",
+      "OOMPolicy=stop",
+      "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+      "/home/zhuzetong/research/cl/Reproduce-Orion/reports/host_feasibility/20260920/probe.py",
+      "worker",
+      "cache"
+    ],
+    "returncode": 0,
+    "peak_sampled_bytes": 134217728,
+    "last_events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0"
+  }
+]

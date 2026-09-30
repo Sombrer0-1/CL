@@ -1,0 +1,76 @@
+{
+  "study_id": "fullmem_v4",
+  "source": "zenodo.4899267 classification zips; not video",
+  "prepared_at_utc": "2026-09-20T09:43:08Z",
+  "rewrote_git_manifest": false,
+  "historical_manifest_kept": "data/manifests/endless_cl_sim.json",
+  "a22_not_official": true,
+  "scenarios": [
+    {
+      "download": {
+        "scenario": "ic",
+        "filename": "IncrementalClasses_Classification.zip",
+        "url": "https://zenodo.org/record/4899267/files/IncrementalClasses_Classification.zip",
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/endless_cl_sim/IncrementalClasses_Classification.zip",
+        "bytes": 815075824,
+        "md5": "8f53c18e46de35ba375d6ed8fced5d47",
+        "paper_input": "32x32 classification patches; Avalanche default patch is 64",
+        "prepared_utc": "2026-09-20T08:34:53.382290+00:00"
+      },
+      "extract": {
+        "scenario": "ic",
+        "extracted_to": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/endless_cl_sim/IncrementalClasses_Classification",
+        "train_dirs": [
+          "Train_IncrementalClasses_Classification_2"
+        ],
+        "test_dirs": [
+          "Test_IncrementalClasses_Classification_2"
+        ]
+      }
+    },
+    {
+      "download": {
+        "scenario": "il",
+        "filename": "IncrementalLighting_Classification.zip",
+        "url": "https://zenodo.org/record/4899267/files/IncrementalLighting_Classification.zip",
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/endless_cl_sim/IncrementalLighting_Classification.zip",
+        "bytes": 2896532879,
+        "md5": "61a36070d6aae926ef3d121fd17ec501",
+        "paper_input": "32x32 classification patches; Avalanche default patch is 64",
+        "prepared_utc": "2026-09-20T09:09:10.256798+00:00"
+      },
+      "extract": {
+        "scenario": "il",
+        "extracted_to": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/endless_cl_sim/IncrementalLighting_Classification",
+        "train_dirs": [
+          "Train_IncrementalLighting_Classification_2"
+        ],
+        "test_dirs": [
+          "Test_IncrementalLighting_Classification_2"
+        ]
+      }
+    },
+    {
+      "download": {
+        "scenario": "wc",
+        "filename": "IncrementalWeather_Classification.zip",
+        "url": "https://zenodo.org/record/4899267/files/IncrementalWeather_Classification.zip",
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/endless_cl_sim/IncrementalWeather_Classification.zip",
+        "bytes": 2926604576,
+        "md5": "60e1a0d50b0091e16424d8e88ae2a2a2",
+        "paper_input": "32x32 classification patches; Avalanche default patch is 64",
+        "prepared_utc": "2026-09-20T09:42:34.073036+00:00"
+      },
+      "extract": {
+        "scenario": "wc",
+        "extracted_to": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/endless_cl_sim/IncrementalWeather_Classification",
+        "train_dirs": [
+          "Train_IncrementalEnvironments_Classification_2"
+        ],
+        "test_dirs": [
+          "Test_IncrementalEnvironments_Classification_2"
+        ]
+      }
+    }
+  ]
+}

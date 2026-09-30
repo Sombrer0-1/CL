@@ -1,0 +1,15 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-occupancy-h4",
+  "seq": 1106,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "g2-occupancy"
+  ],
+  "required_capacity": "mem8g",
+  "batch_id": "g2-dev-h4-bg"
+}

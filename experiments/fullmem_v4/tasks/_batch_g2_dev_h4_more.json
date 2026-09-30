@@ -1,0 +1,26 @@
+{
+  "batch_id": "g2-dev-h4-more",
+  "kind": "probe",
+  "required_capacity": "mem8g",
+  "not_a_freeze": true,
+  "high_bytes": 2684354560,
+  "nic_l_cal_s": 1.871,
+  "n_tasks": 5,
+  "tasks": [
+    "g2-dev-core50-nic-orecon-h4-low-high-low-seed17-mem8g",
+    "g2-dev-core50-nic-orecon-h4-high-low-high-seed17-mem8g",
+    "g2-dev-core50-nc-br-adapt-h4-low-high-low-seed17-mem8g",
+    "g2-dev-core50-nc-br-adapt-h4-high-low-high-seed17-mem8g",
+    "g2-occupancy-h4-more"
+  ],
+  "yamls": [
+    "g2_core50_nic_orecon_h4_low_high_low_seed17_mem8g.yaml",
+    "g2_core50_nic_orecon_h4_high_low_high_seed17_mem8g.yaml",
+    "g2_core50_nc_br_adapt_h4_low_high_low_seed17_mem8g.yaml",
+    "g2_core50_nc_br_adapt_h4_high_low_high_seed17_mem8g.yaml"
+  ],
+  "deferred": [
+    "dynamic_sstar_needs_sequence_search"
+  ],
+  "note": "NIC O-recon uses static NIC S0 L_cal. BR-adapt is H4 fourth method, not O-recon."
+}

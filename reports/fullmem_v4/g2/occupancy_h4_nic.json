@@ -1,0 +1,65 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-25T09:13:06Z",
+  "board": {
+    "capacity_id": "mem8g",
+    "mem_total_bytes": 8374337536,
+    "mem_total_mib": 7986.390625
+  },
+  "pressure_scene": "unestablished_at_mem8g",
+  "pressure_scope": "run_id_contains_h4_nic",
+  "note": "H4 co-running occupancy only. Dedicated background process, not static tight. Do not treat as a G3 freeze. Do not enlarge the model.",
+  "members": [
+    {
+      "run_id": "fullmem_v4_g2_core50_nic_s0_h4_high_low_high_seed17_mem8g",
+      "status": "completed",
+      "method_id": "S0",
+      "dataset": "core50_nic",
+      "n_experiences_run": 79,
+      "p_diag": 0.10747127800366996,
+      "s_initial": 1.0379401972787619,
+      "online_total_s": 1703.4943561740001,
+      "run_total_s": 1704.505845278003,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_core50_nic_s0_h4_high_low_high_seed17_mem8g",
+      "min_system_available_bytes": 1444614144.0,
+      "peak_memtotal_minus_available_bytes": 6929723392.0,
+      "peak_M_t_mib": 6608.69921875,
+      "gpu_reserved_peak_bytes": 159383552.0,
+      "proc_rss_peak_bytes": 1972604928.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nic_s0_h4_low_high_low_seed17_mem8g",
+      "status": "completed",
+      "method_id": "S0",
+      "dataset": "core50_nic",
+      "n_experiences_run": 79,
+      "p_diag": 0.10871791860884558,
+      "s_initial": 1.021908548610585,
+      "online_total_s": 1771.0939012770014,
+      "run_total_s": 1772.1682037589999,
+      "run_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4_g2_core50_nic_s0_h4_low_high_low_seed17_mem8g",
+      "min_system_available_bytes": 1520115712.0,
+      "peak_memtotal_minus_available_bytes": 6854221824.0,
+      "peak_M_t_mib": 6536.6953125,
+      "gpu_reserved_peak_bytes": 159383552.0,
+      "proc_rss_peak_bytes": 2088673280.0
+    }
+  ],
+  "pressure_run_ids": [
+    "fullmem_v4_g2_core50_nic_s0_h4_high_low_high_seed17_mem8g",
+    "fullmem_v4_g2_core50_nic_s0_h4_low_high_low_seed17_mem8g"
+  ],
+  "factor_m_at_observed_peak": [
+    {
+      "run_id": "fullmem_v4_g2_core50_nic_s0_h4_high_low_high_seed17_mem8g",
+      "slack_mib": 1377.69140625,
+      "factor_m": 1.0
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nic_s0_h4_low_high_low_seed17_mem8g",
+      "slack_mib": 1449.6953125,
+      "factor_m": 1.0
+    }
+  ],
+  "min_available_bytes_across_completed": 1444614144.0
+}

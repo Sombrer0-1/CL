@@ -1,0 +1,30 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-occupancy-b",
+  "seq": 140,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "g2-occupancy"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem64g",
+  "batch_id": "g2-dev-mem64g",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "content_hash": "3699f57541e7ce1d353d4a19153bd7c95cccd71623ed9e1c9caa0d7b8f303200",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-20T16:13:32Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-20T17:29:45Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-occupancy-b.log",
+  "finished_at_utc": "2026-09-20T17:29:45Z"
+}

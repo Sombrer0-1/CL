@@ -1,0 +1,23 @@
+{
+  "study_id": "fullmem_v4",
+  "created_at_utc": "2026-09-25T04:03:59Z",
+  "live_path": "/boot/extlinux/extlinux.conf",
+  "current_default": "orion-mem16g",
+  "labels": [
+    "orion-mem16g",
+    "orion-mem32g",
+    "orion-mem64g",
+    "primary"
+  ],
+  "proposed_default": "orion-mem8g",
+  "proposed_label": "orion-mem8g",
+  "mem": "8G",
+  "nvpmodel_untouched": true,
+  "apply": false,
+  "notes": [
+    "This command does not write /boot.",
+    "Apply only after review: copy proposed over /boot/extlinux/extlinux.conf with sudo, keep original LABEL primary.",
+    "Do not change nvpmodel.",
+    "Keep existing mem= LABELs; only DEFAULT points at the new test entry."
+  ]
+}

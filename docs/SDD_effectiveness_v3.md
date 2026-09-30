@@ -1,3 +1,5 @@
+> 历史第三阶段架构；当前阶段4以根PLAN.md为准，本文的准入/执行命令不用于新阶段。
+
 # effectiveness_v3 软件设计说明（SDD）
 
 版本：2026-09-17。依据：[PLAN](../PLAN.md) §1–8、本地原PDF §4.1–4.5 / 式(1)–(5) / Algorithm 1，以及现有源码审查。**本文是第三阶段架构契约。** G0/G1 独立入口与测试已在 `src/orion_repro/stages/effectiveness_v3/`；G2–G4 必须在当前执行宿主（Jetson AGX Thor，[A27](decisions/A27.md)）重新校准与冻结。[A26](decisions/A26.md) 放弃 RTX 5090 上的开发冻结和正式跑数。源码修补见[审计记录](../reports/effectiveness_v3/IMPLEMENTATION_AUDIT.md)。下文部分“待实现”条目以本机重验为准，不把设计文档写成能力已经验收。

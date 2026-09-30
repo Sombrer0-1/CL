@@ -1,0 +1,63 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "frozen_at_utc": "2026-09-28T04:27:27Z",
+  "admits_kind_train": true,
+  "admitted_batches": [
+    "g4-h4-mem8g"
+  ],
+  "capacity_id": "mem8g",
+  "not_tight": true,
+  "static_pressure": "unestablished_at_mem64g_mem32g_mem16g_mem8g",
+  "h4_hold_bytes": 2684354560,
+  "h4_sequences": [
+    "low_high_low",
+    "high_low_high"
+  ],
+  "dynamic_sstar": {
+    "core50_nc": {
+      "low_high_low": {
+        "new_batch": 64,
+        "replay_capacity": 2000
+      },
+      "high_low_high": {
+        "new_batch": 16,
+        "replay_capacity": 2000
+      }
+    },
+    "core50_nic": {
+      "low_high_low": {
+        "new_batch": 16,
+        "replay_capacity": 2000
+      },
+      "high_low_high": {
+        "new_batch": 16,
+        "replay_capacity": 2000
+      }
+    }
+  },
+  "formal_seeds": [
+    0,
+    1,
+    2
+  ],
+  "data_split_seed": 17,
+  "source_snapshot_sha256": "0311c7830e170f21d2ff479b873d4d343c5ec303e9197ed4d2e0f670d46c880e",
+  "source_snapshot_n_files": 246,
+  "environment_lock_sha256": "8311e8e6eccb7914497458706b9ff365a64e130d8cca615e72ed46711efd0dda",
+  "dataset_manifest_sha256": {
+    "data/manifests/core50_nc_run0_dev_split_seed17.json": "6641afb44392e990e217fc008cfe50808eac83c626cf24a86812481bb987caaf",
+    "data/manifests/core50_nicv2_79_run0_dev_split_seed17.json": "4aa0e3650479d464f39a563cc1248840e237445427e928eb387ad9503a66fc17"
+  },
+  "git_head_not_the_snapshot": "b59b4c47d6de0eaf0626568c670ee170aff34468",
+  "boot_id": "cc389c7a-b286-4600-ae93-71c273599497",
+  "mem_total_kb": 8178064,
+  "unestablished": [
+    "static_tight_mid_wide",
+    "h1_h2_h3_h5_h6_h7_h8_formal",
+    "endless_official_protocol",
+    "prefetch_net_benefit",
+    "unrecoverable_board_crash",
+    "cifar100_64g_sstar_is_not_h4_sstar"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g1-cifar100-exp1-mem8g",
+  "seq": 1001,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g1_cifar100_exp1_mem8g.yaml"
+  ],
+  "required_capacity": "mem8g",
+  "batch_id": "g2-dev-mem8g"
+}

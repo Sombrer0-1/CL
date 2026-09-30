@@ -1,0 +1,16 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-dev-endless-wc-s0-seed17",
+  "seq": 317,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_endless_wc_s0_seed17.yaml"
+  ],
+  "required_capacity": "mem64g",
+  "batch_id": "g2-dev-seed17-wide"
+}

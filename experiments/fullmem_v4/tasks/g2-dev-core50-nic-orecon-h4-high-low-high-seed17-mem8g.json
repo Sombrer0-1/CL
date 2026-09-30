@@ -1,0 +1,16 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-dev-core50-nic-orecon-h4-high-low-high-seed17-mem8g",
+  "seq": 1301,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_core50_nic_orecon_h4_high_low_high_seed17_mem8g.yaml"
+  ],
+  "required_capacity": "mem8g",
+  "batch_id": "g2-dev-h4-more"
+}

@@ -1,0 +1,45 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-20T05:31:20Z",
+  "hostname": "epic",
+  "boot_id": "7e7ae8b3-a605-4653-8536-5ddedbf44c44",
+  "cmdline": "root=PARTUUID=a724dd86-bafa-46ac-ae09-7edf71c8b2e0 rw rootwait rootfstype=ext4 mminit_loglevel=4 earlycon=tegra_utc,mmio32,0xc5a0000 console=tty0 console=ttyUTC0,115200 clk_ignore_unused firmware_class.path=/etc/firmware fbcon=map:0 nospectre_bhb efi=runtime bl_prof_dataptr=6225920@0x2008010000 bl_prof_ro_ptr=65536@0x20 mem=64G bl_prof_dataptr=6225920@0x2004010000 bl_prof_ro_ptr=65536@0x2004000000",
+  "uname": {
+    "sysname": "Linux",
+    "nodename": "epic",
+    "release": "6.8.12-1021-tegra",
+    "version": "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+    "machine": "aarch64"
+  },
+  "meminfo_kb": {
+    "MemTotal": 65856188,
+    "MemFree": 62198832,
+    "MemAvailable": 63236420,
+    "Cached": 1445376,
+    "Buffers": 69120,
+    "SwapTotal": 0,
+    "SwapFree": 0
+  },
+  "swap_is_zero": true,
+  "capacity": {
+    "capacity_id": "mem64g",
+    "requested_mem": "64G",
+    "mem_total_kb": 65856188,
+    "mem_total_gib_approx": 62.805
+  },
+  "nvpmodel": {
+    "query": "NV Power Mode: 120W\n1",
+    "name": "NV Power Mode: 120W",
+    "mode": "1",
+    "returncode": "0"
+  },
+  "pid": 4104,
+  "cuda": {
+    "ok": true,
+    "device_name": "NVIDIA Thor",
+    "total_memory": 67436736512,
+    "major": 11,
+    "minor": 0,
+    "torch": "2.14.0+cu132"
+  }
+}

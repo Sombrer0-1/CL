@@ -1,0 +1,139 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "registered_before_first_scan": true,
+  "boot_capacity_id": "mem64g",
+  "dev_seed": 17,
+  "split_seed": 17,
+  "feedback_source": "development_val_seen",
+  "budget_enforcement": "observed_only",
+  "note": "Resource profile set for 64GiB. Not a tight/mid/loose freeze. High-resource members are for pressure identifiability, not to guarantee Orion success.",
+  "members": [
+    {
+      "profile_id": "cifar100_s0",
+      "dataset": "splitcifar100",
+      "method": "S0",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": false
+    },
+    {
+      "profile_id": "cifar100_batch256",
+      "dataset": "splitcifar100",
+      "method": "static_high_batch",
+      "new_batch": 256,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": false
+    },
+    {
+      "profile_id": "cifar100_replay2000",
+      "dataset": "splitcifar100",
+      "method": "static_high_replay",
+      "new_batch": 16,
+      "replay_capacity": 2000,
+      "optional_plugins": "none",
+      "prefetch": false
+    },
+    {
+      "profile_id": "cifar100_er_gem",
+      "dataset": "splitcifar100",
+      "method": "ER+GEM",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "gem",
+      "prefetch": false
+    },
+    {
+      "profile_id": "cifar100_er_ewc",
+      "dataset": "splitcifar100",
+      "method": "ER+EWC",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "ewc",
+      "prefetch": false
+    },
+    {
+      "profile_id": "cifar100_er_gem_ewc",
+      "dataset": "splitcifar100",
+      "method": "ER+GEM+EWC",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "gem_ewc",
+      "prefetch": false
+    },
+    {
+      "profile_id": "cifar10_s0",
+      "dataset": "splitcifar10",
+      "method": "S0",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": false
+    },
+    {
+      "profile_id": "core50_nc_s0",
+      "dataset": "core50_nc",
+      "method": "S0",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": false
+    },
+    {
+      "profile_id": "cifar100_prefetch",
+      "dataset": "splitcifar100",
+      "method": "S0_prefetch_on",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": true
+    },
+    {
+      "profile_id": "core50_ni_s0",
+      "dataset": "core50_ni",
+      "method": "S0",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": false
+    },
+    {
+      "profile_id": "core50_nic_s0",
+      "dataset": "core50_nic",
+      "method": "S0",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": false
+    },
+    {
+      "profile_id": "endless_ic_s0",
+      "dataset": "endless_ic",
+      "method": "S0",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": false
+    },
+    {
+      "profile_id": "endless_il_s0",
+      "dataset": "endless_il",
+      "method": "S0",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": false
+    },
+    {
+      "profile_id": "endless_wc_s0",
+      "dataset": "endless_wc",
+      "method": "S0",
+      "new_batch": 16,
+      "replay_capacity": 200,
+      "optional_plugins": "none",
+      "prefetch": false
+    }
+  ]
+}

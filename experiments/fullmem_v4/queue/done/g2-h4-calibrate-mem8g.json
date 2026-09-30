@@ -1,0 +1,31 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-h4-calibrate-mem8g",
+  "seq": 1099,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "h4-calibrate"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem8g",
+  "batch_id": "g2-dev-h4-bg",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {},
+  "content_hash": "b8774e140a0a1aee61bbc2a52ee83b0e7559235db04fc8e3004579419ec4e59b",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-25T06:30:48Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-25T06:31:07Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-h4-calibrate-mem8g.log",
+  "finished_at_utc": "2026-09-25T06:31:07Z"
+}

@@ -1,0 +1,1303 @@
+{"ts": "2026-09-20T05:27:54Z", "event": "submitted", "task_id": "g1-detach-a", "content_hash": "b3c8a9f978e11f2835c6a2e4a43133bc02f8caa6424da36ac35487636d023e97"}
+{"ts": "2026-09-20T05:27:54Z", "event": "submitted", "task_id": "g1-detach-b", "content_hash": "13fa495f6e173e4689b6a54ad6a988c12f7caf2162766c69f54e62ea2477b3e3"}
+{"ts": "2026-09-20T05:27:54Z", "event": "started", "task_id": "g1-detach-a"}
+{"ts": "2026-09-20T05:28:03Z", "event": "completed", "task_id": "g1-detach-a", "exit_code": 0}
+{"ts": "2026-09-20T05:28:03Z", "event": "started", "task_id": "g1-detach-b"}
+{"ts": "2026-09-20T05:28:06Z", "event": "completed", "task_id": "g1-detach-b", "exit_code": 0}
+{"ts": "2026-09-20T05:29:10Z", "event": "paused", "reason": "supervisor_signal"}
+{"ts": "2026-09-20T05:31:49Z", "event": "submitted", "task_id": "g1-shared-pool-mem64g", "content_hash": "649ba6bf4481c704c24189f720d1e3ca304ef1c27dceb7019c972d8b98116148"}
+{"ts": "2026-09-20T05:31:49Z", "event": "started", "task_id": "g1-shared-pool-mem64g"}
+{"ts": "2026-09-20T05:31:55Z", "event": "completed", "task_id": "g1-shared-pool-mem64g", "exit_code": 0}
+{"ts": "2026-09-20T05:36:24Z", "event": "resumed"}
+{"ts": "2026-09-20T05:36:24Z", "event": "submitted", "task_id": "g1-shared-pool-mem64g-b", "content_hash": "b5906a1530ff6f9f273030f4bfa49f32918b3d9366b319af5f1ece74aef205ef"}
+{"ts": "2026-09-20T05:36:25Z", "event": "submitted", "task_id": "g1-cifar100-exp1", "content_hash": "7cd50364bbc8323072e041813db371bc6bff2e83198f800cebceccf2b685bc54"}
+{"ts": "2026-09-20T05:36:25Z", "event": "started", "task_id": "g1-shared-pool-mem64g-b"}
+{"ts": "2026-09-20T05:36:31Z", "event": "completed", "task_id": "g1-shared-pool-mem64g-b", "exit_code": 0}
+{"ts": "2026-09-20T05:36:32Z", "event": "started", "task_id": "g1-cifar100-exp1"}
+{"ts": "2026-09-20T05:36:46Z", "event": "completed", "task_id": "g1-cifar100-exp1", "exit_code": 0}
+{"ts": "2026-09-20T07:36:48Z", "event": "submitted", "task_id": "g1-impl-error-inject", "content_hash": "7f123cce9dc67d9af291d481b370f1a668a4561f627f8ca6fa180f899087e0aa"}
+{"ts": "2026-09-20T07:36:49Z", "event": "started", "task_id": "g1-impl-error-inject"}
+{"ts": "2026-09-20T07:36:49Z", "event": "paused", "reason": "implementation_error:g1-impl-error-inject"}
+{"ts": "2026-09-20T07:36:49Z", "event": "paused_on_failure", "task_id": "g1-impl-error-inject", "status": "implementation_error", "exit_code": 1}
+{"ts": "2026-09-20T07:36:51Z", "event": "resumed"}
+{"ts": "2026-09-20T07:36:51Z", "event": "submitted", "task_id": "g2-inventory", "content_hash": "00238b06c450d7be8fd0451814c60d5409db00fb745736335b96bb47aad640e7"}
+{"ts": "2026-09-20T07:36:51Z", "event": "submitted", "task_id": "g2-physical", "content_hash": "482e2e5cd3596825da98a58281a8676a0576517445e9db3eb3e2fec36f26d151"}
+{"ts": "2026-09-20T07:36:51Z", "event": "started", "task_id": "g2-inventory"}
+{"ts": "2026-09-20T07:36:52Z", "event": "submitted", "task_id": "g2-prepare-cifar10", "content_hash": "0ac6796cb75c4614fe8326860e76b4c1ea0fa0c82b5d8155e55d786451e6f2eb"}
+{"ts": "2026-09-20T07:36:52Z", "event": "submitted", "task_id": "g2-dev-cifar10-s0", "content_hash": "df14b9e33ea933417f6e1dd49555674e66488b876653f80516f65814694fbeee"}
+{"ts": "2026-09-20T07:36:52Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0", "content_hash": "c722525ed2325a76d0a376e85f334d6bde3bb2faeae665879c93727493f3c49d"}
+{"ts": "2026-09-20T07:36:53Z", "event": "submitted", "task_id": "g2-dev-cifar100-batch256", "content_hash": "459b96c1705fa7ac1baa29a5e8a9f1b96e0b163fe2dd26015e20dcefc37c6f82"}
+{"ts": "2026-09-20T07:36:53Z", "event": "submitted", "task_id": "g2-dev-cifar100-replay2000", "content_hash": "066652cf821d492cece2eb184bb1e3677a2f9b4e4ab46bf4abc4c7759d943f98"}
+{"ts": "2026-09-20T07:36:53Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-gem", "content_hash": "646ed23ca6979a69443d100a2983c4dcbe55e3b63cc884955086c5ad14895837"}
+{"ts": "2026-09-20T07:36:54Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-ewc", "content_hash": "fa183cfb8e882ea92b846d8ecb1bcb894fa17340101299320d6936a3005f03ef"}
+{"ts": "2026-09-20T07:36:54Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-gem-ewc", "content_hash": "0c835196b3809e407b0a32f031057dc60b06884555cb59c8e991a068ad8daeb5"}
+{"ts": "2026-09-20T07:36:54Z", "event": "submitted", "task_id": "g2-dev-core50-nc-s0", "content_hash": "3ad182c3e7ee706849f4106d7801dd2135b96cbf8ef5e8a1e3c5d5d480da2fa4"}
+{"ts": "2026-09-20T07:36:55Z", "event": "submitted", "task_id": "g2-prepare-endless", "content_hash": "4565beb780ec95d5cdaedb7b796d26f0820f26c863f072bdaa330a188989687a"}
+{"ts": "2026-09-20T07:37:03Z", "event": "completed", "task_id": "g2-inventory", "exit_code": 0}
+{"ts": "2026-09-20T07:37:03Z", "event": "started", "task_id": "g2-physical"}
+{"ts": "2026-09-20T07:37:05Z", "event": "completed", "task_id": "g2-physical", "exit_code": 0}
+{"ts": "2026-09-20T07:37:05Z", "event": "started", "task_id": "g2-prepare-cifar10"}
+{"ts": "2026-09-20T08:02:47Z", "event": "completed", "task_id": "g2-prepare-cifar10", "exit_code": 0}
+{"ts": "2026-09-20T08:02:47Z", "event": "started", "task_id": "g2-dev-cifar10-s0"}
+{"ts": "2026-09-20T08:04:04Z", "event": "completed", "task_id": "g2-dev-cifar10-s0", "exit_code": 0}
+{"ts": "2026-09-20T08:04:04Z", "event": "started", "task_id": "g2-dev-cifar100-s0"}
+{"ts": "2026-09-20T08:05:19Z", "event": "completed", "task_id": "g2-dev-cifar100-s0", "exit_code": 0}
+{"ts": "2026-09-20T08:05:20Z", "event": "started", "task_id": "g2-dev-cifar100-batch256"}
+{"ts": "2026-09-20T08:05:52Z", "event": "completed", "task_id": "g2-dev-cifar100-batch256", "exit_code": 0}
+{"ts": "2026-09-20T08:05:52Z", "event": "started", "task_id": "g2-dev-cifar100-replay2000"}
+{"ts": "2026-09-20T08:07:09Z", "event": "completed", "task_id": "g2-dev-cifar100-replay2000", "exit_code": 0}
+{"ts": "2026-09-20T08:07:09Z", "event": "started", "task_id": "g2-dev-cifar100-er-gem"}
+{"ts": "2026-09-20T08:10:07Z", "event": "completed", "task_id": "g2-dev-cifar100-er-gem", "exit_code": 0}
+{"ts": "2026-09-20T08:10:07Z", "event": "started", "task_id": "g2-dev-cifar100-er-ewc"}
+{"ts": "2026-09-20T08:14:38Z", "event": "completed", "task_id": "g2-dev-cifar100-er-ewc", "exit_code": 0}
+{"ts": "2026-09-20T08:14:38Z", "event": "started", "task_id": "g2-dev-cifar100-er-gem-ewc"}
+{"ts": "2026-09-20T08:20:15Z", "event": "completed", "task_id": "g2-dev-cifar100-er-gem-ewc", "exit_code": 0}
+{"ts": "2026-09-20T08:20:15Z", "event": "started", "task_id": "g2-dev-core50-nc-s0"}
+{"ts": "2026-09-20T08:24:09Z", "event": "completed", "task_id": "g2-dev-core50-nc-s0", "exit_code": 0}
+{"ts": "2026-09-20T08:24:09Z", "event": "started", "task_id": "g2-prepare-endless"}
+{"ts": "2026-09-20T09:43:08Z", "event": "completed", "task_id": "g2-prepare-endless", "exit_code": 0}
+{"ts": "2026-09-20T11:59:01Z", "event": "submitted", "task_id": "g2-prepare-core50-splits", "content_hash": "733f09ccfac4800d3481585e9116569a65ffa3936483a956041b8c4a4e28fb93"}
+{"ts": "2026-09-20T11:59:01Z", "event": "submitted", "task_id": "g2-dev-cifar100-prefetch", "content_hash": "cb6bc5a641e8099d641c484c153f2403bbedbccd8a95ba91808a3f6da19f7717"}
+{"ts": "2026-09-20T11:59:01Z", "event": "started", "task_id": "g2-prepare-core50-splits"}
+{"ts": "2026-09-20T11:59:02Z", "event": "submitted", "task_id": "g2-dev-core50-ni-s0", "content_hash": "344c49023cbd740297d45c898586a5db14de26004c390728e3f938ce73182296"}
+{"ts": "2026-09-20T11:59:02Z", "event": "submitted", "task_id": "g2-dev-core50-nic-s0", "content_hash": "39675873d9699ddf3424a4e9ea5ffbc50d52aa5bfb662093997cbf25574920e6"}
+{"ts": "2026-09-20T11:59:02Z", "event": "submitted", "task_id": "g2-dev-endless-ic-s0", "content_hash": "2a34bf1400f138199c8cab2dbb03b656b0e96a02444a33ae240e700585c33b8d"}
+{"ts": "2026-09-20T11:59:03Z", "event": "submitted", "task_id": "g2-dev-endless-il-s0", "content_hash": "2776861e9fab72ecaf28858ca8642e5d2e45552efc33eb9fc4e740efa7731053"}
+{"ts": "2026-09-20T11:59:03Z", "event": "submitted", "task_id": "g2-dev-endless-wc-s0", "content_hash": "4faccc31604312137ac050c71675debd85157b42a8a5db567db5af47da582284"}
+{"ts": "2026-09-20T11:59:03Z", "event": "completed", "task_id": "g2-prepare-core50-splits", "exit_code": 0}
+{"ts": "2026-09-20T11:59:04Z", "event": "started", "task_id": "g2-dev-cifar100-prefetch"}
+{"ts": "2026-09-20T11:59:04Z", "event": "submitted", "task_id": "g2-occupancy", "content_hash": "fdef929c37163cd4611573e18de67f4efb8410deb4a7d41d22b7f108d67d4712"}
+{"ts": "2026-09-20T11:59:11Z", "event": "paused", "reason": "implementation_error:g2-dev-cifar100-prefetch"}
+{"ts": "2026-09-20T11:59:11Z", "event": "paused_on_failure", "task_id": "g2-dev-cifar100-prefetch", "status": "implementation_error", "exit_code": 1}
+{"ts": "2026-09-20T12:01:41Z", "event": "submitted", "task_id": "g2-dev-cifar100-prefetch-b", "content_hash": "cb0350cf93ff206e28da52293261a54ed1889fde9013be9204b1450b7ce5503f"}
+{"ts": "2026-09-20T12:01:42Z", "event": "resumed"}
+{"ts": "2026-09-20T12:01:42Z", "event": "started", "task_id": "g2-dev-cifar100-prefetch-b"}
+{"ts": "2026-09-20T12:02:51Z", "event": "completed", "task_id": "g2-dev-cifar100-prefetch-b", "exit_code": 0}
+{"ts": "2026-09-20T12:02:51Z", "event": "started", "task_id": "g2-dev-core50-ni-s0"}
+{"ts": "2026-09-20T12:07:12Z", "event": "completed", "task_id": "g2-dev-core50-ni-s0", "exit_code": 0}
+{"ts": "2026-09-20T12:07:12Z", "event": "started", "task_id": "g2-dev-core50-nic-s0"}
+{"ts": "2026-09-20T12:36:30Z", "event": "completed", "task_id": "g2-dev-core50-nic-s0", "exit_code": 0}
+{"ts": "2026-09-20T12:36:30Z", "event": "started", "task_id": "g2-dev-endless-ic-s0"}
+{"ts": "2026-09-20T12:37:14Z", "event": "completed", "task_id": "g2-dev-endless-ic-s0", "exit_code": 0}
+{"ts": "2026-09-20T12:37:14Z", "event": "started", "task_id": "g2-dev-endless-il-s0"}
+{"ts": "2026-09-20T12:39:52Z", "event": "completed", "task_id": "g2-dev-endless-il-s0", "exit_code": 0}
+{"ts": "2026-09-20T12:39:52Z", "event": "started", "task_id": "g2-dev-endless-wc-s0"}
+{"ts": "2026-09-20T12:42:31Z", "event": "completed", "task_id": "g2-dev-endless-wc-s0", "exit_code": 0}
+{"ts": "2026-09-20T12:42:31Z", "event": "started", "task_id": "g2-occupancy"}
+{"ts": "2026-09-20T12:42:32Z", "event": "completed", "task_id": "g2-occupancy", "exit_code": 0}
+{"ts": "2026-09-20T16:13:14Z", "event": "submitted", "task_id": "g2-lcal", "content_hash": "d7584afc693fe078acfd2873f8c82dcbd2be26332852930c7cea52ce3077aeef"}
+{"ts": "2026-09-20T16:13:14Z", "event": "started", "task_id": "g2-lcal"}
+{"ts": "2026-09-20T16:13:14Z", "event": "submitted", "task_id": "g2-idle-baseline", "content_hash": "577871cc7984504ffa12965bf9790ad593176bc9f3b2c8bf25ae82aad32d7f0d"}
+{"ts": "2026-09-20T16:13:15Z", "event": "completed", "task_id": "g2-lcal", "exit_code": 0}
+{"ts": "2026-09-20T16:13:15Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b64-r200", "content_hash": "5f264a2e62e75150cbd869bc7d1fba719cb61106f7e906555b17aa081f3170ba"}
+{"ts": "2026-09-20T16:13:15Z", "event": "started", "task_id": "g2-idle-baseline"}
+{"ts": "2026-09-20T16:13:15Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b64-r2000", "content_hash": "e981882dcd3759772bedb46197a9da2700c9274756c6a40874f34c64e8fc9bd2"}
+{"ts": "2026-09-20T16:13:15Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b256-r2000", "content_hash": "190ded221295fdd32084db613b566e6d3624cbfd5ddbb7306e9401c7ee6f2831"}
+{"ts": "2026-09-20T16:13:16Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-eval128", "content_hash": "a7a0930ea68e825c06c7031b3792923233a1051fb10f1169c930c2017e9dc348"}
+{"ts": "2026-09-20T16:13:16Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r10", "content_hash": "69a90522e1145a92f5d10d501255f0e0df58f1acd127ed17c01e8a908c308552"}
+{"ts": "2026-09-20T16:13:16Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r100", "content_hash": "323381a4e907f27bc96547f4d6fc2110099a4189e4e8744b23c141394533a621"}
+{"ts": "2026-09-20T16:13:17Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r1000", "content_hash": "5a19ff9353c8ec735cc71a3450e196e951093890962487c46ff1a215292ca66b"}
+{"ts": "2026-09-20T16:13:17Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r10000", "content_hash": "978b6207fa5b2c943a89137a3e792e92ef7139a6c73e9544b4a4f31f11552be0"}
+{"ts": "2026-09-20T16:13:17Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r100000", "content_hash": "8aaea1ca4d0c8d391d1409a719c1ae674399a01fecaedd3316dc7acf01e2d911"}
+{"ts": "2026-09-20T16:13:18Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r1000000", "content_hash": "b6db40ece5b3995b908769a89e2838c4edcb54eb1091e7d36e993818abc72252"}
+{"ts": "2026-09-20T16:13:18Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r10", "content_hash": "1c4c9712810e76e5650f537934ba9fe76d0baa3457f6b624c25266e9b6bdb3b2"}
+{"ts": "2026-09-20T16:13:18Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r100", "content_hash": "551b9b82a3f8f7e58bbf156e9a7fe7e49073540a2f5dae6a656d08a06ccac001"}
+{"ts": "2026-09-20T16:13:19Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r1000", "content_hash": "b788567f89f880639152baa01d38a921f1185525dca9665d5380a0f4ce6e021c"}
+{"ts": "2026-09-20T16:13:19Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r10000", "content_hash": "65ceb9914ed0a092643295584612aad8aa7682f2f6c8e679eb8548c5bdfcca5c"}
+{"ts": "2026-09-20T16:13:19Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r100000", "content_hash": "a32f6b66514ed53f26345c82bbc85c35e52fd9eef2ed56e13f6e2e6c49b8d695"}
+{"ts": "2026-09-20T16:13:20Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r1000000", "content_hash": "5079a76f87695df4dc651f15a8cd20a7863a3c8e5885edef0f468279081ab2a0"}
+{"ts": "2026-09-20T16:13:20Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r10", "content_hash": "f27586c70a1043ba4b6c3201df0764bc0d5c4399b67388b5b1b793080e14b7f9"}
+{"ts": "2026-09-20T16:13:20Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r100", "content_hash": "5b7662b8935b2f2d09d0f1363c3ad4b57e22379f289d996c01c68040f311bd1e"}
+{"ts": "2026-09-20T16:13:21Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r1000", "content_hash": "127296b0f9f266efdc3b665faba68abb5d0dde96e4f6f9f95e4e461e1895c817"}
+{"ts": "2026-09-20T16:13:21Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r10000", "content_hash": "1dc6bb509a058bd5783b964ebb0426b297f59be311fcc2d5d4dce0988f2a8a1e"}
+{"ts": "2026-09-20T16:13:21Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r100000", "content_hash": "82458f031ea91a8b8b17b14358114fa53dd569f8784d7f49b1d2d1469d754c38"}
+{"ts": "2026-09-20T16:13:22Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r1000000", "content_hash": "4ef97216c951d67f9c148fd3b3f14ee4f36e7230df9eee2e7f63aded4797c475"}
+{"ts": "2026-09-20T16:13:22Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r10", "content_hash": "d2700af04b248c8283880c763ad9f448d9ce02ea6ad062eea4d4a7f7d0f2aa15"}
+{"ts": "2026-09-20T16:13:22Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r100", "content_hash": "7ad77933ee1928a3cd5ba987173b201758b2cb350ca425db8ade393ed37510b9"}
+{"ts": "2026-09-20T16:13:23Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r1000", "content_hash": "a91792fa51ef1258b9c59f550be2d8a99c1e5692f5b5aff08213c698e2dbc305"}
+{"ts": "2026-09-20T16:13:23Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r10000", "content_hash": "bf55029907877b22041e3ff29c10d45f22e7024054508dd0b2dff76e6c103f9c"}
+{"ts": "2026-09-20T16:13:23Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r100000", "content_hash": "d15a7990b70f35e98870cf69d6199b3b97a4b1021cfc1bad4bc56e4237aad376"}
+{"ts": "2026-09-20T16:13:24Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r1000000", "content_hash": "fe58d14987a0782dc8d12d4485a4fdd19dbfc7c0dc30ce4e659ca9f3ed544ad6"}
+{"ts": "2026-09-20T16:13:24Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r10", "content_hash": "0aeb5406b2b14626118fe8c41290d8ed9670e4d1644da24a5edc357d54be3a78"}
+{"ts": "2026-09-20T16:13:24Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r100", "content_hash": "2069c09124b867ed3d299204c68eaaf45e069e06989a1ae2e31ec1ea9afe130f"}
+{"ts": "2026-09-20T16:13:25Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r1000", "content_hash": "69a3b04ccac944cbb8cb33bc262d173de99316f1a18ffa58b28eddc56c54aa4b"}
+{"ts": "2026-09-20T16:13:25Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r10000", "content_hash": "cc45c04ac48f021f8fae8dd7ff10c8cb1c33cbfc925418665452f89b6d96f118"}
+{"ts": "2026-09-20T16:13:25Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r100000", "content_hash": "0e8c7dedfd24cb671eb264bc57d4abd4a9f3e5be2fafb12d8243a8735ff22544"}
+{"ts": "2026-09-20T16:13:26Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r1000000", "content_hash": "5f6b35a1334e4151180c05438719cf66018d4c81aac5b6d8692518bc23424f30"}
+{"ts": "2026-09-20T16:13:26Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r10", "content_hash": "a9e07fc8a3442abb175442e0f30fe6e1e02137b5ccca2fe2b5d466d5ad37e4f8"}
+{"ts": "2026-09-20T16:13:26Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r100", "content_hash": "e477563c3d9c641219da02b55b1166e67400a35601791a03a403afb8437d8f75"}
+{"ts": "2026-09-20T16:13:27Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r1000", "content_hash": "235076061d686f729d1c9c904244901845f661c2bea2708d25c252b237c1f6e5"}
+{"ts": "2026-09-20T16:13:27Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r10000", "content_hash": "5e8b51d18b079f9f6630497dfb639798b6393105b393608ee5265d7215dd3e51"}
+{"ts": "2026-09-20T16:13:27Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r100000", "content_hash": "93b46e2e9e70c037fcf899284b8b2e856f3bbac0a2e92e5dd4d794b130cb77b6"}
+{"ts": "2026-09-20T16:13:28Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r1000000", "content_hash": "f998b95d17b2f028934e43b2b8140a6021db90a31290ba24a1cbcffa3cf23c3a"}
+{"ts": "2026-09-20T16:13:28Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r10", "content_hash": "998df74bc3e5ff3fbbe5cebc58000415985ea5a478a3f5f797c6a56413ab5539"}
+{"ts": "2026-09-20T16:13:28Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r100", "content_hash": "2767d2b4736de78e1f6640dcb6aecd5c56dbd5f977a33ddf6f42fb975ec8ebc6"}
+{"ts": "2026-09-20T16:13:29Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r1000", "content_hash": "eb75786ceed29a39f72644c2d80992f87eb4d4cc7c289dc3299d1ed6effe6d58"}
+{"ts": "2026-09-20T16:13:29Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r10000", "content_hash": "ff4119eb6169981b7a7162a98753ed35e6c1e08b427ce29b163d440a959654f3"}
+{"ts": "2026-09-20T16:13:29Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r100000", "content_hash": "376495ef0d699a970d8c1c96c5a37dcc771252bbfbbd8abdaeac715a21c18e62"}
+{"ts": "2026-09-20T16:13:30Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r1000000", "content_hash": "089d13131aa6e32063dd2186f7a27dfe5a1771ee76c8a13fabd29e53d8b6ee2f"}
+{"ts": "2026-09-20T16:13:30Z", "event": "submitted", "task_id": "g2-dev-cifar100-orecon", "content_hash": "87af0990406a5e3382c2669d1f2a91243e2b285aea5fe5a22ef7a484c13c55d8"}
+{"ts": "2026-09-20T16:13:30Z", "event": "submitted", "task_id": "g2-dev-cifar100-gss", "content_hash": "2f4756642e9c743b7c6f263b137bb4841ceb2d1dbe98b4571a21ef4a0f3411d8"}
+{"ts": "2026-09-20T16:13:31Z", "event": "submitted", "task_id": "g2-dev-cifar100-gem", "content_hash": "f1b8f2dd2a12ba9c395a5bea423f303feebc5c6ee08364365e10aa34296c6d19"}
+{"ts": "2026-09-20T16:13:31Z", "event": "submitted", "task_id": "g2-dev-cifar100-agem", "content_hash": "ece7723eaa5f38b6000f00448a2ac27d48d37087e18ee490d00051a2c68e7ca6"}
+{"ts": "2026-09-20T16:13:31Z", "event": "submitted", "task_id": "g2-dev-core50-nc-orecon", "content_hash": "f76dffef860085e8d5664e60a0e83ef372acd2823feef025ba49a822464c71d2"}
+{"ts": "2026-09-20T16:13:31Z", "event": "submitted", "task_id": "g2-dev-core50-nc-gss", "content_hash": "ca81bba5563220b14f074e3558253dfaaa811a5079dbd6d3a4ff5c19fa39e306"}
+{"ts": "2026-09-20T16:13:32Z", "event": "submitted", "task_id": "g2-dev-core50-nc-gem", "content_hash": "720b5b5cad772791f53df91addd9317b06fd7f9e399779be1f3949328aa1815f"}
+{"ts": "2026-09-20T16:13:32Z", "event": "submitted", "task_id": "g2-dev-core50-nc-agem", "content_hash": "145fb3d6affa4bbd2051d7e14aedaf30295fd6b38b4f9bc45f2bfe63ef4e2f17"}
+{"ts": "2026-09-20T16:13:32Z", "event": "submitted", "task_id": "g2-occupancy-b", "content_hash": "3699f57541e7ce1d353d4a19153bd7c95cccd71623ed9e1c9caa0d7b8f303200"}
+{"ts": "2026-09-20T16:13:33Z", "event": "submitted", "task_id": "g2-cost", "content_hash": "86a3ed2c2c1c06032cab276991f1c8d6f3698138a7037f8e3fca1cd1b3d5e7b1"}
+{"ts": "2026-09-20T16:16:26Z", "event": "completed", "task_id": "g2-idle-baseline", "exit_code": 0}
+{"ts": "2026-09-20T16:16:26Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b64-r200"}
+{"ts": "2026-09-20T16:17:10Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b64-r200", "exit_code": 0}
+{"ts": "2026-09-20T16:17:10Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b64-r2000"}
+{"ts": "2026-09-20T16:17:53Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b64-r2000", "exit_code": 0}
+{"ts": "2026-09-20T16:17:53Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b256-r2000"}
+{"ts": "2026-09-20T16:18:34Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b256-r2000", "exit_code": 0}
+{"ts": "2026-09-20T16:18:34Z", "event": "started", "task_id": "g2-dev-cifar100-s0-eval128"}
+{"ts": "2026-09-20T16:19:59Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-eval128", "exit_code": 0}
+{"ts": "2026-09-20T16:19:59Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r10"}
+{"ts": "2026-09-20T16:21:16Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r10", "exit_code": 0}
+{"ts": "2026-09-20T16:21:16Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r100"}
+{"ts": "2026-09-20T16:22:32Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r100", "exit_code": 0}
+{"ts": "2026-09-20T16:22:32Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r1000"}
+{"ts": "2026-09-20T16:23:44Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r1000", "exit_code": 0}
+{"ts": "2026-09-20T16:23:44Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r10000"}
+{"ts": "2026-09-20T16:25:04Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r10000", "exit_code": 0}
+{"ts": "2026-09-20T16:25:04Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r100000"}
+{"ts": "2026-09-20T16:26:26Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r100000", "exit_code": 0}
+{"ts": "2026-09-20T16:26:26Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r1000000"}
+{"ts": "2026-09-20T16:27:48Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r1000000", "exit_code": 0}
+{"ts": "2026-09-20T16:27:48Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r10"}
+{"ts": "2026-09-20T16:28:38Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r10", "exit_code": 0}
+{"ts": "2026-09-20T16:28:39Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r100"}
+{"ts": "2026-09-20T16:29:24Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r100", "exit_code": 0}
+{"ts": "2026-09-20T16:29:24Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r1000"}
+{"ts": "2026-09-20T16:30:17Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r1000", "exit_code": 0}
+{"ts": "2026-09-20T16:30:17Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r10000"}
+{"ts": "2026-09-20T16:31:10Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r10000", "exit_code": 0}
+{"ts": "2026-09-20T16:31:10Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r100000"}
+{"ts": "2026-09-20T16:31:58Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r100000", "exit_code": 0}
+{"ts": "2026-09-20T16:31:58Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r1000000"}
+{"ts": "2026-09-20T16:32:54Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r1000000", "exit_code": 0}
+{"ts": "2026-09-20T16:32:54Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r10"}
+{"ts": "2026-09-20T16:33:28Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r10", "exit_code": 0}
+{"ts": "2026-09-20T16:33:29Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r100"}
+{"ts": "2026-09-20T16:34:12Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r100", "exit_code": 0}
+{"ts": "2026-09-20T16:34:12Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r1000"}
+{"ts": "2026-09-20T16:34:55Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r1000", "exit_code": 0}
+{"ts": "2026-09-20T16:34:55Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r10000"}
+{"ts": "2026-09-20T16:35:39Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r10000", "exit_code": 0}
+{"ts": "2026-09-20T16:35:39Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r100000"}
+{"ts": "2026-09-20T16:36:24Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r100000", "exit_code": 0}
+{"ts": "2026-09-20T16:36:24Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r1000000"}
+{"ts": "2026-09-20T16:37:08Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r1000000", "exit_code": 0}
+{"ts": "2026-09-20T16:37:09Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r10"}
+{"ts": "2026-09-20T16:37:41Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r10", "exit_code": 0}
+{"ts": "2026-09-20T16:37:41Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r100"}
+{"ts": "2026-09-20T16:38:20Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r100", "exit_code": 0}
+{"ts": "2026-09-20T16:38:20Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r1000"}
+{"ts": "2026-09-20T16:39:01Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r1000", "exit_code": 0}
+{"ts": "2026-09-20T16:39:01Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r10000"}
+{"ts": "2026-09-20T16:39:40Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r10000", "exit_code": 0}
+{"ts": "2026-09-20T16:39:40Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r100000"}
+{"ts": "2026-09-20T16:40:22Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r100000", "exit_code": 0}
+{"ts": "2026-09-20T16:40:22Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r1000000"}
+{"ts": "2026-09-20T16:41:05Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r1000000", "exit_code": 0}
+{"ts": "2026-09-20T16:41:05Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r10"}
+{"ts": "2026-09-20T16:41:37Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r10", "exit_code": 0}
+{"ts": "2026-09-20T16:41:37Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r100"}
+{"ts": "2026-09-20T16:42:12Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r100", "exit_code": 0}
+{"ts": "2026-09-20T16:42:12Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r1000"}
+{"ts": "2026-09-20T16:42:54Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r1000", "exit_code": 0}
+{"ts": "2026-09-20T16:42:54Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r10000"}
+{"ts": "2026-09-20T16:43:36Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r10000", "exit_code": 0}
+{"ts": "2026-09-20T16:43:36Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r100000"}
+{"ts": "2026-09-20T16:44:18Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r100000", "exit_code": 0}
+{"ts": "2026-09-20T16:44:18Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r1000000"}
+{"ts": "2026-09-20T16:45:00Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r1000000", "exit_code": 0}
+{"ts": "2026-09-20T16:45:00Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r10"}
+{"ts": "2026-09-20T16:45:33Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r10", "exit_code": 0}
+{"ts": "2026-09-20T16:45:33Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r100"}
+{"ts": "2026-09-20T16:46:08Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r100", "exit_code": 0}
+{"ts": "2026-09-20T16:46:08Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r1000"}
+{"ts": "2026-09-20T16:46:50Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r1000", "exit_code": 0}
+{"ts": "2026-09-20T16:46:50Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r10000"}
+{"ts": "2026-09-20T16:47:32Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r10000", "exit_code": 0}
+{"ts": "2026-09-20T16:47:32Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r100000"}
+{"ts": "2026-09-20T16:48:15Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r100000", "exit_code": 0}
+{"ts": "2026-09-20T16:48:16Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r1000000"}
+{"ts": "2026-09-20T16:48:59Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r1000000", "exit_code": 0}
+{"ts": "2026-09-20T16:48:59Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r10"}
+{"ts": "2026-09-20T16:49:33Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r10", "exit_code": 0}
+{"ts": "2026-09-20T16:49:33Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r100"}
+{"ts": "2026-09-20T16:50:09Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r100", "exit_code": 0}
+{"ts": "2026-09-20T16:50:09Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r1000"}
+{"ts": "2026-09-20T16:50:53Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r1000", "exit_code": 0}
+{"ts": "2026-09-20T16:50:54Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r10000"}
+{"ts": "2026-09-20T16:51:39Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r10000", "exit_code": 0}
+{"ts": "2026-09-20T16:51:39Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r100000"}
+{"ts": "2026-09-20T16:52:25Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r100000", "exit_code": 0}
+{"ts": "2026-09-20T16:52:26Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r1000000"}
+{"ts": "2026-09-20T16:53:13Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r1000000", "exit_code": 0}
+{"ts": "2026-09-20T16:53:13Z", "event": "started", "task_id": "g2-dev-cifar100-orecon"}
+{"ts": "2026-09-20T16:54:23Z", "event": "completed", "task_id": "g2-dev-cifar100-orecon", "exit_code": 0}
+{"ts": "2026-09-20T16:54:24Z", "event": "started", "task_id": "g2-dev-cifar100-gss"}
+{"ts": "2026-09-20T16:56:48Z", "event": "completed", "task_id": "g2-dev-cifar100-gss", "exit_code": 0}
+{"ts": "2026-09-20T16:56:48Z", "event": "started", "task_id": "g2-dev-cifar100-gem"}
+{"ts": "2026-09-20T16:59:32Z", "event": "completed", "task_id": "g2-dev-cifar100-gem", "exit_code": 0}
+{"ts": "2026-09-20T16:59:32Z", "event": "started", "task_id": "g2-dev-cifar100-agem"}
+{"ts": "2026-09-20T17:01:44Z", "event": "completed", "task_id": "g2-dev-cifar100-agem", "exit_code": 0}
+{"ts": "2026-09-20T17:01:44Z", "event": "started", "task_id": "g2-dev-core50-nc-orecon"}
+{"ts": "2026-09-20T17:05:04Z", "event": "completed", "task_id": "g2-dev-core50-nc-orecon", "exit_code": 0}
+{"ts": "2026-09-20T17:05:04Z", "event": "started", "task_id": "g2-dev-core50-nc-gss"}
+{"ts": "2026-09-20T17:15:37Z", "event": "completed", "task_id": "g2-dev-core50-nc-gss", "exit_code": 0}
+{"ts": "2026-09-20T17:15:38Z", "event": "started", "task_id": "g2-dev-core50-nc-gem"}
+{"ts": "2026-09-20T17:23:34Z", "event": "completed", "task_id": "g2-dev-core50-nc-gem", "exit_code": 0}
+{"ts": "2026-09-20T17:23:34Z", "event": "started", "task_id": "g2-dev-core50-nc-agem"}
+{"ts": "2026-09-20T17:29:44Z", "event": "completed", "task_id": "g2-dev-core50-nc-agem", "exit_code": 0}
+{"ts": "2026-09-20T17:29:45Z", "event": "started", "task_id": "g2-occupancy-b"}
+{"ts": "2026-09-20T17:29:45Z", "event": "completed", "task_id": "g2-occupancy-b", "exit_code": 0}
+{"ts": "2026-09-20T17:29:45Z", "event": "started", "task_id": "g2-cost"}
+{"ts": "2026-09-20T17:29:46Z", "event": "completed", "task_id": "g2-cost", "exit_code": 0}
+{"ts": "2026-09-21T01:15:27Z", "event": "submitted", "task_id": "g2-dev-cifar100-orecon-full", "content_hash": "cafd20d8048045860ff5325943090dca12bec846691b7cd2d1bfe5df6f6400dc"}
+{"ts": "2026-09-21T01:15:27Z", "event": "submitted", "task_id": "g2-dev-core50-nc-orecon-full", "content_hash": "4fe1f96cd497acec7ff242164ed42e0fa1e5cd52b5ecd24b8fc4d0e725368da4"}
+{"ts": "2026-09-21T01:15:28Z", "event": "started", "task_id": "g2-dev-cifar100-orecon-full"}
+{"ts": "2026-09-21T01:19:42Z", "event": "completed", "task_id": "g2-dev-cifar100-orecon-full", "exit_code": 0}
+{"ts": "2026-09-21T01:19:42Z", "event": "started", "task_id": "g2-dev-core50-nc-orecon-full"}
+{"ts": "2026-09-21T01:32:21Z", "event": "completed", "task_id": "g2-dev-core50-nc-orecon-full", "exit_code": 0}
+{"ts": "2026-09-21T04:22:25Z", "event": "submitted", "task_id": "g2-occupancy-c", "content_hash": "4e13732225a94dced0553781d787f42fdd998d9468968be44093c5015892d73a"}
+{"ts": "2026-09-21T04:22:26Z", "event": "started", "task_id": "g2-occupancy-c"}
+{"ts": "2026-09-21T04:22:27Z", "event": "completed", "task_id": "g2-occupancy-c", "exit_code": 0}
+{"ts": "2026-09-21T04:22:28Z", "event": "submitted", "task_id": "g1-adopt-a", "content_hash": "378db5b0defe0dc533b1f098b035db1dd63e9236a27736a83da3b024b317cb81"}
+{"ts": "2026-09-21T04:22:28Z", "event": "submitted", "task_id": "g1-adopt-b", "content_hash": "035a2b872c17e664aa6013e282e51517dff249d790a008b0c0b14b755307ed73"}
+{"ts": "2026-09-21T04:22:29Z", "event": "started", "task_id": "g1-adopt-a"}
+{"ts": "2026-09-21T04:22:31Z", "event": "paused", "reason": "supervisor_signal"}
+{"ts": "2026-09-21T04:29:20Z", "event": "adopted_worker", "task_id": "g1-adopt-a", "unit": "orion-v4-task-g1-adopt-a.service", "kind": "finalize_dead"}
+{"ts": "2026-09-21T04:29:20Z", "event": "completed", "task_id": "g1-adopt-a", "exit_code": 0, "adopted": true}
+{"ts": "2026-09-21T04:29:20Z", "event": "paused", "reason": "supervisor_signal"}
+{"ts": "2026-09-21T04:31:00Z", "event": "resumed"}
+{"ts": "2026-09-21T04:31:01Z", "event": "started", "task_id": "g1-adopt-b"}
+{"ts": "2026-09-21T04:31:05Z", "event": "completed", "task_id": "g1-adopt-b", "exit_code": 0}
+{"ts": "2026-09-21T04:31:06Z", "event": "submitted", "task_id": "g1-resource-fail", "content_hash": "90878859c5f70e21b0072cb950192e6863612491a961ddbac4f396e072f93fda"}
+{"ts": "2026-09-21T04:31:07Z", "event": "submitted", "task_id": "g1-resource-after", "content_hash": "2683c1156850d68452e692821beb6f594ba6c32f0ba44ecbd7201b52030abb14"}
+{"ts": "2026-09-21T04:31:07Z", "event": "started", "task_id": "g1-resource-fail"}
+{"ts": "2026-09-21T04:31:10Z", "event": "resource_failure", "task_id": "g1-resource-fail", "exit_code": 1, "health": "ok"}
+{"ts": "2026-09-21T04:31:10Z", "event": "started", "task_id": "g1-resource-after"}
+{"ts": "2026-09-21T04:31:11Z", "event": "completed", "task_id": "g1-resource-after", "exit_code": 0}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b16-r200-seed17", "content_hash": "7de846e478843625573a2dd7b41e35f6af8ca22169bcf94230fb2c55765edb4a"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b16-r2000-seed17", "content_hash": "ca88ad75643e022a09ae163b25e182f3585765ca550cc3ed1f41a453ca85c01c"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b64-r200-seed17", "content_hash": "0dfc1454d92edb7bcc86321665100ead6bbe20052432888373d93e6627f9d35d"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b64-r2000-seed17", "content_hash": "bae754bec34391907b454fc1af09075361fc4e2eaaf5460b3e40ce0f399721de"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b256-r200-seed17", "content_hash": "b29dda7cd7ad901bd70ee7b040ec05365c99461760f8c7d56f234e9c220970c9"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b256-r2000-seed17", "content_hash": "0d80b9286890a8e3c6ad8dfadde6fc6578b71273c99f03ab6cf6cf2c4de8e621"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r10-seed17", "content_hash": "111bfc413f00566f0300f2cd73ac1ffd1454b65844d1cfbd8ffe3a8772a8e211"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r100-seed17", "content_hash": "17f562d4166a57dd15bad960b1120a6f94cdafb52c57648172551b1d1f7cdd7d"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r1000-seed17", "content_hash": "97b48e27ee8256963bcb2f19b0d40bb2db0c093070a0c7a4d8bc960d49e6bf49"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r10000-seed17", "content_hash": "991018efb1eac367c039f4341e677875f03471c36dd695f4613fb7985a39681e"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r100000-seed17", "content_hash": "78519dfd61c5b7f05cc1c90db8a59025a6ee03583a0d23eef60769d09b0ccd1b"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b16-r1000000-seed17", "content_hash": "5d75ad5286f13c847b6daac2cc4c541e4a02fdd5e0cdc8bc3a7aa8137d0cd8e0"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r10-seed17", "content_hash": "2920b370949edd38ea4146bc33c470b2145b7a43cfbd5b02296b513bf12005ec"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r100-seed17", "content_hash": "fc3bf1b7b9adebd55409a73f74394123591f617b3de901782fe4728ed200ee46"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r1000-seed17", "content_hash": "f0cabc681d48575ce80321f091f871ce3e89f2e18beb6a72a149761f826008bb"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r10000-seed17", "content_hash": "263c8aae12184b4d5ea34e1bc32c9f084941bb429d5201612460cf4d599601cc"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r100000-seed17", "content_hash": "7229048f7ef3bf719079c69abeec4ee8e420ff02dd09802bfdad79d0bd8ebe29"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b32-r1000000-seed17", "content_hash": "de9ed895e4b289c48d2b6848940b491384ce26d6db9ac6c61310b8e54be7f32a"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r10-seed17", "content_hash": "527011fa2b9c8b8f526561e079a57f24b17fb8330de50e0058aaa9caa2bdd0e0"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r100-seed17", "content_hash": "9342e35ed932709c9ca940817abfbb222d3687e503f871fbfc12e4a6bff9fab6"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r1000-seed17", "content_hash": "6a473f155fccee86b0d52702461542098b5152cf4dd5b4a38f5947cbd2864c50"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r10000-seed17", "content_hash": "2b63728b81e0fc10c8cd9ad66b45bb7a9718686ebef257d1d271a65e3a5f17c9"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r100000-seed17", "content_hash": "7b0a33a2ec92cd071068fb4096d6016e236af3bd2d90a6423c9609b30f1d6e04"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b64-r1000000-seed17", "content_hash": "0b380edab83924b10654f998fef3f4b910fc2de700be1884844146ffae12b2cd"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r10-seed17", "content_hash": "aba8fc153370795a750da538c52213e24f4cb91993e272d5fbcc2a182fdbd12a"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r100-seed17", "content_hash": "a607353398e628dd29fa3f127e0580f258fd1071bd6ba7bf40c871da29e2280d"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r1000-seed17", "content_hash": "2cb07c33bf57818bc8fcfd2b943e9c0eccf266d118dde7fd17e1e682902c540d"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r10000-seed17", "content_hash": "d075714891b1968c4f05f1860004f19ace6ebe5b5d9b85b48623296f0e695bff"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r100000-seed17", "content_hash": "788e1e01299df70c2f898bc31619c7e3d5758b7e5fc047ac1f63a16a7ae109da"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b128-r1000000-seed17", "content_hash": "942d50b0a9664df7a32aa9590f97cdb9198238f02d55963eb330b67a8431abf8"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r10-seed17", "content_hash": "c3122a048538ffc7e416b3cfce0c74f4a4922484186b53923fa17909aff9113c"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r100-seed17", "content_hash": "36cd0bd1280d1458d830dd6d81eb8b61ba24bdac68ededa9435a894eba0f2f04"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r1000-seed17", "content_hash": "8194e75083930acf0aafe1f0e809af1cc48d47240330bdcf3769835326a7563e"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r10000-seed17", "content_hash": "aee326748dcdf6029cdc82fec9ca6d81c9d9bbb1058d561c694ee64b1f399bfa"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r100000-seed17", "content_hash": "9f5a372f088e0a3f6274c832bb2ef965069aed8757b8f0c789c8d62fa8d7769d"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b256-r1000000-seed17", "content_hash": "a10c40d1bd42800bffbf1aea75c690ef3fa51c6504208ef95c5bf11949b0b163"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r10-seed17", "content_hash": "b3f317bf79aed0fdfb83428a39424e8a1e4a41916b5580c9abe20880c81b53e8"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r100-seed17", "content_hash": "b57c9f0c59dfcc633c94c162f964cf1d9493de671d9c9cde48d1006c964541a0"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r1000-seed17", "content_hash": "f095c2856f97296cc1d78ff6f0af0cc3af3999325dfe58a7e32ba103b5442480"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r10000-seed17", "content_hash": "5ad15f10fd68c39196f68cba985b134a573978ed8ea2508c8897ed22b27a31b5"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r100000-seed17", "content_hash": "949ec78ba05c1da5b98a33272ca3c44eeb78f949ffdf0e11b38b3a4a86b97bef"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b512-r1000000-seed17", "content_hash": "a00b67094a2cbef55bd2a5ee2e1db3d4691f6898b41bc22316e162a3666f7614"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r10-seed17", "content_hash": "1769a8928891991fd3f36d2d2dbd6966fb341c5056bb9a9c052a822b2b1f20ec"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r100-seed17", "content_hash": "6ebe873cba352a4a14e0a7e539da118a2224a75f8d28fb6b331647c882f6fc9b"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r1000-seed17", "content_hash": "5452d12c47637cc7ec7b61c95820c49b7b4299823484f7eb7581d2e6020e5a0a"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r10000-seed17", "content_hash": "94ff192d4458dddae6e7d7dfc126edbae233e10f41077ca6407b91b2d8957c5c"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r100000-seed17", "content_hash": "a0990e9b8f00443861638123c98e6b682ecc4399e51b204b7ab06920cfa0c4de"}
+{"ts": "2026-09-21T04:35:11Z", "event": "submitted", "task_id": "g2-oracle-cifar100-b1024-r1000000-seed17", "content_hash": "9af3d5bab6337044c48baf61c1df1da42fb13409921889076c41b13f785b6282"}
+{"ts": "2026-09-21T04:35:12Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b16-r200-seed17"}
+{"ts": "2026-09-21T04:36:33Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b16-r200-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:36:33Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b16-r2000-seed17"}
+{"ts": "2026-09-21T04:37:51Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b16-r2000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:37:51Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b64-r200-seed17"}
+{"ts": "2026-09-21T04:38:36Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b64-r200-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:38:36Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b64-r2000-seed17"}
+{"ts": "2026-09-21T04:39:18Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b64-r2000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:39:18Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b256-r200-seed17"}
+{"ts": "2026-09-21T04:39:57Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b256-r200-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:39:57Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b256-r2000-seed17"}
+{"ts": "2026-09-21T04:40:38Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b256-r2000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:40:38Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r10-seed17"}
+{"ts": "2026-09-21T04:41:55Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r10-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:41:55Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r100-seed17"}
+{"ts": "2026-09-21T04:43:15Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r100-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:43:16Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r1000-seed17"}
+{"ts": "2026-09-21T04:44:36Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r1000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:44:36Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r10000-seed17"}
+{"ts": "2026-09-21T04:45:55Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r10000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:45:55Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r100000-seed17"}
+{"ts": "2026-09-21T04:47:17Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r100000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:47:17Z", "event": "started", "task_id": "g2-oracle-cifar100-b16-r1000000-seed17"}
+{"ts": "2026-09-21T04:48:39Z", "event": "completed", "task_id": "g2-oracle-cifar100-b16-r1000000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:48:39Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r10-seed17"}
+{"ts": "2026-09-21T04:49:30Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r10-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:49:31Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r100-seed17"}
+{"ts": "2026-09-21T04:50:24Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r100-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:50:24Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r1000-seed17"}
+{"ts": "2026-09-21T04:51:19Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r1000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:51:20Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r10000-seed17"}
+{"ts": "2026-09-21T04:52:08Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r10000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:52:08Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r100000-seed17"}
+{"ts": "2026-09-21T04:53:03Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r100000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:53:03Z", "event": "started", "task_id": "g2-oracle-cifar100-b32-r1000000-seed17"}
+{"ts": "2026-09-21T04:53:56Z", "event": "completed", "task_id": "g2-oracle-cifar100-b32-r1000000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:53:56Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r10-seed17"}
+{"ts": "2026-09-21T04:54:34Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r10-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:54:34Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r100-seed17"}
+{"ts": "2026-09-21T04:55:18Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r100-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:55:18Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r1000-seed17"}
+{"ts": "2026-09-21T04:56:01Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r1000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:56:01Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r10000-seed17"}
+{"ts": "2026-09-21T04:56:43Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r10000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:56:44Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r100000-seed17"}
+{"ts": "2026-09-21T04:57:24Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r100000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:57:24Z", "event": "started", "task_id": "g2-oracle-cifar100-b64-r1000000-seed17"}
+{"ts": "2026-09-21T04:58:08Z", "event": "completed", "task_id": "g2-oracle-cifar100-b64-r1000000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:58:08Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r10-seed17"}
+{"ts": "2026-09-21T04:58:40Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r10-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:58:40Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r100-seed17"}
+{"ts": "2026-09-21T04:59:18Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r100-seed17", "exit_code": 0}
+{"ts": "2026-09-21T04:59:19Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r1000-seed17"}
+{"ts": "2026-09-21T05:00:00Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r1000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:00:00Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r10000-seed17"}
+{"ts": "2026-09-21T05:00:40Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r10000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:00:41Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r100000-seed17"}
+{"ts": "2026-09-21T05:01:23Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r100000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:01:23Z", "event": "started", "task_id": "g2-oracle-cifar100-b128-r1000000-seed17"}
+{"ts": "2026-09-21T05:02:05Z", "event": "completed", "task_id": "g2-oracle-cifar100-b128-r1000000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:02:05Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r10-seed17"}
+{"ts": "2026-09-21T05:02:37Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r10-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:02:37Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r100-seed17"}
+{"ts": "2026-09-21T05:03:12Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r100-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:03:12Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r1000-seed17"}
+{"ts": "2026-09-21T05:03:52Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r1000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:03:53Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r10000-seed17"}
+{"ts": "2026-09-21T05:04:32Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r10000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:04:32Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r100000-seed17"}
+{"ts": "2026-09-21T05:05:15Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r100000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:05:15Z", "event": "started", "task_id": "g2-oracle-cifar100-b256-r1000000-seed17"}
+{"ts": "2026-09-21T05:05:58Z", "event": "completed", "task_id": "g2-oracle-cifar100-b256-r1000000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:05:58Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r10-seed17"}
+{"ts": "2026-09-21T05:06:30Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r10-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:06:31Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r100-seed17"}
+{"ts": "2026-09-21T05:07:05Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r100-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:07:05Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r1000-seed17"}
+{"ts": "2026-09-21T05:07:47Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r1000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:07:47Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r10000-seed17"}
+{"ts": "2026-09-21T05:08:30Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r10000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:08:30Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r100000-seed17"}
+{"ts": "2026-09-21T05:09:13Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r100000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:09:14Z", "event": "started", "task_id": "g2-oracle-cifar100-b512-r1000000-seed17"}
+{"ts": "2026-09-21T05:09:57Z", "event": "completed", "task_id": "g2-oracle-cifar100-b512-r1000000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:09:57Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r10-seed17"}
+{"ts": "2026-09-21T05:10:31Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r10-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:10:31Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r100-seed17"}
+{"ts": "2026-09-21T05:11:07Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r100-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:11:07Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r1000-seed17"}
+{"ts": "2026-09-21T05:11:51Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r1000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:11:51Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r10000-seed17"}
+{"ts": "2026-09-21T05:12:37Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r10000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:12:37Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r100000-seed17"}
+{"ts": "2026-09-21T05:13:23Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r100000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T05:13:23Z", "event": "started", "task_id": "g2-oracle-cifar100-b1024-r1000000-seed17"}
+{"ts": "2026-09-21T05:14:09Z", "event": "completed", "task_id": "g2-oracle-cifar100-b1024-r1000000-seed17", "exit_code": 0}
+{"ts": "2026-09-21T13:48:36Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-hash-off-seed17", "content_hash": "4e9b97c70e18ee6e33d7573e9f8acc146a6d26a7a8dd1e4a3ead3d900c2882f6"}
+{"ts": "2026-09-21T13:48:36Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-hash-on-seed17", "content_hash": "cad6449135c4e69372c701dc6996c7143b999cc9c9ba351a3c6672e68734c635"}
+{"ts": "2026-09-21T13:48:36Z", "event": "submitted", "task_id": "g2-occupancy-d", "content_hash": "c9c1b1c269550f7c22b85b650a778177a75591b2578f0fa6eb23aff95e5ee563"}
+{"ts": "2026-09-21T13:48:36Z", "event": "submitted", "task_id": "g2-cost-b", "content_hash": "84413e1c76b82e862410d0c4d09d6240b0558f1f0a2e645c763ffae902af4040"}
+{"ts": "2026-09-21T13:48:38Z", "event": "started", "task_id": "g2-dev-cifar100-s0-hash-off-seed17"}
+{"ts": "2026-09-21T13:49:56Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-hash-off-seed17", "exit_code": 0}
+{"ts": "2026-09-21T13:49:57Z", "event": "started", "task_id": "g2-dev-cifar100-s0-hash-on-seed17"}
+{"ts": "2026-09-21T13:51:08Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-hash-on-seed17", "exit_code": 0}
+{"ts": "2026-09-21T13:51:08Z", "event": "started", "task_id": "g2-occupancy-d"}
+{"ts": "2026-09-21T13:51:09Z", "event": "completed", "task_id": "g2-occupancy-d", "exit_code": 0}
+{"ts": "2026-09-21T13:51:09Z", "event": "started", "task_id": "g2-cost-b"}
+{"ts": "2026-09-21T13:51:10Z", "event": "completed", "task_id": "g2-cost-b", "exit_code": 0}
+{"ts": "2026-09-21T14:13:18Z", "event": "submitted", "task_id": "g2-dev-cifar100-lr-seed17", "content_hash": "3cb1b76cb10ec477eaca42b6f31da1787acff0c8e14f50ee5140cb8da05569db"}
+{"ts": "2026-09-21T14:13:18Z", "event": "submitted", "task_id": "g2-dev-core50-nc-lr-seed17", "content_hash": "86609c4ad6aae57d3d140dc6a94e7ef61c7332912a6abc0fecac8cde0637fb25"}
+{"ts": "2026-09-21T14:13:18Z", "event": "started", "task_id": "g2-dev-cifar100-lr-seed17"}
+{"ts": "2026-09-21T14:14:07Z", "event": "completed", "task_id": "g2-dev-cifar100-lr-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:14:07Z", "event": "started", "task_id": "g2-dev-core50-nc-lr-seed17"}
+{"ts": "2026-09-21T14:17:06Z", "event": "completed", "task_id": "g2-dev-core50-nc-lr-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:32:50Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-gem-seed17", "content_hash": "26c148c41b061d284186c310f95e4bc6437c2068384d498fb7cb92cacf54e636"}
+{"ts": "2026-09-21T14:32:50Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-ewc-seed17", "content_hash": "447296a1311dd4f191dec5ef60b984244b582e17a0ecf20faac4c702c2ef9531"}
+{"ts": "2026-09-21T14:32:50Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17", "content_hash": "39815a08c0002a8372dbb1794552a8c52e386d94e53548f602424f5f1ac3111c"}
+{"ts": "2026-09-21T14:32:50Z", "event": "submitted", "task_id": "g2-occupancy-e", "content_hash": "8136a333ed6a820ccb72927a1a20f1f4ef867431c7cc578106a3cfc28411accc"}
+{"ts": "2026-09-21T14:32:50Z", "event": "started", "task_id": "g2-dev-cifar100-er-gem-seed17"}
+{"ts": "2026-09-21T14:35:51Z", "event": "completed", "task_id": "g2-dev-cifar100-er-gem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:35:51Z", "event": "started", "task_id": "g2-dev-cifar100-er-ewc-seed17"}
+{"ts": "2026-09-21T14:40:19Z", "event": "completed", "task_id": "g2-dev-cifar100-er-ewc-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:40:20Z", "event": "started", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17"}
+{"ts": "2026-09-21T14:45:53Z", "event": "completed", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:45:53Z", "event": "started", "task_id": "g2-occupancy-e"}
+{"ts": "2026-09-21T14:45:54Z", "event": "completed", "task_id": "g2-occupancy-e", "exit_code": 0}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar100-gss-seed17", "content_hash": "02ecb4d800dda680f69e16c21eae0de4609201d186d98fdc481633bc02928eeb"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar100-gem-seed17", "content_hash": "dbee38630fde531b39e5256242cc05e3a08fb4b147c2bd4e6a827e4b33720cf5"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar100-agem-seed17", "content_hash": "fd99d421e14b37cf912c148f5fc8a20bc38a39edcba8b43d82ac212d5eb9b3f2"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar100-maxp-seed17", "content_hash": "cdf89b1e75a55d71c765874b25874bf9b662b7f12859d6a153378f1739052e0a"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-s0-seed17", "content_hash": "421f0fd2192301f2d1e9c3339b038006884dcdc4b4d3d09fce23b7edea31e990"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-lr-seed17", "content_hash": "ca74bafb4b35656a235e0fb54acfc7f9ba379b6c6bad6900cc6dd4782e47a71c"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-gss-seed17", "content_hash": "fab4fb0a4f8e2293e8b50ac028ffc8bd73e1d371d4a2a08f0f90a6271f802d14"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-gem-seed17", "content_hash": "4e8e01728a300aaa3f8240b0be5ab59d40585b5f44924ac476f7216411b30ae7"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-agem-seed17", "content_hash": "97ae213bca8e916d3e822eb1094fc0537c2c14467cfc78a9896cf44cba486ea1"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-er-gem-seed17", "content_hash": "a71342ac5dd37d9a0ed6b8fd9f4fb860f145ca5654c99b3b02a17f53935be708"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-er-ewc-seed17", "content_hash": "1e5357345c54e0e3c142951559eedc122853e5c02c062b1192e7352f482fbf9d"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-er-gem-ewc-seed17", "content_hash": "6fdd9708e2a938f972ca3c9b1d3e88ea78d38dceae378705df77c88129c6ce82"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-maxp-seed17", "content_hash": "e706f6f310b439a4a794a285e585b3a9470a0d4ae24f829998835f805ec29de5"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-endless-ic-s0-seed17", "content_hash": "7709e3fc85a8ab59153ddce011094fc5efa9cc27a550bc529882ec29164daebd"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-endless-ic-lr-seed17", "content_hash": "be94cc2f8cb4d6544b52e96a06c771c81cf1add176e1cfcdc86203a4f5fd0010"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-endless-il-s0-seed17", "content_hash": "1f918e7163920d6ddd29b961f3c4c7ee4f66265b42a8571bbfdb3835af2aa81b"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-endless-il-lr-seed17", "content_hash": "224de803ec118e06db010f5178722436bc54179526a3cbd5db00d5217cd95dd5"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-endless-wc-s0-seed17", "content_hash": "6c507f29c59d1566f579132a733fec0d441d1eb906e0f9d59ae40921c1fa507c"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-endless-wc-lr-seed17", "content_hash": "9abba916df8da2c1a580fba732846fe5e43543e45d2b9e853849036d54a5fe7d"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-ni-s0-seed17", "content_hash": "2f1796b647732f1855a630f2c9d893255463bf401bebd5c8a5673fb1985e7a99"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-ni-lr-seed17", "content_hash": "de045c18e810c6491dca23dcd07c6447bef7f229268708827d7a4115c5938fb8"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-ni-er-gem-seed17", "content_hash": "5d173bec6ec4b8e2bd9d33588ea545bf200d9cd2eb9141222c7455236923e288"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-ni-er-ewc-seed17", "content_hash": "deb90a2d95531e53e70711e1f5ec89a39779f7351226f2530e090d240f72bc23"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-ni-er-gem-ewc-seed17", "content_hash": "7355a1cb7cfdfc2344bed4d39069b3708e91f8c8a5cadc24d1348e69534a5394"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-s0-seed17", "content_hash": "830a0ae55f07a53ed2e7c9881a144fdf25c160d8e1d30eb3dbc6db14df2e2393"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-gss-seed17", "content_hash": "7a3d37c642a39d2dbfe0183fbd62a18947057085baa57cce9bb2a680f7a4677b"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-gem-seed17", "content_hash": "4f9975162080852495ff67085f620852755976aea0cb1acce391d9752f947d31"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-agem-seed17", "content_hash": "9b86c60715e0d3eb8b4dbd3f19d0aca4ad8df0faa2addf33479f9968c2f2d59a"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-er-gem-seed17", "content_hash": "e206200158bbec1123cb0abdab01a0c904d000c7430071bc03c6c4ef0d7d7a3a"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-er-ewc-seed17", "content_hash": "1f52d3598f6d7dfc46eb168773154c396fae293903b8ce5f5e4c12e153884f33"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-er-gem-ewc-seed17", "content_hash": "4bf0df20e8afd0d36db3e2036b723862339a6d1f25c65f42ec66fbe444cdf322"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-maxp-seed17", "content_hash": "3f9b6433518af12526c1c22a779221e9ee21231221343543868ea1ba77c56f4b"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nic-s0-seed17", "content_hash": "6c796577e83571485d9dbb7f0fa49363c1de61ef1d9a89268eb0022736c1b5d7"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nic-lr-seed17", "content_hash": "99d55d30bfebdd6235883c56e324039846aca14d063f8b13a1f53267a0e87933"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar100-maxa-seed17", "content_hash": "8f061a33af47a0eb87758de95d605ec7a6b3290834834fef59deaa86f3c42c45"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-maxa-seed17", "content_hash": "1a454609629ba85ab228eaa0020f96d0d31ca8bb6bbf9042bdc012f4ee631aa1"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-maxa-seed17", "content_hash": "8dc9a2ecf764d9e296f0b1719ca837059b9e2bdd818f88ba87bd7917ef42c51e"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar100-orecon-full-hash-off-seed17", "content_hash": "9f477f595eaf667650f1a3c28ca66d68d0ddd7daf4149ad20b00b9870833ad52"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-cifar100-orecon-full-hash-on-seed17", "content_hash": "289c4ca193397ba5436e3e406a5547ced581f0b3b0887ca002fd0dc49b5c0b5a"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-orecon-full-hash-off-seed17", "content_hash": "a83b9de83a9c7c865804cf093636898dde866381edcb12cf6a4fc191c5757d26"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-orecon-full-hash-on-seed17", "content_hash": "74c66d951403f014dd669796c94b41bcfbe547d751ad2867e34ff8e24584c7be"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-occupancy-f", "content_hash": "1ee02d247051c14efd3139fa4f217b722cb1526f9519ee47ec41f54b707c39ff"}
+{"ts": "2026-09-21T14:46:10Z", "event": "submitted", "task_id": "g2-cost-c", "content_hash": "0b8019469aad2449c4c0c88d9063200e3b390fe9e99e8ec27378d8a7e7677c6d"}
+{"ts": "2026-09-21T14:46:10Z", "event": "started", "task_id": "g2-dev-cifar100-gss-seed17"}
+{"ts": "2026-09-21T14:50:06Z", "event": "completed", "task_id": "g2-dev-cifar100-gss-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:50:06Z", "event": "started", "task_id": "g2-dev-cifar100-gem-seed17"}
+{"ts": "2026-09-21T14:52:46Z", "event": "completed", "task_id": "g2-dev-cifar100-gem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:52:46Z", "event": "started", "task_id": "g2-dev-cifar100-agem-seed17"}
+{"ts": "2026-09-21T14:54:57Z", "event": "completed", "task_id": "g2-dev-cifar100-agem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:54:58Z", "event": "started", "task_id": "g2-dev-cifar100-maxp-seed17"}
+{"ts": "2026-09-21T14:55:31Z", "event": "completed", "task_id": "g2-dev-cifar100-maxp-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:55:31Z", "event": "started", "task_id": "g2-dev-cifar10-s0-seed17"}
+{"ts": "2026-09-21T14:56:49Z", "event": "completed", "task_id": "g2-dev-cifar10-s0-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:56:50Z", "event": "started", "task_id": "g2-dev-cifar10-lr-seed17"}
+{"ts": "2026-09-21T14:57:43Z", "event": "completed", "task_id": "g2-dev-cifar10-lr-seed17", "exit_code": 0}
+{"ts": "2026-09-21T14:57:43Z", "event": "started", "task_id": "g2-dev-cifar10-gss-seed17"}
+{"ts": "2026-09-21T15:01:34Z", "event": "completed", "task_id": "g2-dev-cifar10-gss-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:01:34Z", "event": "started", "task_id": "g2-dev-cifar10-gem-seed17"}
+{"ts": "2026-09-21T15:04:19Z", "event": "completed", "task_id": "g2-dev-cifar10-gem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:04:19Z", "event": "started", "task_id": "g2-dev-cifar10-agem-seed17"}
+{"ts": "2026-09-21T15:06:31Z", "event": "completed", "task_id": "g2-dev-cifar10-agem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:06:31Z", "event": "started", "task_id": "g2-dev-cifar10-er-gem-seed17"}
+{"ts": "2026-09-21T15:09:31Z", "event": "completed", "task_id": "g2-dev-cifar10-er-gem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:09:31Z", "event": "started", "task_id": "g2-dev-cifar10-er-ewc-seed17"}
+{"ts": "2026-09-21T15:14:03Z", "event": "completed", "task_id": "g2-dev-cifar10-er-ewc-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:14:03Z", "event": "started", "task_id": "g2-dev-cifar10-er-gem-ewc-seed17"}
+{"ts": "2026-09-21T15:20:18Z", "event": "completed", "task_id": "g2-dev-cifar10-er-gem-ewc-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:20:18Z", "event": "started", "task_id": "g2-dev-cifar10-maxp-seed17"}
+{"ts": "2026-09-21T15:20:50Z", "event": "completed", "task_id": "g2-dev-cifar10-maxp-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:20:50Z", "event": "started", "task_id": "g2-dev-endless-ic-s0-seed17"}
+{"ts": "2026-09-21T15:21:36Z", "event": "completed", "task_id": "g2-dev-endless-ic-s0-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:21:36Z", "event": "started", "task_id": "g2-dev-endless-ic-lr-seed17"}
+{"ts": "2026-09-21T15:22:14Z", "event": "completed", "task_id": "g2-dev-endless-ic-lr-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:22:15Z", "event": "started", "task_id": "g2-dev-endless-il-s0-seed17"}
+{"ts": "2026-09-21T15:24:47Z", "event": "completed", "task_id": "g2-dev-endless-il-s0-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:24:48Z", "event": "started", "task_id": "g2-dev-endless-il-lr-seed17"}
+{"ts": "2026-09-21T15:26:39Z", "event": "completed", "task_id": "g2-dev-endless-il-lr-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:26:39Z", "event": "started", "task_id": "g2-dev-endless-wc-s0-seed17"}
+{"ts": "2026-09-21T15:29:26Z", "event": "completed", "task_id": "g2-dev-endless-wc-s0-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:29:26Z", "event": "started", "task_id": "g2-dev-endless-wc-lr-seed17"}
+{"ts": "2026-09-21T15:31:21Z", "event": "completed", "task_id": "g2-dev-endless-wc-lr-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:31:22Z", "event": "started", "task_id": "g2-dev-core50-ni-s0-seed17"}
+{"ts": "2026-09-21T15:36:01Z", "event": "completed", "task_id": "g2-dev-core50-ni-s0-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:36:01Z", "event": "started", "task_id": "g2-dev-core50-ni-lr-seed17"}
+{"ts": "2026-09-21T15:39:26Z", "event": "completed", "task_id": "g2-dev-core50-ni-lr-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:39:27Z", "event": "started", "task_id": "g2-dev-core50-ni-er-gem-seed17"}
+{"ts": "2026-09-21T15:47:38Z", "event": "completed", "task_id": "g2-dev-core50-ni-er-gem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:47:39Z", "event": "started", "task_id": "g2-dev-core50-ni-er-ewc-seed17"}
+{"ts": "2026-09-21T15:59:36Z", "event": "completed", "task_id": "g2-dev-core50-ni-er-ewc-seed17", "exit_code": 0}
+{"ts": "2026-09-21T15:59:37Z", "event": "started", "task_id": "g2-dev-core50-ni-er-gem-ewc-seed17"}
+{"ts": "2026-09-21T16:16:48Z", "event": "completed", "task_id": "g2-dev-core50-ni-er-gem-ewc-seed17", "exit_code": 0}
+{"ts": "2026-09-21T16:16:48Z", "event": "started", "task_id": "g2-dev-core50-nc-s0-seed17"}
+{"ts": "2026-09-21T16:20:42Z", "event": "completed", "task_id": "g2-dev-core50-nc-s0-seed17", "exit_code": 0}
+{"ts": "2026-09-21T16:20:42Z", "event": "started", "task_id": "g2-dev-core50-nc-gss-seed17"}
+{"ts": "2026-09-21T16:27:23Z", "event": "completed", "task_id": "g2-dev-core50-nc-gss-seed17", "exit_code": 0}
+{"ts": "2026-09-21T16:27:23Z", "event": "started", "task_id": "g2-dev-core50-nc-gem-seed17"}
+{"ts": "2026-09-21T16:35:18Z", "event": "completed", "task_id": "g2-dev-core50-nc-gem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T16:35:18Z", "event": "started", "task_id": "g2-dev-core50-nc-agem-seed17"}
+{"ts": "2026-09-21T16:41:28Z", "event": "completed", "task_id": "g2-dev-core50-nc-agem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T16:41:28Z", "event": "started", "task_id": "g2-dev-core50-nc-er-gem-seed17"}
+{"ts": "2026-09-21T16:50:13Z", "event": "completed", "task_id": "g2-dev-core50-nc-er-gem-seed17", "exit_code": 0}
+{"ts": "2026-09-21T16:50:13Z", "event": "started", "task_id": "g2-dev-core50-nc-er-ewc-seed17"}
+{"ts": "2026-09-21T17:01:29Z", "event": "completed", "task_id": "g2-dev-core50-nc-er-ewc-seed17", "exit_code": 0}
+{"ts": "2026-09-21T17:01:29Z", "event": "started", "task_id": "g2-dev-core50-nc-er-gem-ewc-seed17"}
+{"ts": "2026-09-21T17:18:09Z", "event": "completed", "task_id": "g2-dev-core50-nc-er-gem-ewc-seed17", "exit_code": 0}
+{"ts": "2026-09-21T17:18:09Z", "event": "started", "task_id": "g2-dev-core50-nc-maxp-seed17"}
+{"ts": "2026-09-21T17:20:13Z", "event": "completed", "task_id": "g2-dev-core50-nc-maxp-seed17", "exit_code": 0}
+{"ts": "2026-09-21T17:20:13Z", "event": "started", "task_id": "g2-dev-core50-nic-s0-seed17"}
+{"ts": "2026-09-21T17:49:14Z", "event": "completed", "task_id": "g2-dev-core50-nic-s0-seed17", "exit_code": 0}
+{"ts": "2026-09-21T17:49:14Z", "event": "started", "task_id": "g2-dev-core50-nic-lr-seed17"}
+{"ts": "2026-09-21T18:19:25Z", "event": "completed", "task_id": "g2-dev-core50-nic-lr-seed17", "exit_code": 0}
+{"ts": "2026-09-21T18:19:25Z", "event": "started", "task_id": "g2-dev-cifar100-maxa-seed17"}
+{"ts": "2026-09-21T19:56:49Z", "event": "completed", "task_id": "g2-dev-cifar100-maxa-seed17", "exit_code": 0}
+{"ts": "2026-09-21T19:56:49Z", "event": "started", "task_id": "g2-dev-cifar10-maxa-seed17"}
+{"ts": "2026-09-21T21:33:08Z", "event": "completed", "task_id": "g2-dev-cifar10-maxa-seed17", "exit_code": 0}
+{"ts": "2026-09-21T21:33:09Z", "event": "started", "task_id": "g2-dev-core50-nc-maxa-seed17"}
+{"ts": "2026-09-22T00:51:02Z", "event": "completed", "task_id": "g2-dev-core50-nc-maxa-seed17", "exit_code": 0}
+{"ts": "2026-09-22T00:51:02Z", "event": "started", "task_id": "g2-dev-cifar100-orecon-full-hash-off-seed17"}
+{"ts": "2026-09-22T00:55:13Z", "event": "completed", "task_id": "g2-dev-cifar100-orecon-full-hash-off-seed17", "exit_code": 0}
+{"ts": "2026-09-22T00:55:14Z", "event": "started", "task_id": "g2-dev-cifar100-orecon-full-hash-on-seed17"}
+{"ts": "2026-09-22T00:59:37Z", "event": "completed", "task_id": "g2-dev-cifar100-orecon-full-hash-on-seed17", "exit_code": 0}
+{"ts": "2026-09-22T00:59:37Z", "event": "started", "task_id": "g2-dev-core50-nc-orecon-full-hash-off-seed17"}
+{"ts": "2026-09-22T01:12:28Z", "event": "completed", "task_id": "g2-dev-core50-nc-orecon-full-hash-off-seed17", "exit_code": 0}
+{"ts": "2026-09-22T01:12:28Z", "event": "started", "task_id": "g2-dev-core50-nc-orecon-full-hash-on-seed17"}
+{"ts": "2026-09-22T01:24:28Z", "event": "completed", "task_id": "g2-dev-core50-nc-orecon-full-hash-on-seed17", "exit_code": 0}
+{"ts": "2026-09-22T01:24:28Z", "event": "started", "task_id": "g2-occupancy-f"}
+{"ts": "2026-09-22T01:24:30Z", "event": "completed", "task_id": "g2-occupancy-f", "exit_code": 0}
+{"ts": "2026-09-22T01:24:31Z", "event": "started", "task_id": "g2-cost-c"}
+{"ts": "2026-09-22T01:24:32Z", "event": "completed", "task_id": "g2-cost-c", "exit_code": 0}
+{"ts": "2026-09-22T02:16:59Z", "event": "paused", "reason": "capacity_switch_mem32g"}
+{"ts": "2026-09-22T02:18:45Z", "event": "submitted", "task_id": "g1-cifar100-exp1-mem32g", "content_hash": "e9012044921493b75a6d50546b34496757915dd4ae656a50d530a5626ea26c10"}
+{"ts": "2026-09-22T02:18:45Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-seed17-mem32g", "content_hash": "56df7e02184f35fe3149024c4236045e6136adc9848d5eff7e7a8032236155df"}
+{"ts": "2026-09-22T02:18:45Z", "event": "submitted", "task_id": "g2-dev-cifar100-batch256-seed17-mem32g", "content_hash": "d6d4f509e9294a2b47acaa397820f261dc8fa355657d56f3388fef4270867a49"}
+{"ts": "2026-09-22T02:18:46Z", "event": "submitted", "task_id": "g2-dev-cifar100-replay2000-seed17-mem32g", "content_hash": "d41784b9fbabbe5de5c62bc4db1b552b36435d1a98c9848199d76c201bde2fb4"}
+{"ts": "2026-09-22T02:18:46Z", "event": "started", "task_id": "g1-cifar100-exp1-mem32g"}
+{"ts": "2026-09-22T02:18:46Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem32g", "content_hash": "ccb10a7d20a638d7ac72bc0fb072fe40e25dfbaee5a63f9482068722f06b7a15"}
+{"ts": "2026-09-22T02:18:46Z", "event": "submitted", "task_id": "g2-dev-core50-nc-s0-seed17-mem32g", "content_hash": "0822e7a4edab6316d27c3b460b3875badca797c4cf1cc10e166a2cd0dfedfe78"}
+{"ts": "2026-09-22T02:18:47Z", "event": "submitted", "task_id": "g2-occupancy-mem32g", "content_hash": "8cdaafe34eeabdc7bae56c05b75c645ca5c9af39686e775479b2e9252a59832b"}
+{"ts": "2026-09-22T02:18:47Z", "event": "submitted", "task_id": "g2-idle-mem32g", "content_hash": "f346dfe2827087c24db20af23facddaf7cb1cc06dbaaded902235bff7975d095"}
+{"ts": "2026-09-22T02:19:04Z", "event": "completed", "task_id": "g1-cifar100-exp1-mem32g", "exit_code": 0}
+{"ts": "2026-09-22T02:19:04Z", "event": "started", "task_id": "g2-dev-cifar100-s0-seed17-mem32g"}
+{"ts": "2026-09-22T02:20:25Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-seed17-mem32g", "exit_code": 0}
+{"ts": "2026-09-22T02:20:25Z", "event": "started", "task_id": "g2-dev-cifar100-batch256-seed17-mem32g"}
+{"ts": "2026-09-22T02:20:59Z", "event": "completed", "task_id": "g2-dev-cifar100-batch256-seed17-mem32g", "exit_code": 0}
+{"ts": "2026-09-22T02:20:59Z", "event": "started", "task_id": "g2-dev-cifar100-replay2000-seed17-mem32g"}
+{"ts": "2026-09-22T02:22:18Z", "event": "completed", "task_id": "g2-dev-cifar100-replay2000-seed17-mem32g", "exit_code": 0}
+{"ts": "2026-09-22T02:22:18Z", "event": "started", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem32g"}
+{"ts": "2026-09-22T02:27:46Z", "event": "completed", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem32g", "exit_code": 0}
+{"ts": "2026-09-22T02:27:46Z", "event": "started", "task_id": "g2-dev-core50-nc-s0-seed17-mem32g"}
+{"ts": "2026-09-22T02:31:44Z", "event": "completed", "task_id": "g2-dev-core50-nc-s0-seed17-mem32g", "exit_code": 0}
+{"ts": "2026-09-22T02:31:44Z", "event": "started", "task_id": "g2-occupancy-mem32g"}
+{"ts": "2026-09-22T02:31:46Z", "event": "completed", "task_id": "g2-occupancy-mem32g", "exit_code": 0}
+{"ts": "2026-09-22T02:31:47Z", "event": "started", "task_id": "g2-idle-mem32g"}
+{"ts": "2026-09-22T02:34:57Z", "event": "completed", "task_id": "g2-idle-mem32g", "exit_code": 0}
+{"ts": "2026-09-22T02:59:25Z", "event": "paused", "reason": "capacity_switch_mem16g"}
+{"ts": "2026-09-22T03:00:44Z", "event": "submitted", "task_id": "g1-cifar100-exp1-mem16g", "content_hash": "8d3e8b3051d3aa6df43238d132097e115abaff954648e09fd336073095ae2032"}
+{"ts": "2026-09-22T03:00:44Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-seed17-mem16g", "content_hash": "127fc424fb3e088b7729e9c3d398db8a72b9cddf44903297fbf73bd137504518"}
+{"ts": "2026-09-22T03:00:45Z", "event": "submitted", "task_id": "g2-dev-cifar100-gss-seed17-mem16g", "content_hash": "0ce015d18dd568f93e3667b0abe741e8872ce5bca909c341ff852961bd78ae27"}
+{"ts": "2026-09-22T03:00:45Z", "event": "started", "task_id": "g1-cifar100-exp1-mem16g"}
+{"ts": "2026-09-22T03:00:45Z", "event": "submitted", "task_id": "g2-dev-cifar100-gem-seed17-mem16g", "content_hash": "efac8f5c910ccc8a8183e108bf0315e7d13eba8017da3e6aecbae0799d2ec3af"}
+{"ts": "2026-09-22T03:00:45Z", "event": "submitted", "task_id": "g2-dev-cifar100-agem-seed17-mem16g", "content_hash": "bacf584edb47ed71fcb16515b44727c02f916be455b7ba167a5e576fa1fa32c9"}
+{"ts": "2026-09-22T03:00:46Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-gem-seed17-mem16g", "content_hash": "a9a7d5d1e15dea01ae9f35dbd96ece0af8bda2102ac0a7c5b71cb815dd7d3a47"}
+{"ts": "2026-09-22T03:00:46Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-ewc-seed17-mem16g", "content_hash": "36e6da03c76f8420f67e0dd80772ee84a6c46ae995aeb6312442004209ec0d28"}
+{"ts": "2026-09-22T03:00:47Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem16g", "content_hash": "5745743548e25bb97907f016ad8fdc9d95a5a12dc98efcc6ee7f8021c622ec1d"}
+{"ts": "2026-09-22T03:00:47Z", "event": "submitted", "task_id": "g2-dev-cifar100-lr-seed17-mem16g", "content_hash": "c0226d2849fb0b71b6798ffc26c66e3ca5249d641fb3c8a4736ae1937d40fe19"}
+{"ts": "2026-09-22T03:00:47Z", "event": "submitted", "task_id": "g2-dev-cifar100-sstar-b16-r2000-seed17-mem16g", "content_hash": "df43251f09d418c7a0fd75e9f90db891ab07c41b29bd7806fa057bb2956d3187"}
+{"ts": "2026-09-22T03:00:48Z", "event": "submitted", "task_id": "g2-dev-cifar100-orecon-full-hash-off-seed17-mem16g", "content_hash": "15b00ba188180d98f375915ce50f64d0226ec80b8d1dcbb38a8795af3a97bd97"}
+{"ts": "2026-09-22T03:00:48Z", "event": "submitted", "task_id": "g2-dev-cifar100-batch256-seed17-mem16g", "content_hash": "b7bd41529ca1b74c8e6da00c2c2d5f27afa409611f158301fa909ca84e52def4"}
+{"ts": "2026-09-22T03:00:48Z", "event": "submitted", "task_id": "g2-dev-cifar100-replay2000-seed17-mem16g", "content_hash": "3a7dd277a64cfe9aea84450feb2755517a5fa73b82c77548c76490a910bcd8f6"}
+{"ts": "2026-09-22T03:00:49Z", "event": "submitted", "task_id": "g2-dev-core50-nc-s0-seed17-mem16g", "content_hash": "778353bdd59448f524c5e6f46dc986dd08d1ecf0c3a3caa76345609306392560"}
+{"ts": "2026-09-22T03:00:49Z", "event": "submitted", "task_id": "g2-dev-core50-nc-gss-seed17-mem16g", "content_hash": "5606de7a2fd66035de7989df39a943c240fae97586bbe14f166a77633942906e"}
+{"ts": "2026-09-22T03:00:49Z", "event": "submitted", "task_id": "g2-dev-core50-nc-er-gem-ewc-seed17-mem16g", "content_hash": "879406160ef79139df67d1efc5820015bfcb29e36a6821217851310ad64c6e5f"}
+{"ts": "2026-09-22T03:00:50Z", "event": "submitted", "task_id": "g2-dev-core50-nc-orecon-full-hash-off-seed17-mem16g", "content_hash": "5e2be27570d4859e87a69bccbc0b84be2d6216aa099e14ff8e139bd3be7a696a"}
+{"ts": "2026-09-22T03:00:50Z", "event": "submitted", "task_id": "g2-occupancy-mem16g", "content_hash": "ae6ff84dc71322e5213cabb93dbf9a99fda299ae801a35f23801affac139035a"}
+{"ts": "2026-09-22T03:00:51Z", "event": "submitted", "task_id": "g2-idle-mem16g", "content_hash": "0567e8d8ef2d525b06bdd661276ef2485b88a309064f78f40dd633e179a1d149"}
+{"ts": "2026-09-22T03:01:03Z", "event": "completed", "task_id": "g1-cifar100-exp1-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:01:04Z", "event": "started", "task_id": "g2-dev-cifar100-s0-seed17-mem16g"}
+{"ts": "2026-09-22T03:02:23Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:02:23Z", "event": "started", "task_id": "g2-dev-cifar100-gss-seed17-mem16g"}
+{"ts": "2026-09-22T03:04:49Z", "event": "completed", "task_id": "g2-dev-cifar100-gss-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:04:49Z", "event": "started", "task_id": "g2-dev-cifar100-gem-seed17-mem16g"}
+{"ts": "2026-09-22T03:07:34Z", "event": "completed", "task_id": "g2-dev-cifar100-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:07:34Z", "event": "started", "task_id": "g2-dev-cifar100-agem-seed17-mem16g"}
+{"ts": "2026-09-22T03:09:48Z", "event": "completed", "task_id": "g2-dev-cifar100-agem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:09:48Z", "event": "started", "task_id": "g2-dev-cifar100-er-gem-seed17-mem16g"}
+{"ts": "2026-09-22T03:12:54Z", "event": "completed", "task_id": "g2-dev-cifar100-er-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:12:55Z", "event": "started", "task_id": "g2-dev-cifar100-er-ewc-seed17-mem16g"}
+{"ts": "2026-09-22T03:17:25Z", "event": "completed", "task_id": "g2-dev-cifar100-er-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:17:25Z", "event": "started", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem16g"}
+{"ts": "2026-09-22T03:22:45Z", "event": "completed", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:22:45Z", "event": "started", "task_id": "g2-dev-cifar100-lr-seed17-mem16g"}
+{"ts": "2026-09-22T03:23:37Z", "event": "completed", "task_id": "g2-dev-cifar100-lr-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:23:37Z", "event": "started", "task_id": "g2-dev-cifar100-sstar-b16-r2000-seed17-mem16g"}
+{"ts": "2026-09-22T03:25:00Z", "event": "completed", "task_id": "g2-dev-cifar100-sstar-b16-r2000-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:25:01Z", "event": "started", "task_id": "g2-dev-cifar100-orecon-full-hash-off-seed17-mem16g"}
+{"ts": "2026-09-22T03:29:22Z", "event": "completed", "task_id": "g2-dev-cifar100-orecon-full-hash-off-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:29:22Z", "event": "started", "task_id": "g2-dev-cifar100-batch256-seed17-mem16g"}
+{"ts": "2026-09-22T03:29:56Z", "event": "completed", "task_id": "g2-dev-cifar100-batch256-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:29:56Z", "event": "started", "task_id": "g2-dev-cifar100-replay2000-seed17-mem16g"}
+{"ts": "2026-09-22T03:31:18Z", "event": "completed", "task_id": "g2-dev-cifar100-replay2000-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:31:18Z", "event": "started", "task_id": "g2-dev-core50-nc-s0-seed17-mem16g"}
+{"ts": "2026-09-22T03:35:17Z", "event": "completed", "task_id": "g2-dev-core50-nc-s0-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:35:17Z", "event": "started", "task_id": "g2-dev-core50-nc-gss-seed17-mem16g"}
+{"ts": "2026-09-22T03:45:00Z", "event": "completed", "task_id": "g2-dev-core50-nc-gss-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T03:45:01Z", "event": "started", "task_id": "g2-dev-core50-nc-er-gem-ewc-seed17-mem16g"}
+{"ts": "2026-09-22T04:01:32Z", "event": "completed", "task_id": "g2-dev-core50-nc-er-gem-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T04:01:32Z", "event": "started", "task_id": "g2-dev-core50-nc-orecon-full-hash-off-seed17-mem16g"}
+{"ts": "2026-09-22T04:15:02Z", "event": "completed", "task_id": "g2-dev-core50-nc-orecon-full-hash-off-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T04:15:02Z", "event": "started", "task_id": "g2-occupancy-mem16g"}
+{"ts": "2026-09-22T04:15:04Z", "event": "completed", "task_id": "g2-occupancy-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T04:15:04Z", "event": "started", "task_id": "g2-idle-mem16g"}
+{"ts": "2026-09-22T04:18:15Z", "event": "completed", "task_id": "g2-idle-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:19:09Z", "event": "submitted", "task_id": "g2-dev-cifar10-s0-seed17-mem16g", "content_hash": "45f2369a928677dc497a85ac78e994e6e0d6a8efa83049fe858be74b14408c43"}
+{"ts": "2026-09-22T06:19:09Z", "event": "submitted", "task_id": "g2-dev-cifar10-gss-seed17-mem16g", "content_hash": "95d118f4c8b59083638fe4ab3838822a538b008e328ee75d9df816e5d7142703"}
+{"ts": "2026-09-22T06:19:09Z", "event": "started", "task_id": "g2-dev-cifar10-s0-seed17-mem16g"}
+{"ts": "2026-09-22T06:19:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-gem-seed17-mem16g", "content_hash": "2551e3f311baa1c1d6b469afee7b99dfb49c709e1999d5670bdf49a6de75a0b6"}
+{"ts": "2026-09-22T06:19:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-agem-seed17-mem16g", "content_hash": "8af9d074d067b0bbbdfa3133d27a712d350c63cab0df99e42c8bc679c97e0508"}
+{"ts": "2026-09-22T06:19:10Z", "event": "submitted", "task_id": "g2-dev-cifar10-er-gem-seed17-mem16g", "content_hash": "e4cadbfe1fae35c784a8d0c5cac5e8f52842b39ab46e9a22bfbd377486348052"}
+{"ts": "2026-09-22T06:19:11Z", "event": "submitted", "task_id": "g2-dev-cifar10-er-ewc-seed17-mem16g", "content_hash": "dfe4ce6a0845058bb30aafce27c1710e3deb73a1ec1bd09da795e32865a97208"}
+{"ts": "2026-09-22T06:19:11Z", "event": "submitted", "task_id": "g2-dev-cifar10-er-gem-ewc-seed17-mem16g", "content_hash": "d6c3379bcb17937054f207914fb376e0eb982c5258a00d625dabdba113413664"}
+{"ts": "2026-09-22T06:19:11Z", "event": "submitted", "task_id": "g2-dev-cifar10-lr-seed17-mem16g", "content_hash": "d302c82cfccb303365cad3dbb0ea810322c4c77081ae39a00260a0151bf2b9dc"}
+{"ts": "2026-09-22T06:19:12Z", "event": "submitted", "task_id": "g2-dev-core50-ni-s0-seed17-mem16g", "content_hash": "aef8b91db0bb3563feccf83d14f0a16ae995cf31d566be6ad812d8060ede4ea6"}
+{"ts": "2026-09-22T06:19:12Z", "event": "submitted", "task_id": "g2-dev-core50-ni-er-gem-seed17-mem16g", "content_hash": "d6551592414f83db92e4a382f3a7ee6bde41ddda9ba997f1dd38cfcac456ae6d"}
+{"ts": "2026-09-22T06:19:13Z", "event": "submitted", "task_id": "g2-dev-core50-ni-er-ewc-seed17-mem16g", "content_hash": "125dcc897a69697f4b5afb1991e136f348f1f16c2d360d415e747ad2505cda65"}
+{"ts": "2026-09-22T06:19:13Z", "event": "submitted", "task_id": "g2-dev-core50-ni-er-gem-ewc-seed17-mem16g", "content_hash": "c8521a6bb2627c3d336882d4023baa227cd8e59c195d7139847e4fe75657adfe"}
+{"ts": "2026-09-22T06:19:13Z", "event": "submitted", "task_id": "g2-dev-core50-ni-lr-seed17-mem16g", "content_hash": "1332efd6a03d5a89077821c1600be488e404740a007b9d299732408dffb0d3ca"}
+{"ts": "2026-09-22T06:19:14Z", "event": "submitted", "task_id": "g2-dev-core50-nic-s0-seed17-mem16g", "content_hash": "348e5f0f1bd14ab0675456cb726685d0cb96fffddde2dc138a040592255fe7b5"}
+{"ts": "2026-09-22T06:19:14Z", "event": "submitted", "task_id": "g2-dev-core50-nic-lr-seed17-mem16g", "content_hash": "a2528c6acd1c21e1d24304bca1ad92ba13c12e8b3f23aacd9e99c4595b2b9210"}
+{"ts": "2026-09-22T06:19:14Z", "event": "submitted", "task_id": "g2-dev-core50-nic-er-gem-ewc-seed17-mem16g", "content_hash": "e9bda544cb944dc5f325205b32756db8c48dec2e8bf9cfcfe2bf9f2cf2de168c"}
+{"ts": "2026-09-22T06:19:15Z", "event": "submitted", "task_id": "g2-occupancy-mem16g-b", "content_hash": "29c1573bb4dba0ff093c43461a6e216d205ef4edf66fb5a3216bc7ba54ca07a3"}
+{"ts": "2026-09-22T06:19:15Z", "event": "submitted", "task_id": "g2-idle-mem16g-b", "content_hash": "abdefe459e314975d925e864edf1eeba3f9e1b0e5d8de358c2b77edd1c9b1ebd"}
+{"ts": "2026-09-22T06:20:32Z", "event": "completed", "task_id": "g2-dev-cifar10-s0-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:20:32Z", "event": "started", "task_id": "g2-dev-cifar10-gss-seed17-mem16g"}
+{"ts": "2026-09-22T06:24:11Z", "event": "completed", "task_id": "g2-dev-cifar10-gss-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:24:12Z", "event": "started", "task_id": "g2-dev-cifar10-gem-seed17-mem16g"}
+{"ts": "2026-09-22T06:26:59Z", "event": "completed", "task_id": "g2-dev-cifar10-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:27:00Z", "event": "started", "task_id": "g2-dev-cifar10-agem-seed17-mem16g"}
+{"ts": "2026-09-22T06:29:12Z", "event": "completed", "task_id": "g2-dev-cifar10-agem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:29:12Z", "event": "started", "task_id": "g2-dev-cifar10-er-gem-seed17-mem16g"}
+{"ts": "2026-09-22T06:32:12Z", "event": "completed", "task_id": "g2-dev-cifar10-er-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:32:12Z", "event": "started", "task_id": "g2-dev-cifar10-er-ewc-seed17-mem16g"}
+{"ts": "2026-09-22T06:36:44Z", "event": "completed", "task_id": "g2-dev-cifar10-er-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:36:44Z", "event": "started", "task_id": "g2-dev-cifar10-er-gem-ewc-seed17-mem16g"}
+{"ts": "2026-09-22T06:42:59Z", "event": "completed", "task_id": "g2-dev-cifar10-er-gem-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:43:00Z", "event": "started", "task_id": "g2-dev-cifar10-lr-seed17-mem16g"}
+{"ts": "2026-09-22T06:43:50Z", "event": "completed", "task_id": "g2-dev-cifar10-lr-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:43:50Z", "event": "started", "task_id": "g2-dev-core50-ni-s0-seed17-mem16g"}
+{"ts": "2026-09-22T06:48:29Z", "event": "completed", "task_id": "g2-dev-core50-ni-s0-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:48:29Z", "event": "started", "task_id": "g2-dev-core50-ni-er-gem-seed17-mem16g"}
+{"ts": "2026-09-22T06:56:28Z", "event": "completed", "task_id": "g2-dev-core50-ni-er-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T06:56:28Z", "event": "started", "task_id": "g2-dev-core50-ni-er-ewc-seed17-mem16g"}
+{"ts": "2026-09-22T07:08:27Z", "event": "completed", "task_id": "g2-dev-core50-ni-er-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T07:08:27Z", "event": "started", "task_id": "g2-dev-core50-ni-er-gem-ewc-seed17-mem16g"}
+{"ts": "2026-09-22T07:25:30Z", "event": "completed", "task_id": "g2-dev-core50-ni-er-gem-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T07:25:31Z", "event": "started", "task_id": "g2-dev-core50-ni-lr-seed17-mem16g"}
+{"ts": "2026-09-22T07:28:54Z", "event": "completed", "task_id": "g2-dev-core50-ni-lr-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T07:28:55Z", "event": "started", "task_id": "g2-dev-core50-nic-s0-seed17-mem16g"}
+{"ts": "2026-09-22T07:57:38Z", "event": "completed", "task_id": "g2-dev-core50-nic-s0-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T07:57:38Z", "event": "started", "task_id": "g2-dev-core50-nic-lr-seed17-mem16g"}
+{"ts": "2026-09-22T08:26:02Z", "event": "completed", "task_id": "g2-dev-core50-nic-lr-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T08:26:02Z", "event": "started", "task_id": "g2-dev-core50-nic-er-gem-ewc-seed17-mem16g"}
+{"ts": "2026-09-22T10:20:55Z", "event": "completed", "task_id": "g2-dev-core50-nic-er-gem-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T10:20:56Z", "event": "started", "task_id": "g2-occupancy-mem16g-b"}
+{"ts": "2026-09-22T10:20:58Z", "event": "completed", "task_id": "g2-occupancy-mem16g-b", "exit_code": 0}
+{"ts": "2026-09-22T10:20:58Z", "event": "started", "task_id": "g2-idle-mem16g-b"}
+{"ts": "2026-09-22T10:24:09Z", "event": "completed", "task_id": "g2-idle-mem16g-b", "exit_code": 0}
+{"ts": "2026-09-22T12:28:34Z", "event": "submitted", "task_id": "g1-linger-a", "content_hash": "b7211cbe3242bee858bfeef73fda2de984800842aca8e12dbaf96b6deaca0141"}
+{"ts": "2026-09-22T12:28:34Z", "event": "submitted", "task_id": "g1-linger-b", "content_hash": "f1412324b1e8ac9202410077ea5e05d83bb8d3115fcdbba564c5dc564a39dfc3"}
+{"ts": "2026-09-22T12:28:35Z", "event": "started", "task_id": "g1-linger-a"}
+{"ts": "2026-09-22T12:28:36Z", "event": "paused", "reason": "supervisor_signal"}
+{"ts": "2026-09-22T12:28:42Z", "event": "adopted_worker", "task_id": "g1-linger-a", "unit": "orion-v4-task-g1-linger-a.service", "kind": "finalize_dead"}
+{"ts": "2026-09-22T12:28:42Z", "event": "paused", "reason": "implementation_error:g1-linger-a"}
+{"ts": "2026-09-22T12:28:42Z", "event": "paused_on_failure", "task_id": "g1-linger-a", "status": "implementation_error", "exit_code": null, "adopted": true}
+{"ts": "2026-09-22T12:28:42Z", "event": "paused", "reason": "supervisor_signal"}
+{"ts": "2026-09-22T12:28:51Z", "event": "resumed"}
+{"ts": "2026-09-22T12:28:52Z", "event": "started", "task_id": "g1-linger-b"}
+{"ts": "2026-09-22T12:28:58Z", "event": "completed", "task_id": "g1-linger-b", "exit_code": 0}
+{"ts": "2026-09-22T12:42:41Z", "event": "submitted", "task_id": "g1-reboot-a", "content_hash": "8e6004055c7b12ae224964d86f9344983c45a68cfd7f4fc201486a1c40e79cff"}
+{"ts": "2026-09-22T12:42:41Z", "event": "submitted", "task_id": "g1-reboot-b", "content_hash": "31e625c480c4be14fe45df4c6b2e4c230be165bc019f72d1b680d9d92281a12e"}
+{"ts": "2026-09-22T12:42:42Z", "event": "started", "task_id": "g1-reboot-a"}
+{"ts": "2026-09-22T12:42:45Z", "event": "paused", "reason": "supervisor_signal"}
+{"ts": "2026-09-22T12:43:28Z", "event": "paused", "reason": "host_reboot_with_open_work"}
+{"ts": "2026-09-22T12:43:30Z", "event": "adopted_worker", "task_id": "g1-reboot-a", "unit": "orion-v4-task-g1-reboot-a.service", "kind": "finalize_dead"}
+{"ts": "2026-09-22T12:43:30Z", "event": "paused", "reason": "implementation_error:g1-reboot-a"}
+{"ts": "2026-09-22T12:43:30Z", "event": "paused_on_failure", "task_id": "g1-reboot-a", "status": "implementation_error", "exit_code": null, "adopted": true}
+{"ts": "2026-09-22T12:43:30Z", "event": "paused", "reason": "host_reboot_with_open_work"}
+{"ts": "2026-09-22T12:43:45Z", "event": "resumed"}
+{"ts": "2026-09-22T12:43:46Z", "event": "started", "task_id": "g1-reboot-b"}
+{"ts": "2026-09-22T12:43:52Z", "event": "completed", "task_id": "g1-reboot-b", "exit_code": 0}
+{"ts": "2026-09-22T12:52:02Z", "event": "submitted", "task_id": "g2-dev-core50-nic-gss-seed17-mem16g", "content_hash": "5d39839bb3a25fb942cb0b073888fb9c21bd748a7d8d69d6c28872586195c91d"}
+{"ts": "2026-09-22T12:52:02Z", "event": "started", "task_id": "g2-dev-core50-nic-gss-seed17-mem16g"}
+{"ts": "2026-09-22T12:52:02Z", "event": "submitted", "task_id": "g2-dev-core50-nic-gem-seed17-mem16g", "content_hash": "71102bc4ec88ee2849072cfddd51ffcf7b67554c8db9c71047f5be2f9998e504"}
+{"ts": "2026-09-22T12:52:02Z", "event": "submitted", "task_id": "g2-dev-core50-nic-agem-seed17-mem16g", "content_hash": "6a562a85629e584ba588e8e86c770b25da3341d1b483b50eb52f9755c29dea3e"}
+{"ts": "2026-09-22T12:52:03Z", "event": "submitted", "task_id": "g2-dev-core50-nic-er-gem-seed17-mem16g", "content_hash": "a1ce4a985e06461f6ddea1cdd3b867e584dbce0391fd4711c2bb2394172e604e"}
+{"ts": "2026-09-22T12:52:03Z", "event": "submitted", "task_id": "g2-dev-core50-nic-er-ewc-seed17-mem16g", "content_hash": "6637fa4f40ec222f3bdbb07638e3ee8f49cb29d1b5d2d1b90e1eb726f100a308"}
+{"ts": "2026-09-22T12:52:04Z", "event": "submitted", "task_id": "g2-dev-core50-nic-maxp-seed17-mem16g", "content_hash": "cdbfc0b132a1aed65c508aa94bd55f8c9cf99acd7d13d6a4ea1d0c5f12f61667"}
+{"ts": "2026-09-22T12:52:04Z", "event": "submitted", "task_id": "g2-dev-core50-ni-gss-seed17-mem16g", "content_hash": "95c82e008c1713d62e3e163af15d0dcacaee335b9461c5ab0ad1b15675af7db7"}
+{"ts": "2026-09-22T12:52:04Z", "event": "submitted", "task_id": "g2-dev-core50-ni-gem-seed17-mem16g", "content_hash": "57c9dd4f9cfb209dfd9d9a9284552f2ec6448a6c303284245631e2eccb3c4bd9"}
+{"ts": "2026-09-22T12:52:05Z", "event": "submitted", "task_id": "g2-dev-core50-ni-agem-seed17-mem16g", "content_hash": "4acf6166d031497dcf7de1595d2663bcf02aa111d20116ffb4fbd54ff4386e7c"}
+{"ts": "2026-09-22T12:52:05Z", "event": "submitted", "task_id": "g2-dev-core50-ni-maxa-seed17-mem16g", "content_hash": "4d6e78f280184af845f977993558423588fa215af67e78cbb0231edd69b83305"}
+{"ts": "2026-09-22T12:52:06Z", "event": "submitted", "task_id": "g2-dev-core50-ni-maxp-seed17-mem16g", "content_hash": "e31a21a92390e93d5956ed235d48111957c9aef8855ee856382543e0b9480569"}
+{"ts": "2026-09-22T12:52:06Z", "event": "submitted", "task_id": "g2-dev-endless-ic-gss-seed17-mem16g", "content_hash": "78bb7fcfe24f5cf9fb929c5ddcee4605ad6e09e5f223f5b5914bed30c51f0c95"}
+{"ts": "2026-09-22T12:52:06Z", "event": "submitted", "task_id": "g2-dev-endless-ic-gem-seed17-mem16g", "content_hash": "b46785345a6cc253d764ec1b60563e8bdda1c874de8b1ec3b7d818be2879bd71"}
+{"ts": "2026-09-22T12:52:07Z", "event": "submitted", "task_id": "g2-dev-endless-ic-agem-seed17-mem16g", "content_hash": "e700eb4e832c0bde2ee28a9adcf198363aaad5c8e726574e8b0465aa83b1386e"}
+{"ts": "2026-09-22T12:52:07Z", "event": "submitted", "task_id": "g2-dev-endless-ic-er-gem-ewc-seed17-mem16g", "content_hash": "53d055d255424f4bdb70609994749bb100d1f5b6281f5bf604910865a7977c78"}
+{"ts": "2026-09-22T12:52:08Z", "event": "submitted", "task_id": "g2-dev-endless-ic-maxp-seed17-mem16g", "content_hash": "a7e802dacc55622cb2f763d31bae36cba8f611ce51da06cdfe142c401a099ab0"}
+{"ts": "2026-09-22T12:52:08Z", "event": "submitted", "task_id": "g2-dev-endless-il-gss-seed17-mem16g", "content_hash": "69ba23c67291f55e087670d3f7f2b69c82ff26a8033c957d8702ff9018a231d7"}
+{"ts": "2026-09-22T12:52:08Z", "event": "submitted", "task_id": "g2-dev-endless-il-gem-seed17-mem16g", "content_hash": "7aef20681f09caec5bb73e632fa2b0add77db7445035f0452d8015e079973627"}
+{"ts": "2026-09-22T12:52:09Z", "event": "submitted", "task_id": "g2-dev-endless-il-agem-seed17-mem16g", "content_hash": "c03abe875a227d7501f68a4cfecc18f013a696a27252f990702e33f7720ac3dc"}
+{"ts": "2026-09-22T12:52:09Z", "event": "submitted", "task_id": "g2-dev-endless-il-er-gem-ewc-seed17-mem16g", "content_hash": "98728815bcab941ac5a9682340dba160af9f985dd147e4c945fa9ebdceac9586"}
+{"ts": "2026-09-22T12:52:10Z", "event": "submitted", "task_id": "g2-dev-endless-il-maxp-seed17-mem16g", "content_hash": "557b94c533dcf5f8cdd730789ea692fb6370a84d9e4ab3247d31e8e9130db1d8"}
+{"ts": "2026-09-22T12:52:10Z", "event": "submitted", "task_id": "g2-dev-endless-wc-gss-seed17-mem16g", "content_hash": "abf04fcf77ef784119988e5a5661e0b3d393cc73efcef69821ee2e4cf9120e61"}
+{"ts": "2026-09-22T12:52:11Z", "event": "submitted", "task_id": "g2-dev-endless-wc-gem-seed17-mem16g", "content_hash": "4fb23ef5b47a7cd4f292c67a4a4917783c55866f5c270714cc74817cf14eb4b2"}
+{"ts": "2026-09-22T12:52:11Z", "event": "submitted", "task_id": "g2-dev-endless-wc-agem-seed17-mem16g", "content_hash": "937449af801a8ed8a124d40162cdc346fb1ee692c77df852a6ccebc3aefb8ae8"}
+{"ts": "2026-09-22T12:52:11Z", "event": "submitted", "task_id": "g2-dev-endless-wc-er-gem-ewc-seed17-mem16g", "content_hash": "0bd72dfc8fe3555e2616007b28bb7c9484b93dbbb196003e84f762b830636eb7"}
+{"ts": "2026-09-22T12:52:12Z", "event": "submitted", "task_id": "g2-dev-endless-wc-maxp-seed17-mem16g", "content_hash": "8c7277e9c431084e65defdd95a1e27ebe10c915a8c94b94936c8395287a380ce"}
+{"ts": "2026-09-22T12:52:12Z", "event": "submitted", "task_id": "g2-cifar100-maxa-seed17-mem16g", "content_hash": "908b6392e646549641cd0df4c24cd1174587b57e1be0dea6695d0d2abf50e5a5"}
+{"ts": "2026-09-22T12:52:13Z", "event": "submitted", "task_id": "g2-cifar100-maxp-seed17-mem16g", "content_hash": "6db40e6192a646382937a74886494da1b186c2a1ccad81f1f46d6314bd76f8c0"}
+{"ts": "2026-09-22T12:52:13Z", "event": "submitted", "task_id": "g2-cifar10-maxa-seed17-mem16g", "content_hash": "bc0b155688fa4c59e19aca227759a99e26edc4c05976b66a04eade670d11efbb"}
+{"ts": "2026-09-22T12:52:13Z", "event": "submitted", "task_id": "g2-cifar10-maxp-seed17-mem16g", "content_hash": "b1a2203314fe0402139a01e748ac365a8fc61a8ddbc348c8a486d5551929cbfe"}
+{"ts": "2026-09-22T12:52:14Z", "event": "submitted", "task_id": "g2-core50-nc-maxa-seed17-mem16g", "content_hash": "4df557b71f8f557c20d5b3cc89db6f1e99ecaea1bbf056ff6cdacccc82ec580f"}
+{"ts": "2026-09-22T12:52:14Z", "event": "submitted", "task_id": "g2-core50-nc-maxp-seed17-mem16g", "content_hash": "a7a37ace459fb1f2f0813cf024066dbfdeeea28455e987aad1cb54c553d43961"}
+{"ts": "2026-09-22T12:52:14Z", "event": "submitted", "task_id": "g2-core50-nc-gem-seed17-mem16g", "content_hash": "748d92db696228a6c2734127fd225894851e06dcf642ea1bb25c61d6958b217d"}
+{"ts": "2026-09-22T12:52:15Z", "event": "submitted", "task_id": "g2-core50-nc-agem-seed17-mem16g", "content_hash": "348dfe216ab57eefc3ed8fa9b95cb12cd3da2f95b88807b50265a5d3aff03044"}
+{"ts": "2026-09-22T12:52:15Z", "event": "submitted", "task_id": "g2-core50-nc-er-gem-seed17-mem16g", "content_hash": "6ddd97f5332828800245166e7919db167e1d75146672d09d30d24b0ca9667568"}
+{"ts": "2026-09-22T12:52:16Z", "event": "submitted", "task_id": "g2-core50-nc-er-ewc-seed17-mem16g", "content_hash": "f0d589bcdd966e4e22dbebad1ad73a59571a9b7927cc84dbc4b3e4041a41cc52"}
+{"ts": "2026-09-22T12:52:16Z", "event": "submitted", "task_id": "g2-core50-nc-lr-seed17-mem16g", "content_hash": "affd56102ad86a92b8122c1e99382d0805ebff57210ba246972db80bec9cd153"}
+{"ts": "2026-09-22T12:52:16Z", "event": "submitted", "task_id": "g2-occupancy-mem16g-c", "content_hash": "605d854e21c1676fa32bcdc47b8c890e71df6982f20dee31dcef63cb98e2b207"}
+{"ts": "2026-09-22T12:52:17Z", "event": "submitted", "task_id": "g2-idle-mem16g-c", "content_hash": "bc025ed29c6232eeeee3e230d749d37e2c0cf5a71a2931570dd2677237584ecd"}
+{"ts": "2026-09-22T13:22:47Z", "event": "completed", "task_id": "g2-dev-core50-nic-gss-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T13:22:47Z", "event": "started", "task_id": "g2-dev-core50-nic-gem-seed17-mem16g"}
+{"ts": "2026-09-22T14:58:08Z", "event": "completed", "task_id": "g2-dev-core50-nic-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-22T14:58:08Z", "event": "started", "task_id": "g2-dev-core50-nic-agem-seed17-mem16g"}
+{"ts": "2026-09-22T15:24:55Z", "event": "paused", "reason": "implementation_error:g2-dev-core50-nic-agem-seed17-mem16g"}
+{"ts": "2026-09-22T15:24:55Z", "event": "paused_on_failure", "task_id": "g2-dev-core50-nic-agem-seed17-mem16g", "status": "implementation_error", "exit_code": 1}
+{"ts": "2026-09-23T07:31:35Z", "event": "submitted", "task_id": "g2-dev-core50-nic-agem-seed17-mem16g-b2", "content_hash": "7bee0e96df19c42e2dac07bf1ba88f0c90666cc4f1583c116165f58eb9c2d42f"}
+{"ts": "2026-09-23T07:31:35Z", "event": "resumed"}
+{"ts": "2026-09-23T07:31:37Z", "event": "started", "task_id": "g2-dev-core50-nic-er-gem-seed17-mem16g"}
+{"ts": "2026-09-23T09:08:40Z", "event": "completed", "task_id": "g2-dev-core50-nic-er-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T09:08:40Z", "event": "started", "task_id": "g2-dev-core50-nic-er-ewc-seed17-mem16g"}
+{"ts": "2026-09-23T10:05:44Z", "event": "completed", "task_id": "g2-dev-core50-nic-er-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T10:05:45Z", "event": "started", "task_id": "g2-dev-core50-nic-maxp-seed17-mem16g"}
+{"ts": "2026-09-23T10:32:35Z", "event": "completed", "task_id": "g2-dev-core50-nic-maxp-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T10:32:35Z", "event": "started", "task_id": "g2-dev-core50-ni-gss-seed17-mem16g"}
+{"ts": "2026-09-23T10:44:38Z", "event": "completed", "task_id": "g2-dev-core50-ni-gss-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T10:44:38Z", "event": "started", "task_id": "g2-dev-core50-ni-gem-seed17-mem16g"}
+{"ts": "2026-09-23T10:53:08Z", "event": "completed", "task_id": "g2-dev-core50-ni-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T10:53:08Z", "event": "started", "task_id": "g2-dev-core50-ni-agem-seed17-mem16g"}
+{"ts": "2026-09-23T11:00:15Z", "event": "completed", "task_id": "g2-dev-core50-ni-agem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T11:00:16Z", "event": "started", "task_id": "g2-dev-core50-ni-maxa-seed17-mem16g"}
+{"ts": "2026-09-23T14:16:03Z", "event": "completed", "task_id": "g2-dev-core50-ni-maxa-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:16:04Z", "event": "started", "task_id": "g2-dev-core50-ni-maxp-seed17-mem16g"}
+{"ts": "2026-09-23T14:18:36Z", "event": "completed", "task_id": "g2-dev-core50-ni-maxp-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:18:37Z", "event": "started", "task_id": "g2-dev-endless-ic-gss-seed17-mem16g"}
+{"ts": "2026-09-23T14:21:19Z", "event": "completed", "task_id": "g2-dev-endless-ic-gss-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:21:19Z", "event": "started", "task_id": "g2-dev-endless-ic-gem-seed17-mem16g"}
+{"ts": "2026-09-23T14:22:17Z", "event": "completed", "task_id": "g2-dev-endless-ic-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:22:18Z", "event": "started", "task_id": "g2-dev-endless-ic-agem-seed17-mem16g"}
+{"ts": "2026-09-23T14:23:22Z", "event": "completed", "task_id": "g2-dev-endless-ic-agem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:23:22Z", "event": "started", "task_id": "g2-dev-endless-ic-er-gem-ewc-seed17-mem16g"}
+{"ts": "2026-09-23T14:25:22Z", "event": "completed", "task_id": "g2-dev-endless-ic-er-gem-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:25:22Z", "event": "started", "task_id": "g2-dev-endless-ic-maxp-seed17-mem16g"}
+{"ts": "2026-09-23T14:25:49Z", "event": "completed", "task_id": "g2-dev-endless-ic-maxp-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:25:50Z", "event": "started", "task_id": "g2-dev-endless-il-gss-seed17-mem16g"}
+{"ts": "2026-09-23T14:30:35Z", "event": "completed", "task_id": "g2-dev-endless-il-gss-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:30:35Z", "event": "started", "task_id": "g2-dev-endless-il-gem-seed17-mem16g"}
+{"ts": "2026-09-23T14:34:06Z", "event": "completed", "task_id": "g2-dev-endless-il-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:34:07Z", "event": "started", "task_id": "g2-dev-endless-il-agem-seed17-mem16g"}
+{"ts": "2026-09-23T14:38:22Z", "event": "completed", "task_id": "g2-dev-endless-il-agem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:38:23Z", "event": "started", "task_id": "g2-dev-endless-il-er-gem-ewc-seed17-mem16g"}
+{"ts": "2026-09-23T14:47:51Z", "event": "completed", "task_id": "g2-dev-endless-il-er-gem-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:47:51Z", "event": "started", "task_id": "g2-dev-endless-il-maxp-seed17-mem16g"}
+{"ts": "2026-09-23T14:49:05Z", "event": "completed", "task_id": "g2-dev-endless-il-maxp-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:49:05Z", "event": "started", "task_id": "g2-dev-endless-wc-gss-seed17-mem16g"}
+{"ts": "2026-09-23T14:57:52Z", "event": "completed", "task_id": "g2-dev-endless-wc-gss-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T14:57:53Z", "event": "started", "task_id": "g2-dev-endless-wc-gem-seed17-mem16g"}
+{"ts": "2026-09-23T15:01:29Z", "event": "completed", "task_id": "g2-dev-endless-wc-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T15:01:29Z", "event": "started", "task_id": "g2-dev-endless-wc-agem-seed17-mem16g"}
+{"ts": "2026-09-23T15:05:59Z", "event": "completed", "task_id": "g2-dev-endless-wc-agem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T15:06:00Z", "event": "started", "task_id": "g2-dev-endless-wc-er-gem-ewc-seed17-mem16g"}
+{"ts": "2026-09-23T15:15:29Z", "event": "completed", "task_id": "g2-dev-endless-wc-er-gem-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T15:15:29Z", "event": "started", "task_id": "g2-dev-endless-wc-maxp-seed17-mem16g"}
+{"ts": "2026-09-23T15:16:50Z", "event": "completed", "task_id": "g2-dev-endless-wc-maxp-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T15:16:50Z", "event": "started", "task_id": "g2-cifar100-maxa-seed17-mem16g"}
+{"ts": "2026-09-23T16:55:20Z", "event": "completed", "task_id": "g2-cifar100-maxa-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T16:55:20Z", "event": "started", "task_id": "g2-cifar100-maxp-seed17-mem16g"}
+{"ts": "2026-09-23T16:55:54Z", "event": "completed", "task_id": "g2-cifar100-maxp-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T16:55:54Z", "event": "started", "task_id": "g2-cifar10-maxa-seed17-mem16g"}
+{"ts": "2026-09-23T18:33:39Z", "event": "completed", "task_id": "g2-cifar10-maxa-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T18:33:39Z", "event": "started", "task_id": "g2-cifar10-maxp-seed17-mem16g"}
+{"ts": "2026-09-23T18:34:13Z", "event": "completed", "task_id": "g2-cifar10-maxp-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T18:34:13Z", "event": "started", "task_id": "g2-core50-nc-maxa-seed17-mem16g"}
+{"ts": "2026-09-23T21:52:26Z", "event": "completed", "task_id": "g2-core50-nc-maxa-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T21:52:26Z", "event": "started", "task_id": "g2-core50-nc-maxp-seed17-mem16g"}
+{"ts": "2026-09-23T21:54:34Z", "event": "completed", "task_id": "g2-core50-nc-maxp-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T21:54:35Z", "event": "started", "task_id": "g2-core50-nc-gem-seed17-mem16g"}
+{"ts": "2026-09-23T22:02:31Z", "event": "completed", "task_id": "g2-core50-nc-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T22:02:32Z", "event": "started", "task_id": "g2-core50-nc-agem-seed17-mem16g"}
+{"ts": "2026-09-23T22:08:47Z", "event": "completed", "task_id": "g2-core50-nc-agem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T22:08:47Z", "event": "started", "task_id": "g2-core50-nc-er-gem-seed17-mem16g"}
+{"ts": "2026-09-23T22:17:38Z", "event": "completed", "task_id": "g2-core50-nc-er-gem-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T22:17:38Z", "event": "started", "task_id": "g2-core50-nc-er-ewc-seed17-mem16g"}
+{"ts": "2026-09-23T22:28:54Z", "event": "completed", "task_id": "g2-core50-nc-er-ewc-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T22:28:54Z", "event": "started", "task_id": "g2-core50-nc-lr-seed17-mem16g"}
+{"ts": "2026-09-23T22:31:52Z", "event": "completed", "task_id": "g2-core50-nc-lr-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-23T22:31:52Z", "event": "started", "task_id": "g2-dev-core50-nic-agem-seed17-mem16g-b2"}
+{"ts": "2026-09-23T23:03:43Z", "event": "completed", "task_id": "g2-dev-core50-nic-agem-seed17-mem16g-b2", "exit_code": 0}
+{"ts": "2026-09-23T23:03:43Z", "event": "started", "task_id": "g2-occupancy-mem16g-c"}
+{"ts": "2026-09-23T23:03:47Z", "event": "completed", "task_id": "g2-occupancy-mem16g-c", "exit_code": 0}
+{"ts": "2026-09-23T23:03:48Z", "event": "started", "task_id": "g2-idle-mem16g-c"}
+{"ts": "2026-09-23T23:06:58Z", "event": "completed", "task_id": "g2-idle-mem16g-c", "exit_code": 0}
+{"ts": "2026-09-24T07:42:42Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-hash-off-det-seed17-mem16g", "content_hash": "85900314c4a0fee4fbf41b20f4a38a7c2031a24b46b1979b3b57deaa4c7dbebe"}
+{"ts": "2026-09-24T07:42:42Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-hash-on-det-seed17-mem16g", "content_hash": "6fb8520f93385cff3d8dde3375d339384d02bd4fdbdeefe27d183c722cb22ac5"}
+{"ts": "2026-09-24T07:42:42Z", "event": "submitted", "task_id": "g2-occupancy-h7-det", "content_hash": "fde1f2fbfc7eaa0674069b3f985b681d429ae95a1e1e1376399545ba187860bd"}
+{"ts": "2026-09-24T07:42:43Z", "event": "started", "task_id": "g2-dev-cifar100-s0-hash-off-det-seed17-mem16g"}
+{"ts": "2026-09-24T07:44:15Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-hash-off-det-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T07:44:16Z", "event": "started", "task_id": "g2-dev-cifar100-s0-hash-on-det-seed17-mem16g"}
+{"ts": "2026-09-24T07:45:41Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-hash-on-det-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T07:45:41Z", "event": "started", "task_id": "g2-occupancy-h7-det"}
+{"ts": "2026-09-24T07:45:45Z", "event": "completed", "task_id": "g2-occupancy-h7-det", "exit_code": 0}
+{"ts": "2026-09-24T08:02:32Z", "event": "submitted", "task_id": "g2-dev-cifar100-h5c-pause-keep-seed17-mem16g", "content_hash": "0fe24d0ad0737d7e960231d2c7c61c62a90fdb0fb8a7aabb4f9dea312f54e5dc"}
+{"ts": "2026-09-24T08:02:32Z", "event": "started", "task_id": "g2-dev-cifar100-h5c-pause-keep-seed17-mem16g"}
+{"ts": "2026-09-24T08:02:32Z", "event": "submitted", "task_id": "g2-dev-cifar100-h5c-release-rebuild-seed17-mem16g", "content_hash": "dea275c41da55f70d2837156120a9dba8a22cd2b35dc537e50b7ccc0bae7ac88"}
+{"ts": "2026-09-24T08:02:33Z", "event": "submitted", "task_id": "g2-occupancy-h5c", "content_hash": "d8b304f1c01001c32604c8e0a7a973785ef9366455df04bbc65eb066e29fd891"}
+{"ts": "2026-09-24T08:02:44Z", "event": "paused", "reason": "implementation_error:g2-dev-cifar100-h5c-pause-keep-seed17-mem16g"}
+{"ts": "2026-09-24T08:02:44Z", "event": "paused_on_failure", "task_id": "g2-dev-cifar100-h5c-pause-keep-seed17-mem16g", "status": "implementation_error", "exit_code": 1}
+{"ts": "2026-09-24T08:10:37Z", "event": "submitted", "task_id": "g2-dev-cifar100-h5c-pause-keep-seed17-mem16g-b2", "content_hash": "6ccc4cf38b6a044d4dc39e10a0eef823713d3c220fd0712da34b28056cc0d73c"}
+{"ts": "2026-09-24T08:10:38Z", "event": "resumed"}
+{"ts": "2026-09-24T08:10:39Z", "event": "started", "task_id": "g2-dev-cifar100-h5c-pause-keep-seed17-mem16g-b2"}
+{"ts": "2026-09-24T08:13:08Z", "event": "completed", "task_id": "g2-dev-cifar100-h5c-pause-keep-seed17-mem16g-b2", "exit_code": 0}
+{"ts": "2026-09-24T08:13:08Z", "event": "started", "task_id": "g2-dev-cifar100-h5c-release-rebuild-seed17-mem16g"}
+{"ts": "2026-09-24T08:14:20Z", "event": "paused", "reason": "implementation_error:g2-dev-cifar100-h5c-release-rebuild-seed17-mem16g"}
+{"ts": "2026-09-24T08:14:20Z", "event": "paused_on_failure", "task_id": "g2-dev-cifar100-h5c-release-rebuild-seed17-mem16g", "status": "implementation_error", "exit_code": 1}
+{"ts": "2026-09-24T08:18:32Z", "event": "resumed"}
+{"ts": "2026-09-24T08:18:33Z", "event": "started", "task_id": "g2-occupancy-h5c"}
+{"ts": "2026-09-24T08:18:38Z", "event": "completed", "task_id": "g2-occupancy-h5c", "exit_code": 0}
+{"ts": "2026-09-24T08:26:54Z", "event": "submitted", "task_id": "g2-dev-cifar10-h6a_balanced-seed17-mem16g", "content_hash": "d7188aa25edfab216997d3283ca409337d6e443253d9c5d5ed19fec861d7ea5a"}
+{"ts": "2026-09-24T08:26:54Z", "event": "started", "task_id": "g2-dev-cifar10-h6a_balanced-seed17-mem16g"}
+{"ts": "2026-09-24T08:26:54Z", "event": "submitted", "task_id": "g2-dev-cifar10-h6a_latency-seed17-mem16g", "content_hash": "acb272f104c8f02c5e259c5f559914f154abc3b8c612ee7c243eb5a78d08394b"}
+{"ts": "2026-09-24T08:26:55Z", "event": "submitted", "task_id": "g2-dev-cifar10-h6a_p_s-seed17-mem16g", "content_hash": "beb4faed4758e9ad228ac53a09727db6fface1c8b8a72bbb883bc19493b4f5b2"}
+{"ts": "2026-09-24T08:26:55Z", "event": "submitted", "task_id": "g2-dev-cifar10-h6a_memory-seed17-mem16g", "content_hash": "efa068dd2a6ca9db3d36ee5348404f301b8a148b262716f2843ac31eb8524639"}
+{"ts": "2026-09-24T08:26:56Z", "event": "submitted", "task_id": "g2-dev-cifar10-h6b_ln2-seed17-mem16g", "content_hash": "4ee7d43a99039303be5e14b2f8d4ed5e1f7cffb7d51164ae43a1310a3503275c"}
+{"ts": "2026-09-24T08:26:56Z", "event": "submitted", "task_id": "g2-dev-cifar10-h6b_nminus1-seed17-mem16g", "content_hash": "7bce62a6a1472a193ba3a639ff7e8dcb9ae2acd01bf561626e0b407287656fac"}
+{"ts": "2026-09-24T08:26:56Z", "event": "submitted", "task_id": "g2-dev-cifar100-h6a_balanced-seed17-mem16g", "content_hash": "41655a48fe8c09d090e3cca1537ceedc94462a7b5842368df973b7c5361eb7bc"}
+{"ts": "2026-09-24T08:26:57Z", "event": "submitted", "task_id": "g2-dev-cifar100-h6a_latency-seed17-mem16g", "content_hash": "3ec7e64b8564f84924bff7518fd8a17a54aa014936c3a9aba446f07f42b31d27"}
+{"ts": "2026-09-24T08:26:57Z", "event": "submitted", "task_id": "g2-dev-cifar100-h6a_p_s-seed17-mem16g", "content_hash": "0f852294f27c0c117e914befb19db2b5559e920793946fecf160705874136c06"}
+{"ts": "2026-09-24T08:26:58Z", "event": "submitted", "task_id": "g2-dev-cifar100-h6a_memory-seed17-mem16g", "content_hash": "c7e810478154108a70c2f49e37c93e9c60a18f1b919ef282b17016a602883164"}
+{"ts": "2026-09-24T08:26:58Z", "event": "submitted", "task_id": "g2-dev-cifar100-h6b_ln2-seed17-mem16g", "content_hash": "91a821cb689a03a9f0c4e99dcb41102c3c83438e1e01f1bbb90e219cfae760c4"}
+{"ts": "2026-09-24T08:26:58Z", "event": "submitted", "task_id": "g2-dev-cifar100-h6b_nminus1-seed17-mem16g", "content_hash": "c5a61c15850e1569828ef48d7bae96cee69e2250e10000ed34a853e3ebed2d98"}
+{"ts": "2026-09-24T08:26:59Z", "event": "submitted", "task_id": "g2-dev-core50-ni-h6a_balanced-seed17-mem16g", "content_hash": "8a059ea0a64b0c4b76bbff1e6b32bc49a51e7882b74935adf3b09353286d0c59"}
+{"ts": "2026-09-24T08:26:59Z", "event": "submitted", "task_id": "g2-dev-core50-ni-h6a_latency-seed17-mem16g", "content_hash": "ad04f5cce1d820bcf36f02a30a7ac2edb1c50e714976034b245517eabef485a4"}
+{"ts": "2026-09-24T08:27:00Z", "event": "submitted", "task_id": "g2-dev-core50-ni-h6a_p_s-seed17-mem16g", "content_hash": "6c05493023a7c3ca1b123b4a9fc8211044f212f22532235d637925fde67cb9bc"}
+{"ts": "2026-09-24T08:27:00Z", "event": "submitted", "task_id": "g2-dev-core50-ni-h6a_memory-seed17-mem16g", "content_hash": "18b9b4133513ec099896f98fba591bf37089465ae80ea3b496118d309e18f8f5"}
+{"ts": "2026-09-24T08:27:01Z", "event": "submitted", "task_id": "g2-dev-core50-ni-h6b_ln2-seed17-mem16g", "content_hash": "66bb17e9232d9989a437092931a09955d7c691745688b27cf854f57c0444285c"}
+{"ts": "2026-09-24T08:27:01Z", "event": "submitted", "task_id": "g2-dev-core50-ni-h6b_nminus1-seed17-mem16g", "content_hash": "1e465c93b8574aed69455a4262c25ddbd1b064901c2ba3346dc782c22d51bf88"}
+{"ts": "2026-09-24T08:27:01Z", "event": "submitted", "task_id": "g2-dev-core50-nc-h6a_balanced-seed17-mem16g", "content_hash": "8a4de4f343170acd001db8ba8dae9927ed84c76cc1524d1aacf2975ea36a838e"}
+{"ts": "2026-09-24T08:27:02Z", "event": "submitted", "task_id": "g2-dev-core50-nc-h6a_latency-seed17-mem16g", "content_hash": "fd38ff2bd2783cf826823f8f14d0222e5feaaed34f6e11ecfe92733ce8d67a38"}
+{"ts": "2026-09-24T08:27:02Z", "event": "submitted", "task_id": "g2-dev-core50-nc-h6a_p_s-seed17-mem16g", "content_hash": "275d00e1f6cf19f85da8632f0b122d9cf48a6ca06f15b5ec5a586d8f3340907a"}
+{"ts": "2026-09-24T08:27:02Z", "event": "submitted", "task_id": "g2-dev-core50-nc-h6a_memory-seed17-mem16g", "content_hash": "33204b277d1e8d2392db4e7133958706b8d8d5e28156b5568ac0af3c78a16477"}
+{"ts": "2026-09-24T08:27:03Z", "event": "submitted", "task_id": "g2-dev-core50-nc-h6b_ln2-seed17-mem16g", "content_hash": "583d0a7c657750cefec9fa32816f6cfbec1bafbc5e790bbee6401b2391d6df1f"}
+{"ts": "2026-09-24T08:27:03Z", "event": "submitted", "task_id": "g2-dev-core50-nc-h6b_nminus1-seed17-mem16g", "content_hash": "556f3e95fe55e06052f6a859076d80ef2da3db29b6c8308361e0889e655ec4d6"}
+{"ts": "2026-09-24T08:27:04Z", "event": "submitted", "task_id": "g2-dev-core50-nic-h6a_balanced-seed17-mem16g", "content_hash": "44960233b3a6325f6ce058ef11af25b624ffd25bff6b7b539141db3fe1101045"}
+{"ts": "2026-09-24T08:27:04Z", "event": "submitted", "task_id": "g2-dev-core50-nic-h6a_latency-seed17-mem16g", "content_hash": "0ee8b96fed9af65327519ee3114089656dc9347150ef5eb604e9a25ac784ba55"}
+{"ts": "2026-09-24T08:27:04Z", "event": "submitted", "task_id": "g2-dev-core50-nic-h6a_p_s-seed17-mem16g", "content_hash": "c0764c0b9d36f243eee7f7a2efb0c699224678b29fbb2d542b7b2ab728a789e3"}
+{"ts": "2026-09-24T08:27:05Z", "event": "submitted", "task_id": "g2-dev-core50-nic-h6a_memory-seed17-mem16g", "content_hash": "2acdef6e93f58f477ad764c06246a7045847ff55101e035956a52c9548673f0e"}
+{"ts": "2026-09-24T08:27:05Z", "event": "submitted", "task_id": "g2-dev-core50-nic-h6b_ln2-seed17-mem16g", "content_hash": "a8f98e443753091a613c79b27f6d19a4940284719910dfbd924c2265819d40e5"}
+{"ts": "2026-09-24T08:27:05Z", "event": "submitted", "task_id": "g2-dev-core50-nic-h6b_nminus1-seed17-mem16g", "content_hash": "96ea01af47d49bdb01fbfa57588c48285dcf32f3d7b338912f4c243ec781d60b"}
+{"ts": "2026-09-24T08:27:06Z", "event": "submitted", "task_id": "g2-occupancy-h6", "content_hash": "65337c850605934e3b4e25262aee60f53ec8b82f18cfa27db871f161593fd826"}
+{"ts": "2026-09-24T08:32:24Z", "event": "completed", "task_id": "g2-dev-cifar10-h6a_balanced-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T08:32:24Z", "event": "started", "task_id": "g2-dev-cifar10-h6a_latency-seed17-mem16g"}
+{"ts": "2026-09-24T08:37:03Z", "event": "completed", "task_id": "g2-dev-cifar10-h6a_latency-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T08:37:03Z", "event": "started", "task_id": "g2-dev-cifar10-h6a_p_s-seed17-mem16g"}
+{"ts": "2026-09-24T08:41:59Z", "event": "completed", "task_id": "g2-dev-cifar10-h6a_p_s-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T08:42:00Z", "event": "started", "task_id": "g2-dev-cifar10-h6a_memory-seed17-mem16g"}
+{"ts": "2026-09-24T08:47:15Z", "event": "completed", "task_id": "g2-dev-cifar10-h6a_memory-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T08:47:15Z", "event": "started", "task_id": "g2-dev-cifar10-h6b_ln2-seed17-mem16g"}
+{"ts": "2026-09-24T08:51:37Z", "event": "completed", "task_id": "g2-dev-cifar10-h6b_ln2-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T08:51:37Z", "event": "started", "task_id": "g2-dev-cifar10-h6b_nminus1-seed17-mem16g"}
+{"ts": "2026-09-24T08:55:57Z", "event": "completed", "task_id": "g2-dev-cifar10-h6b_nminus1-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T08:55:57Z", "event": "started", "task_id": "g2-dev-cifar100-h6a_balanced-seed17-mem16g"}
+{"ts": "2026-09-24T09:00:05Z", "event": "completed", "task_id": "g2-dev-cifar100-h6a_balanced-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T09:00:05Z", "event": "started", "task_id": "g2-dev-cifar100-h6a_latency-seed17-mem16g"}
+{"ts": "2026-09-24T09:04:46Z", "event": "completed", "task_id": "g2-dev-cifar100-h6a_latency-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T09:04:47Z", "event": "started", "task_id": "g2-dev-cifar100-h6a_p_s-seed17-mem16g"}
+{"ts": "2026-09-24T09:09:22Z", "event": "completed", "task_id": "g2-dev-cifar100-h6a_p_s-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T09:09:22Z", "event": "started", "task_id": "g2-dev-cifar100-h6a_memory-seed17-mem16g"}
+{"ts": "2026-09-24T09:13:50Z", "event": "completed", "task_id": "g2-dev-cifar100-h6a_memory-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T09:13:50Z", "event": "started", "task_id": "g2-dev-cifar100-h6b_ln2-seed17-mem16g"}
+{"ts": "2026-09-24T09:18:28Z", "event": "completed", "task_id": "g2-dev-cifar100-h6b_ln2-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T09:18:28Z", "event": "started", "task_id": "g2-dev-cifar100-h6b_nminus1-seed17-mem16g"}
+{"ts": "2026-09-24T09:22:41Z", "event": "completed", "task_id": "g2-dev-cifar100-h6b_nminus1-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T09:22:41Z", "event": "started", "task_id": "g2-dev-core50-ni-h6a_balanced-seed17-mem16g"}
+{"ts": "2026-09-24T09:36:11Z", "event": "completed", "task_id": "g2-dev-core50-ni-h6a_balanced-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T09:36:12Z", "event": "started", "task_id": "g2-dev-core50-ni-h6a_latency-seed17-mem16g"}
+{"ts": "2026-09-24T09:49:29Z", "event": "completed", "task_id": "g2-dev-core50-ni-h6a_latency-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T09:49:30Z", "event": "started", "task_id": "g2-dev-core50-ni-h6a_p_s-seed17-mem16g"}
+{"ts": "2026-09-24T10:02:41Z", "event": "completed", "task_id": "g2-dev-core50-ni-h6a_p_s-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T10:02:41Z", "event": "started", "task_id": "g2-dev-core50-ni-h6a_memory-seed17-mem16g"}
+{"ts": "2026-09-24T10:16:16Z", "event": "completed", "task_id": "g2-dev-core50-ni-h6a_memory-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T10:16:16Z", "event": "started", "task_id": "g2-dev-core50-ni-h6b_ln2-seed17-mem16g"}
+{"ts": "2026-09-24T10:29:23Z", "event": "completed", "task_id": "g2-dev-core50-ni-h6b_ln2-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T10:29:23Z", "event": "started", "task_id": "g2-dev-core50-ni-h6b_nminus1-seed17-mem16g"}
+{"ts": "2026-09-24T10:42:47Z", "event": "completed", "task_id": "g2-dev-core50-ni-h6b_nminus1-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T10:42:47Z", "event": "started", "task_id": "g2-dev-core50-nc-h6a_balanced-seed17-mem16g"}
+{"ts": "2026-09-24T10:55:09Z", "event": "completed", "task_id": "g2-dev-core50-nc-h6a_balanced-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T10:55:09Z", "event": "started", "task_id": "g2-dev-core50-nc-h6a_latency-seed17-mem16g"}
+{"ts": "2026-09-24T11:07:27Z", "event": "completed", "task_id": "g2-dev-core50-nc-h6a_latency-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T11:07:27Z", "event": "started", "task_id": "g2-dev-core50-nc-h6a_p_s-seed17-mem16g"}
+{"ts": "2026-09-24T11:19:58Z", "event": "completed", "task_id": "g2-dev-core50-nc-h6a_p_s-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T11:19:58Z", "event": "started", "task_id": "g2-dev-core50-nc-h6a_memory-seed17-mem16g"}
+{"ts": "2026-09-24T11:32:25Z", "event": "completed", "task_id": "g2-dev-core50-nc-h6a_memory-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T11:32:25Z", "event": "started", "task_id": "g2-dev-core50-nc-h6b_ln2-seed17-mem16g"}
+{"ts": "2026-09-24T11:44:29Z", "event": "completed", "task_id": "g2-dev-core50-nc-h6b_ln2-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T11:44:29Z", "event": "started", "task_id": "g2-dev-core50-nc-h6b_nminus1-seed17-mem16g"}
+{"ts": "2026-09-24T11:56:55Z", "event": "completed", "task_id": "g2-dev-core50-nc-h6b_nminus1-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T11:56:55Z", "event": "started", "task_id": "g2-dev-core50-nic-h6a_balanced-seed17-mem16g"}
+{"ts": "2026-09-24T13:01:14Z", "event": "completed", "task_id": "g2-dev-core50-nic-h6a_balanced-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T13:01:14Z", "event": "started", "task_id": "g2-dev-core50-nic-h6a_latency-seed17-mem16g"}
+{"ts": "2026-09-24T14:04:13Z", "event": "completed", "task_id": "g2-dev-core50-nic-h6a_latency-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T14:04:13Z", "event": "started", "task_id": "g2-dev-core50-nic-h6a_p_s-seed17-mem16g"}
+{"ts": "2026-09-24T15:09:09Z", "event": "completed", "task_id": "g2-dev-core50-nic-h6a_p_s-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T15:09:09Z", "event": "started", "task_id": "g2-dev-core50-nic-h6a_memory-seed17-mem16g"}
+{"ts": "2026-09-24T16:13:24Z", "event": "completed", "task_id": "g2-dev-core50-nic-h6a_memory-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T16:13:24Z", "event": "started", "task_id": "g2-dev-core50-nic-h6b_ln2-seed17-mem16g"}
+{"ts": "2026-09-24T17:10:36Z", "event": "completed", "task_id": "g2-dev-core50-nic-h6b_ln2-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T17:10:36Z", "event": "started", "task_id": "g2-dev-core50-nic-h6b_nminus1-seed17-mem16g"}
+{"ts": "2026-09-24T18:11:47Z", "event": "completed", "task_id": "g2-dev-core50-nic-h6b_nminus1-seed17-mem16g", "exit_code": 0}
+{"ts": "2026-09-24T18:11:47Z", "event": "started", "task_id": "g2-occupancy-h6"}
+{"ts": "2026-09-24T18:11:53Z", "event": "completed", "task_id": "g2-occupancy-h6", "exit_code": 0}
+{"ts": "2026-09-25T04:03:57Z", "event": "paused", "reason": "capacity_switch_mem8g"}
+{"ts": "2026-09-25T04:05:23Z", "event": "submitted", "task_id": "g2-idle-mem8g", "content_hash": "56ea910c304f620b67ee1c4bde34d6452ee7c3dfe254e82bb5321c83465e8fce"}
+{"ts": "2026-09-25T04:05:24Z", "event": "submitted", "task_id": "g1-cifar100-exp1-mem8g", "content_hash": "9182ccd5f15f3a02b35d916bea28fb34fe0c209dbc0f55570ffd06de2b5634c4"}
+{"ts": "2026-09-25T04:05:24Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-seed17-mem8g", "content_hash": "f63fd702c8355b919c5bf4fafd90c2a2437456cd30bdda31f762a8656231eb5f"}
+{"ts": "2026-09-25T04:05:24Z", "event": "started", "task_id": "g2-idle-mem8g"}
+{"ts": "2026-09-25T04:05:24Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-repeat-seed17-mem8g", "content_hash": "92c1619dcd081e18c6c230e30c4a2fa618e15010e8faef8efbf369ace823194c"}
+{"ts": "2026-09-25T04:05:25Z", "event": "submitted", "task_id": "g2-dev-cifar100-batch256-seed17-mem8g", "content_hash": "391615e5925b679720ac536366b22ee0fc4b617939dbb88343e204741cdbb6f9"}
+{"ts": "2026-09-25T04:05:25Z", "event": "submitted", "task_id": "g2-dev-cifar100-replay2000-seed17-mem8g", "content_hash": "42e58a4c702488fa645000fec4aa89d77cf41ecfff14c0082eafddbe63642ba4"}
+{"ts": "2026-09-25T04:05:25Z", "event": "submitted", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem8g", "content_hash": "c895981f279d3c4cb10b79188b88ab0bfcb3bde1978ab87f5157257ef5fdf11b"}
+{"ts": "2026-09-25T04:05:26Z", "event": "submitted", "task_id": "g2-dev-core50-nc-s0-seed17-mem8g", "content_hash": "37bb50f75c98c442c1d6911f16e82f75b06462b185e0624c8e1b6c78d9375f75"}
+{"ts": "2026-09-25T04:05:26Z", "event": "submitted", "task_id": "g2-occupancy-mem8g", "content_hash": "dfa8ae36a1cf37a5a8a5c9e903d408ab9d8ee887c308ceeef1171f31ac4c5c16"}
+{"ts": "2026-09-25T04:08:35Z", "event": "completed", "task_id": "g2-idle-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T04:08:35Z", "event": "started", "task_id": "g1-cifar100-exp1-mem8g"}
+{"ts": "2026-09-25T04:08:53Z", "event": "completed", "task_id": "g1-cifar100-exp1-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T04:08:53Z", "event": "started", "task_id": "g2-dev-cifar100-s0-seed17-mem8g"}
+{"ts": "2026-09-25T04:10:12Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T04:10:13Z", "event": "started", "task_id": "g2-dev-cifar100-s0-repeat-seed17-mem8g"}
+{"ts": "2026-09-25T04:11:33Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-repeat-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T04:11:33Z", "event": "started", "task_id": "g2-dev-cifar100-batch256-seed17-mem8g"}
+{"ts": "2026-09-25T04:12:07Z", "event": "completed", "task_id": "g2-dev-cifar100-batch256-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T04:12:07Z", "event": "started", "task_id": "g2-dev-cifar100-replay2000-seed17-mem8g"}
+{"ts": "2026-09-25T04:13:18Z", "event": "completed", "task_id": "g2-dev-cifar100-replay2000-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T04:13:19Z", "event": "started", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem8g"}
+{"ts": "2026-09-25T04:18:39Z", "event": "completed", "task_id": "g2-dev-cifar100-er-gem-ewc-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T04:18:39Z", "event": "started", "task_id": "g2-dev-core50-nc-s0-seed17-mem8g"}
+{"ts": "2026-09-25T04:22:29Z", "event": "completed", "task_id": "g2-dev-core50-nc-s0-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T04:22:29Z", "event": "started", "task_id": "g2-occupancy-mem8g"}
+{"ts": "2026-09-25T04:22:35Z", "event": "completed", "task_id": "g2-occupancy-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T06:30:48Z", "event": "submitted", "task_id": "g2-h4-calibrate-mem8g", "content_hash": "b8774e140a0a1aee61bbc2a52ee83b0e7559235db04fc8e3004579419ec4e59b"}
+{"ts": "2026-09-25T06:30:49Z", "event": "started", "task_id": "g2-h4-calibrate-mem8g"}
+{"ts": "2026-09-25T06:31:07Z", "event": "completed", "task_id": "g2-h4-calibrate-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T06:35:33Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-h4-low-high-low-seed17-mem8g", "content_hash": "98812a470748bdb58c918b5b8e698af16ac25835c6fd70bbcbc815b1aa8db07e"}
+{"ts": "2026-09-25T06:35:33Z", "event": "submitted", "task_id": "g2-dev-cifar100-s0-h4-high-low-high-seed17-mem8g", "content_hash": "c5b900e1e71f4cb660986dcfe128354769b134a24ba40eeebe28be52c7a51fc7"}
+{"ts": "2026-09-25T06:35:34Z", "event": "submitted", "task_id": "g2-dev-core50-nc-s0-h4-low-high-low-seed17-mem8g", "content_hash": "ee886156f33fce1dcdb341a7f2fe4b3e2b85d27e7fd307d770cc60eb17bd7b2e"}
+{"ts": "2026-09-25T06:35:34Z", "event": "submitted", "task_id": "g2-dev-core50-nc-s0-h4-high-low-high-seed17-mem8g", "content_hash": "e3ed5d89c41fbc13d0e999cb18a343f5a784d8b23354c4bae1a991a8f3882de2"}
+{"ts": "2026-09-25T06:35:35Z", "event": "submitted", "task_id": "g2-dev-core50-nc-orecon-h4-low-high-low-seed17-mem8g", "content_hash": "b0ed4d34b2b5894c006bfe85a41250ad87ef925059f048ac4b8f04eb2a500c25"}
+{"ts": "2026-09-25T06:35:35Z", "event": "started", "task_id": "g2-dev-cifar100-s0-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-25T06:35:35Z", "event": "submitted", "task_id": "g2-dev-core50-nc-orecon-h4-high-low-high-seed17-mem8g", "content_hash": "c1c6e481a3d8d1376e25d6fcd61bed8e0a2c30e7a605251b1692537a1cf25763"}
+{"ts": "2026-09-25T06:35:35Z", "event": "submitted", "task_id": "g2-occupancy-h4", "content_hash": "a3f78d7c21f0ddd9616be27f882a3920b19fea04ac14f8df2cc8caa3fbd0fb44"}
+{"ts": "2026-09-25T06:37:00Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T06:37:00Z", "event": "started", "task_id": "g2-dev-cifar100-s0-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-25T06:38:23Z", "event": "completed", "task_id": "g2-dev-cifar100-s0-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T06:38:23Z", "event": "started", "task_id": "g2-dev-core50-nc-s0-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-25T06:42:13Z", "event": "completed", "task_id": "g2-dev-core50-nc-s0-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T06:42:14Z", "event": "started", "task_id": "g2-dev-core50-nc-s0-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-25T06:45:56Z", "event": "completed", "task_id": "g2-dev-core50-nc-s0-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T06:45:57Z", "event": "started", "task_id": "g2-dev-core50-nc-orecon-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-25T06:58:29Z", "event": "completed", "task_id": "g2-dev-core50-nc-orecon-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T06:58:29Z", "event": "started", "task_id": "g2-dev-core50-nc-orecon-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-25T07:11:30Z", "event": "completed", "task_id": "g2-dev-core50-nc-orecon-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T07:11:30Z", "event": "started", "task_id": "g2-occupancy-h4"}
+{"ts": "2026-09-25T07:11:36Z", "event": "completed", "task_id": "g2-occupancy-h4", "exit_code": 0}
+{"ts": "2026-09-25T08:14:43Z", "event": "submitted", "task_id": "g2-dev-core50-nic-s0-h4-low-high-low-seed17-mem8g", "content_hash": "b7da36f5c5548f0924e52c3ca174fbcfc355d966ed7984b7bb27f9fcce849e23"}
+{"ts": "2026-09-25T08:14:43Z", "event": "started", "task_id": "g2-dev-core50-nic-s0-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-25T08:14:43Z", "event": "submitted", "task_id": "g2-dev-core50-nic-s0-h4-high-low-high-seed17-mem8g", "content_hash": "f177adfd51787a8c94d2b63709a085954e902f7760ee6d3cc78f9f9beec772bd"}
+{"ts": "2026-09-25T08:14:44Z", "event": "submitted", "task_id": "g2-occupancy-h4-nic", "content_hash": "75efe65c2e7b85c4310a4e43faed515a67f1270f309696ca833677ddbeb356e1"}
+{"ts": "2026-09-25T08:44:26Z", "event": "completed", "task_id": "g2-dev-core50-nic-s0-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T08:44:27Z", "event": "started", "task_id": "g2-dev-core50-nic-s0-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-25T09:13:00Z", "event": "completed", "task_id": "g2-dev-core50-nic-s0-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-25T09:13:00Z", "event": "started", "task_id": "g2-occupancy-h4-nic"}
+{"ts": "2026-09-25T09:13:06Z", "event": "completed", "task_id": "g2-occupancy-h4-nic", "exit_code": 0}
+{"ts": "2026-09-25T15:13:08Z", "event": "submitted", "task_id": "g2-dev-core50-nic-orecon-h4-low-high-low-seed17-mem8g", "content_hash": "fa79b2126b7fcc4058c09111b9ea3e4aeb5dac7efb1e2275c5ac877ace4e5028"}
+{"ts": "2026-09-25T15:13:08Z", "event": "submitted", "task_id": "g2-dev-core50-nic-orecon-h4-high-low-high-seed17-mem8g", "content_hash": "5a4d516053946d837794fe9a36a9c0c85a0b5db0b49d894cc8618cc8162e56f0"}
+{"ts": "2026-09-25T15:13:09Z", "event": "started", "task_id": "g2-dev-core50-nic-orecon-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-25T15:13:09Z", "event": "submitted", "task_id": "g2-dev-core50-nc-br-adapt-h4-low-high-low-seed17-mem8g", "content_hash": "ae43d5ef6d0f11d3f3ee7510c30673e01564ee2d40cd67352e2ca4fef96ab4a2"}
+{"ts": "2026-09-25T15:13:09Z", "event": "submitted", "task_id": "g2-dev-core50-nc-br-adapt-h4-high-low-high-seed17-mem8g", "content_hash": "f3026e5454bdbcc1a91f217d8fb9b5be6bdf719b7532a021d78c5f1432cf6944"}
+{"ts": "2026-09-25T15:13:10Z", "event": "submitted", "task_id": "g2-occupancy-h4-more", "content_hash": "05b944cb276ea09edccfaa6c1ec89c8921f20d53288860aa86e4d3c647b63d7a"}
+{"ts": "2026-09-25T15:48:31Z", "event": "paused", "reason": "implementation_error:g2-dev-core50-nic-orecon-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-25T15:48:31Z", "event": "paused_on_failure", "task_id": "g2-dev-core50-nic-orecon-h4-low-high-low-seed17-mem8g", "status": "implementation_error", "exit_code": 1}
+{"ts": "2026-09-26T02:38:15Z", "event": "resumed"}
+{"ts": "2026-09-26T02:38:17Z", "event": "started", "task_id": "g2-dev-core50-nic-orecon-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-26T03:20:08Z", "event": "resource_failure", "task_id": "g2-dev-core50-nic-orecon-h4-high-low-high-seed17-mem8g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-09-26T03:20:09Z", "event": "started", "task_id": "g2-dev-core50-nc-br-adapt-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-26T03:20:48Z", "event": "paused", "reason": "implementation_error:g2-dev-core50-nc-br-adapt-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-26T03:20:48Z", "event": "paused_on_failure", "task_id": "g2-dev-core50-nc-br-adapt-h4-low-high-low-seed17-mem8g", "status": "implementation_error", "exit_code": 1}
+{"ts": "2026-09-27T02:45:08Z", "event": "submitted", "task_id": "g2-dev-core50-nc-br-adapt-h4-low-high-low-seed17-mem8g-b2", "content_hash": "c371148c7857ce7de8601e76937f62ba563c548852342806b731ef64a6241a95"}
+{"ts": "2026-09-27T02:45:08Z", "event": "submitted", "task_id": "g2-dev-core50-nic-br-adapt-h4-low-high-low-seed17-mem8g", "content_hash": "5c5cd3d71c108cb486026eb95ce33d83de10989d7988fd0367fc8b201be2cbac"}
+{"ts": "2026-09-27T02:45:09Z", "event": "submitted", "task_id": "g2-dev-core50-nic-br-adapt-h4-high-low-high-seed17-mem8g", "content_hash": "a2f3cf4e81bb3f78c578811080b318c18bf59e722d5489565ea85ac64aaa1d6b"}
+{"ts": "2026-09-27T02:45:09Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b16-r2000-h4-low-high-low-seed17-mem8g", "content_hash": "93b2f251eb7dce7d92b322888215851efe4dc48b22b7444017e08d23073d5497"}
+{"ts": "2026-09-27T02:45:09Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b16-r2000-h4-high-low-high-seed17-mem8g", "content_hash": "cf97370132cb5a4f688db3843afab9d5eef22d2ee2d9200c6d59c51a554ca554"}
+{"ts": "2026-09-27T02:45:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b64-r200-h4-low-high-low-seed17-mem8g", "content_hash": "62e61616b4ac759e1f909ae4fa3acccd5b55a7841b51e3bbaf56f6f08028f993"}
+{"ts": "2026-09-27T02:45:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b64-r200-h4-high-low-high-seed17-mem8g", "content_hash": "3c1b51efe3ac800beae161b710caeb47b0a6d95fcefc7960c608d4267eb9bb4b"}
+{"ts": "2026-09-27T02:45:10Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b64-r2000-h4-low-high-low-seed17-mem8g", "content_hash": "c6a7ccbaa4eaa64849b5f058f800e76d27de6d60013d8435ebe2cc3ead48b979"}
+{"ts": "2026-09-27T02:45:11Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b64-r2000-h4-high-low-high-seed17-mem8g", "content_hash": "2bed3132ce507a4f6577f88955303f8464cdec8423bc890b687a4889d7543e50"}
+{"ts": "2026-09-27T02:45:11Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b256-r200-h4-low-high-low-seed17-mem8g", "content_hash": "e25337e469627628a8a58340c1bff63fd1d7132894a784be4f6d3e3ec8539879"}
+{"ts": "2026-09-27T02:45:12Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b256-r200-h4-high-low-high-seed17-mem8g", "content_hash": "154a3f5aa7ecea1651a377c470de00dad585255f8095240ec1d12c4663ca9293"}
+{"ts": "2026-09-27T02:45:12Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b256-r2000-h4-low-high-low-seed17-mem8g", "content_hash": "844af8128e11625c0dced2eafb6ca2d844159f27aeb0305d285d4476d1d9cb67"}
+{"ts": "2026-09-27T02:45:12Z", "event": "submitted", "task_id": "g2-dev-core50-nc-sstar-b256-r2000-h4-high-low-high-seed17-mem8g", "content_hash": "74563fca7491d5d7ec00072939bccede750b14f33ad487cebc83bc408e0dc597"}
+{"ts": "2026-09-27T02:45:13Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b16-r2000-h4-low-high-low-seed17-mem8g", "content_hash": "efbf014ed0055ec93b9b2c1a4ab88b94db0751ab21b7369c9a3770e5a7e0dc6c"}
+{"ts": "2026-09-27T02:45:13Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b16-r2000-h4-high-low-high-seed17-mem8g", "content_hash": "6f4c3435d2d5c60ac1f321acb7bac965470552b68e8486245f685d3fa28ca4b9"}
+{"ts": "2026-09-27T02:45:13Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b64-r200-h4-low-high-low-seed17-mem8g", "content_hash": "58f13540bb0801bcee321f08c40236c9b06a242c38979eb204f9b99cb480f98b"}
+{"ts": "2026-09-27T02:45:14Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b64-r200-h4-high-low-high-seed17-mem8g", "content_hash": "448534adc4b2090307255ece07743c701bb4b147c600fbaefec3d733616df912"}
+{"ts": "2026-09-27T02:45:14Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b64-r2000-h4-low-high-low-seed17-mem8g", "content_hash": "8277cfea6ccfa5117aab3408e3f03531b3a5e30f1ad7b8eab219bacdedcb7298"}
+{"ts": "2026-09-27T02:45:14Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b64-r2000-h4-high-low-high-seed17-mem8g", "content_hash": "27c4e748997505ec9280db0742d486af4245fa4dea4ddb43616c7c25fe29ba9a"}
+{"ts": "2026-09-27T02:45:15Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b256-r200-h4-low-high-low-seed17-mem8g", "content_hash": "84e86fc0863c07ca231cef55726ed7123bb93ac694bc6390f383f7bf8872efca"}
+{"ts": "2026-09-27T02:45:15Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b256-r200-h4-high-low-high-seed17-mem8g", "content_hash": "ba6475d584548108b25e96f41403b9888620ce6ed0a5918328d657bd06dca41c"}
+{"ts": "2026-09-27T02:45:16Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b256-r2000-h4-low-high-low-seed17-mem8g", "content_hash": "73b0cfa447454070a2dbea7b0e1182107ff6e230cd561adde97d842fb5a9ec2f"}
+{"ts": "2026-09-27T02:45:16Z", "event": "submitted", "task_id": "g2-dev-core50-nic-sstar-b256-r2000-h4-high-low-high-seed17-mem8g", "content_hash": "ca1498739fcf40e2a493ea1273825c6948ad1203a9f049849adf1955c0729299"}
+{"ts": "2026-09-27T02:45:16Z", "event": "submitted", "task_id": "g2-occupancy-h4-sstar", "content_hash": "e434b9686d3ed89eeda8a0f1747b25dc4a580526bb9bd221b56a40acdb971bf8"}
+{"ts": "2026-09-27T02:45:17Z", "event": "resumed"}
+{"ts": "2026-09-27T02:45:18Z", "event": "started", "task_id": "g2-dev-core50-nc-br-adapt-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T02:49:16Z", "event": "completed", "task_id": "g2-dev-core50-nc-br-adapt-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T02:49:17Z", "event": "started", "task_id": "g2-occupancy-h4-more"}
+{"ts": "2026-09-27T02:49:23Z", "event": "completed", "task_id": "g2-occupancy-h4-more", "exit_code": 0}
+{"ts": "2026-09-27T02:49:23Z", "event": "started", "task_id": "g2-dev-core50-nc-br-adapt-h4-low-high-low-seed17-mem8g-b2"}
+{"ts": "2026-09-27T02:53:27Z", "event": "completed", "task_id": "g2-dev-core50-nc-br-adapt-h4-low-high-low-seed17-mem8g-b2", "exit_code": 0}
+{"ts": "2026-09-27T02:53:27Z", "event": "started", "task_id": "g2-dev-core50-nic-br-adapt-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T03:22:31Z", "event": "completed", "task_id": "g2-dev-core50-nic-br-adapt-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T03:22:31Z", "event": "started", "task_id": "g2-dev-core50-nic-br-adapt-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T03:51:12Z", "event": "completed", "task_id": "g2-dev-core50-nic-br-adapt-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T03:51:12Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b16-r2000-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T03:55:27Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b16-r2000-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T03:55:27Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b16-r2000-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T03:59:30Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b16-r2000-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T03:59:30Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b64-r200-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T04:02:11Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b64-r200-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T04:02:12Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b64-r200-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T04:05:00Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b64-r200-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T04:05:00Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b64-r2000-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T04:07:54Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b64-r2000-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T04:07:54Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b64-r2000-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T04:10:50Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b64-r2000-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T04:10:50Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b256-r200-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T04:13:28Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b256-r200-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T04:13:29Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b256-r200-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T04:16:02Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b256-r200-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T04:16:03Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b256-r2000-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T04:18:53Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b256-r2000-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T04:18:53Z", "event": "started", "task_id": "g2-dev-core50-nc-sstar-b256-r2000-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T04:21:45Z", "event": "completed", "task_id": "g2-dev-core50-nc-sstar-b256-r2000-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T04:21:45Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b16-r2000-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T04:51:16Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b16-r2000-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T04:51:16Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b16-r2000-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T05:20:12Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b16-r2000-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T05:20:12Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b64-r200-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T05:48:08Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b64-r200-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T05:48:08Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b64-r200-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T06:14:40Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b64-r200-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T06:14:41Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b64-r2000-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T06:43:36Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b64-r2000-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T06:43:36Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b64-r2000-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T07:11:35Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b64-r2000-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T07:11:36Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b256-r200-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T07:41:24Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b256-r200-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T07:41:24Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b256-r200-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T08:12:09Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b256-r200-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T08:12:09Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b256-r2000-h4-low-high-low-seed17-mem8g"}
+{"ts": "2026-09-27T08:42:05Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b256-r2000-h4-low-high-low-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T08:42:05Z", "event": "started", "task_id": "g2-dev-core50-nic-sstar-b256-r2000-h4-high-low-high-seed17-mem8g"}
+{"ts": "2026-09-27T09:14:56Z", "event": "completed", "task_id": "g2-dev-core50-nic-sstar-b256-r2000-h4-high-low-high-seed17-mem8g", "exit_code": 0}
+{"ts": "2026-09-27T09:14:56Z", "event": "started", "task_id": "g2-occupancy-h4-sstar"}
+{"ts": "2026-09-27T09:15:03Z", "event": "completed", "task_id": "g2-occupancy-h4-sstar", "exit_code": 0}
+{"ts": "2026-09-28T04:27:29Z", "event": "submitted", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g", "content_hash": "061e17c74b02e70269babe6c9e0fcfac9a600c8b390273de45024044c67c64b9"}
+{"ts": "2026-09-28T04:27:29Z", "event": "started", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g"}
+{"ts": "2026-09-28T04:27:30Z", "event": "submitted", "task_id": "g4-h4-core50-nc-sstar-h4-low-high-low-seed0-mem8g", "content_hash": "2b7c8d42df1b43a268cde50855bba0ee2ef02ddf5501e31bade2e3a4648a6b02"}
+{"ts": "2026-09-28T04:27:30Z", "event": "submitted", "task_id": "g4-h4-core50-nc-br-adapt-h4-low-high-low-seed0-mem8g", "content_hash": "c1c858f6d589da85280cccadc992cbf4679987350accce47b5a90b332a36e8f3"}
+{"ts": "2026-09-28T04:27:30Z", "event": "submitted", "task_id": "g4-h4-core50-nc-orecon-h4-low-high-low-seed0-mem8g", "content_hash": "3a2acbcbbdd8d3a649ed32b19d83957f0a34fba85134a60519f8808a7c64af40"}
+{"ts": "2026-09-28T04:27:31Z", "event": "submitted", "task_id": "g4-h4-core50-nc-s0-h4-high-low-high-seed0-mem8g", "content_hash": "d146c859e9dc978d0261734557a047012e2837519468c3de16fe30aa62ba1179"}
+{"ts": "2026-09-28T04:27:31Z", "event": "submitted", "task_id": "g4-h4-core50-nc-sstar-h4-high-low-high-seed0-mem8g", "content_hash": "5f1e9261aa2203f3f270f9915afe93e46797476f3f4f7e89fa4d279b0d837f46"}
+{"ts": "2026-09-28T04:27:31Z", "event": "submitted", "task_id": "g4-h4-core50-nc-br-adapt-h4-high-low-high-seed0-mem8g", "content_hash": "25316050d491a16c4e3bb36829b51bc612098a287daf79093dd75a7062e0a95b"}
+{"ts": "2026-09-28T04:27:32Z", "event": "submitted", "task_id": "g4-h4-core50-nc-orecon-h4-high-low-high-seed0-mem8g", "content_hash": "5c2d45d38eccdc701b52e50b2d05516bf5ddb5a03e0367ece42895cfa2f5b453"}
+{"ts": "2026-09-28T04:27:32Z", "event": "submitted", "task_id": "g4-h4-core50-nic-s0-h4-low-high-low-seed0-mem8g", "content_hash": "0ddcf5fae4617fd3af6c12c176d36e943dc465a1b4ec1137313434b4e3197ee4"}
+{"ts": "2026-09-28T04:27:32Z", "event": "submitted", "task_id": "g4-h4-core50-nic-sstar-h4-low-high-low-seed0-mem8g", "content_hash": "77c3bceb27b4428ed8810abc3aef12de766a0141435281c40931503ddee8cf13"}
+{"ts": "2026-09-28T04:27:33Z", "event": "submitted", "task_id": "g4-h4-core50-nic-br-adapt-h4-low-high-low-seed0-mem8g", "content_hash": "0effab5a634638cf0232d712fec161ef5b6a3a9b13fabbf4171c40cbd915efa9"}
+{"ts": "2026-09-28T04:27:33Z", "event": "submitted", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed0-mem8g", "content_hash": "45ab99ab4e630c599b05f0edaf94e5035b10403010ee2aebec3a3414f9d1b8e9"}
+{"ts": "2026-09-28T04:27:34Z", "event": "submitted", "task_id": "g4-h4-core50-nic-s0-h4-high-low-high-seed0-mem8g", "content_hash": "69bf6f386a6f6437cec00f316e1b8a8492de1c7e896e7a48bd5e2a2e9f714217"}
+{"ts": "2026-09-28T04:27:34Z", "event": "submitted", "task_id": "g4-h4-core50-nic-sstar-h4-high-low-high-seed0-mem8g", "content_hash": "008c54db0fd4e28eb6b0097fd811ea793141fd171408e4bb0d6d426489fdae4e"}
+{"ts": "2026-09-28T04:27:34Z", "event": "submitted", "task_id": "g4-h4-core50-nic-br-adapt-h4-high-low-high-seed0-mem8g", "content_hash": "e02e447eca6a12edf35ffb7b0479d6adba1a7b2ea284e80ed75c70053fb8944c"}
+{"ts": "2026-09-28T04:27:35Z", "event": "submitted", "task_id": "g4-h4-core50-nic-orecon-h4-high-low-high-seed0-mem8g", "content_hash": "ca43dd8f30eb6a12c77cbb758b05ff9617518ee1be9d6bddb26f7642a1e243b1"}
+{"ts": "2026-09-28T04:27:35Z", "event": "submitted", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed1-mem8g", "content_hash": "3b939c2d2ff48889a489b105b97bd00742c7b787ad9b786cb30e5d88c1ff4a80"}
+{"ts": "2026-09-28T04:27:35Z", "event": "submitted", "task_id": "g4-h4-core50-nc-sstar-h4-low-high-low-seed1-mem8g", "content_hash": "eb364f150aed1a6f1d367374fbbbdd44a122f62602a43797479ec881e2050bbb"}
+{"ts": "2026-09-28T04:27:36Z", "event": "submitted", "task_id": "g4-h4-core50-nc-br-adapt-h4-low-high-low-seed1-mem8g", "content_hash": "f033bf1df8ef955656251ae3a465fd89db5822634411e9b1fb5c374d20d69b60"}
+{"ts": "2026-09-28T04:27:36Z", "event": "submitted", "task_id": "g4-h4-core50-nc-orecon-h4-low-high-low-seed1-mem8g", "content_hash": "16572c3841f9c1f9bdb9cf9ceb5936b45411a48ddfcd5d7b13727af86a433e1f"}
+{"ts": "2026-09-28T04:27:36Z", "event": "submitted", "task_id": "g4-h4-core50-nc-s0-h4-high-low-high-seed1-mem8g", "content_hash": "aab746fb3969359f7bfe19d4062bbc3944bb75103879ff55b96a6bacd095515a"}
+{"ts": "2026-09-28T04:27:37Z", "event": "submitted", "task_id": "g4-h4-core50-nc-sstar-h4-high-low-high-seed1-mem8g", "content_hash": "e5ee93fee822e1fe83623d18ebf9a345d3ffd24df803949347e6a51090ff8ed7"}
+{"ts": "2026-09-28T04:27:37Z", "event": "submitted", "task_id": "g4-h4-core50-nc-br-adapt-h4-high-low-high-seed1-mem8g", "content_hash": "d79fcff84d90aa923f370f5499e2398eee75144f72b4177269caea6aba55aa30"}
+{"ts": "2026-09-28T04:27:38Z", "event": "submitted", "task_id": "g4-h4-core50-nc-orecon-h4-high-low-high-seed1-mem8g", "content_hash": "a3da34cd64db81761ebbc3d1dd259bbbbbcadd782710f14b2736765b2012e487"}
+{"ts": "2026-09-28T04:27:38Z", "event": "submitted", "task_id": "g4-h4-core50-nic-s0-h4-low-high-low-seed1-mem8g", "content_hash": "b0910fa8fef1f417df7249d15ceb0c4ef6c5a93b3b2bad613df636cae9292548"}
+{"ts": "2026-09-28T04:27:38Z", "event": "submitted", "task_id": "g4-h4-core50-nic-sstar-h4-low-high-low-seed1-mem8g", "content_hash": "006068b1400ada57f48a4c50a40f33b5f783395b15c0ff2d8d1daf33d259518f"}
+{"ts": "2026-09-28T04:27:39Z", "event": "submitted", "task_id": "g4-h4-core50-nic-br-adapt-h4-low-high-low-seed1-mem8g", "content_hash": "4430568f440407a8984653df14b9a5c88a1205dc3f8f43528cc272367e2ba417"}
+{"ts": "2026-09-28T04:27:39Z", "event": "submitted", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed1-mem8g", "content_hash": "49b2e15366608d406891b0c8f3bc956129369d1e2c35ee3834b350ee104f15e5"}
+{"ts": "2026-09-28T04:27:39Z", "event": "submitted", "task_id": "g4-h4-core50-nic-s0-h4-high-low-high-seed1-mem8g", "content_hash": "f70026af4bc8c55dba2b4b55e943d9ff874c272969fdee004dc8cdad6639c687"}
+{"ts": "2026-09-28T04:27:40Z", "event": "submitted", "task_id": "g4-h4-core50-nic-sstar-h4-high-low-high-seed1-mem8g", "content_hash": "89d51deb4d8302126549fcd89997d321d8fe6e6aab5e665dae5013dd7635bba3"}
+{"ts": "2026-09-28T04:27:40Z", "event": "paused", "reason": "implementation_error:g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g"}
+{"ts": "2026-09-28T04:27:40Z", "event": "paused_on_failure", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g", "status": "implementation_error", "exit_code": 1}
+{"ts": "2026-09-28T04:27:40Z", "event": "submitted", "task_id": "g4-h4-core50-nic-br-adapt-h4-high-low-high-seed1-mem8g", "content_hash": "fcdfa5502afe460c86a8f2b17e4bfecf1f48a7f22f94f7a74b3468c9627047cc"}
+{"ts": "2026-09-28T04:27:40Z", "event": "submitted", "task_id": "g4-h4-core50-nic-orecon-h4-high-low-high-seed1-mem8g", "content_hash": "03b5a90eb24fa1fa094a1fdcb3c093d7d9c5c9283f73cd9b1c42328fbec09857"}
+{"ts": "2026-09-28T04:27:41Z", "event": "submitted", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed2-mem8g", "content_hash": "9a3c8c7f39f08672d799ccf8dcfc499db9cddb8a11fe9c2373c131222e0c4174"}
+{"ts": "2026-09-28T04:27:41Z", "event": "submitted", "task_id": "g4-h4-core50-nc-sstar-h4-low-high-low-seed2-mem8g", "content_hash": "bc4c7b6aae8fd7ae29fe6b6768195102102571ecc90a574d8cd2e9d6c283bc2e"}
+{"ts": "2026-09-28T04:27:41Z", "event": "submitted", "task_id": "g4-h4-core50-nc-br-adapt-h4-low-high-low-seed2-mem8g", "content_hash": "b7d67ac949c7553db3586efc6f3fc2b115635a08413bade05e5c24b7d4411c5f"}
+{"ts": "2026-09-28T04:27:42Z", "event": "submitted", "task_id": "g4-h4-core50-nc-orecon-h4-low-high-low-seed2-mem8g", "content_hash": "ca00a9f17d6e6735146f6a8fc0a1437139f187d550dc2007e6434ab037075019"}
+{"ts": "2026-09-28T04:27:42Z", "event": "submitted", "task_id": "g4-h4-core50-nc-s0-h4-high-low-high-seed2-mem8g", "content_hash": "a8b64f338829bb2f43862fa2f89a834e4c1f9eda00e589503c90c479aea13a38"}
+{"ts": "2026-09-28T04:27:42Z", "event": "submitted", "task_id": "g4-h4-core50-nc-sstar-h4-high-low-high-seed2-mem8g", "content_hash": "124bd159ce56b47a71c0fea0d65144f976678590605bd591ca68b55d3f49a2fa"}
+{"ts": "2026-09-28T04:27:43Z", "event": "submitted", "task_id": "g4-h4-core50-nc-br-adapt-h4-high-low-high-seed2-mem8g", "content_hash": "41ce2122d8a0b7dfdbd339ecad3ec827ac15c6f3960f75bcbbdbad45ce4b3d53"}
+{"ts": "2026-09-28T04:27:43Z", "event": "submitted", "task_id": "g4-h4-core50-nc-orecon-h4-high-low-high-seed2-mem8g", "content_hash": "180cbd33a89720c0a1621c69f0b228f3faa4b5544a0d0a543da313f5c378c718"}
+{"ts": "2026-09-28T04:27:43Z", "event": "submitted", "task_id": "g4-h4-core50-nic-s0-h4-low-high-low-seed2-mem8g", "content_hash": "55db6129c65c602f3e68bf9c409e1101f4903878aa20c8a1a64eb8f20b9b8c38"}
+{"ts": "2026-09-28T04:27:44Z", "event": "submitted", "task_id": "g4-h4-core50-nic-sstar-h4-low-high-low-seed2-mem8g", "content_hash": "29171bb88d05d570dd011810794e1d9ed3269a7845a5c390838ea94b02c777d7"}
+{"ts": "2026-09-28T04:27:44Z", "event": "submitted", "task_id": "g4-h4-core50-nic-br-adapt-h4-low-high-low-seed2-mem8g", "content_hash": "648d3156aef06d94daf0e88c533142cb8666baa4179bc62fc30e7c35e069d8dc"}
+{"ts": "2026-09-28T04:27:44Z", "event": "submitted", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed2-mem8g", "content_hash": "8b2031fca5bfdd0795144f73cfa993c420bee2715ed75696a556efd551036b7f"}
+{"ts": "2026-09-28T04:27:45Z", "event": "submitted", "task_id": "g4-h4-core50-nic-s0-h4-high-low-high-seed2-mem8g", "content_hash": "c4c3e874034453c5aac111a2cecaffe4486e83bce98a442e89a59a52b57d3bef"}
+{"ts": "2026-09-28T04:27:45Z", "event": "submitted", "task_id": "g4-h4-core50-nic-sstar-h4-high-low-high-seed2-mem8g", "content_hash": "c5625f7159098bacc06223bd8becfc7f2490f65f6682b0392f04f1e76a2e71e4"}
+{"ts": "2026-09-28T04:27:46Z", "event": "submitted", "task_id": "g4-h4-core50-nic-br-adapt-h4-high-low-high-seed2-mem8g", "content_hash": "f5ff8cf373eda442336c432b06dd172e2b8fe54756638cc0f908697f8c97e07f"}
+{"ts": "2026-09-28T04:27:46Z", "event": "submitted", "task_id": "g4-h4-core50-nic-orecon-h4-high-low-high-seed2-mem8g", "content_hash": "b22f26b65a77013ffa00f9a93f940aa26a7f04c88579d9fcbdec45a7fc2540d0"}
+{"ts": "2026-09-28T04:30:29Z", "event": "submitted", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g-b2", "content_hash": "aedc328a8432c603e1833fa419b64c98003398597000e41624b68b8df23f8e42"}
+{"ts": "2026-09-28T04:30:30Z", "event": "resumed"}
+{"ts": "2026-09-28T04:30:30Z", "event": "started", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g-b2"}
+{"ts": "2026-09-28T04:30:42Z", "event": "paused", "reason": "implementation_error:g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g-b2"}
+{"ts": "2026-09-28T04:30:42Z", "event": "paused_on_failure", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g-b2", "status": "implementation_error", "exit_code": 1}
+{"ts": "2026-09-28T04:31:39Z", "event": "submitted", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g-b3", "content_hash": "1cf1648455ac079ebd6a0e2bd81f7ba36cdf3004e1d20e4acacc7b0c8fd876c2"}
+{"ts": "2026-09-28T04:31:39Z", "event": "resumed"}
+{"ts": "2026-09-28T04:31:41Z", "event": "started", "task_id": "g4-h4-core50-nc-sstar-h4-low-high-low-seed0-mem8g"}
+{"ts": "2026-09-28T04:36:21Z", "event": "completed", "task_id": "g4-h4-core50-nc-sstar-h4-low-high-low-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T04:36:21Z", "event": "started", "task_id": "g4-h4-core50-nc-br-adapt-h4-low-high-low-seed0-mem8g"}
+{"ts": "2026-09-28T04:42:04Z", "event": "completed", "task_id": "g4-h4-core50-nc-br-adapt-h4-low-high-low-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T04:42:05Z", "event": "started", "task_id": "g4-h4-core50-nc-orecon-h4-low-high-low-seed0-mem8g"}
+{"ts": "2026-09-28T04:59:04Z", "event": "completed", "task_id": "g4-h4-core50-nc-orecon-h4-low-high-low-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T04:59:04Z", "event": "started", "task_id": "g4-h4-core50-nc-s0-h4-high-low-high-seed0-mem8g"}
+{"ts": "2026-09-28T05:05:02Z", "event": "completed", "task_id": "g4-h4-core50-nc-s0-h4-high-low-high-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T05:05:03Z", "event": "started", "task_id": "g4-h4-core50-nc-sstar-h4-high-low-high-seed0-mem8g"}
+{"ts": "2026-09-28T05:11:00Z", "event": "completed", "task_id": "g4-h4-core50-nc-sstar-h4-high-low-high-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T05:11:01Z", "event": "started", "task_id": "g4-h4-core50-nc-br-adapt-h4-high-low-high-seed0-mem8g"}
+{"ts": "2026-09-28T05:16:54Z", "event": "completed", "task_id": "g4-h4-core50-nc-br-adapt-h4-high-low-high-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T05:16:55Z", "event": "started", "task_id": "g4-h4-core50-nc-orecon-h4-high-low-high-seed0-mem8g"}
+{"ts": "2026-09-28T05:34:00Z", "event": "completed", "task_id": "g4-h4-core50-nc-orecon-h4-high-low-high-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T05:34:01Z", "event": "started", "task_id": "g4-h4-core50-nic-s0-h4-low-high-low-seed0-mem8g"}
+{"ts": "2026-09-28T06:16:19Z", "event": "completed", "task_id": "g4-h4-core50-nic-s0-h4-low-high-low-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T06:16:19Z", "event": "started", "task_id": "g4-h4-core50-nic-sstar-h4-low-high-low-seed0-mem8g"}
+{"ts": "2026-09-28T06:58:08Z", "event": "completed", "task_id": "g4-h4-core50-nic-sstar-h4-low-high-low-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T06:58:08Z", "event": "started", "task_id": "g4-h4-core50-nic-br-adapt-h4-low-high-low-seed0-mem8g"}
+{"ts": "2026-09-28T07:39:06Z", "event": "completed", "task_id": "g4-h4-core50-nic-br-adapt-h4-low-high-low-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T07:39:06Z", "event": "started", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed0-mem8g"}
+{"ts": "2026-09-28T08:28:02Z", "event": "resource_failure", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed0-mem8g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-09-28T08:28:03Z", "event": "started", "task_id": "g4-h4-core50-nic-s0-h4-high-low-high-seed0-mem8g"}
+{"ts": "2026-09-28T09:11:14Z", "event": "completed", "task_id": "g4-h4-core50-nic-s0-h4-high-low-high-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T09:11:14Z", "event": "started", "task_id": "g4-h4-core50-nic-sstar-h4-high-low-high-seed0-mem8g"}
+{"ts": "2026-09-28T09:54:09Z", "event": "completed", "task_id": "g4-h4-core50-nic-sstar-h4-high-low-high-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T09:54:09Z", "event": "started", "task_id": "g4-h4-core50-nic-br-adapt-h4-high-low-high-seed0-mem8g"}
+{"ts": "2026-09-28T10:34:56Z", "event": "completed", "task_id": "g4-h4-core50-nic-br-adapt-h4-high-low-high-seed0-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T10:34:56Z", "event": "started", "task_id": "g4-h4-core50-nic-orecon-h4-high-low-high-seed0-mem8g"}
+{"ts": "2026-09-28T11:30:15Z", "event": "resource_failure", "task_id": "g4-h4-core50-nic-orecon-h4-high-low-high-seed0-mem8g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-09-28T11:30:15Z", "event": "started", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed1-mem8g"}
+{"ts": "2026-09-28T11:36:15Z", "event": "completed", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T11:36:15Z", "event": "started", "task_id": "g4-h4-core50-nc-sstar-h4-low-high-low-seed1-mem8g"}
+{"ts": "2026-09-28T11:40:45Z", "event": "completed", "task_id": "g4-h4-core50-nc-sstar-h4-low-high-low-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T11:40:45Z", "event": "started", "task_id": "g4-h4-core50-nc-br-adapt-h4-low-high-low-seed1-mem8g"}
+{"ts": "2026-09-28T11:46:24Z", "event": "completed", "task_id": "g4-h4-core50-nc-br-adapt-h4-low-high-low-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T11:46:24Z", "event": "started", "task_id": "g4-h4-core50-nc-orecon-h4-low-high-low-seed1-mem8g"}
+{"ts": "2026-09-28T12:03:24Z", "event": "completed", "task_id": "g4-h4-core50-nc-orecon-h4-low-high-low-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T12:03:24Z", "event": "started", "task_id": "g4-h4-core50-nc-s0-h4-high-low-high-seed1-mem8g"}
+{"ts": "2026-09-28T12:09:21Z", "event": "completed", "task_id": "g4-h4-core50-nc-s0-h4-high-low-high-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T12:09:21Z", "event": "started", "task_id": "g4-h4-core50-nc-sstar-h4-high-low-high-seed1-mem8g"}
+{"ts": "2026-09-28T12:15:12Z", "event": "completed", "task_id": "g4-h4-core50-nc-sstar-h4-high-low-high-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T12:15:12Z", "event": "started", "task_id": "g4-h4-core50-nc-br-adapt-h4-high-low-high-seed1-mem8g"}
+{"ts": "2026-09-28T12:21:13Z", "event": "completed", "task_id": "g4-h4-core50-nc-br-adapt-h4-high-low-high-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T12:21:13Z", "event": "started", "task_id": "g4-h4-core50-nc-orecon-h4-high-low-high-seed1-mem8g"}
+{"ts": "2026-09-28T12:38:48Z", "event": "completed", "task_id": "g4-h4-core50-nc-orecon-h4-high-low-high-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T12:38:48Z", "event": "started", "task_id": "g4-h4-core50-nic-s0-h4-low-high-low-seed1-mem8g"}
+{"ts": "2026-09-28T13:20:49Z", "event": "completed", "task_id": "g4-h4-core50-nic-s0-h4-low-high-low-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T13:20:49Z", "event": "started", "task_id": "g4-h4-core50-nic-sstar-h4-low-high-low-seed1-mem8g"}
+{"ts": "2026-09-28T14:02:51Z", "event": "completed", "task_id": "g4-h4-core50-nic-sstar-h4-low-high-low-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T14:02:51Z", "event": "started", "task_id": "g4-h4-core50-nic-br-adapt-h4-low-high-low-seed1-mem8g"}
+{"ts": "2026-09-28T14:44:06Z", "event": "completed", "task_id": "g4-h4-core50-nic-br-adapt-h4-low-high-low-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T14:44:06Z", "event": "started", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed1-mem8g"}
+{"ts": "2026-09-28T15:32:58Z", "event": "resource_failure", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed1-mem8g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-09-28T15:32:58Z", "event": "started", "task_id": "g4-h4-core50-nic-s0-h4-high-low-high-seed1-mem8g"}
+{"ts": "2026-09-28T16:14:28Z", "event": "completed", "task_id": "g4-h4-core50-nic-s0-h4-high-low-high-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T16:14:28Z", "event": "started", "task_id": "g4-h4-core50-nic-sstar-h4-high-low-high-seed1-mem8g"}
+{"ts": "2026-09-28T16:55:16Z", "event": "completed", "task_id": "g4-h4-core50-nic-sstar-h4-high-low-high-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T16:55:16Z", "event": "started", "task_id": "g4-h4-core50-nic-br-adapt-h4-high-low-high-seed1-mem8g"}
+{"ts": "2026-09-28T17:35:36Z", "event": "completed", "task_id": "g4-h4-core50-nic-br-adapt-h4-high-low-high-seed1-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T17:35:36Z", "event": "started", "task_id": "g4-h4-core50-nic-orecon-h4-high-low-high-seed1-mem8g"}
+{"ts": "2026-09-28T18:31:52Z", "event": "resource_failure", "task_id": "g4-h4-core50-nic-orecon-h4-high-low-high-seed1-mem8g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-09-28T18:31:52Z", "event": "started", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed2-mem8g"}
+{"ts": "2026-09-28T18:37:57Z", "event": "completed", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T18:37:57Z", "event": "started", "task_id": "g4-h4-core50-nc-sstar-h4-low-high-low-seed2-mem8g"}
+{"ts": "2026-09-28T18:42:25Z", "event": "completed", "task_id": "g4-h4-core50-nc-sstar-h4-low-high-low-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T18:42:26Z", "event": "started", "task_id": "g4-h4-core50-nc-br-adapt-h4-low-high-low-seed2-mem8g"}
+{"ts": "2026-09-28T18:48:18Z", "event": "completed", "task_id": "g4-h4-core50-nc-br-adapt-h4-low-high-low-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T18:48:18Z", "event": "started", "task_id": "g4-h4-core50-nc-orecon-h4-low-high-low-seed2-mem8g"}
+{"ts": "2026-09-28T19:05:39Z", "event": "completed", "task_id": "g4-h4-core50-nc-orecon-h4-low-high-low-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T19:05:39Z", "event": "started", "task_id": "g4-h4-core50-nc-s0-h4-high-low-high-seed2-mem8g"}
+{"ts": "2026-09-28T19:11:36Z", "event": "completed", "task_id": "g4-h4-core50-nc-s0-h4-high-low-high-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T19:11:36Z", "event": "started", "task_id": "g4-h4-core50-nc-sstar-h4-high-low-high-seed2-mem8g"}
+{"ts": "2026-09-28T19:17:19Z", "event": "completed", "task_id": "g4-h4-core50-nc-sstar-h4-high-low-high-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T19:17:19Z", "event": "started", "task_id": "g4-h4-core50-nc-br-adapt-h4-high-low-high-seed2-mem8g"}
+{"ts": "2026-09-28T19:23:05Z", "event": "completed", "task_id": "g4-h4-core50-nc-br-adapt-h4-high-low-high-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T19:23:05Z", "event": "started", "task_id": "g4-h4-core50-nc-orecon-h4-high-low-high-seed2-mem8g"}
+{"ts": "2026-09-28T19:40:24Z", "event": "completed", "task_id": "g4-h4-core50-nc-orecon-h4-high-low-high-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T19:40:24Z", "event": "started", "task_id": "g4-h4-core50-nic-s0-h4-low-high-low-seed2-mem8g"}
+{"ts": "2026-09-28T20:21:33Z", "event": "completed", "task_id": "g4-h4-core50-nic-s0-h4-low-high-low-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T20:21:34Z", "event": "started", "task_id": "g4-h4-core50-nic-sstar-h4-low-high-low-seed2-mem8g"}
+{"ts": "2026-09-28T21:02:13Z", "event": "completed", "task_id": "g4-h4-core50-nic-sstar-h4-low-high-low-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T21:02:13Z", "event": "started", "task_id": "g4-h4-core50-nic-br-adapt-h4-low-high-low-seed2-mem8g"}
+{"ts": "2026-09-28T21:42:47Z", "event": "completed", "task_id": "g4-h4-core50-nic-br-adapt-h4-low-high-low-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-28T21:42:47Z", "event": "started", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed2-mem8g"}
+{"ts": "2026-09-28T22:34:15Z", "event": "paused", "reason": "host_reboot_with_open_work"}
+{"ts": "2026-09-28T22:34:17Z", "event": "adopted_worker", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed2-mem8g", "unit": "orion-v4-task-g4-h4-core50-nic-orecon-h4-low-high-low-seed2-mem8g.service", "kind": "finalize_dead"}
+{"ts": "2026-09-28T22:34:17Z", "event": "paused", "reason": "implementation_error:g4-h4-core50-nic-orecon-h4-low-high-low-seed2-mem8g"}
+{"ts": "2026-09-28T22:34:17Z", "event": "paused_on_failure", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed2-mem8g", "status": "implementation_error", "exit_code": null, "adopted": true}
+{"ts": "2026-09-28T22:34:17Z", "event": "paused", "reason": "host_reboot_with_open_work"}
+{"ts": "2026-09-29T02:17:46Z", "event": "submitted", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed2-mem8g-b2", "content_hash": "432ec158153800f804c5180fd16db0dea17b6af767c330bab550ce97e32ba3c0"}
+{"ts": "2026-09-29T02:17:47Z", "event": "resumed"}
+{"ts": "2026-09-29T02:17:48Z", "event": "started", "task_id": "g4-h4-core50-nic-s0-h4-high-low-high-seed2-mem8g"}
+{"ts": "2026-09-29T03:00:26Z", "event": "completed", "task_id": "g4-h4-core50-nic-s0-h4-high-low-high-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-29T03:00:26Z", "event": "started", "task_id": "g4-h4-core50-nic-sstar-h4-high-low-high-seed2-mem8g"}
+{"ts": "2026-09-29T03:44:17Z", "event": "completed", "task_id": "g4-h4-core50-nic-sstar-h4-high-low-high-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-29T03:44:17Z", "event": "started", "task_id": "g4-h4-core50-nic-br-adapt-h4-high-low-high-seed2-mem8g"}
+{"ts": "2026-09-29T04:27:12Z", "event": "completed", "task_id": "g4-h4-core50-nic-br-adapt-h4-high-low-high-seed2-mem8g", "exit_code": 0}
+{"ts": "2026-09-29T04:27:12Z", "event": "started", "task_id": "g4-h4-core50-nic-orecon-h4-high-low-high-seed2-mem8g"}
+{"ts": "2026-09-29T05:22:44Z", "event": "resource_failure", "task_id": "g4-h4-core50-nic-orecon-h4-high-low-high-seed2-mem8g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-09-29T05:22:44Z", "event": "started", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g-b3"}
+{"ts": "2026-09-29T05:28:46Z", "event": "completed", "task_id": "g4-h4-core50-nc-s0-h4-low-high-low-seed0-mem8g-b3", "exit_code": 0}
+{"ts": "2026-09-29T05:28:46Z", "event": "started", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed2-mem8g-b2"}
+{"ts": "2026-09-29T06:19:02Z", "event": "resource_failure", "task_id": "g4-h4-core50-nic-orecon-h4-low-high-low-seed2-mem8g-b2", "exit_code": 1, "health": "ok"}

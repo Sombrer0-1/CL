@@ -1,0 +1,34 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-dev-core50-nic-orecon-h4-low-high-low-seed17-mem8g",
+  "seq": 1300,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_core50_nic_orecon_h4_low_high_low_seed17_mem8g.yaml"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem8g",
+  "batch_id": "g2-dev-h4-more",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {
+    "configs/fullmem_v4/g2_core50_nic_orecon_h4_low_high_low_seed17_mem8g.yaml": "0e334b24b71dd4f41861ef13de8e8db926db5a69148c66336d904b467d86d5b4"
+  },
+  "content_hash": "fa79b2126b7fcc4058c09111b9ea3e4aeb5dac7efb1e2275c5ac877ace4e5028",
+  "status": "implementation_error",
+  "submitted_at_utc": "2026-09-25T15:13:08Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-25T15:48:31Z",
+  "exit_code": 1,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-dev-core50-nic-orecon-h4-low-high-low-seed17-mem8g.log",
+  "finished_at_utc": "2026-09-25T15:48:31Z"
+}

@@ -1,0 +1,108 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-24T07:41:47Z",
+  "note": "Git-tracked data/manifests are historical identity; this inventory does not rewrite them.",
+  "streams": {
+    "splitcifar10": {
+      "paper_experiences": 10,
+      "raw": {
+        "exists": true,
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/cifar10",
+        "n_files": 9,
+        "bytes": 356712185
+      },
+      "dev_split": true,
+      "class_order_10exp": [
+        4,
+        1,
+        7,
+        5,
+        3,
+        9,
+        0,
+        8,
+        6,
+        2
+      ],
+      "ready": true
+    },
+    "splitcifar100": {
+      "paper_experiences": 10,
+      "raw": {
+        "exists": true,
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/cifar100",
+        "n_files": 46,
+        "bytes": 524303972
+      },
+      "dev_split": true,
+      "ready": true
+    },
+    "core50_nc": {
+      "paper_experiences": 9,
+      "raw": {
+        "exists": true,
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/core50",
+        "n_files": 345654,
+        "bytes": 3801717603
+      },
+      "dev_split": true,
+      "ready": true
+    },
+    "core50_ni": {
+      "paper_experiences": 8,
+      "raw": {
+        "exists": true,
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/core50",
+        "n_files": 345654,
+        "bytes": 3801717603
+      },
+      "dev_split_manifest": true,
+      "ready": true
+    },
+    "core50_nic": {
+      "paper_experiences": 79,
+      "raw": {
+        "exists": true,
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/core50",
+        "n_files": 345654,
+        "bytes": 3801717603
+      },
+      "dev_split_manifest": true,
+      "nic_mapping": "Avalanche nicv2_79 reconstruction (A14); not author-confirmed SKU",
+      "ready": true
+    },
+    "endless_ic": {
+      "paper_experiences": 4,
+      "raw": {
+        "exists": true,
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/endless_cl_sim",
+        "n_files": 419572,
+        "bytes": 13636601414
+      },
+      "ready": true,
+      "zip_exists": true
+    },
+    "endless_il": {
+      "paper_experiences": 5,
+      "raw": {
+        "exists": true,
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/endless_cl_sim",
+        "n_files": 419572,
+        "bytes": 13636601414
+      },
+      "ready": true,
+      "zip_exists": true
+    },
+    "endless_wc": {
+      "paper_experiences": 5,
+      "raw": {
+        "exists": true,
+        "path": "/home/zhuzetong/research/cl/Reproduce-Orion/data/raw/endless_cl_sim",
+        "n_files": 419572,
+        "bytes": 13636601414
+      },
+      "ready": true,
+      "zip_exists": true
+    }
+  }
+}

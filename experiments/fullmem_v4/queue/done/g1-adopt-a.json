@@ -1,0 +1,37 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g1-adopt-a",
+  "seq": 200,
+  "kind": "dummy",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "dummy",
+    "--seconds",
+    "25",
+    "--marker",
+    "runs/fullmem_v4/g1-adopt-a.ok"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "any",
+  "batch_id": "g1-adopt-supervisor",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {},
+  "content_hash": "378db5b0defe0dc533b1f098b035db1dd63e9236a27736a83da3b024b317cb81",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-21T04:22:28Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-21T04:29:20Z",
+  "boot_id": "7e7ae8b3-a605-4653-8536-5ddedbf44c44",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g1-adopt-a.log",
+  "finished_at_utc": "2026-09-21T04:29:20Z",
+  "adopted_after_supervisor_restart": true
+}

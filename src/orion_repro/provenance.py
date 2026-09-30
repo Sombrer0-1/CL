@@ -22,7 +22,11 @@ def sha256_bytes(data: bytes) -> str:
 
 
 def snapshot_source_tree(root: Path, *, exclude_generated_v3: bool = False) -> dict[str, Any]:
-    """Hash tracked implementation files. Does not require a git commit."""
+    """Hash tracked implementation files. Does not require a git commit.
+
+    Runtime queue/heartbeat files must not enter the source identity. Design
+    attachments must, otherwise a freeze cannot bind the current contract.
+    """
     patterns = [
         root / "src" / "orion_repro",
         root / "tests",
@@ -35,6 +39,11 @@ def snapshot_source_tree(root: Path, *, exclude_generated_v3: bool = False) -> d
         root / "environment.lock.yml",
         root / "PLAN.md",
         root / "AGENTS.md",
+        root / "docs" / "fullmem_v4_design.md",
+        root / "docs" / "fullmem_v4_operations.md",
+        root / "docs" / "fullmem_v4_review.md",
+        root / "docs" / "fullmem_v4_alignment.csv",
+        root / "docs" / "decisions" / "A30.md",
     ]
     files: list[Path] = []
     for base in patterns:
@@ -47,7 +56,18 @@ def snapshot_source_tree(root: Path, *, exclude_generated_v3: bool = False) -> d
         files = [p for p in files if not any(p.is_relative_to(base) for base in generated)]
         extra.append(root / "docs/SDD_effectiveness_v3.md")
     files.extend(p for p in extra if p.is_file())
-    rels = sorted({p.resolve() for p in files}, key=lambda p: str(p.relative_to(root)))
+    rels = []
+    seen: set[Path] = set()
+    for path in files:
+        resolved = path.resolve()
+        if resolved in seen:
+            continue
+        rel = str(resolved.relative_to(root)).replace("\\", "/")
+        if _skip_source_rel(rel):
+            continue
+        seen.add(resolved)
+        rels.append(resolved)
+    rels.sort(key=lambda p: str(p.relative_to(root)))
     listing = []
     h = hashlib.sha256()
     for path in rels:
@@ -65,6 +85,19 @@ def snapshot_source_tree(root: Path, *, exclude_generated_v3: bool = False) -> d
         "n_files": len(listing),
         "files": listing,
     }
+
+
+def _skip_source_rel(rel: str) -> bool:
+    normalized = rel.replace("\\", "/")
+    if "/__pycache__/" in f"/{normalized}/":
+        return True
+    skip_prefixes = (
+        "experiments/fullmem_v4/state/",
+        "experiments/fullmem_v4/queue/",
+        "runs/",
+        "reports/",
+    )
+    return any(normalized.startswith(prefix) for prefix in skip_prefixes)
 
 
 def file_sha256_or_none(path: Path | None) -> str | None:

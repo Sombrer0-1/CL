@@ -1,0 +1,17 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-prepare-endless",
+  "seq": 31,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "g2-prepare-endless",
+    "--scenario",
+    "all"
+  ],
+  "required_capacity": "mem64g",
+  "batch_id": "g2-dev-mem64g"
+}

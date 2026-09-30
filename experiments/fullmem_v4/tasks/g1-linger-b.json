@@ -1,0 +1,19 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g1-linger-b",
+  "seq": 701,
+  "kind": "dummy",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "dummy",
+    "--seconds",
+    "5",
+    "--marker",
+    "runs/fullmem_v4/g1-linger-b.ok"
+  ],
+  "required_capacity": "mem16g",
+  "batch_id": "g1-linger-mem16g"
+}

@@ -1,0 +1,16 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-dev-cifar100-orecon-full-hash-on-seed17",
+  "seq": 340,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_cifar100_orecon_full_hash_on_seed17.yaml"
+  ],
+  "required_capacity": "mem64g",
+  "batch_id": "g2-dev-seed17-wide"
+}

@@ -1,0 +1,123 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "collected_at_utc": "2026-09-24T07:42:20Z",
+  "not_a_freeze": true,
+  "kind_train_still_refused": true,
+  "items": {
+    "design_revision": {
+      "status": "present",
+      "value": "design-v1"
+    },
+    "git_commit": {
+      "status": "not_frozen",
+      "head": "b59b4c47d6de0eaf0626568c670ee170aff34468",
+      "status_sb": [
+        "## master...origin/master",
+        " M .cursor/rules/thor-longrun.mdc",
+        " M AGENTS.md"
+      ],
+      "dirty_paths_n": 45,
+      "note": "HEAD is historical v3. v4 overlay is uncommitted. Cannot bind freeze to this HEAD."
+    },
+    "source_tree_snapshot": {
+      "status": "draft_only",
+      "aggregate_sha256": "a9cace14a8ba5c9fde5b548a4a95eff7f61034414dc15a0b30c0045bff8ca330",
+      "n_files": 1122
+    },
+    "orion_lock": {
+      "status": "missing_or_unfrozen",
+      "hashes": {
+        "requirements.lock.txt": "2441b78017080812aecdee490a6fa44e18b03635aa5e64f0a8c249caee7424b4",
+        "environment.lock.yml": "37206057b24e358bf2ea57867df55b9105802ce3bc67af5b4f318bff02a4ff9a",
+        "pyproject.toml": "0ecd9116736e92b600a69061a6e1388a1306fffdf87b994a44bf7f0e0ef8979e"
+      },
+      "pip_freeze": "/home/zhuzetong/research/cl/Reproduce-Orion/reports/fullmem_v4/g3/pip_freeze.txt"
+    },
+    "driver_kernel_cuda": {
+      "status": "recorded_live_not_frozen",
+      "uname": "Linux epic 6.8.12-1021-tegra #1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026 aarch64 aarch64 aarch64 GNU/Linux",
+      "nv_tegra_release": "# R39 (release), REVISION: 2.1, GCID: 46758480, BOARD: generic, EABI: aarch64, DATE: Fri Aug  7 05:54:22 AM UTC 2026\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+      "nvpmodel": "NV Power Mode: 120W\n1",
+      "cuda": {
+        "ok": true,
+        "device_name": "NVIDIA Thor",
+        "total_memory": 16830046208,
+        "major": 11,
+        "minor": 0,
+        "torch": "2.14.0+cu132"
+      },
+      "boot_id": "febc65c9-b79c-425c-9d2c-e959958e09da",
+      "capacity": {
+        "capacity_id": "mem16g",
+        "requested_mem": "16G",
+        "mem_total_kb": 16435592,
+        "mem_total_gib_approx": 15.674
+      }
+    },
+    "data_manifests": {
+      "status": "hashed_not_frozen",
+      "sha256": {
+        "data/manifests/cifar10.json": "da2727c42484b5dd01b010ac331d2ed00498fe71ffa907cdac7e8563ff546621",
+        "data/manifests/cifar100.json": "7fd72ad56437692f21238dbdd234ce2629d977c7da2b5e6f0e46d89cb27c6b84",
+        "data/manifests/cifar100_dev_split_seed17.json": "1dba7d42e863a4c250894644189a519ac0a01b78ff12bcee2b833b081153ce99",
+        "data/manifests/cifar100_split10_seed0.json": "839f8ebbf63dc1fd29fe219b66ff898bd21fb36f1b9636f7ac1d0bf83d30054c",
+        "data/manifests/cifar10_dev_split10_seed0.json": "3926122316cbdc3da640e578ec9f5f498f88ed4e6b909b2720abb2caffc3cdcc",
+        "data/manifests/cifar10_dev_split_seed17.json": "a86058dbece524148031cd69025476785102029b4ccf29cbbffcdf307ccb6fec",
+        "data/manifests/cifar10_split10_seed0.json": "c4760146de1362c2e1ae5087aedf49b68be29278a2a3c3eb5c0df4f24453386f",
+        "data/manifests/core50_mini.json": "f6ad5e52b88a8a58455486ade5072ce664ff31acfd3e56b3054d6d096d7640b0",
+        "data/manifests/core50_nc_run0.json": "eebb5a2ad6457024e88e098d3050c7893743c79e53558840089f3e5d1152be1b",
+        "data/manifests/core50_nc_run0_dev_split_seed17.json": "6641afb44392e990e217fc008cfe50808eac83c626cf24a86812481bb987caaf",
+        "data/manifests/core50_nc_run0_dev_stream.json": "b0e2770035d89c2414732a4b6789485090902b5ef4ce40882170b873b8ac0c5c",
+        "data/manifests/core50_ni_run0.json": "872c687d18fd4bb6f158c3daa7fc80188d3a39f7f211dff5be5f298c62022faa",
+        "data/manifests/core50_ni_run0_dev_split_seed17.json": "3096edddb988b601f80602f4605b54866da85bc62a1d224ae9bda66d2dfe8b2b",
+        "data/manifests/core50_ni_run0_dev_stream.json": "1b73845a2210a543587a0dd239813090d8941f4993d942a08c42f72406f974b6",
+        "data/manifests/core50_nic_run0.json": "dab10922cf80300c7c77a7e473f4e864d0fd692c5e4310fba3cf589b293b06b9",
+        "data/manifests/core50_nicv2_79_run0_dev_split_seed17.json": "4aa0e3650479d464f39a563cc1248840e237445427e928eb387ad9503a66fc17",
+        "data/manifests/endless_cl_sim.json": "9bb4b38ec084ce5fed50fce13dae6eea6171cc4d44e9b808f09cabc6461d711f"
+      }
+    },
+    "actual_budget": {
+      "status": "unestablished",
+      "pressure_scene": "unestablished_at_mem16g",
+      "min_available_bytes": 8374267904.0,
+      "note": "16G admitted, not frozen. Do not write a tight/mid/wide freeze from slack."
+    },
+    "matrix": {
+      "status": "design_denominator_only",
+      "design_slots_before_dedup": 1320,
+      "cost_output": "/home/zhuzetong/research/cl/Reproduce-Orion/reports/fullmem_v4/g2/cost_estimate.json",
+      "inventory_output": "/home/zhuzetong/research/cl/Reproduce-Orion/reports/fullmem_v4/data/inventory.json"
+    },
+    "g1_fault_probes": {
+      "status": "probes_done_except_hard_oom",
+      "done": [
+        "duplicate_submit",
+        "ssh_disconnect",
+        "agent_exit",
+        "worker_exception",
+        "resource_failure_follow_on",
+        "linger_terminate_user",
+        "disk_full_tmpfs",
+        "in_run_reboot"
+      ],
+      "hard_board_oom": "unconfirmed_by_design"
+    },
+    "control_machine_backup": {
+      "status": "missing"
+    },
+    "h7_param_hash": {
+      "status": "dev_aligned_under_deterministic_algorithms",
+      "net_benefit": "unestablished"
+    },
+    "endless_official_protocol": {
+      "status": "unestablished"
+    }
+  },
+  "outputs": {
+    "identity": "/home/zhuzetong/research/cl/Reproduce-Orion/reports/fullmem_v4/g3/identity_live.json",
+    "source_snapshot": "/home/zhuzetong/research/cl/Reproduce-Orion/reports/fullmem_v4/g3/source_snapshot.json",
+    "source_tree_files": "/home/zhuzetong/research/cl/Reproduce-Orion/reports/fullmem_v4/g3/source_tree_files.jsonl"
+  },
+  "hostname": "epic"
+}

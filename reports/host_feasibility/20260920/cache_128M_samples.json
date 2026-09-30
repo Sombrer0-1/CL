@@ -1,0 +1,998 @@
+[
+  {
+    "time": 1789870708.0274432
+  },
+  {
+    "time": 1789870708.0477378,
+    "memory.current": "0",
+    "memory.peak": "0",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 0\nfile 0\nkernel 0\nkernel_stack 0\npagetables 0\nsec_pagetables 0\npercpu 0\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 0\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 0\nslab_unreclaimable 0\nslab 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 0\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": ""
+  },
+  {
+    "time": 1789870708.0681682,
+    "memory.current": "0",
+    "memory.peak": "0",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 0\nfile 0\nkernel 0\nkernel_stack 0\npagetables 0\nsec_pagetables 0\npercpu 0\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 0\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 0\nslab_unreclaimable 0\nslab 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 0\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": ""
+  },
+  {
+    "time": 1789870708.0884657,
+    "memory.current": "4059136",
+    "memory.peak": "4059136",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 3866624\nfile 0\nkernel 114688\nkernel_stack 0\npagetables 77824\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 3817472\nactive_anon 4096\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 2008\nslab_unreclaimable 21344\nslab 23352\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 1060\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.1087673,
+    "memory.current": "6680576",
+    "memory.peak": "6680576",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6479872\nfile 0\nkernel 147456\nkernel_stack 0\npagetables 90112\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6459392\nactive_anon 4096\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 2008\nslab_unreclaimable 41992\nslab 44000\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 1719\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.129035,
+    "memory.current": "6938624",
+    "memory.peak": "6942720",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6479872\nfile 0\nkernel 147456\nkernel_stack 0\npagetables 90112\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6459392\nactive_anon 4096\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 2008\nslab_unreclaimable 41992\nslab 44000\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 1719\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.149331,
+    "memory.current": "6938624",
+    "memory.peak": "6942720",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6479872\nfile 0\nkernel 147456\nkernel_stack 0\npagetables 90112\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6459392\nactive_anon 4096\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 2008\nslab_unreclaimable 41992\nslab 44000\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 1719\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.1697466,
+    "memory.current": "6938624",
+    "memory.peak": "6942720",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6479872\nfile 0\nkernel 147456\nkernel_stack 0\npagetables 90112\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6459392\nactive_anon 4096\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 2008\nslab_unreclaimable 41992\nslab 44000\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 1719\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.19014,
+    "memory.current": "6938624",
+    "memory.peak": "6942720",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6479872\nfile 0\nkernel 147456\nkernel_stack 0\npagetables 90112\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6459392\nactive_anon 4096\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 2008\nslab_unreclaimable 41992\nslab 44000\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 1719\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.2105048,
+    "memory.current": "6938624",
+    "memory.peak": "6942720",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6479872\nfile 0\nkernel 147456\nkernel_stack 0\npagetables 90112\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6459392\nactive_anon 4096\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 2008\nslab_unreclaimable 41992\nslab 44000\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 1719\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.2309046,
+    "memory.current": "6938624",
+    "memory.peak": "6942720",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6762496\nfile 0\nkernel 135168\nkernel_stack 0\npagetables 90112\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6750208\nactive_anon 4096\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 1808\nslab_unreclaimable 40264\nslab 42072\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 1799\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.2514305,
+    "memory.current": "6938624",
+    "memory.peak": "6942720",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6762496\nfile 0\nkernel 135168\nkernel_stack 0\npagetables 90112\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6750208\nactive_anon 4096\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 1808\nslab_unreclaimable 40264\nslab 42072\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 1799\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.2718923,
+    "memory.current": "23977984",
+    "memory.peak": "23977984",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 16633856\nkernel 638976\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 16633856\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 16576512\nactive_file 0\nunevictable 0\nslab_reclaimable 494712\nslab_unreclaimable 40264\nslab 534976\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.2921534,
+    "memory.current": "29634560",
+    "memory.peak": "29896704",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 22294528\nkernel 811008\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1843200\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 22237184\nactive_file 0\nunevictable 0\nslab_reclaimable 663896\nslab_unreclaimable 40264\nslab 704160\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.3125548,
+    "memory.current": "50475008",
+    "memory.peak": "50475008",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 42106880\nkernel 1396736\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 5976064\nfile_writeback 8200192\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 42082304\nactive_file 0\nunevictable 0\nslab_reclaimable 1247864\nslab_unreclaimable 40264\nslab 1288128\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.332999,
+    "memory.current": "74067968",
+    "memory.peak": "74067968",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 64946176\nkernel 2076672\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 12414976\nfile_writeback 5693440\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 64946176\nactive_file 0\nunevictable 0\nslab_reclaimable 1924584\nslab_unreclaimable 40264\nslab 1964848\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.3534136,
+    "memory.current": "76427264",
+    "memory.peak": "76427264",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 66813952\nkernel 2129920\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1867776\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 66789376\nactive_file 0\nunevictable 0\nslab_reclaimable 1983048\nslab_unreclaimable 40264\nslab 2023312\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.3737822,
+    "memory.current": "76427264",
+    "memory.peak": "76427264",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 66813952\nkernel 2129920\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1867776\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 66789376\nactive_file 0\nunevictable 0\nslab_reclaimable 1983048\nslab_unreclaimable 40264\nslab 2023312\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.3942,
+    "memory.current": "76427264",
+    "memory.peak": "76427264",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 66813952\nkernel 2129920\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1867776\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 66789376\nactive_file 0\nunevictable 0\nslab_reclaimable 1983048\nslab_unreclaimable 40264\nslab 2023312\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.414592,
+    "memory.current": "76427264",
+    "memory.peak": "76427264",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 66813952\nkernel 2129920\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1867776\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 66789376\nactive_file 0\nunevictable 0\nslab_reclaimable 1983048\nslab_unreclaimable 40264\nslab 2023312\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.4350111,
+    "memory.current": "76427264",
+    "memory.peak": "76427264",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 66813952\nkernel 2129920\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1867776\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 66789376\nactive_file 0\nunevictable 0\nslab_reclaimable 1983048\nslab_unreclaimable 40264\nslab 2023312\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.4554074,
+    "memory.current": "76427264",
+    "memory.peak": "76427264",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 66813952\nkernel 2129920\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1867776\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 66789376\nactive_file 0\nunevictable 0\nslab_reclaimable 1983048\nslab_unreclaimable 40264\nslab 2023312\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.4757662,
+    "memory.current": "76427264",
+    "memory.peak": "76427264",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6766592\nfile 66813952\nkernel 2129920\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1867776\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6762496\nactive_anon 4096\ninactive_file 66789376\nactive_file 0\nunevictable 0\nslab_reclaimable 1983048\nslab_unreclaimable 40264\nslab 2023312\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2313\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.4961362,
+    "memory.current": "77475840",
+    "memory.peak": "77475840",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 67862528\nkernel 2162688\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 2916352\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 67829760\nactive_file 0\nunevictable 0\nslab_reclaimable 2012216\nslab_unreclaimable 40528\nslab 2052744\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.5164855,
+    "memory.current": "95563776",
+    "memory.peak": "95563776",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 85688320\nkernel 2695168\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 3739648\nfile_writeback 6451200\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 85688320\nactive_file 0\nunevictable 0\nslab_reclaimable 2542728\nslab_unreclaimable 40528\nslab 2583256\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.5368857,
+    "memory.current": "117252096",
+    "memory.peak": "117321728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 106823680\nkernel 3321856\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 16482304\nfile_writeback 4653056\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 106815488\nactive_file 0\nunevictable 0\nslab_reclaimable 3169192\nslab_unreclaimable 40528\nslab 3209720\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.5575047,
+    "memory.current": "130097152",
+    "memory.peak": "130097152",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 119177216\nkernel 3686400\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 12353536\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 119164928\nactive_file 0\nunevictable 0\nslab_reclaimable 3532824\nslab_unreclaimable 40528\nslab 3573352\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.5780795,
+    "memory.current": "134152192",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 20\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123338752\nkernel 3821568\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123322368\nactive_file 0\nunevictable 0\nslab_reclaimable 3668472\nslab_unreclaimable 40528\nslab 3709000\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 1000\npgsteal 1000\npgscan_kswapd 0\npgscan_direct 1000\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 1000\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.5984845,
+    "memory.current": "134189056",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 53\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123392000\nkernel 3833856\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6606848\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123371520\nactive_file 0\nunevictable 0\nslab_reclaimable 3681864\nslab_unreclaimable 40528\nslab 3722392\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 2600\npgsteal 2600\npgscan_kswapd 0\npgscan_direct 2600\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 2600\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.6188471,
+    "memory.current": "134189056",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 53\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123392000\nkernel 3833856\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6606848\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123371520\nactive_file 0\nunevictable 0\nslab_reclaimable 3681864\nslab_unreclaimable 40528\nslab 3722392\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 2600\npgsteal 2600\npgscan_kswapd 0\npgscan_direct 2600\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 2600\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.6391473,
+    "memory.current": "134189056",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 53\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123392000\nkernel 3833856\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6606848\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123371520\nactive_file 0\nunevictable 0\nslab_reclaimable 3681864\nslab_unreclaimable 40528\nslab 3722392\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 2600\npgsteal 2600\npgscan_kswapd 0\npgscan_direct 2600\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 2600\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.659499,
+    "memory.current": "134189056",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 53\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123392000\nkernel 3833856\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6606848\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123371520\nactive_file 0\nunevictable 0\nslab_reclaimable 3681864\nslab_unreclaimable 40528\nslab 3722392\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 2600\npgsteal 2600\npgscan_kswapd 0\npgscan_direct 2600\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 2600\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.6798441,
+    "memory.current": "134189056",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 53\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123392000\nkernel 3833856\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6606848\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123371520\nactive_file 0\nunevictable 0\nslab_reclaimable 3681864\nslab_unreclaimable 40528\nslab 3722392\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 2600\npgsteal 2600\npgscan_kswapd 0\npgscan_direct 2600\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 2600\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.7002234,
+    "memory.current": "134057984",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 53\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123392000\nkernel 3833856\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6606848\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123371520\nactive_file 0\nunevictable 0\nslab_reclaimable 3681864\nslab_unreclaimable 40528\nslab 3722392\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 2600\npgsteal 2600\npgscan_kswapd 0\npgscan_direct 2600\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 2600\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.7207272,
+    "memory.current": "134057984",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 53\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123392000\nkernel 3833856\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6606848\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123371520\nactive_file 0\nunevictable 0\nslab_reclaimable 3681864\nslab_unreclaimable 40528\nslab 3722392\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 2600\npgsteal 2600\npgscan_kswapd 0\npgscan_direct 2600\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 2600\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.7411022,
+    "memory.current": "134057984",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 53\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123392000\nkernel 3833856\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6606848\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123371520\nactive_file 0\nunevictable 0\nslab_reclaimable 3681864\nslab_unreclaimable 40528\nslab 3722392\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 2600\npgsteal 2600\npgscan_kswapd 0\npgscan_direct 2600\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 2600\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.7614534,
+    "memory.current": "134164480",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 120\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123441152\nkernel 3862528\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11706368\nfile_writeback 7344128\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123408384\nactive_file 0\nunevictable 0\nslab_reclaimable 3716968\nslab_unreclaimable 40264\nslab 3757232\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 6000\npgsteal 6000\npgscan_kswapd 0\npgscan_direct 6000\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 6000\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.7831607,
+    "memory.current": "134189056",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 152\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123478016\nkernel 3878912\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6180864\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123457536\nactive_file 0\nunevictable 0\nslab_reclaimable 3731320\nslab_unreclaimable 40264\nslab 3771584\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 7500\npgsteal 7500\npgscan_kswapd 0\npgscan_direct 7500\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 7500\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.8035443,
+    "memory.current": "134201344",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 222\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123424768\nkernel 3915776\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 13496320\nfile_writeback 4399104\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123420672\nactive_file 0\nunevictable 0\nslab_reclaimable 3766584\nslab_unreclaimable 40264\nslab 3806848\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 11100\npgsteal 11100\npgscan_kswapd 0\npgscan_direct 11100\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 11100\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.8240042,
+    "memory.current": "134184960",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 256\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123428864\nkernel 3928064\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 6557696\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123412480\nactive_file 0\nunevictable 0\nslab_reclaimable 3780824\nslab_unreclaimable 40264\nslab 3821088\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 12700\npgsteal 12700\npgscan_kswapd 0\npgscan_direct 12700\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 12700\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.8444195,
+    "memory.current": "134017024",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 325\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123203584\nkernel 3952640\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11501568\nfile_writeback 7733248\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123195392\nactive_file 0\nunevictable 0\nslab_reclaimable 3806232\nslab_unreclaimable 40264\nslab 3846496\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 16250\npgsteal 16250\npgscan_kswapd 0\npgscan_direct 16250\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 16250\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.8647654,
+    "memory.current": "134127616",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 367\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123379712\nkernel 3977216\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8368128\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123359232\nactive_file 0\nunevictable 0\nslab_reclaimable 3831432\nslab_unreclaimable 40264\nslab 3871696\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 18250\npgsteal 18250\npgscan_kswapd 0\npgscan_direct 18250\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 18250\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.8850925,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 381\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123375616\nkernel 3981312\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11231232\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123355136\nactive_file 0\nunevictable 0\nslab_reclaimable 3836264\nslab_unreclaimable 40264\nslab 3876528\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 18950\npgsteal 18950\npgscan_kswapd 0\npgscan_direct 18950\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 18950\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.9054356,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 381\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123375616\nkernel 3981312\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11231232\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123355136\nactive_file 0\nunevictable 0\nslab_reclaimable 3836264\nslab_unreclaimable 40264\nslab 3876528\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 18950\npgsteal 18950\npgscan_kswapd 0\npgscan_direct 18950\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 18950\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.925793,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 381\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123375616\nkernel 3981312\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11231232\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123355136\nactive_file 0\nunevictable 0\nslab_reclaimable 3836264\nslab_unreclaimable 40264\nslab 3876528\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 18950\npgsteal 18950\npgscan_kswapd 0\npgscan_direct 18950\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 18950\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.946131,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 381\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123375616\nkernel 3981312\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11231232\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123355136\nactive_file 0\nunevictable 0\nslab_reclaimable 3836264\nslab_unreclaimable 40264\nslab 3876528\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 18950\npgsteal 18950\npgscan_kswapd 0\npgscan_direct 18950\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 18950\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.9664943,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 381\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123375616\nkernel 3981312\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11231232\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123355136\nactive_file 0\nunevictable 0\nslab_reclaimable 3836264\nslab_unreclaimable 40264\nslab 3876528\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 18950\npgsteal 18950\npgscan_kswapd 0\npgscan_direct 18950\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 18950\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870708.986978,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 381\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123375616\nkernel 3981312\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11231232\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123355136\nactive_file 0\nunevictable 0\nslab_reclaimable 3836264\nslab_unreclaimable 40264\nslab 3876528\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 18950\npgsteal 18950\npgscan_kswapd 0\npgscan_direct 18950\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 18950\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.007609,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 381\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123375616\nkernel 3981312\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11231232\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123355136\nactive_file 0\nunevictable 0\nslab_reclaimable 3836264\nslab_unreclaimable 40264\nslab 3876528\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 18950\npgsteal 18950\npgscan_kswapd 0\npgscan_direct 18950\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 18950\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.0281441,
+    "memory.current": "134012928",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 417\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123326464\nkernel 3997696\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 18583552\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123326464\nactive_file 0\nunevictable 0\nslab_reclaimable 3853208\nslab_unreclaimable 40264\nslab 3893472\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 20757\npgsteal 20757\npgscan_kswapd 0\npgscan_direct 20757\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 20757\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.0485654,
+    "memory.current": "134184960",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 445\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123338752\nkernel 4014080\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 3694592\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123318272\nactive_file 0\nunevictable 0\nslab_reclaimable 3868488\nslab_unreclaimable 40264\nslab 3908752\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 22150\npgsteal 22150\npgscan_kswapd 0\npgscan_direct 22150\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 22150\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.069769,
+    "memory.current": "134033408",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 521\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123305984\nkernel 4046848\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 19226624\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123285504\nactive_file 0\nunevictable 0\nslab_reclaimable 3903960\nslab_unreclaimable 40264\nslab 3944224\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 25950\npgsteal 25950\npgscan_kswapd 0\npgscan_direct 25950\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 25950\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.090324,
+    "memory.current": "134180864",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 561\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123285504\nkernel 4067328\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 7573504\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123265024\nactive_file 0\nunevictable 0\nslab_reclaimable 3923800\nslab_unreclaimable 40264\nslab 3964064\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 27950\npgsteal 27950\npgscan_kswapd 0\npgscan_direct 27950\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 27950\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.110666,
+    "memory.current": "134176768",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 623\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123215872\nkernel 4096000\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 5603328\nfile_writeback 8818688\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123170816\nactive_file 0\nunevictable 0\nslab_reclaimable 3951240\nslab_unreclaimable 40264\nslab 3991504\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 31150\npgsteal 31150\npgscan_kswapd 0\npgscan_direct 31150\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 31150\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.1310067,
+    "memory.current": "134217728",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 694\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123314176\nkernel 4128768\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 14434304\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123293696\nactive_file 0\nunevictable 0\nslab_reclaimable 3984600\nslab_unreclaimable 38392\nslab 4022992\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 34650\npgsteal 34650\npgscan_kswapd 0\npgscan_direct 34650\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 34650\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.1513665,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 709\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123305984\nkernel 4136960\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 17293312\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123285504\nactive_file 0\nunevictable 0\nslab_reclaimable 3993400\nslab_unreclaimable 38392\nslab 4031792\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 35350\npgsteal 35350\npgscan_kswapd 0\npgscan_direct 35350\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 35350\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.1717129,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 709\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123305984\nkernel 4136960\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 17293312\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123285504\nactive_file 0\nunevictable 0\nslab_reclaimable 3993400\nslab_unreclaimable 38392\nslab 4031792\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 35350\npgsteal 35350\npgscan_kswapd 0\npgscan_direct 35350\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 35350\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.192039,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 709\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123305984\nkernel 4136960\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 17293312\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123285504\nactive_file 0\nunevictable 0\nslab_reclaimable 3993400\nslab_unreclaimable 38392\nslab 4031792\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 35350\npgsteal 35350\npgscan_kswapd 0\npgscan_direct 35350\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 35350\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.2123604,
+    "memory.current": "134144000",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 709\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123305984\nkernel 4136960\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 17293312\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123285504\nactive_file 0\nunevictable 0\nslab_reclaimable 3993400\nslab_unreclaimable 38392\nslab 4031792\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 35350\npgsteal 35350\npgscan_kswapd 0\npgscan_direct 35350\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 35350\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.2326834,
+    "memory.current": "134139904",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 709\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123305984\nkernel 4136960\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 17293312\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123285504\nactive_file 0\nunevictable 0\nslab_reclaimable 3993400\nslab_unreclaimable 38392\nslab 4031792\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 35350\npgsteal 35350\npgscan_kswapd 0\npgscan_direct 35350\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 35350\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.2530117,
+    "memory.current": "134139904",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 709\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123305984\nkernel 4136960\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 17293312\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123285504\nactive_file 0\nunevictable 0\nslab_reclaimable 3993400\nslab_unreclaimable 38392\nslab 4031792\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 35350\npgsteal 35350\npgscan_kswapd 0\npgscan_direct 35350\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 35350\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.2733366,
+    "memory.current": "134139904",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 709\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123305984\nkernel 4136960\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 17293312\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123285504\nactive_file 0\nunevictable 0\nslab_reclaimable 3993400\nslab_unreclaimable 38392\nslab 4031792\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 35350\npgsteal 35350\npgscan_kswapd 0\npgscan_direct 35350\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 35350\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.2936842,
+    "memory.current": "134045696",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 724\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123138048\nkernel 4136960\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8200192\nfile_writeback 8937472\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123097088\nactive_file 0\nunevictable 0\nslab_reclaimable 3995704\nslab_unreclaimable 38392\nslab 4034096\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 36200\npgsteal 36200\npgscan_kswapd 0\npgscan_direct 36200\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 36200\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.3140407,
+    "memory.current": "134131712",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 782\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123277312\nkernel 4169728\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11608064\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123256832\nactive_file 0\nunevictable 0\nslab_reclaimable 4021512\nslab_unreclaimable 38392\nslab 4059904\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 39000\npgsteal 39000\npgscan_kswapd 0\npgscan_direct 39000\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 39000\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.3344338,
+    "memory.current": "134021120",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 825\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123064320\nkernel 4186112\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 6807552\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123052032\nactive_file 0\nunevictable 0\nslab_reclaimable 4042856\nslab_unreclaimable 38392\nslab 4081248\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 41250\npgsteal 41250\npgscan_kswapd 0\npgscan_direct 41250\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 41250\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.3548827,
+    "memory.current": "134189056",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 899\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123219968\nkernel 4222976\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 15106048\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123203584\nactive_file 0\nunevictable 0\nslab_reclaimable 4077560\nslab_unreclaimable 38392\nslab 4115952\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 44900\npgsteal 44900\npgscan_kswapd 0\npgscan_direct 44900\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 44900\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.3752506,
+    "memory.current": "134160384",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 928\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123211776\nkernel 4235264\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 163840\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123129856\nactive_file 0\nunevictable 0\nslab_reclaimable 4092136\nslab_unreclaimable 38392\nslab 4130528\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 46350\npgsteal 46350\npgscan_kswapd 0\npgscan_direct 46350\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 46350\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.3955815,
+    "memory.current": "134160384",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1013\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123174912\nkernel 4272128\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 17326080\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123113472\nactive_file 0\nunevictable 0\nslab_reclaimable 4128680\nslab_unreclaimable 38392\nslab 4167072\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 50550\npgsteal 50550\npgscan_kswapd 0\npgscan_direct 50550\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 50550\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.4159112,
+    "memory.current": "134070272",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1032\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123162624\nkernel 4284416\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 598016\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123133952\nactive_file 0\nunevictable 0\nslab_reclaimable 4137480\nslab_unreclaimable 38392\nslab 4175872\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 51500\npgsteal 51500\npgscan_kswapd 0\npgscan_direct 51500\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 51500\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.4362435,
+    "memory.current": "134021120",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1038\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123162624\nkernel 4284416\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1826816\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123129856\nactive_file 0\nunevictable 0\nslab_reclaimable 4141704\nslab_unreclaimable 38392\nslab 4180096\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 51800\npgsteal 51800\npgscan_kswapd 0\npgscan_direct 51800\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 51800\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.456579,
+    "memory.current": "134021120",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1038\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123162624\nkernel 4284416\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1826816\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123129856\nactive_file 0\nunevictable 0\nslab_reclaimable 4141704\nslab_unreclaimable 38392\nslab 4180096\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 51800\npgsteal 51800\npgscan_kswapd 0\npgscan_direct 51800\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 51800\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.4769049,
+    "memory.current": "134021120",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1038\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123162624\nkernel 4284416\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1826816\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123129856\nactive_file 0\nunevictable 0\nslab_reclaimable 4141704\nslab_unreclaimable 38392\nslab 4180096\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 51800\npgsteal 51800\npgscan_kswapd 0\npgscan_direct 51800\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 51800\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.4972398,
+    "memory.current": "134021120",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1038\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123162624\nkernel 4284416\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1826816\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123129856\nactive_file 0\nunevictable 0\nslab_reclaimable 4141704\nslab_unreclaimable 38392\nslab 4180096\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 51800\npgsteal 51800\npgscan_kswapd 0\npgscan_direct 51800\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 51800\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.517563,
+    "memory.current": "134021120",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1038\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123162624\nkernel 4284416\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1826816\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123129856\nactive_file 0\nunevictable 0\nslab_reclaimable 4141704\nslab_unreclaimable 38392\nslab 4180096\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 51800\npgsteal 51800\npgscan_kswapd 0\npgscan_direct 51800\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 51800\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.537888,
+    "memory.current": "134021120",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1038\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123162624\nkernel 4284416\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1826816\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123129856\nactive_file 0\nunevictable 0\nslab_reclaimable 4141704\nslab_unreclaimable 38392\nslab 4180096\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 51800\npgsteal 51800\npgscan_kswapd 0\npgscan_direct 51800\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 51800\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.558217,
+    "memory.current": "134021120",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1038\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123162624\nkernel 4284416\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 1826816\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123129856\nactive_file 0\nunevictable 0\nslab_reclaimable 4141704\nslab_unreclaimable 38392\nslab 4180096\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 51800\npgsteal 51800\npgscan_kswapd 0\npgscan_direct 51800\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 51800\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.5785608,
+    "memory.current": "134217728",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1078\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123138048\nkernel 4304896\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 9994240\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123121664\nactive_file 0\nunevictable 0\nslab_reclaimable 4159976\nslab_unreclaimable 38392\nslab 4198368\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 53800\npgsteal 53800\npgscan_kswapd 0\npgscan_direct 53800\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 53800\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.5988967,
+    "memory.current": "134201344",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1128\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123105280\nkernel 4325376\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 3448832\nfile_writeback 6725632\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123097088\nactive_file 0\nunevictable 0\nslab_reclaimable 4183912\nslab_unreclaimable 38392\nslab 4222304\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 56400\npgsteal 56400\npgscan_kswapd 0\npgscan_direct 56400\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 56400\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.6192486,
+    "memory.current": "134131712",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1188\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123092992\nkernel 4354048\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 11866112\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 123072512\nactive_file 0\nunevictable 0\nslab_reclaimable 4208056\nslab_unreclaimable 38392\nslab 4246448\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 59300\npgsteal 59300\npgscan_kswapd 0\npgscan_direct 59300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 59300\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.6395779,
+    "memory.current": "134131712",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1227\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 123035648\nkernel 4370432\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 380928\nfile_writeback 4472832\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122990592\nactive_file 0\nunevictable 0\nslab_reclaimable 4224600\nslab_unreclaimable 38392\nslab 4262992\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 61350\npgsteal 61350\npgscan_kswapd 0\npgscan_direct 61350\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 61350\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.6599116,
+    "memory.current": "134201344",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1324\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6770688\nfile 122867712\nkernel 4415488\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 14249984\nfile_writeback 3756032\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122822656\nactive_file 0\nunevictable 0\nslab_reclaimable 4266792\nslab_unreclaimable 38392\nslab 4305184\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 66200\npgsteal 66200\npgscan_kswapd 0\npgscan_direct 66200\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 66200\npgsteal_khugepaged 0\npgfault 2314\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.6802468,
+    "memory.current": "134119424",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4435968\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 2392064\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122867712\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 38392\nslab 4327968\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.7005918,
+    "memory.current": "134119424",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4435968\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 2392064\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122867712\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 38392\nslab 4327968\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.7209153,
+    "memory.current": "134119424",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4435968\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 2392064\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122867712\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 38392\nslab 4327968\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.741238,
+    "memory.current": "134119424",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4435968\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 2392064\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122867712\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 38392\nslab 4327968\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.761559,
+    "memory.current": "134119424",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4435968\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 2392064\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122867712\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 38392\nslab 4327968\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.781882,
+    "memory.current": "134119424",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4435968\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 2392064\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122867712\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 38392\nslab 4327968\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.8022094,
+    "memory.current": "134119424",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4435968\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 2392064\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122867712\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 38392\nslab 4327968\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.8225305,
+    "memory.current": "134119424",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4435968\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 2392064\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6766592\nactive_anon 4096\ninactive_file 122867712\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 38392\nslab 4327968\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.8428707,
+    "memory.current": "134123520",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4440064\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 122908672\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 42888\nslab 4332464\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.8632972,
+    "memory.current": "134123520",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4440064\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 122908672\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 42888\nslab 4332464\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.8836234,
+    "memory.current": "134123520",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4440064\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 122908672\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 42888\nslab 4332464\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.9039528,
+    "memory.current": "134123520",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4440064\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 122908672\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 42888\nslab 4332464\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.9242778,
+    "memory.current": "134123520",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4440064\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 122908672\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 42888\nslab 4332464\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.9446056,
+    "memory.current": "134123520",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4440064\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 122908672\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 42888\nslab 4332464\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.9649405,
+    "memory.current": "134123520",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4440064\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 122908672\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 42888\nslab 4332464\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870709.9852657,
+    "memory.current": "134123520",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 122908672\nkernel 4431872\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 122908672\nactive_file 0\nunevictable 0\nslab_reclaimable 4289576\nslab_unreclaimable 38392\nslab 4327968\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870710.0055985,
+    "memory.current": "82427904",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 71991296\nkernel 2920448\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 72044544\nactive_file 0\nunevictable 0\nslab_reclaimable 2780920\nslab_unreclaimable 38392\nslab 2819312\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870710.025951,
+    "memory.current": "33001472",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6774784\nfile 24252416\nkernel 1085440\nkernel_stack 0\npagetables 98304\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 24252416\nactive_file 0\nunevictable 0\nslab_reclaimable 944296\nslab_unreclaimable 38392\nslab 982688\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2315\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870710.0464325,
+    "memory.current": "7278592",
+    "memory.peak": "134217728",
+    "memory.max": "134217728",
+    "memory.swap.max": "0",
+    "memory.events": "low 0\nhigh 0\nmax 1366\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.stat": "anon 6565888\nfile 8192\nkernel 237568\nkernel_stack 0\npagetables 90112\nsec_pagetables 0\npercpu 256\nsock 0\nvmalloc 0\nshmem 0\nfile_mapped 0\nfile_dirty 8192\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 6770688\nactive_anon 4096\ninactive_file 8192\nactive_file 0\nunevictable 0\nslab_reclaimable 102536\nslab_unreclaimable 38392\nslab 140928\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 68300\npgsteal 68300\npgscan_kswapd 0\npgscan_direct 68300\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 68300\npgsteal_khugepaged 0\npgfault 2316\npgmajfault 0\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0",
+    "cgroup.procs": "800064"
+  },
+  {
+    "time": 1789870710.0668163
+  }
+]

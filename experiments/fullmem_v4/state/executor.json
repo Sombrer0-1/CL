@@ -1,0 +1,18 @@
+{
+  "study_id": "fullmem_v4",
+  "mode": "idle",
+  "pause_reason": null,
+  "batch_id": "g4-h4-mem8g",
+  "boot_id_at_batch_start": "18f419b5-dd78-4c2a-bd52-4dd84d9b38da",
+  "current_task_id": null,
+  "worker_unit": null,
+  "worker_pid": null,
+  "heartbeat_ts": "2026-09-30T02:41:30Z",
+  "completed_n": 400,
+  "failed_n": 20,
+  "last_event": null,
+  "last_identity": {
+    "boot_id": "18f419b5-dd78-4c2a-bd52-4dd84d9b38da",
+    "capacity_id": "mem8g"
+  }
+}

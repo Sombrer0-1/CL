@@ -1,0 +1,35 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-22T10:24:09Z",
+  "boot_id": "7b3d596d-3424-4a78-854c-18fd5cc5833e",
+  "capacity": {
+    "capacity_id": "mem16g",
+    "requested_mem": "16G",
+    "mem_total_kb": 16435592,
+    "mem_total_gib_approx": 15.674
+  },
+  "windows": [
+    {
+      "window": 0,
+      "n_samples": 60,
+      "min_MemAvailable_kb": 13648008,
+      "max_MemAvailable_kb": 13743556,
+      "mean_MemAvailable_kb": 13709776.666666666
+    },
+    {
+      "window": 1,
+      "n_samples": 60,
+      "min_MemAvailable_kb": 13743580,
+      "max_MemAvailable_kb": 13753860,
+      "mean_MemAvailable_kb": 13750657.733333332
+    },
+    {
+      "window": 2,
+      "n_samples": 60,
+      "min_MemAvailable_kb": 13753688,
+      "max_MemAvailable_kb": 13753940,
+      "mean_MemAvailable_kb": 13753846.666666666
+    }
+  ],
+  "note": "Development idle windows on mem64g. Not a G3 freeze of admission ranges."
+}

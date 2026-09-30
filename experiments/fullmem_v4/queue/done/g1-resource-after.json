@@ -1,0 +1,35 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g1-resource-after",
+  "seq": 203,
+  "kind": "dummy",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "dummy",
+    "--seconds",
+    "1",
+    "--marker",
+    "runs/fullmem_v4/g1-resource-after.ok"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "any",
+  "batch_id": "g1-resource-health",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {},
+  "content_hash": "2683c1156850d68452e692821beb6f594ba6c32f0ba44ecbd7201b52030abb14",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-21T04:31:07Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-21T04:31:11Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g1-resource-after.log",
+  "finished_at_utc": "2026-09-21T04:31:11Z"
+}

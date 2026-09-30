@@ -1,0 +1,37 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g1-linger-a",
+  "seq": 700,
+  "kind": "dummy",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "dummy",
+    "--seconds",
+    "90",
+    "--marker",
+    "runs/fullmem_v4/g1-linger-a.ok"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem16g",
+  "batch_id": "g1-linger-mem16g",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {},
+  "content_hash": "b7211cbe3242bee858bfeef73fda2de984800842aca8e12dbaf96b6deaca0141",
+  "status": "implementation_error",
+  "submitted_at_utc": "2026-09-22T12:28:34Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-22T12:28:42Z",
+  "boot_id": "7b3d596d-3424-4a78-854c-18fd5cc5833e",
+  "exit_code": null,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g1-linger-a.log",
+  "finished_at_utc": "2026-09-22T12:28:42Z",
+  "adopted_after_supervisor_restart": true
+}

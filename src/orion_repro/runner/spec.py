@@ -109,8 +109,13 @@ def validate_mapping(
         "adaptive",
         "fixed_default",
         "fixed_advanced",
+        "scripted_pause_keep_state",
+        "scripted_release_rebuild",
     }:
-        errors.append("controller.plugin_policy must be adaptive, fixed_default, or fixed_advanced")
+        errors.append(
+            "controller.plugin_policy must be adaptive, fixed_default, fixed_advanced, "
+            "scripted_pause_keep_state, or scripted_release_rebuild"
+        )
     _walk_unresolved(data, "spec", errors)
 
     def check_none(obj: Any, prefix: str) -> None:

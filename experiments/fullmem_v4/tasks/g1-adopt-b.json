@@ -1,0 +1,19 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g1-adopt-b",
+  "seq": 201,
+  "kind": "dummy",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "dummy",
+    "--seconds",
+    "3",
+    "--marker",
+    "runs/fullmem_v4/g1-adopt-b.ok"
+  ],
+  "required_capacity": "any",
+  "batch_id": "g1-adopt-supervisor"
+}

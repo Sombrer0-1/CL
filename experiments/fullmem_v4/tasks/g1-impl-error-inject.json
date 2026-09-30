@@ -1,0 +1,17 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g1-impl-error-inject",
+  "seq": 19,
+  "kind": "dummy",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "dummy-fail",
+    "--reason",
+    "g1_implementation_error_injection"
+  ],
+  "required_capacity": "mem64g",
+  "batch_id": "g1-fault-inject"
+}

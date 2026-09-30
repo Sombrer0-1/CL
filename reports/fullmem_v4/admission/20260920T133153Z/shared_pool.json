@@ -1,0 +1,155 @@
+{
+  "probe": "shared_pool_g1",
+  "started_at_utc": "2026-09-20T05:31:50Z",
+  "identity": {
+    "study_id": "fullmem_v4",
+    "collected_at_utc": "2026-09-20T05:31:49Z",
+    "hostname": "epic",
+    "boot_id": "7e7ae8b3-a605-4653-8536-5ddedbf44c44",
+    "cmdline": "root=PARTUUID=a724dd86-bafa-46ac-ae09-7edf71c8b2e0 rw rootwait rootfstype=ext4 mminit_loglevel=4 earlycon=tegra_utc,mmio32,0xc5a0000 console=tty0 console=ttyUTC0,115200 clk_ignore_unused firmware_class.path=/etc/firmware fbcon=map:0 nospectre_bhb efi=runtime bl_prof_dataptr=6225920@0x2008010000 bl_prof_ro_ptr=65536@0x20 mem=64G bl_prof_dataptr=6225920@0x2004010000 bl_prof_ro_ptr=65536@0x2004000000",
+    "uname": {
+      "sysname": "Linux",
+      "nodename": "epic",
+      "release": "6.8.12-1021-tegra",
+      "version": "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+      "machine": "aarch64"
+    },
+    "meminfo_kb": {
+      "MemTotal": 65856188,
+      "MemFree": 60287968,
+      "MemAvailable": 63096372,
+      "Cached": 2967100,
+      "Buffers": 84544,
+      "SwapTotal": 0,
+      "SwapFree": 0
+    },
+    "swap_is_zero": true,
+    "capacity": {
+      "capacity_id": "mem64g",
+      "requested_mem": "64G",
+      "mem_total_kb": 65856188,
+      "mem_total_gib_approx": 62.805
+    },
+    "nvpmodel": {
+      "query": "NV Power Mode: 120W\n1",
+      "name": "NV Power Mode: 120W",
+      "mode": "1",
+      "returncode": "0"
+    },
+    "pid": 4657,
+    "cuda": {
+      "ok": true,
+      "device_name": "NVIDIA Thor",
+      "total_memory": 67436736512,
+      "major": 11,
+      "minor": 0,
+      "torch": "2.14.0+cu132"
+    }
+  },
+  "max_bytes": 8589934592,
+  "chunk_bytes": 268435456,
+  "samples": [
+    {
+      "tag": "start",
+      "ts": "2026-09-20T05:31:50Z",
+      "mem_available_kb": 62774276,
+      "rss_kb": 593292
+    },
+    {
+      "tag": "cpu_hold",
+      "ts": "2026-09-20T05:31:50Z",
+      "mem_available_kb": 61728284,
+      "rss_kb": 1641872,
+      "held_bytes": 1073741824
+    },
+    {
+      "tag": "cpu_released",
+      "ts": "2026-09-20T05:31:51Z",
+      "mem_available_kb": 62517192,
+      "rss_kb": 593296
+    },
+    {
+      "tag": "cuda_hold",
+      "ts": "2026-09-20T05:31:51Z",
+      "mem_available_kb": 61351884,
+      "rss_kb": 669328,
+      "held_bytes": 1073741824,
+      "allocated": 1073741824
+    },
+    {
+      "tag": "cuda_released",
+      "ts": "2026-09-20T05:31:52Z",
+      "mem_available_kb": 61353268,
+      "rss_kb": 669332,
+      "allocated": 0
+    },
+    {
+      "tag": "pinned_hold",
+      "ts": "2026-09-20T05:31:52Z",
+      "mem_available_kb": 60817016,
+      "rss_kb": 1194380,
+      "held_bytes": 536870912
+    },
+    {
+      "tag": "child_alive",
+      "ts": "2026-09-20T05:31:52Z",
+      "mem_available_kb": 60816852,
+      "rss_kb": 1194372,
+      "child_pid": 4707,
+      "held_bytes": 536870912
+    },
+    {
+      "tag": "child_exited",
+      "ts": "2026-09-20T05:31:53Z",
+      "mem_available_kb": 60748776,
+      "rss_kb": 1194372,
+      "wait_status": 0
+    },
+    {
+      "tag": "mixed_done",
+      "ts": "2026-09-20T05:31:53Z",
+      "mem_available_kb": 59925916,
+      "rss_kb": 1194376,
+      "ok": true,
+      "before_avail_kb": 60748776,
+      "after_gpu_avail_kb": 60748776,
+      "after_cpu_and_gpu_avail_kb": 59950628,
+      "after_cpu_free_avail_kb": 60443000,
+      "after_more_gpu_avail_kb": 59925916,
+      "gpu_drop_kb": 0,
+      "cpu_extra_drop_kb": 798148,
+      "cpu_free_recovered_kb": 492372,
+      "more_gpu_drop_kb": 517084
+    },
+    {
+      "tag": "end",
+      "ts": "2026-09-20T05:31:53Z",
+      "mem_available_kb": 59925916,
+      "rss_kb": 1194376
+    }
+  ],
+  "steps": {
+    "cpu_alloc_free": "ok",
+    "cuda_alloc_free": "ok",
+    "pinned_alloc_free": "ok",
+    "child": "ok",
+    "mixed": "ok"
+  },
+  "cuda": {
+    "ok": true,
+    "bytes": 1073741824
+  },
+  "mixed": {
+    "ok": true,
+    "before_avail_kb": 60748776,
+    "after_gpu_avail_kb": 60748776,
+    "after_cpu_and_gpu_avail_kb": 59950628,
+    "after_cpu_free_avail_kb": 60443000,
+    "after_more_gpu_avail_kb": 59925916,
+    "gpu_drop_kb": 0,
+    "cpu_extra_drop_kb": 798148,
+    "cpu_free_recovered_kb": 492372,
+    "more_gpu_drop_kb": 517084
+  },
+  "finished_at_utc": "2026-09-20T05:31:53Z"
+}

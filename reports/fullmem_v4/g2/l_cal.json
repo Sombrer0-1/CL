@@ -1,0 +1,75 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-20T16:13:14Z",
+  "definition": "L is per-experience training wall time from experience_metrics.learning_s (excludes eval/controller/setup).",
+  "previous_placeholder_latency_th_s": 30.0,
+  "note": "CIFAR100 S0 median L is far below the 30s placeholder, so factor_l saturates 'fast enough' on this board. Do not import v3 L_cal.",
+  "members": [
+    {
+      "run_id": "fullmem_v4_g2_cifar10_s0",
+      "n_experiences": 10,
+      "median_learning_s": 5.63185327049996,
+      "mean_learning_s": 5.5818647680996945,
+      "min_learning_s": 4.991565660999186,
+      "max_learning_s": 5.83481440200012
+    },
+    {
+      "run_id": "fullmem_v4_g2_cifar100_s0",
+      "n_experiences": 10,
+      "median_learning_s": 5.512836203499319,
+      "mean_learning_s": 5.389196495099895,
+      "min_learning_s": 4.880594864000159,
+      "max_learning_s": 5.7538044640004955
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nc_s0",
+      "n_experiences": 9,
+      "median_learning_s": 15.70609356299974,
+      "mean_learning_s": 15.341549311333235,
+      "min_learning_s": 11.805419283000447,
+      "max_learning_s": 20.76416863600025
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_ni_s0",
+      "n_experiences": 8,
+      "median_learning_s": 19.307972733999122,
+      "mean_learning_s": 19.15404173787465,
+      "min_learning_s": 17.36524480099979,
+      "max_learning_s": 20.549255401001574
+    },
+    {
+      "run_id": "fullmem_v4_g2_core50_nic_s0",
+      "n_experiences": 79,
+      "median_learning_s": 1.8707709239970427,
+      "mean_learning_s": 1.734749551645581,
+      "min_learning_s": 0.43688313199891127,
+      "max_learning_s": 3.1909221979985887
+    },
+    {
+      "run_id": "fullmem_v4_g2_endless_ic_s0",
+      "n_experiences": 4,
+      "median_learning_s": 6.1086454185006005,
+      "mean_learning_s": 7.031912512249619,
+      "min_learning_s": 2.920775868999044,
+      "max_learning_s": 12.98958334299823
+    },
+    {
+      "run_id": "fullmem_v4_g2_endless_il_s0",
+      "n_experiences": 5,
+      "median_learning_s": 22.794910094999068,
+      "mean_learning_s": 22.259673672399366,
+      "min_learning_s": 19.406462648999877,
+      "max_learning_s": 24.12402530399777
+    },
+    {
+      "run_id": "fullmem_v4_g2_endless_wc_s0",
+      "n_experiences": 5,
+      "median_learning_s": 23.298048191001726,
+      "mean_learning_s": 22.625133740400635,
+      "min_learning_s": 19.607723432000057,
+      "max_learning_s": 24.64075203399989
+    }
+  ],
+  "adopted_for_o_recon_cifar100_s": 5.512836203499319,
+  "adopted_for_o_recon_core50_nc_s": 15.70609356299974
+}

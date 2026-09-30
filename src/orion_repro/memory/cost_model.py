@@ -63,6 +63,10 @@ class MemoryCostModel:
             )
         if resource == "host":
             return self.predict_host_replay_bytes(replay_capacity, representation=representation)
+        if resource in {"board", "shared_pool"}:
+            raise ValueError(
+                f"{resource} is observed from MemTotal-MemAvailable; do not substitute a formula cost model"
+            )
         raise ValueError(f"unknown resource {resource}")
 
     def as_dict(self) -> dict:

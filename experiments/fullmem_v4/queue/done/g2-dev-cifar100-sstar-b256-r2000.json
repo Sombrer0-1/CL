@@ -1,0 +1,31 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-dev-cifar100-sstar-b256-r2000",
+  "seq": 64,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_cifar100_sstar_b256_r2000.yaml"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem64g",
+  "batch_id": "g2-dev-mem64g",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "content_hash": "190ded221295fdd32084db613b566e6d3624cbfd5ddbb7306e9401c7ee6f2831",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-20T16:13:15Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-20T16:18:34Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-dev-cifar100-sstar-b256-r2000.log",
+  "finished_at_utc": "2026-09-20T16:18:34Z"
+}

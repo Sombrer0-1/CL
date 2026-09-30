@@ -1,0 +1,24 @@
+{
+  "batch_id": "g2-dev-h4-nic",
+  "kind": "probe",
+  "required_capacity": "mem8g",
+  "not_a_freeze": true,
+  "high_bytes": 2684354560,
+  "calibrated_high_bytes": 4294967296,
+  "identifiable": true,
+  "n_tasks": 3,
+  "tasks": [
+    "g2-dev-core50-nic-s0-h4-low-high-low-seed17-mem8g",
+    "g2-dev-core50-nic-s0-h4-high-low-high-seed17-mem8g",
+    "g2-occupancy-h4-nic"
+  ],
+  "yamls": [
+    "g2_core50_nic_s0_h4_low_high_low_seed17_mem8g.yaml",
+    "g2_core50_nic_s0_h4_high_low_high_seed17_mem8g.yaml"
+  ],
+  "deferred": [
+    "nic_orecon_needs_stream_lcal",
+    "dynamic_sstar_needs_sequence_search"
+  ],
+  "note": "H4 NIC S0 both sequences. kind=probe only. Occupancy task_id is new so it is not idempotent with g2-occupancy-h4."
+}

@@ -1,0 +1,28 @@
+{
+  "batch_id": "g2-dev-mem8g",
+  "kind": "probe",
+  "required_capacity": "mem8g",
+  "not_a_freeze": true,
+  "n_tasks": 9,
+  "tasks": [
+    "g2-idle-mem8g",
+    "g1-cifar100-exp1-mem8g",
+    "g2-dev-cifar100-s0-seed17-mem8g",
+    "g2-dev-cifar100-s0-repeat-seed17-mem8g",
+    "g2-dev-cifar100-batch256-seed17-mem8g",
+    "g2-dev-cifar100-replay2000-seed17-mem8g",
+    "g2-dev-cifar100-er-gem-ewc-seed17-mem8g",
+    "g2-dev-core50-nc-s0-seed17-mem8g",
+    "g2-occupancy-mem8g"
+  ],
+  "yamls": [
+    "g1_cifar100_exp1_mem8g.yaml",
+    "g2_cifar100_s0_seed17_mem8g.yaml",
+    "g2_cifar100_s0_repeat_seed17_mem8g.yaml",
+    "g2_cifar100_batch256_seed17_mem8g.yaml",
+    "g2_cifar100_replay2000_seed17_mem8g.yaml",
+    "g2_cifar100_er_gem_ewc_seed17_mem8g.yaml",
+    "g2_core50_nc_s0_seed17_mem8g.yaml"
+  ],
+  "note": "8G admission calibration. S0 twice + high-resource static. kind=probe only."
+}

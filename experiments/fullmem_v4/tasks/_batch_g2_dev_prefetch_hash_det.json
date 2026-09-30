@@ -1,0 +1,14 @@
+{
+  "batch_id": "g2-dev-prefetch-hash-det",
+  "kind": "probe",
+  "required_capacity": "mem16g",
+  "tasks": [
+    "g2-dev-cifar100-s0-hash-off-det-seed17-mem16g",
+    "g2-dev-cifar100-s0-hash-on-det-seed17-mem16g",
+    "g2-occupancy-h7-det"
+  ],
+  "yamls": [
+    "g2_cifar100_s0_hash_off_det_seed17_mem16g.yaml",
+    "g2_cifar100_s0_hash_on_det_seed17_mem16g.yaml"
+  ]
+}

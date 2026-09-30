@@ -2,11 +2,24 @@
 
 from __future__ import annotations
 
+import random
 import warnings
 
 import torch
-from avalanche.training.plugins.agem import AGEMPlugin
 from avalanche.benchmarks.utils.data_loader import GroupBalancedInfiniteDataLoader
+from avalanche.training.plugins.agem import AGEMPlugin
+
+
+def agem_group_batch_size(sample_size: int, n_buffers: int) -> int:
+    """Per-group batch for GroupBalancedInfiniteDataLoader.
+
+    Avalanche 0.6.0 uses sample_size // n_buffers, which becomes 0 once the
+    number of stored experiences exceeds sample_size (NIC 79-exp with
+    sample_size=64 fails at experience 65). Keep at least one pattern per group.
+    """
+    if n_buffers <= 0:
+        return 0
+    return max(1, int(sample_size) // int(n_buffers))
 
 
 class AdaptiveAGEMPlugin(AGEMPlugin):
@@ -52,6 +65,33 @@ class AdaptiveAGEMPlugin(AGEMPlugin):
                 self.projection_count += 1
         return super().after_backward(strategy, **kwargs)
 
+    def _rebuild_loader(self, num_workers: int = 0) -> None:
+        if not self.buffers:
+            self.buffer_dataloader = None
+            self.buffer_dliter = iter([])
+            return
+        if num_workers > 0:
+            warnings.warn("Num workers > 0 is known to cause heavy slowdowns in AGEM.")
+        n_buf = len(self.buffers)
+        self.buffer_dataloader = GroupBalancedInfiniteDataLoader(
+            self.buffers,
+            batch_size=agem_group_batch_size(self.sample_size, n_buf),
+            num_workers=num_workers,
+            pin_memory=False,
+            persistent_workers=num_workers > 0,
+        )
+        self.buffer_dliter = iter(self.buffer_dataloader)
+
+    @torch.no_grad()
+    def update_memory(self, dataset, num_workers=0, **kwargs):
+        removed_els = len(dataset) - self.patterns_per_experience
+        if removed_els > 0:
+            indices = list(range(len(dataset)))
+            random.shuffle(indices)
+            dataset = dataset.subset(indices[: self.patterns_per_experience])
+        self.buffers.append(dataset)
+        self._rebuild_loader(num_workers)
+
     def resize(
         self,
         patterns_per_experience: int,
@@ -79,14 +119,4 @@ class AdaptiveAGEMPlugin(AGEMPlugin):
             self.buffer_dataloader = None
             self.buffer_dliter = iter([])
             return
-        if num_workers > 0:
-            warnings.warn("Num workers > 0 is known to cause heavy slowdowns in AGEM.")
-        n_buf = len(self.buffers)
-        self.buffer_dataloader = GroupBalancedInfiniteDataLoader(
-            self.buffers,
-            batch_size=max(1, self.sample_size // n_buf),
-            num_workers=num_workers,
-            pin_memory=False,
-            persistent_workers=num_workers > 0,
-        )
-        self.buffer_dliter = iter(self.buffer_dataloader)
+        self._rebuild_loader(num_workers)

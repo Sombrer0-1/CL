@@ -1,0 +1,34 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-oracle-cifar100-b256-r10-seed17",
+  "seq": 244,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_oracle_cifar100_b256_r10_seed17.yaml"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem64g",
+  "batch_id": "g2-dev-seed17-select",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {
+    "configs/fullmem_v4/g2_oracle_cifar100_b256_r10_seed17.yaml": "2c2ae2cc0811874011a6f54049561a38c78d708a298db54c35279f4ab1d3f6c7"
+  },
+  "content_hash": "c3122a048538ffc7e416b3cfce0c74f4a4922484186b53923fa17909aff9113c",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-21T04:35:11Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-21T05:02:37Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-oracle-cifar100-b256-r10-seed17.log",
+  "finished_at_utc": "2026-09-21T05:02:37Z"
+}

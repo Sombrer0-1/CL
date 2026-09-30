@@ -1,0 +1,37 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-20T05:26:52Z",
+  "hostname": "epic",
+  "boot_id": "f0b2b777-3d70-42e3-9af4-bdabca3b7631",
+  "cmdline": "root=PARTUUID=a724dd86-bafa-46ac-ae09-7edf71c8b2e0 rw rootwait rootfstype=ext4 mminit_loglevel=4 earlycon=tegra_utc,mmio32,0xc5a0000 console=tty0 console=ttyUTC0,115200 clk_ignore_unused firmware_class.path=/etc/firmware fbcon=map:0 nospectre_bhb efi=runtime bl_prof_dataptr=6225920@0x2008010000 bl_prof_ro_ptr=65536@0x20 bl_prof_dataptr=6225920@0x2004010000 bl_prof_ro_ptr=65536@0x2004000000",
+  "uname": {
+    "sysname": "Linux",
+    "nodename": "epic",
+    "release": "6.8.12-1021-tegra",
+    "version": "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+    "machine": "aarch64"
+  },
+  "meminfo_kb": {
+    "MemTotal": 128766532,
+    "MemFree": 12122912,
+    "MemAvailable": 123445568,
+    "Cached": 45365112,
+    "Buffers": 774460,
+    "SwapTotal": 0,
+    "SwapFree": 0
+  },
+  "swap_is_zero": true,
+  "capacity": {
+    "capacity_id": "unrestricted",
+    "requested_mem": null,
+    "mem_total_kb": 128766532,
+    "mem_total_gib_approx": 122.801
+  },
+  "nvpmodel": {
+    "query": "NV Power Mode: 120W\n1",
+    "name": "NV Power Mode: 120W",
+    "mode": "1",
+    "returncode": "0"
+  },
+  "pid": 880176
+}

@@ -1,0 +1,465 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-21T13:48:36Z",
+  "frozen": false,
+  "rule": "max (p_diag+s_initial)/2; ties shorter run_total_s then run_id",
+  "stream": "splitcifar100_dev_seed17",
+  "capacity_id": "mem64g",
+  "development_seed": 17,
+  "sstar": [
+    {
+      "run_id": "fullmem_v4_g2_cifar100_sstar_b16_r200_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 73.92753293299756,
+      "p_diag": 0.4389,
+      "s_initial": 0.5772222222222223,
+      "score": 0.5080611111111112
+    },
+    {
+      "run_id": "fullmem_v4_g2_cifar100_sstar_b16_r2000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 71.13481336800032,
+      "p_diag": 0.4101,
+      "s_initial": 0.6972222222222222,
+      "score": 0.5536611111111112
+    },
+    {
+      "run_id": "fullmem_v4_g2_cifar100_sstar_b64_r200_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 37.428271213007974,
+      "p_diag": 0.3648,
+      "s_initial": 0.657,
+      "score": 0.5109
+    },
+    {
+      "run_id": "fullmem_v4_g2_cifar100_sstar_b64_r2000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 34.425642515998334,
+      "p_diag": 0.3518,
+      "s_initial": 0.701111111111111,
+      "score": 0.5264555555555555
+    },
+    {
+      "run_id": "fullmem_v4_g2_cifar100_sstar_b256_r200_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 32.120049347009626,
+      "p_diag": 0.084,
+      "s_initial": 0.9422222222222222,
+      "score": 0.5131111111111111
+    },
+    {
+      "run_id": "fullmem_v4_g2_cifar100_sstar_b256_r2000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 33.991650989002665,
+      "p_diag": 0.08049999999999999,
+      "s_initial": 0.9477777777777778,
+      "score": 0.5141388888888889
+    }
+  ],
+  "oracle": [
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b16_r10_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 69.5282082670019,
+      "p_diag": 0.44630000000000003,
+      "s_initial": 0.5546666666666666,
+      "score": 0.5004833333333334
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b16_r100_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 73.14719629599131,
+      "p_diag": 0.4556,
+      "s_initial": 0.5563333333333333,
+      "score": 0.5059666666666667
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b16_r1000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 72.97634814000048,
+      "p_diag": 0.38880000000000003,
+      "s_initial": 0.6976666666666667,
+      "score": 0.5432333333333333
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b16_r10000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 71.74173152800358,
+      "p_diag": 0.4367,
+      "s_initial": 0.6841111111111111,
+      "score": 0.5604055555555556
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b16_r100000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 74.45088523600134,
+      "p_diag": 0.4227,
+      "s_initial": 0.6956666666666667,
+      "score": 0.5591833333333334
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b16_r1000000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 74.28406503300357,
+      "p_diag": 0.42919999999999997,
+      "s_initial": 0.6768888888888889,
+      "score": 0.5530444444444444
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b32_r10_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 44.17351637101092,
+      "p_diag": 0.3882,
+      "s_initial": 0.612,
+      "score": 0.5001
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b32_r100_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 46.68937991799612,
+      "p_diag": 0.4095,
+      "s_initial": 0.6025555555555555,
+      "score": 0.5060277777777777
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b32_r1000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 47.924639084987575,
+      "p_diag": 0.37889999999999996,
+      "s_initial": 0.6837777777777778,
+      "score": 0.5313388888888889
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b32_r10000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 41.08370594998996,
+      "p_diag": 0.42060000000000003,
+      "s_initial": 0.6606666666666667,
+      "score": 0.5406333333333334
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b32_r100000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 47.74302620999515,
+      "p_diag": 0.40499999999999997,
+      "s_initial": 0.6841111111111111,
+      "score": 0.5445555555555556
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b32_r1000000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 46.03766000800533,
+      "p_diag": 0.40619999999999995,
+      "s_initial": 0.6792222222222222,
+      "score": 0.542711111111111
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b64_r10_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 30.50124001399672,
+      "p_diag": 0.301,
+      "s_initial": 0.7014444444444445,
+      "score": 0.5012222222222222
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b64_r100_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 36.45976721600164,
+      "p_diag": 0.3907,
+      "s_initial": 0.6216666666666666,
+      "score": 0.5061833333333333
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b64_r1000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 35.768264465994434,
+      "p_diag": 0.36219999999999997,
+      "s_initial": 0.6965555555555556,
+      "score": 0.5293777777777777
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b64_r10000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 35.53656145199784,
+      "p_diag": 0.3501,
+      "s_initial": 0.6849999999999999,
+      "score": 0.51755
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b64_r100000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 33.38989156798925,
+      "p_diag": 0.3471,
+      "s_initial": 0.688,
+      "score": 0.51755
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b64_r1000000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 36.39428108801076,
+      "p_diag": 0.33709999999999996,
+      "s_initial": 0.6955555555555556,
+      "score": 0.5163277777777777
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b128_r10_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 24.782856877995073,
+      "p_diag": 0.18739999999999998,
+      "s_initial": 0.8101111111111111,
+      "score": 0.49875555555555556
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b128_r100_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 31.62201790099789,
+      "p_diag": 0.2787,
+      "s_initial": 0.7355555555555555,
+      "score": 0.5071277777777777
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b128_r1000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 34.076380512997275,
+      "p_diag": 0.2365,
+      "s_initial": 0.7961111111111111,
+      "score": 0.5163055555555556
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b128_r10000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 33.84536762499192,
+      "p_diag": 0.21749999999999997,
+      "s_initial": 0.8061111111111111,
+      "score": 0.5118055555555555
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b128_r100000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 35.1129874259932,
+      "p_diag": 0.22559999999999997,
+      "s_initial": 0.8063333333333333,
+      "score": 0.5159666666666667
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b128_r1000000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 34.24536901099782,
+      "p_diag": 0.2198,
+      "s_initial": 0.8192222222222222,
+      "score": 0.519511111111111
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b256_r10_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 25.331139980000444,
+      "p_diag": 0.09029999999999999,
+      "s_initial": 0.9222222222222223,
+      "score": 0.5062611111111112
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b256_r100_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 27.328337534010643,
+      "p_diag": 0.09430000000000001,
+      "s_initial": 0.9235555555555556,
+      "score": 0.5089277777777778
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b256_r1000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 33.6507475739927,
+      "p_diag": 0.0848,
+      "s_initial": 0.9494444444444444,
+      "score": 0.5171222222222223
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b256_r10000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 32.57931543100858,
+      "p_diag": 0.0844,
+      "s_initial": 0.9395555555555556,
+      "score": 0.5119777777777778
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b256_r100000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 35.208894864001195,
+      "p_diag": 0.08330000000000001,
+      "s_initial": 0.9504444444444444,
+      "score": 0.5168722222222222
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b256_r1000000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 35.28243359400949,
+      "p_diag": 0.08370000000000001,
+      "s_initial": 0.9467777777777778,
+      "score": 0.5152388888888889
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b512_r10_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 25.604670055996394,
+      "p_diag": 0.043800000000000006,
+      "s_initial": 0.9657777777777777,
+      "score": 0.5047888888888888
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b512_r100_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 26.955311219004216,
+      "p_diag": 0.0437,
+      "s_initial": 0.9758888888888889,
+      "score": 0.5097944444444444
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b512_r1000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 35.15067262999946,
+      "p_diag": 0.0507,
+      "s_initial": 0.9755555555555555,
+      "score": 0.5131277777777777
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b512_r10000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 36.27601603900257,
+      "p_diag": 0.0496,
+      "s_initial": 0.9786666666666667,
+      "score": 0.5141333333333333
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b512_r100000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 36.18056367400277,
+      "p_diag": 0.0496,
+      "s_initial": 0.9804444444444445,
+      "score": 0.5150222222222223
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b512_r1000000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 36.04803360099322,
+      "p_diag": 0.0495,
+      "s_initial": 0.9801111111111112,
+      "score": 0.5148055555555556
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b1024_r10_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 27.172348702995805,
+      "p_diag": 0.009500000000000001,
+      "s_initial": 1.0064444444444445,
+      "score": 0.5079722222222223
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b1024_r100_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 28.369944270991255,
+      "p_diag": 0.007000000000000001,
+      "s_initial": 1.0107777777777778,
+      "score": 0.5088888888888888
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b1024_r1000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 37.14566844199726,
+      "p_diag": 0.0007,
+      "s_initial": 1.0316666666666667,
+      "score": 0.5161833333333333
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b1024_r10000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 38.219627399987075,
+      "p_diag": 0.0008,
+      "s_initial": 1.025,
+      "score": 0.5128999999999999
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b1024_r100000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 38.63858887999959,
+      "p_diag": 0.0007,
+      "s_initial": 1.029,
+      "score": 0.5148499999999999
+    },
+    {
+      "run_id": "fullmem_v4_g2_oracle_cifar100_b1024_r1000000_seed17",
+      "status": "completed",
+      "n_experiences_run": 10,
+      "run_total_s": 38.478518763004104,
+      "p_diag": 0.0007,
+      "s_initial": 1.029111111111111,
+      "score": 0.5149055555555555
+    }
+  ],
+  "sstar_selected": {
+    "run_id": "fullmem_v4_g2_cifar100_sstar_b16_r2000_seed17",
+    "status": "completed",
+    "n_experiences_run": 10,
+    "run_total_s": 71.13481336800032,
+    "p_diag": 0.4101,
+    "s_initial": 0.6972222222222222,
+    "score": 0.5536611111111112
+  },
+  "oracle_selected": {
+    "run_id": "fullmem_v4_g2_oracle_cifar100_b16_r10000_seed17",
+    "status": "completed",
+    "n_experiences_run": 10,
+    "run_total_s": 71.74173152800358,
+    "p_diag": 0.4367,
+    "s_initial": 0.6841111111111111,
+    "score": 0.5604055555555556
+  },
+  "n_sstar": 6,
+  "n_oracle": 42
+}

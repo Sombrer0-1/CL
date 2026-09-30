@@ -1,0 +1,24 @@
+{
+  "ts_utc": "2026-09-22T12:41:58Z",
+  "root": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/g1_diskfull/mnt",
+  "fstype_df_free_bytes": 268435456,
+  "fstype_df_total_bytes": 268435456,
+  "min_free_bytes": 10737418240,
+  "below_threshold": true,
+  "submitted": {
+    "accepted": true,
+    "idempotent": false,
+    "task_id": "g1-diskfull-a",
+    "path": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/g1_diskfull/mnt/experiments/fullmem_v4/queue/inbox/g1-diskfull-a.json",
+    "status": "admitted"
+  },
+  "inbox_before_n": 0,
+  "process_one": "paused",
+  "mode": "paused",
+  "pause_reason": "disk_low:268427264",
+  "current_task_id": null,
+  "inbox_kept": true,
+  "running_absent": true,
+  "done_absent": true,
+  "host_pid": 52653
+}

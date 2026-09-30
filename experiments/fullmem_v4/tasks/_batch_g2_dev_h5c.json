@@ -1,0 +1,14 @@
+{
+  "batch_id": "g2-dev-h5c-plugin-lifecycle",
+  "kind": "probe",
+  "required_capacity": "mem16g",
+  "tasks": [
+    "g2-dev-cifar100-h5c-pause-keep-seed17-mem16g",
+    "g2-dev-cifar100-h5c-release-rebuild-seed17-mem16g",
+    "g2-occupancy-h5c"
+  ],
+  "yamls": [
+    "g2_cifar100_h5c_pause_keep_seed17_mem16g.yaml",
+    "g2_cifar100_h5c_release_rebuild_seed17_mem16g.yaml"
+  ]
+}

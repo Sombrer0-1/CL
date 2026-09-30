@@ -1,0 +1,16 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-dev-cifar100-s0-hash-off-det-seed17-mem16g",
+  "seq": 940,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_cifar100_s0_hash_off_det_seed17_mem16g.yaml"
+  ],
+  "required_capacity": "mem16g",
+  "batch_id": "g2-dev-prefetch-hash-det"
+}

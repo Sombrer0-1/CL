@@ -1,14 +1,11 @@
 # 配置用途
 
-当前没有可迁移的第三阶段正式配置。冻结后的 YAML 只在执行宿主生成，见 [PLAN](../PLAN.md) 与 [A26](../docs/decisions/A26.md)。
+当前阶段为fullmem_v4，尚无冻结或正式可执行配置；见 [PLAN](../PLAN.md)。
 
-| 目录 / 文件 | 状态 |
-|---|---|
-| `effectiveness_v3/` | 仅 README；`dev/` `formal/` 在新宿主 freeze/emit 后出现 |
-| `light24/` | 第一阶段已结束，保留原配置 |
-| `pressure_v2/` | 第二阶段原平台开发与中断正式配置，不能在新机续入同一矩阵 |
-| `development/`、`formal/` | 早期配置；部分仍是生成器输入模板，保留路径 |
-| `oracle/` | 旧42格搜索背景，不是当前任务 |
-| `smoke*.yaml` | 功能/小样本检查，不能代替正式复现或视为冻结协议 |
+- `effectiveness_v3/thor_r2/`：已结项第三阶段的开发/正式配置，保留溯源，不用于阶段4。
+- `effectiveness_v3/thor_r1/`、`thor_readiness/`：第三阶段过程/准入证据，不能混作冻结配置。
+- `light24/`、`pressure_v2/`：历史阶段；后者中断未验收。
+- `development/`、`formal/`、`oracle/`：旧模板/探索配置，部分仍被代码引用，不清空。
+- `smoke*.yaml`：功能检查，不是正式复现。
 
-按研究语义复用模板时，须重新核对数据域、插件、预算、study/protocol ID 和 provenance，不能只修改文件名。
+阶段4另建fullmem_v4目录和身份；不复制旧配额或L_cal冒充校准。所有现存执行配置均不作为当前待跑队列。

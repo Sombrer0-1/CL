@@ -1,0 +1,31 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-idle-mem16g",
+  "seq": 518,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "g2-idle-baseline"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem16g",
+  "batch_id": "g2-dev-mem16g",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {},
+  "content_hash": "0567e8d8ef2d525b06bdd661276ef2485b88a309064f78f40dd633e179a1d149",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-22T03:00:51Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-22T04:18:15Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-idle-mem16g.log",
+  "finished_at_utc": "2026-09-22T04:18:15Z"
+}

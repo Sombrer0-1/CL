@@ -1,0 +1,164 @@
+{
+  "probe": "shared_pool_g1",
+  "started_at_utc": "2026-09-25T04:05:18Z",
+  "identity": {
+    "study_id": "fullmem_v4",
+    "collected_at_utc": "2026-09-25T04:05:17Z",
+    "hostname": "epic",
+    "boot_id": "cc389c7a-b286-4600-ae93-71c273599497",
+    "cmdline": "root=PARTUUID=a724dd86-bafa-46ac-ae09-7edf71c8b2e0 rw rootwait rootfstype=ext4 mminit_loglevel=4 earlycon=tegra_utc,mmio32,0xc5a0000 console=tty0 console=ttyUTC0,115200 clk_ignore_unused firmware_class.path=/etc/firmware fbcon=map:0 nospectre_bhb efi=runtime bl_prof_dataptr=6225920@0x2008010000 bl_prof_ro_ptr=65536@0x20 mem=8G bl_prof_dataptr=6225920@0x2004010000 bl_prof_ro_ptr=65536@0x2004000000",
+    "uname": {
+      "sysname": "Linux",
+      "nodename": "epic",
+      "release": "6.8.12-1021-tegra",
+      "version": "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+      "machine": "aarch64"
+    },
+    "meminfo_kb": {
+      "MemTotal": 8178064,
+      "MemFree": 3636416,
+      "MemAvailable": 6011136,
+      "Cached": 1934516,
+      "Buffers": 76372,
+      "SwapTotal": 0,
+      "SwapFree": 0
+    },
+    "swap_is_zero": true,
+    "capacity": {
+      "capacity_id": "mem8g",
+      "requested_mem": "8G",
+      "mem_total_kb": 8178064,
+      "mem_total_gib_approx": 7.799
+    },
+    "nvpmodel": {
+      "query": "NV Power Mode: 120W\n1",
+      "name": "NV Power Mode: 120W",
+      "mode": "1",
+      "returncode": "0"
+    },
+    "pid": 3716,
+    "cuda": {
+      "ok": true,
+      "device_name": "NVIDIA Thor",
+      "total_memory": 8374337536,
+      "major": 11,
+      "minor": 0,
+      "torch": "2.14.0+cu132"
+    }
+  },
+  "max_bytes": 2147483648,
+  "chunk_bytes": 268435456,
+  "samples": [
+    {
+      "tag": "start",
+      "ts": "2026-09-25T04:05:18Z",
+      "mem_available_kb": 5668816,
+      "rss_kb": 593376
+    },
+    {
+      "tag": "cpu_hold",
+      "ts": "2026-09-25T04:05:18Z",
+      "mem_available_kb": 5145096,
+      "rss_kb": 1117668,
+      "held_bytes": 536870912
+    },
+    {
+      "tag": "cpu_released",
+      "ts": "2026-09-25T04:05:18Z",
+      "mem_available_kb": 5629468,
+      "rss_kb": 593376
+    },
+    {
+      "tag": "cuda_hold",
+      "ts": "2026-09-25T04:05:19Z",
+      "mem_available_kb": 4946508,
+      "rss_kb": 669392,
+      "held_bytes": 536870912,
+      "allocated": 536870912
+    },
+    {
+      "tag": "cuda_released",
+      "ts": "2026-09-25T04:05:19Z",
+      "mem_available_kb": 4946724,
+      "rss_kb": 669396,
+      "allocated": 0
+    },
+    {
+      "tag": "pinned_hold",
+      "ts": "2026-09-25T04:05:19Z",
+      "mem_available_kb": 4672120,
+      "rss_kb": 932292,
+      "held_bytes": 268435456
+    },
+    {
+      "tag": "pagecache_written",
+      "ts": "2026-09-25T04:05:19Z",
+      "mem_available_kb": 4667640,
+      "rss_kb": 932420,
+      "bytes": 67108864
+    },
+    {
+      "tag": "child_alive",
+      "ts": "2026-09-25T04:05:19Z",
+      "mem_available_kb": 4699172,
+      "rss_kb": 932416,
+      "child_pid": 3796,
+      "held_bytes": 268435456
+    },
+    {
+      "tag": "child_exited",
+      "ts": "2026-09-25T04:05:20Z",
+      "mem_available_kb": 4676644,
+      "rss_kb": 932416,
+      "wait_status": 0
+    },
+    {
+      "tag": "mixed_done",
+      "ts": "2026-09-25T04:05:21Z",
+      "mem_available_kb": 4382876,
+      "rss_kb": 932420,
+      "ok": true,
+      "before_avail_kb": 5193684,
+      "after_gpu_avail_kb": 4679820,
+      "after_cpu_and_gpu_avail_kb": 4154524,
+      "after_cpu_free_avail_kb": 4646044,
+      "after_more_gpu_avail_kb": 4382876,
+      "gpu_drop_kb": 513864,
+      "cpu_extra_drop_kb": 525296,
+      "cpu_free_recovered_kb": 491520,
+      "more_gpu_drop_kb": 263168
+    },
+    {
+      "tag": "end",
+      "ts": "2026-09-25T04:05:21Z",
+      "mem_available_kb": 4382876,
+      "rss_kb": 932420
+    }
+  ],
+  "steps": {
+    "cpu_alloc_free": "ok",
+    "cuda_alloc_free": "ok",
+    "pinned_alloc_free": "ok",
+    "pagecache": "ok",
+    "child": "ok",
+    "mixed": "ok"
+  },
+  "cuda": {
+    "ok": true,
+    "bytes": 536870912
+  },
+  "mixed_notes": "empty_cache used only to isolate mixed-step measurement from the prior CUDA cache; not a training-time URGE policy",
+  "mixed": {
+    "ok": true,
+    "before_avail_kb": 5193684,
+    "after_gpu_avail_kb": 4679820,
+    "after_cpu_and_gpu_avail_kb": 4154524,
+    "after_cpu_free_avail_kb": 4646044,
+    "after_more_gpu_avail_kb": 4382876,
+    "gpu_drop_kb": 513864,
+    "cpu_extra_drop_kb": 525296,
+    "cpu_free_recovered_kb": 491520,
+    "more_gpu_drop_kb": 263168
+  },
+  "finished_at_utc": "2026-09-25T04:05:21Z"
+}

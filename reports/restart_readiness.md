@@ -1,3 +1,5 @@
+> 历史快照：本文仅描述2026-09-17，不是当前状态/命令。旧host探测缺口已在host_feasibility/20260920/README.md解释；阶段4以根PLAN.md和STATUS.md为准。
+
 # Thor 第三阶段准备验收
 
 2026-09-17。结论：**可进入第三阶段G1/G2开发工作；尚不可直接进入G3/G4正式比较。** 机器可读记录：[admission.json](effectiveness_v3/readiness/admission.json)。

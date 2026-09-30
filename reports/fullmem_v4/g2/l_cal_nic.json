@@ -1,0 +1,13 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-25T15:15:00Z",
+  "kind": "l_cal_nic_adopt",
+  "not_a_freeze": true,
+  "definition": "L is per-experience training wall time from experience_metrics.learning_s (excludes eval/controller/setup).",
+  "source_run_id": "fullmem_v4_g2_core50_nic_s0",
+  "source_is_h4": false,
+  "n_experiences": 79,
+  "median_learning_s": 1.8707709239970427,
+  "adopted_for_o_recon_core50_nic_s": 1.871,
+  "note": "Adopted from static NIC S0, not the H4 co-running runs. Same rounding style as NC 15.706. Not a G3 freeze."
+}

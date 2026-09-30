@@ -1,0 +1,31 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-cost-b",
+  "seq": 273,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.stages.fullmem_v4",
+    "g2-cost"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem64g",
+  "batch_id": "g2-dev-prefetch-hash",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {},
+  "content_hash": "84413e1c76b82e862410d0c4d09d6240b0558f1f0a2e645c763ffae902af4040",
+  "status": "completed",
+  "submitted_at_utc": "2026-09-21T13:48:36Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-09-21T13:51:10Z",
+  "exit_code": 0,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-cost-b.log",
+  "finished_at_utc": "2026-09-21T13:51:10Z"
+}

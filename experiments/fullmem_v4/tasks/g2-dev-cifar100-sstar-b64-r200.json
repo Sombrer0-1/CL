@@ -1,0 +1,16 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-dev-cifar100-sstar-b64-r200",
+  "seq": 62,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_cifar100_sstar_b64_r200.yaml"
+  ],
+  "required_capacity": "mem64g",
+  "batch_id": "g2-dev-mem64g"
+}

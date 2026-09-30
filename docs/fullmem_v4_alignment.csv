@@ -1,0 +1,22 @@
+topic,paper_ref,classification,adopted_v4,v3_or_history,rationale,status
+board_memory_executor,PLAN 2; NVIDIA R39.2 mem=64G,platform_adaptation,kernel mem= on independent boot LABEL; measured MemTotal/CUDA total_memory; nvpmodel unchanged,v3 device_allocator_enforced Q,host cgroup cannot bill CUDA; G1 admitted mem64g actual 62.805 GiB,g1_admitted_not_frozen
+observation_M,design-v1 3.1; Eq1 M,source_inferred,M_max=MemTotal MiB; M_t=window peak MemTotal-MemAvailable MiB via controlled_resource=board,v3 allocator MiB / formula M_batch,G1 mixed probe: GPU 1GiB dropped MemAvailable ~1.01GiB. Pre-wiring O-recon traces used device allocated (~91MiB) and are not complete-method evidence,wired_in_loop_pending_reprobe
+o_recon_vs_o_eng,design-v1 3.1,platform_adaptation,O-recon keeps Eq1-5 and experience-boundary control; guards/normalization/empty_cache-as-policy are O-eng-*,v3 O00 numbers,do not call v3 O00 author config,adopted
+memory_sigmoid_saturation,Eq1 km example 0.25,paper_explicit_plus_diagnosis,record slack/factor_m; 32MiB slack already saturates factor_m; not a reason to add hidden margin,v3 used small M_max,must diagnose rather than silently normalize,g2_required
+m_batch_m_frame,Eq3-4,source_inferred,S0 keeps count-space 1.0; complete O-recon uses 32x32 uint8 3072B and mb0/mr0 in byte space; do not swap in fitted slopes,A13 device slope model,fitted peak model is O-eng cost diagnosis only,split_s0_count_orecon_bytes
+dev_seed,design-v1 4.1,paper_explicit_plus_platform,development model/stream/replay/augmentation seed=17; split seed independently named; formal seeds 0/1/2,early G2 probes used seed 0,seed-0 runs are exploration only and cannot freeze S*/Oracle,gap_seed0_exploration
+plugin_policy_o_recon,Eq5 / Table1 GEM+EWC,source_inferred,complete O-recon uses plugin_policy=adaptive with optional GEM+EWC starting default; fixed_default ER-only is a batch/replay-only probe,v3 O11 adaptive,early g2_*_orecon yamls were ER-only and are not freeze evidence,wired_pending_reprobe
+single_pass,Alg1 vs sec1,source_inferred,one train pass per experience then eval then control then apply next,A03,unchanged,adopted
+splitcifar_nexp,Table2,paper_explicit,CIFAR10/100 both 10 experiences; CIFAR10 is 1 class/exp with frozen order 4 1 7 5 3 9 0 8 6 2,framework often 5,do not use Avalanche 5-exp default,adopted
+core50_nic,Table2 79 exp,source_inferred,Avalanche nicv2_79 reconstruction (A14),A14,not author SKU confirmation,adopted_with_gap
+endless_protocol,Table2 IC/IL/WC 4/5/5,platform_adaptation,official zips from Zenodo 4899267; A22 grouped holdout is NOT official robot protocol,A22,self-built grouping cannot impersonate official,data_ready_not_official_robot
+feedback,sec2.1 test acc,source_inferred,development_val_seen for selection; paper_feedback disclosed leakage; same train subset pairing for H8,A06,test must not select hyperparameters,adopted
+replay_capacity_vs_batch,Eq4 vs Oracle grid,source_inferred,Oracle replay grid maps to buffer capacity not minibatch (A08/A09); new_batch is SGD new-stream size,A08 A09,do not silently swap meanings to make runs fit,adopted
+oracle_42,sec5.1,paper_explicit,batch 16..1024 x replay 10..1e6; search cost listed separately from selected-config train cost,A15,cannot use 6-cell S* as Oracle,adopted
+s_star_vs_oracle,design-v1 4.1,platform_adaptation,S* from six batch x capacity candidates; Oracle is 42-cell PDF grid,v3 S*,do not mix names,adopted
+plugin_pause,Table1 GEM+EWC,source_inferred,TogglePlugin pause-keep-state default; release-rebuild is H5c variant O-eng,A10,disabled plugins still occupy bytes,adopted
+prefetch_base,sec4.5/5.4,platform_adaptation,H1/H3 share prefetch-on as system base; H7 isolates; no sleep-induced bottleneck,A19,disclose vs author baseline backend,adopted
+preference_weights,sec4.4 vs design-v1 H6,source_inferred,design-v1 wins: balanced 0.25; latency [L M P S]; P-S [P S M L]; memory [M L S P],A21 different latency-first order,conflict resolved by design-v1; A21 kept as history,adopted_design_v1
+energy,sec5.5,platform_adaptation,Thor board sensors only if calibrated; else energy unverified; not Xavier/Orin,A16,do not multiply nvpmodel watts by time,adopted
+no_model_upsizing,sec5.1 ResNet-20 32x32,paper_explicit,do not enlarge model/resolution/epochs to manufacture pressure,v3 allocator pressure,if 64GiB stays loose mark pressure scene unbuilt,adopted
+train_kind_gate,PLAN 8 G3,platform_adaptation,executor refuses kind=train until G3 freeze; G2 uses kind=probe,n/a,prevents accidental formal launch,adopted

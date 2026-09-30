@@ -1,0 +1,149 @@
+{
+  "study_id": "fullmem_v4",
+  "collected_at_utc": "2026-09-20T07:37:04Z",
+  "identity": {
+    "study_id": "fullmem_v4",
+    "collected_at_utc": "2026-09-20T07:37:03Z",
+    "hostname": "epic",
+    "boot_id": "7e7ae8b3-a605-4653-8536-5ddedbf44c44",
+    "cmdline": "root=PARTUUID=a724dd86-bafa-46ac-ae09-7edf71c8b2e0 rw rootwait rootfstype=ext4 mminit_loglevel=4 earlycon=tegra_utc,mmio32,0xc5a0000 console=tty0 console=ttyUTC0,115200 clk_ignore_unused firmware_class.path=/etc/firmware fbcon=map:0 nospectre_bhb efi=runtime bl_prof_dataptr=6225920@0x2008010000 bl_prof_ro_ptr=65536@0x20 mem=64G bl_prof_dataptr=6225920@0x2004010000 bl_prof_ro_ptr=65536@0x2004000000",
+    "uname": {
+      "sysname": "Linux",
+      "nodename": "epic",
+      "release": "6.8.12-1021-tegra",
+      "version": "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+      "machine": "aarch64"
+    },
+    "meminfo_kb": {
+      "MemTotal": 65856188,
+      "MemFree": 57898392,
+      "MemAvailable": 63024560,
+      "Cached": 3346896,
+      "Buffers": 199140,
+      "SwapTotal": 0,
+      "SwapFree": 0
+    },
+    "swap_is_zero": true,
+    "capacity": {
+      "capacity_id": "mem64g",
+      "requested_mem": "64G",
+      "mem_total_kb": 65856188,
+      "mem_total_gib_approx": 62.805
+    },
+    "nvpmodel": {
+      "query": "NV Power Mode: 120W\n1",
+      "name": "NV Power Mode: 120W",
+      "mode": "1",
+      "returncode": "0"
+    },
+    "pid": 25718,
+    "cuda": {
+      "ok": true,
+      "device_name": "NVIDIA Thor",
+      "total_memory": 67436736512,
+      "major": 11,
+      "minor": 0,
+      "torch": "2.14.0+cu132"
+    }
+  },
+  "observation_protocol": {
+    "M_max": "actual MemTotal, MiB",
+    "M_t": "training-window peak MemTotal-MemAvailable, MiB",
+    "g1_gpu_response": "confirmed in reports/fullmem_v4/admission/20260920T133630Z/shared_pool.json mixed gpu_drop_kb\u22481.01GiB",
+    "not_used_as_sum": [
+      "host RSS",
+      "cuda allocated",
+      "cgroup"
+    ]
+  },
+  "formula_warning": {
+    "km": 0.25,
+    "note": "When M_t<=M_max, factor_m>=0.5. With km=0.25, 32MiB slack already drives factor_m near 1. Experience-boundary control cannot warn inside a step. This is O-recon behavior, not a silent O-eng guard.",
+    "table": [
+      {
+        "slack_mib": 0,
+        "M_t_mib": 64312.68359375,
+        "M_max_mib": 64312.68359375,
+        "factor_m": 0.5,
+        "urge_with_other_neutral": 0.0625
+      },
+      {
+        "slack_mib": 8,
+        "M_t_mib": 64304.68359375,
+        "M_max_mib": 64312.68359375,
+        "factor_m": 0.8807970779778823,
+        "urge_with_other_neutral": 0.11009963474723529
+      },
+      {
+        "slack_mib": 16,
+        "M_t_mib": 64296.68359375,
+        "M_max_mib": 64312.68359375,
+        "factor_m": 0.9820137900379085,
+        "urge_with_other_neutral": 0.12275172375473856
+      },
+      {
+        "slack_mib": 32,
+        "M_t_mib": 64280.68359375,
+        "M_max_mib": 64312.68359375,
+        "factor_m": 0.9996646498695336,
+        "urge_with_other_neutral": 0.1249580812336917
+      },
+      {
+        "slack_mib": 64,
+        "M_t_mib": 64248.68359375,
+        "M_max_mib": 64312.68359375,
+        "factor_m": 0.9999998874648379,
+        "urge_with_other_neutral": 0.12499998593310474
+      },
+      {
+        "slack_mib": 256,
+        "M_t_mib": 64056.68359375,
+        "M_max_mib": 64312.68359375,
+        "factor_m": 1.0,
+        "urge_with_other_neutral": 0.125
+      },
+      {
+        "slack_mib": 1024,
+        "M_t_mib": 63288.68359375,
+        "M_max_mib": 64312.68359375,
+        "factor_m": 1.0,
+        "urge_with_other_neutral": 0.125
+      },
+      {
+        "slack_mib": 4096,
+        "M_t_mib": 60216.68359375,
+        "M_max_mib": 64312.68359375,
+        "factor_m": 1.0,
+        "urge_with_other_neutral": 0.125
+      },
+      {
+        "slack_mib": 64312,
+        "M_t_mib": 0.68359375,
+        "M_max_mib": 64312.68359375,
+        "factor_m": 1.0,
+        "urge_with_other_neutral": 0.125
+      }
+    ],
+    "slacks_with_factor_m_ge_0.99": [
+      32,
+      64,
+      256,
+      1024,
+      4096,
+      64312
+    ]
+  },
+  "code_audit": {
+    "m_batch_m_frame": "configs still ship m_batch=m_frame=1.0 as count-space reconstruction (A13); not a physical byte model. O-recon must not treat these as measured bytes.",
+    "replay": "ExperienceBalancedBuffer + storage_policy.resize; expand does not restore discarded samples (A09).",
+    "optional_plugins": "TogglePlugin pause-keep-state; bytes still resident while disabled (toggles.py).",
+    "gem_agem_gss": "patterns_per_experience = capacity // n_experiences; GEM/AGEM refuse stacked GEM (builder.py).",
+    "prefetch": "bounded queue; H1/H3 later share prefetch on as system base, H7 isolates benefit.",
+    "single_pass": "train each experience once (A03)."
+  },
+  "board": {
+    "capacity_id": "mem64g",
+    "mem_total_mib": 64312.68359375,
+    "requested_mem": "64G"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "study_id": "fullmem_v4",
+  "prepared_at_utc": "2026-09-20T11:59:03Z",
+  "rewrote_git_manifest": false,
+  "historical_manifests_kept": [
+    "data/manifests/core50_ni_run0_dev_split_seed17.json",
+    "data/manifests/core50_nicv2_79_run0_dev_split_seed17.json"
+  ],
+  "streams": [
+    {
+      "scenario": "ni",
+      "out_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/reports/fullmem_v4/data/core50_ni_run0_dev_split_seed17",
+      "n_experiences": 8,
+      "n_dev_train": 97714,
+      "n_dev_val": 22180
+    },
+    {
+      "scenario": "nicv2_79",
+      "out_dir": "/home/zhuzetong/research/cl/Reproduce-Orion/reports/fullmem_v4/data/core50_nicv2_79_run0_dev_split_seed17",
+      "n_experiences": 79,
+      "n_dev_train": 88417,
+      "n_dev_val": 31477
+    }
+  ]
+}
