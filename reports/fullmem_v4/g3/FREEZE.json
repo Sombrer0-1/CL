@@ -8,7 +8,8 @@
     "g4-static-tight-mem5g",
     "g4-static-loose-mem8g",
     "g4-h2-basic-nc-mem5g",
-    "g4-h2-orecon-nc-mem5g"
+    "g4-h2-orecon-nc-mem5g",
+    "g4-h2-fixedopt-nc-mem5g"
   ],
   "capacity_id": "mem5g",
   "not_tight": true,
@@ -70,5 +71,6 @@
   "mem5g_note": "S0 completed twice. CIFAR100 batch256 min MemAvailable was 194809856 bytes. No resource failure. factor_m still saturated above 32 MiB. Not a three-tier freeze.",
   "mem8g_note": "Loose candidate. Same static S0/S*/O-recon comparison as mem5g, no H4 holder.",
   "h2_basic_note": "Only NC GSS/GEM/AGEM basic static, mem5g, seeds 0/1/2. Not tuned static, not Orion-on-algorithm, not fixed-optional, not 3 capacities.",
-  "h2_orecon_note": "NC GSS/GEM/AGEM, seeds 0/1/2, mem5g. Controller constants copied from admitted NC O-recon static. Optional plugin is EWC only. Prefetch off, matching the basic static. Not tuned static, not fixed-optional, not three capacities."
+  "h2_orecon_note": "NC GSS/GEM/AGEM, seeds 0/1/2, mem5g. Controller constants copied from admitted NC O-recon static. Optional plugin is EWC only. Prefetch off, matching the basic static. Not tuned static, not fixed-optional, not three capacities.",
+  "h2_fixedopt_note": "NC GSS/GEM/AGEM, seeds 0/1/2, mem5g. EWC fixed on, lambda 100. Controller off, batch 16, replay 200. Not tuned static and not three capacities."
 }

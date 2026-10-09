@@ -2,7 +2,7 @@
 
 先读 [STATUS](../STATUS.md)、[G4_STATIC_TIGHT](../reports/fullmem_v4/G4_STATIC_TIGHT.md)、[G4_STATIC_LOOSE](../reports/fullmem_v4/G4_STATIC_LOOSE.md)、[MEMORY](MEMORY.md)。
 
-当前 `mem=5G`，boot_id `13f1512f-57ca-4ce5-8054-f415f168afd3`。执行器正在跑 2026-10-09 提交的 11 条：先是 AGEM seed 2 的 b2 和 NI O-recon seed 2 的 b3，然后是 `g4-h2-orecon-nc-mem5g`。不要停，不要换档。
+当前 `mem=5G`，boot_id `13f1512f-57ca-4ce5-8054-f415f168afd3`。H2 Orion 和两条补跑已终态。执行器正在跑 `g4-h2-fixedopt-nc-mem5g`。不要停，不要换档。
 
 回到 8G：`sudo cp /boot/extlinux/extlinux.conf.bak.orion-fullmem-v4-20261007-mem8g /boot/extlinux/extlinux.conf` 后重启。这批结束前不换档。mid 未建立。
 

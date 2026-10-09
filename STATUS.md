@@ -1,6 +1,6 @@
-# 当前状态：正在补两条热身失败，并跑 NC 上的 H2 Orion
+# 当前状态：H2 Orion 已终态，正在跑固定 EWC
 
-更新：2026-10-09 11:40（UTC+8）。`mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。5G 是 tight 候选，8G 是 loose 候选，mid 未建立。
+更新：2026-10-09 18:20（UTC+8）。`mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。5G 是 tight 候选，8G 是 loose 候选，mid 未建立。
 
 ## 已完成
 
@@ -26,19 +26,21 @@ P = `p_diag`，S = `s_initial`。失败格不填 0。
 
 GSS seed 2 的九个经验都训练并评估完了。P 约 0.011，S 停在 1，和 seed 0/1 不是同一量级。AGEM seed 2 与 seed 0/1 的 batch/replay 相同，失败发生在 CUDA context 创建。
 
+## 已完成
+
+上午那 11 条在 14:32 全部 completed。AGEM 基础静态 seed 2 的 b2：P 0.629，S 0.388，online 514 秒。NI O-recon seed 2 的 b3：P 0.053，S 0.962，online 1028 秒，相对 S* 仍然更差更慢。
+
+`g4-h2-orecon-nc-mem5g` 九条都 completed。相对同算法基础静态，GEM 的 ΔP 约 −0.32，AGEM 约 −0.39，在线时间约 1.5 到 1.7 倍。GSS 未崩的两个 seed ΔP 约 −0.26，seed 2 两边 P 都是 0.011。稳定性更高，但没有实用优势。数字见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md)。
+
 ## 正在跑
 
-2026-10-09 11:40（UTC+8）提交 11 条，执行器已从 idle 进入 running。顺序按 seq：
+`g4-h2-fixedopt-nc-mem5g`：NC 上 GSS、GEM、AGEM，EWC 固定打开，λ=100，控制器关闭，batch 16，replay 200。9 条。这是 H2 的固定可选策略，不是调优静态，也不是三档。
 
-1. `g4-core50-nc-agem-basic-seed2-mem5g-b2`。补跑 H2 基础静态里热身 CUDA OOM 的 AGEM seed 2。原 attempt 保留。
-2. `g4-core50-ni-orecon-static-seed2-mem5g-b3`。补跑 5G NI O-recon seed 2。前两次 attempt 保留。
-3. `g4-h2-orecon-nc-mem5g`：NC 上 GSS、GEM、AGEM 各 seed 0/1/2，共 9 条。控制器常数抄自已完成的 NC O-recon 静态格。可选插件只有 EWC，因为 GSS/GEM/AGEM 不能再叠 GEM。预取保持关闭，与基础静态相同。这一批不是调优静态，不是固定可选策略，也不是三档。
-
-基础静态成功时 AGEM 大约 9 分钟，GSS 大约 13 分钟，GEM 大约 11 分钟。NC 上 ER 的 O-recon 在线大约 16 分钟。按这个量级，11 条大约 3 到 5 小时。热身再 OOM 的补跑会在十几秒内结束，后面的格子继续。
+GSS seed 0 在 18:18 热身创建 CUDA context 时 OOM，约 12 秒，`resource_failure`。执行器已继续，当前是 GSS seed 1。其余格子若正常训练，这一批大约还要 2 到 3 小时。
 
 ## 现场
 
-执行器从 2026-10-07 12:35 起一直 active。`FREEZE.json` 已准入 `g4-h2-orecon-nc-mem5g`。此前四批 `g4-h4-mem8g`、`g4-static-tight-mem5g`、`g4-static-loose-mem8g`、`g4-h2-basic-nc-mem5g` 的原格子都有终态。
+执行器从 2026-10-07 12:35 起一直 active。`mem=5G` 不变。调优静态和另外两档容量还没做。
 
 [G5_CLAIMS](reports/fullmem_v4/G5_CLAIMS.md) 仍只覆盖已准入的 H4。后来的静态比较和这组 H2 基础静态写在各自报告和本文件里，还没有并进那份裁决。
 
