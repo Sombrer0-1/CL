@@ -1,6 +1,6 @@
-# 当前状态：H2 的基础静态、Orion、固定 EWC 都已终态，执行器空闲
+# 当前状态：正在做 H2 调优静态的开发选择
 
-更新：2026-10-09 21:20（UTC+8）。`mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。5G 是 tight 候选，8G 是 loose 候选，mid 未建立。
+更新：2026-10-09 21:30（UTC+8）。`mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。5G 是 tight 候选，8G 是 loose 候选，mid 未建立。
 
 ## 已完成
 
@@ -34,9 +34,21 @@ GSS seed 2 的九个经验都训练并评估完了。P 约 0.011，S 停在 1，
 
 `g4-h2-fixedopt-nc-mem5g` 于 20:54 终态。8 条 completed，GSS seed 0 热身 CUDA OOM。固定 EWC 相对基础静态更差更慢：GEM 的 ΔP 约 −0.44，AGEM 约 −0.45，GSS seed 1 的 ΔP −0.374，在线时间大约 1.5 到 2.2 倍。见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md)。
 
+## 进度
+
+设计分母是 1320 个名额，不是执行队列。已经有终态的正式格大约 165 个，约占 12%：H4 的 48 格，五流 S0/S*/O-recon 在 5G 和 8G 上的 90 格，以及 mem5g 上 H2 三个对照的 27 格。已写入 `FREEZE.json` 的批次本身都已终态。
+
+中间档、Endless 官方协议、Oracle 全搜索、LR/MAX-A/MAX-P 和 H5–H8 的正式矩阵还没建立。这些留在分母里，没有排进队列，也不能给出跑完日期。按单卡串行、每条大约 10 到 20 分钟估算，把这些未建立块也全部排上是数周，而且中间档和 Endless 官方协议现在不能靠加运行填上。
+
+眼下能排期的下一块是 mem5g 上 H2 的调优静态。开发选择 18 条大约 5 到 9 小时。选出之后的正式 9 条大约再要 2 小时。
+
+## 正在跑
+
+`g2-h2-tune-select-nc-mem5g`：NC 上 GSS、GEM、AGEM，开发 seed 17，batch {16,64,256} × replay {200,2000}，共 18 条 `kind=probe`。用 `development_val_seen`，不用官方测试来选。GEM/AGEM 的 `patterns_per_exp` 在 capacity 200 时为 50，2000 时为 500。当前是 GSS b16/r200。这批结束前不换档，也不发射正式 seed。
+
 ## 现场
 
-执行器 active，mode=idle，inbox 与 running 为空。心跳 21:21。`mem=5G` 不变。H2 还缺调优静态，也还缺另外两档容量。没有下一条已提交的任务。
+执行器 active。`mem=5G` 不变。
 
 [G5_CLAIMS](reports/fullmem_v4/G5_CLAIMS.md) 仍只覆盖已准入的 H4。后来的静态比较和这组 H2 基础静态写在各自报告和本文件里，还没有并进那份裁决。
 
