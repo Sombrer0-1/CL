@@ -1,0 +1,16 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g4-core50-ni-orecon-static-seed2-mem8g",
+  "seq": 4118,
+  "kind": "train",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g4_core50_ni_orecon_static_seed2_mem8g.yaml"
+  ],
+  "required_capacity": "mem8g",
+  "batch_id": "g4-static-loose-mem8g"
+}

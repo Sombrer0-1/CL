@@ -2,17 +2,17 @@
   "study_id": "fullmem_v4",
   "mode": "idle",
   "pause_reason": null,
-  "batch_id": "g4-h4-mem8g",
-  "boot_id_at_batch_start": "18f419b5-dd78-4c2a-bd52-4dd84d9b38da",
+  "batch_id": "g4-h2-basic-nc-mem5g",
+  "boot_id_at_batch_start": "13f1512f-57ca-4ce5-8054-f415f168afd3",
   "current_task_id": null,
   "worker_unit": null,
   "worker_pid": null,
-  "heartbeat_ts": "2026-09-30T02:41:30Z",
-  "completed_n": 400,
-  "failed_n": 20,
+  "heartbeat_ts": "2026-10-09T02:59:28Z",
+  "completed_n": 503,
+  "failed_n": 29,
   "last_event": null,
   "last_identity": {
-    "boot_id": "18f419b5-dd78-4c2a-bd52-4dd84d9b38da",
-    "capacity_id": "mem8g"
+    "boot_id": "984c4ed8-ed8f-4782-bc05-2577fd938c46",
+    "capacity_id": "mem5g"
   }
 }

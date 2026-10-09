@@ -1,0 +1,30 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g4-cifar100-orecon-static-seed2-mem5g",
+  "seq": 3014,
+  "kind": "train",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g4_cifar100_orecon_static_seed2_mem5g.yaml"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem5g",
+  "batch_id": "g4-static-tight-mem5g",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {
+    "configs/fullmem_v4/g4_cifar100_orecon_static_seed2_mem5g.yaml": "7a49c9621959a685cb47c23bc60a00ea4de92191a11728a545af231d3d8abc3c"
+  },
+  "content_hash": "6f5f070d5924bd404331b447a6b1af14114b4385d444d597b8bcaaea4cb785bb",
+  "status": "admitted",
+  "submitted_at_utc": "2026-09-30T03:32:25Z",
+  "attempt": 1
+}

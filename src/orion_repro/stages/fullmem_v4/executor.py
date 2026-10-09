@@ -378,7 +378,7 @@ def _classify_exit(code: int | None, log_text: str) -> str:
     blob = log_text.lower()
     if "h4 scene_failure" in blob or "scene_failure" in blob:
         return "resource_failure"
-    if "oom-kill" in blob or "outofmemoryerror" in blob or "cuda out of memory" in blob:
+    if "oom-kill" in blob or "outofmemoryerror" in blob or "cuda out of memory" in blob or "cuda error: out of memory" in blob or "cuda_error_out_of_memory" in blob:
         return "resource_failure"
     if code == 0:
         return "completed"

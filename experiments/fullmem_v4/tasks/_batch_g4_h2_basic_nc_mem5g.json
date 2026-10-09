@@ -1,0 +1,13 @@
+{
+  "tasks": [
+    "g4-core50-nc-gss-basic-seed0-mem5g",
+    "g4-core50-nc-gss-basic-seed1-mem5g",
+    "g4-core50-nc-gss-basic-seed2-mem5g",
+    "g4-core50-nc-gem-basic-seed0-mem5g",
+    "g4-core50-nc-gem-basic-seed1-mem5g",
+    "g4-core50-nc-gem-basic-seed2-mem5g",
+    "g4-core50-nc-agem-basic-seed0-mem5g",
+    "g4-core50-nc-agem-basic-seed1-mem5g",
+    "g4-core50-nc-agem-basic-seed2-mem5g"
+  ]
+}

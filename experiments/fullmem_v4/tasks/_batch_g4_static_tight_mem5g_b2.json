@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    "g4-cifar100-orecon-static-seed0-mem5g-b2",
+    "g4-cifar100-orecon-static-seed1-mem5g-b2",
+    "g4-cifar100-orecon-static-seed2-mem5g-b2",
+    "g4-cifar100-s0-static-seed0-mem5g-b2",
+    "g4-cifar100-s0-static-seed1-mem5g-b2",
+    "g4-cifar100-s0-static-seed2-mem5g-b2",
+    "g4-cifar100-sstar-static-seed0-mem5g-b2",
+    "g4-cifar100-sstar-static-seed1-mem5g-b2",
+    "g4-cifar100-sstar-static-seed2-mem5g-b2",
+    "g4-core50-nc-orecon-static-seed0-mem5g-b2",
+    "g4-core50-nc-orecon-static-seed1-mem5g-b2",
+    "g4-core50-nc-orecon-static-seed2-mem5g-b2",
+    "g4-core50-nc-s0-static-seed0-mem5g-b2",
+    "g4-core50-nc-s0-static-seed1-mem5g-b2",
+    "g4-core50-nc-s0-static-seed2-mem5g-b2",
+    "g4-core50-nc-sstar-static-seed0-mem5g-b2",
+    "g4-core50-nc-sstar-static-seed1-mem5g-b2",
+    "g4-core50-nc-sstar-static-seed2-mem5g-b2"
+  ]
+}

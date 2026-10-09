@@ -1,0 +1,16 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g4-core50-ni-s0-static-seed1-mem5g",
+  "seq": 5013,
+  "kind": "train",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g4_core50_ni_s0_static_seed1_mem5g.yaml"
+  ],
+  "required_capacity": "mem5g",
+  "batch_id": "g4-static-tight-mem5g"
+}

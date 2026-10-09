@@ -1,0 +1,28 @@
+{
+  "batch_id": "g2-dev-mem5g",
+  "kind": "probe",
+  "required_capacity": "mem5g",
+  "not_a_freeze": true,
+  "n_tasks": 9,
+  "tasks": [
+    "g2-idle-mem5g",
+    "g1-cifar100-exp1-mem5g",
+    "g2-dev-cifar100-s0-seed17-mem5g",
+    "g2-dev-cifar100-s0-repeat-seed17-mem5g",
+    "g2-dev-cifar100-batch256-seed17-mem5g",
+    "g2-dev-cifar100-replay2000-seed17-mem5g",
+    "g2-dev-cifar100-er-gem-ewc-seed17-mem5g",
+    "g2-dev-core50-nc-s0-seed17-mem5g",
+    "g2-occupancy-mem5g"
+  ],
+  "yamls": [
+    "g1_cifar100_exp1_mem5g.yaml",
+    "g2_cifar100_s0_seed17_mem5g.yaml",
+    "g2_cifar100_s0_repeat_seed17_mem5g.yaml",
+    "g2_cifar100_batch256_seed17_mem5g.yaml",
+    "g2_cifar100_replay2000_seed17_mem5g.yaml",
+    "g2_cifar100_er_gem_ewc_seed17_mem5g.yaml",
+    "g2_core50_nc_s0_seed17_mem5g.yaml"
+  ],
+  "note": "5G admission calibration. S0 twice + high-resource static. kind=probe only. Not tight until the runs say so."
+}
