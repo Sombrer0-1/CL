@@ -1,6 +1,6 @@
-# 当前状态：正在做 H2 调优静态的开发选择
+# 当前状态：调优静态已选出，正在跑 GEM 和 AGEM 的正式 seed
 
-更新：2026-10-09 21:30（UTC+8）。`mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。5G 是 tight 候选，8G 是 loose 候选，mid 未建立。
+更新：2026-10-10 11:00（UTC+8）。`mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。5G 是 tight 候选，8G 是 loose 候选，mid 未建立。
 
 ## 已完成
 
@@ -40,11 +40,11 @@ GSS seed 2 的九个经验都训练并评估完了。P 约 0.011，S 停在 1，
 
 中间档、Endless 官方协议、Oracle 全搜索、LR/MAX-A/MAX-P 和 H5–H8 的正式矩阵还没建立。这些留在分母里，没有排进队列，也不能给出跑完日期。按单卡串行、每条大约 10 到 20 分钟估算，把这些未建立块也全部排上是数周，而且中间档和 Endless 官方协议现在不能靠加运行填上。
 
-眼下能排期的下一块是 mem5g 上 H2 的调优静态。开发选择 18 条大约 5 到 9 小时。选出之后的正式 9 条大约再要 2 小时。
+mem5g 上 H2 的调优静态已经选出。开发选择 18 条在 2026-10-09 22:29 终态。GSS 为 b16/r200，和基础静态相同，正式结果复用。GEM 为 b256/r200。AGEM 为 b16/r2000，`patterns_per_exp` 500。见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md)。
 
 ## 正在跑
 
-`g2-h2-tune-select-nc-mem5g`：NC 上 GSS、GEM、AGEM，开发 seed 17，batch {16,64,256} × replay {200,2000}，共 18 条 `kind=probe`。用 `development_val_seen`，不用官方测试来选。GEM/AGEM 的 `patterns_per_exp` 在 capacity 200 时为 50，2000 时为 500。当前是 GSS b16/r200。这批结束前不换档，也不发射正式 seed。
+`g4-h2-tuned-nc-mem5g`：GEM 与 AGEM 各 seed 0/1/2，共 6 条。当前是 GEM seed 0。开发选择里 GEM b256 大约 3 分钟，AGEM b16/r2000 大约 6 分钟；正式评价会更长，这一批大约 1 到 2 小时。这批结束前不换档。
 
 ## 现场
 
