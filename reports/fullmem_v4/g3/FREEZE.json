@@ -11,7 +11,8 @@
     "g4-h2-orecon-nc-mem5g",
     "g4-h2-fixedopt-nc-mem5g",
     "g4-h2-tuned-nc-mem5g",
-    "g4-h5b-nc-mem5g"
+    "g4-h5b-nc-mem5g",
+    "g4-h5b-cifar100-mem5g"
   ],
   "capacity_id": "mem5g",
   "not_tight": true,
@@ -76,5 +77,6 @@
   "h2_orecon_note": "NC GSS/GEM/AGEM, seeds 0/1/2, mem5g. Controller constants copied from admitted NC O-recon static. Optional plugin is EWC only. Prefetch off, matching the basic static. Not tuned static, not fixed-optional, not three capacities.",
   "h2_fixedopt_note": "NC GSS/GEM/AGEM, seeds 0/1/2, mem5g. EWC fixed on, lambda 100. Controller off, batch 16, replay 200. Not tuned static and not three capacities.",
   "h2_tuned_note": "Dev seed 17 selection on mem5g, score (P+S)/2, ties by shorter online. GSS b16/r200 reuses basic formal seeds 0/1/2. GEM formal is b256/r200 patterns_per_exp 50. AGEM formal is b16/r2000 patterns_per_exp 500. Seeds 0/1/2.",
-  "h5b_note": "NC only, mem5g, fixed b16/r200, controller off. ER reuses S0. New runs are ER+GEM, ER+EWC, ER+GEM+EWC, seeds 0/1/2. Not CIFAR-100 and not a second budget. EWC lambda 100, GEM patterns_per_exp 50."
+  "h5b_note": "NC only, mem5g, fixed b16/r200, controller off. ER reuses S0. New runs are ER+GEM, ER+EWC, ER+GEM+EWC, seeds 0/1/2. Not CIFAR-100 and not a second budget. EWC lambda 100, GEM patterns_per_exp 50.",
+  "h5b_cifar100_note": "CIFAR-100, mem5g, fixed b16/r200, controller off. ER reuses S0. New runs are ER+GEM, ER+EWC, ER+GEM+EWC, seeds 0/1/2. Not a second budget."
 }

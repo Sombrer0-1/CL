@@ -1,6 +1,6 @@
 # 阶段4长程记忆
 
-更新：2026-10-11 14:30（UTC+8）。指针：[STATUS](../STATUS.md)、[G4_STATIC_TIGHT](../reports/fullmem_v4/G4_STATIC_TIGHT.md)、[G4_STATIC_LOOSE](../reports/fullmem_v4/G4_STATIC_LOOSE.md)。
+更新：2026-10-11 18:20（UTC+8）。指针：[STATUS](../STATUS.md)、[G4_STATIC_TIGHT](../reports/fullmem_v4/G4_STATIC_TIGHT.md)、[G4_STATIC_LOOSE](../reports/fullmem_v4/G4_STATIC_LOOSE.md)。
 
 - 当前 `mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。tight 候选。8G 是 loose。mid 未建立。回退这次 8G：`extlinux.conf.bak.orion-fullmem-v4-20261007-mem8g`。
 - 控制机连接：这台控制机的 `id_ed25519` 已在 2026-10-09 追加进 `authorized_keys`。密钥和密码脚本并存。
@@ -12,4 +12,6 @@
 - 设计分母 1320 里大约 165 格有终态，约 12%。已准入批次都终态。中间档、Endless 官方协议、Oracle 全搜索没有跑完日期。
 - 调优静态开发选择 18 条已于 2026-10-09 22:29 终态。GSS 选 b16/r200，复用基础静态正式结果。GEM 选 b256/r200。AGEM 选 b16/r2000。
 - 调优静态正式结果已于 2026-10-10 11:35 终态。AGEM 与基础静态同量级。GEM seed 0/2 可塑性更低、时间更短。seed 1 热身 CUDA OOM。
-- 2026-10-11 14:30 已发 GEM seed 1 的 b2，以及 `g4-h5b-nc-mem5g` 九条：ER+GEM、ER+EWC、ER+GEM+EWC。ER 复用 S0。大约 2 到 4 小时。不要换档，不要把 5G/8G 写成已冻结三档。
+- GEM 调优静态 seed 1 的 b2 已 completed：P 0.393，online 272 秒。三条都是可塑性更低、时间更短。
+- `g4-h5b-nc-mem5g` 于 15:20 终态。固定 b16/r200 上 GEM/EWC 和 S0 没有拉开。ER+EWC seed 1 热身失败，b2 已发。
+- 18:20 起跑 `g4-h5b-cifar100-mem5g` 九条。大约 1 到 2 小时。不要换档，不要把 5G/8G 写成已冻结三档。

@@ -2,7 +2,7 @@
 
 先读 [STATUS](../STATUS.md)、[G4_STATIC_TIGHT](../reports/fullmem_v4/G4_STATIC_TIGHT.md)、[G4_STATIC_LOOSE](../reports/fullmem_v4/G4_STATIC_LOOSE.md)、[MEMORY](MEMORY.md)。
 
-当前 `mem=5G`，boot_id `13f1512f-57ca-4ce5-8054-f415f168afd3`。调优静态正式格已终态，GEM seed 1 的 b2 正在补。随后是 `g4-h5b-nc-mem5g`。不要停，不要换档。GSS 调优静态不要重跑。
+当前 `mem=5G`，boot_id `13f1512f-57ca-4ce5-8054-f415f168afd3`。NC 的 H5b 已终态。执行器正在补 ER+EWC seed 1，然后跑 `g4-h5b-cifar100-mem5g`。不要停，不要换档。
 
 回到 8G：`sudo cp /boot/extlinux/extlinux.conf.bak.orion-fullmem-v4-20261007-mem8g /boot/extlinux/extlinux.conf` 后重启。这批结束前不换档。mid 未建立。
 
