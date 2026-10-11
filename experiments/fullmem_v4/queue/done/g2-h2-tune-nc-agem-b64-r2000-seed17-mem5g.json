@@ -1,0 +1,34 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g2-h2-tune-nc-agem-b64-r2000-seed17-mem5g",
+  "seq": 5516,
+  "kind": "probe",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g2_h2_tune_nc_agem_b64_r2000_seed17_mem5g.yaml"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem5g",
+  "batch_id": "g2-h2-tune-select-nc-mem5g",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {
+    "configs/fullmem_v4/g2_h2_tune_nc_agem_b64_r2000_seed17_mem5g.yaml": "cccf9e3151295153cdc8104873ef2f669a1c991ae14971e36f534e501c79da7d"
+  },
+  "content_hash": "4b9b7420032cfbb768df5743e788a07ccf782f05ceb912ba4cd2e3d2e796e2a9",
+  "status": "resource_failure",
+  "submitted_at_utc": "2026-10-09T13:27:45Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-10-09T14:26:49Z",
+  "exit_code": 1,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g2-h2-tune-nc-agem-b64-r2000-seed17-mem5g.log",
+  "finished_at_utc": "2026-10-09T14:26:49Z"
+}

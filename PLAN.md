@@ -1,6 +1,6 @@
 # 阶段 4：Thor 真实共享内存约束下的 Orion 完整方法复现
 
-日期：2026-09-21。设计版本：**design-v1（最终设计审查版）**。阶段 ID：`fullmem_v4`。状态：**设计仍是 design-v1。G1 已准入 mem=64G/32G/16G/8G（准入不等于冻结，8G 不是 tight）。静态压力在四档均未建立。G3 只放行正式批次 g4-h4-mem8g。该 48 格已全部终态（42 completed，6 条 NIC O-recon 为 resource_failure），见 reports/fullmem_v4/G4_H4.md。裁决见 reports/fullmem_v4/G5_CLAIMS.md：已准入场景不支持整体借鉴 Orion；H1–H3 与 H5–H8 保持未验证，不另发射 kind=train。**
+日期：2026-09-21。设计版本：**design-v1（最终设计审查版）**。阶段 ID：`fullmem_v4`。状态：**阶段 4 已于 2026-10-11 结项。终局裁决见 reports/fullmem_v4/G5_CLAIMS.md：Orion（O-recon）没有可信的实用优势，不借鉴，结束投入。设计分母 1320 个名额里约 165 格有终态，其余是覆盖缺口，不写成无效，也不再发射 kind=train。整机已还原为原始 primary 启动项（无 mem=，128G 机型），执行器已停用，见 STATUS.md。下面是结项前的设计与计划原文，保留作溯源，其中「当前」「下一步」类表述不再有效。**
 
 用户已选择放弃前阶段的 allocator 配额、公式预算和 host-only 限额作为正式主基准，采用真实整机共享内存约束，并由另一台机器上的 agent 通过 SSH 调度 Thor。16 GiB 是讨论中的候选，不是已批准安装或已验证的配置。本计划取代旧阶段的约 24 小时缩减范围；耗时仅作估算，不设训练硬截止。
 

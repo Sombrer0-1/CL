@@ -1,0 +1,34 @@
+{
+  "study_id": "fullmem_v4",
+  "design_version": "design-v1",
+  "task_id": "g4-core50-nc-gss-fixedopt-seed0-mem5g",
+  "seq": 5401,
+  "kind": "train",
+  "argv": [
+    "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+    "-m",
+    "orion_repro.run",
+    "--config",
+    "configs/fullmem_v4/g4_core50_nc_gss_fixedopt_seed0_mem5g.yaml"
+  ],
+  "interpreter": "/home/zhuzetong/miniconda3/envs/orion/bin/python",
+  "working_directory": "/home/zhuzetong/research/cl/Reproduce-Orion",
+  "required_capacity": "mem5g",
+  "batch_id": "g4-h2-fixedopt-nc-mem5g",
+  "timeout_s": null,
+  "env": {
+    "WANDB_MODE": "disabled",
+    "WANDB_DISABLED": "true"
+  },
+  "config_content_hashes": {
+    "configs/fullmem_v4/g4_core50_nc_gss_fixedopt_seed0_mem5g.yaml": "01b5aa95330b903f35617080971fb61732f681184c87f764b3caf6da9032840e"
+  },
+  "content_hash": "b760d1184aeac62795f6e957cdb78bd9c283b0d31ee739dcc554a0909a188137",
+  "status": "resource_failure",
+  "submitted_at_utc": "2026-10-09T10:18:44Z",
+  "attempt": 1,
+  "updated_at_utc": "2026-10-09T10:18:57Z",
+  "exit_code": 1,
+  "log": "/home/zhuzetong/research/cl/Reproduce-Orion/runs/fullmem_v4/executor/g4-core50-nc-gss-fixedopt-seed0-mem5g.log",
+  "finished_at_utc": "2026-10-09T10:18:57Z"
+}

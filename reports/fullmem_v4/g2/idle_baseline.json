@@ -1,34 +1,34 @@
 {
   "study_id": "fullmem_v4",
-  "collected_at_utc": "2026-09-25T04:08:34Z",
-  "boot_id": "cc389c7a-b286-4600-ae93-71c273599497",
+  "collected_at_utc": "2026-09-30T03:12:20Z",
+  "boot_id": "984c4ed8-ed8f-4782-bc05-2577fd938c46",
   "capacity": {
-    "capacity_id": "mem8g",
-    "requested_mem": "8G",
-    "mem_total_kb": 8178064,
-    "mem_total_gib_approx": 7.799
+    "capacity_id": "mem5g",
+    "requested_mem": "5G",
+    "mem_total_kb": 5093776,
+    "mem_total_gib_approx": 4.858
   },
   "windows": [
     {
       "window": 0,
       "n_samples": 60,
-      "min_MemAvailable_kb": 5424712,
-      "max_MemAvailable_kb": 5988080,
-      "mean_MemAvailable_kb": 5595999.866666666
+      "min_MemAvailable_kb": 2441792,
+      "max_MemAvailable_kb": 2514072,
+      "mean_MemAvailable_kb": 2498481.8666666667
     },
     {
       "window": 1,
       "n_samples": 60,
-      "min_MemAvailable_kb": 5582328,
-      "max_MemAvailable_kb": 5588188,
-      "mean_MemAvailable_kb": 5585925.933333334
+      "min_MemAvailable_kb": 2499344,
+      "max_MemAvailable_kb": 2521464,
+      "mean_MemAvailable_kb": 2510942.0
     },
     {
       "window": 2,
       "n_samples": 60,
-      "min_MemAvailable_kb": 5560708,
-      "max_MemAvailable_kb": 5587192,
-      "mean_MemAvailable_kb": 5572733.533333333
+      "min_MemAvailable_kb": 2485996,
+      "max_MemAvailable_kb": 2513740,
+      "mean_MemAvailable_kb": 2505813.1333333333
     }
   ],
   "note": "Development idle windows on mem64g. Not a G3 freeze of admission ranges."

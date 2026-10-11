@@ -1,17 +1,22 @@
 # 阶段4长程记忆
 
-更新：2026-10-11 18:20（UTC+8）。指针：[STATUS](../STATUS.md)、[G4_STATIC_TIGHT](../reports/fullmem_v4/G4_STATIC_TIGHT.md)、[G4_STATIC_LOOSE](../reports/fullmem_v4/G4_STATIC_LOOSE.md)。
+更新：2026-10-11 23:30（UTC+8）。阶段 4 已结项。指针：[STATUS](../STATUS.md)、[G5_CLAIMS](../reports/fullmem_v4/G5_CLAIMS.md)。
 
-- 当前 `mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。tight 候选。8G 是 loose。mid 未建立。回退这次 8G：`extlinux.conf.bak.orion-fullmem-v4-20261007-mem8g`。
+## 结论
+
+- Orion（O-recon）没有可信的实用优势，不借鉴。五个数据流、5G 与 8G、静态与共运行压力、NC 上三种算法，O-recon 都比调好的静态 S* 或同算法基础静态差：ΔP −0.17 到 −0.39，时间 1.3 到 4.5 倍。NIC 的压力场景里 O-recon 是唯一被 oom-kill 的方法。
+- 归因：内存因子饱和（`factor_m=1.0`，`km=0.25` 时约 32 MiB 余量才下降），batch/replay 几乎不动；urge 恒高于阈值使 GEM+EWC 常开，EWC（λ=100）拖垮可塑性。只调 batch/replay 的 BR-adapt 与 S0 无差别。
+- 这是对本重建实现与本场景的负结果，不是对作者平台的反驳。中间档、Endless 官方协议、Oracle 全搜索、LR/MAX-A/MAX-P、H1–H3、H5–H8 是覆盖缺口，不写成无效。
+
+## 环境
+
+- 2026-10-11 23:10 已还原为原始 `primary` 启动项，boot_id `68b3d186-454f-44a1-adaa-eaee2be1f369`，`MemTotal` ≈ 122.8 GiB，无 `mem=`。实验配置的备份是 `/boot/extlinux/extlinux.conf.bak.orion-fullmem-v4-20261011-pre-restore`。
+- 执行器已 stop 并 disable。Linger 保持原状 yes。没有改 nvpmodel、内核、驱动。
 - 控制机连接：这台控制机的 `id_ed25519` 已在 2026-10-09 追加进 `authorized_keys`。密钥和密码脚本并存。
-- 五流在 8G 上的 S0/S*/O-recon 已齐，O-recon 没有实用优势。5G 上 CIFAR-100、NC、NIC、CIFAR-10 已齐；NIC 的 O-recon 三条 oom-kill。5G CIFAR-10 ΔP −0.266、ΔS +0.046、时间 4.2 倍。
-- NI 的 O-recon seed 0/1 在 5G 上完成，ΔP 约 −0.17、ΔS 约 −0.13。seed 2 的原 attempt 与 b2 都是热身 CUDA OOM，约 11 秒，`resource_failure`。没有第三条质量结果。
-- H2 基础静态 `g4-h2-basic-nc-mem5g` 已于 2026-10-08 13:36 终态。GSS 与 GEM 各 3 条 completed；GSS seed 2 的 P 为 0.011、S 为 1。AGEM seed 0/1 completed，seed 2 热身 CUDA OOM。这只是基础静态，不是 108 格。
-- 2026-10-09 14:32 那 11 条全部 completed。H2 Orion 相对基础静态没有实用优势：GEM ΔP 约 −0.32，AGEM 约 −0.39，GSS 未崩的 seed 约 −0.26，时间更长。NI O-recon seed 2 的 b3 也 completed，ΔP −0.157，ΔS −0.137。见 `reports/fullmem_v4/G4_H2_NC.md`。
-- `g4-h2-fixedopt-nc-mem5g` 于 20:54 终态。8/9 completed，GSS seed 0 热身 CUDA OOM。固定 EWC 相对基础静态更差更慢，GEM ΔP 约 −0.44，AGEM 约 −0.45。
-- 设计分母 1320 里大约 165 格有终态，约 12%。已准入批次都终态。中间档、Endless 官方协议、Oracle 全搜索没有跑完日期。
-- 调优静态开发选择 18 条已于 2026-10-09 22:29 终态。GSS 选 b16/r200，复用基础静态正式结果。GEM 选 b256/r200。AGEM 选 b16/r2000。
-- 调优静态正式结果已于 2026-10-10 11:35 终态。AGEM 与基础静态同量级。GEM seed 0/2 可塑性更低、时间更短。seed 1 热身 CUDA OOM。
-- GEM 调优静态 seed 1 的 b2 已 completed：P 0.393，online 272 秒。三条都是可塑性更低、时间更短。
-- `g4-h5b-nc-mem5g` 于 15:20 终态。固定 b16/r200 上 GEM/EWC 和 S0 没有拉开。ER+EWC seed 1 热身失败，b2 已发。
-- 18:20 起跑 `g4-h5b-cifar100-mem5g` 九条。大约 1 到 2 小时。不要换档，不要把 5G/8G 写成已冻结三档。
+
+## 已知坑
+
+- **H5b 无效。** 配置 `plugin_policy: fixed_default` 令 `TogglePlugin` 全程关闭（`loop.py` 起跑时 `enabled = (initial_mode == "advanced")`）。要固定打开插件须用 `fixed_advanced`。判断插件是否真的在跑，看 `auxiliary_visits`、`plugin_state_bytes`、`optimizer_mode`，不能只看 `plugins.json` 里的 `enabled`。
+- `executor.py` 把 `cuda error: out of memory` 也记成 `resource_failure`，热身 CUDA OOM 约 10 秒，换新 ID 补跑即可。
+- 失败记录保留，不改写已失败的 done 记录，不用同一 task_id 重跑。
+- 不把 5G/8G 写成已冻结三档，不把开发选择 S* 写成静态冻结。

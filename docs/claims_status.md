@@ -47,3 +47,7 @@
 判定用支持、部分支持、不支持、未验证。S04/C 组按 [A29](decisions/A29.md) 放弃，未验证动态预留。n=3 不作强显著性宣称。
 
 **第三阶段已结束。** 本小节是 `thor_r2` 限定判定；覆盖缺口与外推见 [after_effectiveness_v3.md](plans/after_effectiveness_v3.md)，不作为本阶段未完成项自动续跑。
+
+### 2026-10-11 fullmem_v4 结项
+
+上面两张表仍是各自阶段的判定，不要用本小节覆盖。第四阶段在 Thor 真实整机 `mem=` 约束下重做主比较，裁决见 [G5_CLAIMS](../reports/fullmem_v4/G5_CLAIMS.md)：**O-recon 没有可信的实用优势，不借鉴 Orion，结束投入。** 五个数据流、5G 与 8G、静态与共运行压力下，O-recon 对调好的静态 S* 的 ΔP 为 −0.17 到 −0.37，在线时间 2.1 到 4.5 倍；NIC 压力场景里只有 O-recon 被 oom-kill；NC 上 GSS/GEM/AGEM 同向为负。归因是内存因子饱和加插件常开，与第三阶段同向。H5b 因插件被配置关闭而无效。中间档、Endless 官方协议、H1–H3、H5–H8 的正式矩阵未建立，记覆盖缺口，不写成无效。

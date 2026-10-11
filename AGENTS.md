@@ -6,9 +6,9 @@
 
 用户已启动阶段4 `fullmem_v4` 的计划准备，见 [PLAN](PLAN.md)、[STATUS](STATUS.md)、[A30](docs/decisions/A30.md)。以下旧条款中的阶段范围按此更新解释：
 
-- 主基准采用经本机验收的真实整机 CPU/GPU 共享内存约束。**当前 Thor 运行独立启动项 `mem=8G`（实测 MemTotal ≈ 7.80 GiB）。** 64/32/16/8 均已启动准入，准入不等于冻结，8G 不是 tight。allocator、host-only、公式和 watchdog 不得替代正式总预算。已准入正式批次只有已终态的 `g4-h4-mem8g`。
-- 控制机已接通。SSH 提交 Thor 用户 systemd 任务 `orion-fullmem-v4-executor.service`。正式训练期间不在 Thor 做 agent 重分析。换 `mem=` 档必须暂停批次并人工重启。
-- Linger 必须保持 enable。查询：`python -m orion_repro.stages.fullmem_v4 status`（需 `XDG_RUNTIME_DIR=/run/user/1001`）。
+- **阶段 4 已于 2026-10-11 结项：Orion 没有可信的实用优势，不借鉴，结束投入。** 裁决见 [G5_CLAIMS](reports/fullmem_v4/G5_CLAIMS.md)。Thor 已还原为原始 `primary` 启动项（无 `mem=`，MemTotal ≈ 122.8 GiB）。除非用户明确要求，不再发射 `kind=train`，不再换 `mem=` 档。
+- 阶段 4 期间的约定（仅作溯源）：主基准采用真实整机 CPU/GPU 共享内存约束，64/32/16/8/5 均启动准入过，准入不等于冻结。allocator、host-only、公式和 watchdog 不得替代正式总预算。
+- 用户级 systemd 任务 `orion-fullmem-v4-executor.service` 已 stop 并 disable，单元文件保留。Linger 本来就是 yes，不动。重开方式见 [STATUS](STATUS.md)。
 - 本阶段恢复论文方法与基准的全面覆盖：五主基准、四OCL算法、Endless和论文基线。旧约24小时缩减范围与“不恢复全组合”不限制v4；采用可追溯分块矩阵，耗时仅估算。
 - A29停改/禁补C/H等规则只保护v3冻结身份；不阻止新阶段修改。旧证据不可覆写，新实验建立v4独立身份。
 - 不升级驱动、不使用mineru/base、显式orion、单遍与公平比较等稳定约束继续有效。

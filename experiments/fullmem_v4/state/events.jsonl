@@ -1666,3 +1666,195 @@
 {"ts": "2026-10-08T05:36:02Z", "event": "completed", "task_id": "g4-core50-nc-agem-basic-seed1-mem5g", "exit_code": 0}
 {"ts": "2026-10-08T05:36:02Z", "event": "started", "task_id": "g4-core50-nc-agem-basic-seed2-mem5g"}
 {"ts": "2026-10-08T05:36:14Z", "event": "resource_failure", "task_id": "g4-core50-nc-agem-basic-seed2-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-09T03:42:19Z", "event": "submitted", "task_id": "g4-core50-nc-agem-basic-seed2-mem5g-b2", "content_hash": "ff6b4e0a986cfb02b17ac4fd008be4debfe7ab787948e52518a6e52c02025ac6"}
+{"ts": "2026-10-09T03:42:19Z", "event": "submitted", "task_id": "g4-core50-ni-orecon-static-seed2-mem5g-b3", "content_hash": "722681fb016eb06e340eeee473fc6956c83baabf74efd2c73cea4f6615dbf54e"}
+{"ts": "2026-10-09T03:42:19Z", "event": "submitted", "task_id": "g4-core50-nc-gss-orecon-seed0-mem5g", "content_hash": "38301cc93587d5c6e8e1c2be11fc8521adc91d871a4819f19cd2b5d5884a4a00"}
+{"ts": "2026-10-09T03:42:19Z", "event": "submitted", "task_id": "g4-core50-nc-gss-orecon-seed1-mem5g", "content_hash": "5f083f79c16421413d2da57b4dac7bb98ec91de6790466f0e78be9e9b2d173bc"}
+{"ts": "2026-10-09T03:42:19Z", "event": "started", "task_id": "g4-core50-nc-agem-basic-seed2-mem5g-b2"}
+{"ts": "2026-10-09T03:42:19Z", "event": "submitted", "task_id": "g4-core50-nc-gss-orecon-seed2-mem5g", "content_hash": "438ee2117c45955c450af1dbd28a09c3e9461a571a477cb8f4515335ede9f8c4"}
+{"ts": "2026-10-09T03:42:19Z", "event": "submitted", "task_id": "g4-core50-nc-gem-orecon-seed0-mem5g", "content_hash": "05e448120adbd9df8e0d4db2d095b53cf48975f06ed6cb948a1dc9ea6d5b8940"}
+{"ts": "2026-10-09T03:42:19Z", "event": "submitted", "task_id": "g4-core50-nc-gem-orecon-seed1-mem5g", "content_hash": "7550621df20929a31f15243ec39c0cac0cb3d62b8894761a43bd9cf22c4855a5"}
+{"ts": "2026-10-09T03:42:20Z", "event": "submitted", "task_id": "g4-core50-nc-gem-orecon-seed2-mem5g", "content_hash": "6102b3142bf167c143f13f0bf98808cd85730e0a136a608224b0cc34847d856a"}
+{"ts": "2026-10-09T03:42:20Z", "event": "submitted", "task_id": "g4-core50-nc-agem-orecon-seed0-mem5g", "content_hash": "83261590beb9a330eb8dfe2d615b7866639b643c9248a1a8a6ec7c63ef093f2e"}
+{"ts": "2026-10-09T03:42:20Z", "event": "submitted", "task_id": "g4-core50-nc-agem-orecon-seed1-mem5g", "content_hash": "08b402425e35b3d509320cefaf1dc9bfb36413b28803d2824bfc19d3c22eb620"}
+{"ts": "2026-10-09T03:42:20Z", "event": "submitted", "task_id": "g4-core50-nc-agem-orecon-seed2-mem5g", "content_hash": "c6adf2c08870b53c0e72ec81b9125a5e116414fa19b77e616b008bbbce181edd"}
+{"ts": "2026-10-09T03:51:08Z", "event": "completed", "task_id": "g4-core50-nc-agem-basic-seed2-mem5g-b2", "exit_code": 0}
+{"ts": "2026-10-09T03:51:09Z", "event": "started", "task_id": "g4-core50-ni-orecon-static-seed2-mem5g-b3"}
+{"ts": "2026-10-09T04:08:31Z", "event": "completed", "task_id": "g4-core50-ni-orecon-static-seed2-mem5g-b3", "exit_code": 0}
+{"ts": "2026-10-09T04:08:31Z", "event": "started", "task_id": "g4-core50-nc-gss-orecon-seed0-mem5g"}
+{"ts": "2026-10-09T04:25:59Z", "event": "completed", "task_id": "g4-core50-nc-gss-orecon-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T04:25:59Z", "event": "started", "task_id": "g4-core50-nc-gss-orecon-seed1-mem5g"}
+{"ts": "2026-10-09T04:43:10Z", "event": "completed", "task_id": "g4-core50-nc-gss-orecon-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T04:43:11Z", "event": "started", "task_id": "g4-core50-nc-gss-orecon-seed2-mem5g"}
+{"ts": "2026-10-09T04:58:37Z", "event": "completed", "task_id": "g4-core50-nc-gss-orecon-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T04:58:37Z", "event": "started", "task_id": "g4-core50-nc-gem-orecon-seed0-mem5g"}
+{"ts": "2026-10-09T05:14:30Z", "event": "completed", "task_id": "g4-core50-nc-gem-orecon-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T05:14:31Z", "event": "started", "task_id": "g4-core50-nc-gem-orecon-seed1-mem5g"}
+{"ts": "2026-10-09T05:31:55Z", "event": "completed", "task_id": "g4-core50-nc-gem-orecon-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T05:31:55Z", "event": "started", "task_id": "g4-core50-nc-gem-orecon-seed2-mem5g"}
+{"ts": "2026-10-09T05:48:37Z", "event": "completed", "task_id": "g4-core50-nc-gem-orecon-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T05:48:37Z", "event": "started", "task_id": "g4-core50-nc-agem-orecon-seed0-mem5g"}
+{"ts": "2026-10-09T06:03:20Z", "event": "completed", "task_id": "g4-core50-nc-agem-orecon-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T06:03:20Z", "event": "started", "task_id": "g4-core50-nc-agem-orecon-seed1-mem5g"}
+{"ts": "2026-10-09T06:17:57Z", "event": "completed", "task_id": "g4-core50-nc-agem-orecon-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T06:17:57Z", "event": "started", "task_id": "g4-core50-nc-agem-orecon-seed2-mem5g"}
+{"ts": "2026-10-09T06:32:25Z", "event": "completed", "task_id": "g4-core50-nc-agem-orecon-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T10:18:44Z", "event": "submitted", "task_id": "g4-core50-nc-agem-fixedopt-seed0-mem5g", "content_hash": "ca5565739c5a10f251e3897f54dfab8c7adfcd1b7b6dcc7dffaa50db59924af9"}
+{"ts": "2026-10-09T10:18:44Z", "event": "submitted", "task_id": "g4-core50-nc-agem-fixedopt-seed1-mem5g", "content_hash": "c14bfd9c1850f4fde56fe39b9389a5d1301c8eff517448bebce5136cfbad63ce"}
+{"ts": "2026-10-09T10:18:44Z", "event": "submitted", "task_id": "g4-core50-nc-agem-fixedopt-seed2-mem5g", "content_hash": "be18f1e498e3ba2cffb2f3b91a2b3188f1bcc86468c8ffeae59073db296b4108"}
+{"ts": "2026-10-09T10:18:44Z", "event": "submitted", "task_id": "g4-core50-nc-gem-fixedopt-seed0-mem5g", "content_hash": "7b8d41b98657bc413c483d56ab10c3ef30f9829e832e9e2556cafb389633422d"}
+{"ts": "2026-10-09T10:18:44Z", "event": "submitted", "task_id": "g4-core50-nc-gem-fixedopt-seed1-mem5g", "content_hash": "5895cdc018544c0794d7786b95dafd907998c7880a49c50f7283c431f353951d"}
+{"ts": "2026-10-09T10:18:44Z", "event": "submitted", "task_id": "g4-core50-nc-gem-fixedopt-seed2-mem5g", "content_hash": "37eb38fabffb64e44461dc71be4f1648d4ab7bc041bf364bcc4af03756feeea5"}
+{"ts": "2026-10-09T10:18:44Z", "event": "submitted", "task_id": "g4-core50-nc-gss-fixedopt-seed0-mem5g", "content_hash": "b760d1184aeac62795f6e957cdb78bd9c283b0d31ee739dcc554a0909a188137"}
+{"ts": "2026-10-09T10:18:44Z", "event": "submitted", "task_id": "g4-core50-nc-gss-fixedopt-seed1-mem5g", "content_hash": "587d3987c6285bd69eb223823fe8def1ce8dece79069ac943f4f9df342c7e48c"}
+{"ts": "2026-10-09T10:18:44Z", "event": "submitted", "task_id": "g4-core50-nc-gss-fixedopt-seed2-mem5g", "content_hash": "973f33b236a259afe0b55ea302a5e08b0ff87229207aa19c6574c260e43db5d1"}
+{"ts": "2026-10-09T10:18:45Z", "event": "started", "task_id": "g4-core50-nc-gss-fixedopt-seed0-mem5g"}
+{"ts": "2026-10-09T10:18:59Z", "event": "resource_failure", "task_id": "g4-core50-nc-gss-fixedopt-seed0-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-09T10:19:00Z", "event": "started", "task_id": "g4-core50-nc-gss-fixedopt-seed1-mem5g"}
+{"ts": "2026-10-09T10:38:27Z", "event": "completed", "task_id": "g4-core50-nc-gss-fixedopt-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T10:38:27Z", "event": "started", "task_id": "g4-core50-nc-gss-fixedopt-seed2-mem5g"}
+{"ts": "2026-10-09T10:56:16Z", "event": "completed", "task_id": "g4-core50-nc-gss-fixedopt-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T10:56:16Z", "event": "started", "task_id": "g4-core50-nc-gem-fixedopt-seed0-mem5g"}
+{"ts": "2026-10-09T11:16:56Z", "event": "completed", "task_id": "g4-core50-nc-gem-fixedopt-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T11:16:57Z", "event": "started", "task_id": "g4-core50-nc-gem-fixedopt-seed1-mem5g"}
+{"ts": "2026-10-09T11:37:18Z", "event": "completed", "task_id": "g4-core50-nc-gem-fixedopt-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T11:37:19Z", "event": "started", "task_id": "g4-core50-nc-gem-fixedopt-seed2-mem5g"}
+{"ts": "2026-10-09T11:58:10Z", "event": "completed", "task_id": "g4-core50-nc-gem-fixedopt-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T11:58:10Z", "event": "started", "task_id": "g4-core50-nc-agem-fixedopt-seed0-mem5g"}
+{"ts": "2026-10-09T12:16:54Z", "event": "completed", "task_id": "g4-core50-nc-agem-fixedopt-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T12:16:54Z", "event": "started", "task_id": "g4-core50-nc-agem-fixedopt-seed1-mem5g"}
+{"ts": "2026-10-09T12:35:32Z", "event": "completed", "task_id": "g4-core50-nc-agem-fixedopt-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T12:35:32Z", "event": "started", "task_id": "g4-core50-nc-agem-fixedopt-seed2-mem5g"}
+{"ts": "2026-10-09T12:54:07Z", "event": "completed", "task_id": "g4-core50-nc-agem-fixedopt-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T13:27:44Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gss-b16-r200-seed17-mem5g", "content_hash": "4a415c8b96ae7d71a06ae2ab705a6329c5a8d84c64bbccc827fd4e44bd109e70"}
+{"ts": "2026-10-09T13:27:44Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gss-b16-r2000-seed17-mem5g", "content_hash": "e18dd5edf2399dce10cfdaf68cd900e56e33e41f9ecf6f1b24101d4cb8d5ebcf"}
+{"ts": "2026-10-09T13:27:44Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gss-b64-r200-seed17-mem5g", "content_hash": "02a1d708ef49f2b4b893a10189d0569c8a17782b47b47dc0b17d97ab0f0e7a11"}
+{"ts": "2026-10-09T13:27:44Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gss-b64-r2000-seed17-mem5g", "content_hash": "cf83889642685126c062ee46218aff651acdaf87cfc83c469ceb5967f993f08e"}
+{"ts": "2026-10-09T13:27:44Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gss-b256-r200-seed17-mem5g", "content_hash": "36376f073f39aebe37a9848317cc9e7848a33df3783b310873d82ccf5b81df74"}
+{"ts": "2026-10-09T13:27:44Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gss-b256-r2000-seed17-mem5g", "content_hash": "67731913eb6f7c9d649e678a8ad0ef1d35e47737293648aaccd5527c80ec5be7"}
+{"ts": "2026-10-09T13:27:44Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gem-b16-r200-seed17-mem5g", "content_hash": "3478596513ac2fb04cfad78cd3324e4a7cb6c34a283e9c6ee53055a085607063"}
+{"ts": "2026-10-09T13:27:44Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gem-b16-r2000-seed17-mem5g", "content_hash": "50666f7d91c54b57711589afc7091a5c459d650420824dce781b0d0a08b3039f"}
+{"ts": "2026-10-09T13:27:44Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gem-b64-r200-seed17-mem5g", "content_hash": "dae43d552315bc568415fb1954f3e1b2b87573307796cfa486ad153f8404751f"}
+{"ts": "2026-10-09T13:27:45Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gem-b64-r2000-seed17-mem5g", "content_hash": "e66e6e0f70e82e0b48c223c888ad2cd006e215fc12b7c1f5c6d573041f2fda29"}
+{"ts": "2026-10-09T13:27:45Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gem-b256-r200-seed17-mem5g", "content_hash": "11bb96bde08ebea5dbd287b77066f1a26cd6793d1a8e5e855230a88278040830"}
+{"ts": "2026-10-09T13:27:45Z", "event": "submitted", "task_id": "g2-h2-tune-nc-gem-b256-r2000-seed17-mem5g", "content_hash": "ad3d005f471c7545a319a2644524d352fcc02069f162e7ac394d8d0aab0a0763"}
+{"ts": "2026-10-09T13:27:45Z", "event": "submitted", "task_id": "g2-h2-tune-nc-agem-b16-r200-seed17-mem5g", "content_hash": "367df090a3677445f94e27597f6a0160efe01590180bce4cd59a2494bb423765"}
+{"ts": "2026-10-09T13:27:45Z", "event": "submitted", "task_id": "g2-h2-tune-nc-agem-b16-r2000-seed17-mem5g", "content_hash": "fcc71e94a34b2854b88b03f663a33993f4aa35e5172aee6938e84e0d68017388"}
+{"ts": "2026-10-09T13:27:45Z", "event": "submitted", "task_id": "g2-h2-tune-nc-agem-b64-r200-seed17-mem5g", "content_hash": "1963af2af7e0c86db4ae2ae2459122dcf05a7634d4906edada6cfcbf390be3bd"}
+{"ts": "2026-10-09T13:27:45Z", "event": "submitted", "task_id": "g2-h2-tune-nc-agem-b64-r2000-seed17-mem5g", "content_hash": "4b9b7420032cfbb768df5743e788a07ccf782f05ceb912ba4cd2e3d2e796e2a9"}
+{"ts": "2026-10-09T13:27:45Z", "event": "submitted", "task_id": "g2-h2-tune-nc-agem-b256-r200-seed17-mem5g", "content_hash": "86d3521931d47eec791f448cee97ac87cec2bb34e75933d4d14f08ef3fa82625"}
+{"ts": "2026-10-09T13:27:45Z", "event": "submitted", "task_id": "g2-h2-tune-nc-agem-b256-r2000-seed17-mem5g", "content_hash": "f7eb9753a78e634639f6a61a49e5cd3bdd26b34106592326242bdb9ec611fa7d"}
+{"ts": "2026-10-09T13:27:46Z", "event": "started", "task_id": "g2-h2-tune-nc-gss-b16-r200-seed17-mem5g"}
+{"ts": "2026-10-09T13:37:38Z", "event": "completed", "task_id": "g2-h2-tune-nc-gss-b16-r200-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T13:37:38Z", "event": "started", "task_id": "g2-h2-tune-nc-gss-b16-r2000-seed17-mem5g"}
+{"ts": "2026-10-09T13:44:21Z", "event": "completed", "task_id": "g2-h2-tune-nc-gss-b16-r2000-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T13:44:21Z", "event": "started", "task_id": "g2-h2-tune-nc-gss-b64-r200-seed17-mem5g"}
+{"ts": "2026-10-09T13:48:03Z", "event": "completed", "task_id": "g2-h2-tune-nc-gss-b64-r200-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T13:48:03Z", "event": "started", "task_id": "g2-h2-tune-nc-gss-b64-r2000-seed17-mem5g"}
+{"ts": "2026-10-09T13:52:06Z", "event": "completed", "task_id": "g2-h2-tune-nc-gss-b64-r2000-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T13:52:06Z", "event": "started", "task_id": "g2-h2-tune-nc-gss-b256-r200-seed17-mem5g"}
+{"ts": "2026-10-09T13:52:44Z", "event": "resource_failure", "task_id": "g2-h2-tune-nc-gss-b256-r200-seed17-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-09T13:52:44Z", "event": "started", "task_id": "g2-h2-tune-nc-gss-b256-r2000-seed17-mem5g"}
+{"ts": "2026-10-09T13:53:01Z", "event": "resource_failure", "task_id": "g2-h2-tune-nc-gss-b256-r2000-seed17-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-09T13:53:01Z", "event": "started", "task_id": "g2-h2-tune-nc-gem-b16-r200-seed17-mem5g"}
+{"ts": "2026-10-09T14:01:32Z", "event": "completed", "task_id": "g2-h2-tune-nc-gem-b16-r200-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T14:01:32Z", "event": "started", "task_id": "g2-h2-tune-nc-gem-b16-r2000-seed17-mem5g"}
+{"ts": "2026-10-09T14:02:16Z", "event": "resource_failure", "task_id": "g2-h2-tune-nc-gem-b16-r2000-seed17-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-09T14:02:17Z", "event": "started", "task_id": "g2-h2-tune-nc-gem-b64-r200-seed17-mem5g"}
+{"ts": "2026-10-09T14:06:33Z", "event": "completed", "task_id": "g2-h2-tune-nc-gem-b64-r200-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T14:06:33Z", "event": "started", "task_id": "g2-h2-tune-nc-gem-b64-r2000-seed17-mem5g"}
+{"ts": "2026-10-09T14:07:04Z", "event": "resource_failure", "task_id": "g2-h2-tune-nc-gem-b64-r2000-seed17-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-09T14:07:04Z", "event": "started", "task_id": "g2-h2-tune-nc-gem-b256-r200-seed17-mem5g"}
+{"ts": "2026-10-09T14:10:10Z", "event": "completed", "task_id": "g2-h2-tune-nc-gem-b256-r200-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T14:10:11Z", "event": "started", "task_id": "g2-h2-tune-nc-gem-b256-r2000-seed17-mem5g"}
+{"ts": "2026-10-09T14:10:37Z", "event": "resource_failure", "task_id": "g2-h2-tune-nc-gem-b256-r2000-seed17-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-09T14:10:37Z", "event": "started", "task_id": "g2-h2-tune-nc-agem-b16-r200-seed17-mem5g"}
+{"ts": "2026-10-09T14:16:52Z", "event": "completed", "task_id": "g2-h2-tune-nc-agem-b16-r200-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T14:16:52Z", "event": "started", "task_id": "g2-h2-tune-nc-agem-b16-r2000-seed17-mem5g"}
+{"ts": "2026-10-09T14:23:24Z", "event": "completed", "task_id": "g2-h2-tune-nc-agem-b16-r2000-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T14:23:25Z", "event": "started", "task_id": "g2-h2-tune-nc-agem-b64-r200-seed17-mem5g"}
+{"ts": "2026-10-09T14:26:37Z", "event": "completed", "task_id": "g2-h2-tune-nc-agem-b64-r200-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-09T14:26:38Z", "event": "started", "task_id": "g2-h2-tune-nc-agem-b64-r2000-seed17-mem5g"}
+{"ts": "2026-10-09T14:26:51Z", "event": "resource_failure", "task_id": "g2-h2-tune-nc-agem-b64-r2000-seed17-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-09T14:26:51Z", "event": "started", "task_id": "g2-h2-tune-nc-agem-b256-r200-seed17-mem5g"}
+{"ts": "2026-10-09T14:27:04Z", "event": "resource_failure", "task_id": "g2-h2-tune-nc-agem-b256-r200-seed17-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-09T14:27:04Z", "event": "started", "task_id": "g2-h2-tune-nc-agem-b256-r2000-seed17-mem5g"}
+{"ts": "2026-10-09T14:29:53Z", "event": "completed", "task_id": "g2-h2-tune-nc-agem-b256-r2000-seed17-mem5g", "exit_code": 0}
+{"ts": "2026-10-10T02:59:10Z", "event": "submitted", "task_id": "g4-core50-nc-gem-tuned-seed0-mem5g", "content_hash": "7a9f946d6a58fbcf5b3e789b48cedc99148e5f7858a5903e3711ed2a95b3cadc"}
+{"ts": "2026-10-10T02:59:10Z", "event": "submitted", "task_id": "g4-core50-nc-gem-tuned-seed1-mem5g", "content_hash": "a8aaa9dd414b6021474d9090df784dd9e20cd28b9a8a0479c4d6d18ac0007305"}
+{"ts": "2026-10-10T02:59:10Z", "event": "submitted", "task_id": "g4-core50-nc-gem-tuned-seed2-mem5g", "content_hash": "7af6ae8948f64cab80bb818d3c2548b7bb73eb9ecf7ebb7f24407aa107474c71"}
+{"ts": "2026-10-10T02:59:10Z", "event": "submitted", "task_id": "g4-core50-nc-agem-tuned-seed0-mem5g", "content_hash": "a12c3ed6663769cdd31ea4cb7a6c1eca2bc7ddb6153ae647f80f331b84a6fdb5"}
+{"ts": "2026-10-10T02:59:10Z", "event": "submitted", "task_id": "g4-core50-nc-agem-tuned-seed1-mem5g", "content_hash": "2737bdbe124a127d5a20be4813812542e017c3575e85a7d083d85e43c5230ae2"}
+{"ts": "2026-10-10T02:59:10Z", "event": "submitted", "task_id": "g4-core50-nc-agem-tuned-seed2-mem5g", "content_hash": "3e3d96909fe3d2f871ffd49e1d7f27897f093ab3b064a075f1d6f3c14a31f2ad"}
+{"ts": "2026-10-10T02:59:11Z", "event": "started", "task_id": "g4-core50-nc-gem-tuned-seed0-mem5g"}
+{"ts": "2026-10-10T03:03:57Z", "event": "completed", "task_id": "g4-core50-nc-gem-tuned-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-10T03:03:58Z", "event": "started", "task_id": "g4-core50-nc-gem-tuned-seed1-mem5g"}
+{"ts": "2026-10-10T03:04:09Z", "event": "resource_failure", "task_id": "g4-core50-nc-gem-tuned-seed1-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-10T03:04:09Z", "event": "started", "task_id": "g4-core50-nc-gem-tuned-seed2-mem5g"}
+{"ts": "2026-10-10T03:08:48Z", "event": "completed", "task_id": "g4-core50-nc-gem-tuned-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-10T03:08:48Z", "event": "started", "task_id": "g4-core50-nc-agem-tuned-seed0-mem5g"}
+{"ts": "2026-10-10T03:17:28Z", "event": "completed", "task_id": "g4-core50-nc-agem-tuned-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-10T03:17:28Z", "event": "started", "task_id": "g4-core50-nc-agem-tuned-seed1-mem5g"}
+{"ts": "2026-10-10T03:26:21Z", "event": "completed", "task_id": "g4-core50-nc-agem-tuned-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-10T03:26:21Z", "event": "started", "task_id": "g4-core50-nc-agem-tuned-seed2-mem5g"}
+{"ts": "2026-10-10T03:35:15Z", "event": "completed", "task_id": "g4-core50-nc-agem-tuned-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T06:29:26Z", "event": "submitted", "task_id": "g4-core50-nc-gem-tuned-seed1-mem5g-b2", "content_hash": "babb72bfbaeb62454e7578d84c85f65143e272b79621dee5e9f9d5f1e5a5c450"}
+{"ts": "2026-10-11T06:29:27Z", "event": "submitted", "task_id": "g4-core50-nc-er-gem-seed0-mem5g", "content_hash": "b639a38ee993f098fe496fc292dcc8f1fb73cc5f4e287e20251c11820baca3f5"}
+{"ts": "2026-10-11T06:29:27Z", "event": "submitted", "task_id": "g4-core50-nc-er-gem-seed1-mem5g", "content_hash": "aaa12042bb41e21a843ceeaf8ee4c701368f6d742356efd546b62be5d48e0f30"}
+{"ts": "2026-10-11T06:29:27Z", "event": "submitted", "task_id": "g4-core50-nc-er-gem-seed2-mem5g", "content_hash": "9c97ac8b8209b0d3dce881167a8828f88d052452e11caf81d71d68e7bef8e818"}
+{"ts": "2026-10-11T06:29:27Z", "event": "started", "task_id": "g4-core50-nc-gem-tuned-seed1-mem5g-b2"}
+{"ts": "2026-10-11T06:29:27Z", "event": "submitted", "task_id": "g4-core50-nc-er-ewc-seed0-mem5g", "content_hash": "1e11904d0e4e3ae8d93ef6010802eeb934015654030c4576366c2dc6d77ff7e6"}
+{"ts": "2026-10-11T06:29:27Z", "event": "submitted", "task_id": "g4-core50-nc-er-ewc-seed1-mem5g", "content_hash": "2c61cb19469537483b1fa53211542f847c1f03f5d7382b3109ecd9a411dda208"}
+{"ts": "2026-10-11T06:29:27Z", "event": "submitted", "task_id": "g4-core50-nc-er-ewc-seed2-mem5g", "content_hash": "be6c0856e4bb283890d513863d6a2c7484fcc396222f523c599ad2be83c41525"}
+{"ts": "2026-10-11T06:29:27Z", "event": "submitted", "task_id": "g4-core50-nc-er-gem-ewc-seed0-mem5g", "content_hash": "c0ab7c5552ce5686eb9f536840052669ee4e0a12ce13a69e21404b60d257bd6c"}
+{"ts": "2026-10-11T06:29:27Z", "event": "submitted", "task_id": "g4-core50-nc-er-gem-ewc-seed1-mem5g", "content_hash": "5c215c75d8e28a391f62553f513e8ff776b891bb5039de6f60f78e441acab26b"}
+{"ts": "2026-10-11T06:29:27Z", "event": "submitted", "task_id": "g4-core50-nc-er-gem-ewc-seed2-mem5g", "content_hash": "b7e2fbcbcfd67fe9c1a633d18fea6c25722af1d0c6d846f2679985bb8cd3b225"}
+{"ts": "2026-10-11T06:34:14Z", "event": "completed", "task_id": "g4-core50-nc-gem-tuned-seed1-mem5g-b2", "exit_code": 0}
+{"ts": "2026-10-11T06:34:14Z", "event": "started", "task_id": "g4-core50-nc-er-gem-seed0-mem5g"}
+{"ts": "2026-10-11T06:40:00Z", "event": "completed", "task_id": "g4-core50-nc-er-gem-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T06:40:00Z", "event": "started", "task_id": "g4-core50-nc-er-gem-seed1-mem5g"}
+{"ts": "2026-10-11T06:45:46Z", "event": "completed", "task_id": "g4-core50-nc-er-gem-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T06:45:47Z", "event": "started", "task_id": "g4-core50-nc-er-gem-seed2-mem5g"}
+{"ts": "2026-10-11T06:51:33Z", "event": "completed", "task_id": "g4-core50-nc-er-gem-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T06:51:33Z", "event": "started", "task_id": "g4-core50-nc-er-ewc-seed0-mem5g"}
+{"ts": "2026-10-11T06:57:25Z", "event": "completed", "task_id": "g4-core50-nc-er-ewc-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T06:57:25Z", "event": "started", "task_id": "g4-core50-nc-er-ewc-seed1-mem5g"}
+{"ts": "2026-10-11T06:57:38Z", "event": "resource_failure", "task_id": "g4-core50-nc-er-ewc-seed1-mem5g", "exit_code": 1, "health": "ok"}
+{"ts": "2026-10-11T06:57:39Z", "event": "started", "task_id": "g4-core50-nc-er-ewc-seed2-mem5g"}
+{"ts": "2026-10-11T07:03:12Z", "event": "completed", "task_id": "g4-core50-nc-er-ewc-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T07:03:13Z", "event": "started", "task_id": "g4-core50-nc-er-gem-ewc-seed0-mem5g"}
+{"ts": "2026-10-11T07:08:51Z", "event": "completed", "task_id": "g4-core50-nc-er-gem-ewc-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T07:08:51Z", "event": "started", "task_id": "g4-core50-nc-er-gem-ewc-seed1-mem5g"}
+{"ts": "2026-10-11T07:14:14Z", "event": "completed", "task_id": "g4-core50-nc-er-gem-ewc-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T07:14:14Z", "event": "started", "task_id": "g4-core50-nc-er-gem-ewc-seed2-mem5g"}
+{"ts": "2026-10-11T07:20:00Z", "event": "completed", "task_id": "g4-core50-nc-er-gem-ewc-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T10:16:43Z", "event": "submitted", "task_id": "g4-core50-nc-er-ewc-seed1-mem5g-b2", "content_hash": "a91b79faf1feca9733c46c38f945e142b92df961dbb4620ba44c0ee43d7f54e6"}
+{"ts": "2026-10-11T10:16:43Z", "event": "submitted", "task_id": "g4-cifar100-er-gem-seed0-mem5g", "content_hash": "f4e4b58d440ad1b84d2cda5bebbaa9e8a4bb7f9dd9d62093371bd275e025db2d"}
+{"ts": "2026-10-11T10:16:43Z", "event": "submitted", "task_id": "g4-cifar100-er-gem-seed1-mem5g", "content_hash": "bb7d00701e10a28275b2b65d51aa6c26ac2c2ec6833a3620775e3412b983e5f8"}
+{"ts": "2026-10-11T10:16:43Z", "event": "submitted", "task_id": "g4-cifar100-er-gem-seed2-mem5g", "content_hash": "0689f8ce51ca744c13efe1f80d06d4a5ea775d574d595292a057629414491e2d"}
+{"ts": "2026-10-11T10:16:43Z", "event": "submitted", "task_id": "g4-cifar100-er-ewc-seed0-mem5g", "content_hash": "c611fa675d49ddb7856b4483a02520a78c7d2dcd83dbf2bc7a9663a9c3beb159"}
+{"ts": "2026-10-11T10:16:44Z", "event": "submitted", "task_id": "g4-cifar100-er-ewc-seed1-mem5g", "content_hash": "055bb85eac85df6659f339f28c011fff16b51c79c35107a929cfb8aefee4e51b"}
+{"ts": "2026-10-11T10:16:44Z", "event": "submitted", "task_id": "g4-cifar100-er-ewc-seed2-mem5g", "content_hash": "ae7bf4ba44e6371d9f218b5961285e662a2a5c05448836b6b833c2df3fcfd820"}
+{"ts": "2026-10-11T10:16:44Z", "event": "submitted", "task_id": "g4-cifar100-er-gem-ewc-seed0-mem5g", "content_hash": "d1132c39d4e20aa75f78a29d9ef3c22b762416977a1959943e14594880ffe31a"}
+{"ts": "2026-10-11T10:16:44Z", "event": "submitted", "task_id": "g4-cifar100-er-gem-ewc-seed1-mem5g", "content_hash": "4d17e004ec45685037b2a6049e56ab93be2593d0670fdf10ddd3a2225f8af117"}
+{"ts": "2026-10-11T10:16:44Z", "event": "submitted", "task_id": "g4-cifar100-er-gem-ewc-seed2-mem5g", "content_hash": "2cf3f5933719d1e5f6f20b7903469d3c127ad1e560ec17a0e8d51cc5923e2ac1"}
+{"ts": "2026-10-11T10:16:45Z", "event": "started", "task_id": "g4-core50-nc-er-ewc-seed1-mem5g-b2"}
+{"ts": "2026-10-11T10:22:39Z", "event": "completed", "task_id": "g4-core50-nc-er-ewc-seed1-mem5g-b2", "exit_code": 0}
+{"ts": "2026-10-11T10:22:39Z", "event": "started", "task_id": "g4-cifar100-er-gem-seed0-mem5g"}
+{"ts": "2026-10-11T10:24:11Z", "event": "completed", "task_id": "g4-cifar100-er-gem-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T10:24:11Z", "event": "started", "task_id": "g4-cifar100-er-gem-seed1-mem5g"}
+{"ts": "2026-10-11T10:25:51Z", "event": "completed", "task_id": "g4-cifar100-er-gem-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T10:25:51Z", "event": "started", "task_id": "g4-cifar100-er-gem-seed2-mem5g"}
+{"ts": "2026-10-11T10:27:30Z", "event": "completed", "task_id": "g4-cifar100-er-gem-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T10:27:31Z", "event": "started", "task_id": "g4-cifar100-er-ewc-seed0-mem5g"}
+{"ts": "2026-10-11T10:29:07Z", "event": "completed", "task_id": "g4-cifar100-er-ewc-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T10:29:07Z", "event": "started", "task_id": "g4-cifar100-er-ewc-seed1-mem5g"}
+{"ts": "2026-10-11T10:30:37Z", "event": "completed", "task_id": "g4-cifar100-er-ewc-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T10:30:38Z", "event": "started", "task_id": "g4-cifar100-er-ewc-seed2-mem5g"}
+{"ts": "2026-10-11T10:32:16Z", "event": "completed", "task_id": "g4-cifar100-er-ewc-seed2-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T10:32:16Z", "event": "started", "task_id": "g4-cifar100-er-gem-ewc-seed0-mem5g"}
+{"ts": "2026-10-11T10:33:52Z", "event": "completed", "task_id": "g4-cifar100-er-gem-ewc-seed0-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T10:33:52Z", "event": "started", "task_id": "g4-cifar100-er-gem-ewc-seed1-mem5g"}
+{"ts": "2026-10-11T10:35:29Z", "event": "completed", "task_id": "g4-cifar100-er-gem-ewc-seed1-mem5g", "exit_code": 0}
+{"ts": "2026-10-11T10:35:30Z", "event": "started", "task_id": "g4-cifar100-er-gem-ewc-seed2-mem5g"}
+{"ts": "2026-10-11T10:37:01Z", "event": "completed", "task_id": "g4-cifar100-er-gem-ewc-seed2-mem5g", "exit_code": 0}

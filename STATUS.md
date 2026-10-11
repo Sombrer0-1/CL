@@ -1,61 +1,32 @@
-# 当前状态：NC 的 H5b 已终态，正在补一条并跑 CIFAR-100
+# 当前状态：阶段 4 已结项，整机已还原
 
-更新：2026-10-11 18:20（UTC+8）。`mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。5G 是 tight 候选，8G 是 loose 候选，mid 未建立。
+更新：2026-10-11 23:30（UTC+8）。
 
-## 已完成
+**裁决：Orion（O-recon）没有可信的实用优势，不借鉴，结束投入。** 完整裁决、证据表与归因见 [G5_CLAIMS](reports/fullmem_v4/G5_CLAIMS.md)。不再发射 `kind=train`。
 
-8G 上 CIFAR-10、CIFAR-100、NI、NC、NIC 的 S0 / S* / O-recon 都完成。5G 上 CIFAR-100、NC、NIC、CIFAR-10 也完成。各流 O-recon 相对 S* 都没有实用优势。见 [G4_STATIC_LOOSE](reports/fullmem_v4/G4_STATIC_LOOSE.md)、[G4_STATIC_TIGHT](reports/fullmem_v4/G4_STATIC_TIGHT.md)。
+## 环境（已还原）
 
-5G NI 的 O-recon 三条现在都有质量结果。seed 2 的前两次热身 CUDA OOM 保留；b3 已 completed，三条相对 S* 都更差更慢。数字在下面和 [G4_STATIC_TIGHT](reports/fullmem_v4/G4_STATIC_TIGHT.md)。
+- 启动项：`/boot/extlinux/extlinux.conf` 已还原为实验前原件（与 `extlinux.conf.bak.orion-fullmem-v4-20260920` 逐字节一致），`DEFAULT primary`，没有 `mem=`，也没有 `orion-mem*` 标签。
+- 重启验收，2026-10-11 23:10：boot_id `68b3d186-454f-44a1-adaa-eaee2be1f369`，`MemTotal` 128766588 kB（约 122.8 GiB，128G 机型的整机内存），swap 0，`/proc/cmdline` 无 `mem=`，IP 仍 `10.5.229.37`。nvpmodel 仍是 120W/mode 1，驱动 595.78 未动，`orion` 环境里 torch 2.14.0+cu132 的 CUDA 前向与 1 GiB 分配正常，根盘 12%。
+- 执行器：`orion-fullmem-v4-executor.service` 已 stop 并 disable，重启后保持 inactive/disabled。停止时 inbox、running 都空，`mode=idle`，completed_n 557、failed_n 39。单元文件 `~/.config/systemd/user/orion-fullmem-v4-executor.service` 还在，不再自启。
+- Linger 实验前就是 yes，保持不动。
+- 回到实验配置（只有用户明确要求才做）：`sudo cp /boot/extlinux/extlinux.conf.bak.orion-fullmem-v4-20261011-pre-restore /boot/extlinux/extlinux.conf` 后重启，得到 `DEFAULT orion-mem5g` 和 64/32/16/8/5G 标签；再 `systemctl --user enable --now orion-fullmem-v4-executor.service`。其它档的备份仍在 `/boot/extlinux/`。
+- 没有改内核、驱动、nvpmodel。
 
-H2 基础静态 `g4-h2-basic-nc-mem5g` 于 2026-10-08 13:36（UTC+8）终态。范围只是 NC 上 GSS、GEM、AGEM 的基础静态，seed 0/1/2。调优静态、算法上的 Orion、固定可选策略和三档都不在这批里。
+## 终态
 
-P = `p_diag`，S = `s_initial`。失败格不填 0。
+设计分母 1320 个名额，约 165 格有终态，其余是覆盖缺口，不写成无效。已准入批次全部终态。
 
-| 方法 | seed | 状态 | P | S | online 秒 |
-|---|---:|---|---:|---:|---:|
-| GSS | 0 | completed | 0.435 | 0.664 | 792 |
-| GSS | 1 | completed | 0.450 | 0.622 | 791 |
-| GSS | 2 | completed | 0.011 | 1.000 | 523 |
-| GEM | 0 | completed | 0.596 | 0.462 | 680 |
-| GEM | 1 | completed | 0.588 | 0.482 | 681 |
-| GEM | 2 | completed | 0.600 | 0.468 | 688 |
-| AGEM | 0 | completed | 0.637 | 0.383 | 514 |
-| AGEM | 1 | completed | 0.646 | 0.370 | 504 |
-| AGEM | 2 | resource_failure | — | — | 热身约 9 秒 |
+| 范围 | 结果 |
+|---|---|
+| 5 个数据流 × 5G/8G 的 S0 / S* / O-recon | O-recon 相对 S*：ΔP −0.17 到 −0.37，online 2.1 到 4.5 倍，没有实用优势。见 [G4_STATIC_LOOSE](reports/fullmem_v4/G4_STATIC_LOOSE.md)、[G4_STATIC_TIGHT](reports/fullmem_v4/G4_STATIC_TIGHT.md) |
+| H4 共运行压力（NC/NIC，8G + 2.5 GiB 持有） | NC 完成但 O-recon 更差更慢；NIC 的 O-recon 6/6 oom-kill。见 [G4_H4](reports/fullmem_v4/G4_H4.md) |
+| H2（NC 上 GSS/GEM/AGEM，5G） | Orion 对同算法基础静态 ΔP −0.26 到 −0.39；固定 EWC 更差更慢；调优静态没有拉开。见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md) |
+| H5b（插件拆分，NC 与 CIFAR-100） | **无效**：配置 `fixed_default` 使插件全程关闭，等同 ER。见 [G4_H5B](reports/fullmem_v4/G4_H5B.md) |
 
-GSS seed 2 的九个经验都训练并评估完了。P 约 0.011，S 停在 1，和 seed 0/1 不是同一量级。AGEM seed 2 与 seed 0/1 的 batch/replay 相同，失败发生在 CUDA context 创建。
+未建立：中间档、Endless 官方协议、Oracle 全搜索、LR/MAX-A/MAX-P、H1–H3、H5–H8 的正式矩阵。
 
-## 已完成
+## 位置
 
-上午那 11 条在 14:32 全部 completed。AGEM 基础静态 seed 2 的 b2：P 0.629，S 0.388，online 514 秒。NI O-recon seed 2 的 b3：P 0.053，S 0.962，online 1028 秒，相对 S* 仍然更差更慢。
-
-`g4-h2-orecon-nc-mem5g` 九条都 completed。相对同算法基础静态，GEM 的 ΔP 约 −0.32，AGEM 约 −0.39，在线时间约 1.5 到 1.7 倍。GSS 未崩的两个 seed ΔP 约 −0.26，seed 2 两边 P 都是 0.011。稳定性更高，但没有实用优势。数字见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md)。
-
-`g4-h2-fixedopt-nc-mem5g` 于 20:54 终态。8 条 completed，GSS seed 0 热身 CUDA OOM。固定 EWC 相对基础静态更差更慢：GEM 的 ΔP 约 −0.44，AGEM 约 −0.45，GSS seed 1 的 ΔP −0.374，在线时间大约 1.5 到 2.2 倍。见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md)。
-
-## 进度
-
-设计分母是 1320 个名额，不是执行队列。已经有终态的正式格大约 165 个，约占 12%：H4 的 48 格，五流 S0/S*/O-recon 在 5G 和 8G 上的 90 格，以及 mem5g 上 H2 三个对照的 27 格。已写入 `FREEZE.json` 的批次本身都已终态。
-
-中间档、Endless 官方协议、Oracle 全搜索、LR/MAX-A/MAX-P 和 H5–H8 的正式矩阵还没建立。这些留在分母里，没有排进队列，也不能给出跑完日期。按单卡串行、每条大约 10 到 20 分钟估算，把这些未建立块也全部排上是数周，而且中间档和 Endless 官方协议现在不能靠加运行填上。
-
-mem5g 上 H2 的调优静态已经选出。开发选择 18 条在 2026-10-09 22:29 终态。GSS 为 b16/r200，和基础静态相同，正式结果复用。GEM 为 b256/r200。AGEM 为 b16/r2000，`patterns_per_exp` 500。见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md)。
-
-`g4-h2-tuned-nc-mem5g` 已终态。GEM 三条 P 为 0.390、0.393、0.343，online 约 270 秒。见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md)。
-
-`g4-h5b-nc-mem5g` 于 15:20 终态。ER+GEM、ER+EWC、ER+GEM+EWC 的 P 都在 0.60 附近，online 约 330 秒，和复用的 S0 没有拉开。ER+EWC seed 1 是热身 CUDA OOM。见 [G4_H5B](reports/fullmem_v4/G4_H5B.md)。
-
-## 正在跑
-
-先补 NC 上 ER+EWC seed 1 的 b2。随后是 `g4-h5b-cifar100-mem5g`：同样的固定 b16/r200，ER+GEM、ER+EWC、ER+GEM+EWC 各 3 个 seed。ER 复用 CIFAR-100 的 S0。CIFAR-100 的 S0 大约 90 秒，这一批大约 1 到 2 小时。结束前不换档。不是第二档预算。
-
-## 现场
-
-执行器 active。`mem=5G` 不变。
-
-[G5_CLAIMS](reports/fullmem_v4/G5_CLAIMS.md) 仍只覆盖已准入的 H4。后来的静态比较和这组 H2 基础静态写在各自报告和本文件里，还没有并进那份裁决。
-
-`executor.py` 把 `cuda error: out of memory` 也记成 `resource_failure`。上面两次热身失败按这一行归类。
-
-查询：`ssh zhuzetong@10.5.229.37` 后看 `experiments/fullmem_v4/state/executor.json`。
+- Git 仓库在 Thor：`/home/zhuzetong/research/cl/Reproduce-Orion`，推送目标 `origin/master`（`Sombrer0-1/CL`）。`runs/` 被 gitignore，原始 `summary.json` 与控制轨迹只在 Thor 本机。
+- 控制机工作区 `C:\Users\admin\Desktop\ssh` 不是 git 仓库，里面有 SSH 脚本，密码只在这些脚本里，不进远端仓库。
