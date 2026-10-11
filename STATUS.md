@@ -1,6 +1,6 @@
-# 当前状态：调优静态已选出，正在跑 GEM 和 AGEM 的正式 seed
+# 当前状态：调优静态已终态，正在补 GEM seed 1 并跑 H5b
 
-更新：2026-10-10 11:00（UTC+8）。`mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。5G 是 tight 候选，8G 是 loose 候选，mid 未建立。
+更新：2026-10-11 14:30（UTC+8）。`mem=5G`，boot_id=`13f1512f-57ca-4ce5-8054-f415f168afd3`，MemTotal ≈ 4.856 GiB。5G 是 tight 候选，8G 是 loose 候选，mid 未建立。
 
 ## 已完成
 
@@ -42,9 +42,11 @@ GSS seed 2 的九个经验都训练并评估完了。P 约 0.011，S 停在 1，
 
 mem5g 上 H2 的调优静态已经选出。开发选择 18 条在 2026-10-09 22:29 终态。GSS 为 b16/r200，和基础静态相同，正式结果复用。GEM 为 b256/r200。AGEM 为 b16/r2000，`patterns_per_exp` 500。见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md)。
 
+`g4-h2-tuned-nc-mem5g` 于 2026-10-10 11:35 终态。GSS 复用基础静态。AGEM 三条和基础静态同一量级。GEM seed 0/2 的 P 为 0.390、0.343，online 约 270 秒，比基础静态可塑性更低、时间更短。seed 1 是热身 CUDA OOM。见 [G4_H2_NC](reports/fullmem_v4/G4_H2_NC.md)。
+
 ## 正在跑
 
-`g4-h2-tuned-nc-mem5g`：GEM 与 AGEM 各 seed 0/1/2，共 6 条。当前是 GEM seed 0。开发选择里 GEM b256 大约 3 分钟，AGEM b16/r2000 大约 6 分钟；正式评价会更长，这一批大约 1 到 2 小时。这批结束前不换档。
+先是 GEM 调优静态 seed 1 的 b2。随后是 `g4-h5b-nc-mem5g`：NC、batch 16、replay 200、控制器关闭，ER+GEM、ER+EWC、ER+GEM+EWC 各 3 个 seed。无可选插件的 ER 复用已完成的 S0。不是 CIFAR-100，也不是第二档预算。当前是 GEM 的 b2。这一批大约 2 到 4 小时。结束前不换档。
 
 ## 现场
 
